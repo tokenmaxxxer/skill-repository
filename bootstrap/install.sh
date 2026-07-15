@@ -60,11 +60,14 @@ PY
 # 즉 아래 install 단계가 플러그인을 실제로 받아오는 유일한 경로다 — 실패하면 치명적.
 find_claude() {
   if command -v claude >/dev/null 2>&1; then command -v claude; return 0; fi
-  # VS Code 확장에 번들된 CLI (PATH에 없는 것이 기본)
-  local bundled
-  bundled=$(ls -d "$HOME"/.vscode/extensions/anthropic.claude-code-*/resources/native-binary/claude \
-            2>/dev/null | sort -V | tail -1)
-  if [ -n "$bundled" ] && [ -x "$bundled" ]; then echo "$bundled"; return 0; fi
+  # VS Code 확장에 번들된 CLI (PATH에 없는 것이 기본).
+  # 로컬은 ~/.vscode, Remote-SSH/WSL 서버는 ~/.vscode-server에 확장이 깔린다.
+  local ext_root bundled
+  for ext_root in "$HOME/.vscode" "$HOME/.vscode-server" "$HOME/.cursor-server"; do
+    bundled=$(ls -d "$ext_root"/extensions/anthropic.claude-code-*/resources/native-binary/claude \
+              2>/dev/null | sort -V | tail -1)
+    if [ -n "$bundled" ] && [ -x "$bundled" ]; then echo "$bundled"; return 0; fi
+  done
   for c in "$HOME/.claude/local/claude" "/usr/local/bin/claude" "/opt/homebrew/bin/claude"; do
     if [ -x "$c" ]; then echo "$c"; return 0; fi
   done

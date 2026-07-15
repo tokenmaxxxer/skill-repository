@@ -1,0 +1,17 @@
+{
+  "name": "skill-registry",
+  "owner": {
+    "name": "skill-registry maintainers"
+  },
+  "metadata": {
+    "description": "사내 공용 스킬/에이전트/훅 레지스트리",
+    "version": "0.8.0"
+  },
+  "plugins": [
+    {
+      "name": "core",
+      "source": "./plugins/core",
+      "description": "skill-registry 공통 플러그인 — registry 설치 확인 및 공용 스킬"
+    }
+  ]
+}
