@@ -1,13 +1,15 @@
 export const meta = {
   name: 'deep-research-tiered',
-  description: 'Deep research harness (tiered) — Sonnet for mechanical search/fetch fan-out, session model for scope/verify/synthesize judgment.',
+  description: 'Deep research harness (tiered) — sonnet for mechanical search/fetch fan-out, opus for adversarial verify votes, session model for scope/synthesize.',
   whenToUse: 'When the user wants a deep, multi-source, fact-checked research report on any topic. BEFORE invoking, check if the question is specific enough to research directly — if underspecified (e.g., "what car to buy" without budget/use-case/region), ask 2-3 clarifying questions to narrow scope. Then pass the refined question as args, weaving the answers in.',
-  phases: [{"title":"Scope","detail":"Decompose question (from args) into 5 search angles"},{"title":"Search","detail":"5 parallel WebSearch agents, one per angle","model":"sonnet"},{"title":"Fetch","detail":"URL-dedup, fetch top 15 sources, extract falsifiable claims","model":"sonnet"},{"title":"Verify","detail":"3-vote adversarial verification per claim (need 2/3 refutes to kill)"},{"title":"Synthesize","detail":"Merge semantic dupes, rank by confidence, cite sources"}],
+  phases: [{"title":"Scope","detail":"Decompose question (from args) into 5 search angles"},{"title":"Search","detail":"5 parallel WebSearch agents, one per angle","model":"sonnet"},{"title":"Fetch","detail":"URL-dedup, fetch top 15 sources, extract falsifiable claims","model":"sonnet"},{"title":"Verify","detail":"3-vote adversarial verification per claim (need 2/3 refutes to kill)","model":"opus"},{"title":"Synthesize","detail":"Merge semantic dupes, rank by confidence, cite sources"}],
 }
 
 // deep-research-tiered: Scope → pipeline(Search → URL-dedup → Fetch+Extract) → 3-vote Verify → Synthesize
 // Model tiering (core:model-routing): Search/Fetch are mechanical retrieval → sonnet;
-// Scope, Verify (adversarial judgment), and Synthesize inherit the session model.
+// Verify is bounded adversarial judgment → opus (the reasoner tier — and at
+// VOTES_PER_CLAIM × MAX_VERIFY_CLAIMS agents it is the run's largest cost block);
+// Scope and Synthesize are single orchestration-adjacent calls → session model.
 // Ported from bughunter architecture. WebSearch/WebFetch instead of git/grep.
 // Question is passed via Workflow({name: 'deep-research-tiered', args: '<question>'}).
 
@@ -305,6 +307,7 @@ const voted = (await parallel(
           label: "v" + v + ":" + claim.claim.slice(0, 40),
           phase: "Verify",
           schema: VERDICT_SCHEMA,
+          model: "opus",
         })
       )
     ).then(verdicts => {
