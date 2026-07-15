@@ -1,0 +1,13 @@
+{
+  "name": "core",
+  "description": "skill-registry 공통 플러그인 — registry 설치 확인 및 공용 스킬",
+  "version": "0.8.0",
+  "author": {
+    "name": "skill-registry maintainers"
+  },
+  "homepage": "https://github.com/JiwonJung94/skill-repository",
+  "repository": "https://github.com/JiwonJung94/skill-repository",
+  "license": "MIT",
+  "category": "productivity",
+  "keywords": ["registry", "skills"]
+}
