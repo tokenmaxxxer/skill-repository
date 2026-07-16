@@ -29,8 +29,17 @@ export const meta = {
 
 const VOTES_PER_CLAIM = 3
 const REFUTATIONS_REQUIRED = 2
-const MAX_FETCH = 15
-const MAX_VERIFY_CLAIMS = 25
+// Sized from measurement, not taste. Across 14 rounds (34.4M subagent tokens),
+// spend was Verify 66.8% / Fetch 26.7% / everything else 6.5% — so only these two
+// are worth tuning, and the votes-per-claim panel is not the thing to cut: it is
+// the discrimination that killed 10 of 25 claims in round 8B, which is the product.
+// The waste was upstream. At MAX_FETCH=15 a round extracted ~100 claims and voted
+// on 25 (the repo-wide audit found 1,343 extracted vs 371 verified) — most fetch
+// tokens bought claims that could never reach a vote. Fetching fewer sources cuts
+// that directly AND shrinks the deferred pile, which is the honest direction: the
+// coverage invariant above wants the never-checked list small, not just declared.
+const MAX_FETCH = 9
+const MAX_VERIFY_CLAIMS = 18
 
 // ─── Schemas ───
 const SCOPE_SCHEMA = {
