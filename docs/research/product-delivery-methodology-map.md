@@ -86,6 +86,7 @@ Conway의 법칙(1968, Datamation — "시스템을 설계하는 조직은 그 �
 | 기회·수요 정의 | JTBD, Kano | 미확정 (Kano는 변형 불일치 비판만 확정) | 미정 | 공백 |
 | 법·지재권 | 규제 지도, 선행조사 | 표준 확립 | 높음 | compliance-scan, prior-art-scan |
 | 원인 진단 | 진단 우선 원리 | 표준 확립 | 높음 | diagnose-first |
+| 추정·예측 | Reference Class Forecasting (내부 추정 선기록 + 참조군 분포 보정) | 관찰 데이터 258→2,062건 + 영국 제도 의무화 (RCT 아님) | 높음 (선기록·사전 약정 백분위·산술 공개) | reference-forecast |
 | 판단 상신 | DQ 6요소 + Nutt 복수대안 + KT musts/wants + MAP 순서 + 가역성 분류 | 절차 표준 + 관찰 실증(Nutt 4배, medium) + 관례(Bezos) | 높음 (요소 체크 + 산술 + 위치 게이트) | decision-brief |
 
 ## 스킬화 우선순위 제안
