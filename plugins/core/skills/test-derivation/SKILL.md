@@ -11,15 +11,13 @@ description: >-
   케이스 뽑아줘", "테스트 케이스 도출해줘", "경계값 테스트 만들어줘", "어떤 테스트 기법 써야 해", "조합 테스트 만들어줘", "상태 전이
   테스트 설계해줘", "요구사항이랑 테스트 매핑해줘", "추적성 매트릭스 만들어줘", "derive test cases from these acceptance
   criteria", "generate boundary value tests", "which test technique should I use", "design a
-  decision table", "design state transition tests", "build a requirements-to-tests traceability
-  matrix", "what equivalence classes am I missing". The value is coverage discipline,
-  technique-fit routing, and removal of tedious manual cross-referencing — not a claim that any
+  decision table", "build a requirements-to-tests traceability matrix", "what equivalence classes
+  am I missing". The value is coverage discipline and technique-fit routing, not a claim that any
   one of these techniques finds more bugs than another. Do NOT use it when there are no written
-  requirements or acceptance criteria to derive from yet (that's a requirements-quality problem —
-  get the requirements written first), when the user already has a full test suite and
-  traceability matrix and just wants them executed or reported on, or when the ask is about
-  non-functional testing (performance, security, usability) that these black-box techniques don't
-  cover.
+  requirements to derive from yet (that's requirements-quality — get them written first), when a
+  full test suite and traceability matrix already exist and just need executing or reporting on,
+  or for non-functional testing (performance, security, usability) that these black-box techniques
+  don't cover.
 ---
 
 # Test Derivation

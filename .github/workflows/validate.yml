@@ -1,0 +1,29 @@
+name: validate
+
+# main = 배포 채널. merge가 곧 릴리스이므로 구조 검증과 version 범프 검사를
+# 여기서 막는다. README의 "설계 원칙"이 약속하는 게이트가 이것이다.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # version 범프 검사가 base와 diff를 내려면 전체 이력이 필요하다.
+          # 얕은 clone에서는 base ref가 없어 검사가 통째로 무력화된다.
+          fetch-depth: 0
+
+      # PR에서만 범프를 검사한다. base에 없던 version 변화가 곧 배포 트리거이므로
+      # 비교 대상이 있어야 의미가 있다.
+      - name: 구조 검증 + version 범프 검사
+        if: github.event_name == 'pull_request'
+        run: python3 scripts/validate.py --base "origin/${{ github.base_ref }}"
+
+      # push 이벤트에서는 base가 자기 자신이라 범프 검사가 공허하다. 구조만 본다.
+      - name: 구조 검증
+        if: github.event_name != 'pull_request'
+        run: python3 scripts/validate.py

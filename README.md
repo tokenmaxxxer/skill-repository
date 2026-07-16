@@ -48,15 +48,21 @@ bash ~/skill-registry/bootstrap/install.sh
    - frontmatter의 `name`은 디렉터리명과 일치, `description`은 "언제 이 스킬을 쓰는지"가
      드러나게 (Claude의 자동 호출 판단 기준, 1536자 이하)
 2. **`version`을 올립니다 — 이게 배포 트리거입니다.**
-   [plugin.json](plugins/core/.claude-plugin/plugin.json)과
-   [marketplace.json](.claude-plugin/marketplace.json) **두 곳 모두**, 같은 값으로.
+   올릴 곳은 [plugin.json](plugins/core/.claude-plugin/plugin.json) **한 곳뿐**입니다.
    스킬 추가는 기능 추가이므로 MINOR(`0.1.0` → `0.2.0`), 오타·문구 수정은 PATCH.
-   - **왜 필요한가**: Claude Code는 설치된 version과 마켓플레이스가 광고하는 version이
-     같으면 "이미 최신"으로 보고 캐시를 갱신하지 않습니다 (강제 `claude plugin update`도
+   - **왜 필요한가**: Claude Code는 해석된 version이 사용자가 이미 가진 것과 같으면
+     "이미 최신"으로 보고 캐시를 갱신하지 않습니다 (강제 `claude plugin update`도
      `already at the latest version`으로 거부). 즉 **version을 안 올리면 merge돼도
-     아무에게도 배포되지 않고**, CI는 초록불이고 autoUpdate도 정상 동작하므로 아무도
-     알아채지 못합니다. 깜빡해도 CI가 막아주지만(`validate.py --base`), 이유를 알고
-     올리는 편이 낫습니다.
+     아무에게도 배포되지 않고**, autoUpdate도 정상 동작하므로 아무도 알아채지 못합니다.
+   - **왜 한 곳인가**: version 해석 순서는 plugin.json → marketplace.json의 `plugins[]`
+     항목 → git 커밋 SHA이고, plugin.json에 version이 있으면 그 값이 **항상 조용히
+     이깁니다**. 그래서 marketplace 항목에 version을 같이 두면 그 값은 무시되면서 실제
+     배포되는 version을 가리는 거짓 기록이 됩니다 — [공식 문서][ver]가 두 곳에 두지
+     말라고 명시적으로 경고합니다. `marketplace.json`의 `metadata.version`은 마켓플레이스
+     자신의 매니페스트 버전이라 플러그인 배포와 무관합니다(올려도 아무 일도 안 일어납니다).
+   - 깜빡해도 CI가 막아주지만(`validate.py --base`), 이유를 알고 올리는 편이 낫습니다.
+
+[ver]: https://code.claude.com/docs/en/plugin-marketplaces
 3. 새 플러그인을 만들 경우: `plugins/<이름>/.claude-plugin/plugin.json` 작성 후
    [marketplace.json](.claude-plugin/marketplace.json)의 `plugins[]`에
    `"source": "./plugins/<이름>"` 항목 추가 (맨 앞 `./` 필수)
@@ -79,7 +85,7 @@ plugins/
     skills/<스킬명>/SKILL.md
 bootstrap/install.sh              # 구성원 1회 설정 스크립트
 scripts/validate.py               # 구조 검증기 (CI와 동일)
-.github/workflows/validate.yml    # merge 게이트 — PR마다 위 검증기 + claude plugin validate 실행
+.github/workflows/validate.yml    # merge 게이트 — PR마다 위 검증기 실행 (+ version 범프 검사)
 ```
 
 ## 설계 원칙

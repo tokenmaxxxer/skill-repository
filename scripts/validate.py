@@ -7,15 +7,24 @@
   2. 각 플러그인의 skills/*/SKILL.md frontmatter에 name/description이 있고,
      name은 디렉터리명과 일치하며, description은 1536자 이하이다.
   3. 마켓플레이스에 등록되지 않은 plugins/ 하위 디렉터리가 없다 (등록 누락 방지).
-  4. marketplace.json과 plugin.json의 version이 일치한다.
+  4. version이 plugin.json에만 있다 (marketplace.json plugins[] 항목에는 없다).
   5. (--base <ref> 지정 시) 플러그인 내용이 바뀌었다면 version도 올랐다.
 
-    4·5번이 핵심이다. Claude Code는 설치된 플러그인의 version이 마켓플레이스가
-    광고하는 version과 같으면 "이미 최신"으로 보고 캐시를 갱신하지 않는다
-    (강제 `claude plugin update`조차 "already at the latest version"으로 거부).
-    즉 version을 올리지 않으면 스킬을 merge해도 아무에게도 배포되지 않으며,
-    CI는 초록불이고 autoUpdate도 정상 동작하므로 누구도 알아채지 못한다.
+    4·5번이 핵심이다. Claude Code의 version 해석 순서는 plugin.json →
+    marketplace.json의 plugins[] 항목 → git 커밋 SHA이고, plugin.json에 version이
+    있으면 그 값이 항상 이긴다. 그래서 version은 plugin.json 한 곳에만 둔다 —
+    marketplace 항목에 같이 두면 plugin.json이 조용히 이기면서 그 값은 무시되므로,
+    어긋난 순간 실제 배포되는 version을 가리는 거짓 기록이 된다. 공식 문서가
+    두 곳에 두는 것을 명시적으로 경고한다.
+      https://code.claude.com/docs/en/plugin-marketplaces
+    그리고 해석된 version이 사용자가 이미 가진 것과 같으면 "이미 최신"으로 보고
+    캐시를 갱신하지 않는다 (강제 `claude plugin update`조차 "already at the latest
+    version"으로 거부). 즉 version을 올리지 않으면 스킬을 merge해도 아무에게도
+    배포되지 않으며, autoUpdate도 정상 동작하므로 누구도 알아채지 못한다.
     사람의 기억에 맡기지 않고 여기서 막는다.
+
+    marketplace.json의 metadata.version은 마켓플레이스 자신의 매니페스트 버전이라
+    플러그인 배포와 무관하다. 검사하지 않는다.
 
 사용법:
     python3 scripts/validate.py                  # 구조만 검사 (로컬)
@@ -91,14 +100,16 @@ def check_plugin(plugin_dir: Path, entry: dict) -> None:
         return
     if data.get("name") != registered_name:
         err(f"{manifest}: name '{data.get('name')}' ≠ marketplace 등록명 '{registered_name}'")
-    # 두 곳의 version이 어긋나면 어느 쪽이 광고되는지 알 수 없어 배포가 불확실해진다.
+    # version은 plugin.json 한 곳에만. 해석 순서상 plugin.json이 항상 이기므로,
+    # marketplace 항목의 version은 무시되면서 실제 배포 version을 가리기만 한다.
     mkt_ver, plugin_ver = entry.get("version"), data.get("version")
     if not plugin_ver:
         err(f"{manifest}: version 없음 (version이 배포 트리거다)")
-    elif mkt_ver != plugin_ver:
+    if mkt_ver is not None:
         err(
-            f"version 불일치: marketplace.json[{registered_name}]='{mkt_ver}' ≠ "
-            f"plugin.json='{plugin_ver}' — 두 곳을 같은 값으로 맞출 것"
+            f"marketplace.json[{registered_name}]: version '{mkt_ver}'가 있다 — "
+            f"version은 plugin.json에만 둘 것. plugin.json이 항상 이기므로 이 값은 "
+            f"무시되면서 실제 배포되는 version을 가린다"
         )
     skills_root = plugin_dir / "skills"
     if skills_root.is_dir():
@@ -153,7 +164,7 @@ def check_version_bump(base: str, registered: dict) -> None:
             err(
                 f"plugins/{name}: 내용이 바뀌었는데 version이 '{old_ver}' 그대로다.\n"
                 f"      → 올리지 않으면 merge돼도 아무에게도 배포되지 않는다.\n"
-                f"      → {manifest} 와 .claude-plugin/marketplace.json 둘 다 올릴 것.\n"
+                f"      → {manifest} 의 version을 올릴 것 (marketplace.json이 아니다).\n"
                 f"      변경된 파일:\n      {shown}{more}"
             )
 
