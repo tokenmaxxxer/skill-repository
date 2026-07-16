@@ -1,7 +1,7 @@
 {
   "name": "core",
   "description": "skill-registry 공통 플러그인 — registry 설치 확인 및 공용 스킬",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "author": {
     "name": "skill-registry maintainers"
   },

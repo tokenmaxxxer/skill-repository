@@ -7,7 +7,10 @@ description: >-
   skill on EVERY non-trivial task in any domain — development, design,
   architecture, data, docs, or multi-step orchestration — to decide what
   you do yourself, what goes to the reasoner subagent, and what goes to the
-  executor subagent. Trigger even if the user never mentions cost, models,
+  executor subagent. It also carries the rule for accepting delegated work —
+  the brief names an executable check, and neither a reasoner's approval nor
+  the delegate's own narration of a test run substitutes for that check's
+  traceable output. Trigger even if the user never mentions cost, models,
   or delegation. Do not use for pure conversation or single trivial edits.
 ---
 
@@ -52,7 +55,10 @@ only the brief's content changes.
   CSS tokens, generate the migration script, apply a rename across 50
   files) → `core:executor`. Include in the brief: exact scope, files, the
   acceptance check it must run, and what to report back (summary, not
-  logs).
+  logs). What counts as an acceptance check — and why a reasoner's
+  approval is not one — is below. If more than one executor will write to
+  the same codebase, `parallel-decomposition` gates the cut before you
+  send the briefs.
 - **Mechanical exploration** (find usages, map an unfamiliar area, run tests
   and summarize failures, analyze logs) → `core:executor` with an explicitly
   narrow question and instruction to return conclusions + file:line
@@ -77,6 +83,42 @@ only the brief's content changes.
   integrating results, and anything requiring the full conversation
   context. Delegating orchestration itself defeats the pattern.
 
+## Review is not the acceptance gate
+
+An executor brief names the check. What accepts the work when it comes
+back is that check's result — not a reasoner's approval, and not the
+executor's own account of having run it.
+
+The evidence, measured on human reviewers: of **570** review comments at
+Microsoft only **14%** identified defects, while the largest category —
+readability and consistency — was **29%**, and of the 78 defect-finding
+comments only **6** were design-level (Bacchelli & Bird, ICSE 2013). At
+Google, review's historical rationale was readability and
+maintainability, and of **44** survey respondents, **2** said review had
+caught bugs for them (Sadowski et al., ICSE-SEIP 2018). Both peer-reviewed,
+one company each. Whether an LLM reviewer behaves differently is unmeasured
+in both directions — no agent-specific baseline exists, and note the shape of
+that gap: this repo's round-7 agent claims were never put to a vote, because
+the research harness truncated them before verification. The evidence is
+missing, not refuted. So take the weak, safe
+rule: where an executable check exists, don't rest acceptance on review.
+Where none exists, review is what you have — then say which of the two you
+used, so the difference stays visible.
+
+That leaves review with what the evidence says it does produce: design
+fit, security implications, norm consistency, a record of why. Worth a
+reasoner call on a risky diff. Not a defect gate.
+
+**Provenance.** "Tests pass" is a claim. For an LLM, generating
+`Test Suites: 3 passed, 3 total` costs exactly what generating "tests
+pass" costs — the same next-token operation — so demanding the output does
+not by itself separate a real run from a plausible one. The cost asymmetry
+that makes "show me the output" work on a human delegate does not exist
+here. Acceptance evidence has to trace to an invocation you can see: a
+tool-call record in the transcript, a CI artifact, or the command re-run at
+your level. On anything that matters, re-run it yourself — it costs seconds,
+and it is the only part of the report that isn't the delegate's word.
+
 ## Domain examples
 
 **Development** — "간헐적 로그인 버그 고쳐줘": executor explores auth
@@ -96,9 +138,14 @@ option, or two opposing framings) → you synthesize the decision →
 executor writes the ADR from your decision.
 
 **Orchestration at scale** — "API v1 → v2 마이그레이션, 파일 50개":
-executor(scout brief) inventories call sites → you partition into
-batches → parallel executors transform batches → executor runs the full
-test suite → reasoner spot-reviews the riskiest diffs → you report.
+executor(scout brief) inventories call sites → **you freeze the v2
+contract first** and put it verbatim in every brief, because fifty agents
+that never talk will each invent their own v2 signature otherwise → you
+partition into batches with disjoint write sets → parallel executors
+transform batches → executor runs the full test suite → reasoner
+spot-reviews the riskiest diffs → you report. The freeze and the
+disjointness are `parallel-decomposition`'s gates; what must be true
+before any of it lands is `merge-gates`'.
 
 ## A delegate that delegates inherits your tier
 
