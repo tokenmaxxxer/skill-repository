@@ -9,11 +9,11 @@ description: >-
   A/B / online-experiment result — e.g. "A/B 테스트 결과 믿어도 돼?", "실험 결과 해석해줘", "이 실험 설계 점검해줘",
   "A/B 테스트 돌려도 될까", "실험 신뢰성 체크", "can we trust this experiment", "check this experiment for SRM",
   "is our A/B testing platform reliable", "why does this experiment result look too good to be true".
-  Trigger it BEFORE interpreting any variant-comparison result, and especially when a result looks
-  like a big win or is about to be used for a launch decision. This is the reliability companion to
-  `usability-eval` (which designs the evaluative study itself) and `hypothesis-testing` (which
-  pre-registers the metric/threshold/decision rule) — cross-reference both, do not duplicate their
-  content. Do NOT use it for designing a NEW experiment from scratch (route to `usability-eval` for
+  Trigger it BEFORE interpreting any variant-comparison result, especially a big win or one about to
+  drive a launch decision. This is the reliability companion to `usability-eval` (which designs the
+  study) and `hypothesis-testing` (which pre-registers the metric and decision rule) — cross-reference
+  both, don't duplicate them. Do NOT use it for designing a NEW experiment from scratch (route to
+  `usability-eval` for
   test design or `hypothesis-testing` for the decision rule), for an observational comparison with no
   random assignment (say so and stop — this skill is only for randomized controlled experiments), or
   for a qualitative usability question with no metric contrast (route to `usability-eval`).
