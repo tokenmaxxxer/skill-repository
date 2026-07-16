@@ -86,7 +86,20 @@ Without the placebo arm, rule content is confounded with prompt length and atten
 
 ### Field 4 — Generation protocol
 
-Model pinned to `claude-sonnet-5` (the tier that produces documents in this org per `core:model-routing`; generalization to other tiers is untested and will be stated as a limit). Temperature and top_p fixed and recorded. Generation order randomized; arm assignment via a committed seed. **Generator and grader must not be the same instance.**
+Model pinned to `claude-sonnet-5` (the tier that produces documents in this org per `core:model-routing`; generalization to other tiers is untested and will be stated as a limit). Generation order randomized; arm assignment via a committed seed. **Generator and grader must not be the same instance.**
+
+**Sampling parameters are not free variables on this model.** `claude-sonnet-5` rejects non-default `temperature` / `top_p` / `top_k` with a 400. They are omitted from every request and are not exposed as knobs. Recorded as "API default, not settable."
+
+**`thinking` is pinned explicitly to `{"type": "adaptive"}`, not omitted.** On `claude-sonnet-5` an omitted `thinking` field runs adaptive anyway (a silent change from Sonnet 4.6, which ran thinking-off) — so omitting it would leave the experiment's largest output-side variable undeclared. Adaptive matches how the skill is actually used, so it is the honest setting; pinning it makes that a recorded decision rather than an accident.
+
+**Thinking spend is a registered manipulation check, because it is confounded with the arms by construction.** Large, complex system prompts trigger adaptive thinking more often. The ON arm carries a full skill; the OFF arm carries nothing. Any ON-vs-OFF difference therefore mixes rule content with thinking spend — which is a further reason the primary contrast is ON vs PLACEBO (length-matched), not ON vs OFF. Per-arm thinking token usage is recorded and reported; a large ON/PLACEBO gap in thinking spend is itself a finding, not noise to be smoothed.
+
+**`max_tokens` = 16000, and truncation is a registered exclusion.** `max_tokens` is a hard ceiling on *total* output — thinking plus response text — so a low ceiling silently truncates the document, and thinking eats the same budget. This matters asymmetrically: a verbose OFF-arm document hits the ceiling more often than a terse ON-arm one, and a truncated document has artificially suppressed pattern counts in the part that never got written. Unhandled, the metric would partly measure truncation frequency rather than rule effect.
+
+- Every generation records `stop_reason`.
+- Any generation with `stop_reason == "max_tokens"` is **flagged as truncated and excluded from pattern counts**, never silently scored.
+- Truncation counts per arm are reported. If any arm exceeds a 5% truncation rate, the batch is void and re-run at a higher ceiling — this threshold is fixed now, before any counts exist.
+- **Truncation rate denominator = generations that completed an API call**, not generations planned. A network or API failure is not a truncated document; those are counted separately as failures. Fixed here so the denominator cannot be chosen later to keep a batch under the 5% threshold.
 
 ### Field 5 — Design and unit of analysis
 
