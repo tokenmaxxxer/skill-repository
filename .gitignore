@@ -1,0 +1,12 @@
+# Python bytecode. `python3 scripts/validate.py` writes these on every run, so
+# without this rule they show up as untracked noise and get swept into the next
+# `git add -A` — which is exactly how they landed in a commit once already.
+__pycache__/
+*.py[cod]
+
+# Scratch files. Source dumps, extraction output and one-off notes belong in the
+# session scratchpad, not in a repo that is a published plugin marketplace.
+# out.txt in particular has been a 1.6MB dump of copyrighted book text.
+out.txt
+b.txt
+*.tmp
