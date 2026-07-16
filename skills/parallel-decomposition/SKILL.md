@@ -152,15 +152,14 @@ across two agents. If someone names a desired agent count first and asks for the
 into it, that is backwards — cut lines come from the code's structure, not from the parallelism
 someone wants.
 
-### Step 7 — Hand the union to merge-gates
+### Step 7 — Hand the union to agent-coordination and merge-gates
 
 Per-piece checks passing does not mean the union is correct, and per-piece checks cannot see the
-disagreement Step 3 exists to prevent. The union is `merge-gates`' subject: its Step 3 requires the
-combined state — trunk plus every change ahead — and names the mechanisms that produce it.
+disagreement Step 3 exists to prevent. The in-flight coordination is `agent-coordination`'s subject: its work loop, conflict detection, heartbeat monitoring, and self-merge protocol keep agents from colliding while they work. The landing gate is `merge-gates`' subject: its Step 3 requires the combined state — trunk plus every change ahead — and names the mechanisms that produce it.
 
-**Gate:** before fan-out, name the mechanism that will evaluate the combined state, or write
+**Gate:** before fan-out, name the mechanism that will evaluate the combined state for landing, or write
 `merge-gates`' honest sentence instead: changes are gated individually and can break trunk in
-combination. Do not invent a substitute here; that skill has the evidence and this one does not.
+combination. For in-flight coordination, confirm that every agent brief includes the `agent-coordination` work loop — agents must know how to register, monitor, and resolve before they start writing.
 
 ### Step 8 — Record the cut
 

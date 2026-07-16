@@ -18,7 +18,7 @@ description: >-
 ## First: does this even need the procedure?
 
 - **Is more than one change in flight against the same trunk at once?** If changes land strictly one at a time, the combined-state problem this skill exists for does not arise. Use the repo's normal review and move on.
-- **Is the question how to cut the work, not how to land it?** Deciding whether parallel work can be split at all, and freezing the contract the pieces must share before they are spawned, is `parallel-decomposition`. It runs before fan-out; this skill runs before the merge. Both apply to the same job at different times.
+- **Is the question how to cut the work, not how to land it?** Deciding whether parallel work can be split at all, and freezing the contract the pieces must share before they are spawned, is `parallel-decomposition`. Keeping agents from colliding while they work is `agent-coordination`. This skill runs last, at landing time, after coordination has resolved the in-flight conflicts.
 - **Is a gate what's wanted, or a decision?** A gate is a binary precondition on merging. "Should we build this?" and "is this design right?" are not gates and cannot be made into them.
 - **Has a conflict already happened?** Then this is resolution work, not gate design. Resolve it; come back here only if the question is what should have blocked it.
 
