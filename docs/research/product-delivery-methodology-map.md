@@ -69,7 +69,7 @@ Conway의 법칙(1968, Datamation — "시스템을 설계하는 조직은 그 �
 | 단계 | 방법론 후보 | 근거 등급 | 절차화 가능성 | 기존 스킬 |
 |---|---|---|---|---|
 | 기회 발견·조사 | 생성적 조사, 시장 조사 | 수십 년 관찰 합의 | 높음 | user-discovery, market-recon |
-| 우선순위·중단/피벗 | 과학적 가설검증 (Camuffo RCT) | **RCT 4건** | 높음 (훈련 전이성은 미검증) | 공백 |
+| 우선순위·중단/피벗 | 과학적 가설검증 (Camuffo RCT) | **RCT 4건** | 높음 (사전 등록 양식으로 조작화; 셀프서브 전이는 미검증임을 스킬에 명시) | hypothesis-testing |
 | 확장 시점 | 조기 확장 진단 (Startup Genome) | 산업 보고서 | 높음 (단계 정합성 체크) | premature-scaling |
 | 프로세스 선택·거버넌스 | Hybrid Model Matrix + 층위 분리 | 동료심사 틀, N=5 사례 | 중간 (2축 매트릭스) | 공백 |
 | 요구사항 정의 | EARS + QUS/AQUSA 품질 기준 | 사례연구 + 도구 실측 | 매우 높음 (템플릿·체크리스트) | requirements-quality |
