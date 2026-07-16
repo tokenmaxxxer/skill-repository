@@ -147,6 +147,31 @@ spot-reviews the riskiest diffs → you report. The freeze and the
 disjointness are `parallel-decomposition`'s gates; what must be true
 before any of it lands is `merge-gates`'.
 
+**Research** — "이 시장 조사해줘", "is this library safe to depend on":
+
+This is the one domain where the routing pattern has been measured and cap-tuned across 14 production rounds (34.4M subagent tokens). The pipeline has five phases:
+
+1. **Scope** (you — orchestration-adjacent): decompose the question into 5 deliberately disjoint search angles. Each angle gets a label, a query, and a rationale. Disjointness matters: if two angles return the same results, one of them was wasted.
+2. **Search** (executor): one executor per angle runs web search. Returns top 4-6 results each with relevance rating.
+3. **Fetch + Extract** (executor): URL-dedup across all searchers, then one executor per novel source fetches the page and extracts 2-5 falsifiable claims. Each claim carries a direct quote from the source, importance (central/supporting/tangential), and source quality (primary/secondary/blog/forum/unreliable).
+4. **Verify** (reasoner): 3-vote adversarial verification. Each claim gets 3 independent reasoner voters instructed to be skeptical and try to refute. ≥2 refutations kill the claim. This is the largest cost block — at 3 voters per claim, it was 66.8% of total spend — but it is also the discrimination that produces the product: without it, a marketing claim and a peer-reviewed finding are indistinguishable.
+5. **Synthesize** (you): merge semantic duplicates, group into coherent findings, assign confidence (high/medium/low by source count and vote unanimity), list caveats and open questions, and — crucially — declare what was **not** checked.
+
+**Measured caps, not taste.** Spend analysis found MAX_FETCH=9 and MAX_VERIFY_CLAIMS=18 as the point where fetch waste and verify discrimination balance. At these caps, a round extracts ~100 claims and votes on the strongest 18; the rest are recorded as deferred, not dropped. Don't tune these by feel — they were sized from measurement.
+
+**Coverage invariant (the harness's most dangerous failure).** "We never looked" and "we looked and found nothing" read identically in a report. Three mechanisms prevent this, and all three must hold:
+1. Verify slots are allocated **round-robin across angles**, not by a global importance rank. A global top-N sort let one angle's claims fill every slot and starved another angle to zero — the synthesis then reported that angle as having produced no findings. With round-robin, an angle can only go unverified if it produced no claims at all.
+2. Claims the verify cap cannot reach become a **deferred** list — a first-class output, not a silent drop. It travels on every exit path and the synthesis must account for it.
+3. The report schema requires a **notChecked** field. A report physically cannot be produced without declaring the coverage gap. An empty notChecked is a claim that nothing was deferred, and it is checkable.
+
+Removing any one of these three re-opens the hole. This is not hypothetical: a production run silently dropped all 8 claims on one angle and the report called that angle evidence-free.
+
+**Research brief template.** When delegating research sub-tasks, every brief must carry:
+- The research question verbatim (so subagents don't drift).
+- The specific angle or sub-question assigned to that agent.
+- The output schema (structured, not prose — so claims are machine-checkable).
+- The cap: max results per searcher, max claims per source, max claims to verify.
+
 ## A delegate that delegates inherits your tier
 
 Unless the tool explicitly supports per-subagent model selection, a
