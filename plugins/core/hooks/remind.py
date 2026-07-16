@@ -15,8 +15,12 @@ thinking about skills, and answering directly. Two events cover the gap:
 
 The reminder must never name individual skills. It is paid on every turn, and
 a list here would be a second place to update on every skill added — one that
-rots silently when someone forgets. Claude already has the descriptions; this
-only has to make it look.
+rots silently when someone forgets. Claude already has the descriptions; the
+reminder only has to force the decision — check whether one fits, invoke it if
+so — not re-list them. It frames that check as a mandatory step, not optional
+encouragement, because "use them actively" reads as skippable next to a
+concrete task; it also bars invoking a skill that does not fit, so the push
+cannot degrade into rubber-stamp skill-loading on trivial work.
 
 Every turn is reminded, with no prefilter for greetings or short prompts.
 A prefilter only pays off when something expensive (e.g. a subprocess
@@ -55,27 +59,35 @@ ROUTING = (
 )
 
 REMINDER = (
-    "The skill-registry (core) skills are active. If one applies to this "
-    "task, invoke it with the Skill tool before answering; use them "
-    "actively. If none applies, proceed. " + ROUTING
+    "The skill-registry (core) skills are active. Before answering, decide "
+    "explicitly whether one fits THIS task — if so, invoke it with the Skill "
+    "tool before answering rather than working from memory; if none genuinely "
+    "fits, proceed. Make this check every turn, and never invoke a skill that "
+    "does not fit. " + ROUTING
 )
 
 SUBAGENT_REMINDER = (
     "The skill-registry (core) skills are active. You are a subagent and "
-    "inherit no conversation context, so nothing else will surface them: if "
-    "one applies to your brief, invoke it with the Skill tool and use it "
-    "actively. If none applies, proceed. " + ROUTING
+    "inherit no conversation context, so nothing else will surface them. "
+    "Before starting work, decide explicitly whether one fits your brief and "
+    "state your choice in one line (the skill you will use, or 'none fits'); "
+    "if one fits, invoke it with the Skill tool before proceeding. Never "
+    "invoke a skill that does not fit your brief. " + ROUTING
 )
 
 WORKFLOW_REMINDER = (
-    "Workflow model routing: agent() calls inside workflow scripts inherit "
-    "the session model unless the script says otherwise, and the Agent-tool "
-    "guard cannot see them. Before launching, confirm the script sets "
-    "model: 'sonnet' (add effort: 'low' where it fits) on mechanical stages "
-    "— search, fetch/extract, bulk transforms — and reserves the session "
-    "tier for judgment stages (scope, verify, synthesize). If the script "
-    "lacks these overrides, edit it first (e.g. use the deep-research-tiered "
-    "variant instead of deep-research)."
+    "Workflow skill + model routing. Skills: workflow agents are spawned by "
+    "the script and may not receive the subagent skill reminder, so bake it "
+    "into each agent() prompt — instruct every agent to first decide whether "
+    "a registry skill fits its brief and invoke it before working. Model "
+    "routing: agent() calls inside workflow scripts inherit the session model "
+    "unless the script says otherwise, and the Agent-tool guard cannot see "
+    "them. Before launching, confirm the script sets model: 'sonnet' (add "
+    "effort: 'low' where it fits) on mechanical stages — search, "
+    "fetch/extract, bulk transforms — and reserves the session tier for "
+    "judgment stages (scope, verify, synthesize). If the script lacks these "
+    "overrides, edit it first (e.g. use the deep-research-tiered variant "
+    "instead of deep-research)."
 )
 
 

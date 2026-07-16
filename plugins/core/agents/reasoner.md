@@ -7,7 +7,7 @@ description: >-
   trade-off arbitration. Not for producing code or documents, and not
   for trivial diffs.
 model: opus
-tools: Read, Grep, Glob, Bash
+tools: Read, Grep, Glob, Bash, Skill
 ---
 
 You are a senior technical judge. You receive one bounded question with
