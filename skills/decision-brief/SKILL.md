@@ -27,17 +27,9 @@ Run the Step 1 trigger test below before drafting anything. Most judgment calls 
 
 Everything below applies only once a real, still-open, user-owned judgment call is on the table.
 
-## Evidence grade — read before citing this to anyone
+## Evidence grade
 
-Three layers, and they must not be blurred together:
-
-- **Procedure standards** — the Decision Quality six elements (SDG/Stanford, Ron Howard's decision-analysis lineage, 1960s), Kepner-Tregoe's musts/wants arithmetic (Kepner & Tregoe, *The Rational Manager*, 1965), and MAP/decision-hygiene ordering (Kahneman, Lovallo & Sibony, MIT SMR 2019 → *Noise*, 2021) are well-defined, expert-consensus, industry-standard procedures. **No RCT shows that following them causes better decision outcomes.** Treat them as a rigor scaffold, not a proven-effective intervention.
-- **Observational numbers** — Paul Nutt's organizational-decision research (AME 1999; *Why Decisions Fail*, 2002): 400+ real decisions over 20+ years, about half failed (operationalized as not fully implemented/used two years out; a third never used). Failure was roughly 4x more likely when the decision-maker embraced the first idea without investigating alternatives — this is the basis for the single-option ban in Step 3. This is a large real-decision dataset, but it is non-randomized, retrospective, and correlational; Nutt himself was self-critical of it in 2011, and no independent replication was confirmed. Also from this dataset: participation-based approaches succeeded over 80% of the time but were used in only 1 of 5 decisions, while power-based tactics (edict/persuasion) succeeded only about a third of the time yet were used in roughly 60% of cases — cite this as motivation for genuine alternatives and a real trade-off table, not as a guarantee.
-- **Convention, no data** — Bezos's Type 1 (irreversible, "one-way door") / Type 2 (reversible, "two-way door") split (2015 Amazon shareholder letter) is a practitioner triage label with no empirical study behind it; reversibility-based thinking predates it (real options theory). Use it only to decide whether to escalate at all (Step 1), never as evidence that the resulting decision will be better.
-
-**Never claimed by this skill**: that AHP or any pairwise-comparison method has resolved its rank-reversal debate (it hasn't — 40 years unresolved, and AHP's CR<0.1 consistency gate was not confirmed in verification; this skill deliberately uses KT's simpler must/want arithmetic instead), that decision analysis was "coined in 1963 at Stanford" (say only "Howard's decision-analysis lineage, 1960s"), or any statistic not listed above.
-
-**What this skill actually delivers**: your escalations will be well-structured, evidence-labeled, and auditable. It does **not** deliver "your decisions will provably succeed more often" — no evidence base here supports that stronger claim.
+For full evidence grading — procedure standards, observational numbers, convention-only labels, and what this skill does and does not claim — see [references/evidence.md](references/evidence.md). In short: the procedures here are expert-consensus scaffolds with observational backing, not RCT-proven interventions; cite them with their evidence labels, never as guarantees of better outcomes.
 
 ## Procedure
 
@@ -78,7 +70,7 @@ Name the want-criteria, each with a weight 1–10 (proposed by the AI, adjustabl
 
 **MAP ordering gate**: every per-criterion cell for every alternative must be filled in *before* any recommendation or overall-ranking language is written — assessments precede judgment, not the reverse.
 
-**Gate**: no empty cells; weighted arithmetic shown, not asserted; the recommendation row/line appears physically after the completed table, never interleaved with it.
+**Gate**: the recommendation row/line appears physically after the completed table, never interleaved with it. For non-high-stakes escalations, this full weighted table may be omitted per the Verdict depth rule below.
 
 ### Step 6 — Recommendation + falsifier
 
@@ -92,16 +84,12 @@ End with a closed question the user can answer by picking one of the Step 5 alte
 
 **Gate**: the closed question lists exactly the same alternatives that appear in the Step 5 table — no option is smuggled in at the last moment that wasn't scored, and no scored alternative is silently dropped from the question.
 
-## Verdict
+## Verdict — stakes-based depth
 
-Report, per escalation:
+The output format is determined by the stakes, not a one-size-fits-all mandate:
 
-- Step 1 result: escalate / decide-yourself, with the specific condition(s) that fired (or "all four no" if self-decided).
-- Step 2 frame sentence.
-- Step 3 alternative table with "wins on" cells and the Nutt figure cited with its observational label.
-- Step 4 musts table naming any eliminations and the surviving count.
-- Step 5 full weighted trade-off table, evidence-graded per cell, recommendation appearing only after it.
-- Step 6 recommendation, numeric confidence, and the checkable falsifier.
-- Step 7 closed question as actually posed to the user.
+- **High-stakes** (expensive to reverse, sets binding direction, or the user explicitly requests full rigor): produce the full 7-step brief — frame sentence, alternative table with "wins on" cells, musts filter, full weighted trade-off table with evidence-graded cells, recommendation with numeric confidence and checkable falsifier, and closed handoff question.
+- **Directional / medium-stakes**: produce a summary brief containing only: (1) decision what+excluded frame, (2) rationale — the key trade-off and why the recommendation wins on it, (3) the top risk or disconfirming signal, (4) the recommendation and closed question. Skip the full musts filter and weighted table.
+- **Low-stakes**: produce a one-paragraph decision note — the recommendation, one-sentence rationale, and what would flip it. No tables, no formal frame.
 
-Never compress this into a single "recommendation: X" line with the scaffolding stripped out — the entire point of escalating instead of asking a bare question is that the user can audit *how* the recommendation was reached, not just what it is.
+The "do not escalate" path from Step 1 (all four conditions no) is distinct from low-stakes escalation: "do not escalate" means the AI decides and notes it in one line; low-stakes escalation means the AI still escalates but in abbreviated form.

@@ -27,19 +27,9 @@ Run this gate before drafting a theory statement or a registration form — most
 
 Everything below applies only once a real, still-open, falsifiable go/kill/pivot/persist decision is on the table.
 
-## Evidence grade — read before citing this to anyone
+## Evidence grade
 
-This is the registry's strongest evidence base for a decision-methodology skill, and it comes with an honest limit that must be stated every time this skill is invoked.
-
-- **CONFIRMED, causal, large-scale**: Camuffo, Gambardella et al. (2024, *Strategic Management Journal*) combine four randomized controlled trials (Milan 2016, Milan 2017, Turin 2018, London 2019; 759 firms, 11,463 data points). Entrepreneurs trained in a scientific approach — theory → falsifiable hypotheses → rigorous tests → Bayesian belief updating — compared to a control group trained in generic business methods:
-  - Terminated unpromising ideas more often (+9.8 percentage points) and earlier (~2.7 weeks sooner, p=.001).
-  - Made 1-2 focused pivots rather than either never pivoting or thrashing through many — a nonlinear effect (p=.001-.003): the scientific-approach group converged on a small number of pivots, not zero and not many.
-  - Showed higher performance in the pooled sample (~+€6,999, p=.030).
-  - Independent confirmation: a separate Tanzania RCT (*Organization Science*, 2024) found theory-based training dominated alternative approaches.
-- **Teachability**: the source research states plainly that "a relatively short treatment embedded in a training program can lead entrepreneurs to adopt a scientific approach when making decisions and benefit from it" — the underlying behavior change is teachable, not innate.
-- **LIMITS — state these every time, they are not fine print**: all four RCTs were run on early-stage entrepreneurs in Italy and the UK, by the same research group. The training in every trial was **instructor-led, delivered over 2-4 months** — not a checklist someone runs alone. This skill packages that training's logic into a **self-serve procedure**, and that transfer — from months of instructor-led coaching to a document you follow yourself — is an **inference this skill is making, not a result any study has demonstrated**. Say this openly whenever the skill is cited: the RCTs validate the *method*: theory → falsifiable hypothesis → pre-registered test → mechanical verdict. They do not validate *this document* as a delivery mechanism for that method.
-- **Related registry context** (already verified elsewhere, cite briefly, do not re-derive): the dominant startup failure pattern is premature scaling — acting ahead of validated traction — covered by the premature-scaling skill; Paul Nutt's research on the risk of adopting the first idea without investigating alternatives is covered in decision-brief. Cross-reference those skills rather than repeating their evidence here.
-- **MUST NOT claim**: that this skill's checklist format is itself RCT-validated; any invented statistic beyond the ones listed above; "hypothesis-driven decision-making improves outcomes" as a blanket claim outside the tested population (early-stage entrepreneurial go/kill/pivot decisions). The licensed claim is narrower: pre-registered thresholds plus a mechanical verdict rule caused better termination and pivot behavior in controlled, instructor-led settings.
+Pre-registered thresholds plus a mechanical verdict rule caused better termination and pivot behavior in four RCTs (759 firms, instructor-led). This self-serve procedure is an inference from that method, not itself RCT-validated. Full evidence base in `references/evidence.md`.
 
 ## Procedure
 
@@ -101,14 +91,10 @@ If the verdict is "pivot," it spawns a **new** theory (return to Step 2) and a *
 
 ## Verdict
 
-Report, per hypothesis-testing cycle:
+Classify the stakes before reporting depth. Write the classification in the verdict so it's auditable.
 
-- Step 1: scope gate result (proceed / routed elsewhere, with reason).
-- Step 2: the theory sentence, with actor, outcome, intervention, and mechanism identified.
-- Step 3: each hypothesis with its metric, direction/threshold, and measurement location — and confirmation each one is genuinely falsifiable.
-- Step 4: the full six-field registration, with its date stamp, filed before Step 5 began — flag explicitly if this gate was violated.
-- Step 5: the deviations log (or its explicit emptiness).
-- Step 6: the verdict sentence citing registered threshold vs. measured number, plus any override with its written reason.
-- Step 7: cumulative pivot count and the kill/pivot/persist history across cycles.
+**High-stakes** (expensive pivot, hard-to-reverse commitment, or decision that will block other work): full 7-element report per cycle — scope gate result, theory sentence, each hypothesis with falsifiability check, full six-field registration with date stamp and gate-violation flag, deviations log (or its explicit emptiness), verdict sentence citing registered threshold vs. measured number plus any override with reason, and cumulative pivot count with kill/pivot/persist history.
 
-Never compress this into a bare "we decided to pivot" — the entire point of pre-registration is that the reasoning is auditable before the fact, not reconstructed to fit the outcome after it.
+**Directional / early-stage**: decision + metric + threshold only (3 elements) — state the kill/pivot/persist call, cite the metric and the measured vs. registered threshold, and record the cycle's outcome in the pivot log. Full traceability is preserved in the registration form itself; the directional report does not reprint it.
+
+If stakes are unclear, default to full 7-element reporting.

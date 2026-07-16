@@ -51,7 +51,30 @@ below applies — there is no partial-launch exemption for "it's just a small ch
 
 ### Step 2 — Readiness checklist by area
 
-Every line item needs a yes/no and an artifact. Leave no item as prose reassurance.
+#### Step 2a — Classification (area risk tier)
+
+Before item-by-item expansion, classify each checklist area by risk:
+
+| Area | Tier | Rationale |
+|------|------|-----------|
+| Rollback | High | Inability to roll back extends outage → user safety / data loss / revenue |
+| Monitoring & alerting | High | Undetected issues bypass all other safeguards → safety / data loss |
+| Failure modes | High | Unrecognized failure modes become unmitigated incidents → safety / data loss / revenue |
+| Capacity | Medium | Revenue-affecting on overload; typically does not cause data loss |
+| Dependencies | Medium | Cascading-failure risk exists but is indirect |
+| Gradual rollout plan | Medium | Blast-radius control; revenue-affecting |
+| Communication | Low | Coordination aid; does not directly prevent or detect incidents |
+
+Tier rules:
+- **High**: must produce binary yes/no + verifiable artifact.
+- **Medium**: binary yes/no required; artifact optional, note when absent.
+- **Low**: aggregate check ("N items reviewed, no blockers").
+
+This classification table is part of the audit record — include it in the final output.
+
+---
+
+Each area below must be checked against its tier rule above. Leave no High item as prose reassurance.
 
 **Rollback**
 - [ ] A documented rollback procedure exists — *artifact: runbook/doc link*
@@ -110,15 +133,19 @@ already made the call.
 
 ### Step 4 — Verdict
 
-**Launch-ready** means every single item across Steps 2 and 3 is a yes backed by an
-artifact. There is no weighted score and no "mostly ready" — a launch is either ready or it
-isn't.
+**Launch-ready** means:
+- Every **High** area item from Step 2 is a yes backed by an artifact.
+- Every **Medium** area item from Step 2 is a yes (artifact optional, noted when absent).
+- Every **Low** area from Step 2 passes its aggregate check.
+- Every Step 3 canary item is a yes backed by an artifact (no tier relaxation — canary items
+  directly affect safety).
 
-If any item is a no, or a yes with no artifact to point to, the launch is **not ready**.
-Output the result as a blocking list: each failing item, its area, and what's missing (no
-artifact vs. no procedure at all vs. not yet exercised). That blocking list is the entire
-output of a failed review — do not average it into an overall percentage or soften it into
-"mostly ready, just needs monitoring."
+There is no weighted score and no "mostly ready" — these gates are per-tier, not averaged.
+
+If any item fails its tier rule, the launch is **not ready**. Output the result as a blocking
+list grouped by tier: each failing item, its area, what's missing, and which tier rule it
+broke. The blocking list is the entire output of a failed review — do not average it into an
+overall percentage or soften it into "mostly ready, just needs monitoring."
 
 ## Evidence grade (read before presenting this as more than it is)
 

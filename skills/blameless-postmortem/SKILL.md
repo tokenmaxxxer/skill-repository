@@ -40,9 +40,27 @@ Already covered above. Gate: **the trigger condition is named** (SLO breach / da
 
 ### Step 2 — Timeline reconstruction
 
-Build an ordered timeline from artifacts: logs, alerts, chat records, deploy history, dashboards, ticket timestamps. Every entry gets a timestamp and cites the artifact it came from (e.g., "14:32 UTC — deploy of service X, source: deploy log #4821").
+#### Step 2a — Classification (criticality triage)
 
-**Gate:** every timeline entry cites its source artifact. Any entry reconstructed purely from someone's memory, with no artifact behind it, is explicitly marked **"unconfirmed"** rather than stated as fact.
+Before reconstructing the timeline, classify each candidate entry by criticality:
+
+| Tier | Criteria | Treatment |
+|------|----------|-----------|
+| High | Led directly to the incident OR was a missed detection opportunity | Full timestamp + artifact citation |
+| Medium | Contextual / background events that shaped the incident landscape | Timestamp required; artifact citation optional |
+| Low | Routine events included for completeness | Aggregate only ("N routine events during the window, no incident relevance") |
+
+This classification is part of the audit record — include it in the final timeline output, with entries grouped or tagged by tier.
+
+---
+
+Build an ordered timeline from artifacts: logs, alerts, chat records, deploy history, dashboards, ticket timestamps. Apply the tier rules from Step 2a:
+
+- **High** entries: full timestamp + artifact citation (e.g., "14:32 UTC — deploy of service X, source: deploy log #4821").
+- **Medium** entries: timestamp required; artifact citation optional, note when absent.
+- **Low** entries: aggregate in a summary line ("N routine events during the window, no incident relevance").
+
+**Gate:** every **High** entry cites its source artifact. **Medium** entries require timestamps; missing artifacts are noted but not blocking. **Low** entries are aggregated. Any entry reconstructed purely from someone's memory, with no artifact behind it, is explicitly marked **"unconfirmed"** regardless of tier — "unconfirmed" entries cannot be classified as High.
 
 ### Step 3 — Impact quantification
 
@@ -72,13 +90,30 @@ Scan the entire draft for two concrete failure patterns:
 
 ### Step 6 — Action items
 
-Every prevention follow-up from Step 4 becomes an action item with three mandatory fields:
+#### Step 6a — Action item classification
 
-- **Owner** — a specific name, not a team or "TBD."
-- **Deadline** — a specific date, not "soon" or "next sprint."
-- **Verifiable artifact** — the item is stated as a change whose existence can later be checked: a specific config, an added test, a new alert, a written runbook step. Not "improve monitoring" — "add a p99-latency alert on endpoint /checkout with a 2s threshold, owned by Priya, due 2026-08-01."
+Classify each prevention follow-up from Step 4 by criticality:
 
-**Gate:** every action item has owner + date + a verifiable-artifact description. No blanks, no "TBD" owners, no open-ended deadlines. An item that fails this gate is not done — send it back for specifics.
+| Tier | Criteria | Fields required |
+|------|----------|-----------------|
+| High | Prevents recurrence of a root cause | Owner + deadline + verifiable artifact |
+| Medium | Improvement that does not directly prevent recurrence | Owner + deadline |
+| Low | Nice-to-have / polish | Aggregate list only |
+
+This classification is part of the audit record.
+
+---
+
+Apply the tier rules from Step 6a to each prevention follow-up from Step 4:
+
+- **High** action items require:
+  - **Owner** — a specific name, not a team or "TBD."
+  - **Deadline** — a specific date, not "soon" or "next sprint."
+  - **Verifiable artifact** — the item is stated as a change whose existence can later be checked: a specific config, an added test, a new alert, a written runbook step. Not "improve monitoring" — "add a p99-latency alert on endpoint /checkout with a 2s threshold, owned by Priya, due 2026-08-01."
+- **Medium** action items require owner + deadline only.
+- **Low** action items are listed in aggregate.
+
+**Gate:** every **High** action item has owner + date + a verifiable-artifact description. Every **Medium** action item has owner + date. **Low** items are listed in aggregate. No High or Medium action item has blanks or "TBD" owners. An item that fails its tier gate is not done — send it back for specifics.
 
 Per the evidence-grade note above: this is enforced because it makes the gate objectively checkable later, not because a study proved owner+deadline items get done more often — don't claim the latter.
 

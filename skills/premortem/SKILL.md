@@ -25,14 +25,9 @@ Check these before running the full exercise, because forcing it where it doesn'
 
 Everything below applies when there's a real plan, a real decision point still ahead, and enough at stake to warrant a structured failure exercise.
 
-## Evidence grade — read before citing this to anyone
+## Evidence grade
 
-- **Confirmed, direct experimental evidence**: Veinott, Klein & Elliott (2010, ISCRAM), N=178, five conditions (baseline / critique / Pro-Con / Cons-only / premortem). The premortem condition reduced *self-reported plan confidence* significantly more than every other condition (mean reduction ≈25.0 points vs. ≈14.0 for Pro-Con and ≈12.4 for Cons-only — roughly 2x; all pairwise comparisons p<.05).
-- **Limits on that result, state them every time this is cited**: the dependent variable measured was *self-reported confidence*, not plan quality or actual project outcomes — no study has measured whether premortems make plans better or projects more likely to succeed. Both key studies here are from the technique's creator's research circle (Klein is a co-author on the ISCRAM study).
-- **Theoretical basis**: Mitchell, Russo & Pennington (1989). The commonly repeated "~30% more reasons generated" figure is real, but it belongs to *this* 1989 experiment, not to a premortem study — and the original result shows the active ingredient was the **certainty manipulation** (telling people the outcome has definitely happened), not future-vs-past time framing (time framing alone had no effect). It also measured only the *count* of reasons generated, not their quality. This is why Step 2 below is non-negotiable: soften the certainty framing and you're no longer running the thing that was shown to work. Never cite "30% more reasons" as a premortem-study finding — attribute it to the 1989 certainty experiment.
-- **Grey literature, flag as such if cited**: a follow-up (SJDM 2020, N=53, d=.81 confidence reduction) exists only as an unpublished conference poster.
-- **Base-rate honesty**: the researchers themselves note that controlled randomized experiments on plan-evaluation techniques are scarce. The technique's popularity (HBR 2007 origin, Kahneman's endorsement) outstrips its direct empirical base.
-- **What this licenses you to say**: premortems are well-supported as a way to correct overconfidence — i.e., they reliably lower stated confidence more than alternative critique methods. They are NOT demonstrated to improve actual plan quality or project outcomes; no study has measured that. Say the first, do not imply the second.
+For full evidence grading — the ISCRAM 2010 experimental result, its limits, the 1989 certainty-manipulation basis, and what this technique does and does not license you to say — see [references/evidence.md](references/evidence.md). In short: premortems are well-supported for correcting overconfidence, not demonstrated to improve plan quality or project outcomes. Say the first, do not imply the second.
 
 ## Procedure
 
@@ -64,17 +59,32 @@ Combine all independently generated reasons into a single numbered failure-reaso
 
 - **Gate**: the list is numbered with a stated total count; duplicate or near-duplicate reasons across lenses are noted as duplicates (and what that convergence signals), not silently dropped.
 
-### Step 5 — Disposition every reason
+### Step 5 — Triage by impact × plausibility
 
-For each numbered reason, assign exactly one of:
+Before writing dispositions, classify each failure reason from Step 4 on two axes:
 
-- a **mitigation** with a **named owner**,
-- a **detection signal** — the specific number, metric, or alert that would tell the team this failure mode is happening, or
-- an explicit **accepted risk**, documented with who accepted it and why.
+- **Impact**: high (would materially compromise the plan's objective or cause user-visible harm) vs. low (inconvenience, delay, or contained cost).
+- **Plausibility**: high (a concrete path from today's plan to this failure exists with no improbable leaps) vs. low (requires multiple unlikely events or a cascade this plan specifically guards against).
 
-- **Gate**: every row in the list has exactly one of the three dispositions filled in. No blank dispositions, and no reason gets more than one disposition type (pick the one that actually applies — don't hedge by giving a reason both a mitigation and an "accepted" label).
+Assign each reason to one tier:
 
-### Step 6 — Confidence re-check
+- **High tier** (high impact AND high plausibility): requires full disposition in Step 6 — mitigation with named owner, a specific detection signal, and the accepted-risk declaration if mitigation is impractical.
+- **Medium tier** (high impact OR high plausibility, but not both): record a disposition label only — which of mitigation/detection/accepted-risk applies, with a one-line justification. No named owner or detailed signal required.
+- **Low tier** (low impact AND low plausibility): do not individually disposition. Aggregate them as "N low-tier reasons noted (impact low, plausibility low), not individually dispositioned."
+
+- **Gate**: every reason from Step 4 is classified into one of the three tiers before any disposition text is written. The tier assignment — not the disposition content — is the first gate output.
+
+### Step 6 — Disposition (by tier)
+
+For each high-tier reason, assign all three: a **mitigation** with a **named owner**, a **detection signal** (the specific number, metric, or alert that would tell the team this failure mode is happening), and an explicit **accepted risk** (documented with who accepted it and why) as the fallback.
+
+For each medium-tier reason, assign a **disposition label** only — mitigation, detection signal, or accepted risk — with a one-line justification.
+
+For low-tier reasons, output the aggregate count only (see Step 5).
+
+- **Gate**: every high-tier reason has all three disposition elements (mitigation+owner, detection signal, accepted-risk fallback). Every medium-tier reason has a disposition label with one-line justification. Low-tier reasons are aggregated, not individually dispositioned. No reason spans more than one tier.
+
+### Step 7 — Confidence re-check
 
 Record the team's or decision-maker's plan confidence as a number (e.g., 0–100) *before* the exercise and again *after* seeing the full disposed failure list.
 
@@ -82,4 +92,4 @@ Record the team's or decision-maker's plan confidence as a number (e.g., 0–100
 
 ## After the exercise
 
-Report the before/after confidence numbers, the full disposition table, and any procedure violations from Step 2 or gaps from Step 3. Do not claim the plan is now more likely to succeed — the evidence supports confidence calibration, not outcome improvement. If confidence didn't move and the certainty framing (Step 2) was followed correctly, say that plainly rather than manufacturing a shift.
+Report the before/after confidence numbers, the tiered disposition output (high-tier full dispositions, medium-tier labels, low-tier aggregate), and any procedure violations from Step 2 or gaps from Step 3. Do not claim the plan is now more likely to succeed — the evidence supports confidence calibration, not outcome improvement. If confidence didn't move and the certainty framing (Step 2) was followed correctly, say that plainly rather than manufacturing a shift.
