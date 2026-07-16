@@ -2,7 +2,7 @@ export const meta = {
   name: 'deep-research-tiered',
   description: 'Deep research harness (tiered) — sonnet for mechanical search/fetch fan-out, opus for adversarial verify votes, session model for scope/synthesize.',
   whenToUse: 'When the user wants a deep, multi-source, fact-checked research report on any topic. BEFORE invoking, check if the question is specific enough to research directly — if underspecified (e.g., "what car to buy" without budget/use-case/region), ask 2-3 clarifying questions to narrow scope. Then pass the refined question as args, weaving the answers in.',
-  phases: [{"title":"Scope","detail":"Decompose question (from args) into 5 search angles"},{"title":"Search","detail":"5 parallel WebSearch agents, one per angle","model":"sonnet"},{"title":"Fetch","detail":"URL-dedup, fetch top 15 sources, extract falsifiable claims","model":"sonnet"},{"title":"Verify","detail":"3-vote adversarial verification per claim (need 2/3 refutes to kill)","model":"opus"},{"title":"Synthesize","detail":"Merge semantic dupes, rank by confidence, cite sources"}],
+  phases: [{"title":"Scope","detail":"Decompose question (from args) into 5 search angles"},{"title":"Search","detail":"5 parallel WebSearch agents, one per angle","model":"sonnet"},{"title":"Fetch","detail":"URL-dedup, fetch top 15 sources, extract falsifiable claims","model":"sonnet"},{"title":"Verify","detail":"3-vote adversarial verification; slots allocated round-robin across angles, deferred claims reported","model":"opus"},{"title":"Synthesize","detail":"Merge semantic dupes, rank by confidence, cite sources, declare what was never checked"}],
 }
 
 // deep-research-tiered: Scope → pipeline(Search → URL-dedup → Fetch+Extract) → 3-vote Verify → Synthesize
@@ -12,6 +12,20 @@ export const meta = {
 // Scope and Synthesize are single orchestration-adjacent calls → session model.
 // Ported from bughunter architecture. WebSearch/WebFetch instead of git/grep.
 // Question is passed via Workflow({name: 'deep-research-tiered', args: '<question>'}).
+//
+// Coverage invariant — the harness's most dangerous failure is reporting a
+// coverage gap as a finding, because "we never looked" and "we looked and found
+// nothing" read identically in a report and only one of them is a result. Three
+// mechanisms keep them apart, and all three must hold together:
+//   1. Verify slots go round-robin across angles, so no angle can be starved to
+//      zero by another angle's claims (see the allocator below).
+//   2. Claims the cap cannot reach become `deferred` — a first-class list that
+//      is logged, passed into Synthesize, and returned on every exit path.
+//   3. REPORT_SCHEMA requires `notChecked`, so a report physically cannot be
+//      produced without declaring the gap.
+// Removing any one of them re-opens the hole. This is not hypothetical: a run
+// silently dropped all 8 claims on one angle and the report called that angle
+// evidence-free.
 
 const VOTES_PER_CLAIM = 3
 const REFUTATIONS_REQUIRED = 2
@@ -73,9 +87,18 @@ const VERDICT_SCHEMA = {
   },
 }
 const REPORT_SCHEMA = {
-  type: "object", required: ["summary", "findings", "caveats"],
+  // notChecked is REQUIRED on purpose. The report must state what was never
+  // examined in the same breath as what was found, or a reader cannot tell a
+  // real negative from an unexamined one. Making it a required field means the
+  // model cannot quietly omit the coverage gap the way a prose instruction lets
+  // it: "" is a claim that nothing was deferred, and it is checkable.
+  type: "object", required: ["summary", "findings", "caveats", "notChecked"],
   properties: {
     summary: { type: "string" },
+    notChecked: {
+      type: "string",
+      description: "Claims extracted but never voted on (deferred by the verify cap), grouped by angle, plus any angle whose coverage is therefore incomplete. Write 'none — every extracted claim was verified' if the deferred list is empty. NEVER describe these as absent, missing, or unsupported by evidence: they are unexamined.",
+    },
     findings: { type: "array", items: {
       type: "object", required: ["claim", "confidence", "sources", "evidence"],
       properties: {
@@ -265,7 +288,11 @@ const searchResults = await pipeline(
           return {
             url: source.url, title: source.title, angle: searchResult.angle,
             sourceQuality: ext.sourceQuality, publishDate: ext.publishDate,
-            claims: ext.claims.map(c => ({ ...c, sourceUrl: source.url, sourceQuality: ext.sourceQuality })),
+            // angle rides on every claim: the verify allocator below needs it to
+            // guarantee each angle gets slots, and it cannot be recovered later.
+            claims: ext.claims.map(c => ({
+              ...c, sourceUrl: source.url, sourceQuality: ext.sourceQuality, angle: searchResult.angle,
+            })),
           }
         }).catch(e => {
           log("fetch failed: " + source.url + " — " + (e.message || e))
@@ -281,11 +308,53 @@ const allClaims = allSources.flatMap(s => s.claims)
 const impRank = { central: 0, supporting: 1, tangential: 2 }
 const qualRank = { primary: 0, secondary: 1, blog: 2, forum: 3, unreliable: 4 }
 
-const rankedClaims = [...allClaims]
-  .sort((a, b) => (impRank[a.importance] - impRank[b.importance]) || (qualRank[a.sourceQuality] - qualRank[b.sourceQuality]))
-  .slice(0, MAX_VERIFY_CLAIMS)
+// Verify slots are allocated ROUND-ROBIN ACROSS ANGLES, not by a global rank.
+//
+// This is a fix for an observed failure, not a preference. A global top-N sort
+// let one angle's claims fill every slot and starve another angle to zero: in
+// a run with 111 claims and 33 of them tied at central+primary, all 8 claims on
+// one angle lost their slot to array position alone and were never voted on.
+// The synthesis stage then reported that angle as having produced no confirmed
+// findings — truncation reported as absence of evidence, which is the worst
+// failure this harness can produce, because it is indistinguishable from a real
+// negative result.
+//
+// The scope stage decomposes the question into deliberately disjoint angles so
+// each sub-question gets checked. Round-robin honours that: every angle gets its
+// first slot before any angle gets its second, so an angle can only go entirely
+// unverified if it produced no claims at all. Within an angle, the old
+// importance-then-quality rank still decides who goes first.
+const byAngle = new Map()
+for (const c of allClaims) {
+  const k = c.angle || "(unattributed)"
+  if (!byAngle.has(k)) byAngle.set(k, [])
+  byAngle.get(k).push(c)
+}
+for (const queue of byAngle.values()) {
+  queue.sort((a, b) => (impRank[a.importance] - impRank[b.importance]) || (qualRank[a.sourceQuality] - qualRank[b.sourceQuality]))
+}
 
-log("Fetched " + allSources.length + " sources → " + allClaims.length + " claims → verifying top " + rankedClaims.length)
+const rankedClaims = []
+const queues = [...byAngle.values()]
+while (rankedClaims.length < MAX_VERIFY_CLAIMS && queues.some(q => q.length > 0)) {
+  for (const queue of queues) {
+    if (rankedClaims.length >= MAX_VERIFY_CLAIMS) break
+    if (queue.length > 0) rankedClaims.push(queue.shift())
+  }
+}
+
+// Whatever the cap could not reach. These are NOT refuted and NOT absent — they
+// are unexamined, and they must survive to the report so nobody can mistake one
+// for the other. Never let this become a silent drop again.
+const deferred = queues.flat()
+
+log("Fetched " + allSources.length + " sources → " + allClaims.length + " claims → verifying " + rankedClaims.length + " (round-robin across " + byAngle.size + " angles)")
+if (deferred.length > 0) {
+  const perAngle = [...byAngle.keys()]
+    .map(k => k + ": " + deferred.filter(c => (c.angle || "(unattributed)") === k).length)
+    .filter(s => !s.endsWith(": 0"))
+  log("DEFERRED (extracted but never voted on, cap=" + MAX_VERIFY_CLAIMS + "): " + deferred.length + " claims — " + perAngle.join(", "))
+}
 
 if (rankedClaims.length === 0) {
   return {
@@ -333,6 +402,9 @@ const killed = voted.filter(c => c.isRefuted)
 const unverified = voted.filter(c => !c.survives && !c.isRefuted)
 log("Verify done: " + voted.length + " claims → " + confirmed.length + " confirmed, " + killed.length + " refuted, " + unverified.length + " unverified")
 
+// Deferred claims leave on every exit path. A caller must always be able to
+// see the coverage gap, not just the findings.
+const toDeferred = c => ({ claim: c.claim, source: c.sourceUrl, sourceQuality: c.sourceQuality, importance: c.importance, angle: c.angle })
 const toRefuted = c => ({ claim: c.claim, vote: (c.verdicts.length - c.refutedVotes) + "-" + c.refutedVotes, source: c.sourceUrl })
 const toUnverified = c => ({ claim: c.claim, erroredVotes: c.erroredVotes, validVotes: c.verdicts.length, source: c.sourceUrl })
 
@@ -355,8 +427,9 @@ if (confirmed.length === 0) {
     findings: [],
     refuted: killed.map(toRefuted),
     unverified: unverified.map(toUnverified),
+    deferred: deferred.map(toDeferred),
     sources: allSources.map(s => ({ url: s.url, quality: s.sourceQuality, claimCount: s.claims.length })),
-    stats: { angles: scope.angles.length, sources: allSources.length, claims: allClaims.length, verified: voted.length, confirmed: 0, killed: killed.length, unverified: unverified.length },
+    stats: { angles: scope.angles.length, sources: allSources.length, claims: allClaims.length, verified: voted.length, confirmed: 0, killed: killed.length, unverified: unverified.length, deferred: deferred.length },
   }
 }
 
@@ -375,6 +448,22 @@ const killedBlock = killed.length > 0
     killed.map(c => "- \"" + c.claim + "\" (" + c.sourceUrl + ", vote " + (c.verdicts.length - c.refutedVotes) + "-" + c.refutedVotes + ")").join("\n")
   : ""
 
+// Deferred ≠ unverified. `unverified` below means the voters ERRORED; `deferred`
+// means the cap never gave the claim a voter at all. Conflating them is how a
+// coverage gap gets narrated as a finding, so they stay separate all the way out.
+const deferredBlock = deferred.length > 0
+  ? "\n## DEFERRED — extracted but NEVER VOTED ON (" + deferred.length + " claims; cap is " + MAX_VERIFY_CLAIMS + ")\n" +
+    "These are NOT refuted and NOT absent. They are unexamined. Read the rules in the Instructions before writing about them.\n" +
+    [...byAngle.keys()].map(k => {
+      const forAngle = deferred.filter(c => (c.angle || "(unattributed)") === k)
+      if (forAngle.length === 0) return ""
+      const verifiedHere = rankedClaims.filter(c => (c.angle || "(unattributed)") === k).length
+      return "\n### " + k + " — " + forAngle.length + " deferred, " + verifiedHere + " verified" +
+        (verifiedHere === 0 ? " ← THIS ANGLE WENT ENTIRELY UNVERIFIED\n" : "\n") +
+        forAngle.map(c => "- \"" + c.claim + "\" (" + c.sourceUrl + ", " + c.sourceQuality + ", " + c.importance + ")").join("\n")
+    }).join("") + "\n"
+  : ""
+
 const unverifiedBlock = unverified.length > 0
   ? "\n## Unverified claims (" + unverified.length + " — verifier agents failed; neither confirmed nor refuted)\n" +
     unverified.map(c => "- \"" + c.claim + "\" (" + c.sourceUrl + ", " + c.erroredVotes + "/" + VOTES_PER_CLAIM + " votes errored)").join("\n") +
@@ -385,14 +474,18 @@ const report = await agent(
   "## Synthesis: research report\n\n" +
   "**Question:** " + QUESTION + "\n\n" +
   confirmed.length + " claims survived " + VOTES_PER_CLAIM + "-vote adversarial verification. Merge semantic duplicates and synthesize.\n\n" +
-  "## Confirmed claims\n" + block + "\n" + killedBlock + unverifiedBlock + "\n\n" +
+  "## Confirmed claims\n" + block + "\n" + killedBlock + unverifiedBlock + deferredBlock + "\n\n" +
   "## Instructions\n" +
   "1. Identify claims that say the same thing — merge them, combine their sources.\n" +
   "2. Group related claims into coherent findings. Each finding should directly address the research question.\n" +
   "3. Assign confidence per finding: high (multiple primary sources, unanimous votes), medium (secondary sources or split votes), low (single source or blog-quality).\n" +
   "4. Write a 3-5 sentence executive summary answering the research question.\n" +
   "5. Note caveats: what's uncertain, what sources were weak, what time-sensitivity applies.\n" +
-  "6. List 2-4 open questions that emerged but weren't answered.\n\nStructured output only.",
+  "6. List 2-4 open questions that emerged but weren't answered.\n" +
+  "7. Fill `notChecked` from the DEFERRED block above. Three hard rules, because this is where this harness has produced a false report before:\n" +
+  "   - A deferred claim was NEVER voted on. It is not refuted, not weak, and not absent — it is unexamined. Never write that a topic 'produced no confirmed claims' or 'has no evidence' when its claims are sitting in the deferred list.\n" +
+  "   - If every claim on some angle is deferred, say so explicitly and name the angle: that angle went unverified and the report does not cover it.\n" +
+  "   - The same rule binds `summary` and `caveats`: no absence-of-evidence statement anywhere in the report may rest on a claim that was deferred rather than refuted.\n\nStructured output only.",
   { label: "synthesize", schema: REPORT_SCHEMA }
 )
 
@@ -406,8 +499,9 @@ if (!report) {
     confirmed: confirmed.map(c => ({ claim: c.claim, source: c.sourceUrl, quote: c.quote, vote: (c.verdicts.length - c.refutedVotes) + "-" + c.refutedVotes })),
     refuted: killed.map(toRefuted),
     unverified: unverified.map(toUnverified),
+    deferred: deferred.map(toDeferred),
     sources: allSources.map(s => ({ url: s.url, quality: s.sourceQuality, claimCount: s.claims.length })),
-    stats: { angles: scope.angles.length, sources: allSources.length, claims: allClaims.length, verified: voted.length, confirmed: confirmed.length, killed: killed.length, unverified: unverified.length, afterSynthesis: 0 },
+    stats: { angles: scope.angles.length, sources: allSources.length, claims: allClaims.length, verified: voted.length, confirmed: confirmed.length, killed: killed.length, unverified: unverified.length, deferred: deferred.length, afterSynthesis: 0 },
   }
 }
 
@@ -416,11 +510,13 @@ return {
   ...report,
   refuted: killed.map(toRefuted),
   unverified: unverified.map(toUnverified),
+  deferred: deferred.map(toDeferred),
   sources: allSources.map(s => ({ url: s.url, quality: s.sourceQuality, angle: s.angle, claimCount: s.claims.length })),
   stats: {
     angles: scope.angles.length,
     sourcesFetched: allSources.length,
     claimsExtracted: allClaims.length,
+    claimsDeferred: deferred.length,
     claimsVerified: voted.length,
     confirmed: confirmed.length,
     killed: killed.length,
