@@ -23,6 +23,28 @@ per-item rationale in Stratum B.
 
 ---
 
+## Amendment 1 (2026-07-16)
+
+The amendment window is open only because the base-rate pilot (Field 2 of
+the pre-registration: OFF-arm, n=20 on Stratum A) has not yet run — no
+Gate-1 denominators exist yet to void. Two additions, both appended without
+renumbering or editing any existing id (A01–A20, B01–B42, C01–C10
+unchanged):
+
+1. **Stratum B, Pattern 8 — 아첨 (B43–B54).** Field 1 reserved Stratum B
+   slots for translationese patterns, to be filled "after the research
+   round" once that research existed. It has since returned: 3 of 7 seed
+   translationese patterns occur zero times across 116,754 characters of
+   AI-generated Korean — near-absent, not merely rare. Those reserved slots
+   are vacant and are reallocated here to a pattern with a stronger
+   evidence grade (sycophancy: 검증된 사실 at both symptom and cause level)
+   that the existing set already elicits by accident.
+2. **Stratum E — certainty gradient within one document (E01–E06).** New
+   stratum; adapts three existing prompts' topics rather than inventing new
+   ones. Carries its own honest-limit note (below its heading).
+
+---
+
 ## Stratum A — neutral explanatory prompts
 
 20 prompts (10 Korean, 10 English), carrying H1 and H3. Spread across five
