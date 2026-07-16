@@ -88,7 +88,7 @@ For low-tier reasons, output the aggregate count only (see Step 5).
 
 Record the team's or decision-maker's plan confidence as a number (e.g., 0–100) *before* the exercise and again *after* seeing the full disposed failure list.
 
-- **Gate**: both numbers are recorded, with who gave them and when. This is the one effect the evidence actually supports — calibrating confidence — so measure exactly that rather than declaring the plan "better" or "safer."
+- **Gate**: both numbers are recorded, with who gave them and when. This is the one effect the evidence actually supports — calibrating confidence — so measure exactly that rather than declaring the plan "better" or "safer." For decisions where the confidence re-check triggers a go/kill/pivot/persist call, route to `hypothesis-testing` to pre-register the metric and threshold before acting on the revised confidence number.
 
 ## After the exercise
 

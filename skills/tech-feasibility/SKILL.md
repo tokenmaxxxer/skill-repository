@@ -28,7 +28,16 @@ When this triggers, **you do the investigation**: search the real maintenance an
 
 **Kill the riskiest assumption first.** Before comparing nice-to-haves, name the assumption that kills the project if false ("this API can handle our latency", "this library supports our data volume", "the vendor allows data export") and test *that* — with a timeboxed spike whose pass/fail criteria are written **before** the code. A PoC without pre-declared kill criteria isn't a test; it's a demo that always "succeeds." The cost asymmetry is the reason: failure discovered after commitment costs orders of magnitude more than failure discovered in a spike.
 
-## The protocol
+## Evidence grade
+
+- **Technology Readiness Levels (TRL)**: ●●○ — originally NASA (Mankins 1995), adopted by the EU Horizon program and multiple government R&D agencies. The 9-level scale is a widely-used maturity framework, not an experimentally validated predictor of project success.
+- **OpenSSF Scorecard / CHAOSS metrics**: ●●○ — the OpenSSF Scorecard (Open Source Security Foundation, 2020–) provides automated health and security checks for open-source repositories. The checks are syntactically defined (e.g., "has a security policy file"); correlation with actual security outcomes has not been experimentally established.
+- **Bus factor / contributor concentration** (~65% of popular OSS projects hinge on ≤2 people): ●●○ — measured in multiple OSS health studies (e.g., Avelino et al. 2016, CHAOSS project data). The 65% figure comes from corpus analysis; the implication (single-person projects are future fork-or-migrate risks) is a reasonable inference, not a causally established outcome.
+- **Build-vs-buy TCO analysis**: ●○○ — practitioner methodology. The 60-80% post-v1 cost estimate is a widely-cited industry heuristic (originating from maintenance-cost studies in the 1980s-1990s), not a contemporary measured figure.
+- **Core-vs-context framework** (Moore 2005, *Dealing with Darwin*): ●○○ — a strategy framework adopted in IT sourcing; the distinction is analytical, not experimentally validated.
+- **The spike/PoC with pre-declared kill criteria**: procedural design choice. The kill-criteria-before-code rule is a logical requirement for a test to be falsifiable, not an empirically validated methodology. [설계]
+
+What this skill delivers: a graded comparison and an architecture decision record with evidence tiers. The evidence grade for each technology claim is labeled at point of use.
 
 ### 1 — Frame the decision
 

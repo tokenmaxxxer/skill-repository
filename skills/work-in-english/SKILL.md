@@ -22,6 +22,14 @@ reads it: exhaust to English, everything the user reads to natural Korean.
 
 ## The rule
 
+## Evidence grade
+
+This skill is a language policy, not an experimentally validated method.
+
+- **~1.9× token multiplier for Korean vs. English**: ●●○ — measured empirically on common LLM tokenizers (Korean uses 3-byte UTF-8 Hangul syllables, typically 2-3 tokens per syllable in subword tokenizers like GPT and Claude families, vs. ~1-1.5 tokens per word for English). The multiplier is an observed ratio, not a controlled-experiment finding — it varies by tokenizer and text type. [검증]
+- **"Models reason more accurately in English"**: ●●○ — an empirically observed pattern across multiple LLM benchmarks, but the causal mechanism (training-data imbalance vs. token-efficiency vs. linguistic properties) has not been resolved in published research. Treat this as an observed tendency, not a proven causal claim.
+- **The Korean/English split rule** (exhaust to English, user-facing to Korean): procedural design choice. The policy's value is token savings and context efficiency, not improved output quality. [설계]
+
 Write in **English**: internal reasoning and planning; commit messages, branch
 names, PR titles and bodies, issue text; code comments, docstrings, log and
 error messages; READMEs, design docs, changelogs — anything that lives in the

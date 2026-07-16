@@ -33,7 +33,16 @@ State the type up front and run the scan accordingly.
 
 **No single search method is a complete search.** Keyword-only recall is badly incomplete — synonyms, coined terms, and translations slip through; measured recall for single methods runs anywhere from 0% to ~50%. Real coverage needs the **triple search**: keyword + classification (CPC/IPC) + citation chasing (forward/backward from seed patents). Each finds documents the others miss; only together do they close the gaps. Examiners are explicit that text search alone is rarely a thorough search.
 
-## The protocol
+## Evidence grade
+
+- **Single-method recall (0% to ~50%)**: ●●○ — drawn from patent-examiner training literature and the USPTO's own training materials (the 7-step search strategy manual). The range is broad because recall depends on the technology domain and the searcher's classification-code expertise; no single universal number exists.
+- **The triple-search methodology** (keyword + classification + citation): ●●○ — codified in the USPTO's examiner training (7-step strategy), the EPO's search guidelines, and WIPO's PCT search guidance. The method is procedural consensus among patent offices, not an experimentally validated instrument.
+- **Claims vs. abstract reading rule**: ●●● — derived from patent law itself. 35 U.S.C. § 112 and the equivalent provisions in other jurisdictions establish that claims define the scope of the right. The abstract is explicitly non-binding (MPEP § 608.01(b)). This is not a methodology claim; it is the law's own rule.
+- **The legal boundary (research vs. FTO opinion)**: ●●● — the distinction between freedom-to-operate *search* (identifying relevant in-force patents) and an FTO *opinion* (a legal conclusion about infringement risk) is established in patent practice as the line between research and legal advice. Documented attorney opinions are the defense against willful-infringement treble damages (35 U.S.C. § 284; *Halo Electronics v. Pulse Electronics*, 2016).
+- **Database coverage differences**: ●●○ — the fact that national patent databases differ in their full-text and translation coverage is well-documented (Google Patents covers 100+ offices with machine translation; Espacenet has stronger bibliographic/family data; KIPRIS is Korea-specific). The practical implication is that no single database is complete.
+- **The search-type classification** (patentability / FTO / invalidity / landscape): procedural design choice synthesized from patent-search practice. [설계]
+
+What this skill delivers: a graded findings report from the triple search. It does not deliver a legal clearance opinion — the FTO boundary is firm and stated at every step.
 
 ### 1 — Terms and classes
 

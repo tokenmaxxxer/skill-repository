@@ -34,7 +34,7 @@ Grades used below:
 - **[가설]** — inferred from a validated mechanism, or collected from field correction. Not tested.
 - **[현장]** — this user corrected it into existence. n=1, and irreplaceable — no literature recovers it.
 
-**Nothing here is A/B verified.** The pre-registration (`docs/research/prose-skill-ab-preregistration.md`) exists, the 3-arm test is frozen and ready, and it has not run. Do not say this skill is "verified to improve writing." It is not verified to do anything.
+**Nothing here is A/B verified.** The pre-registration (`docs/research/prose-skill-ab-preregistration.md` at the repository root) exists, the 3-arm test is frozen and ready, and it has not run. Do not say this skill is "verified to improve writing." It is not verified to do anything.
 
 **Ceiling — state this whenever the skill is cited.** A skill is a prompt, and prompting raises the floor, not the ceiling. 31 prompting strategies land on a near-identical length/accuracy curve (arXiv:2503.01141); multi-hop accuracy caps near 60% even when every single-hop fact is correct (arXiv:2506.02000). **This skill can move wording, structure, and format. It cannot make thinking deeper.** Any rule below that seems to promise depth is promising placement, not cognition.
 
@@ -143,7 +143,7 @@ Three findings that should stop you from writing a translationese linter:
 
 **No experiment shows translationese harms readability** — within verified scope, and that scope is not complete (15 unverified claims remain on that angle). Do not upgrade this to "no such research exists."
 
-Full evidence: `docs/research/korean-translationese-evidence.md`. Observed frequencies in AI-written Korean: `docs/research/translationese-candidates-observed.md`.
+Full evidence (repository root): `docs/research/korean-translationese-evidence.md`. Observed frequencies in AI-written Korean (repository root): `docs/research/translationese-candidates-observed.md`.
 
 ## What this skill is not verified to do
 

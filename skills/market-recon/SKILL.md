@@ -30,7 +30,17 @@ Everything below applies when the user wants a market actually investigated.
 
 You cannot verify a market estimate against ground truth until the future arrives. So the deliverable is not a confident number — it's a **defensible range with graded evidence and an honest coverage statement**. Concretely: every number traced to its primary source, independent triangulation, stated-preference data discounted, and an explicit record of what you did and didn't scan. Pretending to certainty the evidence doesn't support is the failure mode; a smaller, honest answer is the success mode.
 
-## Setup — four moves before any searching
+## Evidence grade
+
+- **The SSNIP test** (Small but Significant Non-transitory Increase in Price) for market definition: ●●○ — codified in the U.S. DOJ/FTC Horizontal Merger Guidelines (1982, revised 2010); the test is an analytical framework used by competition authorities, not an experimentally validated instrument.
+- **Revealed-preference vs. stated-preference data**: ●●● — the gap is extensively measured. Stated willingness-to-pay systematically overstates actual payment behavior (~21% on average across multiple meta-analyses; List & Gallet 2001, Murphy et al. 2005). The mechanism (hypothetical bias) is well-documented in experimental economics.
+- **Saturation as a stopping rule**: ●●○ — qualitative research methodology (Guest, Bunce & Johnson 2006 established ~12 interviews for code saturation in homogeneous samples; the concept traces to Glaser & Strauss 1967). The criterion is methodological, not experimentally validated.
+- **Bottom-up vs. top-down sizing convergence**: ●○○ — a practitioner heuristic for internal consistency; no studied threshold exists for what constitutes "same order of magnitude."
+- **Source-tiering** (government/audited > disclosed-methodology > blog > marketing): procedural design choice, not empirically validated. [설계]
+- **Graveyard analysis** (searching for failed prior entrants): ●●○ — a well-established venture-capital and strategy-consulting practice; the logic is sound (survivorship bias correction) but no study quantifies its incremental predictive value.
+- **The multi-modal sweep and saturation-ledger stopping rule**: procedural design choices adapted from production research systems. [설계]
+
+Full evidence: `references/gate-criteria.md` (SSNIP, saturation formulas, hypothetical-bias magnitudes, HHI thresholds, reference-class forecasting).
 
 1. **Name the decision.** Research without a decision is boundless. Pin what this feeds: enter or not? price at what? which segment first? If the request is underspecified (no region, segment, or decision named), ask 2-3 sharp clarifying questions when the user is present; if they're away, state your assumptions at the top of the report and proceed.
 2. **Define the market boundary — before searching.** Everything downstream depends on it. Use the substitution test (if a monopolist of the defined market raised prices ~5%, would buyers flee to something outside it? then that something is inside) or equivalently the job-to-be-done: count everything the customer would hire instead, including manual workarounds and doing nothing. Write the boundary down; you'll report against it.

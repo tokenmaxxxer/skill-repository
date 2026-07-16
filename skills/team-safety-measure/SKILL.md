@@ -75,7 +75,7 @@ Report the internal-consistency coefficient for the context actually being cited
 |---|---|---|
 | Original manufacturing-company study | α = .82 | Edmondson (1999) |
 | 2025 Swedish elite-sport validation, one-factor solution | ω = 0.72 | Swedish elite-sport validation (2025) |
-| An independent validation study | α = .95 | **Citation not verified in this research — do not cite this coefficient until the study is sourced by name.** |
+| An independent validation study | α = .95 | **Unverified — the specific study was not sourced in this research. The coefficient appears in secondary literature citing an independent validation whose full bibliographic reference was not recovered. Do not cite this coefficient without sourcing the study by name.** |
 
 - **Gate:** no single number is presented as "the" reliability of the instrument in general. The coefficient cited must name the study it came from, matched to the context of the administration being reported.
 

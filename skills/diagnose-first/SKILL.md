@@ -48,9 +48,24 @@ So lead with the *specific* diagnostic move for this problem and the rigor above
 
 A factory delivery crisis and a "should I try Pomodoro?" question do not deserve the same ceremony. The gates are the same underlying logic, but a personal or low-stakes question should get a light, conversational pass — one or two sharp diagnostic questions and the single most relevant rigor check — not a six-stage essay. A high-stakes, expensive, or irreversible problem earns the full treatment. When unsure, err toward lighter: a crisp response that lands the one insight that matters beats a thorough one the user won't finish.
 
+## Evidence grade
+
+- **Amdahl's law** (Amdahl 1967): ●●● — mathematically derived; the improvement-from-optimizing-a-fraction formula is exact given correct input shares.
+- **Pareto principle / 80-20 rule** (Juran 1951, operationalized from Pareto 1896): ●●○ — observed across many domains but not a law; the specific 80-20 split is an empirical regularity, not a theorem.
+- **Deming's funnel experiment** (Deming 1982, *Out of the Crisis*): ●●● — demonstrated that adjusting a stable process on individual measurements increases variance; the experiment is replicable.
+- **Cynefin framework** (Kurtz & Snowden 2003, *IBM Systems Journal*): ●●○ — qualitative classification framework developed through action research; the four-domain distinction is analytically useful but has not been experimentally validated as improving decision outcomes.
+- **Cynefin's retrospective coherence claim** (Snowden 2000): ●●○ — the argument that complex-domain cause is only knowable in hindsight is a theoretical claim supported by case evidence, not experimentally proven.
+- **Five Rules of Causation** (Six Sigma / root-cause analysis practice): ●○○ — practitioner consensus codified in quality-management literature; individually the rules are definitional ("state the cause without vague words") rather than empirically validated.
+- **SMART goals** (Doran 1981, *Management Review*): ●●○ — widely adopted management practice; the framework is definitional, not outcome-validated.
+- **RICE / WSJF prioritization**: ●○○ — practitioner heuristics with no outcome-validated studies; they make prioritization transparent but do not guarantee better results.
+- **Little's law** (Little 1961): ●●● — mathematically proven for stable queueing systems; the application to development queues assumes the stationarity condition holds, which is often violated in practice.
+- **Goodhart's law**: ●●○ — widely observed (the Campbell law generalization in social science); the mechanism is well-documented but the threshold at which a metric becomes "gamed" is case-specific.
+
+Full gate criteria with evidence chains: `references/gate-criteria.md`.
+
 ## Is this a diagnosable problem, or a complex one?
 
-Not every problem yields to analysis, and forcing analysis on the wrong kind wastes time. Do a 30-second classification (this is the Cynefin distinction):
+Not every problem yields to analysis, and forcing analysis on the wrong kind wastes time. Do a 30-second classification (this is the Cynefin distinction; Kurtz & Snowden 2003):
 
 - **Obvious / known** — you've seen it many times, the fix is established. Just apply the known fix; don't run this procedure.
 - **Complicated** — cause-and-effect exists and expert analysis can find it. **This is what the procedure below is for.** Cost, latency, and quality problems usually live here.

@@ -52,6 +52,17 @@ Route by the nature of the STEP, not the domain of the task. The same
 three roles cover development, design, architecture, and data work —
 only the brief's content changes.
 
+## Evidence grade
+
+This skill is a routing policy, not an experimentally validated method. What has been measured:
+
+- **Human code-review effectiveness**: ●●● — Bacchelli & Bird (ICSE 2013) analyzed 570 review comments at Microsoft: 14% identified defects, 29% addressed readability/consistency, and only 6 of 78 defect-finding comments were design-level. Sadowski et al. (ICSE-SEIP 2018) surveyed 44 Google developers: 2 said review had caught bugs for them. Both are peer-reviewed single-company studies. Whether an LLM reviewer behaves differently is unmeasured — no agent-specific baseline exists.
+- **The three-role decomposition** (orchestrator / reasoner / executor) is a procedural design choice adapted from tiered-orchestration patterns observed in production multi-agent systems. The cost and quality tradeoffs of tiered routing have been measured across 14 production rounds (34.4M subagent tokens) for the research pipeline specifically (see Step 4); they have not been measured for code-production or design tasks. [설계]
+- **"Tests pass" as a claims** — the finding that LLM-generated test-output strings cost the same to produce as a real run (same next-token operation, no cost asymmetry) is a logical observation about autoregressive generation, not an empirical measurement. [가설]
+- **MAX_FETCH=9, MAX_VERIFY_CLAIMS=18 caps**: measured empirically across production research rounds as the point where fetch waste and verify discrimination balance. These are calibration points for a specific pipeline, not general-purpose numbers. [현장]
+
+The routing rules below are prescriptive patterns, not empirically validated heuristics.
+
 - **Production steps** (write code, write tests, write docs, build the
   CSS tokens, generate the migration script, apply a rename across 50
   files) → executor. Include in the brief: exact scope, files, the

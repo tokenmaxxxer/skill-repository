@@ -27,7 +27,16 @@ You can't recruit the users yourself — but you can design the evaluation so it
 
 **Match the sample to the question, because they diverge by an order of magnitude.** Finding usability problems: small iterative rounds (~5 users catch most *surface* problems in a homogeneous flow) — but that number is a cost-benefit heuristic, not a guarantee, and it collapses for open-ended tasks, heterogeneous users, or low-frequency problems. Comparing metrics (success rate, conversion, satisfaction): you need enough power to detect the effect — roughly ~40 for a binary metric at typical precision, more for tight bounds — and you compute it up front, don't peek and stop early. Using the wrong regime doesn't just waste effort; it produces confident wrong conclusions.
 
-## Designing the evaluation
+## Evidence grade
+
+- **The 5-user heuristic** (Nielsen 2000, "Why You Only Need to Test with 5 Users"): ●●○ — derived from the geometric-series formula for problem-discovery rate (N = 1−(1−p)^n), where p is the average problem-detection rate per user. The heuristic assumes p ≈ 0.31 (the average across Nielsen's reviewed studies). The formula is mathematically sound given its assumption; the assumption itself is an empirical average that varies by study context. Faust (2005) and Woolrych & Cockton (2001) demonstrated that the 5-user rule undercounts problems in heterogeneous user populations or complex interfaces. The 5-user number is a cost-benefit starting point, not a guarantee.
+- **The evaluator effect** (Jacobsen, Hertzum & John 1998; Hertzum & Jacobsen 2001): ●●● — measured across multiple studies. A single evaluator finds only ~35% of usability problems; 3-5 evaluators are needed for reasonable coverage. The finding is replicated.
+- **SUS (System Usability Scale)** benchmark mean of 68: ●●○ — Bangor, Kortum & Miller (2008, 2009) analyzed 3,500+ SUS responses across 273 studies. The 68-point mean is well-established; the adjective-to-score mapping (SUS → letter grade) is Bangor et al.'s interpretive overlay, not a property of the scale itself.
+- **Task-success confidence intervals (adjusted Wald)**: ●●● — the adjusted Wald interval (Agresti & Coull 1998) is the standard method for small-sample binomial proportion CIs. It corrects the naive interval's overconfidence at small n.
+- **A/B experiment base rates**: ●●○ — Microsoft's experimentation platform data (Kohavi et al.) reports ~1/3 of experiments move the metric positively, ~1/3 move it negatively, ~1/3 have no effect. Booking.com reports ~90% failure rate on the primary metric. These are self-reported platform statistics, not independently audited.
+- **Automated accessibility tool coverage** (~30-40%): ●●○ — multiple studies (e.g., Vigo et al. 2013 on automated WCAG coverage) converge on similar ranges; automated tools detect syntactic violations, not semantic ones (alt-text quality, heading logic). The "volume-based studies argue higher" caveat reflects that some tools claim higher coverage when counting by check count rather than by issue category.
+
+What this skill delivers: evaluation designs and analyses with honest significance, benchmarked scores, and properly-sized samples. For A/B experiment validation (SRM, A/A check), route to `experiment-trust` before interpreting results.
 
 Pick the method by the question:
 
@@ -35,7 +44,7 @@ Pick the method by the question:
 - **RITE** (fix-as-you-go) when problems are obvious, the decision-maker is in the room, and the build allows rapid change — fix after even one observation, re-test the change. Not for when causes are unclear or rare problems matter (changing the UI mid-study breaks the controlled condition).
 - **Benchmark/summative** — how good is it, on a scale? Standardized instruments so results are comparable: SUS (whole-experience, 0-100), SEQ (per-task ease), task-success rate. Size for the precision you need.
 - **Heuristic evaluation** — expert inspection against Nielsen's 10 heuristics, **3-5 evaluators** because any one evaluator finds only ~35% of problems (the evaluator effect) and no one evaluator is reliably best.
-- **A/B test** — does the change move the metric? Pre-declare the primary metric, minimum detectable effect, and required sample from a power calculation; no peeking. (The stats live in diagnose-first's criteria too.)
+- **A/B test** — does the change move the metric? Pre-declare the primary metric, minimum detectable effect, and required sample from a power calculation; no peeking. For validating the experiment setup itself (SRM, A/A check, pre-committed design), route to `experiment-trust` before interpreting the result.
 - **Accessibility** — WCAG conformance level (AA is the usual legal/industry bar). Automated tools are a first pass only: they catch a *minority* of issues (commonly cited ~30-40%, though volume-based studies argue higher) — the semantic judgments (alt-text quality, heading logic, link context, screen-reader experience) require manual testing regardless.
 
 ## Analyzing the results

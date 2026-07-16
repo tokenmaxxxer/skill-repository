@@ -27,7 +27,14 @@ Two things this skill must never do: state that a specific product *is or isn't*
 
 **Trace every requirement to primary source, or flag it unverified.** The authority hierarchy is strict: statute/regulation text and binding case law (primary) > the regulator's own guidance, official interpretations, no-action letters (quasi-primary, decisive for predicting enforcement) > law-firm newsletters and industry commentary (persuasive only) > blogs/wikis/forums (verify before trusting). A requirement sourced only to a blog or an AI summary is **unverified** — label it and point to the primary text (e.g. the national statute portal), because reg summaries and even AI-reconstructed statute text are frequently wrong on the number and the nuance that decide applicability.
 
-## The protocol
+## Evidence grade
+
+- **The authority hierarchy** (statute > regulator guidance > firm commentary > blogs) traces to legal-research methodology codified in legal writing manuals and the U.S. Administrative Procedure Act's hierarchy of authority sources. The hierarchy is procedural, not experimentally validated — it describes how courts and regulators weight sources, not an empirically measured reliability ordering. [업계표준]
+- **The research-vs-legal-advice boundary** derives from professional-conduct rules: ABA Model Rule 5.5 (unauthorized practice of law) and the Korean Attorney-at-Law Act (변호사법) — the criterion is whether a statement applies law to a client's specific facts, which is exclusively a lawyer's function. [1차출처]
+- **The four-axis applicability framework** (product / data / customer / region) is a procedural synthesis from regulatory practice, not an empirically validated instrument. [설계]
+- **The COSO / ISO 37301 compliance risk frameworks** referenced in `references/criteria.md` are industry standards for compliance management — widely adopted, not experimentally validated. [업계표준]
+
+What this skill delivers: a researched compliance map with primary-source traces and risk grades. It does not deliver legal advice — the stop-and-consult line for high×high risk cells is the boundary between research and a legal conclusion.
 
 ### 1 — Map the applicability surface (four axes)
 
