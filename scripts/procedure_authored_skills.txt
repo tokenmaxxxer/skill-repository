@@ -37,6 +37,13 @@ product-discovery-one-pager
 product-discovery-opportunity-solution-tree
 product-discovery-opportunity-solution-tree-branching
 product-discovery-rice-ice-prioritization
+conformance-review-finding-record
+conformance-review-requirement-extraction
+conformance-review-sampling-derivation
+conformance-review-severity-classification
+conformance-review-traceability-and-evidence
+conformance-review-verdict-assignment
+conformance-review-verification-method-selection
 observability-cardinality-budget
 observability-explorability
 observability-methodology-selection

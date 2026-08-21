@@ -1,6 +1,6 @@
 ---
 name: conformance-review-verdict-assignment
-description: Use when you need guidance on Verdict assignment. Applies to the verdict-assignment axis.
+description: Use when choosing among Present, Surface, Absent, Incorrect, or Unverifiable once evidence for a requirement has been located, or not. Applies to the verdict-assignment axis.
 axis: verdict-assignment
 rule_count_floor: 3
 ---
@@ -9,6 +9,39 @@ rule_count_floor: 3
 
 Choosing among Present | Surface | Absent | Incorrect | Unverifiable once
 evidence for a requirement has been located (or not).
+
+## Trigger
+
+Apply this skill when choosing among Present, Surface, Absent, Incorrect,
+or Unverifiable once evidence for a requirement has been located, or
+confirmed not to exist.
+
+## Procedure
+
+1. Assign Surface, not Present, when matching code exists but a check of
+   the surrounding code shows it does not fire on the actual condition
+   the requirement names (rule 1).
+2. Assign Incorrect, not Absent, when the artifact actively contradicts
+   the requirement's stated condition rather than merely omitting it
+   (rule 2).
+3. Assign Unverifiable and name the specific missing evidence location
+   when the only evidence lives somewhere the review session cannot read
+   — never a favorable or unfavorable guess (rule 3).
+4. When a prior review record already marked a requirement Present and
+   the diff since that commit does not touch its evidence, carry the
+   prior verdict forward and cite the prior record's commit sha (rule 4).
+5. When assigning Incorrect or Absent, name the specific clause the
+   evidence fails to satisfy, not a bare verdict label (rule 5).
+6. Before finalizing an Absent or Incorrect verdict that could plausibly
+   be a false positive, re-check that specific evidence once against the
+   current artifact state (rule 6).
+
+## Output shape
+
+One verdict per requirement from the five-value set, each Incorrect or
+Absent verdict naming its failing clause, each Unverifiable verdict
+naming the missing evidence location, and prior Present verdicts carried
+forward with their basis commit sha cited rather than re-derived.
 
 ## Rules
 

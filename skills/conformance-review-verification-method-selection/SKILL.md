@@ -1,6 +1,6 @@
 ---
 name: conformance-review-verification-method-selection
-description: Use when you need guidance on Verification method selection. Applies to the verification-method-selection axis.
+description: Use when picking how a requirement gets checked — inspection, analysis, demonstration, or test — before picking a verdict. Applies to the verification-method-selection axis.
 axis: verification-method-selection
 rule_count_floor: 3
 ---
@@ -10,6 +10,35 @@ rule_count_floor: 3
 Picking HOW a requirement gets checked — inspection, analysis, demonstration,
 or test — before picking a verdict. Wrong method choice produces a verdict
 that looks rigorous but didn't actually check the claim.
+
+## Trigger
+
+Apply this skill when picking how a requirement gets checked —
+inspection, analysis, demonstration, or test — before picking a verdict.
+
+## Procedure
+
+1. Use Inspection for a structural/static property — a field exists, a
+   schema shape, a file present at a path — rather than running the code
+   (rule 1).
+2. Use Analysis, not a happy-path demonstration, when the requirement
+   concerns behavior under conditions the review session cannot
+   realistically reproduce (rule 2).
+3. Use Demonstration for a qualitative functional claim, exercising the
+   actual flow with representative stimuli rather than inferring
+   behavior from the code (rule 3).
+4. When a requirement already has an executable test in the repo, reuse
+   it as the Test-method evidence rather than re-deriving a parallel
+   manual check (rule 4).
+5. When a requirement has a recorded, replayable interaction fixture,
+   prefer replaying it over re-reading prose documentation, treating a
+   passing replay as Test-method evidence per rule 4 (rule 5).
+
+## Output shape
+
+One verification method — Inspection, Analysis, Demonstration, or Test —
+selected per requirement's own nature before a verdict is rendered, with
+existing tests and recorded fixtures reused rather than duplicated.
 
 ## Rules
 

@@ -1,6 +1,6 @@
 ---
 name: conformance-review-traceability-and-evidence
-description: Use when you need guidance on Traceability and evidence citation. Applies to the traceability-and-evidence axis.
+description: Use when recording a verdict's evidence so a reader can re-derive it, or when linking a requirement forward or backward across a spec and its artifacts. Applies to the traceability-and-evidence axis.
 axis: traceability-and-evidence
 rule_count_floor: 3
 ---
@@ -9,6 +9,35 @@ rule_count_floor: 3
 
 How a verdict's evidence gets recorded so a reader can re-derive it, and how
 forward/backward links stay honest.
+
+## Trigger
+
+Apply this skill when recording a verdict's evidence so a reader can
+re-derive it, or when linking a requirement forward or backward across a
+spec and its artifacts.
+
+## Procedure
+
+1. Cite file:line-range plus the commit sha the review actually read, not
+   a bare file path (rule 1).
+2. When a requirement's evidence spans multiple files, record one
+   traceability link per contributing file, not a single link to
+   whichever file was found first (rule 2).
+3. Backward-trace a requirement by verifying its source line exists in
+   the issue/spec before verifying its implementation (rule 3).
+4. Collapse two requirements that trace to the exact same evidence
+   location and verdict reasoning into one entry with a note of the
+   duplication (rule 4).
+5. When the spec exists in more than one version a target artifact could
+   plausibly be built against, name the exact spec version the evidence
+   was checked against alongside the file:line citation (rule 5).
+
+## Output shape
+
+Evidence citations pinned to file:line-range, commit sha, and spec
+version; one traceability link per contributing file; duplicate
+requirements collapsed into one noted entry; a requirement's source line
+verified before its implementation is checked.
 
 ## Rules
 
