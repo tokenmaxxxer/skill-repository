@@ -131,3 +131,8 @@ refactoring-legacy-refactoring-step-decomposition
 refactoring-legacy-seam-selection
 refactoring-legacy-strangler-fig-migration
 refactoring-legacy-verification-cadence
+growth-analytics-experiment-trust
+growth-analytics-funnel-stage-attribution
+growth-analytics-metric-selection
+growth-analytics-reporting-reduction
+growth-analytics-segmentation

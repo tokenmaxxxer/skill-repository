@@ -1,11 +1,34 @@
 ---
 name: growth-analytics-funnel-stage-attribution
-description: Use when you need guidance on Funnel-stage attribution rules. Applies to the funnel-stage-attribution axis.
+description: Use when a proposed metric counts raw registrations, installs, or signups, or when a dashboard reports one blended conversion rate spanning multiple funnel stages. Applies to the funnel-stage-attribution axis.
 axis: funnel-stage-attribution
 rule_count_floor: 2
 ---
 
 # Funnel-stage attribution rules
+
+## Trigger
+
+Apply this skill when a metric is proposed as a `funnel_stage` record
+counting raw registrations, installs, or signups, or when a dashboard
+reports a single blended "conversion rate" spanning acquisition through
+revenue.
+
+## Procedure
+
+1. When a metric counts raw registrations, installs, or signups with no
+   downstream usage check, classify it as acquisition, not activation,
+   and require a separate activation metric before treating the signup
+   number as progress (rule 1).
+2. When a dashboard reports one blended conversion rate spanning
+   acquisition through revenue, drop the blended figure and report only
+   per-stage-pair rates (rule 2).
+
+## Output shape
+
+Each metric correctly attributed to its AARRR stage (acquisition vs.
+activation kept separate), with any multi-stage conversion figure
+replaced by per-stage-pair rates.
 
 1. **When** a metric is proposed as a `funnel_stage` record and it counts
    raw registrations, installs, or signups with no downstream usage

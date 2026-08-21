@@ -1,11 +1,32 @@
 ---
 name: growth-analytics-metric-selection
-description: Use when you need guidance on One-metric-that-matters selection rules. Applies to the metric-selection axis.
+description: Use when choosing a team's North Star / one metric that matters for its current business stage, or when a record proposes more than one metric as the live North Star. Applies to the metric-selection axis.
 axis: metric-selection
 rule_count_floor: 2
 ---
 
 # One-metric-that-matters selection rules
+
+## Trigger
+
+Apply this skill when a team is choosing what to call its North Star /
+one metric that matters for its current business stage, or when a
+record proposes more than one metric flagged as the live North Star for
+the same review window.
+
+## Procedure
+
+1. When choosing the North Star / one metric that matters, pick the
+   single metric tied to the stage's current bottleneck, not the metric
+   that is easiest to move, and revisit the choice as the stage changes
+   (rule 1).
+2. When more than one metric is proposed as `is_north_star=true` for the
+   same review window, cut all but one (rule 2).
+
+## Output shape
+
+Exactly one live North Star metric, tied to the current stage's
+bottleneck, with any competing candidates removed.
 
 1. **When** a team is choosing what to call the North Star / one metric
    that matters for a given business stage, **pick the single metric
