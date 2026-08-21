@@ -1,11 +1,11 @@
 ---
 name: product-discovery-one-pager
 description: >
-  Use this skill when the product role is in the `scoping` state and needs
-  to turn a handed-in idea into a structured one-pager before evidence
-  gathering starts. Trigger it right after `idle -> scoping`. Do NOT use it
-  to draft a solution spec — the whole point of this skill is to keep the
-  problem statement separate from any proposed solution.
+  Use this skill when the product role is in the `scoping` state and a
+  handed-in idea needs to become a structured one-pager before evidence
+  gathering starts, keeping the problem statement separate from any
+  proposed solution. Trigger it right after `idle -> scoping`. Do NOT use
+  it to draft a solution spec.
 ---
 
 # One-pager drafting
@@ -74,6 +74,34 @@ non-empty before the skill reports the one-pager complete):
 - Go-to-Market Plan
 
 Template: `product-one-pager/skills/one-pager/templates/one-pager-template.md`.
+
+## Trigger
+
+Apply this skill when the product role is in the `scoping` state and a
+handed-in idea needs to become a structured one-pager before evidence
+gathering starts — not for drafting a solution spec, which belongs
+elsewhere; this skill exists to keep the problem statement separate
+from any proposed solution.
+
+## Procedure
+
+1. Ask the eleven fields one at a time, in the fixed order above,
+   writing each answer into `product/one-pager.md` before asking the
+   next (see `## How to run the conversation`).
+2. If the problem-statement answer already contains a solution, ask the
+   user to restate just the problem first (see field 2 above).
+3. Once all eleven fields are non-empty, tell the user the one-pager is
+   complete and that the `scoping -> scoping` affirmation is next; if
+   the affirmation is vague, ask where that read came from rather than
+   treating it as a green light (see `## How to run the conversation`).
+
+## Output shape
+
+`product/one-pager.md` with all eleven fields (Background/Context,
+Problem Statement, Candidate Hypotheses, Known Risks, Goals/Success
+Metrics, Target Market, Market Size Rationale, Competitive
+Alternatives, Differentiator, Timing Rationale, Go-to-Market Plan)
+non-empty, the problem statement solution-free.
 
 ## How to run the conversation
 

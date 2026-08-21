@@ -3,11 +3,11 @@ name: product-discovery-guardrail-metrics
 description: >
   Use this skill while the product role is in `hypothesis-registered`,
   before the transition to `measuring`, to name guardrail metrics that
-  must not move adversarially, distinct from the primary metric. Trigger
-  it alongside metric/threshold/decision-rule registration, and read it
-  again once `measuring` starts so guardrail breaches are checked against
-  what was named here. Do NOT use it to change the primary metric or
-  threshold — those belong to the hypothesis-testing skill.
+  must not move adversarially — distinct from the primary metric or
+  threshold, which belong to `hypothesis-testing`. Trigger it alongside
+  metric/threshold/decision-rule registration, and read it again once
+  `measuring` starts so guardrail breaches are checked against what was
+  named here.
 ---
 
 # Guardrail metrics for `hypothesis-registered` / `measuring`
@@ -48,6 +48,36 @@ alongside metric/threshold/decision_rule.
   required)
 - Adversarial-direction / threshold (what counts as a breach)
 - Action on breach (e.g. "stop outright" or "reduced trust, re-examine")
+
+## Trigger
+
+Apply this skill while the product role is in `hypothesis-registered`,
+before the transition to `measuring`, to name guardrail metrics that
+must not move adversarially — distinct from the primary metric or
+threshold, which belong to `hypothesis-testing` — and again at
+`measuring` to check incoming data against the list named here.
+
+## Procedure
+
+1. After the metric/threshold/decision rule are drafted, ask the user
+   what must not get worse while the experiment runs (see `## How to run
+   the conversation`).
+2. For each guardrail named, ask what counts as a breach (direction and
+   threshold) and the action on breach, and write it into the hypothesis
+   record before reporting `hypothesis-registered` complete (see `## How
+   to run the conversation`).
+3. Enforce the field non-empty before `researching -> hypothesis-registered`
+   (and by extension `hypothesis-registered -> measuring`) (see
+   `## Precondition this skill enforces`).
+4. At `measuring`, read the list back when checking incoming data — never
+   let a guardrail move silently because the primary metric is winning
+   (see `## How to run the conversation`).
+
+## Output shape
+
+A non-empty guardrail-metrics list on the same hypothesis record as
+metric/threshold/decision_rule, each entry naming the metric, its
+breach direction/threshold, and the action to take on breach.
 
 ## Precondition this skill enforces
 

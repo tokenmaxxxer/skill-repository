@@ -2,13 +2,11 @@
 name: product-discovery-assumption-mapping
 description: >
   Use this skill when the product role is in the `researching` state and
-  needs to decompose a candidate solution into testable assumptions before
-  a hypothesis can be registered. Trigger it right after `scoping ->
-  researching`. It also injects the Mom Test's three interview rules any
-  time the agent is about to draft interview questions while in this
-  state. Do NOT use it to write the hypothesis statement itself — that is
-  the last step of `researching`, done once a top-quadrant assumption has
-  enough evidence.
+  needs to decompose a candidate solution into testable assumptions, or
+  whenever the agent is about to draft interview questions while in this
+  state. Trigger it right after `scoping -> researching`. Do NOT use it
+  to write the hypothesis statement itself — that is the last step of
+  `researching`, done once a top-quadrant assumption has enough evidence.
 ---
 
 # Assumption mapping for `researching`
@@ -51,6 +49,42 @@ write, not the state file. Never gated by `state-gate.sh`.
 - Quadrant (derived: critical+weak = priority)
 - Assumption-test type chosen, if in the priority quadrant (prototype
   test / one-question survey / data mining / engineering spike)
+
+## Trigger
+
+Apply this skill when the product role is in the `researching` state and
+needs to decompose a candidate solution into testable assumptions, or
+whenever the agent is about to draft interview questions while in this
+state — distinct from writing the hypothesis statement itself, which
+happens once a top-quadrant assumption has enough evidence.
+
+## Procedure
+
+1. Ask the user for candidate assumptions across the five Torres
+   categories, one category at a time, or pull them from interview
+   evidence already on file (see `## How to run the conversation`).
+2. For each assumption, ask for or propose its evidence-strength and
+   importance ratings, and write each row into `product/assumption-map.md`
+   as you go, not batched at the end (see `## How to run the
+   conversation`).
+3. Any time interview questions are about to be drafted, inject the Mom
+   Test's three rules first, and discard compliments, hypotheticals, and
+   feature wishlists as unreliable answers (see `## Standing directive:
+   the Mom Test`).
+4. Cite every evidence entry to a concrete source (file path, commit
+   sha, named interview record) — never a bare claim (see
+   `## `evidence_log``).
+5. Once assumptions are plotted, name which fall in the critical +
+   weak-evidence quadrant, propose which to test first and with which
+   test type, and hand off to `hypothesis-testing` and `guardrail-metrics`
+   once enough evidence exists (see `## How to run the conversation`).
+
+## Output shape
+
+An assumption map in `product/assumption-map.md`: one row per
+assumption (text, category, evidence strength, importance, derived
+quadrant, assumption-test type if priority), each evidence citation
+resolving to a concrete source.
 
 ## `evidence_log`
 

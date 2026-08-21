@@ -1,6 +1,6 @@
 ---
 name: product-discovery-opportunity-solution-tree-branching
-description: Use when you need guidance on Opportunity-solution-tree branching and pruning. Applies to the opportunity-solution-tree-branching axis.
+description: Use when placing a finding onto the Opportunity Solution Tree's four layers, prioritizing opportunities or solutions, or pruning invalidated/stale branches. Applies to the opportunity-solution-tree-branching axis.
 axis: opportunity-solution-tree-branching
 rule_count_floor: 10
 ---
@@ -8,6 +8,41 @@ rule_count_floor: 10
 # Opportunity-solution-tree branching and pruning
 
 Research trail: Teresa Torres's continuous-discovery Opportunity Solution Tree (OST) method, fetched this session via Product School, ProductPlan glossary, Chameleon's interview with Torres, and Shortform's summary of *Continuous Discovery Habits*; the four-layer structure (outcome, opportunity, solutions, assumption tests) and Torres's explicit pruning/prioritization guidance.
+
+## Trigger
+
+Apply this skill when placing a current-state finding onto the tree's
+four layers, prioritizing opportunities or solutions for the next round
+of work, or deciding whether an invalidated, exhausted, or stale branch
+should be pruned.
+
+## Procedure
+
+1. Classify each finding into exactly one of the four named layers
+   (outcome, opportunity, solution, assumption test), stating the layer
+   explicitly (rule 1), and add a new customer need as an opportunity
+   node under its outcome, never directly as a solution (rule 2).
+2. Prioritize the opportunity space before generating solutions, not
+   solutions directly (rule 3); generate as many candidate solutions as
+   reasonable for the target opportunity before selecting (rule 4); and
+   when only one test can run next across sibling solutions, pick it by
+   learning value per unit of experiment cost (rule 11).
+3. Attach an assumption-test node beneath any solution carrying residual
+   uncertainty before committing engineering effort (rule 5).
+4. Prune inactive or lower-value branches once the tree exceeds roughly
+   3-4 active opportunities or 8-10 total solutions (rule 6); prune an
+   invalidated solution branch while keeping its opportunity (rule 7);
+   prune an opportunity whose every solution has failed with no new
+   candidates surfacing, recording why (rule 8); prune a solution branch
+   idle for a full discovery cycle (rule 10).
+5. Before prioritizing, remove any opportunity whose parent outcome is
+   unnamed or ambiguous (rule 9).
+
+## Output shape
+
+A four-layer tree entry (outcome / opportunity / solution / assumption
+test) placed under its named parent, with pruned branches marked pruned
+(not deleted) and a stated reason attached to each prune.
 
 ## Rules
 
