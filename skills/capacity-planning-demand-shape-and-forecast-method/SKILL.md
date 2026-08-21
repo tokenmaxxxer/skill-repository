@@ -1,6 +1,6 @@
 ---
 name: capacity-planning-demand-shape-and-forecast-method
-description: Use when you need guidance on Demand shape classification and forecast-method selection. Applies to the demand-shape-and-forecast-method axis.
+description: Use when classifying a resource's demand shape (organic vs. inorganic) and choosing a forecast method — regression trend, scenario/step model, Holt-Winters, ARIMA/SARIMA, or a hybrid — and reporting or reconciling that forecast against actuals.
 axis: demand-shape-and-forecast-method
 rule_count_floor: 8
 ---
@@ -8,6 +8,49 @@ rule_count_floor: 8
 # Demand shape classification and forecast-method selection
 
 Research trail: Google SRE literature on organic/inorganic demand (USENIX ;login: Winter 2020, "SRE Best Practices for Capacity Management", Torres et al.), Holt-Winters vs. ARIMA comparative forecasting studies (ScienceDirect 2024 supply-chain comparison; food-retail Holt-Winters/ARIMA comparison), and general demand-forecasting method literature. All fetched/searched this session.
+
+## Trigger
+
+Apply this skill when classifying a resource's demand as organic or
+inorganic, choosing between a trend fit, a scenario/step model,
+Holt-Winters/SARIMA, or ARIMA, setting the forecast horizon, or
+reconciling a new forecast against what actually happened since the
+last one.
+
+## Procedure
+
+1. Classify a slow, monotonic, attribution-free increase as organic
+   demand and fit a regression trend line (rule 1).
+2. Classify a usage increase traceable to a specific planned action as
+   inorganic demand and model it as a scenario/step forecast keyed to
+   the event (rule 2).
+3. Fit Holt-Winters (or SARIMA/ARIMA with a seasonal term) when the
+   series shows a calendar-locked repeating pattern (rule 3).
+4. Prefer ARIMA over Holt-Winters when the forecast horizon is short
+   relative to history and the series is not strongly trending
+   (rule 4).
+5. When ARIMA/SARIMA is used on a series with a real trend component,
+   pair the fit with an explicit trend term rather than trusting the
+   raw fit (rule 5).
+6. Extend the forecast horizon beyond the lead time needed to acquire
+   the capacity (rule 6).
+7. When organic and inorganic demand both apply inside the horizon,
+   forecast each component separately and sum them (rule 7).
+8. Never silently overwrite a prior forecast; diff the new forecast
+   against what actually happened and flag persistent divergence
+   (rule 8).
+9. For a genuinely organic series, drop seasonal machinery rather than
+   applying it out of habit (rule 9).
+10. Report fitted components (trend rate, seasonal amplitude, event
+    term) separately so a forecast-vs-actual divergence can be
+    attributed to the specific component that moved (rule 10).
+
+## Output shape
+
+A forecast classified by demand shape (organic, inorganic, or both
+summed separately), fit with the method matched to that shape and
+horizon, extended past the capacity acquisition lead time, with its
+components reported separately and diffed against prior actuals.
 
 ## Rules
 

@@ -141,3 +141,8 @@ knowledge-management-pattern-extraction
 knowledge-management-structure-findability
 knowledge-management-supersession-lifecycle
 knowledge-management-taxonomy-tagging
+capacity-planning-cost-attribution-at-trigger
+capacity-planning-demand-shape-and-forecast-method
+capacity-planning-expansion-trigger-threshold-sizing
+capacity-planning-headroom-band-and-degradation-risk
+capacity-planning-safety-buffer-sizing-by-criticality

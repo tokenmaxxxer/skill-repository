@@ -1,6 +1,6 @@
 ---
 name: capacity-planning-safety-buffer-sizing-by-criticality
-description: Use when you need guidance on Safety-buffer sizing by criticality and blast radius. Applies to the safety-buffer-sizing-by-criticality axis.
+description: Use when sizing a safety_buffer term by a resource's criticality and blast radius — choosing a service-level target, ranking criticality against demand history, or sizing a buffer for a shared or sparse-history resource.
 axis: safety-buffer-sizing-by-criticality
 rule_count_floor: 8
 ---
@@ -8,6 +8,53 @@ rule_count_floor: 8
 # Safety-buffer sizing by criticality and blast radius
 
 Research trail: safety-stock/service-level supply-chain literature (Working Capital Hub's safety-stock formula guide, SPS Commerce's formula-selection guide, Verusen/Verdantis on criticality-weighted spare-parts buffers), applied to capacity buffers rather than physical inventory. All fetched/searched this session.
+
+## Trigger
+
+Apply this skill when sizing a resource's safety_buffer by its
+criticality and blast radius: choosing a service-level target, ranking
+criticality against demand history, sizing a buffer for a shared or
+sparse-history resource, or revisiting a buffer after a driver
+changes.
+
+## Procedure
+
+1. Derive the buffer from demand variability, lead-time variability,
+   and required service level rather than a single house-wide
+   percentage (rule 1).
+2. Size a hard-outage/user-visible-unavailability resource's buffer to
+   a high service level such as p99 (rule 2), and a
+   graceful-degradation resource's buffer to a lower service level
+   such as p90 deliberately (rule 3).
+3. Rank buffer sizing by operational consequence first and demand
+   history second when two resources share a growth rate but differ in
+   criticality (rule 4).
+4. When lead time itself is volatile, increase the buffer specifically
+   for lead-time variance, separate from demand-variance buffer
+   (rule 5).
+5. When a single resource serves mixed-criticality workloads, size the
+   buffer to the highest-criticality consumer, not an average across
+   consumers (rule 6).
+6. State which driver (demand variability, lead-time variability, or
+   service-level target) is actually pushing the buffer number
+   (rule 7).
+7. For sparse-history or new resources, do not default to a low buffer
+   just because computed variance looks small (rule 8).
+8. Retire a flat-percentage buffer copied across resources of differing
+   criticality (rule 9), and lower a buffer whose blast radius has
+   since shrunk rather than leaving the original high-criticality
+   buffer in place (rule 10).
+9. When enough recent usage history exists, derive the buffer from a
+   rolling recent-usage window rather than a flat org-wide default
+   (rule 11).
+
+## Output shape
+
+A safety_buffer sized from demand variability, lead-time variability,
+and a service-level target chosen by failure consequence rather than a
+flat percentage, attributed to its driving factor, sized to the
+highest-criticality consumer when shared, and revisited as blast
+radius or usage history changes.
 
 ## Rules
 
