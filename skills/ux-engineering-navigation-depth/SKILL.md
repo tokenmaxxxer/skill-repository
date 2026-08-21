@@ -1,6 +1,6 @@
 ---
 name: ux-engineering-navigation-depth
-description: Use when you need guidance on Navigation order vs. usage frequency. Applies to the nav-order-vs-usage-frequency axis.
+description: Use when deciding where an action or item sits in a navigation hierarchy, top level vs. nested, and in what order. Applies to the nav-order-vs-usage-frequency axis.
 axis: nav-order-vs-usage-frequency
 rule_count_floor: 3
 ---
@@ -12,6 +12,38 @@ deep, and ordering navigation by task sequence rather than alphabet or
 org chart, sourced from Hick's Law / Fitts's Law and NN/g navigation
 research actually fetched during issue #1174's ux-engineering research
 pass (2026-08-13).
+
+## Trigger
+
+Apply this skill when deciding where an action or item sits in a
+navigation hierarchy — top level vs. nested, and in what order —
+distinguishing it from control-selection and layout-grouping, which
+govern within-screen controls rather than cross-screen navigation
+structure.
+
+## Procedure
+
+1. For an action used by most users in most sessions, place it at the
+   top level, reachable in one tap/click (rule 1).
+2. For a rarely used action, nest it inside a secondary/overflow menu
+   rather than giving it top-level billing (rule 2).
+3. When ordering a navigation list, order by task-flow sequence, not
+   alphabetically or by org chart (rule 3).
+4. When a component set exceeds roughly 7±2 top-level choices,
+   consolidate related items under one parent (rule 4).
+5. REMOVAL: when a navigation tree has a parent menu holding only one
+   child item, delete that parent level and promote the child (rule
+   5).
+6. Judge navigation depth by a measured directness score — completion
+   without backtracking — rather than a subjective read of tree depth
+   alone (rule 6).
+
+## Output shape
+
+A navigation placement per action or item (top-level vs. nested, and
+its position in list order), plus, where rule 5 fires, a flagged
+single-child parent to flatten, and where rule 6 applies, a
+directness-based verdict rather than a bare depth count.
 
 ## Decision rules
 
