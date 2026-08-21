@@ -1,6 +1,6 @@
 ---
 name: market-analysis-competitor-mapping
-description: Use when you need guidance on Competitor-mapping rules (direct vs indirect). Applies to the competitor-mapping axis.
+description: Use when classifying a company as a direct or indirect competitor, attaching evidence to a claimed competitor fact, tracing a secondary-sourced claim back to its primary source, planning monitoring cadence for a competitor list, or checking a comparison table for duplicate/merged entries. Applies to the competitor-mapping axis.
 axis: competitor-mapping
 rule_count_floor: 10
 ---
@@ -12,6 +12,48 @@ attaching evidence to every claimed fact (this rulebook's
 `produces.competitor list w/ evidence links` field). Research trail:
 layer 1 (practitioner classification criteria) plus layer 3 (evidence
 sourcing rigor, shared with evidence-rigor axis).
+
+## Trigger
+
+Apply this skill when classifying a competitor as direct or indirect,
+adding or evaluating an entry in a competitor list, tracing a
+secondary-sourced competitor fact back to its primary source, planning
+monitoring cadence across the list, or checking a comparison table for
+redundant or double-counted entries.
+
+## Procedure
+
+1. When classifying, check both product-category overlap and
+   evaluation-set overlap before calling a competitor direct (rule 1),
+   and check for job overlap without product-category overlap before
+   calling one indirect (rule 2).
+2. When segmenting by purchasing pattern, determine whether the buyer
+   defaults to this category or only sometimes evaluates it before
+   assigning direct vs. indirect (rule 3).
+3. When adding a competitor entry, require an evidence link for every
+   claimed fact, and if the source is secondary, trace the citation
+   chain to the primary source before citing it (rules 4-5).
+4. When cadence-planning follow-up monitoring, assign direct
+   competitors to high-frequency tracking and indirect competitors to
+   lower-frequency tracking (rule 6).
+5. When a listed competitor fails both the direct and indirect
+   evaluation-set tests on evidence check, drop the entry rather than
+   downgrade it (rule 7).
+6. When building the comparison table, merge structurally identical
+   direct competitors into one row, and merge sibling brands of the
+   same underlying company into one entity, to keep the table MECE
+   (rules 8, 10).
+7. When a competitor is privately held with no public filings, state
+   its facts as sourced-from-secondhand and label them lower-confidence
+   rather than omitting or fabricating precision (rule 9).
+
+## Output shape
+
+A competitor list where each entry is classified direct or indirect by
+the product-category-and-evaluation-set / job-overlap tests, carries an
+evidence link traced to its primary source, is assigned a monitoring
+cadence matching its class, and contains no duplicate or double-counted
+rows.
 
 ## Rules
 

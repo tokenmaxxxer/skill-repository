@@ -1,6 +1,6 @@
 ---
 name: market-analysis-mece-proposal
-description: Use when you need guidance on MECE-structuring rules (phase-1 proposal). Applies to the mece-proposal axis.
+description: Use when structuring a phase-1 proposal's required elements to check for content overlap between sections, choosing a MECE split for the analysis, or verifying the section set is collectively exhaustive against the rulebook's PRODUCES field. Applies to the mece-proposal axis.
 axis: mece-proposal
 rule_count_floor: 10
 ---
@@ -13,6 +13,51 @@ adoption rationale, plugin-reflection plan) so the set is mutually
 exclusive and collectively exhaustive. Research trail: layer 2 (Barbara
 Minto's MECE principle, verified at source) plus layer 1 (practitioner
 issue-tree structuring practice).
+
+## Trigger
+
+Apply this skill when drafting or reviewing a phase-1 proposal's
+section structure, choosing how to split the analysis, or checking the
+proposal against the rulebook's 5 required elements for overlap or
+gaps.
+
+## Procedure
+
+1. When drafting the section list, check each pair of sections for
+   content overlap and merge or reassign overlapping facts rather than
+   let them be restated in two places (rule 1).
+2. When a frameworks-selected section lists a framework with no "why,"
+   treat that as an exhaustiveness gap, not a style nit (rule 2).
+3. When choosing how to split the analysis, prefer a fastest reliable
+   MECE split (two-part, formula-based, process-step, or explicit
+   "other" bucket) over an ad hoc list (rule 3).
+4. When the same source justifies claims in two sections, cite it once
+   in the owning section and cross-reference by name rather than
+   duplicate the citation (rule 4).
+5. When structuring as an issue tree, keep sibling branches independent
+   and re-cut the structure if one sub-question needs another's answer
+   first (rule 5).
+6. When the plugin-reflection element has no corresponding gate or
+   plugin named elsewhere in the proposal, flag it as a collective-
+   exhaustiveness gap (rule 6).
+7. When a draft section restates a decision already framed earlier, cut
+   the restatement rather than keep it for emphasis (rule 7).
+8. When two required elements genuinely share unavoidable context, do
+   not force an artificial split — state the shared dependency once and
+   reference it (rule 8).
+9. When checking collective exhaustiveness, verify against the
+   rulebook's own PRODUCES field's 5 named elements, not against
+   recollection (rule 9).
+10. When an "other" bucket accumulates more than a small fraction of
+    content, split it into properly named sub-elements rather than
+    leave it as a catch-all (rule 10).
+
+## Output shape
+
+A proposal whose sections carry no cross-section content overlap, each
+required element paired with its rationale, an explicit MECE split
+choice, and full coverage of the rulebook's 5 named elements verified
+against the PRODUCES field.
 
 ## Rules
 
