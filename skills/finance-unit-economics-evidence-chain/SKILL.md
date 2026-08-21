@@ -1,12 +1,50 @@
 ---
 name: finance-unit-economics-evidence-chain
-description: Use when you need guidance on Evidence chain — decision rules. Applies to the evidence-chain axis.
+description: Use when a unit-economics input, benchmark citation, or headline figure needs its sourcing traced, deduplicated, positioned against a peer distribution, or checked for a hardcoded value hiding behind a formula-derived one.
 axis: evidence-chain
 rule_count_floor: 12
 tier: moderate
 ---
 
 # Evidence chain — decision rules
+
+## Trigger
+
+Use whenever a unit-economics model, proposal, or benchmark claim needs
+its inputs' sourcing checked — an uncited figure, a benchmark pulled
+from a secondary source, a stale caveat sitting next to a current
+citation, a benchmark cited with no distribution position, or a
+headline number whose formula-derived-vs-hardcoded status has not been
+verified. This axis underlies every other finance-unit-economics skill
+that presents a `source:`-bearing figure; use it to check the citation,
+not to produce the metric itself.
+
+## Procedure
+
+1. Cite the 1st ADDITION bullet when a unit-economics input has no
+   traceable source, to require a cited report/dataset and date rather
+   than a bare number.
+2. Cite the 2nd ADDITION bullet when a benchmark is pulled from an
+   external report, to prefer the primary/first-party dataset over a
+   secondary blog restating it.
+3. Cite the REMOVAL bullet when an input already carries a dated source
+   citation, to drop a duplicate older "as of" caveat carried over from
+   an earlier draft.
+4. Cite the 4th ADDITION bullet when citing an external benchmark to
+   judge a company's own figure, to state the peer-distribution
+   position and measurement period, and to flag any stale prior-period
+   input for re-verification.
+5. Cite the 5th (final) ADDITION bullet before a model or proposal is
+   published, to run an explicit trace pass marking every headline
+   figure formula-derived or hardcoded.
+
+## Output shape
+
+A sourcing verdict for each cited input: a dated, traceable citation
+(primary preferred over secondary), no duplicate or conflicting
+caveats, a stated peer-distribution position and measurement period for
+any benchmark comparison, and a formula-derived/hardcoded trace mark
+for every headline figure.
 
 ## Decision rules
 

@@ -1,12 +1,48 @@
 ---
 name: finance-unit-economics-cac-payback
-description: Use when you need guidance on CAC payback — decision rules. Applies to the cac-payback axis.
+description: Use when a proposal or model needs a CAC payback headline metric picked, banded by motion, kept isolated from overhead, or jointly checked against gross margin and burn multiple before it is called healthy.
 axis: cac-payback
 rule_count_floor: 12
 tier: moderate
 ---
 
 # CAC payback — decision rules
+
+## Trigger
+
+Use when a unit-economics proposal or model is choosing or presenting
+its headline efficiency metric — deciding between CAC payback and
+LTV:CAC, banding a payback figure against a benchmark, isolating the
+payback calculation from overhead, or declaring a business "healthy" on
+the strength of a payback number. Do not use it to compute LTV:CAC
+magnitude itself (that is `finance-unit-economics-ltv-cac-band`) or to
+source/cite the inputs feeding the payback figure (that is
+`finance-unit-economics-evidence-chain`).
+
+## Procedure
+
+1. Cite the 1st ADDITION bullet when blended CAC payback is under 12
+   months, to prefer payback over LTV:CAC as the headline board-facing
+   efficiency metric.
+2. Cite the 2nd ADDITION bullet when the motion is SMB self-serve
+   (sub-$15K ACV), to apply the segment-specific 8-12 month band rather
+   than a flat threshold.
+3. Cite the REMOVAL bullet when the payback calculation already
+   isolates variable acquisition cost, to drop fully-loaded overhead
+   allocation from the same headline number.
+4. Cite the 4th (final ADDITION) bullet before calling the unit
+   economics "healthy" on a cleared payback figure alone, to check it
+   jointly against gross margin and burn multiple and state explicitly
+   which of the three did not clear when only some do.
+
+## Output shape
+
+A CAC payback verdict: the chosen headline metric (payback vs.
+LTV:CAC) with its rationale, a segment-appropriate band applied to the
+payback figure, a payback number isolated to variable acquisition cost,
+and — when "healthy" is claimed — an explicit joint check against gross
+margin and burn multiple naming which of the three metrics did and did
+not clear.
 
 ## Decision rules
 
