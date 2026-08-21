@@ -94,3 +94,9 @@ incident-response-rca-method-selection
 incident-response-severity-classification-scoping
 incident-response-timeline-construction
 incident-response-tool-landscape
+finance-unit-economics-cac-payback
+finance-unit-economics-evidence-chain
+finance-unit-economics-ltv-cac-band
+finance-unit-economics-ltv-churn-assumption
+finance-unit-economics-proposal-shape
+finance-unit-economics-sensitivity-scenario
