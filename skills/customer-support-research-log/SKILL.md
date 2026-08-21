@@ -1,6 +1,6 @@
 ---
 name: customer-support-research-log
-description: Use when you need guidance on Research log — customer-support operational playbook.
+description: Use when verifying that every rule across the customer-support playbook traces to a fetched source, or when auditing this family's rule_count_floor derivation against its axis count and tier.
 role: customer-support
 rule_count_floor: 5
 axes:
@@ -17,6 +17,33 @@ tier: sparse
 Per issue #1174 amendment 1 (research-execution protocol): every rule
 below traces to a fetched source, not pretrained recall. This log
 records the queries run and sources read this session.
+
+## Trigger
+
+Apply this skill when verifying that a customer-support rule traces to
+a fetched source rather than pretrained recall, or when auditing this
+family's rule_count_floor derivation (tier, axis count, delivered rule
+count) for the five playbook files this log supports.
+
+## Procedure
+
+1. To verify sourcing for a claim, check it against the `## Queries run`
+   list and confirm a matching entry.
+2. To find the fetched sources backing that query, read the `## Sources
+   read` list (practitioner/methodology layer, academic-theory layer).
+3. To confirm a specific playbook file's rules are inline-sourced, check
+   the `## Per-rule mapping` section, which names all five files and
+   states no rule is asserted without an inline `Source:` URL.
+4. To audit the family's floor compliance, recompute the derivation in
+   `## rule_count_floor derivation` (tier, axis count, N_min formula,
+   delivered rule count) and confirm it still holds.
+
+## Output shape
+
+A pass/fail verification against one of: a specific rule's source
+citation, the full source list, or the rule_count_floor derivation —
+citing this log's own `## Queries run`, `## Sources read`, `## Per-rule
+mapping`, or `## rule_count_floor derivation` section as evidence.
 
 ## Queries run (WebSearch, this session)
 

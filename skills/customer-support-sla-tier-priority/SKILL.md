@@ -1,6 +1,6 @@
 ---
 name: customer-support-sla-tier-priority
-description: Use when you need guidance on SLA-tier priority decision rules.
+description: Use when a ticket needs an Impact x Urgency Priority tier and first-response/resolution commitment assigned, or when checking whether a legacy priority label maps to the ITIL matrix.
 ---
 
 # SLA-tier priority decision rules
@@ -8,6 +8,40 @@ description: Use when you need guidance on SLA-tier priority decision rules.
 Axis: sla-tier-priority. Every rule below maps an Impact x Urgency pair to
 a Priority tier via the ITIL incident-prioritization matrix convention —
 tier values are traceable to that lookup, never asserted by feel.
+
+## Trigger
+
+Apply this skill when assigning a ticket's Impact x Urgency Priority
+tier and its first-response/resolution commitment, or when auditing an
+existing priority label (including a legacy one) against the ITIL
+matrix.
+
+## Procedure
+
+1. When a ticket affects a single user with no deadline pressure
+   (Impact: Low, Urgency: Low), assign Priority 4/P4 and commit a
+   24-hour first response (rule 1).
+2. When an issue affects a single user who is blocked right now (Impact:
+   Low, Urgency: High), choose Priority 3/P3 over P4 (rule 2).
+3. When multiple users lose access to a core function (Impact: High) but
+   a workaround exists (Urgency: Medium), select Priority 2/P2 rather
+   than P1 (rule 3).
+4. When an incident affects many users AND leaves no workaround (Impact:
+   High, Urgency: High), assign Priority 1/P1 and commit a 15-minute
+   first response with escalation if unresolved by the 30-minute mark
+   (rule 4).
+5. Under a P2 commitment, escalate to the Support Team Lead if the
+   ticket is not resolved by hour 5 of a 4-hour resolution target
+   (rule 5).
+6. When a queue carries a legacy "Priority 0 / Blocker" label that
+   predates the Impact x Urgency matrix, drop that label rather than
+   keeping a sixth tier alongside P1-P4 (rule 6).
+
+## Output shape
+
+One Priority tier (P1-P4) traceable to an (Impact, Urgency) cell, paired
+with its first-response/resolution commitment and, when applicable, its
+escalation trigger.
 
 ## Rules
 
