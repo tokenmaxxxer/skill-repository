@@ -1,6 +1,6 @@
 ---
 name: observability-methodology-selection
-description: Use when you need guidance on Signal-methodology selection (RED / USE / Golden Signals). Applies to the methodology-selection axis.
+description: Use when a touched surface needs exactly one signal methodology (RED, USE, or Golden Signals) chosen, or when a redundant methodology dashboard is proposed on top of an existing one. Applies to the methodology-selection axis.
 axis: methodology-selection
 rule_count_floor: 3
 ---
@@ -14,6 +14,29 @@ Wilkie's RED method, Brendan Gregg's USE method, Google's Four Golden
 Signals — verified at source) plus layer 1 (practitioner framing of
 when each applies, as documented by SRE-adjacent writeups that trace
 back to the originating talks/books).
+
+## Trigger
+
+Apply this skill when a touched surface needs exactly one signal
+methodology chosen, or when a new methodology dashboard is proposed
+for a surface that already has one.
+
+## Procedure
+
+1. If the surface is a request-driven service boundary, choose RED
+   (rule 1).
+2. If the surface is a finite resource a service consumes rather than
+   a request path, choose USE (rule 2).
+3. When a surface already has a named RED or USE dashboard and a new
+   Golden Signals overview panel is proposed that just restates the
+   same numbers at coarser granularity, drop the redundant overview
+   rather than add it (rule 3).
+
+## Output shape
+
+Exactly one named methodology (RED or USE) assigned per touched
+surface, with no redundant duplicate-methodology overview panel added
+where one already exists.
 
 ## Rules
 

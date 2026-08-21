@@ -1,6 +1,6 @@
 ---
 name: observability-signal-golden
-description: Use when you need guidance on Golden Signals placement (Latency / Traffic / Errors / Saturation). Applies to the signal-golden axis.
+description: Use when placing the four Golden Signals on a service-rollup surface aggregating multiple request-driven and resource-bound children. Applies to the signal-golden axis.
 axis: signal-golden
 rule_count_floor: 3
 ---
@@ -12,6 +12,32 @@ service-rollup surface (a service-level view aggregating multiple
 request-driven and resource-bound children). Research trail: layer 2
 (Google SRE book's Four Golden Signals) plus layer 1 (practitioner
 guidance on combining RED+USE into a rollup rather than re-instrumenting).
+
+## Trigger
+
+Apply this skill when instrumenting a service-rollup surface that
+aggregates multiple request-driven and resource-bound children and the
+four Golden Signals need a placement.
+
+## Procedure
+
+1. For latency and traffic, roll up from the service's own RED
+   instrumentation rather than re-instrumenting at the rollup layer
+   (rule 1).
+2. For saturation, roll up from the constituent resources' USE
+   saturation signals (rule 2).
+3. For errors, aggregate the same classified error counters RED
+   already emits per request, rather than a single service-level error
+   boolean (rule 3).
+4. When the rollup's children already publish RED+USE dashboards, do
+   not instrument fresh collection points at the rollup layer — only
+   aggregate the children's existing series (rule 4).
+
+## Output shape
+
+A service-rollup dashboard whose latency/traffic/errors/saturation
+panels are aggregations of the children's existing RED/USE series, with
+no fresh competing collection points instrumented at the rollup layer.
 
 ## Rules
 
