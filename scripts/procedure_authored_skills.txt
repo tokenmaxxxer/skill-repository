@@ -196,3 +196,4 @@ performance-engineering-operational-playbook
 pr-communications-message-planning-and-evaluation-rules
 requirements-engineering-rules
 security-threat-model-threat-modeling-decision-rules
+test-authoring-isolation-and-fixture-strategy
