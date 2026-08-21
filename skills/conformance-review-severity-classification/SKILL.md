@@ -1,6 +1,6 @@
 ---
 name: conformance-review-severity-classification
-description: Use while acting as the review role in the draft-reported state, optionally, when the review's scope has been explicitly extended into risk-weighting a finding — not for ordinary fidelity-checking. Use to attach a severity band to a finding already recorded by finding-record; never to decide whether a finding exists.
+description: Use while acting as the review role in the draft-reported state, when the review's scope has been explicitly extended into risk-weighting a finding already recorded by finding-record — not for ordinary fidelity-checking, and never to decide whether a finding exists.
 ---
 
 # severity-classification
@@ -11,6 +11,34 @@ required for pure fidelity-checking, per the existing spec's scoping of
 this role to a per-requirement verdict rather than a holistic quality
 judgment. Only run this skill when the user (or the engagement scope
 agreed at `idle -> scoped`) has said severity is in scope.
+
+## Trigger
+
+Apply this skill while acting as the review role in the `draft-reported`
+state, only when the engagement's scope has been explicitly extended
+into risk-weighting a finding already recorded by `finding-record` — not
+for ordinary fidelity-checking, and never to decide whether a finding
+exists in the first place.
+
+## Procedure
+
+1. Confirm severity is actually in scope for this engagement before
+   running at all (see the framing paragraph above and "What it asks the
+   user for").
+2. Compute the band via one of the two sourced deterministic table
+   lookups, not an averaged subjective score (see "The shape of the
+   classification").
+3. Write the resulting `severity` field onto the finding's existing
+   block in `review-record.md` (see "The artifact").
+4. If the band is disputed after the fact, retain the finding but adjust
+   the recorded band rather than dropping it (see "What it asks the user
+   for").
+
+## Output shape
+
+A `severity` field, one of the chosen band's values, added onto the
+existing finding block in `review-record.md` — never a new file, never a
+DREAD-style averaged score.
 
 ## What it asks the user for
 

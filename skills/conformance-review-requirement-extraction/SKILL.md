@@ -1,6 +1,6 @@
 ---
 name: conformance-review-requirement-extraction
-description: Use when you need guidance on Requirement extraction. Applies to the requirement-extraction axis.
+description: Use when decomposing a spec/issue into a discrete, checkable requirement list, before any verdict is rendered. Applies to the requirement-extraction axis.
 axis: requirement-extraction
 rule_count_floor: 3
 ---
@@ -9,6 +9,38 @@ rule_count_floor: 3
 
 Decomposing a spec/issue into a discrete, checkable requirement list — phase 1
 of a conformance-review pass, before any verdict is rendered.
+
+## Trigger
+
+Apply this skill when decomposing a spec or issue into a discrete,
+checkable requirement list — phase 1 of a conformance-review pass,
+before any verdict is rendered.
+
+## Procedure
+
+1. Split any requirement sentence bundling more than one obligation with
+   "and"/"또한" across independent clauses into one line item per
+   obligation (rule 1).
+2. Flag a requirement with no observable success condition as
+   unverifiable-as-written and request the missing acceptance threshold,
+   rather than inventing one (rule 2).
+3. Drop a derived/summary line restating three or more sub-points
+   already listed elsewhere, keeping only its sub-points (rule 3).
+4. When the issue's acceptance section already states a sampling
+   derivation, use it verbatim as the requirement list's scope rather
+   than re-deriving your own N (rule 4).
+5. Keep a requirement whose check-worthiness or expected verdict is
+   conditional on another requirement's outcome as its own list item,
+   stating the dependency inline (rule 5).
+6. Tag each extracted requirement with its dimension type — functional
+   behavior, error-handling, edge-case, or scope-boundary (rule 6).
+
+## Output shape
+
+A dimension-tagged, one-obligation-per-line requirement list: bundled
+sentences split, redundant summary lines dropped, unverifiable-as-written
+items flagged instead of guessed, and conditional or sampling-derived
+scope stated explicitly rather than silently re-derived.
 
 ## Rules
 
