@@ -1,4 +1,6 @@
 ---
+name: ml-engineering-slo-definition-tradeoffs
+description: Use when you need guidance on SLO definition and error-budget tradeoffs. Applies to the slo-definition-tradeoffs axis.
 axis: slo-definition-tradeoffs
 rule_count_floor: 5
 ---

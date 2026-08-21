@@ -1,4 +1,6 @@
 ---
+name: market-analysis-competitor-mapping
+description: Use when you need guidance on Competitor-mapping rules (direct vs indirect). Applies to the competitor-mapping axis.
 axis: competitor-mapping
 rule_count_floor: 10
 ---

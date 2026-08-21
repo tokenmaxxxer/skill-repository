@@ -1,4 +1,6 @@
 ---
+name: pr-communications-message-planning-and-evaluation-rules
+description: Use when you need guidance on pr-communications operational playbook.
 role: pr-communications
 axes:
   - objective-channel-fit

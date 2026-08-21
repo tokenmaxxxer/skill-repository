@@ -1,4 +1,6 @@
 ---
+name: observability-signal-golden
+description: Use when you need guidance on Golden Signals placement (Latency / Traffic / Errors / Saturation). Applies to the signal-golden axis.
 axis: signal-golden
 rule_count_floor: 3
 ---

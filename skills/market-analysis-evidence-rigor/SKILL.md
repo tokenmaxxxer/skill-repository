@@ -1,4 +1,6 @@
 ---
+name: market-analysis-evidence-rigor
+description: Use when you need guidance on Evidence-rigor rules. Applies to the evidence-rigor axis.
 axis: evidence-rigor
 rule_count_floor: 10
 ---

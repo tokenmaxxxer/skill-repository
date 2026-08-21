@@ -1,3 +1,8 @@
+---
+name: content-design-operational-playbook
+description: Use when you need guidance on Content-design operational playbook.
+---
+
 # Content-design operational playbook
 
 Issue: tokenmaxxxer/on-the-record#1174 (batch 1, UX/design family).

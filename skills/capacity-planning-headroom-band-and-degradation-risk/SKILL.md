@@ -1,4 +1,6 @@
 ---
+name: capacity-planning-headroom-band-and-degradation-risk
+description: Use when you need guidance on Headroom-band sizing and degradation-risk shape. Applies to the headroom-band-and-degradation-risk axis.
 axis: headroom-band-and-degradation-risk
 rule_count_floor: 8
 ---

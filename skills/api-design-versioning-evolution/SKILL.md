@@ -1,4 +1,6 @@
 ---
+name: api-design-versioning-evolution
+description: Use when you need guidance on Versioning & evolution. Applies to the versioning-evolution axis.
 axis: versioning-evolution
 rule_count_floor: 10
 ---

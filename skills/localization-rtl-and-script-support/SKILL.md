@@ -1,4 +1,6 @@
 ---
+name: localization-rtl-and-script-support
+description: Use when you need guidance on Decision axis: RTL & script/encoding support. Applies to the rtl-and-script-support axis.
 axis: rtl-and-script-support
 rule_count_floor: 10
 axes:

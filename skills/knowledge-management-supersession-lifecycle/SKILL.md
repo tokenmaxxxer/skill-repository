@@ -1,4 +1,6 @@
 ---
+name: knowledge-management-supersession-lifecycle
+description: Use when you need guidance on Supersession, deprecation, and removal lifecycle. Applies to the supersession-lifecycle axis.
 axis: supersession-lifecycle
 rule_count_floor: 10
 ---

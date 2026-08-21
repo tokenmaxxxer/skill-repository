@@ -1,5 +1,5 @@
 ---
-name: stride-table
+name: technical-feasibility-stride-table
 description: Use this skill when running the threat-model probe inside the feasibility role's `probing` state — produces a STRIDE per-finding table before that probe can resolve.
 ---
 

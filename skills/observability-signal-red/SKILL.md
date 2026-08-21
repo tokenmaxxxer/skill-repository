@@ -1,4 +1,6 @@
 ---
+name: observability-signal-red
+description: Use when you need guidance on RED signal placement (Rate / Errors / Duration). Applies to the signal-red axis.
 axis: signal-red
 rule_count_floor: 3
 ---

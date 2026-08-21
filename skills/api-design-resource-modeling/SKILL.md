@@ -1,4 +1,6 @@
 ---
+name: api-design-resource-modeling
+description: Use when you need guidance on Resource modeling. Applies to the resource-modeling axis.
 axis: resource-modeling
 rule_count_floor: 10
 ---

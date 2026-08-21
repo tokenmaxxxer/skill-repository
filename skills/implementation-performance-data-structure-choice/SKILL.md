@@ -1,4 +1,6 @@
 ---
+name: implementation-performance-data-structure-choice
+description: Use when you need guidance on Performance-degradation prevention: data structure, algorithm, and. Applies to the performance-data-structure-choice axis.
 axis: performance-data-structure-choice
 rule_count_floor: 6
 tier: sparse

@@ -1,4 +1,6 @@
 ---
+name: user-discovery-verdict-prevalence-reporting
+description: Use when you need guidance on Verdict reporting: prevalence, prompted/unprompted, contradictions. Applies to the verdict-prevalence-reporting axis.
 axis: verdict-prevalence-reporting
 rule_count_floor: 8
 ---

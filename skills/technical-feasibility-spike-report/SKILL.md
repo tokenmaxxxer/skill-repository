@@ -1,5 +1,5 @@
 ---
-name: spike-report
+name: technical-feasibility-spike-report
 description: Use this skill when running the technical probe inside the feasibility role's `probing` state — a timeboxed spike to answer one uncertain technical question before a feasibility verdict can be drafted.
 ---
 

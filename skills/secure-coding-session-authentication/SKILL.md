@@ -1,4 +1,6 @@
 ---
+name: secure-coding-session-authentication
+description: Use when you need guidance on Session & authentication management. Applies to the session-authentication axis.
 axis: session-authentication
 rule_count_floor: 9
 ---

@@ -1,4 +1,6 @@
 ---
+name: conformance-review-verdict-assignment
+description: Use when you need guidance on Verdict assignment. Applies to the verdict-assignment axis.
 axis: verdict-assignment
 rule_count_floor: 3
 ---

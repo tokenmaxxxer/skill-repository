@@ -1,4 +1,6 @@
 ---
+name: conformance-review-sampling-derivation
+description: Use when you need guidance on Sampling derivation. Applies to the sampling-derivation axis.
 axis: sampling-derivation
 rule_count_floor: 3
 ---

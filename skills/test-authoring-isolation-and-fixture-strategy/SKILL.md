@@ -1,3 +1,8 @@
+---
+name: test-authoring-isolation-and-fixture-strategy
+description: Use when you need guidance on Operational playbook — isolation & fixture strategy.
+---
+
 # Operational playbook — isolation & fixture strategy
 
 Condition → choice → source rules for this role's decides: 테스트 코드 자체가

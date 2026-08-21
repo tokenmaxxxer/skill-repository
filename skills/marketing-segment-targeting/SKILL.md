@@ -1,4 +1,6 @@
 ---
+name: marketing-segment-targeting
+description: Use when you need guidance on Segment selection and targeting. Applies to the segment-targeting axis.
 axis: segment-targeting
 rule_count_floor: 5
 ---

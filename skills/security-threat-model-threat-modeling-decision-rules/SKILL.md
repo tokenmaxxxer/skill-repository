@@ -1,4 +1,6 @@
 ---
+name: security-threat-model-threat-modeling-decision-rules
+description: Use when you need guidance on Operational playbook: trust-boundary threat modeling decision rules (issue-1174).
 rule_count_floor: 12
 tier: moderate
 axes:

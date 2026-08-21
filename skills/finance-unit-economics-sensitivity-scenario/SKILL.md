@@ -1,4 +1,6 @@
 ---
+name: finance-unit-economics-sensitivity-scenario
+description: Use when you need guidance on Sensitivity / scenario analysis — decision rules. Applies to the sensitivity-scenario axis.
 axis: sensitivity-scenario
 rule_count_floor: 12
 tier: moderate

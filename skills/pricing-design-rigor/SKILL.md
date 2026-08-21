@@ -1,4 +1,6 @@
 ---
+name: pricing-design-rigor
+description: Use when you need guidance on Design-rigor decision rules. Applies to the design-rigor axis.
 axis: design-rigor
 rule_count_floor: 3
 ---

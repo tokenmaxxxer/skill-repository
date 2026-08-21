@@ -1,4 +1,6 @@
 ---
+name: technical-writing-minimalism-scoping
+description: Use when you need guidance on Minimalism / scoping. Applies to the minimalism-scoping axis.
 axis: minimalism-scoping
 rule_count_floor: 11
 ---

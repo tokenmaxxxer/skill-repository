@@ -1,4 +1,6 @@
 ---
+name: localization-text-expansion-and-layout
+description: Use when you need guidance on Decision axis: text expansion & layout. Applies to the text-expansion-and-layout axis.
 axis: text-expansion-and-layout
 rule_count_floor: 10
 axes:

@@ -1,4 +1,6 @@
 ---
+name: pricing-tier-structure
+description: Use when you need guidance on Tier-structure decision rules. Applies to the tier-structure axis.
 axis: tier-structure
 rule_count_floor: 2
 ---

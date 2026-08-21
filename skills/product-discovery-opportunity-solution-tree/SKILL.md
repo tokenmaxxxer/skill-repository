@@ -1,5 +1,5 @@
 ---
-name: opportunity-solution-tree
+name: product-discovery-opportunity-solution-tree
 description: >
   Use this skill whenever the `scoping -> scoping` self-loop fires — i.e.
   whenever opportunity/outcome framing is drafted or re-affirmed with the

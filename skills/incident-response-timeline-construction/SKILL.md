@@ -1,4 +1,6 @@
 ---
+name: incident-response-timeline-construction
+description: Use when you need guidance on Timeline construction. Applies to the timeline-construction axis.
 axis: timeline-construction
 rule_count_floor: 4
 ---

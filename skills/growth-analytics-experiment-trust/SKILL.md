@@ -1,4 +1,6 @@
 ---
+name: growth-analytics-experiment-trust
+description: Use when you need guidance on Experiment-trust verdict rules. Applies to the experiment-trust axis.
 axis: experiment-trust
 rule_count_floor: 3
 ---

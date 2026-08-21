@@ -1,4 +1,6 @@
 ---
+name: technical-feasibility-reversibility-and-spike-scoping
+description: Use when you need guidance on Decision axis: reversibility classification & spike scoping. Applies to the reversibility-and-spike-scoping axis.
 axis: reversibility-and-spike-scoping
 rule_count_floor: 10
 axes:

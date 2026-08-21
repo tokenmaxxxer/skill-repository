@@ -1,4 +1,6 @@
 ---
+name: user-discovery-question-design-past-behavior
+description: Use when you need guidance on Question design: past behavior over hypotheticals/opinion/pitching. Applies to the question-design-past-behavior axis.
 axis: question-design-past-behavior
 rule_count_floor: 8
 ---

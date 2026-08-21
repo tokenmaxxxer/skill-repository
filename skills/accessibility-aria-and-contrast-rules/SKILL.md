@@ -1,3 +1,8 @@
+---
+name: accessibility-aria-and-contrast-rules
+description: Use when you need guidance on Operational playbook: ARIA usage, contrast, and focus (issue-1174).
+---
+
 # Operational playbook: ARIA usage, contrast, and focus (issue-1174)
 
 Numbered condition → choice → source rules. Practitioner-depth decision

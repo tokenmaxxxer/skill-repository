@@ -1,4 +1,6 @@
 ---
+name: secure-coding-input-validation-injection-defense
+description: Use when you need guidance on Input validation / injection defense. Applies to the input-validation-injection-defense axis.
 axis: input-validation-injection-defense
 rule_count_floor: 9
 ---

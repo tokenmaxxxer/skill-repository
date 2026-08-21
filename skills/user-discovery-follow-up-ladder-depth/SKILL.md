@@ -1,4 +1,6 @@
 ---
+name: user-discovery-follow-up-ladder-depth
+description: Use when you need guidance on Follow-up ladder: laddering / Five Whys depth per hypothesis. Applies to the follow-up-ladder-depth axis.
 axis: follow-up-ladder-depth
 rule_count_floor: 8
 ---

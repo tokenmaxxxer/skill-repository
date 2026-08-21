@@ -1,4 +1,6 @@
 ---
+name: refactoring-legacy-refactoring-step-decomposition
+description: Use when you need guidance on Refactoring step decomposition. Applies to the refactoring-step-decomposition axis.
 axis: refactoring-step-decomposition
 rule_count_floor: 5
 ---

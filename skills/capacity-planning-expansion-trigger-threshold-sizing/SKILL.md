@@ -1,4 +1,6 @@
 ---
+name: capacity-planning-expansion-trigger-threshold-sizing
+description: Use when you need guidance on Expansion-trigger threshold sizing (growth_rate x lead_time x safety_buffer). Applies to the expansion-trigger-threshold-sizing axis.
 axis: expansion-trigger-threshold-sizing
 rule_count_floor: 8
 ---

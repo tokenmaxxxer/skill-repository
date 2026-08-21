@@ -1,4 +1,6 @@
 ---
+name: sales-objection-handling
+description: Use when you need guidance on Objection handling. Applies to the objection-handling axis.
 axis: objection-handling
 rule_count_floor: 5
 ---

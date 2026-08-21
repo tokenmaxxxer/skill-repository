@@ -1,3 +1,8 @@
+---
+name: customer-support-sla-tier-priority
+description: Use when you need guidance on SLA-tier priority decision rules.
+---
+
 # SLA-tier priority decision rules
 
 Axis: sla-tier-priority. Every rule below maps an Impact x Urgency pair to

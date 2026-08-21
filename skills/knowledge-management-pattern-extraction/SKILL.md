@@ -1,4 +1,6 @@
 ---
+name: knowledge-management-pattern-extraction
+description: Use when you need guidance on Pattern extraction from issue retrospectives. Applies to the pattern-extraction axis.
 axis: pattern-extraction
 rule_count_floor: 10
 ---

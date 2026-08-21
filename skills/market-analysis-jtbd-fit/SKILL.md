@@ -1,4 +1,6 @@
 ---
+name: market-analysis-jtbd-fit
+description: Use when you need guidance on JTBD-landscape verdict rules. Applies to the jtbd-fit axis.
 axis: jtbd-fit
 rule_count_floor: 10
 ---

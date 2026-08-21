@@ -1,4 +1,6 @@
 ---
+name: refactoring-legacy-strangler-fig-migration
+description: Use when you need guidance on Strangler fig migration. Applies to the strangler-fig-migration axis.
 axis: strangler-fig-migration
 rule_count_floor: 5
 ---

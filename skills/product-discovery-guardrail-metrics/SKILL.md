@@ -1,5 +1,5 @@
 ---
-name: guardrail-metrics
+name: product-discovery-guardrail-metrics
 description: >
   Use this skill while the product role is in `hypothesis-registered`,
   before the transition to `measuring`, to name guardrail metrics that

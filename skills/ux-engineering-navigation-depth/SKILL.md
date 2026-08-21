@@ -1,4 +1,6 @@
 ---
+name: ux-engineering-navigation-depth
+description: Use when you need guidance on Navigation order vs. usage frequency. Applies to the nav-order-vs-usage-frequency axis.
 axis: nav-order-vs-usage-frequency
 rule_count_floor: 3
 ---

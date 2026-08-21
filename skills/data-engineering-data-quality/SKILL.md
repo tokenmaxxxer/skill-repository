@@ -1,4 +1,6 @@
 ---
+name: data-engineering-data-quality
+description: Use when you need guidance on Data quality — decision rules. Applies to the data-quality axis.
 axis: data-quality
 rule_count_floor: 10
 ---

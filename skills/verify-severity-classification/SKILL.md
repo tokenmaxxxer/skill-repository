@@ -1,5 +1,5 @@
 ---
-name: severity-classification
+name: verify-severity-classification
 description: Use while acting as the verify role in the reproduced state, when a reproduced defect is escalated as a finding addressed to coding, to attach a severity band (blocking or advisory) to that finding. Use to decide how a reproduced attempt's finding gates landing; never to decide whether the attempt reproduced at all.
 ---
 

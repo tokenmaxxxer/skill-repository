@@ -1,4 +1,6 @@
 ---
+name: upstream-defect-report-subtraction
+description: Use when you need guidance on Subtraction — what to remove before filing. Applies to the subtraction axis.
 axis: subtraction
 rule_count_floor: 5
 role: upstream-defect-report

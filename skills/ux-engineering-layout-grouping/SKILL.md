@@ -1,4 +1,6 @@
 ---
+name: ux-engineering-layout-grouping
+description: Use when you need guidance on Layout and grouping. Applies to the layout-grouping axis.
 axis: layout-grouping
 rule_count_floor: 3
 ---

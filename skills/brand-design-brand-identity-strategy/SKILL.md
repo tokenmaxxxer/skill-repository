@@ -1,4 +1,6 @@
 ---
+name: brand-design-brand-identity-strategy
+description: Use when you need guidance on Brand identity strategy rules. Applies to the brand-identity-strategy axis.
 axis: brand-identity-strategy
 rule_count_floor: 3
 tier: rich

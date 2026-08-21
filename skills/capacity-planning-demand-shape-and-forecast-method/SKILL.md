@@ -1,4 +1,6 @@
 ---
+name: capacity-planning-demand-shape-and-forecast-method
+description: Use when you need guidance on Demand shape classification and forecast-method selection. Applies to the demand-shape-and-forecast-method axis.
 axis: demand-shape-and-forecast-method
 rule_count_floor: 8
 ---

@@ -1,4 +1,6 @@
 ---
+name: growth-analytics-funnel-stage-attribution
+description: Use when you need guidance on Funnel-stage attribution rules. Applies to the funnel-stage-attribution axis.
 axis: funnel-stage-attribution
 rule_count_floor: 2
 ---

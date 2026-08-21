@@ -1,4 +1,6 @@
 ---
+name: architecture-module-boundary-definition
+description: Use when you need guidance on Module Boundary Definition. Applies to the module-boundary-definition axis.
 axis: module-boundary-definition
 rule_count_floor: 12
 ---

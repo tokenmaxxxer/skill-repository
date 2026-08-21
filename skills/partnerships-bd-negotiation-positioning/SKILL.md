@@ -1,4 +1,6 @@
 ---
+name: partnerships-bd-negotiation-positioning
+description: Use when you need guidance on Negotiation positioning (BATNA/ZOPA) rules. Applies to the negotiation-positioning axis.
 axis: negotiation-positioning
 rule_count_floor: 3
 tier: sparse

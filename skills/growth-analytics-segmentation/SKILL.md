@@ -1,4 +1,6 @@
 ---
+name: growth-analytics-segmentation
+description: Use when you need guidance on Segmentation / drop-off localization rules. Applies to the segmentation axis.
 axis: segmentation
 rule_count_floor: 2
 ---

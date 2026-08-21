@@ -1,4 +1,6 @@
 ---
+name: defect-verification-severity-band-assignment
+description: Use when you need guidance on Severity-band assignment for a reproduced defect. Applies to the severity-band-assignment axis.
 axis: severity-band-assignment
 rule_count_floor: 8
 ---

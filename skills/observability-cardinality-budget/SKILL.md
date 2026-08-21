@@ -1,4 +1,6 @@
 ---
+name: observability-cardinality-budget
+description: Use when you need guidance on Cardinality budgeting for instrumentation dimensions. Applies to the cardinality-budget axis.
 axis: cardinality-budget
 rule_count_floor: 3
 ---

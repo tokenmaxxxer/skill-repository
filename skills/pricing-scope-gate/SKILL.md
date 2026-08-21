@@ -1,4 +1,6 @@
 ---
+name: pricing-scope-gate
+description: Use when you need guidance on Scope-gate decision rules. Applies to the scope-gate axis.
 axis: scope-gate
 rule_count_floor: 2
 ---

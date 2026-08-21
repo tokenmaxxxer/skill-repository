@@ -1,3 +1,8 @@
+---
+name: customer-support-escalation-path
+description: Use when you need guidance on Escalation-path decision rules.
+---
+
 # Escalation-path decision rules
 
 Axis: escalation-path. Every tier below names a trigger, a role/title

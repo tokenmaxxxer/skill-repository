@@ -1,4 +1,6 @@
 ---
+name: devrel-program-subtraction
+description: Use when you need guidance on Program subtraction (removal/omission decision rules). Applies to the program-subtraction axis.
 axis: program-subtraction
 rule_count_floor: 8
 ---

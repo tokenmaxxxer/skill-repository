@@ -1,4 +1,6 @@
 ---
+name: release-engineering-changelog-entry-categorization
+description: Use when you need guidance on Changelog entry categorization. Applies to the changelog-entry-categorization axis.
 axis: changelog-entry-categorization
 rule_count_floor: 12
 ---

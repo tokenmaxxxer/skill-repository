@@ -1,4 +1,6 @@
 ---
+name: defect-verification-reproduction-evidence-quality
+description: Use when you need guidance on Reproduction-evidence quality for a defect attempt. Applies to the reproduction-evidence-quality axis.
 axis: reproduction-evidence-quality
 rule_count_floor: 8
 ---

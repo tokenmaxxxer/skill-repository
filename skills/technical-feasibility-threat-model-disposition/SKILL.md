@@ -1,4 +1,6 @@
 ---
+name: technical-feasibility-threat-model-disposition
+description: Use when you need guidance on Decision axis: threat-model disposition (STRIDE). Applies to the threat-model-disposition axis.
 axis: threat-model-disposition
 rule_count_floor: 10
 axes:

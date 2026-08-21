@@ -1,4 +1,6 @@
 ---
+name: technical-feasibility-verdict-and-timebox-selection
+description: Use when you need guidance on Decision axis: verdict selection & timebox governance. Applies to the verdict-and-timebox-selection axis.
 axis: verdict-and-timebox-selection
 rule_count_floor: 10
 axes:

@@ -1,4 +1,6 @@
 ---
+name: ux-engineering-surface-contrast
+description: Use when you need guidance on Background vs. edit surface contrast. Applies to the background-vs-edit-surface-contrast axis.
 axis: background-vs-edit-surface-contrast
 rule_count_floor: 3
 ---

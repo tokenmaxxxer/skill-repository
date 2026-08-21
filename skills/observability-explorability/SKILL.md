@@ -1,4 +1,6 @@
 ---
+name: observability-explorability
+description: Use when you need guidance on Explorability (unplanned production questions). Applies to the explorability axis.
 axis: explorability
 rule_count_floor: 3
 ---

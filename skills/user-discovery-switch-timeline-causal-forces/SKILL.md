@@ -1,4 +1,6 @@
 ---
+name: user-discovery-switch-timeline-causal-forces
+description: Use when you need guidance on Switch-timeline reconstruction: JTBD four-forces causal framing. Applies to the switch-timeline-causal-forces axis.
 axis: switch-timeline-causal-forces
 rule_count_floor: 8
 ---

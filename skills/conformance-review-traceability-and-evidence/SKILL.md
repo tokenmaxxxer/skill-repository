@@ -1,4 +1,6 @@
 ---
+name: conformance-review-traceability-and-evidence
+description: Use when you need guidance on Traceability and evidence citation. Applies to the traceability-and-evidence axis.
 axis: traceability-and-evidence
 rule_count_floor: 3
 ---

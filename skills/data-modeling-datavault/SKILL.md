@@ -1,4 +1,6 @@
 ---
+name: data-modeling-datavault
+description: Use when you need guidance on Data Vault — hubs, links, satellites, raw/business vault split. Applies to the datavault axis.
 axis: datavault
 rule_count_floor: 10
 ---
