@@ -1,6 +1,6 @@
 ---
 name: legal-compliance-vendor-dpa
-description: Use when you need guidance on Vendor / sub-processor DPA requirements. Applies to the vendor-dpa-requirements axis.
+description: Use when onboarding a vendor/sub-processor that will handle personal data, or when auditing an existing DPA's sub-processor chain.
 axis: vendor-dpa-requirements
 rule_count_floor: 2
 ---
@@ -10,6 +10,36 @@ rule_count_floor: 2
 Decision rules for what a data processing agreement must contain before
 a vendor can be onboarded, sourced live during issue #1174's
 legal-compliance research pass (2026-08-13).
+
+## Trigger
+
+Apply this skill when a vendor, cloud provider, or sub-processor is
+being onboarded to handle personal data, or an existing DPA/
+sub-processor chain is being audited — distinguishing it from the
+cross-border-transfer axis (`legal-compliance-cross-border-transfer`),
+which governs the transfer mechanism once a vendor relationship crosses
+a border, rather than the DPA contract terms themselves.
+
+## Procedure
+
+1. Require a signed DPA covering all eight Art 28(3) topics before data
+   flows to any vendor handling personal data (rule 1).
+2. Before a processor engages a new sub-processor, require specific
+   prior written authorization or confirm a standing general-
+   authorization clause with a working objection window (rule 2).
+3. Flow the same data-protection obligations down to each sub-processor
+   by contract (rule 3).
+4. Remove stale sub-processor entries no longer actually used from the
+   list and its authorization record (rule 4).
+5. For a multi-hop sub-processor chain, require each downstream vendor
+   to actually honor a current legal-basis/consent status at processing
+   time, not just rely on the flow-down clause (rule 5).
+
+## Output shape
+
+A DPA completeness checklist against the eight Art 28(3) topics, a
+current sub-processor authorization list with stale entries flagged for
+removal, and — for multi-hop chains — a per-hop verification note.
 
 ## Decision rules
 
