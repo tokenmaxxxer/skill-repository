@@ -1,6 +1,6 @@
 ---
 name: data-engineering-failure-handling
-description: Use when you need guidance on Failure handling — decision rules. Applies to the failure-handling axis.
+description: Use when classifying a pipeline failure as retry-vs-DLQ, setting DLQ alert thresholds, scaling recovery targets, or rolling back a bad load.
 axis: failure-handling
 rule_count_floor: 10
 ---
@@ -8,6 +8,53 @@ rule_count_floor: 10
 # Failure handling — decision rules
 
 Condition → choice → source. Each rule is `addition` or `**REMOVAL**`.
+
+## Trigger
+
+Apply this skill when classifying a pipeline failure as transient
+(backoff retry) vs permanent (DLQ) vs ambiguous (bounded retry then
+DLQ), setting DLQ volume/aging alert thresholds, diagnosing a failure
+via replay success rate, scaling a recovery-time target to business
+criticality, rolling back a bad load, handling DLQ overflow during a
+cascading failure, or choosing a source-read mechanism to avoid a
+failure precursor. This is distinct from data-quality (authoring
+completeness/uniqueness/accuracy/freshness checks) and from
+pipeline-design (ETL/ELT pattern, idempotency-pattern, and ownership
+decisions) — this skill is about how a pipeline detects, classifies,
+alerts on, and recovers from failure, not about defining checks or
+designing the pipeline's structure.
+
+## Procedure
+
+1. Classify the failure: transient errors get exponential-backoff
+   retry, permanent errors go straight to the DLQ, and ambiguous
+   errors get one or two bounded retries before falling back to the
+   DLQ (rules 1-3).
+2. Isolate a bad record to the DLQ and keep processing the rest of
+   the batch rather than stopping the whole pipeline on one failure
+   (rule 4).
+3. Alert on DLQ volume spikes and on DLQ message aging as two
+   separate signals, not one combined check (rules 5-6).
+4. After applying a fix, verify it by checking reprocessing/replay
+   success rate, not just whether the DLQ drained (rule 7).
+5. Scale the recovery-time target and escalation path to the
+   pipeline's business criticality rather than applying one blanket
+   RTO (rule 8).
+6. Roll back a bad load by re-running the idempotent partition/window
+   load rather than hand-patching the destination table (rule 9).
+7. During a cascading failure, route DLQ overflow to dedicated
+   capacity instead of overloading the shared DLQ path (rule 10).
+8. Retire runbook steps a later fix made structurally dead, and
+   collapse redundant retry tiers down to one policy per real error
+   class (rules 11-12).
+9. Prefer log-based CDC over scheduled polling to remove a
+   source-side failure precursor at its root (rule 13).
+
+## Output shape
+
+A failure-handling decision: the applicable rule number(s), the
+failure classification or alert/escalation action taken, and the
+recovery mechanism used.
 
 1. When a failure is transient (network timeout, HTTP 429/503), retry
    with exponential backoff (e.g. 2^attempt seconds) rather than either
