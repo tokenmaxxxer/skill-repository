@@ -1,6 +1,6 @@
 ---
 name: knowledge-management-pattern-extraction
-description: Use when you need guidance on Pattern extraction from issue retrospectives. Applies to the pattern-extraction axis.
+description: Use when a retrospective surfaces a candidate lesson, when deciding whether a finding is pattern-shaped, or when extracting, merging, or promoting a pattern-library entry from issue retrospectives.
 axis: pattern-extraction
 rule_count_floor: 10
 ---
@@ -8,6 +8,53 @@ rule_count_floor: 10
 # Pattern extraction from issue retrospectives
 
 Research trail: ACM "Knowledge Management with Patterns" (patterns as generalized, self-descriptive units distinct from raw stories/anecdotes), Wikipedia "Postmortem documentation", LSA Global project-postmortem-analysis practitioner guidance, and 2601.22758 "AutoRefine: From Trajectories to Reusable Expertise" (cross-trajectory pattern extraction — recurring patterns across multiple executions signal generalizability; a single execution does not), all fetched this session.
+
+## Trigger
+
+Apply this skill when a retrospective surfaces a candidate lesson, when
+deciding whether a finding is pattern-shaped, when two or more
+retrospectives may share a root cause, when scheduling a postmortem, or
+when extracting, merging, or promoting a pattern-library entry.
+
+## Procedure
+
+1. Do not promote a single retrospective's lesson to a pattern-library
+   entry on one occurrence — hold it as a candidate until a second,
+   independently-caused issue reproduces the same condition→choice
+   shape (rule 1).
+2. Require a condition→choice pair before treating a finding as
+   pattern-shaped; a finding with no transferable condition→choice
+   stays in the issue's own retrospective record (rule 2).
+3. When two or more retrospectives share the same root cause under
+   different surface symptoms, extract the pattern at the root-cause
+   level, not per symptom (rule 3).
+4. Run a postmortem while the causal chain is still fresh, immediately
+   after resolution rather than batched later (rule 4).
+5. Capture contrastive evidence — what failed attempts did as well as
+   what the successful resolution did (rule 5).
+6. Rewrite a candidate pattern's condition until it is checkable by a
+   reader with no access to the original thread before filing it
+   (rule 6).
+7. Drop a pattern candidate that only restates a language/framework
+   default or a step already mandated by an existing gate/CI check
+   (rule 7).
+8. Do not file "we should have tested this" as a standalone pattern —
+   route it to the specific test/CI gate it should have tripped
+   (rule 8).
+9. Merge candidate patterns from the same batch that share an identical
+   condition clause into one entry with multiple linked source issues
+   (rule 9).
+10. Record which issue(s) a pattern came from and the date when
+    extracting it, per this repo's evidence-trail discipline (rule 10).
+11. Mark a pattern confirmed/reinforced once a second, unrelated issue
+    reuses it successfully, distinguishing it from a freshly-filed
+    single-source candidate (rule 11).
+
+## Output shape
+
+A condition→choice pattern-library entry with source issue(s), date,
+and (once reused) a confirmed/reinforced marker, filed only after a
+second independent occurrence.
 
 ## Rules
 
