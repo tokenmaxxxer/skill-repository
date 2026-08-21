@@ -70,3 +70,9 @@ user-discovery-question-design-past-behavior
 user-discovery-saturation-stopping-rule
 user-discovery-switch-timeline-causal-forces
 user-discovery-verdict-prevalence-reporting
+technical-writing-doc-type-selection
+technical-writing-minimalism-scoping
+technical-writing-persuasion-trust
+technical-writing-structure-comprehension
+technical-writing-style-guide-compliance
+technical-writing-tool-landscape

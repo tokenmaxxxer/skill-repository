@@ -1,6 +1,6 @@
 ---
 name: technical-writing-style-guide-compliance
-description: Use when you need guidance on Style-guide compliance (Google Developer Documentation Style Guide). Applies to the style-guide-compliance axis.
+description: Use when reviewing or drafting prose for Google Developer Documentation Style Guide compliance — mood, voice, person, tone, word choice. Applies to the style-guide-compliance axis.
 axis: style-guide-compliance
 rule_count_floor: 11
 ---
@@ -11,6 +11,46 @@ Decision rules for the `produces.style-guide compliance note` field.
 Research trail: layer 2 (named standard, verified at source:
 developers.google.com/style, plus the Federal plain-language guidelines
 as a second named standard for corroboration/conflict-checking).
+
+## Trigger
+
+Apply this skill when writing or reviewing prose for compliance with
+the Google Developer Documentation Style Guide (mood, voice, person,
+tone, word choice, formatting of complex material), distinguishing it
+from structure-comprehension, which governs sentence/section shaping
+for cognitive load rather than style-guide conformance.
+
+## Procedure
+
+1. Check instruction steps for imperative mood, not descriptive mood
+   (rule 1); check actor-driven sentences for active voice with the
+   actor as subject (rule 2).
+2. Check reader address for second person, present tense (rule 3).
+3. Check word choice against the guide's preferred/discouraged word
+   list (rule 4); check tone for the "knowledgeable friend" register,
+   flagging both stiff/formal and overly playful extremes (rule 5).
+4. Check instructions for unnecessary "please" padding and strip it
+   from routine steps, keeping it only for real-cost/destructive
+   actions (rule 6).
+5. For a legal/government-adjacent doc, cross-check active-voice
+   enforcement against the Federal Plain Language Guidelines and
+   record convergence (rule 7).
+6. Restructure material with more than ~3 parallel conditions or
+   options as a bulleted list or table (rule 8).
+7. When a passive-voice sentence with no named actor is found, rewrite
+   to name the actor rather than partially soften it (rule 9).
+8. When a necessary term is jargon to the target reader, keep it but
+   add a first-use gloss (rule 10).
+9. Where the repo has an executable style check (a linter rule, a CI
+   lint config), cite it over a prose-only compliance claim; name the
+   gap explicitly when none exists (rule 11).
+
+## Output shape
+
+A style-guide compliance note per reviewed passage: pass/fail per rule
+category (mood, voice, person, tone, word choice, formatting), with
+flagged deviations rewritten rather than merely noted, and — where
+available — a pointer to the executable check backing the claim.
 
 ## Rules
 
