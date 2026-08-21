@@ -1,6 +1,6 @@
 ---
 name: ml-engineering-slo-definition-tradeoffs
-description: Use when you need guidance on SLO definition and error-budget tradeoffs. Applies to the slo-definition-tradeoffs axis.
+description: Use when setting or auditing a model-serving SLO and its error-budget policy, including deploy-velocity tradeoffs as the budget depletes. Applies to the slo-definition-tradeoffs axis.
 axis: slo-definition-tradeoffs
 rule_count_floor: 5
 ---
@@ -8,6 +8,37 @@ rule_count_floor: 5
 # SLO definition and error-budget tradeoffs
 
 Research trail: Google SRE book (service level objectives) and SRE workbook (error budget policy, implementing SLOs) as the named-methodology primary source; Nobl9's error-budget guide as a practitioner cross-check. Fetched this session.
+
+## Trigger
+
+Apply this skill when defining or auditing a latency/availability/
+throughput/cost SLO for a serving model, or deciding how deploy velocity
+should respond as an error budget depletes — distinguishing it from
+serving-pattern-selection (which architecture is chosen before an SLO is
+set) and rollout-promotion-rollback (the rollback mechanics once an SLO
+breach is detected, a separate concern from defining the SLO itself).
+
+## Procedure
+
+1. Derive an SLO target from actual user tolerance for degraded
+   service, not a round default picked without justification (rule 1).
+2. Use a ~99% availability tier for internal/tooling-facing services;
+   move to 99.9%+ for payment or other critical user-facing paths, never
+   reuse the lower figure there (rule 2).
+3. When the error budget has less than 25% remaining for its
+   measurement window, slow deploys and prioritize reliability work over
+   shipping new changes (rule 3).
+4. When the error budget reaches 0% for its window, freeze
+   non-reliability deploys until the budget recovers (rule 4).
+5. When an SLI duplicates an already-tracked latency/availability/
+   throughput signal without adding new user-facing information, drop it
+   rather than letting the dashboard grow unboundedly (rule 5).
+
+## Output shape
+
+An SLO table (latency/availability/throughput/cost) with each target
+justified by user tolerance, plus a stated deploy-velocity policy keyed
+to remaining error budget.
 
 ## Rules
 

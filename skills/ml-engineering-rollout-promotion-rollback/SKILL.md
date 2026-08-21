@@ -1,6 +1,6 @@
 ---
 name: ml-engineering-rollout-promotion-rollback
-description: Use when you need guidance on Rollout staging, promotion, and rollback. Applies to the rollout-promotion-rollback axis.
+description: Use when staging a new model version's rollout through shadow, canary, and full traffic, or defining its automated rollback trigger. Applies to the rollout-promotion-rollback axis.
 axis: rollout-promotion-rollback
 rule_count_floor: 5
 ---
@@ -8,6 +8,39 @@ rule_count_floor: 5
 # Rollout staging, promotion, and rollback
 
 Research trail: Google Cloud Architecture Center's ML production-readiness guidelines (canary/shadow rollout guidance) as the practitioner layer; Qwak's shadow-vs-canary comparison as a cross-check. Fetched this session.
+
+## Trigger
+
+Apply this skill when staging a new model version's path from
+offline-ready to full production traffic, or defining what triggers an
+automated rollback — distinguishing it from serving-pattern-selection
+(which serving architecture the model runs under, a separate choice)
+and evaluation-discipline (whether the underlying launch decision's
+metric is trustworthy in the first place).
+
+## Procedure
+
+1. Order the rollout offline-eval -> shadow -> canary -> full, never
+   skipping straight to full traffic (rule 1).
+2. Use shadow deployment — duplicate live traffic, log outputs, never
+   serve them — to validate against the live serving pipeline with zero
+   user-facing risk (rule 2).
+3. After shadow validation passes, use canary with an initial 5-10%
+   traffic slice gated by automated SLO threshold checks to decide
+   ramp-or-halt, not manual dashboard eyeballing (rule 3).
+4. Roll back automatically when canary or full-rollout metrics breach a
+   pre-declared rollback threshold, with the trigger defined before the
+   rollout starts (rule 4).
+5. When traffic volume is too low for shadow or canary to reach a
+   meaningful sample within an acceptable window, drop that stage and go
+   directly to a conservative, longer-ramp canary instead of running it
+   as theater (rule 5).
+
+## Output shape
+
+A staged rollout plan (offline-eval -> shadow -> canary -> full, or a
+documented stage-skip when traffic is too low) with a pre-declared,
+automated rollback trigger.
 
 ## Rules
 
