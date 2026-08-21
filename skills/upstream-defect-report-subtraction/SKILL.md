@@ -1,6 +1,6 @@
 ---
 name: upstream-defect-report-subtraction
-description: Use when you need guidance on Subtraction — what to remove before filing. Applies to the subtraction axis.
+description: Use when a draft defect report or its reproduction still contains "just in case" prose, redundant log/text duplication, unrelated repro lines, an investigation narrative, a private dependency, or an un-reverified suspected defect, right before filing.
 axis: subtraction
 rule_count_floor: 5
 role: upstream-defect-report
@@ -12,6 +12,46 @@ Decision rules for what to cut from a defect report before it reaches
 an upstream maintainer. Default human behavior is additive (see
 Sources) — this axis exists because reporters over-include by default,
 not because removal is a stylistic nicety.
+
+## Trigger
+
+Apply this skill as a pre-filing pass on a drafted defect report,
+whenever any of: extra "just in case" content is present; a log/
+screenshot duplicates a text description; the repro includes lines not
+needed to reproduce; the report narrates the investigation instead of
+stating the conclusion; a private/proprietary dependency appears with a
+public substitute available; a duplicate may already exist; or the
+report is about to be filed without one final re-verification.
+
+## Procedure
+
+1. For each paragraph added "just in case," ask whether removing it
+   changes whether the bug reproduces; if not, cut it (rule 1).
+2. If a stack trace/log/screenshot duplicates a text description of the
+   same failure, keep exactly one representation and drop or collapse
+   the other (rule 2).
+3. In the reproduction steps, binary-search for lines that can be
+   deleted while the bug still reproduces, and delete them (rule 3).
+4. Replace any investigation-history narrative ("first I tried X...")
+   with only the final condition→symptom pair; move the trail to an
+   appendix only if it has independent diagnostic value (rule 4).
+5. If a proprietary/reporter-specific dependency appears in the repro
+   and a public substitute reproduces the same failure, replace it
+   (rule 5).
+6. Run the duplicate search (per [[upstream-defect-report-convention]]
+   rule 7); if a hit is found, omit filing a new report and add a
+   comment to the existing issue instead (rule 6).
+7. Immediately before filing, re-run the exact reproduction against the
+   current state as a dedicated verification step, separate from the
+   original observation (rule 7).
+
+## Output shape
+
+A defect report with no "just in case" content, one representation per
+failure signal, a minimized reproduction, no investigation narrative,
+no unnecessary private dependency, a completed duplicate-search result,
+and a fresh re-verification confirming the defect still reproduces at
+filing time.
 
 ## Rules
 

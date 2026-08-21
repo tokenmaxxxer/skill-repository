@@ -1,6 +1,6 @@
 ---
 name: api-design-versioning-evolution
-description: Use when you need guidance on Versioning & evolution. Applies to the versioning-evolution axis.
+description: Use when choosing an API versioning scheme, classifying whether a proposed change is breaking, or planning a field/endpoint/version deprecation and removal.
 axis: versioning-evolution
 rule_count_floor: 10
 ---
@@ -8,6 +8,55 @@ rule_count_floor: 10
 # Versioning & evolution
 
 Research trail: Stripe's date-based versioning docs, GitHub REST API versioning/deprecation docs, Microsoft Graph and Azure versioning policies, Google AIP-180/181, Zalando's RESTful API guidelines, RFC 8594 (Sunset header), the OpenAPI `deprecated` convention, and the Adams/Converse/Hales/Klotz (Nature 2021) subtraction-neglect finding, all fetched or read via search this session.
+
+## Trigger
+
+Apply this skill when choosing how an API exposes versions, classifying
+whether a proposed change is breaking, deciding between an additive
+field and a version bump, or planning the deprecation/removal of a
+field, endpoint, or API version.
+
+## Procedure
+
+1. Prefer a versioning scheme that ships additive changes continuously
+   without a version bump, reserving an explicit version identifier for
+   breaking releases (rule 1); avoid URL-based version prefixes in
+   favor of a header/media-type signal (rule 2).
+2. Classify the proposed change: additive fields/resources/webhooks are
+   non-breaking; required-parameter additions, type changes, and
+   renames/removals are breaking (rule 3); treat removal of any
+   existing component, or moving a field into/out of a `oneof`, as
+   breaking even within the same major version (rule 4). Do not treat a
+   client's assumption about opaque-string length/format as part of the
+   contract (rule 5).
+3. Default to an additive, optional field over a new version when the
+   change is optional-in/optional-out (rule 6).
+4. Route any interface change through a dedicated review process
+   against a written breaking-change policy (rule 7).
+5. Mark deprecated fields/endpoints/parameters with `deprecated: true`
+   in the schema, keeping them usable until formal removal (rule 8).
+6. Before retiring a version, confirm consumer consent, publish a
+   migration guide, and send `Deprecation`/`Sunset` response headers
+   during the interim (rule 9), using the standard `Sunset` header for
+   the concrete removal date (rule 10).
+7. Hold a minimum 24-month notice window before retiring a GA version
+   (rule 11), overridable only for an emergency (critical security/
+   data-exposure/reliability issue) (rule 13).
+8. Budget explicit review and communication effort for the subtractive
+   (deprecation/removal) step specifically, since it is systematically
+   under-scoped relative to additive rollout (rule 12).
+9. Replace human re-review of spec diffs with an automated
+   compatibility check that runs on every proposed spec change (rule
+   14), classifying compatibility along source-level, wire-level, and
+   semantic axes rather than one breaking/non-breaking bit (rule 15).
+
+## Output shape
+
+A versioning/deprecation decision (or review verdict) stating: the
+chosen versioning scheme, the breaking/non-breaking classification of
+the change under review with its compatibility-axis tag, and — for any
+deprecation — the notice window, `Sunset`/`Deprecation` header plan,
+and migration-guide status.
 
 ## Rules
 

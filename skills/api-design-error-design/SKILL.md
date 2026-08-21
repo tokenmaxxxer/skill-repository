@@ -1,6 +1,6 @@
 ---
 name: api-design-error-design
-description: Use when you need guidance on Error response design. Applies to the error-design axis.
+description: Use when designing or reviewing an HTTP API's error response shape — envelope, machine-readable codes, field-level validation errors, retryability signaling, or error-message text — before or during implementation.
 axis: error-design
 rule_count_floor: 10
 ---
@@ -8,6 +8,56 @@ rule_count_floor: 10
 # Error response design
 
 Research trail: RFC 9457 (Problem Details for HTTP APIs, primary source, obsoletes RFC 7807), Stripe API error/idempotency docs, Microsoft REST API Guidelines, Zalando RESTful API Guidelines, Google AIP-193 (Errors), and HCI literature on programming error-message readability. The academic layer is thin — usability/HCI research on error messages exists but is sparse and mostly qualitative, as noted below.
+
+## Trigger
+
+Apply this skill when designing or reviewing a JSON HTTP API's error
+response shape: the base envelope, machine-readable error identifiers,
+multi-field validation errors, error-code namespacing, human-readable
+message text, retryability signaling, or an automated design-review
+check over error responses.
+
+## Procedure
+
+1. Adopt the RFC 9457 `application/problem+json` envelope (`type`,
+   `title`, `status`, `detail`, `instance`) as the base shape (rule 1).
+2. Add a stable machine-readable identifier for client branching
+   (`type` URI, or `code`/`reason` pair) rather than relying on HTTP
+   status alone (rule 2).
+3. For multi-field validation failures, return a structured per-field
+   errors array rather than one flat message (rule 3).
+4. Namespace error codes (domain+reason or nested hierarchy) rather
+   than a flat global enum (rule 4).
+5. Keep `detail`/`message` as human prose only; put anything a client
+   parses into a typed extension field (rule 5).
+6. Keep `title` a fixed string per error type, with per-instance data
+   only in `detail` (rule 6).
+7. Before returning any response to an external client, strip stack
+   traces, internal paths, and SQL fragments from the payload
+   (rule 7).
+8. For retryable errors, expose retryability as a structured field
+   rather than prose, and require/support idempotency keys on requests
+   safe to retry, documenting which status/error-type combinations are
+   retryable (rules 8-9).
+9. Use a typed, extensible details mechanism (`innererror`,
+   `google.rpc.Status` details) when more error context than
+   code+message is needed (rule 10).
+10. Write message text for the actual audience (end user vs.
+    integrating developer), concrete and actionable (rule 11).
+11. Keep `status` (or equivalent) consistent with the actual HTTP
+    response status code (rule 12).
+12. If encoding these rules into an automated check, tag each check as
+    blocking or advisory rather than one pass/fail signal (rule 13).
+
+## Output shape
+
+An error-response contract (or a review verdict on one) stating: the
+envelope shape used, the machine-readable identifier scheme, whether
+multi-field validation errors are structured, the code-namespacing
+scheme, confirmation that `detail`/`title` follow the stability rules,
+confirmation implementation details are stripped, the retryability
+signal and idempotency-key policy, and — if a CI check was authored —
+each rule's blocking/advisory tag.
 
 ## Rules
 

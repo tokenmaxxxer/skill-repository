@@ -10,10 +10,38 @@ block (delimited by `---` lines) that contains:
 Exits 0 (printing "<n> skills checked") when every skill is conformant,
 including the vacuous "0 skills checked" case for an empty skills/ dir.
 Exits 1, listing every violator (path + reason), otherwise.
+
+Optional --manifest <path> adds an additive, opt-in check: every skill
+directory name listed in the manifest file (one per line, blank lines
+and lines starting with `#` ignored) must have a SKILL.md body
+containing `## Trigger`, `## Procedure`, and `## Output shape` headings
+(any order). Skills not listed in the manifest are unaffected by this
+check.
 """
+import argparse
 import re
 import sys
 from pathlib import Path
+
+PROCEDURE_HEADINGS = ("## Trigger", "## Procedure", "## Output shape")
+
+
+def load_manifest(manifest_path):
+    names = set()
+    for line in manifest_path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        names.add(line)
+    return names
+
+
+def check_procedure_sections(skill_md):
+    text = skill_md.read_text(encoding="utf-8")
+    missing = [h for h in PROCEDURE_HEADINGS if h not in text]
+    if missing:
+        return [f"missing procedure section(s): {', '.join(missing)}"]
+    return []
 
 TRIGGER_MARKERS = (
     "use when",
@@ -86,8 +114,14 @@ def check_skill(skill_md, dirname):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--manifest", type=Path, default=None)
+    args = parser.parse_args()
+
     repo_root = Path(__file__).resolve().parent.parent
     skills_dir = repo_root / "skills"
+
+    manifest_names = load_manifest(args.manifest) if args.manifest else set()
 
     skill_dirs = sorted(p for p in skills_dir.iterdir() if p.is_dir()) if skills_dir.is_dir() else []
 
@@ -100,6 +134,8 @@ def main():
             continue
         checked += 1
         reasons = check_skill(skill_md, skill_dir.name)
+        if skill_dir.name in manifest_names:
+            reasons += check_procedure_sections(skill_md)
         if reasons:
             violations.append((skill_dir.name, reasons))
 
