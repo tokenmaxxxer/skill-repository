@@ -1,11 +1,47 @@
 ---
 name: technical-feasibility-stride-table
-description: Use this skill when running the threat-model probe inside the feasibility role's `probing` state — produces a STRIDE per-finding table before that probe can resolve.
+description: Use when the feasibility role is in the `probing` state running the threat-model probe and the specification's design needs an adversarial, security-design pass, row by row, before that probe can resolve.
 ---
 
 # STRIDE table
 
 **Belongs to state:** `probing`, threat-model probe.
+
+## Trigger
+
+Apply this probe when the feasibility role is in the `probing` state and
+the active probe is the threat-model probe — i.e., the specification's
+design (or a diagram of it) needs an adversarial, security-design pass
+before the probe can resolve and the role can move past it.
+
+## Procedure
+
+1. Walk the specification's design or diagram element by element, asking
+   the user what could go wrong from an adversarial-input or
+   security-design standpoint and what trust boundary or entry point is
+   crossed, building the table row by row rather than all at once
+   (see ## What it asks the user for).
+2. Classify each row's threat against one or more of the six STRIDE
+   categories (see ## What it asks the user for).
+3. Record each row with its element, threat category, entry point or
+   trust boundary crossed, and disposition, writing the table to
+   `feasibility-record.md`'s threat-model probe field or a project-local
+   STRIDE table file it points to (see ## Artifact, see ## Field list).
+4. Ensure every row's disposition is mitigated, accepted, or deferred —
+   never blank or "in progress" (see ## Field list).
+5. Before resolving the probe, confirm every row has a non-empty
+   disposition, and tag every finding as a one-way or two-way door per
+   `reversibility-tag`, requiring more rigorous mitigation evidence for
+   one-way-door findings before the probe may resolve `pass`
+   (see ## Resolution rule).
+
+## Output shape
+
+Applying this skill produces a STRIDE table — one row per
+(element, threat category) with entry point/trust boundary and
+disposition fields — written either inline in or pointed to by
+`feasibility-record.md`'s threat-model probe field, typically at a
+project-local path such as `feasibility/stride-table.md`.
 
 ## What it asks the user for
 
