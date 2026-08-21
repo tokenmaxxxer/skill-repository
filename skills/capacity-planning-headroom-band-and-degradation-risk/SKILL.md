@@ -1,6 +1,6 @@
 ---
 name: capacity-planning-headroom-band-and-degradation-risk
-description: Use when you need guidance on Headroom-band sizing and degradation-risk shape. Applies to the headroom-band-and-degradation-risk axis.
+description: Use when reporting a resource's headroom or assessing its degradation-risk shape as it nears a scaling ceiling — sizing a headroom band, applying USL alpha/beta terms, or pairing a predictive band with a reactive fallback trigger.
 axis: headroom-band-and-degradation-risk
 rule_count_floor: 8
 ---
@@ -8,6 +8,52 @@ rule_count_floor: 8
 # Headroom-band sizing and degradation-risk shape
 
 Research trail: Neil J. Gunther's Universal Scalability Law (USL), X(N) = γN / (1 + α(N-1) + βN(N-1)) — Performance Dynamics' "How to Quantify Scalability" and the CRAN `usl` package vignette, both fetched this session; Amdahl's-Law-derived scalability-limit literature (Steinacker) as secondary framing.
+
+## Trigger
+
+Apply this skill when reporting a resource's headroom, assessing its
+degradation-risk shape as it approaches a scaling ceiling, applying
+the Universal Scalability Law's alpha/beta terms, or defining a
+fallback trigger for when the predictive headroom band's forecast
+turns out to be wrong.
+
+## Procedure
+
+1. Report headroom as a band (current % and shrink rate over the
+   forecast horizon) rather than a single snapshot, always paired with
+   the forecast horizon it was computed over (rule 1, rule 6).
+2. Account for USL's alpha (contention) term, which creates a hard
+   ceiling before beta-driven degradation kicks in (rule 2).
+3. Account for USL's beta (coherency) term when cross-node consistency
+   work is present, keeping the safe band below Nmax rather than only
+   below raw exhaustion (rule 3).
+4. When beta is negligible (no cross-node coordination), size the band
+   around the alpha-driven asymptote instead of applying the retrograde
+   framing (rule 4).
+5. Treat an accelerating shrink rate as its own trigger signal,
+   distinct from the flat threshold in the expansion-trigger axis
+   (rule 5).
+6. Do not extrapolate from an ideal linear-speedup (Amdahl) assumption
+   once contention/coherency effects are observable in load-test data
+   (rule 7).
+7. When USL parameters cannot be fit (no multi-concurrency load-test
+   data), state the degradation shape as unmeasured and widen
+   safety_buffer instead of fabricating a curve (rule 8), and drop
+   USL fitting for a resource that shows genuinely linear scaling
+   (rule 10) — never keep reporting the old snapshot-only format once a
+   band-plus-horizon format is adopted (rule 9).
+8. Pair a predictive headroom band with a reactive fallback trigger
+   keyed to live observed utilization, stating what action it takes if
+   actual usage outruns the band before the next forecast cycle
+   (rule 11), and name the specific owner and escalation path that
+   acts on that fallback trigger (rule 12).
+
+## Output shape
+
+A headroom record stated as a band with shrink rate and forecast
+horizon, its degradation shape justified by USL alpha/beta terms (or
+explicitly flagged unmeasured), paired with a reactive fallback
+trigger and a named owner/escalation path.
 
 ## Rules
 
