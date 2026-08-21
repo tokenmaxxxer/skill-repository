@@ -1,6 +1,6 @@
 ---
 name: technical-writing-tool-landscape
-description: Use when you need guidance on Tool-landscape learnings (Claude Code plugin/skill ecosystem). Applies to the tool-landscape axis.
+description: Use when applying a Claude Code plugin/skill-ecosystem tool learning to a diagram, redraw, or accuracy-review-evidence decision elsewhere in this family. Applies to the tool-landscape axis.
 axis: tool-landscape
 rule_count_floor: 3
 ---
@@ -12,6 +12,35 @@ plugin/skill ecosystem, not general domain tools (Vale/Mermaid/
 Docusaurus, kept as secondary context only). Each entry names the
 axis-file rule it upgrades so the learning is applied, not merely
 catalogued.
+
+## Trigger
+
+Apply this skill when a diagram, redraw, or accuracy-review-evidence
+decision elsewhere in this family (doc-type-selection,
+minimalism-scoping, style-guide-compliance) needs the ecosystem's
+adoption evidence to back its cap values or evidence-shape choice —
+distinguishing it from the other 5 skills, which state the judgment
+rules directly rather than surveying tool adoption for them.
+
+## Procedure
+
+1. For an editorial-diagram cap/constraint decision (doc-type-selection
+   rule 11, minimalism-scoping rule 11), cite the token/grid-constrained
+   generator adoption evidence rather than an unconstrained "draw me a
+   diagram" default (rule 1).
+2. For a redrawn/regenerated diagram, keep a visible "what changed"
+   ledger, extending style-guide-compliance's accuracy-review-evidence
+   expectation to diagram edits (rule 2).
+3. For an accuracy claim spanning multiple artifacts (docs, code,
+   tests, CI), prefer a read-only, deterministic drift checker over a
+   manual doc-code sync pass (rule 3).
+
+## Output shape
+
+A named upgrade to the specific rule (doc-type-selection rule 11,
+minimalism-scoping rule 11, or style-guide-compliance's
+accuracy-review-evidence expectation) being applied, backed by the
+cited adoption evidence — not a new judgment call.
 
 1. When a deliverable needs an editorial (non-diagram-as-code) diagram,
    prefer a token/grid-constrained generator over an unconstrained

@@ -1,6 +1,6 @@
 ---
 name: technical-writing-structure-comprehension
-description: Use when you need guidance on Structure for comprehension (cognitive load). Applies to the structure-comprehension axis.
+description: Use when drafting or editing sentence, paragraph, or section structure for reader comprehension and cognitive load. Applies to the structure-comprehension axis.
 axis: structure-comprehension
 rule_count_floor: 10
 ---
@@ -10,6 +10,44 @@ rule_count_floor: 10
 Decision rules for sentence/paragraph/section structure. Research trail:
 layer 3 (academic: cognitive load theory applied to sentence
 comprehension, working-memory constraints on reading).
+
+## Trigger
+
+Apply this skill when drafting or editing sentence, paragraph, or
+section structure for reader comprehension, distinguishing it from
+minimalism-scoping (what content survives) and doc-type-selection
+(which quadrant it belongs to) — this axis governs how surviving
+content is structured, not what is kept.
+
+## Procedure
+
+1. Target 15-20 words per instructional sentence (rule 1); split a
+   sentence carrying more than one independent clause plus a
+   conditional (rule 2).
+2. Allow a longer sentence where technical detail (a caveat, a
+   condition, a threshold) requires it, keeping surrounding sentences
+   short (rule 3); bias toward the short end of the range for
+   accessibility-sensitive audiences (rule 4).
+3. Insert a break (list item, subheading, sentence split) before a
+   chunk exceeds ~130-150 characters of new information (rule 5).
+4. When editing a long sentence, first try deleting subordinate
+   clauses that don't change what the reader does next, before
+   restructuring into multiple sentences (rule 6).
+5. Group a procedure of more than ~7 sequential steps under
+   subheadings by phase rather than one flat list (rule 7).
+6. When subject and main verb are separated by a long embedded clause,
+   rewrite so they sit close together (rule 8).
+7. Substitute a common synonym for a rare/technical word with no loss
+   of precision (rule 9).
+8. Delete hedge or filler clauses outright rather than compress them,
+   as a separate pass from rule 6's clause deletion (rule 10).
+
+## Output shape
+
+A structurally revised passage: sentences within the target length
+range, chunks broken at the size threshold, long procedures grouped by
+phase, and filler/subordinate clauses removed per the applicable
+rules.
 
 ## Rules
 
