@@ -1,12 +1,39 @@
 ---
 name: brand-design-logo-clear-space-size
-description: Use when you need guidance on Logo clear-space and minimum-size rules. Applies to the logo-clear-space-and-minimum-size axis.
+description: Use when specifying a logo's required clear space, setting minimum-size floors for print or digital reproduction, or pruning a logo-variant appendix of versions tied to a discontinued campaign or medium.
 axis: logo-clear-space-and-minimum-size
 rule_count_floor: 3
 tier: rich
 ---
 
 # Logo clear-space and minimum-size rules
+
+## Trigger
+
+Apply this skill when specifying how much surrounding empty space a
+logo lockup requires, when a lockup must be reproduced small enough
+that legibility or registration risk becomes real, or when a brand
+guide's logo-variant appendix is reviewed for versions to prune.
+
+## Procedure
+
+1. When specifying clear space, express the minimum margin as a ratio
+   of a unit intrinsic to the logo itself, never a flat absolute value
+   (rule 1).
+2. When a lockup must be reproduced at small size, publish separate
+   minimum-size floors for print vs. digital and for wordmark vs.
+   logomark-alone rather than one number for all media and variants
+   (rule 2).
+3. When a logo-variant appendix has accumulated versions tied to a
+   past campaign or discontinued medium, remove variants with zero
+   current production use from the active guide (rule 3).
+
+## Output shape
+
+A clear-space specification expressed as a ratio of the logo's own
+unit, a table of minimum-size floors by medium and variant, and a
+pruned variant appendix with zero-use variants removed or moved to a
+separate historical archive.
 
 ## Decision rules
 
