@@ -1,6 +1,6 @@
 ---
 name: product-discovery-jtbd-problem-framing
-description: Use when you need guidance on JTBD problem framing (fixing the problem before any solution). Applies to the jtbd-problem-framing axis.
+description: Use when a problem statement, issue, or feature request needs to be fixed as a solution-free job statement before any solution is evaluated. Applies to the jtbd-problem-framing axis.
 axis: jtbd-problem-framing
 rule_count_floor: 10
 ---
@@ -8,6 +8,39 @@ rule_count_floor: 10
 # JTBD problem framing (fixing the problem before any solution)
 
 Research trail: Jobs-to-be-Done canon (Tony Ulwick/Strategyn ODI method, Clayton Christensen's "hire a solution" framing) fetched this session via UXtweak, Strategyn, Hotjar, and Coursera summaries; cross-checked for the four-part tuple (job performer, job statement, circumstance, desired outcome) and the solution-free job-statement rule.
+
+## Trigger
+
+Apply this skill whenever a problem statement, issue, or feature request
+is being written or reviewed, especially when the incoming text already
+names a tool or mechanism — the job statement must be fixed in
+solution-free form before evaluating any named solution.
+
+## Procedure
+
+1. Write the problem as a job statement (verb + object + clarifier),
+   never naming a tool or feature (rule 1), and name the specific job
+   performer, not "users" generically (rule 2).
+2. If the request already names a solution, restate the problem in
+   job-statement form first, before evaluating that solution (rule 3).
+3. Record the circumstance as the triggering condition and situational
+   constraints (rule 4), and phrase each desired outcome as a
+   measurable success criterion, kept as a list of independently
+   measurable criteria rather than one collapsed statement (rules 5, 7).
+4. Fix all four tuple elements (performer, job, circumstance, outcome)
+   before proceeding to solution comparison (rule 6); when a stakeholder
+   asserts "the solution is obviously X," redirect to which job X serves
+   (rule 8).
+5. Strip any UI/technology/mechanism reference from the problem
+   statement itself (rule 9), and delete any justification clause that
+   trails a circumstance description into a specific fix (rule 10).
+
+## Output shape
+
+A solution-free job statement (performer, job, circumstance, one or
+more measurable desired outcomes), with any named solution or
+justification clause removed from the problem section and preserved
+separately if needed.
 
 ## Rules
 

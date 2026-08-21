@@ -1,6 +1,6 @@
 ---
 name: product-discovery-rice-ice-prioritization
-description: Use when you need guidance on RICE / ICE prioritization and evidence citation. Applies to the rice-ice-prioritization axis.
+description: Use when comparing more than one opportunity or solution candidate for build priority and scoring or citing the evidence behind each score. Applies to the rice-ice-prioritization axis.
 axis: rice-ice-prioritization
 rule_count_floor: 10
 ---
@@ -8,6 +8,40 @@ rule_count_floor: 10
 # RICE / ICE prioritization and evidence citation
 
 Research trail: Intercom's original RICE model and the ICE simplification, fetched this session via ProductPlan glossary, PM Toolkit's RICE-vs-ICE comparison, and Evelance's research-integration guide; cross-checked against the Mom Test's evidence-admissibility rule (stated preference/hypothetical response is not admissible evidence) already binding on this role's proposal facet.
+
+## Trigger
+
+Apply this skill when more than one opportunity or solution candidate is
+being compared for build priority and each candidate needs a RICE or
+ICE score with its supporting evidence cited.
+
+## Procedure
+
+1. Score each candidate with RICE by default (rule 1); fall back to ICE,
+   explicitly flagged, only when reach data is genuinely unavailable
+   (rules 2-3).
+2. Cite evidence for any Reach or Impact estimate as one line with
+   count, approximate date range, and paraphrase (rule 4); exclude
+   stated preference or hypothetical response from the Confidence input
+   (rule 5); tie Confidence to the strength of the admissible evidence
+   actually cited (rule 6).
+3. Use the same effort unit across every candidate in one prioritization
+   pass (rule 7).
+4. When two or more candidates land within a narrow score band, state
+   the near-tie explicitly and resolve it by re-examining the
+   weakest-evidenced input, rather than picking the numerically higher
+   score (rule 8).
+5. Drop the RICE/ICE scoring step entirely when only one candidate
+   exists to compare (rule 9), and remove any evidence line missing a
+   count or date range rather than keeping it as a lesser citation
+   (rule 10).
+
+## Output shape
+
+A RICE (or explicitly-flagged ICE-fallback) score per compared
+candidate, each Reach/Impact input backed by a count+date+paraphrase
+citation, near-ties flagged rather than silently broken, using one
+consistent effort unit across the whole comparison.
 
 ## Rules
 

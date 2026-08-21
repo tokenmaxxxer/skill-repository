@@ -3,11 +3,11 @@ name: product-discovery-opportunity-solution-tree
 description: >
   Use this skill whenever the `scoping -> scoping` self-loop fires — i.e.
   whenever opportunity/outcome framing is drafted or re-affirmed with the
-  user — to update the living Opportunity Solution Tree. This is
-  cross-cutting: it runs on its own cadence, independent of any single
-  hypothesis's state, and its artifact is never the product-cycle state
-  file. Do NOT use it to register a hypothesis or to gate any transition —
-  it has no gate.
+  user — to update the living Opportunity Solution Tree, distinct from
+  registering a hypothesis or gating any transition (it has no gate).
+  This is cross-cutting: it runs on its own cadence, independent of any
+  single hypothesis's state, and its artifact is never the product-cycle
+  state file.
 ---
 
 # Opportunity Solution Tree maintenance
@@ -36,6 +36,37 @@ bottom:
 `state-gate.sh` does not check writes to this file at all. Update it as
 often as new interview evidence arrives; do not wait for a state
 transition to justify writing to it.
+
+## Trigger
+
+Apply this skill whenever the `scoping -> scoping` self-loop fires —
+i.e. whenever opportunity/outcome framing is drafted or re-affirmed
+with the user — to update the living Opportunity Solution Tree. This is
+cross-cutting and runs on its own cadence, independent of any single
+hypothesis's state; do not use it to register a hypothesis or to gate
+any transition — it has no gate.
+
+## Procedure
+
+1. When the `scoping -> scoping` affirmation moment comes up, ask which
+   opportunity or solution should be added or updated this cycle (see
+   `## How to run the conversation`).
+2. Confirm which desired-outcome node it hangs under, creating one if
+   none exists yet (see `## How to run the conversation`).
+3. Ask whether new interview evidence supports it and record the
+   evidence source alongside the node, never a stakeholder's unsourced
+   opinion as if it were customer evidence (see `## How to run the
+   conversation`).
+4. Write or update `product/opportunity-tree.md` with the four-layer
+   structure, outside `state-gate.sh` entirely (see `## Where it is
+   written`).
+
+## Output shape
+
+`product/opportunity-tree.md`, four layers top to bottom (desired
+outcome, opportunities, candidate solutions, assumption tests), each
+opportunity/solution node sourced to interview evidence where
+available, maintained continuously outside the gated state file.
 
 ## How to run the conversation
 
