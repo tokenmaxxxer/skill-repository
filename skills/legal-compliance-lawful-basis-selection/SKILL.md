@@ -1,6 +1,6 @@
 ---
 name: legal-compliance-lawful-basis-selection
-description: Use when you need guidance on Lawful basis selection. Applies to the lawful-basis-selection axis.
+description: Use when selecting or auditing the GDPR Article 6(1) lawful basis (contract, legitimate interests, or consent) for a specific data processing activity.
 axis: lawful-basis-selection
 rule_count_floor: 2
 ---
@@ -10,6 +10,35 @@ rule_count_floor: 2
 Decision rules for picking a GDPR Article 6(1) lawful basis for a given
 processing activity, sourced live during issue #1174's legal-compliance
 research pass (2026-08-13).
+
+## Trigger
+
+Apply this skill when a specific processing activity needs an Article
+6(1) lawful basis assigned or audited — distinguishing it from sibling
+axes that govern the interface collecting consent
+(`legal-compliance-consent-ux`) or how long the resulting data is kept
+(`legal-compliance-retention-minimization`), rather than which basis
+justifies the processing in the first place.
+
+## Procedure
+
+1. If the activity is required to deliver what the data subject asked
+   for, pick the contract basis over consent (rule 1).
+2. If the activity serves the controller's own operational need with no
+   requirement for the subject's free choice, pick legitimate interests
+   and record a balancing test (rule 2).
+3. If no contract, legal duty, or surviving legitimate-interest
+   balancing test applies, fall back to consent — not as a first choice
+   (rule 3).
+4. If a purpose already has a basis, remove any duplicate basis stacked
+   onto the same purpose "for safety" (rule 4).
+
+## Output shape
+
+A named Article 6(1) basis (contract / legitimate interests / consent)
+per processing purpose, with the balancing-test record attached when
+legitimate interests is chosen, or a flagged duplicate-basis removal
+when rule 4 applies.
 
 ## Decision rules
 

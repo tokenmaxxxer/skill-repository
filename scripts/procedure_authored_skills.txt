@@ -51,3 +51,10 @@ observability-phase-trace
 observability-signal-golden
 observability-signal-red
 observability-signal-use
+legal-compliance-consent-ux
+legal-compliance-cross-border-transfer
+legal-compliance-lawful-basis-selection
+legal-compliance-license-compatibility
+legal-compliance-research-log
+legal-compliance-retention-minimization
+legal-compliance-vendor-dpa

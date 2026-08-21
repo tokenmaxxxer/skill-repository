@@ -1,6 +1,6 @@
 ---
 name: legal-compliance-consent-ux
-description: Use when you need guidance on Consent mechanism UX. Applies to the consent-mechanism-ux axis.
+description: Use when designing or reviewing a consent-collecting interface — cookie/consent banners, opt-in forms, or any accept/reject or checkbox control gating non-essential data processing.
 axis: consent-mechanism-ux
 rule_count_floor: 2
 ---
@@ -10,6 +10,36 @@ rule_count_floor: 2
 Decision rules for how a consent-collecting interface (cookie banners,
 opt-in forms) must be built to be legally valid, sourced live during
 issue #1174's legal-compliance research pass (2026-08-13).
+
+## Trigger
+
+Apply this skill when designing or reviewing a cookie/consent banner,
+opt-in form, or any checkbox/toggle that gates non-essential data
+processing (marketing, analytics, profiling) — distinguishing it from
+sibling legal-compliance axes that govern the underlying lawful basis
+(`legal-compliance-lawful-basis-selection`) or data handling after
+consent is obtained (`legal-compliance-retention-minimization`), rather
+than the consent-collecting interface itself.
+
+## Procedure
+
+1. Check the banner's accept/reject controls for equal visual
+   prominence and click depth (rule 1).
+2. Check that any non-essential consent checkbox/toggle initializes
+   unchecked/off (rule 2).
+3. Check that purpose text on the first screen names the specific
+   processing purpose and rejection means in plain language (rule 3).
+4. If reject is nested behind more clicks than accept, or purposes are
+   bundled under one "Accept All" toggle, remove the bundling/friction
+   structurally rather than adding disclosure text (rule 4).
+5. Verify non-essential third-party scripts are technically blocked
+   from loading until the affirmative accept act occurs (rule 5).
+
+## Output shape
+
+A pass/fail assessment of the reviewed consent interface against rules
+1-5, naming which rule(s) are violated (if any) and the structural fix
+required — not additional disclosure copy layered onto a violation.
 
 ## Decision rules
 

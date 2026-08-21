@@ -1,6 +1,6 @@
 ---
 name: legal-compliance-cross-border-transfer
-description: Use when you need guidance on Cross-border data transfer mechanism selection. Applies to the cross-border-transfer-mechanism axis.
+description: Use when selecting or reviewing a GDPR Chapter V mechanism (adequacy, SCCs, BCRs) for transferring personal data to a third country.
 axis: cross-border-transfer-mechanism
 rule_count_floor: 2
 ---
@@ -9,6 +9,34 @@ rule_count_floor: 2
 
 Decision rules for picking a GDPR Chapter V transfer mechanism, sourced
 live during issue #1174's legal-compliance research pass (2026-08-13).
+
+## Trigger
+
+Apply this skill when personal data will move to, or is already flowing
+to, a recipient outside the originating jurisdiction and a transfer
+mechanism (adequacy reliance, SCCs, or BCRs) must be selected or
+audited — distinguishing it from sibling axes that govern the domestic
+lawful basis (`legal-compliance-lawful-basis-selection`) or the vendor
+contract terms once a transfer mechanism is chosen
+(`legal-compliance-vendor-dpa`).
+
+## Procedure
+
+1. Check whether the destination country has an EU adequacy decision;
+   if so, rely on it and skip contractual clauses (rule 1).
+2. For a non-adequate destination to an unrelated external vendor, pick
+   SCCs over BCRs (rule 2).
+3. For a growing multinational group with recurring intra-group
+   transfers, weigh BCRs' amortized approval cost against SCCs'
+   per-entity re-execution cost (rule 3).
+4. Whichever mechanism is selected, confirm a Transfer Impact Assessment
+   accompanies it — drop any transfer plan that skips this step (rule 4).
+
+## Output shape
+
+A named transfer mechanism (adequacy / SCC / BCR) per destination-vendor
+pair, plus confirmation that a Transfer Impact Assessment is attached —
+or a flagged gap naming which rule's prerequisite is unmet.
 
 ## Decision rules
 
