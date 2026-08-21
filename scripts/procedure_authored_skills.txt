@@ -58,3 +58,9 @@ legal-compliance-license-compatibility
 legal-compliance-research-log
 legal-compliance-retention-minimization
 legal-compliance-vendor-dpa
+ux-engineering-color-visibility
+ux-engineering-control-selection
+ux-engineering-layout-grouping
+ux-engineering-navigation-depth
+ux-engineering-research-log
+ux-engineering-surface-contrast

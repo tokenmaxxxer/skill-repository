@@ -1,6 +1,6 @@
 ---
 name: ux-engineering-layout-grouping
-description: Use when you need guidance on Layout and grouping. Applies to the layout-grouping axis.
+description: Use when arranging related fields into groups, choosing single- vs. multi-column layout, placing labels, or adding a visible group boundary. Applies to the layout-grouping axis.
 axis: layout-grouping
 rule_count_floor: 3
 ---
@@ -11,6 +11,46 @@ Decision rules for proximity grouping, column layout, and label
 placement, sourced from Gestalt grouping literature and form-layout
 practitioner research actually fetched during issue #1174's
 ux-engineering research pass (2026-08-13).
+
+## Trigger
+
+Apply this skill when arranging related fields into groups, choosing
+single- vs. multi-column layout, placing labels, or adding a visible
+group boundary — distinguishing it from control-selection (which
+widget per field) and surface-contrast (elevation around an active
+edit surface, not grouping within a static layout).
+
+## Procedure
+
+1. For semantically related fields, use tighter spacing between them
+   than to the next unrelated group, letting proximity alone signal
+   the grouping (rule 1).
+2. For a form with more than roughly 6-8 fields, split into labeled
+   sub-groups of 3-5 related fields (rule 2).
+3. For a form whose fields form one linear sequence, use a
+   single-column layout by default (rule 3).
+4. For a short or expert-repeated form, place labels to the left of
+   inputs; for a longer or first-time-user form, place labels above
+   inputs (rule 4).
+5. When whitespace alone is insufficient to show a group boundary, use
+   a subtle border or background-tint container rather than a hard
+   divider line (rule 5).
+6. REMOVAL: when a group already carries a divider, a background
+   tint, AND a bordered card, cut down to one grouping signal (rule
+   6).
+7. Prove a grouped layout's empty, loading, error, and populated
+   states correct in isolation before assembling the full screen
+   (rule 7).
+8. Before specifying a new component for a grouped layout's slot,
+   check the live component library for an existing match rather than
+   relying on a stale mental snapshot (rule 8).
+
+## Output shape
+
+A layout spec: which fields group together, spacing/boundary
+treatment per group, column count, and label placement — plus, where
+rule 6 or 7 fires, a flagged over-boundaried group or an untested
+non-populated state.
 
 ## Decision rules
 

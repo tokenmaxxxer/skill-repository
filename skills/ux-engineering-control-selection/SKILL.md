@@ -1,6 +1,6 @@
 ---
 name: ux-engineering-control-selection
-description: Use when you need guidance on Control selection by field type. Applies to the control-selection-by-field-type axis.
+description: Use when picking which UI control fits a given field's type, option count, or interaction contract. Applies to the control-selection-by-field-type axis.
 axis: control-selection-by-field-type
 rule_count_floor: 3
 ---
@@ -10,6 +10,48 @@ rule_count_floor: 3
 Decision rules for which UI control fits which field type, sourced from
 practitioner canon and platform component-selection guidance actually
 fetched during issue #1174's ux-engineering research pass (2026-08-13).
+
+## Trigger
+
+Apply this skill when picking which UI control fits a given field's
+type, option count, or interaction contract — distinguishing it from
+color-visibility (contrast/color) and layout-grouping (spatial
+arrangement of already-chosen controls).
+
+## Procedure
+
+1. For a true binary choice with an immediate, visible effect, pick a
+   toggle switch over a checkbox (rule 1).
+2. For 3-7 mutually-exclusive options with room to show them all, pick
+   a radio group over a dropdown (rule 2).
+3. For mutually-exclusive options under space constraints or at the
+   upper edge of that range, pick a dropdown/select over a radio group
+   (rule 3).
+4. For 8 or more option values, pick a searchable select/combobox over
+   a plain dropdown or radio group (rule 4).
+5. For a calendar-date field, pick a date picker for visual browse/
+   confirm needs, or permit a validated free-text date field when
+   users already know the exact date (rule 5).
+6. For free text, pick a single-line input for short content and a
+   sized text view/textarea for long or multi-paragraph content
+   (rule 6).
+7. REMOVAL: when a control choice adds a confirmation step duplicating
+   information an adjacent control already shows, cut the redundant
+   control (rule 7).
+8. For an interactive pattern with an established role-and-keyboard
+   contract, pick the control that matches that contract rather than a
+   visual look-alike that skips it (rule 8).
+9. Name accessibility as a co-equal constraint at spec time, not a
+   pass deferred until after visual/interaction design is settled
+   (rule 9).
+
+## Output shape
+
+A named control choice per field (toggle, checkbox, radio group,
+dropdown, combobox, date picker, free-text date, text input, or text
+view), with the triggering rule number and, where rule 7 or 9 fires, a
+flagged redundant control or a named accessibility constraint to
+record at spec time.
 
 ## Decision rules
 
