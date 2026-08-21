@@ -172,3 +172,6 @@ data-modeling-datavault
 data-modeling-structure
 data-modeling-kimball
 data-modeling-inmon
+devrel-channel-convention
+devrel-program-subtraction
+devrel-content-comprehensibility

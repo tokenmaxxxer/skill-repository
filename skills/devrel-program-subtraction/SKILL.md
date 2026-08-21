@@ -1,16 +1,53 @@
 ---
 name: devrel-program-subtraction
-description: Use when you need guidance on Program subtraction (removal/omission decision rules). Applies to the program-subtraction axis.
+description: Use when deciding whether to add or cut a devrel program's content, channel, or program surface — evaluating a new content format against existing ones, retiring unused docs/samples/talks/channels, or consolidating instead of adding.
 axis: program-subtraction
 rule_count_floor: 8
 ---
 
 # Program subtraction (removal/omission decision rules)
 
-Decision rules for when to cut a devrel program's content, channel, or
-program surface rather than default to adding more. Research trail:
-layer 3 (academic — subtraction-neglect research) plus layer 1/2
-(practitioner minimalism and progressive-disclosure convention).
+## Trigger
+
+Apply this skill when deciding whether to add to or cut from a devrel
+program's content, channel, or program surface — evaluating a new
+content format, reviewing docs/samples/talks/channels for retirement,
+or choosing between consolidating existing surface and adding new
+surface.
+
+## Procedure
+
+1. Before adding a new content format, first name which existing
+   channel or format could be retired to hold total surface constant,
+   and add only if nothing qualifies (rule 1).
+2. Delete a docs page or sample with zero measured engagement over a
+   defined review window rather than leaving it live (rule 2).
+3. When a proposed new page could instead be answered by editing an
+   existing page, edit the existing page instead of creating the new
+   one (rule 3).
+4. Retire a conference-talk topic delivered at more than 3 events with
+   no content update, instead of resubmitting it (rule 4).
+5. Cut optional onboarding-checklist steps out of the default path into
+   an advanced appendix (rule 5).
+6. Do not surface a feature used by a small minority of the target
+   segment in the main path of a quickstart; defer it to a secondary
+   view (rule 6).
+7. Archive or merge community channels with no message activity over a
+   defined window rather than letting them sit (rule 7).
+8. Cut restated marketing framing from a changelog or release note and
+   keep only what changed and the required developer action (rule 8).
+
+## Output shape
+
+An add/cut/consolidate decision for a devrel program surface (content
+format, docs page, talk, onboarding step, feature exposure, community
+channel, or changelog entry), attributed to the rule that drove it,
+with total surface held constant by default unless the decision is to
+add.
+
+Research trail: layer 3 (academic — subtraction-neglect research) plus
+layer 1/2 (practitioner minimalism and progressive-disclosure
+convention).
 
 ## Rules
 
@@ -76,3 +113,4 @@ layer 3 (academic — subtraction-neglect research) plus layer 1/2
    narrative the reader must now filter out to find the actionable
    delta, which is the same bias in miniature. source:
    https://www.nature.com/articles/s41586-021-03380-y
+</content>
