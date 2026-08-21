@@ -1,6 +1,6 @@
 ---
 name: user-discovery-follow-up-ladder-depth
-description: Use when you need guidance on Follow-up ladder: laddering / Five Whys depth per hypothesis. Applies to the follow-up-ladder-depth axis.
+description: Use when deciding how deep to follow up on an interviewee's answer — chaining "why"/"how" questions (laddering) toward a root cause or personal value instead of accepting the first surface-level attribute or complaint.
 axis: follow-up-ladder-depth
 rule_count_floor: 8
 ---
@@ -8,6 +8,44 @@ rule_count_floor: 8
 # Follow-up ladder: laddering / Five Whys depth per hypothesis
 
 Research trail: Toyota's Five Whys (via hyperlatam and playbookux explainer pieces on customer-interview application); UXmatters and IxDF (Interaction Design Foundation) laddering-technique literature distinguishing attribute→consequence→value chains from bare root-cause chains. All searched this session.
+
+## Trigger
+
+Apply this skill when an interviewee gives a surface-level attribute,
+complaint, or root-cause answer and you must decide whether/how far to
+follow up with further "why"/"how" questions before moving to the next
+script item — distinct from the sibling axis that designs the base
+question wording (question-design-past-behavior).
+
+## Procedure
+
+1. On a surface-level attribute or preference statement, ask "why is
+   that good/important" instead of advancing the script (rule 1).
+2. Ask "why" up to five times in sequence on a stated problem, stopping
+   earlier only once an answer names a cause the interviewee cannot
+   further explain (rule 2).
+3. If a "why" answer is itself another surface fact, continue laddering
+   on that fact rather than accepting it as the endpoint (rule 3).
+4. Ladder sideways with "how" as well as "why" to connect a value to a
+   concrete design/product decision (rule 4).
+5. On a vague root-cause answer, press for a concrete instance before
+   continuing the why-chain (rule 5).
+6. Stop and treat a personal/organizational value answer as the ladder's
+   endpoint once reached (rule 6).
+7. When competitive/differentiation intelligence is also a goal, run
+   Five Whys and laddering together rather than either alone (rule 7).
+8. Drop any scripted single-fixed-follow-up structure that caps every
+   hypothesis at the surface-attribute rung (rule 8).
+9. Once a root-cause or value-level answer is reached, drop remaining
+   scripted "why" prompts for that thread rather than exhausting a fixed
+   count (rule 9).
+
+## Output shape
+
+A completed ladder per hypothesis thread — the chain of why/how
+follow-ups actually asked, ending at a value or verified root-cause
+answer (or, for a still-surface answer, a note that the ladder did not
+yet reach an endpoint) — rather than a single unfollowed first answer.
 
 ## Rules
 

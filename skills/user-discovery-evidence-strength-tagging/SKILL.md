@@ -1,6 +1,6 @@
 ---
 name: user-discovery-evidence-strength-tagging
-description: Use when you need guidance on Evidence-strength tagging: behavioral / recounted / opinion. Applies to the evidence-strength-tagging axis.
+description: Use when tagging or weighting interview-log claims by evidence strength — distinguishing directly-observed behavioral claims from secondhand recounted ones and from stated opinions/intentions, or when computing an evidence count that must exclude opinion-tier entries.
 axis: evidence-strength-tagging
 rule_count_floor: 8
 ---
@@ -8,6 +8,46 @@ rule_count_floor: 8
 # Evidence-strength tagging: behavioral / recounted / opinion
 
 Research trail: behavioral vs. attitudinal interview evidence distinction (ventureforall.com, structured-interview bias literature on ScienceDirect); the Mom Test's evidence-quality framing. All searched this session.
+
+## Trigger
+
+Apply this skill when logging or reviewing an interview-log claim that
+needs an evidence-strength tag (`behavioral`/`recounted`/`opinion`), or
+when computing a count or verdict that depends on weighting or excluding
+claims by that tier — distinct from the sibling axes that design the
+questions (question-design-past-behavior) or report the resulting
+prevalence (verdict-prevalence-reporting).
+
+## Procedure
+
+1. For each claim, check whether it is grounded in something the
+   interviewee did and can point to; if so tag `behavioral` (rule 1).
+2. If the claim is about a real past event but not independently
+   verifiable from the conversation (secondhand, a memory of someone
+   else's action), tag `recounted` instead (rule 2).
+3. If the claim is a stated preference, prediction, or attitude, tag
+   `opinion` (rule 3).
+4. Tag each occurrence of a repeated claim independently rather than
+   merging phrasings across the interview (rule 4).
+5. Resist upgrading a vivid hypothetical answer to `behavioral` — the
+   tag follows whether the event happened, not how concrete the telling
+   is (rule 5).
+6. When totaling evidence toward a prevalence count, weight `behavioral`
+   full, `recounted` reduced, and exclude `opinion` entirely (rule 6).
+7. Tag evidence strength immediately after each answer, not
+   retrospectively at interview end, to avoid confirmation-bias upgrades
+   (rule 7).
+8. Drop untaggable entries with no underlying event rather than
+   defaulting them into `opinion` (rule 8).
+9. Drop any prior binary confirmed/not-confirmed tag scheme entirely
+   rather than layering the three-tier scheme on top of it (rule 9).
+
+## Output shape
+
+A per-claim evidence-strength tag (`behavioral`/`recounted`/`opinion`)
+attached at log-write time, plus — when computing a prevalence count —
+the tier-weighted total with opinion-tier entries excluded and
+untaggable entries dropped rather than defaulted.
 
 ## Rules
 

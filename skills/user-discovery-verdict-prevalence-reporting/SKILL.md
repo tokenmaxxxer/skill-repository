@@ -1,6 +1,6 @@
 ---
 name: user-discovery-verdict-prevalence-reporting
-description: Use when you need guidance on Verdict reporting: prevalence, prompted/unprompted, contradictions. Applies to the verdict-prevalence-reporting axis.
+description: Use when writing a pain-confirmed/not-confirmed verdict from interview evidence — stating prevalence as N of M, distinguishing prompted from unprompted mentions, and naming contradicting evidence rather than omitting it.
 axis: verdict-prevalence-reporting
 rule_count_floor: 8
 ---
@@ -8,6 +8,48 @@ rule_count_floor: 8
 # Verdict reporting: prevalence, prompted/unprompted, contradictions
 
 Research trail: qualitative saturation-reporting norms (tandfonline 2025 review), Mom Test evidence-quality distinctions, JTBD switch-story evidence asymmetry (rules cross-referenced from switch-timeline-causal-forces). All searched this session.
+
+## Trigger
+
+Apply this skill when composing the final pain-confirmed/not-confirmed
+verdict from an interview round's evidence log — how prevalence is
+stated, how prompted vs. unprompted mentions and contradictions are
+represented — distinct from tagging individual claims
+(evidence-strength-tagging) or deciding when the round itself is done
+(saturation-stopping-rule).
+
+## Procedure
+
+1. State prevalence as "N of M," never a bare percentage or qualitative
+   descriptor (rule 1).
+2. Flag each occurrence as unprompted (volunteered) or prompted
+   (only after a direct question) in the evidence log, and keep the two
+   distinct (rule 2).
+3. Count only `behavioral`-or-higher-tagged instances toward N, never
+   `opinion`-tagged ones (rule 3).
+4. Name any contradicting evidence explicitly in the verdict rather than
+   omitting it because the majority already confirms the hypothesis
+   (rule 4).
+5. When a theme's unprompted count is zero, downgrade the verdict's
+   confidence wording accordingly (rule 5).
+6. When M is below the saturation-appropriate range for the population,
+   state that explicitly rather than presenting N of M as if saturation
+   were reached (rule 6).
+7. Cite the specific evidence-log entries (interview ID + entry) the
+   verdict rests on rather than asserting a bare summary number
+   (rule 7).
+8. Drop any verdict shape that cites only the confirming count and omits
+   the total M (rule 8).
+9. Drop any pooled prompted+unprompted count used to inflate apparent
+   prevalence (rule 9).
+
+## Output shape
+
+A verdict stating prevalence as "N of M" (N restricted to
+behavioral-or-higher evidence), each theme's prompted/unprompted split,
+any contradicting evidence named explicitly, an under-saturation caveat
+when M is below range, and citations to the specific evidence-log
+entries N is drawn from.
 
 ## Rules
 

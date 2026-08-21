@@ -1,6 +1,6 @@
 ---
 name: user-discovery-saturation-stopping-rule
-description: Use when you need guidance on Saturation: when to stop interviewing. Applies to the saturation-stopping-rule axis.
+description: Use when deciding how many discovery interviews to run or when to stop a round — sizing the initial batch, tracking a new-theme counter, applying a three-consecutive-dry stopping rule, and recording the saturation decision with its evidence.
 axis: saturation-stopping-rule
 rule_count_floor: 8
 ---
@@ -8,6 +8,42 @@ rule_count_floor: 8
 # Saturation: when to stop interviewing
 
 Research trail: qualitative-research saturation systematic review (ScienceDirect 2021), sample-size-to-saturation empirical studies (PMC/PubMed secondary analyses), Torres' continuous-discovery weekly-interview cadence. All searched this session.
+
+## Trigger
+
+Apply this skill when planning the interview count for a discovery
+round, or deciding whether to stop or continue an in-progress round —
+distinct from how the resulting count feeds a prevalence verdict
+(verdict-prevalence-reporting).
+
+## Procedure
+
+1. For a narrow hypothesis and homogeneous population, plan an initial
+   batch of 9-12 interviews before the first saturation check (rule 1).
+2. For a diverse population or complex multi-part hypothesis, extend the
+   planned count beyond that range rather than reusing 9-12 (rule 2).
+3. Track a running new-theme counter per interview rather than only a
+   total-interview count (rule 3).
+4. Treat three consecutive interviews with a zero new-theme count as the
+   saturation stopping point (rule 4).
+5. If a new theme appears mid-check, reset the consecutive-dry counter
+   to zero rather than only decrementing a fixed budget (rule 5).
+6. Record the initial plan, the stopping criterion actually used, and
+   the interview count at which it was met (rule 6).
+7. For an ongoing/continuous discovery practice, run interviews on a
+   fixed weekly cadence and re-evaluate saturation per theme rather than
+   once for the whole practice (rule 7).
+8. Drop any "saturation reached" claim from a below-range small sample
+   that has no new-theme tracking evidence (rule 8).
+9. Drop any fixed a-priori interview quota used as the sole stopping
+   rule with no theme-tracking component (rule 9).
+
+## Output shape
+
+A saturation decision recording the initial interview-count plan, the
+stopping criterion applied (e.g. three consecutive dry interviews), and
+the interview count at which it was met — never a bare "saturation
+reached" assertion with no supporting count.
 
 ## Rules
 

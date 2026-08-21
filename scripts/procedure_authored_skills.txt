@@ -64,3 +64,9 @@ ux-engineering-layout-grouping
 ux-engineering-navigation-depth
 ux-engineering-research-log
 ux-engineering-surface-contrast
+user-discovery-evidence-strength-tagging
+user-discovery-follow-up-ladder-depth
+user-discovery-question-design-past-behavior
+user-discovery-saturation-stopping-rule
+user-discovery-switch-timeline-causal-forces
+user-discovery-verdict-prevalence-reporting
