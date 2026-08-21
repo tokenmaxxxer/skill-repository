@@ -1,6 +1,6 @@
 ---
 name: secure-coding-input-validation-injection-defense
-description: Use when you need guidance on Input validation / injection defense. Applies to the input-validation-injection-defense axis.
+description: Use when untrusted input is about to cross a trust boundary — a shell, SQL query, HTML/JS/URL sink, or a validation layer — and you need to choose an allowlist, parameterization, or output-encoding approach.
 axis: input-validation-injection-defense
 rule_count_floor: 9
 ---
@@ -12,6 +12,54 @@ crosses a trust boundary (parser, shell, query engine, template engine,
 DOM). Research trail: layer 1 (OWASP practitioner cheat sheets) plus
 layer 2 (named standard: OWASP ASVS 5.0 "Encoding and Sanitization"
 chapter, CWE-20/CWE-89/CWE-78 families).
+
+## Trigger
+
+Use when untrusted input is about to cross a trust boundary — a shell,
+SQL/query engine, HTML/JS/URL rendering sink, or a duplicated validation
+layer — and a validation, parameterization, or encoding approach needs
+to be chosen, or when scoping a security review pass itself. Do not use
+it for authorization decisions once input has already been validated
+(that is `secure-coding-authorization-access-control`).
+
+## Procedure
+
+1. Cite rule 1 when a field has a known finite structure, to validate
+   with an allowlist regex rather than reaching for a denylist first.
+2. Cite rule 2 when a denylist filter is proposed as the sole defense
+   against injection, to remove it as the primary control.
+3. Cite rule 3 when input is a fixed set of caller-visible options, to
+   validate an exact match against the offered values.
+4. Cite rule 4 when input is free-form Unicode text where legitimate
+   users need special characters, to rely on context-aware output
+   encoding at the sink instead of restrictive character-class
+   validation.
+5. Cite rule 5 when untrusted data reaches an OS shell, to choose
+   parameterized OS calls/argument arrays over string-built commands.
+6. Cite rule 6 when untrusted data reaches a SQL/query engine, to use
+   parameterized queries or a bound-parameter ORM API, never string
+   concatenation.
+7. Cite rule 7 when output is rendered into HTML, JS, or a URL context,
+   to apply encoding specific to that sink rather than one generic
+   escaping function.
+8. Cite rule 8 when a validation routine currently rejects then
+   continues with a default/sanitized value for a security-relevant
+   field, to remove the silent-fallback path and fail closed instead.
+9. Cite rule 9 when a review finds two validation layers doing the same
+   allowlist check on the same field, to remove the duplicate and keep
+   validation at the trust-boundary crossing point only.
+10. Cite rule 10 when conducting a security review pass, to scope it to
+    changed lines and the trust boundaries they cross, triaging out
+    low-signal or non-reachable matches before they reach the finding
+    list.
+
+## Output shape
+
+An input-validation verdict: the chosen control (allowlist,
+parameterization, sink-specific encoding) with its rule citation, any
+denylist-only or silent-fallback path flagged for removal, and — for a
+review pass — the scoped set of changed trust boundaries actually
+checked with low-signal matches triaged out.
 
 ## Rules
 

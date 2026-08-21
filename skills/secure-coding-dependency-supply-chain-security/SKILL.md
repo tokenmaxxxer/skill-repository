@@ -1,6 +1,6 @@
 ---
 name: secure-coding-dependency-supply-chain-security
-description: Use when you need guidance on Dependency & supply-chain security. Applies to the dependency-supply-chain-security axis.
+description: Use when you need to decide how to scan, patch, work around, accept the risk of, or retire a vulnerable or unmaintained third-party dependency, or vet a new one before it enters the manifest.
 axis: dependency-supply-chain-security
 rule_count_floor: 8
 ---
@@ -11,6 +11,54 @@ Decision rules for accepting, patching, and retiring third-party
 dependencies. Research trail: layer 1 (OWASP Vulnerable Dependency
 Management Cheat Sheet) plus layer 2 (ASVS V14/V1 dependency chapter,
 CWE-1104 Use of Unmaintained Third-Party Components).
+
+## Trigger
+
+Use when a project or review is deciding how to scan for, patch, work
+around, accept the risk of, or retire a vulnerable or unmaintained
+third-party dependency, or when a new dependency is about to be added to
+the manifest. Do not use it for choosing algorithms or handling secret
+material once a dependency is already vetted (that is
+`secure-coding-cryptography-secrets-management`).
+
+## Procedure
+
+1. Cite rule 1 when a project starts, to wire automated dependency
+   vulnerability scanning into CI from the first commit.
+2. Cite rule 2 when a scanner reports a patch is available, to update
+   and validate it in a testing environment before promoting, as the
+   default path.
+3. Cite rule 3 when no patch exists yet but the vulnerable path is
+   reachable from untrusted input, to apply a protective workaround as
+   a stopgap, not a permanent fix.
+4. Cite rule 4 when accepting a known vulnerability's risk instead of
+   patching, to route that decision to the accountable risk owner
+   rather than the implementing engineer alone.
+5. Cite rule 5 when a dependency has no fix forthcoming and is open
+   source, to consider patching it directly before falling back to
+   replacement.
+6. Cite rule 6 when no fix exists and patching is infeasible, to treat
+   replacement or defensive coding as the last resort after rules 3/5
+   are exhausted.
+7. Cite rule 7 when a scan or audit finds a package no longer
+   imported/referenced by any code path, to remove it from the manifest
+   rather than leave it "in case it's needed."
+8. Cite rule 8 when a dependency has had no maintainer activity for an
+   extended period while still handling security-relevant functionality,
+   to flag it for replacement proactively rather than waiting for a CVE.
+9. Cite rule 9 when a new dependency is about to be added, to check its
+   maintenance posture and exploitability before it enters the manifest,
+   prioritized by exploitability/reachability rather than a flat
+   CVSS-sorted list.
+
+## Output shape
+
+A dependency-risk verdict: the current lifecycle stage (scan, patch,
+stopgap, accept-risk, self-patch, replace) with its rule citation, the
+accountable decision-maker when risk is being accepted rather than
+patched, and — for a new or unused dependency — the maintenance/
+exploitability check or removal action required before the manifest
+change lands.
 
 ## Rules
 

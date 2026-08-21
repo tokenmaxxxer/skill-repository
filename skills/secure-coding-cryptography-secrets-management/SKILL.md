@@ -1,6 +1,6 @@
 ---
 name: secure-coding-cryptography-secrets-management
-description: Use when you need guidance on Cryptography & secrets management. Applies to the cryptography-secrets-management axis.
+description: Use when you need to choose an algorithm, key size, or cipher mode, or decide how a secret is generated, stored, rotated, or removed from an image, env var, or log across its lifecycle.
 axis: cryptography-secrets-management
 rule_count_floor: 10
 ---
@@ -12,6 +12,52 @@ material through its lifecycle. Research trail: layer 1 (OWASP
 Cryptographic Storage / Secrets Management Cheat Sheets) plus layer 2
 (ASVS V6/V7 crypto chapters, CWE-798 Hard-coded Credentials, CWE-327
 Broken/Risky Crypto).
+
+## Trigger
+
+Use when a proposal or review is choosing an encryption algorithm, key
+size, or cipher mode, or deciding how a secret (password, token, key,
+credential) is generated, stored, delivered to a running process,
+rotated, or removed once it has leaked into an image or log. Do not use
+it for session-cookie or auth-token transport decisions once a secret
+is already a live session artifact (that is
+`secure-coding-session-authentication`).
+
+## Procedure
+
+1. Cite rule 1 when encrypting data at rest with a symmetric cipher, to
+   require AES with a key of at least 128 bits (256 preferred).
+2. Cite rule 2 when public-key cryptography is required, to default to
+   ECC/Curve25519 and require at least 2048-bit RSA if RSA is used
+   instead.
+3. Cite rule 3 when selecting a symmetric cipher mode, to prefer an
+   authenticated mode and remove ECB wherever found.
+4. Cite rule 4 when a proposal surfaces a custom/home-grown
+   cryptographic algorithm, to remove it before it lands in favor of a
+   vetted standard.
+5. Cite rule 5 when storing passwords, to reject reversible encryption
+   in favor of a secure password-hashing algorithm.
+6. Cite rule 6 when code needs randomness for a token, key, or nonce, to
+   require a CSPRNG and remove any non-cryptographic PRNG in that path.
+7. Cite rule 7 when a secret needs to reach a running process, to prefer
+   a vault/secret manager over an environment variable.
+8. Cite rule 8 when a secret is currently baked into a Docker image via
+   `ENV`/`ARG`, to remove it from the image build and inject it at
+   runtime instead.
+9. Cite rule 9 when scheduling rotation for a secret, to set a short
+   cycle for high-risk secret classes and exempt ordinary user
+   credentials from routine rotation.
+10. Cite rule 10 when a secret value appears in application logs, to
+    remove it from the log while preserving log integrity for
+    surrounding entries.
+
+## Output shape
+
+A cryptography/secrets verdict: the chosen algorithm/key-size/mode with
+its rule citation, the chosen secret-delivery mechanism, a rotation
+cadence appropriate to the secret's risk class, and — when a secret has
+already leaked into an image, env var, or log — the specific removal
+step required before the finding is closed.
 
 ## Rules
 
