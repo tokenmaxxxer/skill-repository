@@ -165,3 +165,6 @@ defect-verification-reproduction-evidence-quality
 defect-verification-independence-from-upstream-verdicts
 defect-verification-severity-band-assignment
 defect-verification-evidence-artifact-completeness
+data-engineering-data-quality
+data-engineering-failure-handling
+data-engineering-pipeline-design
