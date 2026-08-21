@@ -1,6 +1,6 @@
 ---
 name: incident-response-rca-method-selection
-description: Use when you need guidance on RCA method selection. Applies to the rca-method-selection axis.
+description: Use when choosing which root-cause-analysis method to apply to an incident — 5 Whys, fishbone, or fault tree — or converting a fishbone into a causal chain. Applies to the rca-method-selection axis.
 axis: rca-method-selection
 rule_count_floor: 4
 ---
@@ -12,6 +12,43 @@ Decision rules for which root-cause-analysis method to apply
 field / `incident-response-rca-method-gate`). Layer 1 (practitioner:
 Google SRE workbook), layer 2 (named methods: 5 Whys, fishbone, fault
 tree), layer 3 (RCA-method-comparison literature).
+
+## Trigger
+
+Apply this skill when deciding which root-cause-analysis method fits an
+incident's causal shape — a single linear failure, a detection/response
+delay, several parallel contributing factors, or an early-investigation
+brainstorm — or when a fishbone diagram has been drawn and needs
+converting into a causal chain, distinguishing it from
+severity-classification-scoping (how deep the RCA needs to go, not which
+method to use at that depth).
+
+## Procedure
+
+1. When the failure runs down one relatively linear causal path, use a
+   5-Whys causal chain (rule 1).
+2. When the incident escalated because it was not caught quickly, run a
+   second, separate 5-Whys chain rooted at the detection/response delay
+   (rule 2).
+3. When several independent contributing factors combined to cause the
+   incident, supplement with a fault tree instead of forcing a single
+   5-Whys chain (rule 3).
+4. When causes are not yet obvious, open with a fishbone diagram to
+   generate breadth, then apply 5 Whys to the 2-3 most likely branches
+   (rule 4).
+5. When distinguishing primary cause from contributing factors in the
+   record, frame contributing factors as 2-5 systemic, blame-neutral
+   causes rather than isolating one single root cause (rule 5).
+6. When a fishbone diagram has been drawn but the write-up stops there,
+   do not submit the fishbone itself as the RCA — convert its top
+   branches into 5-Whys chain(s) before finalizing (rule 6).
+
+## Output shape
+
+One or more causal chains (5-Whys and/or fault tree) rooted at the
+failure and, when detection was slow, a second chain rooted at the
+detection/response delay, plus a primary-cause/contributing-factors
+split with 2-5 systemic, blame-neutral contributing factors.
 
 ## Rules
 
