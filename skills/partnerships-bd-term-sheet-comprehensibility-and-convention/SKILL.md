@@ -1,6 +1,6 @@
 ---
 name: partnerships-bd-term-sheet-comprehensibility-and-convention
-description: Use when you need guidance on Term-sheet comprehensibility and convention rules. Applies to the term-sheet-comprehensibility-and-convention axis.
+description: Use when laying out a new term sheet's section structure, when drafting or reviewing a clause a non-lawyer stakeholder must approve, or when a term-sheet review finds a clause restating another section.
 axis: term-sheet-comprehensibility-and-convention
 rule_count_floor: 3
 tier: sparse
@@ -12,6 +12,35 @@ Practitioner + cognitive-psychology-of-reading rules for drafting a
 term sheet that both sides' non-lawyer stakeholders can actually parse,
 and for using market-standard structure over bespoke structure by
 default.
+
+## Trigger
+
+Use when laying out a new term sheet's section order, when drafting or
+reviewing a clause a business-side (non-lawyer) stakeholder is expected
+to approve on their own reading, or when a term-sheet draft review finds
+a clause that restates a commitment already stated elsewhere.
+
+## Procedure
+
+1. Lay out the term sheet using the market-standard section order and
+   naming (purpose, roles, terms, governance, KPIs, dispute resolution,
+   exit) instead of inventing a bespoke structure or merging distinct
+   concerns into one section (rule 1).
+2. In any clause a non-lawyer stakeholder must approve, rewrite
+   center-embedded legal phrasing into front-loaded, single-clause
+   sentences and replace low-frequency legal vocabulary with plain
+   equivalents that don't lose legal precision (rule 2).
+3. When a review finds a clause that restates a commitment already
+   stated in another section, delete the duplicate and consolidate into
+   the single owning section, using an explicit cross-reference instead
+   of a restated duplicate if cross-reference is genuinely needed
+   (rule 3).
+
+## Output shape
+
+A term sheet following market-standard section order, with
+stakeholder-facing clauses in plain front-loaded sentences and no
+duplicated commitments across sections.
 
 ## Decision rules
 
