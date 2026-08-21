@@ -1,6 +1,6 @@
 ---
 name: knowledge-management-taxonomy-tagging
-description: Use when you need guidance on Taxonomy, tagging, and controlled vocabulary. Applies to the taxonomy-tagging axis.
+description: Use when adding, merging, or scoping a term in the controlled vocabulary, or when tagging an entry with an ambiguous, cross-cutting, or synonym-prone concept.
 axis: taxonomy-tagging
 rule_count_floor: 10
 ---
@@ -8,6 +8,52 @@ rule_count_floor: 10
 # Taxonomy, tagging, and controlled vocabulary
 
 Research trail: ISO 25964 (Thesauri and interoperability with other vocabularies, parts 1-2), ANSI/NISO Z39.19, SKOS (W3C Simple Knowledge Organization System) as summarized by NISO and Hedden Information Management, and Wikipedia's "Controlled vocabulary" entry, all fetched this session.
+
+## Trigger
+
+Apply this skill when two entries could be described by different
+words for the same concept, when adding a new tag/term to the index,
+when a term's meaning could be ambiguous, when choosing between
+folksonomy and controlled vocabulary, or when tagging a cross-cutting
+or source-specific entry.
+
+## Procedure
+
+1. When two entries could be described by different words for the same
+   concept, pick one preferred term and register the other as a
+   non-preferred synonym pointing to it (rule 1).
+2. Place a new term inside the existing hierarchy via broader/narrower
+   relationships rather than adding it as an unconnected flat label
+   (rule 2).
+3. Attach a scope note fixing a term's intended sense when its meaning
+   could be ambiguous to a future tagger (rule 3).
+4. Use a controlled vocabulary once the library exceeds a size where
+   synonym/near-duplicate tags start fragmenting retrieval, rather than
+   free tagging (rule 4).
+5. Represent the vocabulary for machine consumption with SKOS's
+   `broader`/`narrower`/`related`/`prefLabel`/`altLabel` primitives
+   rather than an ad hoc nested-bullet list (rule 5).
+6. Record a related-but-distinct concept as an associative relationship
+   rather than forcing it into a false hierarchy (rule 6).
+7. Tag a cross-issue index entry by concept, not by source-issue number
+   (rule 7).
+8. Remove a tag from the controlled vocabulary once it has had zero
+   entries filed under it for a full review cycle and no scope note
+   justifies keeping it (rule 8).
+9. Merge two terms found to always co-occur on the same entries with no
+   entry tagged with only one of them (rule 9).
+10. Use ISO 25964 Part 2's interoperability mapping types
+    (exact/close/broad/narrow match) rather than silently aliasing terms
+    1:1 when aligning against another system's taxonomy (rule 10).
+11. Tag a single entry with both terms when it genuinely spans two
+    unrelated concepts, rather than forcing a single-tag choice
+    (rule 11).
+
+## Output shape
+
+A term placed in the broader/narrower hierarchy with a scope note where
+ambiguous, encoded in SKOS primitives, with synonyms and associative
+relationships recorded explicitly rather than aliased or flattened.
 
 ## Rules
 

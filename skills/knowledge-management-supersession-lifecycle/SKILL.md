@@ -1,6 +1,6 @@
 ---
 name: knowledge-management-supersession-lifecycle
-description: Use when you need guidance on Supersession, deprecation, and removal lifecycle. Applies to the supersession-lifecycle axis.
+description: Use when a knowledge-library entry is replaced, dropped, or edited — deciding whether to mark it superseded or deprecated, and how to record the change without deleting history.
 axis: supersession-lifecycle
 rule_count_floor: 10
 ---
@@ -8,6 +8,51 @@ rule_count_floor: 10
 # Supersession, deprecation, and removal lifecycle
 
 Research trail: adr.github.io (Architectural Decision Records reference site), Martin Fowler's "Architecture Decision Record" bliki entry, TechTarget's ADR best-practices guide, Catio's 2026 ADR guide, and GitScrum's ADR documentation best practices, all fetched this session — the ADR status-lifecycle literature is this playbook's primary source because it is the most mature, citable public model of exactly this problem (superseding a prior decision without losing its history).
+
+## Trigger
+
+Apply this skill when a knowledge-library entry is replaced by a newer
+one, when a practice is dropped with nothing replacing it, when two
+proposed successors conflict, or when deciding whether a change to an
+entry is a plain edit or a supersession.
+
+## Procedure
+
+1. Mark an entry `superseded` and add a forward link to its replacement
+   rather than editing the old entry's content in place (rule 1).
+2. Mark an entry `deprecated` (not `superseded`) when nothing replaces
+   it (rule 2).
+3. Write the reason for the change into the new, superseding entry, not
+   only a status flip on the old one (rule 3).
+4. Carry the status and forward link on the entry itself, not only in a
+   separate index (rule 4).
+5. Carry a decision's timestamp forward into any superseding entry's
+   own record of when the old decision held (rule 5).
+6. When two teams independently propose superseding the same entry with
+   different replacements, file both as candidate successors and
+   resolve the conflict explicitly rather than silently picking one
+   (rule 6).
+7. Assign status from a closed, small set (`proposed`/`accepted`/
+   `deprecated`/`superseded`) rather than free-text status notes
+   (rule 7).
+8. Never delete a superseded entry (rule 8).
+9. Move a `deprecated` entry with zero live citations and no forward
+   link out of the actively-indexed set into an archive tier, rather
+   than deleting it or leaving it live (rule 9).
+10. When an entry is marked `superseded`, remove its tags from the
+    active controlled-vocabulary term set if it was the sole entry
+    keeping that term populated, per
+    [[knowledge-management-taxonomy-tagging]] rule 8, while keeping the
+    term itself resolvable from the entry's historical record (rule 10).
+11. Treat a change as a supersession if the original reasoning no longer
+    holds, and as a plain edit in place if only wording/typos/
+    formatting changed and the reasoning still holds (rule 11).
+
+## Output shape
+
+A status-tagged entry (`proposed`/`accepted`/`deprecated`/`superseded`)
+carrying its own forward link and reasoning, never deleted, with active
+tags reconciled against the controlled vocabulary.
 
 ## Rules
 
