@@ -1,6 +1,6 @@
 ---
 name: incident-response-severity-classification-scoping
-description: Use when you need guidance on Severity classification / postmortem depth scoping. Applies to the severity-classification-scoping axis.
+description: Use when classifying an incident's severity tier or scoping how much postmortem depth it earns, or when a draft's depth doesn't match its tier. Applies to the severity-classification-scoping axis.
 axis: severity-classification-scoping
 rule_count_floor: 4
 ---
@@ -12,6 +12,35 @@ Decision rules for how much postmortem depth a given incident earns
 (practitioner canon: incident.io/PagerDuty/Xurrent severity playbooks),
 layer 2 (named framework: SEV0-SEV5 tiering), layer 3 (impact-scoping
 theory: proportionality of response cost to blast radius).
+
+## Trigger
+
+Apply this skill when classifying an incident's severity tier
+(SEV1-SEV3) or scoping how much postmortem depth that tier earns, or
+when auditing a draft postmortem whose depth doesn't match its assigned
+tier, distinguishing it from rca-method-selection (which method to use
+at whatever depth is already scoped).
+
+## Procedure
+
+1. When the incident is a full outage, data loss, or business-stopping
+   event, classify SEV1 and require a full postmortem (rule 1).
+2. When the incident is major degradation affecting many users with no
+   clean workaround, classify SEV2 and require a team-level postmortem
+   (rule 2).
+3. When the incident is minor/partial with a workaround and affects a
+   small user fraction, classify SEV3 and write summary-only (rule 3).
+4. When classifying severity, use affected-user-count as the primary
+   signal, not response effort or report volume (rule 4).
+5. When a SEV3/minor draft already contains a full timeline
+   reconstruction or a multi-branch RCA tree, strip it back to the
+   summary-only form the tier requires (rule 5).
+
+## Output shape
+
+One severity tier (SEV1, SEV2, or SEV3) assigned to the incident, paired
+with a postmortem whose depth (full RCA + timeline + action items,
+team-level, or summary-only) matches that tier exactly.
 
 ## Rules
 

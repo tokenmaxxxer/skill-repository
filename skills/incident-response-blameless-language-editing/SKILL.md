@@ -1,6 +1,6 @@
 ---
 name: incident-response-blameless-language-editing
-description: Use when you need guidance on Blameless language editing. Applies to the blameless-language-editing axis.
+description: Use when editing a draft postmortem's prose for blame language — person-attributed mistakes, "should have" judgments, or individual credit. Applies to the blameless-language-editing axis.
 axis: blameless-language-editing
 rule_count_floor: 4
 ---
@@ -14,6 +14,39 @@ postmortem docs), layer 2 (named practice: "we"-framing, system-language
 over person-language), layer 3 (just-culture / human-factors framing
 that treats action as reasonable given the information available at the
 time).
+
+## Trigger
+
+Apply this skill when editing a draft postmortem's prose for blame
+language — a sentence naming an individual as the actor of a mistake, a
+"should have" judgment, a hindsight opinion, an interview question
+framed as "who," or praise crediting one responder by name —
+distinguishing it from timeline-construction (what facts go in) by
+focusing on how those facts are worded.
+
+## Procedure
+
+1. When a sentence names an individual as the actor of a mistake,
+   rewrite to "we"-framing and system-language (rule 1).
+2. When a sentence contains "should have," replace it with a process
+   question about what would need to be true in the process (rule 2).
+3. When describing what a responder did, write the observable fact
+   only, never the hindsight judgment (rule 3).
+4. When phrasing interview or timeline questions, ask "what" questions,
+   never "who" questions (rule 4).
+5. When a word like "mistake," "fault," or "failure to" (attributed to
+   a person) appears, replace it with a neutral, measurable observation
+   (rule 5).
+6. When a draft praises or credits one responder's individual save,
+   remove the individual credit line and keep the system-level fact
+   instead (rule 6).
+
+## Output shape
+
+A revised postmortem passage with every person-attributed mistake,
+"should have," hindsight judgment, "who" question, and individual-credit
+aside rewritten to system-language, process questions, and observable
+facts.
 
 ## Rules
 

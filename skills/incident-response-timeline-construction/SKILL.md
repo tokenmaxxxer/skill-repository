@@ -1,6 +1,6 @@
 ---
 name: incident-response-timeline-construction
-description: Use when you need guidance on Timeline construction. Applies to the timeline-construction axis.
+description: Use when building or reviewing an incident postmortem's timeline field — what events to log, at what resolution, and how to verify them. Applies to the timeline-construction axis.
 axis: timeline-construction
 rule_count_floor: 4
 ---
@@ -12,6 +12,34 @@ resolution. Layer 1 (practitioner: Google SRE workbook, PagerDuty
 postmortem meeting guide), layer 2 (named practice: event-vs-narrative
 timeline separation), layer 3 (impact-scoping proportionality, shared
 with [[severity-classification-scoping]]).
+
+## Trigger
+
+Apply this skill when building or reviewing a postmortem's `timeline`
+field — deciding what events belong in it, at what resolution, tagging
+detection versus mitigation steps, cross-checking responder memories, or
+compressing it for a lower-severity incident — distinguishing it from
+blameless-language-editing (how those entries are worded once chosen).
+
+## Procedure
+
+1. Log timestamped, falsifiable events rather than narrative summary
+   sentences (rule 1).
+2. Tag detection/escalation steps distinctly from mitigation/remediation
+   steps (rule 2).
+3. Cross-check entries gathered from multiple responders' memories
+   against an objective source before entering them (rule 3).
+4. When the incident is SEV3/minor, compress the timeline to the
+   detection-to-mitigation window only (rule 4).
+5. When a draft entry restates the narrative summary instead of a
+   discrete event, delete it (rule 5).
+
+## Output shape
+
+A timeline of timestamped, falsifiable, source-verified events, tagged
+detection-vs-mitigation, scoped to full pre-incident reconstruction or
+compressed to the detection-to-mitigation window per the incident's
+severity tier.
 
 ## Rules
 

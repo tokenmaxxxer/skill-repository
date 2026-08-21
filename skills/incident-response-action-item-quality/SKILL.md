@@ -1,6 +1,6 @@
 ---
 name: incident-response-action-item-quality
-description: Use when you need guidance on Action item quality and prioritization. Applies to the action-item-quality axis.
+description: Use when drafting, prioritizing, or cutting a postmortem's action-item list — writing items, setting deadlines, or deciding what to drop. Applies to the action-item-quality axis.
 axis: action-item-quality
 rule_count_floor: 4
 ---
@@ -13,6 +13,35 @@ PagerDuty postmortem docs, incident.io), layer 2 (named framework:
 severity-vs-effort prioritization), layer 3 (subtraction-neglect —
 Adams, Converse, Hales & Klotz, *Nature* 594, 2021 — applied to backlog
 pruning).
+
+## Trigger
+
+Apply this skill when drafting or reviewing a postmortem's action-item
+list — writing new items, setting deadlines, prioritizing a candidate
+list, or deciding whether to cut an item — distinguishing it from
+rca-method-selection (finding causes) and severity-classification-scoping
+(how deep the whole document should be).
+
+## Procedure
+
+1. When writing an action item, require a directive verb, a named
+   owner, a concrete outcome, and a deadline in the same item (rule 1).
+2. Set the deadline from the incident's severity: 15 days for a
+   SEV1-driven item, 30 days for a SEV2-driven item (rule 2).
+3. When more than ~5 candidate items exist, prioritize by a
+   severity-vs-effort matrix rather than meeting-room volume (rule 3).
+4. When deprioritizing an item, record the decision and its reason
+   instead of silently dropping it from the list (rule 4).
+5. When the recent completion rate falls under ~50%, treat that as a
+   signal to shrink the next list, not to push execution harder (rule 5).
+6. Before finalizing the list, run a deliberate cutting pass and keep
+   only the 3-5 well-defined, root-cause-addressing items (rule 6).
+
+## Output shape
+
+A short action-item list (typically 3-5 items), each with owner, verb,
+outcome, and deadline, prioritized by severity-vs-effort, with any
+deprioritized candidate recorded alongside its cut reason.
 
 ## Rules
 
