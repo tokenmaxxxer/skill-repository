@@ -21,6 +21,41 @@ Belongs to the `incident` state, run once the incident is over. Writes
 `postmortem/skills/postmortem/templates/postmortem-template.md` as the field
 skeleton. Writing this file is never gated — it is not `ops/state.md`.
 
+## Trigger
+
+Apply this skill once an `incident` state's live incident is over and a
+blameless postmortem is owed per the required trigger criteria below —
+distinguishing it from the live incident timeline itself (built while the
+incident is ongoing, before this skill runs) and from the rollout
+thresholds (`rollout-plan`).
+
+## Procedure
+
+1. Confirm a postmortem is owed by checking the required trigger
+   criteria (see "Required trigger criteria").
+2. Draft the postmortem's required sections, drawing Actions taken from
+   the live incident timeline built during the incident (see "Required
+   sections").
+3. For every action item under Prevention/follow-up, run the mechanical
+   check — named owner, tracking location, closing condition — before
+   treating it as complete (see "The mechanical check on every action
+   item").
+4. Do not self-certify rollback, IC appointment, or incident resolution;
+   while waiting for those human calls, keep building the timeline and
+   surfacing evidence (see "What this skill does NOT do").
+5. Once the human confirms resolution, tell the user the draft is ready
+   for review — do not move `incident -> steady` yourself; that
+   transition needs the human's own confirmation that the postmortem was
+   reviewed and satisfactory (see "What this skill does NOT do").
+
+## Output shape
+
+`ops/postmortem-<incident-id>.md`, filled in against the postmortem
+template's field skeleton (Impact, Actions taken, Root cause(s),
+Prevention/follow-up action items — each item carrying an owner,
+tracking location, and closing condition), ready for human review before
+`incident -> steady` fires.
+
 ## Required trigger criteria (fixed before the fact, per Google's stated
 rule, so there is no post-hoc argument about whether one is owed)
 

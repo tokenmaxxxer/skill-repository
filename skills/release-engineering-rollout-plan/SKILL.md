@@ -17,6 +17,40 @@ description: >-
 Belongs to the `rollout` state. Entered once `readiness -> rollout` fires
 (checklist complete, every yes item has a pointable artifact).
 
+## Trigger
+
+Apply this skill while working the `rollout` state: declaring or deriving
+the traffic curve and per-step metric thresholds before the agent-owned
+`rollout -> rollout`/`rollout -> incident` rows can read them —
+distinguishing it from the readiness checklist (`readiness-checklist`)
+and the post-incident postmortem (`postmortem`).
+
+## Procedure
+
+1. Ask the user for (or derive from the readiness record) the traffic
+   curve, bake time, metric queries, and per-step thresholds (see "What
+   it asks the user for").
+2. Write one step entry per traffic increment to `ops/rollout-plan.md`,
+   each with a `result: pending` field (see "What it writes, and
+   where").
+3. Let the agent promote itself `rollout -> rollout` when a step's
+   result comes back clean against its declared threshold, with no
+   human turn required (see "How the agent-owned rows read it").
+4. Let the agent declare `rollout -> incident` immediately on a breach
+   past a step's hard threshold, without waiting to be asked (see "How
+   the agent-owned rows read it").
+5. For `rollout -> steady`, do not self-promote even after the last
+   canary step passes — ask the user for an explicit promotion approval
+   in their own turn first (see "How the agent-owned rows read it").
+
+## Output shape
+
+`ops/rollout-plan.md`, one step entry per traffic increment (bake time,
+metric queries, pass/fail/inconclusive thresholds, `result:` field), read
+mechanically by the `rollout -> rollout` and `rollout -> incident`
+agent-owned transitions; `rollout -> steady` instead waits on the user's
+own explicit approval turn.
+
 ## What it asks the user for
 
 Either directly, or derived from the readiness record if already implied

@@ -17,3 +17,13 @@ technical-feasibility-spike-report
 technical-feasibility-stride-table
 technical-feasibility-threat-model-disposition
 technical-feasibility-verdict-and-timebox-selection
+release-engineering-branching-release-strategy
+release-engineering-changelog-entry-categorization
+release-engineering-deployment-rollout-strategy
+release-engineering-error-budget-policy
+release-engineering-postmortem
+release-engineering-readiness-checklist
+release-engineering-release-cadence-and-toil
+release-engineering-rollback-and-recovery
+release-engineering-rollout-plan
+release-engineering-semver-bump-selection

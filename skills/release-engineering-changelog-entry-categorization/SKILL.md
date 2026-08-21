@@ -1,11 +1,47 @@
 ---
 name: release-engineering-changelog-entry-categorization
-description: Use when you need guidance on Changelog entry categorization. Applies to the changelog-entry-categorization axis.
+description: Use when categorizing a changelog entry (Added/Changed/Deprecated/Removed/Fixed/Security), deciding whether an entry belongs at all, or ordering/dating a release's changelog section.
 axis: changelog-entry-categorization
 rule_count_floor: 12
 ---
 
 # Changelog entry categorization
+
+## Trigger
+
+Apply this skill when writing or categorizing a changelog entry for a
+release — choosing among Added/Changed/Deprecated/Removed/Fixed/
+Security, deciding whether an internal change belongs in the changelog
+at all, or formatting a release's date and category grouping.
+
+## Procedure
+
+1. Categorize by what the entry actually is: a wholly new capability is
+   `Added` (rule 1); a change to existing, still-present functionality
+   is `Changed` (rule 2); a scheduled-for-removal-but-not-yet-removed
+   feature is `Deprecated` (rule 3); an actual deletion of previously
+   deprecated functionality is `Removed` (rule 4); a correction of
+   incorrect behavior is `Fixed` (rule 5); a vulnerability closure is
+   `Security` even if it looks like a `Fixed` bug (rule 6).
+2. Write every entry's language for a human consumer — what changed and
+   why it matters — never a copy-pasted commit message or diff summary
+   (rule 7).
+3. Group entries under fixed category headings in a fixed order, never
+   flat under a bare version heading (rule 8), and date the release
+   heading in ISO 8601 (rule 9).
+4. When the `Unreleased` section accumulates near-duplicate entries
+   across many PRs, collapse them at release time rather than list
+   every PR (rule 10), and omit entries for internal refactors with no
+   observable consumer effect entirely (rule 11).
+5. Omit a category heading entirely for a release with no entries in it
+   rather than print it empty (rule 12).
+
+## Output shape
+
+A changelog section for the release: one heading per non-empty category
+(in fixed order), each holding human-readable entries, dated in ISO
+8601, with any internal-only or deduplicated changes already excluded
+per the rules above.
 
 ## Rules
 
