@@ -1,6 +1,6 @@
 ---
 name: refactoring-legacy-refactoring-step-decomposition
-description: Use when you need guidance on Refactoring step decomposition. Applies to the refactoring-step-decomposition axis.
+description: Use when sizing an individual refactoring step, sequencing the test cycle between steps, splitting a step that still touches multiple concerns, or prioritizing which legacy area to refactor first.
 axis: refactoring-step-decomposition
 rule_count_floor: 5
 ---
@@ -8,6 +8,38 @@ rule_count_floor: 5
 # Refactoring step decomposition
 
 Research trail: Martin Fowler, Kent Beck et al., *Refactoring: Improving the Design of Existing Code* (the catalog and its test-small-change-test rhythm), understandlegacycode.com's summary of the catalog's key points, and freeCodeCamp/Sourcegraph practitioner guides that restate the small-step discipline for legacy codebases specifically.
+
+## Trigger
+
+Apply this skill when choosing the size of an individual refactoring
+step, deciding when to run tests relative to a step, splitting a step
+that still spans more than one concern, prioritizing which legacy area
+to refactor first, or judging whether a planned step is still
+behavior-preserving.
+
+## Procedure
+
+1. Pick the smallest individually-named catalog refactoring that makes
+   progress rather than a larger compound change (rule 1).
+2. Run the full test suite immediately after each step, before starting
+   the next one (rule 2).
+3. If a single catalog step still touches more than one separable
+   concern to compile, split it further along those concerns (rule 3).
+4. Prioritize the code path with the highest change frequency or defect
+   risk over the one that looks structurally worst (rule 4).
+5. If a planned step would also change what the code does, stop and
+   treat it as a feature change, not a refactoring step (rule 5).
+6. Prefer removing duplicated logic via a catalog step over
+   parameterizing it in place (rule 6).
+7. When several components are refactor/migrate candidates, score each
+   on criticality, coverage, coupling, and team familiarity, and let
+   that combined score set the order (rule 7).
+
+## Output shape
+
+A refactoring executed as a sequence of minimal, individually-named,
+test-verified catalog steps, each behavior-preserving, ordered by
+combined risk score rather than surface appearance.
 
 ## Rules
 

@@ -1,6 +1,6 @@
 ---
 name: refactoring-legacy-strangler-fig-migration
-description: Use when you need guidance on Strangler fig migration. Applies to the strangler-fig-migration axis.
+description: Use when choosing between Strangler Fig and Branch by Abstraction for a legacy migration, scoping a migration slice, verifying a new implementation's correctness before cutover, or deciding when to decommission the legacy path.
 axis: strangler-fig-migration
 rule_count_floor: 5
 ---
@@ -8,6 +8,41 @@ rule_count_floor: 5
 # Strangler fig migration
 
 Research trail: Martin Fowler's original Strangler Fig naming, Azure Architecture Center's Strangler Fig pattern page, AWS Prescriptive Guidance's Branch-by-Abstraction page, and practitioner comparisons (Simran Chawla; techdebt.best; ishir.com/Security Boulevard modernization write-ups) covering when each pattern applies and how decommissioning is actually executed.
+
+## Trigger
+
+Apply this skill when choosing between the Strangler Fig pattern and
+Branch by Abstraction for a legacy migration, scoping which slice of
+functionality to migrate together, verifying a new implementation's
+correctness before routing production traffic to it, or deciding when
+a fully-migrated legacy path is safe to decommission.
+
+## Procedure
+
+1. Use the Strangler Fig pattern when the functionality has an
+   externally interceptable request boundary (rule 1).
+2. Use Branch by Abstraction when the functionality is embedded
+   in-process with no interceptable boundary (rule 2).
+3. Re-scope a migration slice when business, code, deployment, and team
+   boundaries do not agree along the code boundary alone (rule 3).
+4. Run a parallel run/shadow-traffic comparison before routing real
+   traffic when output correctness can't be verified by review alone
+   (rule 4).
+5. Wait for a monitoring-confirmed zero-traffic signal on the legacy
+   path before touching legacy code for a fully-migrated slice (rule 5).
+6. After confirming zero legacy traffic, actually delete the old code
+   path, its unused data, and the routing rule (rule 6).
+7. Define an explicit adapter/translation layer at the facade boundary
+   and forbid either side's internals from crossing it directly
+   (rule 7).
+
+## Output shape
+
+A migration executed as reversible, boundary-scoped slices — Strangler
+Fig or Branch by Abstraction as the boundary dictates — each verified
+by parallel-run comparison and monitoring-confirmed zero traffic before
+its legacy path is actually deleted through an explicit translation
+layer.
 
 ## Rules
 

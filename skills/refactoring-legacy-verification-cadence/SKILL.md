@@ -1,6 +1,6 @@
 ---
 name: refactoring-legacy-verification-cadence
-description: Use when you need guidance on Verification cadence and rollback. Applies to the verification-cadence axis.
+description: Use when deciding how often to run tests during a refactoring sequence, ordering fast vs. slow suites, scoping which regression tests to re-run per step, monitoring a canary rollout, or reacting to a failed captured test.
 axis: verification-cadence
 rule_count_floor: 5
 ---
@@ -8,6 +8,38 @@ rule_count_floor: 5
 # Verification cadence and rollback
 
 Research trail: BrowserStack and CircleCI's regression-testing/CI guides, Harness's regression-testing-in-CI/CD writeup on gated pipelines, and progressive-delivery/canary-rollback practitioner material (Bird Eats Bug; the CI/CD gate-ordering pattern). This axis is process/tooling practice rather than a named academic methodology — no independent academic layer was found, matching the sparse-tier expectation for this role.
+
+## Trigger
+
+Apply this skill when deciding how often to re-run tests during a
+refactoring sequence, ordering fast vs. slow suites in the verification
+pipeline, scoping which regression tests to run per step, monitoring a
+staged/canary rollout, reacting to a captured test failure, or pruning
+an orphaned regression suite.
+
+## Procedure
+
+1. Run the captured suite for the touched area immediately after each
+   individual step, before starting the next one (rule 1).
+2. Order the pipeline fast-tests-first, only running the slow suite if
+   the fast gate passes (rule 2).
+3. Scope per-step re-runs to the changed area's risk, but escalate to
+   the full suite before merging the overall sequence (rule 3).
+4. Under a staged/canary rollout, monitor production error/latency
+   signals and treat a threshold breach as a hard rollback trigger
+   (rule 4).
+5. Treat a captured-test failure after a step as a stop signal to
+   revert/fix the step, not a signal to adjust the test (rule 5).
+6. Remove regression tests that no longer exercise any reachable code
+   path from the per-step verification run (rule 6).
+
+## Output shape
+
+A verification pipeline that gates each refactoring step on an
+immediate, risk-scoped, fast-first test run, escalates to the full
+suite before merge, monitors canary rollouts with a hard rollback
+trigger, and treats any captured-test failure as a stop-and-revert
+signal.
 
 ## Rules
 

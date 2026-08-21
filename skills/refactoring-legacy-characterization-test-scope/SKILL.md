@@ -1,6 +1,6 @@
 ---
 name: refactoring-legacy-characterization-test-scope
-description: Use when you need guidance on Characterization test scope. Applies to the characterization-test-scope axis.
+description: Use when writing characterization tests before a legacy refactor, choosing what and how many inputs to capture, deciding a unit is safety-net "done," or handling an observed defect in legacy behavior.
 axis: characterization-test-scope
 rule_count_floor: 5
 ---
@@ -8,6 +8,39 @@ rule_count_floor: 5
 # Characterization test scope
 
 Research trail: Michael Feathers' characterization-test definition (Wikipedia's summary of *Working Effectively with Legacy Code*), golden-master testing write-ups (Chris Melinn; Fabrizio Duroni/chicio; Blexin) that operationalize "how much to capture," and understandlegacycode.com's comparison of characterization vs. approval vs. regression tests. Academic layer: none independently found for this axis beyond the practitioner canon above — flagged as an open gap below, same pattern the observability/technical-writing exemplars already recorded for their own thin-academic axes.
+
+## Trigger
+
+Apply this skill when writing a characterization test ahead of a legacy
+refactor, choosing what output shape or how many/which inputs to
+capture, deciding whether a unit's characterization coverage is done
+before starting structural change, or handling an obvious defect
+surfaced during characterization.
+
+## Procedure
+
+1. Assert on the actual observed output of the run under test, not on
+   what the output "should" be (rule 1).
+2. For a complex structured result, capture a golden-master snapshot
+   instead of many field-by-field assertions (rule 2).
+3. Select a large, diverse input set (edge cases, boundaries,
+   production-like samples) rather than one or two happy-path examples
+   (rule 3).
+4. Stop adding tests once new inputs stop producing new observed
+   behaviors, not at a fixed test count (rule 4).
+5. Record an observed defect as a cited discrepancy instead of silently
+   correcting it in the test (rule 5).
+6. Do not write tests to force coverage of dead branches a diverse
+   input sweep never reaches (rule 6).
+7. After capturing a test, mutate the code under test and confirm the
+   test fails against the mutation before trusting it (rule 7).
+
+## Output shape
+
+A characterization test suite that asserts on actually-observed
+behavior across a diverse, plateau-scoped input set, with any surfaced
+defects recorded rather than silently corrected, and each test
+confirmed to fail under a deliberate mutation.
 
 ## Rules
 

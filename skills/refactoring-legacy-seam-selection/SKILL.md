@@ -1,6 +1,6 @@
 ---
 name: refactoring-legacy-seam-selection
-description: Use when you need guidance on Seam selection. Applies to the seam-selection axis.
+description: Use when choosing how to introduce new or changed behavior into legacy code without tests, deciding between Sprout/Wrap Method and a full object seam, or picking where in the call graph to place the seam.
 axis: seam-selection
 rule_count_floor: 5
 ---
@@ -8,6 +8,41 @@ rule_count_floor: 5
 # Seam selection
 
 Research trail: Michael Feathers, *Working Effectively with Legacy Code* (seam taxonomy: preprocessing/link/object seams; Sprout Method, Sprout Class, Wrap Method), Martin Fowler's bliki "LegacySeam", and practitioner write-ups (Mike Bland; Codably's sprout/wrap/seam comparison) that restate the book's decision order in current terms. No independent academic layer was found specific to seam mechanics beyond Feathers' own text — this is a practitioner-canon axis, not a research-literature one, consistent with this role's sparse source tier.
+
+## Trigger
+
+Apply this skill when deciding how to introduce new or changed behavior
+into untested legacy code, choosing between Sprout/Wrap Method and
+instrumenting a full object seam, selecting which of several candidate
+seam points to use, or scoping how much of a legacy method a seam
+should enclose.
+
+## Procedure
+
+1. For behavior that changes at a single, clearly-localized point, use
+   the Sprout Method rather than editing inline (rule 1).
+2. For behavior that must run unconditionally before/after an existing
+   method on every call, use the Wrap Method rather than editing inside
+   it (rule 2).
+3. To replace a hard external dependency with a fake, use an object
+   seam rather than a preprocessor or link seam (rule 3).
+4. Base the Sprout/Wrap-vs-full-seam choice on confidence and budget,
+   not code aesthetics (rule 4).
+5. When multiple call sites could serve as the seam, prefer the one
+   closest to the point of actual behavioral difference (rule 5).
+6. When only one responsibility of an entangled method needs testing,
+   narrow the seam to the smallest enclosing scope rather than seaming
+   the whole method (rule 6).
+7. Before choosing a seam, read the surrounding legacy code for
+   undocumented business rules the seam choice could otherwise miss
+   (rule 7).
+
+## Output shape
+
+A minimal seam (Sprout Method, Wrap Method, or a scoped object seam)
+placed at the point closest to the actual behavioral difference,
+chosen by confidence/budget rather than aesthetics, informed by a read
+of the surrounding legacy code for hidden rules.
 
 ## Rules
 
