@@ -178,3 +178,8 @@ devrel-content-comprehensibility
 sales-objection-handling
 sales-pitch-scoping-and-messaging-handoff
 sales-qualification-and-discovery
+architecture-coupling-classification
+architecture-decomposition-strategy
+architecture-dependency-direction
+architecture-interface-contract-shape
+architecture-module-boundary-definition
