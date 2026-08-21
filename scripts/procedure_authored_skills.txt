@@ -192,3 +192,4 @@ content-design-operational-playbook
 accessibility-aria-and-contrast-rules
 interaction-design-form-control-and-layout
 issue-retrospective-timeline-comprehensibility-and-subtraction-rules
+performance-engineering-operational-playbook
