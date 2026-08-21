@@ -106,3 +106,8 @@ customer-support-kcs-article-authoring
 customer-support-research-log
 customer-support-sla-tier-priority
 customer-support-subtraction-comprehensibility
+secure-coding-authorization-access-control
+secure-coding-cryptography-secrets-management
+secure-coding-dependency-supply-chain-security
+secure-coding-input-validation-injection-defense
+secure-coding-session-authentication

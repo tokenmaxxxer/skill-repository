@@ -1,6 +1,6 @@
 ---
 name: secure-coding-authorization-access-control
-description: Use when you need guidance on Authorization / access control. Applies to the authorization-access-control axis.
+description: Use when a design or review is deciding who may act on what, choosing between RBAC and ABAC/ReBAC, closing a client-side-only or single-entry-path check, or auditing accumulated role permissions.
 axis: authorization-access-control
 rule_count_floor: 8
 ---
@@ -11,6 +11,49 @@ Decision rules for deciding who may act on what, and where that check
 runs. Research trail: layer 1 (OWASP Authorization Cheat Sheet) plus
 layer 2 (ASVS V4 "Access Control", CWE-862 Missing Authorization,
 CWE-863 Incorrect Authorization).
+
+## Trigger
+
+Use when a design or review is deciding who may act on what and where
+that check runs — choosing a default for unmatched requests, granting a
+new permission, picking between RBAC and ABAC/ReBAC, modeling a
+multi-tenant resource, closing a client-side-only or single-entry-path
+check, or auditing accumulated role permissions. Do not use it for
+session/credential lifecycle concerns once identity is already
+established (that is `secure-coding-session-authentication`).
+
+## Procedure
+
+1. Cite rule 1 when a request reaches a point with no explicit
+   access-control rule matching it, to deny by default rather than
+   permit-by-omission.
+2. Cite rule 2 when a permission grant is being proposed, to require it
+   be explicitly justifiable rather than granted broad-then-trimmed.
+3. Cite rule 3 when the system has few, stable, non-overlapping roles,
+   to choose RBAC as the simplest auditable model.
+4. Cite rule 4 when access depends on dynamic context (tenant ownership,
+   time, device posture) rather than a fixed role, to choose ABAC/ReBAC
+   over RBAC and avoid role explosion.
+5. Cite rule 5 when a multi-tenant resource is being modeled, to reject
+   reusing a single-tenant RBAC role set that cannot express tenant
+   ownership.
+6. Cite rule 6 when an authorization check currently exists only in
+   client-side code, to remove reliance on it and add a server-side
+   enforcement point.
+7. Cite rule 7 when an endpoint is reachable through more than one entry
+   path, to apply the same permission check on every path rather than
+   special-casing one as trusted.
+8. Cite rule 8 when a role has accumulated permissions through
+   incremental grants over time, to periodically audit and remove
+   grants no longer justifiable under rule 2.
+
+## Output shape
+
+An authorization verdict: the applicable default (deny-unless-matched),
+the chosen model (RBAC vs. ABAC/ReBAC) with its justification, any
+client-side-only or single-entry-path gap identified with the required
+server-side fix, and — for an existing role — a permission-audit note
+naming any grant that no longer clears rule 2.
 
 ## Rules
 
