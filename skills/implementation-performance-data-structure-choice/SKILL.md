@@ -1,6 +1,6 @@
 ---
 name: implementation-performance-data-structure-choice
-description: Use when you need guidance on Performance-degradation prevention: data structure, algorithm, and. Applies to the performance-data-structure-choice axis.
+description: Use when choosing a data structure, algorithm, or communication scheme that could introduce a performance cliff — membership testing in a loop, comparing algorithms by asymptotic class, per-message connections, or a cache/index whose maintenance cost may now outweigh its benefit.
 axis: performance-data-structure-choice
 rule_count_floor: 6
 tier: sparse
@@ -12,6 +12,39 @@ tier: sparse
 Decision rules for picking the structure/algorithm/communication scheme
 that avoids introducing an avoidable performance cliff, plus removal
 rules for structures that are now pure overhead.
+
+## Trigger
+
+Apply this skill when writing or reviewing code that picks a data
+structure, algorithm, or communication scheme: membership testing or
+dedup inside a loop, a lookup structure choice under memory constraints,
+comparing two algorithms by asymptotic class alone, a communication
+scheme moving many small messages, or a cache layer or precomputed
+index/denormalized field under review for whether its maintenance cost
+still earns its keep.
+
+## Procedure
+
+1. If membership testing or dedup runs inside a loop, use a hash-based
+   set/map instead of a linearly scanned list (rule 1).
+2. If the target is memory-constrained and lookups are infrequent,
+   accept a sorted-array + binary search over a hash map (rule 2).
+3. If comparing two algorithms by asymptotic class, measure actual
+   per-element cost before picking by class alone (rule 3).
+4. If a communication scheme moves many small, frequent messages,
+   prefer batching or a persistent connection over one connection per
+   message (rule 4).
+5. If a cache layer's measured hit rate is near zero, delete the cache
+   rather than tuning it (rule 5).
+6. If a precomputed index or denormalized field is read on less than
+   the fraction of reads that justifies its write-side cost, drop it
+   and compute on read instead (rule 6).
+
+## Output shape
+
+A structure/algorithm/scheme decision: the condition that triggered it,
+the applicable rule number, and the concrete choice (structure,
+algorithm, batching, removal) selected.
 
 ## Rules
 
