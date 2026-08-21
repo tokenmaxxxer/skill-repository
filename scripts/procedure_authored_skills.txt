@@ -193,3 +193,4 @@ accessibility-aria-and-contrast-rules
 interaction-design-form-control-and-layout
 issue-retrospective-timeline-comprehensibility-and-subtraction-rules
 performance-engineering-operational-playbook
+pr-communications-message-planning-and-evaluation-rules
