@@ -126,3 +126,8 @@ partnerships-bd-exclusivity-and-scope-terms
 partnerships-bd-governance-cadence-and-kpi
 partnerships-bd-negotiation-positioning
 partnerships-bd-term-sheet-comprehensibility-and-convention
+refactoring-legacy-characterization-test-scope
+refactoring-legacy-refactoring-step-decomposition
+refactoring-legacy-seam-selection
+refactoring-legacy-strangler-fig-migration
+refactoring-legacy-verification-cadence
