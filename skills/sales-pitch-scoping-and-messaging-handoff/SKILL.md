@@ -1,6 +1,6 @@
 ---
 name: sales-pitch-scoping-and-messaging-handoff
-description: Use when you need guidance on Pitch scoping and messaging hand-off. Applies to the pitch-scoping-and-messaging-handoff axis.
+description: Use when scoping a sales pitch's length and content, or deciding whether a prospect's request for messaging assets belongs to sales or should hand off to marketing.
 axis: pitch-scoping-and-messaging-handoff
 rule_count_floor: 5
 ---
@@ -11,6 +11,35 @@ Decision rules for how much a sales pitch should say and where the
 sales/marketing boundary sits, grounded in elevator-pitch research on
 cognitive load and attention, plus subtraction-neglect research on why
 reps default to adding rather than cutting.
+
+## Trigger
+
+Apply this skill when drafting or reviewing a sales pitch's scope
+(opening line, one-touch length, feature content) or when a prospect
+requests a messaging asset (case-study one-pager, battlecard copy,
+outbound email template) and it's unclear whether sales should draft it
+inline or hand off to marketing.
+
+## Procedure
+
+1. Open a first-touch pitch with the prospect's problem in their own
+   language, not the company/product name (rule 1).
+2. Cap a first-touch pitch to one core problem and one core outcome
+   (rule 2).
+3. Actively cut features that don't map to the prospect's stated pain,
+   even differentiating ones (rule 3).
+4. If the prospect requests messaging assets, hand off to marketing's
+   asset library rather than drafting positioning copy inline (rule 4).
+5. For a technical-buyer audience, cut promotional adjectives and
+   superlatives, keep only concrete falsifiable claims (rule 5).
+6. If the pitch exceeds ~30 seconds/75-100 words for a first-touch
+   context, cut content rather than speeding up delivery (rule 6).
+
+## Output shape
+
+A pitch-scoping decision: the applicable rule number(s), the trimmed or
+scoped pitch content, and — when a messaging-asset request triggered
+rule 4 — the hand-off destination instead of inline copy.
 
 ## Rules
 
