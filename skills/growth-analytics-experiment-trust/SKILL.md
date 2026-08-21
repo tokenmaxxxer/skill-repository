@@ -1,11 +1,37 @@
 ---
 name: growth-analytics-experiment-trust
-description: Use when you need guidance on Experiment-trust verdict rules. Applies to the experiment-trust axis.
+description: Use when an experiment's traffic split looks skewed, an anomalous win needs a trust verdict before it is reported, or a guardrail metric's non-significant result needs to be surfaced rather than dropped. Applies to the experiment-trust axis.
 axis: experiment-trust
 rule_count_floor: 3
 ---
 
 # Experiment-trust verdict rules
+
+## Trigger
+
+Apply this skill when an experiment's variant traffic split may deviate
+from its assigned ratio, when an experiment result looks anomalously
+large relative to the pre-registered expected effect, or when a
+guardrail metric shows no statistically significant delta and someone is
+deciding whether to include it in the report.
+
+## Procedure
+
+1. Before reading any effect size, run a Sample Ratio Mismatch (SRM)
+   chi-square check on the variant traffic split; treat a detected SRM
+   as a hard stop (rule 1).
+2. When a win exceeds roughly 2x the pre-registered expected effect,
+   flag it "unconfirmed, pending independent check" rather than
+   reporting it as a plain result (rule 2).
+3. When a guardrail metric shows no statistically significant delta,
+   still report it — drop only the practice of omitting it, never the
+   metric itself (rule 3).
+
+## Output shape
+
+A trust verdict on the experiment: SRM check result (pass/hard-stop),
+any anomalous win flagged as unconfirmed pending independent check, and
+every guardrail metric reported regardless of significance.
 
 1. **When** an experiment's variant traffic split deviates from the
    assigned ratio, **run a Sample Ratio Mismatch (SRM) chi-square check

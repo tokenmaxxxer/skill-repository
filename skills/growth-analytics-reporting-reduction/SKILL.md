@@ -1,11 +1,30 @@
 ---
 name: growth-analytics-reporting-reduction
-description: Use when you need guidance on Report-reduction (subtraction) rules. Applies to the reporting-reduction axis.
+description: Use when drafting a funnel-diagnosis or experiment-trust deliverable, or when a funnel-diagnosis section carries more than one prioritized recommendation. Applies to the reporting-reduction axis.
 axis: reporting-reduction
 rule_count_floor: 2
 ---
 
 # Report-reduction (subtraction) rules
+
+## Trigger
+
+Apply this skill when drafting a funnel-diagnosis or experiment-trust
+deliverable, or when a funnel-diagnosis section already has more than
+one prioritized recommendation.
+
+## Procedure
+
+1. Before defaulting to an additive fix, actively look for a subtractive
+   fix — remove a step, a confusing field, or a metric (rule 1).
+2. When a funnel-diagnosis section has more than one prioritized
+   recommendation, cut every recommendation but the one scoped to the
+   single weakest stage (rule 2).
+
+## Output shape
+
+A deliverable with subtractive fixes considered before additive ones,
+and at most one prioritized recommendation per funnel-diagnosis section.
 
 1. **When** drafting a funnel-diagnosis or experiment-trust deliverable,
    **actively look for a subtractive fix (remove a step, remove a
