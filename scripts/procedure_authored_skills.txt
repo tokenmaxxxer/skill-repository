@@ -111,3 +111,8 @@ secure-coding-cryptography-secrets-management
 secure-coding-dependency-supply-chain-security
 secure-coding-input-validation-injection-defense
 secure-coding-session-authentication
+risk-management-aggregation-consolidation
+risk-management-appetite-tolerance-threshold
+risk-management-likelihood-impact-scale
+risk-management-monitoring-review-cadence
+risk-management-response-strategy-selection

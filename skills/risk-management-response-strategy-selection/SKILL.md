@@ -1,11 +1,45 @@
 ---
 name: risk-management-response-strategy-selection
-description: Use when you need guidance on Risk response strategy selection. Applies to the response-strategy-selection axis.
+description: Use when choosing between Avoid, Mitigate, Transfer, and Accept for a risk, selecting among candidate Mitigate controls, or auditing an Accept decision for missing ownership. Applies to the response-strategy-selection axis.
 axis: response-strategy-selection
 rule_count_floor: 10
 ---
 
 # Risk response strategy selection
+
+## Trigger
+
+Apply this skill when choosing a response strategy (Avoid, Mitigate,
+Transfer, Accept) for a risk, when a risk is complex with multiple
+contributing causes, when auditing an existing Accept decision, or when
+ranking candidate Mitigate controls.
+
+## Procedure
+
+1. When likelihood x impact lands in the extreme band and a viable
+   alternative activity exists, choose Avoid over Mitigate (rule 1).
+2. When candidate-control cost is less than the expected value at risk,
+   choose Mitigate; when it exceeds that value, choose Accept with
+   active monitoring (rule 2).
+3. When a third party can bear the consequence more cheaply than
+   in-house mitigation, choose Transfer for that portion of the risk
+   (rule 3).
+4. When a risk is complex with multiple contributing causes, combine
+   strategies per cause rather than one label for the whole risk
+   (rule 4).
+5. When an Accept decision has no named accountable owner and no
+   monitoring trigger, strip the Accept label until both are attached
+   (rule 5).
+6. When selecting a Mitigate control, prefer source-removal over
+   protective/add-on over information-only controls, in that order
+   (rule 6).
+
+## Output shape
+
+One response strategy (or a per-cause combination of strategies) per
+risk, with any Accept decision carrying a named owner and monitoring
+trigger, and any selected Mitigate control ranked by the
+source-removal > protective > information-only preference order.
 
 ## Decision rules
 

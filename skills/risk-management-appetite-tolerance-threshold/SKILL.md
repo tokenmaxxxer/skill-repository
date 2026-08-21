@@ -1,11 +1,45 @@
 ---
 name: risk-management-appetite-tolerance-threshold
-description: Use when you need guidance on Risk appetite / tolerance threshold setting. Applies to the appetite-tolerance-threshold axis.
+description: Use when setting or deriving a category- or entity-level risk appetite/tolerance threshold, choosing between appetite and tolerance framing, reconciling thresholds across interacting categories, or tracing a threshold back to its source. Applies to the appetite-tolerance-threshold axis.
 axis: appetite-tolerance-threshold
 rule_count_floor: 10
 ---
 
 # Risk appetite / tolerance threshold setting
+
+## Trigger
+
+Apply this skill when setting `risk-appetite-threshold` for a register
+entry, choosing whether to express a threshold in appetite or tolerance
+terms, reconciling thresholds across interacting risk categories,
+auditing whether a threshold traces back to its entity-level appetite
+statement, or a threshold is bound by an external regulatory/contractual
+limit.
+
+## Procedure
+
+1. When setting a register entry's threshold, derive it from the
+   entity-level appetite statement decomposed for that risk's
+   category/objective, never independently (rule 1).
+2. When the objective is strategic/business-model-level, express the
+   threshold in appetite terms; when operational/day-to-day, express it
+   in tolerance terms (rule 2).
+3. When multiple risk categories interact, set the combined threshold
+   from a portfolio view of how they cascade, not by summing
+   independent per-category thresholds (rule 3).
+4. When a category-level threshold cannot be traced back to an
+   entity-level appetite statement, retire it and re-derive from the
+   current statement rather than carrying it forward (rule 4).
+5. When a threshold is bound by an external regulatory or contractual
+   limit, cite the exact clause/control ID on the entry instead of only
+   the generic appetite band (rule 5).
+
+## Output shape
+
+Each register entry's threshold traceable to an entity-level appetite
+statement, expressed in appetite or tolerance terms matching its
+objective level, reconciled across interacting categories, and citing
+any binding external clause/control ID.
 
 ## Decision rules
 
