@@ -1,6 +1,6 @@
 ---
 name: ml-engineering-model-provenance-versioning
-description: Use when you need guidance on Model provenance (model card) and data/model versioning. Applies to the model-provenance-versioning axis.
+description: Use when authoring a model card or deciding how a trained model and its training data should be versioned and traced back to their lineage. Applies to the model-provenance-versioning axis.
 axis: model-provenance-versioning
 rule_count_floor: 5
 ---
@@ -8,6 +8,38 @@ rule_count_floor: 5
 # Model provenance (model card) and data/model versioning
 
 Research trail: Mitchell, Wu, Zaldivar, Barnes, Vasserman, Hutchinson, Spitzer, Raji & Gebru, "Model Cards for Model Reporting" (FAT* 2019), the named source for the model-card field set (via a 2024 secondary discussion of its categories); MLflow/DVC practitioner docs for data/model versioning and lineage. Fetched this session.
+
+## Trigger
+
+Apply this skill when authoring or auditing a model card, or when
+deciding how a trained model artifact and its training dataset should be
+versioned and traced to the run that produced them — distinguishing it
+from ml-test-score-scoring (whether the surrounding test rubric is
+complete) and rollout-promotion-rollback (what happens after the
+versioned artifact is deployed).
+
+## Procedure
+
+1. Include all of the model-card framework's named sections (model
+   details, intended use, factors, metrics, evaluation data, training
+   data, ethical considerations, caveats and recommendations), not a
+   convenient subset (rule 1).
+2. In the Intended Use section, state both the primary intended
+   uses/users AND explicit out-of-scope use cases (rule 2).
+3. Assign a trained model artifact a version identifier traceable to its
+   originating training run, not an ad hoc filename or date string
+   (rule 3).
+4. When the training dataset changes, version the dataset itself and
+   record that version identifier alongside the model version (rule 4).
+5. When the Ethical Considerations section only restates generic
+   boilerplate, drop it and require model-specific findings from actual
+   evaluation instead (rule 5).
+
+## Output shape
+
+A model card with all required sections present, an explicit
+in-scope/out-of-scope Intended Use split, and a model version identifier
+paired with a traceable dataset version identifier.
 
 ## Rules
 
