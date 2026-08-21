@@ -82,3 +82,9 @@ pricing-research
 pricing-scope-gate
 pricing-tier-structure
 pricing-verdict-report
+ml-engineering-evaluation-discipline
+ml-engineering-ml-test-score-scoring
+ml-engineering-model-provenance-versioning
+ml-engineering-rollout-promotion-rollback
+ml-engineering-serving-pattern-selection
+ml-engineering-slo-definition-tradeoffs

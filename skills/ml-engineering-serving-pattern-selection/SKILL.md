@@ -1,6 +1,6 @@
 ---
 name: ml-engineering-serving-pattern-selection
-description: Use when you need guidance on Serving pattern selection (batch / online-sync / online-async-streaming). Applies to the serving-pattern-selection axis.
+description: Use when choosing between batch, online-synchronous, and online-asynchronous/streaming serving for a model workload, or deciding whether to micro-batch requests. Applies to the serving-pattern-selection axis.
 axis: serving-pattern-selection
 rule_count_floor: 5
 ---
@@ -8,6 +8,41 @@ rule_count_floor: 5
 # Serving pattern selection (batch / online-sync / online-async-streaming)
 
 Research trail: practitioner layer from Xebia's ML serving architecture taxonomy and the Clipper low-latency prediction-serving system (academic/systems paper); throughput-latency tradeoff literature on request batching. All fetched this session.
+
+## Trigger
+
+Apply this skill when choosing how a model workload should be served —
+batch, online-synchronous, or online-asynchronous/streaming — or
+deciding whether to micro-batch concurrent requests, distinguishing it
+from rollout-promotion-rollback (how a chosen serving pattern's model
+version gets staged into production, a separate concern) and
+slo-definition-tradeoffs (what latency/availability target the chosen
+pattern must then hit).
+
+## Procedure
+
+1. When output tolerates minutes-to-hours latency and inputs arrive as
+   bounded batches, use batch serving over online serving (rule 1).
+2. When a user-facing request needs a prediction synchronously within
+   the request/response cycle, use online-synchronous serving over
+   batch (rule 2).
+3. When input arrives as a continuous, unbounded stream with
+   non-blocking downstream consumers, use online-asynchronous/streaming
+   serving rather than forcing a synchronous path onto it (rule 3).
+4. When accelerator cost dominates the budget and the latency budget
+   allows a short queuing delay, micro-batch concurrent requests rather
+   than serving one at a time (rule 4).
+5. When a workload's traffic shape has shifted from the pattern it was
+   originally chosen for, drop the mismatched pattern and re-choose
+   rather than layering compensating infrastructure on top of it
+   (rule 5).
+
+## Output shape
+
+One serving-pattern choice (batch, online-synchronous, or
+online-asynchronous/streaming) per workload, plus an explicit
+micro-batching decision when accelerator cost dominates, re-evaluated
+when the workload's traffic shape changes.
 
 ## Rules
 
