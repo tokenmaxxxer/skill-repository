@@ -1,6 +1,6 @@
 ---
 name: observability-explorability
-description: Use when you need guidance on Explorability (unplanned production questions). Applies to the explorability axis.
+description: Use when designing a dashboard or planning an incident investigation and the design must stay open to ad-hoc questions beyond pre-built panels. Applies to the explorability axis.
 axis: explorability
 rule_count_floor: 3
 ---
@@ -12,6 +12,30 @@ questions rather than only pre-built dashboards. Research trail: layer
 2 (Charity Majors' observability definition — high cardinality, high
 dimensionality, explorability) plus layer 1 (practitioner ad-hoc-query
 patterns from the Honeycomb/observability-2.0 lineage).
+
+## Trigger
+
+Apply this skill when designing a dashboard for a surface or planning
+an incident investigation, and the design must stay open to questions
+that were not pre-defined.
+
+## Procedure
+
+1. Retain the raw high-dimensionality event/span data behind any new
+   dashboard, not only the pre-aggregated panel series (rule 1).
+2. When an investigation needs a breakdown existing dashboards don't
+   have, support answering it by querying the raw dimensional data
+   directly, not by shipping new code for a new panel (rule 2).
+3. When a proposal lists many candidate pre-built panels with none
+   backed by queryable raw dimensional data, cut the panel-
+   proliferation approach and route the underlying raw events/spans to
+   a system that supports ad-hoc query instead (rule 3).
+
+## Output shape
+
+A dashboard design backed by queryable raw dimensional data, with
+unplanned incident-investigation questions answerable by ad-hoc query
+against that raw data rather than by new code or new fixed panels.
 
 ## Rules
 

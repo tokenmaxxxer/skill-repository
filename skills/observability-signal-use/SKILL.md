@@ -1,6 +1,6 @@
 ---
 name: observability-signal-use
-description: Use when you need guidance on USE signal placement (Utilization / Saturation / Errors). Applies to the signal-use axis.
+description: Use when placing Utilization, Saturation, or Errors signals on a resource-bound surface. Applies to the signal-use axis.
 axis: signal-use
 rule_count_floor: 3
 ---
@@ -11,6 +11,32 @@ Decision rules for where each of the three USE signals gets a concrete
 metric on a resource-bound surface. Research trail: layer 2 (Brendan
 Gregg's USE method, Prometheus TSDB resource-cardinality guidance)
 plus layer 1 (practitioner saturation-vs-utilization distinctions).
+
+## Trigger
+
+Apply this skill when instrumenting a resource-bound surface and
+Utilization, Saturation, or Errors each need a concrete signal
+placement.
+
+## Procedure
+
+1. For utilization, measure the resource's busy-time fraction at the
+   resource itself, not a derived proxy like request rate (rule 1).
+2. For saturation, measure queue/backlog depth or wait-time at the
+   resource's admission point in addition to utilization (rule 2).
+3. For errors, count resource-level failures distinct from the caller-
+   facing errors already tracked by RED on surfaces that use this
+   resource (rule 3).
+4. When a dashboard already plots utilization and saturation, do not
+   add a raw queue-depth gauge as a fourth panel duplicating what
+   saturation already shows — fold it into the existing saturation
+   panel instead (rule 4).
+
+## Output shape
+
+A busy-time utilization metric, a queue/backlog saturation metric, and
+a resource-level error counter per resource-bound surface — with no
+duplicate raw queue-depth panel alongside saturation.
 
 ## Rules
 

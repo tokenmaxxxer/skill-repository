@@ -37,3 +37,10 @@ product-discovery-one-pager
 product-discovery-opportunity-solution-tree
 product-discovery-opportunity-solution-tree-branching
 product-discovery-rice-ice-prioritization
+observability-cardinality-budget
+observability-explorability
+observability-methodology-selection
+observability-phase-trace
+observability-signal-golden
+observability-signal-red
+observability-signal-use

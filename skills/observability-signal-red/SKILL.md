@@ -1,6 +1,6 @@
 ---
 name: observability-signal-red
-description: Use when you need guidance on RED signal placement (Rate / Errors / Duration). Applies to the signal-red axis.
+description: Use when placing Rate, Errors, or Duration signals on a request-driven surface. Applies to the signal-red axis.
 axis: signal-red
 rule_count_floor: 3
 ---
@@ -11,6 +11,31 @@ Decision rules for where each of the three RED signals gets a concrete
 counter/classifier/histogram on a request-driven surface. Research
 trail: layer 2 (RED method per Tom Wilkie, Google SRE latency-SLI
 guidance) plus layer 1 (percentile-vs-average practitioner pitfalls).
+
+## Trigger
+
+Apply this skill when instrumenting a request-driven surface and Rate,
+Errors, or Duration each need a concrete signal placement.
+
+## Procedure
+
+1. For rate, place a monotonic request counter at the single choke
+   point every request passes through, not scattered per-handler
+   counters (rule 1).
+2. For errors, classify by response/outcome category rather than a
+   single boolean success/fail counter (rule 2).
+3. For duration, use a histogram and read back percentiles, never an
+   arithmetic mean and never an average of per-instance percentiles
+   (rule 3).
+4. When a surface already emits a duration histogram, do not
+   additionally instrument a separate average-latency gauge — read the
+   percentile off the existing histogram instead (rule 4).
+
+## Output shape
+
+A choke-point rate counter, an outcome-classified error counter, and a
+duration histogram read back as percentiles per request-driven surface
+— with no separate average-latency gauge duplicating the histogram.
 
 ## Rules
 
