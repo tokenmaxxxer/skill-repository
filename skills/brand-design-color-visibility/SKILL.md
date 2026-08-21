@@ -1,6 +1,6 @@
 ---
 name: brand-design-color-visibility
-description: Use when you need guidance on Color-combination visibility rules. Applies to the color-combination-visibility axis.
+description: Use when choosing a brand color pair for body/UI text, designating a brand's primary recognition hue, or reviewing a mature palette for low-familiarity accent colors to remove.
 axis: color-combination-visibility
 rule_count_floor: 3
 tier: rich
@@ -11,6 +11,33 @@ tier: rich
 Practitioner + standards + academic rules for which color combinations
 preserve visibility and recognition in brand-facing material (logos,
 brand-color-on-background pairings, brand color as UI accent).
+
+## Trigger
+
+Apply this skill when a brand color pair is chosen for body copy,
+labels, or interactive UI, when defining or auditing which hue a brand
+system treats as its primary recognition color, or when a mature
+palette is reviewed for accent colors to prune.
+
+## Procedure
+
+1. When a brand color pair renders text or an interactive control,
+   require it to clear the WCAG contrast ratio for that use, with the
+   logo-mark exemption applying only when the mark is not itself
+   interactive (rule 1).
+2. When defining or auditing the brand's primary identity signal,
+   designate a single dominant hue and keep secondary/accent colors
+   visually subordinate rather than co-equal (rule 2).
+3. When a mature palette is due for review, audit actual usage
+   frequency per accent color and drop any below the usage floor
+   rather than retiring it "just in case" (rule 3).
+
+## Output shape
+
+A per-pair contrast-ratio check result against the WCAG threshold, a
+primary-hue designation with secondary colors marked subordinate, and
+a palette review listing accent colors below the usage floor for
+removal.
 
 ## Decision rules
 

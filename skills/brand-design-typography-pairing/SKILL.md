@@ -1,12 +1,38 @@
 ---
 name: brand-design-typography-pairing
-description: Use when you need guidance on Typography pairing rules. Applies to the typography-pairing axis.
+description: Use when selecting a second typeface to pair with the brand's primary typeface, locking a final font pair for the brand system, or auditing shipped material for typefaces beyond the guide's stated type system.
 axis: typography-pairing
 rule_count_floor: 3
 tier: rich
 ---
 
 # Typography pairing rules
+
+## Trigger
+
+Apply this skill when selecting a second typeface to pair with an
+already-chosen primary brand typeface, when locking a final font pair
+for the brand system, or when an audit of shipped material finds more
+typefaces in active use than the guide's stated type system lists.
+
+## Procedure
+
+1. When selecting a second typeface, default to a structurally
+   distinct pair over two faces from the same structural family
+   (rule 1).
+2. Once two structurally distinct faces are shortlisted, pick a final
+   pair whose stroke-contrast/weight registers are compatible rather
+   than pulling toward opposite ends of the spectrum (rule 2).
+3. When an audit finds more typefaces in active use than the guide's
+   stated system, remove the excess typefaces and fold any material
+   need they served into the two-to-three-face core system (rule 3).
+
+## Output shape
+
+A shortlist of structurally distinct pairing candidates, a locked
+final pair with its contrast/weight compatibility noted, and an audit
+result listing typefaces to remove to restore the guide's stated
+two-to-three-face ceiling.
 
 ## Decision rules
 
