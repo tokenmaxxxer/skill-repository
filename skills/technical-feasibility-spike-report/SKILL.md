@@ -1,6 +1,6 @@
 ---
 name: technical-feasibility-spike-report
-description: Use this skill when running the technical probe inside the feasibility role's `probing` state — a timeboxed spike to answer one uncertain technical question before a feasibility verdict can be drafted.
+description: Use when a feasibility role's `probing` state needs one uncertain technical question answered inside an agreed timebox before a feasibility verdict can be drafted.
 ---
 
 # Spike report
@@ -13,6 +13,53 @@ research found at both ends of a spike (agreeing the question and timebox
 before starting; reporting back at the timebox's end) and writes the
 resulting spike report as one artifact — never asks for everything in one
 turn.
+
+## Trigger
+
+This probe applies once the feasibility role has entered the `probing`
+state and there is a single, specific technical unknown blocking the
+feasibility verdict — something that must be resolved by a timeboxed
+investigation (not a broad exploration) before `feasibility-record.md`'s
+technical-probe field can be filled in.
+
+## Procedure
+
+1. Ask the user for the question, the proposed timebox, and the acceptance
+   criteria, one at a time, and do not start investigating until all three
+   are agreed (see "What it asks the user for, one thing at a time").
+2. While investigating, record Tasks/Activities as they happen, without
+   asking the user to approve the spike's internal method (see "While
+   investigating").
+3. If the timebox expires without a conclusive answer, stop, report the
+   remaining gaps, and let the user decide whether to open a new,
+   separately-scoped timebox or record the gap as an open finding (see "If
+   the timebox expires with no conclusive answer").
+4. On completion, record Tasks/Activities, Outcomes/Learnings, a
+   Recommendation, and open questions, and classify every finding as a
+   one-way or two-way door via the `reversibility-tag` skill before writing
+   the technical-probe resolution (see "On completion").
+5. Write the spike report to its project-local artifact file using the
+   template's field skeleton, keeping this write ungated while the
+   `feasibility-record.md` status transition remains gated by
+   `state-gate.sh` (see "Artifact" and "Field list (spike-report-template.md)").
+6. Where the marketplace spec expects one record file to carry all four
+   required fields, keep the spike report as its own separate project-local
+   artifact and only summarize/link it from the main record, per the
+   deliberate, unresolved structural difference (see "Spec write_scope gap
+   (issue-53)").
+7. Refuse to mark Acceptance Criteria complete if its timestamp postdates
+   the timebox's recorded start, and say so plainly rather than silently
+   backdating the field (see "Timestamp discipline").
+
+## Output shape
+
+Applying this skill produces one project-local spike report file (e.g.
+`feasibility/spike-report-<slug>.md`), filled in against the
+`spike-report-template.md` field skeleton (Spike Title, Description/Goal,
+Type of spike, Estimated Timebox, Acceptance Criteria, Tasks/Activities,
+Outcomes/Learnings, Recommendation, Open questions), plus a
+technical-probe resolution (`pass`/`fail`/`blocked` plus evidence) written
+into `feasibility-record.md` that points at or summarizes that report.
 
 ## What it asks the user for, one thing at a time
 

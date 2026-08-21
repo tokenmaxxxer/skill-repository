@@ -1,6 +1,6 @@
 ---
 name: technical-feasibility-reversibility-tag
-description: Use when applying Reversibility tag. Cross-cutting standing directive across all four feasibility probes — classify every finding as a one-way or two-way door before it is written to a probe-resolution field. Not a user-facing question; a discipline the agent applies to itself.
+description: Use when a finding is about to be written to a probe-resolution field in feasibility-record.md by spike-report, stride-table, build-vs-buy, or license-scan, and it has not yet been classified as a one-way or two-way door.
 
 ---
 
@@ -17,6 +17,39 @@ methodically and carefully; others are cheap to reverse (a two-way door)
 and can be made quickly. Reversibility is not a fifth probe — it is a field
 on every finding the other four probes produce, and it scales how much
 evidence a probe needs before it can resolve `pass`.
+
+## Trigger
+
+This applies whenever any of the four feasibility probes — `spike-report`,
+`stride-table`, `build-vs-buy`, or `license-scan` — has produced a finding
+that is about to be written into a probe-resolution field
+(`technical`, `prior_art`, `legal_regulatory`, `threat_model`) in
+`feasibility-record.md`. It applies to the agent itself, not as a question
+to surface to the user.
+
+## Procedure
+
+1. Before writing any probe-resolution field, take each finding produced by
+   the four probes and classify it as a one-way or two-way door (see ## What
+   it does, before any probe-resolution field is written).
+2. Record the classification and a one-line reason for it inline as a field
+   on the finding within the probe artifact that produced it, not as a
+   standalone file (see ## Artifact).
+3. Add the **Reversibility** field itself — `one-way` or `two-way` plus the
+   one-line reason of what it would cost to undo — to every finding (see
+   ## Field added to every finding).
+4. Before resolving a probe as `pass`, check whether any one-way-door
+   findings still lack the heavier evidence this tag requires, and if so
+   say so to the user instead of resolving optimistically (see ## Rule).
+
+## Output shape
+
+Applying this skill does not produce a new file; it adds a Reversibility
+field — `one-way` or `two-way` plus a one-line cost-to-undo reason — inline
+to each finding already being written into the relevant probe artifact
+(the spike report, STRIDE table row, build-vs-buy comparison row, or
+license-scan entry), which in turn feeds the probe-resolution fields in
+`feasibility-record.md`.
 
 ## What it does, before any probe-resolution field is written
 

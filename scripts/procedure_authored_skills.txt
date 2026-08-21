@@ -7,3 +7,13 @@ api-design-payload-design
 api-design-resource-modeling
 api-design-tool-landscape
 api-design-versioning-evolution
+technical-feasibility-build-vs-buy
+technical-feasibility-build-vs-buy-dependency-health
+technical-feasibility-license-and-regulatory-risk
+technical-feasibility-license-scan
+technical-feasibility-reversibility-and-spike-scoping
+technical-feasibility-reversibility-tag
+technical-feasibility-spike-report
+technical-feasibility-stride-table
+technical-feasibility-threat-model-disposition
+technical-feasibility-verdict-and-timebox-selection
