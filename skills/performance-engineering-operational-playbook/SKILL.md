@@ -1,6 +1,6 @@
 ---
 name: performance-engineering-operational-playbook
-description: Use when you need guidance on Performance-engineering operational playbook.
+description: Use when diagnosing an unexplained slowdown with no prior hypothesis, setting or reporting a latency/SLO/error-budget target, assessing queue/pool/connection-pool pressure, or choosing between a removal-shaped and addition-shaped fix.
 subject: issue-1174
 layer_program: docs/issue-1174/proposals/operational-playbook-program.md
 ---
@@ -11,6 +11,43 @@ Numbered condition → choice → source rules, three research layers:
 (A) practitioner decision rules, (B) named methodologies verified at
 source, (C) academic/theoretical grounding. REMOVAL-category rules are
 marked `[REMOVAL]`.
+
+## Trigger
+
+Apply this skill when diagnosing a service that is "slow" with no prior
+hypothesis (rule 1), reporting or alerting on request latency (rule 2),
+deciding how strict an SLO/error budget should be (rule 3), a queue,
+worker pool, or connection pool is running hot or periodically exhausted
+(rules 4–6), choosing a fix among several that close the same
+latency/capacity gap (rule 7), starting a performance investigation with
+no existing dashboard coverage (rule 8), defining what "reliable enough"
+means before setting alerts (rule 9), or justifying a wait-time or
+capacity claim across arrival-rate variation (rule 10).
+
+## Procedure
+
+1. Practitioner decision rules (rules 1–7): check Utilization,
+   Saturation, and Errors per resource before touching code; report
+   latency by percentile, never the mean; set SLO targets below 100% and
+   track error-budget burn rate; treat a hot queue/pool as an imminent
+   wait-time cliff; remove N+1 queries and connection leaks before
+   scaling the database or pool (`[REMOVAL]`, rules 5–6); prefer a
+   removal-shaped fix over an addition-shaped one when both close the
+   same gap.
+2. Named methodologies verified at source (rules 8–9): apply the USE
+   Method systematically before any application-level profiling; define
+   SLI → SLO → error budget in that order before setting an alert
+   threshold.
+3. Academic/theoretical grounding (rule 10): ground any wait-time or
+   capacity claim in Little's Law (L = λW) rather than a single point
+   measurement, stating explicitly that it predicts long-run averages.
+
+## Output shape
+
+A cited condition → choice → source decision for the triggering
+performance question, plus — when a REMOVAL-category rule (5, 6, or 7)
+applies — which removal-shaped fix took precedence over an
+addition-shaped alternative and why.
 
 ## Layer A — practitioner decision rules
 
