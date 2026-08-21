@@ -27,3 +27,13 @@ release-engineering-release-cadence-and-toil
 release-engineering-rollback-and-recovery
 release-engineering-rollout-plan
 release-engineering-semver-bump-selection
+product-discovery-assumption-mapping
+product-discovery-guardrail-metric-status
+product-discovery-guardrail-metrics
+product-discovery-hypothesis-preregistration
+product-discovery-hypothesis-testing
+product-discovery-jtbd-problem-framing
+product-discovery-one-pager
+product-discovery-opportunity-solution-tree
+product-discovery-opportunity-solution-tree-branching
+product-discovery-rice-ice-prioritization

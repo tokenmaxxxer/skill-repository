@@ -1,6 +1,6 @@
 ---
 name: product-discovery-guardrail-metric-status
-description: Use when you need guidance on Guardrail metric naming and status reporting. Applies to the guardrail-metric-status axis.
+description: Use when naming guardrail metrics for a hypothesis or reporting a guardrail's measured status alongside a primary-metric result. Applies to the guardrail-metric-status axis.
 axis: guardrail-metric-status
 rule_count_floor: 10
 ---
@@ -8,6 +8,46 @@ rule_count_floor: 10
 # Guardrail metric naming and status reporting
 
 Research trail: guardrail-metric practice fetched this session via Statsig's guardrail explainer, Optibase's guardrail glossary, PrepVector's secondary-vs-guardrail explainer, and abtestresult.com's guardrail article; scoped narrowly to the naming/status-reporting decisions distinct from the threshold-fixing rules already covered in hypothesis-preregistration.md.
+
+## Trigger
+
+Apply this skill when naming candidate guardrail metrics for a
+hypothesis, distinguishing a guardrail from a secondary metric, or
+reporting a guardrail's measured status alongside a primary-metric
+result — distinct from fixing the guardrail's numeric threshold itself,
+which belongs to `hypothesis-preregistration`.
+
+## Procedure
+
+1. Name guardrail metrics the team does not want to see harmed, never
+   the primary metric itself (rule 1), and name any risk a change
+   plausibly introduces that the primary metric would not detect
+   (rule 2).
+2. Keep the guardrail list and the secondary-metric list separate and
+   explicitly labeled (rule 3), and carry forward a guardrail a prior
+   experiment on the same surface already flagged, rather than
+   re-deriving the list from scratch (rule 7).
+3. When reporting an outcome, state guardrail status explicitly next to
+   the primary-metric result (rule 4), report the actual measured value
+   next to a boundary-adjacent threshold rather than a bare OK/not-OK
+   label (rule 5), and report an unmeasured guardrail as unmeasured, not
+   as passed (rule 8).
+4. When a guardrail trips while the primary metric wins, record the
+   result as reduced-trust or kill per the pre-registered rule, never
+   as a win with a caveat (rule 6).
+5. Before accepting a guardrail into a hypothesis package, strip any
+   entry with no numeric degradation threshold and route it back to
+   registration (rule 9); after several clean experiments on the same
+   surface with a stated reason, remove an inert guardrail from the
+   default list, recording the removal and its reason (rule 10).
+
+## Output shape
+
+A named, non-empty guardrail-metric list distinct from the primary and
+secondary metrics, each entry carrying a numeric degradation threshold,
+plus — at outcome time — an explicit guardrail-status line (breached /
+unmeasured / inside threshold with measured value) reported next to the
+primary-metric result.
 
 ## Rules
 

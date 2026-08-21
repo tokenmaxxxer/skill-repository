@@ -4,11 +4,11 @@ description: >
   Use this skill whenever the product role is moving a specification file
   through product-cycle's state machine — scoping an idea, registering a
   metric/threshold/decision rule, asking the user to approve the move into
-  measuring, or applying a registered rule to reach a decision. Trigger it
-  before writing status, metric, threshold, or decision_rule into any file
-  under docs/proposals/. Do NOT use it to make the go/kill/pivot call
-  yourself once measuring has started — that call belongs to the
-  pre-registered rule, not to fresh judgement at decision time.
+  measuring, or applying a registered rule to reach a decision — but not
+  to make the go/kill/pivot call yourself once measuring has started, as
+  that call belongs to the pre-registered rule, not fresh judgement.
+  Trigger it before writing status, metric, threshold, or decision_rule
+  into any file under docs/proposals/.
 ---
 
 # Hypothesis testing for the product role
@@ -102,6 +102,43 @@ ask for it but must never refuse a transition for its absence.
    `hypothesis-not-falsifiable` refusal (see loop_state vocabulary below)
    until it can be restated as testable. Set `status:
    hypothesis-registered`.
+
+## Trigger
+
+Apply this skill whenever the product role is moving a specification
+file through product-cycle's state machine — scoping an idea,
+registering a metric/threshold/decision rule, asking the user to
+approve the move into `measuring`, or applying a registered rule to
+reach a decision — distinct from making the go/kill/pivot call itself
+once `measuring` has started, which belongs to the pre-registered rule,
+not fresh judgement.
+
+## Procedure
+
+1. Move `idle -> scoping` on the user's idea, then `scoping ->
+   researching` once evidence gathering begins (see steps 1-2 above).
+2. Write the falsifiable `hypothesis_statement` and register
+   metric/threshold/decision_rule/fail_condition/time_box before moving
+   `researching -> hypothesis-registered` (see step 3 above); if the
+   statement cannot be falsified, set `status:
+   hypothesis-not-falsifiable` instead.
+3. Move `hypothesis-registered -> measuring` only once the gate's two
+   conditions both hold — all pre-registration fields non-empty and the
+   user's own-turn approval token present (see step 4 above).
+4. While `status: measuring`, never edit `threshold` (see step 5 above).
+5. At measurement time, apply the pre-registered decision rule
+   mechanically, writing `success_metric`, `recommendation`, and
+   `verdict` as separate fields and setting `status` to the matching
+   verdict — or `evidence-log-unreadable` if the cited evidence does not
+   resolve (see step 6 above).
+
+## Output shape
+
+One specification file's `status` field advanced through
+product-cycle's state machine, with `hypothesis_statement`,
+`metric`, `threshold`, `decision_rule`, `fail_condition`, and
+`time_box` all written before any gated transition, and a mechanically
+-derived `recommendation`/`verdict` pair once measured.
 
 4. **hypothesis-registered -> measuring** (gated): this is the one
    transition `state-gate.sh` enforces mechanically. It is refused unless:

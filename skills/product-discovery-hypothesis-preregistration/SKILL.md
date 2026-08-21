@@ -1,6 +1,6 @@
 ---
 name: product-discovery-hypothesis-preregistration
-description: Use when you need guidance on Hypothesis pre-registration (metric, threshold, decision rule fixed before data). Applies to the hypothesis-preregistration axis.
+description: Use when a hypothesis needs its primary metric, numeric threshold, and decision rule fixed before any data collection begins, or when ranking candidate hypotheses to register next. Applies to the hypothesis-preregistration axis.
 axis: hypothesis-preregistration
 rule_count_floor: 10
 ---
@@ -8,6 +8,43 @@ rule_count_floor: 10
 # Hypothesis pre-registration (metric, threshold, decision rule fixed before data)
 
 Research trail: pre-registration and metric-hierarchy practice fetched this session via Atticus Li's pre-registration glossary, Optibase and AB Test Pro guardrail/measurement-plan guides, and Statsig's guardrail-metric explainer; converged with this role's own binding rule that the verdict is the mechanical application of a rule fixed before data collection.
+
+## Trigger
+
+Apply this skill before any data collection begins on a hypothesis: when
+writing its primary metric, numeric threshold, and decision rule; when
+several candidate assumptions compete for which hypothesis to register
+next; or when a stakeholder proposes changing the registered package
+once the test is already running.
+
+## Procedure
+
+1. Name a single primary metric with a numeric threshold and decision
+   rule before data collection starts (rule 1), combining the
+   statistical test and the practical-significance bar in one explicit
+   ship criterion (rule 2), and register the sample size and test
+   duration needed to reach it (rule 3).
+2. At the same moment, name at least one guardrail metric with a bounded
+   degradation limit, not a bare metric name (rules 4-5).
+3. At measurement time, apply the registered decision rule mechanically
+   to the collected data (rule 7); record a primary-metric win alongside
+   a breached guardrail as a breach, not an unqualified win (rule 6);
+   refuse any mid-flight change to metric, threshold, or decision rule
+   (rule 8).
+4. Strip a metric with prose intent but no attached number from the
+   registered list (rule 9), and strip "registered" status from a
+   package with no defined sample size, duration, or interim-peeking
+   policy (rule 10).
+5. When several assumptions compete for the next registration slot,
+   rank them by impact-times-risk and register the highest-ranked one
+   first, naming the experiment that would falsify it (rule 11).
+
+## Output shape
+
+A registered hypothesis package: primary metric, numeric threshold,
+decision rule, sample size/duration, and at least one bounded guardrail
+metric, all fixed before data collection — plus, at measurement time, a
+mechanically-applied verdict that respects any guardrail breach.
 
 ## Rules
 
