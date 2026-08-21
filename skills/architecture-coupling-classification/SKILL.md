@@ -1,6 +1,6 @@
 ---
 name: architecture-coupling-classification
-description: Use when you need guidance on Coupling Classification — Operational Decision Rules. Applies to the coupling-classification axis.
+description: Use when classifying the type and severity of coupling between two components (shared data, control flags, struct passing, internal reach-through, timing/deploy ordering, cycles, or chatty call chains) and deciding what corrective action, if any, to take.
 axis: coupling-classification
 rule_count_floor: 12
 ---
@@ -12,6 +12,62 @@ temporal, data, control coupling, connascence) and what corrective action to tak
 Sources span three layers: practitioner writeups, named methodology (Constantine &
 Yourdon structured design, Robert Martin's instability metric, Page-Jones/Weirich
 connascence), and academic/theory (Stevens, Myers & Constantine 1974).
+
+## Trigger
+
+Apply this skill when reviewing or designing a dependency between two
+components and you need to name the coupling type at play — a shared
+global/database table, a control flag steering callee behavior, a
+struct/DTO passed for one field, direct reach-through into another
+module's internals, hand-coordinated deploy ordering, an unstable
+dependency below a stable one, a shared magic literal, implicit
+startup/shutdown timing, a god config object, an import cycle, or a
+chatty synchronous call chain — and decide whether to leave it, weaken
+it, or remove it.
+
+## Procedure
+
+1. Classify the coupling by its concrete shape: shared mutable
+   global/database table (rule 1), a shared physical database across
+   microservices (rule 2), hand-coordinated deploy/release timing
+   (rule 3), a control/mode flag steering callee behavior (rule 4), a
+   whole struct passed for one field (rule 5), direct reach into
+   another module's private internals (rule 6), a magic shared literal
+   with no enforcing symbol (rule 9), implicit startup/shutdown timing
+   (rule 10), a god config object threaded through many modules
+   (rule 11), an import/dependency cycle (rule 12), or a chatty
+   synchronous cross-service call chain (rule 13).
+2. Before trusting Robert Martin's instability metric (I = Ce/(Ca+Ce))
+   alone, use it only as a triage signal, then classify the actual
+   dependency by connascence strength/Constantine coupling type before
+   judging severity (rule 1 of Cross-source conflicts).
+3. For a component with high afferent coupling that also changes often,
+   flag a Stable Dependencies Principle violation and freeze its
+   interface (rule 7); for a component that depends on something less
+   stable than itself, insert an abstraction/dependency inversion
+   instead (rule 8).
+4. For a stable-but-concrete package accumulating dependents, extract
+   an abstract interface package (this rule is shared with the
+   dependency-direction axis; see rule 13 there) — within this axis,
+   apply rules 7/8 for the stability-direction judgment itself.
+5. Once classified, apply the paired corrective action: REMOVAL rules
+   (1, 2, 4, 6, 11, 12) delete or restructure the coupling; non-REMOVAL
+   rules (3, 5, 7, 8, 9, 10, 13) narrow, invert, or make the coupling
+   explicit instead of deleting it.
+6. Never gate a design review purely on a coupling/cohesion metric
+   threshold — pair the metric with a human classification of coupling
+   type before deciding to act (rule 14).
+7. When structural severity and observed change cost diverge — a
+   moderate-ranked component is co-edited constantly, or a severe one
+   is frozen — reprioritize remediation by observed co-change frequency
+   from commit history, not by structural ranking alone (rule 15).
+
+## Output shape
+
+A coupling classification: the coupling type (common, control, stamp,
+content, temporal, or connascence variant), the rule number(s) applied,
+and the corrective action — REMOVAL, narrowing, or explicit
+documentation — with its rationale.
 
 ## Cross-source conflicts and resolution
 

@@ -1,6 +1,6 @@
 ---
 name: architecture-decomposition-strategy
-description: Use when you need guidance on Decomposition Strategy Playbook. Applies to the decomposition-strategy axis.
+description: Use when deciding whether to split a system into more services/modules, keep it consolidated, or merge an existing split back — including choosing extraction mechanics, boundary placement, and whether a proposed split has enough operational evidence behind it.
 axis: decomposition-strategy
 rule_count_floor: 12
 ---
@@ -11,6 +11,55 @@ Operational decision rules for whether to split a system into more services/modu
 keep it consolidated. Synthesized from practitioner postmortems, named methodology
 (Fowler, Newman, DDD, Conway), and academic research on decomposition cost and
 subtraction neglect.
+
+## Trigger
+
+Apply this skill when deciding whether a system should be split into
+more services/modules, kept as one deployable, or merged back after a
+split — greenfield architecture choice, extracting a module with its
+own scaling/deploy needs, choosing the boundary/mechanics of a split,
+aligning team structure to a target architecture, or auditing an
+existing split for whether it still earns its keep.
+
+## Procedure
+
+1. On a greenfield project with no validated domain model, build a
+   single modular monolith rather than splitting into services
+   (rule 1); for a small team on one product, prefer a "majestic
+   monolith" over per-team services (rule 2); for a large but
+   single-owner monolith, decompose into enforced internal modules
+   before extracting any network service (rule 3).
+2. When a module shows genuinely independent, operationally-observed
+   scaling or deploy-cadence needs, extract it via the Strangler Fig
+   pattern (rule 4); when the functionality isn't externally routable,
+   use Branch by Abstraction instead (rule 5).
+3. When choosing where to cut the boundary, draw it at a bounded
+   context, not a technical layer or size threshold (rule 6); once a
+   split is justified, align team structure to the target boundaries
+   via the Inverse Conway Maneuver (rule 7) — team alignment follows
+   the split decision, it never justifies splitting earlier on its own.
+4. Factor actor-driven load patterns into boundary granularity: split a
+   sub-capability further only if it has both a distinct domain
+   boundary and a distinct load profile, not load alone (rule 12).
+5. Check for reversal conditions and merge back when found: a service
+   whose deploys are ~100% correlated with one caller's (rule 8), a
+   premature split made before the domain model stabilized (rule 9),
+   or a pipeline where cross-component orchestration cost dominates
+   the actual compute (rule 10).
+6. When a proposed split rests on anticipated future need rather than
+   collected operational evidence, default to not splitting (rule 11).
+7. If a split leaves duplicated logic drifting across the resulting
+   services (e.g. auth, formatting, validation reimplemented per
+   service), extract it back into one shared internal package rather
+   than accepting drift or re-decomposing it into its own service
+   (rule 13).
+
+## Output shape
+
+A decomposition decision: split / keep-consolidated / merge-back, the
+rule number(s) applied, the extraction or reversal mechanism chosen
+(Strangler Fig, Branch by Abstraction, boundary merge), and the
+operational evidence cited for the call.
 
 ### 1. Greenfield project, no proven domain model yet
 - condition: You are starting a new product or system and the domain boundaries are not yet validated by real usage.

@@ -1,6 +1,6 @@
 ---
 name: architecture-module-boundary-definition
-description: Use when you need guidance on Module Boundary Definition. Applies to the module-boundary-definition axis.
+description: Use when deciding where to draw a module/component/service boundary — what belongs together by cohesion, when to stop splitting, when to merge things back, and how to keep a C4-level boundary diagram reviewable as the decision evolves.
 axis: module-boundary-definition
 rule_count_floor: 12
 ---
@@ -17,6 +17,59 @@ services" (microservices advocacy) vs. "avoid premature decomposition, start
 monolith-first" (Fowler, and the growing body of monolith-reversion case
 studies) — the conflict is called out explicitly in the affected rules rather
 than silently picking a side.
+
+## Trigger
+
+Apply this skill when placing or auditing a module/component/service
+boundary: deciding what belongs together, whether a proposed split
+should happen at all, whether an existing split should be merged back,
+or whether a boundary diagram is trustworthy enough to review against.
+
+## Procedure
+
+1. Draw the boundary so a likely-to-change design decision is hidden
+   entirely inside one module (rule 1); never decompose purely by
+   processing step/technical layer — keep those steps together unless a
+   real hidden-decision boundary separates them (rule 2); organize by
+   domain concept, not technical role (rule 3).
+2. Require every cross-component interaction to go through an explicit
+   public interface, treating direct data reach-through as a violation
+   to fix (rule 4); use bounded contexts — where the ubiquitous language
+   changes — as the seam, not database schemas (rule 5).
+3. When decomposing a newly identified bounded context, model it as one
+   service first and only split further once a concrete need
+   (independent scaling, ownership, deploy cadence) appears (rule 6);
+   for a new system, build a monolith first and defer service
+   boundaries until real usage reveals the seams (rule 7).
+4. Merge over-decomposed services back together when each is thin and
+   mostly passes calls through (rule 8); merge two services back into
+   one when their boundary no longer hides an independent design
+   decision (rule 9); redraw the boundary to match a single team's
+   ownership, or restructure teams via reverse-Conway, rather than
+   leaving a boundary that forces permanent cross-team coordination
+   (rule 10).
+5. Split a module along the seam where cohesion changes from
+   functional/sequential to coincidental/logical — never solely because
+   line count crossed a threshold (rule 11); conversely, leave a large
+   but low-coupling, internally-cohesive module as one module rather
+   than splitting to satisfy a size guideline (rule 12).
+6. When a boundary discussion conflates deployable-unit and
+   internal-code-organization questions, separate them: pick container
+   boundaries from ownership/scaling/deploy-cadence needs first, then
+   component boundaries from cohesion inside each container (rule 13).
+7. When two boundary placements both seem plausible, prefer the one
+   that isolates the assumption most likely to change, not the one that
+   merely looks tidier (rule 14).
+8. When a C4-level boundary diagram exists only as a pasted image,
+   produce it instead from a single text-based model checked into the
+   record's write scope so it diffs like code (rule 15).
+
+## Output shape
+
+A boundary decision: keep-together / split / merge-back, the rule
+number(s) applied, the cohesion or bounded-context justification, and
+— where a REMOVAL rule fires (8, 9, 12) — what gets merged or left
+unsplit.
 
 ### 1. Hide a design decision likely to change
 - condition: a design decision (data format, algorithm, storage choice) is likely to change during the system's life and multiple modules would otherwise need to know about it
