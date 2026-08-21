@@ -9,6 +9,54 @@ rule_count_floor: 10
 
 Condition → choice → source. Each rule is `addition` or `**REMOVAL**`.
 
+## Trigger
+
+Apply this skill when defining or reviewing data-quality checks —
+completeness, uniqueness, accuracy, freshness, or volume checks on a
+column; formalizing a cross-column business rule or a data contract
+across a producer/consumer team boundary; layering anomaly monitoring
+on top of authored checks; or verifying an agent's or human's actual
+pipeline output rather than just its exit status. This is distinct
+from failure-handling decisions (retry/DLQ/recovery once a check or
+job fails) and pipeline-design decisions (ETL vs ELT, idempotency,
+orchestration, ownership) — those live in the sibling
+failure-handling and pipeline-design axes.
+
+## Procedure
+
+1. Identify the column's role — join/dedup key, required field,
+   measured quantity, freshness-sensitive, or volume-sensitive — and
+   pick the matching check type: uniqueness (rule 1), completeness
+   (rule 2), accuracy (rule 3), freshness (rule 4), or volume
+   (rule 5).
+2. If the dataset crosses a team boundary, formalize the agreed
+   shape and thresholds as an explicit data contract rather than an
+   implicit arrangement (rule 6).
+3. If a business rule spans multiple columns, encode it as its own
+   multi-column expectation instead of relying on per-column checks
+   to catch it (rule 7).
+4. When a check first goes live, start with a fixed threshold and
+   only move to a dynamic/rolling baseline once enough history has
+   accumulated to calibrate it (rule 8).
+5. Record each check's outcome as a per-check pass/fail verdict
+   against its numeric threshold, not folded into an aggregate score
+   (rule 9).
+6. Periodically audit the check set: delete checks left over from a
+   decommissioned source or dropped column (rule 10), and collapse
+   overlapping checks down to the single strictest one (rule 11).
+7. Layer an unsupervised anomaly monitor alongside the authored
+   checks to catch shape shifts nobody wrote a rule for, recording
+   its findings with the same per-check verdict discipline (rule 12).
+8. When verifying a transform step, run it and inspect a sample of
+   its actual output against the expected shape — a successful
+   compile or run is necessary but not sufficient (rule 13).
+
+## Output shape
+
+A data-quality decision: the applicable rule number(s), the check(s)
+added, removed, or adjusted, and the resulting threshold or verdict
+recorded.
+
 1. When a column feeds a join key, primary key, or dedup logic, enforce
    a uniqueness check on it (e.g. GX `ExpectColumnValuesToBeUnique`)
    rather than only checking null-rate — duplicates on a join key break
