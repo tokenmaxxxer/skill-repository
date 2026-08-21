@@ -1,6 +1,6 @@
 ---
 name: pricing-scope-gate
-description: Use when you need guidance on Scope-gate decision rules. Applies to the scope-gate axis.
+description: Use when a pricing-adjacent request first arrives, before any method is fielded, to decide whether it names a defined product, whether an existing study already covers it within its shelf life, or whether it should be routed to market-recon or dropped entirely.
 axis: scope-gate
 rule_count_floor: 2
 ---
@@ -10,6 +10,40 @@ rule_count_floor: 2
 Decisions for `pricing-scope-gate` (chain position 1/4): whether an
 existing study already answers the question, or whether to route
 elsewhere before any method is fielded.
+
+## Trigger
+
+Use first in the chain (position 1/4), before `pricing-method-family` or
+any other pricing skill runs — whenever a pricing-adjacent request
+arrives and it is not yet established whether a method should be fielded
+at all. Use it to check for an undefined product, an adequate prior
+study still within its shelf life, or a request that is not really a
+willingness-to-pay question (a rename, a promo discount). Do not use it
+once a product and method question are already settled — that is
+`pricing-method-family`'s job.
+
+## Procedure
+
+1. Cite decision rule 1 when the request names no defined product, to
+   route to `market-recon` and exit without opening a pricing method.
+2. Cite decision rule 2 when a prior study already measured the same
+   product and segment within its shelf life, to cite that study and
+   proceed straight to `pricing-verdict-report` instead of re-fielding.
+3. Cite decision rule 3, when judging rule 2's shelf life, to apply the
+   concrete 6-12-month-or-material-change cadence rather than an
+   open-ended gut call.
+4. Cite decision rule 4 when the request is a routine SKU/tier rename or
+   a promotional discount with no change to what is delivered, to drop
+   the scope-gate study entirely rather than opening a pricing method
+   chain.
+
+## Output shape
+
+Applying this skill produces a routing decision made before any method
+fields: proceed to `pricing-method-family`, route to `market-recon` and
+exit, cite an adequate prior study and skip straight to
+`pricing-verdict-report`, or drop the request as not a pricing-method
+question at all. It does not itself produce a price number.
 
 ## Decision rules
 

@@ -1,6 +1,6 @@
 ---
 name: pricing-tier-structure
-description: Use when you need guidance on Tier-structure decision rules. Applies to the tier-structure axis.
+description: Use when a verdict has already produced a correctly-labeled price point or preference share and the question turns to packaging it — choosing a value-metric unit and assembling a Good/Better/Best tier structure with a deliberate anchor tier.
 axis: tier-structure
 rule_count_floor: 2
 ---
@@ -12,6 +12,37 @@ tier-structure element of this role's PRODUCES line: how a fielded
 verdict's numbers assemble into packaging, once the research-method
 rules elsewhere in this chain have produced a correctly-labeled price
 point or preference share.
+
+## Trigger
+
+Use once a research method elsewhere in the chain has already produced a
+correctly-labeled price point or preference share and the remaining
+question is packaging: what unit to bill on, and how to assemble a
+Good/Better/Best structure around the fielded numbers. Do not use it to
+choose or grade the underlying research method (that is
+`pricing-method-family` / `pricing-design-rigor` upstream), and do not
+use it when the decision never asked a tiering/packaging question in the
+first place.
+
+## Procedure
+
+1. Cite decision rule 1 before assigning any unit as the pricing metric,
+   to run the value-metric test explicitly and record whether delivered
+   value grows with that unit.
+2. Cite decision rule 2 when assembling a Good/Better/Best tier
+   structure from a fielded verdict, to assign the anchor role to the
+   middle tier deliberately rather than wherever the numbers happen to
+   land.
+3. Cite decision rule 3 when the fielded verdict covers a single-product,
+   single-price decision with no tiering question in scope, to skip the
+   Good/Better/Best assembly entirely.
+
+## Output shape
+
+Applying this skill produces a packaging decision: either a named,
+value-metric-tested billing unit plus a Good/Better/Best structure with
+an explicit anchor tier, or an explicit statement that no tier structure
+applies because the decision was never a packaging question.
 
 ## Decision rules
 

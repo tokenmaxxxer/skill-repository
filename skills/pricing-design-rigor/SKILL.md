@@ -1,6 +1,6 @@
 ---
 name: pricing-design-rigor
-description: Use when you need guidance on Design-rigor decision rules. Applies to the design-rigor axis.
+description: Use when a study design or fielding plan is already chosen and needs a rigor check — banding a CBC/CVA design's task ratio and task count, or deciding whether and how to incentive-align a conjoint study before it fields.
 axis: design-rigor
 rule_count_floor: 3
 ---
@@ -10,6 +10,46 @@ rule_count_floor: 3
 Decisions for `pricing-design-rigor` (chain position 3/4): the
 design-gate band for CVA-style designs, and the incentive-alignment
 decision with its cost.
+
+## Trigger
+
+Use once `pricing-method-family` has already routed the decision to a
+conjoint method (CBC or CVA) and a concrete design — attributes, levels,
+task count, sample size — is on the table to be fielded or reviewed.
+This is chain position 3/4: it does not choose the method family (that
+is `pricing-method-family`'s job upstream), it grades the rigor of a
+design already chosen, specifically the CBC/CVA task-ratio and task-count
+bands and the incentive-alignment cost/benefit call. Do not use it to
+pick between PSM and conjoint in the first place, and do not use it once
+a verdict is already being assembled (that is `pricing-verdict-report`
+downstream).
+
+## Procedure
+
+1. Cite decision rule 1 when the study is CBC-based, to report the
+   task ratio (n·t·a/c) as a reference figure only, never a banded
+   verdict.
+2. Cite decision rule 2 when the study is CBC-based, to band the task
+   count itself (warned/clear/warned) alongside the per-level-appearance
+   check.
+3. Cite decision rule 3 when the study is not incentive-aligned and a
+   go/no-go price decision rides on the output, to flag the predictive-
+   validity cost with its three required qualifications.
+4. Cite decision rule 4 when incentive alignment is under consideration,
+   to name its concrete behavioral cost (price sensitivity, none-choice
+   rate) alongside the accuracy gain.
+5. Cite decision rule 5 when the decision is a low-stakes price tweak
+   within an already-validated range, to drop the incentive-alignment
+   requirement rather than defaulting to always incentive-aligning.
+
+## Output shape
+
+Applying this skill produces a design-rigor verdict for the fielded or
+proposed conjoint study: a banded task-ratio/task-count assessment
+(reference-figure-only for CBC, blocked/warned/clear for CVA), plus an
+explicit incentive-alignment decision that states its cost alongside any
+accuracy benefit claimed. It does not itself produce a price number or a
+method choice — only a rigor judgment on the design already chosen.
 
 ## Decision rules
 

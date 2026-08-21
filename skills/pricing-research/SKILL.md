@@ -16,6 +16,16 @@ description: >-
 
 # Pricing Research (Willingness to Pay)
 
+## Trigger
+
+Use whenever someone needs to set, test, or audit a price or price range
+for a defined product, or is about to pick a pricing method, design one,
+or hand off pricing numbers as if they answer a question the method
+didn't collect data for. Do NOT use for competitor pricing (route to
+`market-recon`), for pricing decisions with no enumerable product yet
+(too early), or for general market-sizing questions with no price
+variable at their center.
+
 ## First: does this even need the procedure?
 
 Run this gate before touching any method — the whole point of this skill is matching the method
@@ -239,6 +249,16 @@ source rather than a category. Every PSM number carries the label "price-percept
 revenue optimum"; OPP is never reported as "the optimal price." The residual list names at least the
 questions the chosen method structurally cannot answer (for PSM: any revenue/volume/profit question;
 for CBC: unit volume and profit without external market-size and cost inputs).
+
+## Output shape
+
+Applying this skill produces a six-element report per pricing study: the
+scope-gate result, the input the decision needed and the method chosen
+for it, the conjoint family named where relevant, the design parameters
+and their gate band, the incentive-alignment decision and its cost, and
+the final numbers with correctly scoped labels plus the residual list of
+what the method cannot answer. See `## Report format` below for the full
+per-step layout and the high-stakes/directional weighting rule.
 
 ## Report format
 
