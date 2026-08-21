@@ -1,4 +1,6 @@
 ---
+name: market-analysis-mece-proposal
+description: Use when you need guidance on MECE-structuring rules (phase-1 proposal). Applies to the mece-proposal axis.
 axis: mece-proposal
 rule_count_floor: 10
 ---

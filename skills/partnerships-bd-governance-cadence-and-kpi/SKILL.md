@@ -1,4 +1,6 @@
 ---
+name: partnerships-bd-governance-cadence-and-kpi
+description: Use when you need guidance on Governance cadence and KPI rules. Applies to the governance-cadence-and-kpi axis.
 axis: governance-cadence-and-kpi
 rule_count_floor: 3
 tier: sparse

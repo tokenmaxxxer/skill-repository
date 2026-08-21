@@ -1,5 +1,5 @@
 ---
-name: one-pager
+name: product-discovery-one-pager
 description: >
   Use this skill when the product role is in the `scoping` state and needs
   to turn a handed-in idea into a structured one-pager before evidence

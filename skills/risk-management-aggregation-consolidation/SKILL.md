@@ -1,4 +1,6 @@
 ---
+name: risk-management-aggregation-consolidation
+description: Use when you need guidance on Risk aggregation / consolidation (removal-heavy axis). Applies to the aggregation-consolidation axis.
 axis: aggregation-consolidation
 rule_count_floor: 10
 ---

@@ -1,4 +1,6 @@
 ---
+name: finance-unit-economics-ltv-churn-assumption
+description: Use when you need guidance on LTV churn-assumption — decision rules. Applies to the ltv-churn-assumption axis.
 axis: ltv-churn-assumption
 rule_count_floor: 12
 tier: moderate

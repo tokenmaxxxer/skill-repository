@@ -1,4 +1,6 @@
 ---
+name: devrel-channel-convention
+description: Use when you need guidance on Channel and format convention. Applies to the channel-convention axis.
 axis: channel-convention
 rule_count_floor: 8
 ---

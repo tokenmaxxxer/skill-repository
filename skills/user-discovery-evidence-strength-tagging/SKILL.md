@@ -1,4 +1,6 @@
 ---
+name: user-discovery-evidence-strength-tagging
+description: Use when you need guidance on Evidence-strength tagging: behavioral / recounted / opinion. Applies to the evidence-strength-tagging axis.
 axis: evidence-strength-tagging
 rule_count_floor: 8
 ---

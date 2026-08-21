@@ -1,4 +1,6 @@
 ---
+name: architecture-decomposition-strategy
+description: Use when you need guidance on Decomposition Strategy Playbook. Applies to the decomposition-strategy axis.
 axis: decomposition-strategy
 rule_count_floor: 12
 ---

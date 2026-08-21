@@ -1,4 +1,6 @@
 ---
+name: secure-coding-cryptography-secrets-management
+description: Use when you need guidance on Cryptography & secrets management. Applies to the cryptography-secrets-management axis.
 axis: cryptography-secrets-management
 rule_count_floor: 10
 ---

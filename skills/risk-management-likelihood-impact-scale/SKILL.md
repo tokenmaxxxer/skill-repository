@@ -1,4 +1,6 @@
 ---
+name: risk-management-likelihood-impact-scale
+description: Use when you need guidance on Likelihood x impact scale calibration. Applies to the likelihood-impact-scale axis.
 axis: likelihood-impact-scale
 rule_count_floor: 10
 ---

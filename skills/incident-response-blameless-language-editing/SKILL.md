@@ -1,4 +1,6 @@
 ---
+name: incident-response-blameless-language-editing
+description: Use when you need guidance on Blameless language editing. Applies to the blameless-language-editing axis.
 axis: blameless-language-editing
 rule_count_floor: 4
 ---

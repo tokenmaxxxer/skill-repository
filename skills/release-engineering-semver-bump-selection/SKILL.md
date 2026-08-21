@@ -1,4 +1,6 @@
 ---
+name: release-engineering-semver-bump-selection
+description: Use when you need guidance on Semver bump selection. Applies to the semver-bump-selection axis.
 axis: semver-bump-selection
 rule_count_floor: 12
 ---

@@ -1,4 +1,6 @@
 ---
+name: incident-response-action-item-quality
+description: Use when you need guidance on Action item quality and prioritization. Applies to the action-item-quality axis.
 axis: action-item-quality
 rule_count_floor: 4
 ---

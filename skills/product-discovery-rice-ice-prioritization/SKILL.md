@@ -1,4 +1,6 @@
 ---
+name: product-discovery-rice-ice-prioritization
+description: Use when you need guidance on RICE / ICE prioritization and evidence citation. Applies to the rice-ice-prioritization axis.
 axis: rice-ice-prioritization
 rule_count_floor: 10
 ---

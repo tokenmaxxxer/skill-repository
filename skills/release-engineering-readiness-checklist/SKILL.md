@@ -1,5 +1,5 @@
 ---
-name: readiness-checklist
+name: release-engineering-readiness-checklist
 description: >-
   Use when working the ops role's readiness state (ops/state.md status:
   readiness), preparing to move readiness -> rollout, or checking what

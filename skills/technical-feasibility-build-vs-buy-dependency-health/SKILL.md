@@ -1,4 +1,6 @@
 ---
+name: technical-feasibility-build-vs-buy-dependency-health
+description: Use when you need guidance on Decision axis: build-vs-buy & dependency health. Applies to the build-vs-buy-dependency-health axis.
 axis: build-vs-buy-dependency-health
 rule_count_floor: 10
 axes:

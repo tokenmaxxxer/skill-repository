@@ -1,4 +1,6 @@
 ---
+name: market-analysis-five-forces
+description: Use when you need guidance on Five-forces verdict rules (Porter). Applies to the five-forces axis.
 axis: five-forces
 rule_count_floor: 10
 ---

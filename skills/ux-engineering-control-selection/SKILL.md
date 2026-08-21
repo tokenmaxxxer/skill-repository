@@ -1,4 +1,6 @@
 ---
+name: ux-engineering-control-selection
+description: Use when you need guidance on Control selection by field type. Applies to the control-selection-by-field-type axis.
 axis: control-selection-by-field-type
 rule_count_floor: 3
 ---

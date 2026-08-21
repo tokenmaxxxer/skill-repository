@@ -1,4 +1,6 @@
 ---
+name: incident-response-rca-method-selection
+description: Use when you need guidance on RCA method selection. Applies to the rca-method-selection axis.
 axis: rca-method-selection
 rule_count_floor: 4
 ---

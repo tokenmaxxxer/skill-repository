@@ -1,5 +1,5 @@
 ---
-name: build-vs-buy
+name: technical-feasibility-build-vs-buy
 description: Use this skill when running the prior-art probe inside the feasibility role's `probing` state — produces a build-vs-buy comparison and per-dependency health scores before that probe can resolve.
 ---
 

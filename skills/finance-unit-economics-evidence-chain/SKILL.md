@@ -1,4 +1,6 @@
 ---
+name: finance-unit-economics-evidence-chain
+description: Use when you need guidance on Evidence chain — decision rules. Applies to the evidence-chain axis.
 axis: evidence-chain
 rule_count_floor: 12
 tier: moderate

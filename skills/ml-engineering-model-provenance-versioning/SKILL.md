@@ -1,4 +1,6 @@
 ---
+name: ml-engineering-model-provenance-versioning
+description: Use when you need guidance on Model provenance (model card) and data/model versioning. Applies to the model-provenance-versioning axis.
 axis: model-provenance-versioning
 rule_count_floor: 5
 ---

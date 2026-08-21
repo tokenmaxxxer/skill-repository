@@ -1,4 +1,6 @@
 ---
+name: product-discovery-jtbd-problem-framing
+description: Use when you need guidance on JTBD problem framing (fixing the problem before any solution). Applies to the jtbd-problem-framing axis.
 axis: jtbd-problem-framing
 rule_count_floor: 10
 ---

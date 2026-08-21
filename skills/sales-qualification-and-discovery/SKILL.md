@@ -1,4 +1,6 @@
 ---
+name: sales-qualification-and-discovery
+description: Use when you need guidance on Qualification and discovery. Applies to the qualification-and-discovery axis.
 axis: qualification-and-discovery
 rule_count_floor: 5
 ---

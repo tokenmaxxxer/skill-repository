@@ -1,4 +1,6 @@
 ---
+name: marketing-channel-selection
+description: Use when you need guidance on Channel selection and budget allocation. Applies to the channel-selection axis.
 axis: channel-selection
 rule_count_floor: 5
 ---

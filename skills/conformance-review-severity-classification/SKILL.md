@@ -1,5 +1,5 @@
 ---
-name: severity-classification
+name: conformance-review-severity-classification
 description: Use while acting as the review role in the draft-reported state, optionally, when the review's scope has been explicitly extended into risk-weighting a finding — not for ordinary fidelity-checking. Use to attach a severity band to a finding already recorded by finding-record; never to decide whether a finding exists.
 ---
 

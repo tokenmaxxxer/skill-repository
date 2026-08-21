@@ -1,4 +1,6 @@
 ---
+name: implementation-complexity-coupling-management
+description: Use when you need guidance on Complexity / coupling management. Applies to the complexity-coupling-management axis.
 axis: complexity-coupling-management
 rule_count_floor: 6
 tier: sparse

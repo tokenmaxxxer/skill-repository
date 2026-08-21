@@ -1,3 +1,8 @@
+---
+name: interaction-design-form-control-and-layout
+description: Use when you need guidance on Playbook: form controls, grouping, navigation, contrast (issue-1174 batch 1).
+---
+
 # Playbook: form controls, grouping, navigation, contrast (issue-1174 batch 1)
 
 Each `## R<n>` heading below is one condition -> choice -> source

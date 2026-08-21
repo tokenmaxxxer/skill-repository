@@ -1,4 +1,6 @@
 ---
+name: observability-phase-trace
+description: Use when you need guidance on Phase-1 to phase-2 methodology-consistency. Applies to the phase-trace axis.
 axis: phase-trace
 rule_count_floor: 3
 ---

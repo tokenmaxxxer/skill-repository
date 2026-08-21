@@ -1,3 +1,8 @@
+---
+name: ux-engineering-research-log
+description: Use when you need guidance on Playbook research log — ux-engineering (issue #1174).
+---
+
 # Playbook research log — ux-engineering (issue #1174)
 
 Evidence trail for `playbook/*.md`, recorded per the amendment-1

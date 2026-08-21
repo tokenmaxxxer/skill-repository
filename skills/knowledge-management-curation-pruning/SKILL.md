@@ -1,4 +1,6 @@
 ---
+name: knowledge-management-curation-pruning
+description: Use when you need guidance on Curation quality gate and pruning. Applies to the curation-pruning axis.
 axis: curation-pruning
 rule_count_floor: 10
 ---

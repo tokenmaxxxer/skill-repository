@@ -1,4 +1,6 @@
 ---
+name: legal-compliance-lawful-basis-selection
+description: Use when you need guidance on Lawful basis selection. Applies to the lawful-basis-selection axis.
 axis: lawful-basis-selection
 rule_count_floor: 2
 ---

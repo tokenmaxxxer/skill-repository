@@ -1,4 +1,6 @@
 ---
+name: brand-design-logo-clear-space-size
+description: Use when you need guidance on Logo clear-space and minimum-size rules. Applies to the logo-clear-space-and-minimum-size axis.
 axis: logo-clear-space-and-minimum-size
 rule_count_floor: 3
 tier: rich

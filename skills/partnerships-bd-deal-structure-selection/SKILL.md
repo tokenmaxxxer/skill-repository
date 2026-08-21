@@ -1,4 +1,6 @@
 ---
+name: partnerships-bd-deal-structure-selection
+description: Use when you need guidance on Deal-structure selection rules. Applies to the deal-structure-selection axis.
 axis: deal-structure-selection
 rule_count_floor: 3
 tier: sparse

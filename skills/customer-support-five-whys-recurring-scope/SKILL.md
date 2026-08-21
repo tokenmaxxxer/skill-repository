@@ -1,3 +1,8 @@
+---
+name: customer-support-five-whys-recurring-scope
+description: Use when you need guidance on Five-whys recurring-pattern decision rules.
+---
+
 # Five-whys recurring-pattern decision rules
 
 Axis: five-whys-scope. 5 Whys fits simple-to-moderate problems; complex,

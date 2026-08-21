@@ -1,3 +1,8 @@
+---
+name: customer-support-subtraction-comprehensibility
+description: Use when you need guidance on Subtraction / comprehensibility decision rules.
+---
+
 # Subtraction / comprehensibility decision rules
 
 Axis: subtraction-comprehensibility (amendment 4). Academic layer: people

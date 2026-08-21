@@ -1,4 +1,6 @@
 ---
+name: architecture-interface-contract-shape
+description: Use when you need guidance on Interface Contract Shape. Applies to the interface-contract-shape axis.
 axis: interface-contract-shape
 rule_count_floor: 12
 ---

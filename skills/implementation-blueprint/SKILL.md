@@ -1,5 +1,5 @@
 ---
-name: blueprint
+name: implementation-blueprint
 description: >-
   Situational code-architecture selection backed by a queryable database and a
   deterministic CLI. Use whenever you are about to produce non-trivial code

@@ -1,4 +1,6 @@
 ---
+name: risk-management-response-strategy-selection
+description: Use when you need guidance on Risk response strategy selection. Applies to the response-strategy-selection axis.
 axis: response-strategy-selection
 rule_count_floor: 10
 ---

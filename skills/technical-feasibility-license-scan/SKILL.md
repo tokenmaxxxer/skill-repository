@@ -1,5 +1,5 @@
 ---
-name: license-scan
+name: technical-feasibility-license-scan
 description: Use this skill when running the legal-regulatory probe inside the feasibility role's `probing` state — produces a per-dependency license verdict and a regulatory-applicability note before that probe can resolve.
 ---
 

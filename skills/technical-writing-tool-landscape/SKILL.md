@@ -1,4 +1,6 @@
 ---
+name: technical-writing-tool-landscape
+description: Use when you need guidance on Tool-landscape learnings (Claude Code plugin/skill ecosystem). Applies to the tool-landscape axis.
 axis: tool-landscape
 rule_count_floor: 3
 ---

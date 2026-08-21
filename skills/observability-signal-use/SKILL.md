@@ -1,4 +1,6 @@
 ---
+name: observability-signal-use
+description: Use when you need guidance on USE signal placement (Utilization / Saturation / Errors). Applies to the signal-use axis.
 axis: signal-use
 rule_count_floor: 3
 ---

@@ -1,4 +1,6 @@
 ---
+name: legal-compliance-license-compatibility
+description: Use when you need guidance on Open-source license compatibility. Applies to the oss-license-compatibility axis.
 axis: oss-license-compatibility
 rule_count_floor: 2
 ---

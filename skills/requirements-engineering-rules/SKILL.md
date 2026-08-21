@@ -1,9 +1,11 @@
 ---
-name: requirements-engineering-playbook
+name: requirements-engineering-rules
 subject: issue-1174
 rule_count_floor: 23
 axes: 7
 tier: rich
+description: Use when you need guidance on Requirements-engineering operational playbook.
+
 ---
 
 # Requirements-engineering operational playbook

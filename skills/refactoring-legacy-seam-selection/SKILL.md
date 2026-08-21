@@ -1,4 +1,6 @@
 ---
+name: refactoring-legacy-seam-selection
+description: Use when you need guidance on Seam selection. Applies to the seam-selection axis.
 axis: seam-selection
 rule_count_floor: 5
 ---

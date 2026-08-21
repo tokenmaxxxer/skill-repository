@@ -1,5 +1,5 @@
 ---
-name: postmortem
+name: release-engineering-postmortem
 description: >-
   Use when working the ops role's incident state (ops/state.md status:
   incident) once the incident is over and a blameless postmortem is owed.

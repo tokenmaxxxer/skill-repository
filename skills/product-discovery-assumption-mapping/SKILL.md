@@ -1,5 +1,5 @@
 ---
-name: assumption-mapping
+name: product-discovery-assumption-mapping
 description: >
   Use this skill when the product role is in the `researching` state and
   needs to decompose a candidate solution into testable assumptions before

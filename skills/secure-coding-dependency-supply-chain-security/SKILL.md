@@ -1,4 +1,6 @@
 ---
+name: secure-coding-dependency-supply-chain-security
+description: Use when you need guidance on Dependency & supply-chain security. Applies to the dependency-supply-chain-security axis.
 axis: dependency-supply-chain-security
 rule_count_floor: 8
 ---

@@ -1,4 +1,6 @@
 ---
+name: refactoring-legacy-verification-cadence
+description: Use when you need guidance on Verification cadence and rollback. Applies to the verification-cadence axis.
 axis: verification-cadence
 rule_count_floor: 5
 ---

@@ -1,4 +1,6 @@
 ---
+name: data-modeling-inmon
+description: Use when you need guidance on Inmon — subject-oriented, 3NF enterprise warehouse modeling. Applies to the inmon axis.
 axis: inmon
 rule_count_floor: 10
 ---

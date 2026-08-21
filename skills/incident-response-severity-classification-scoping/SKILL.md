@@ -1,4 +1,6 @@
 ---
+name: incident-response-severity-classification-scoping
+description: Use when you need guidance on Severity classification / postmortem depth scoping. Applies to the severity-classification-scoping axis.
 axis: severity-classification-scoping
 rule_count_floor: 4
 ---

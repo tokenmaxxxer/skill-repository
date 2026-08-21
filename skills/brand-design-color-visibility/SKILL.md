@@ -1,4 +1,6 @@
 ---
+name: brand-design-color-visibility
+description: Use when you need guidance on Color-combination visibility rules. Applies to the color-combination-visibility axis.
 axis: color-combination-visibility
 rule_count_floor: 3
 tier: rich

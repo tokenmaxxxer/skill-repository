@@ -1,4 +1,6 @@
 ---
+name: pricing-method-family
+description: Use when you need guidance on Method-family selection decision rules. Applies to the method-family-selection axis.
 axis: method-family-selection
 rule_count_floor: 3
 ---

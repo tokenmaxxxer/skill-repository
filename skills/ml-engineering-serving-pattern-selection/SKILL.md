@@ -1,4 +1,6 @@
 ---
+name: ml-engineering-serving-pattern-selection
+description: Use when you need guidance on Serving pattern selection (batch / online-sync / online-async-streaming). Applies to the serving-pattern-selection axis.
 axis: serving-pattern-selection
 rule_count_floor: 5
 ---

@@ -1,4 +1,6 @@
 ---
+name: data-engineering-pipeline-design
+description: Use when you need guidance on Pipeline design — decision rules. Applies to the pipeline-design axis.
 axis: pipeline-design
 rule_count_floor: 10
 ---

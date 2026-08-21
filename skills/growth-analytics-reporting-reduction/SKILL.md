@@ -1,4 +1,6 @@
 ---
+name: growth-analytics-reporting-reduction
+description: Use when you need guidance on Report-reduction (subtraction) rules. Applies to the reporting-reduction axis.
 axis: reporting-reduction
 rule_count_floor: 2
 ---

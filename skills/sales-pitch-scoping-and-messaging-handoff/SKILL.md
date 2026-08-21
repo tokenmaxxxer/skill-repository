@@ -1,4 +1,6 @@
 ---
+name: sales-pitch-scoping-and-messaging-handoff
+description: Use when you need guidance on Pitch scoping and messaging hand-off. Applies to the pitch-scoping-and-messaging-handoff axis.
 axis: pitch-scoping-and-messaging-handoff
 rule_count_floor: 5
 ---

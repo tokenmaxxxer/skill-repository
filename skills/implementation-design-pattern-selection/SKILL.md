@@ -1,4 +1,6 @@
 ---
+name: implementation-design-pattern-selection
+description: Use when you need guidance on Design-pattern selection. Applies to the design-pattern-selection axis.
 axis: design-pattern-selection
 rule_count_floor: 6
 tier: sparse

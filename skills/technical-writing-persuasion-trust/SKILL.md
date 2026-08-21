@@ -1,4 +1,6 @@
 ---
+name: technical-writing-persuasion-trust
+description: Use when you need guidance on Persuasion and trust (adoption-facing docs). Applies to the persuasion-trust axis.
 axis: persuasion-trust
 rule_count_floor: 10
 ---

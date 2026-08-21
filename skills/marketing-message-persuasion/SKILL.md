@@ -1,4 +1,6 @@
 ---
+name: marketing-message-persuasion
+description: Use when you need guidance on Message construction and persuasion. Applies to the message-persuasion axis.
 axis: message-persuasion
 rule_count_floor: 5
 ---

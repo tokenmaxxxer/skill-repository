@@ -1,4 +1,6 @@
 ---
+name: product-discovery-opportunity-solution-tree-branching
+description: Use when you need guidance on Opportunity-solution-tree branching and pruning. Applies to the opportunity-solution-tree-branching axis.
 axis: opportunity-solution-tree-branching
 rule_count_floor: 10
 ---

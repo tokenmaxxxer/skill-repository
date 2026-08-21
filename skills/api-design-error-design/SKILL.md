@@ -1,4 +1,6 @@
 ---
+name: api-design-error-design
+description: Use when you need guidance on Error response design. Applies to the error-design axis.
 axis: error-design
 rule_count_floor: 10
 ---

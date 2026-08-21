@@ -1,4 +1,6 @@
 ---
+name: defect-verification-independence-from-upstream-verdicts
+description: Use when you need guidance on Preserving independence from coding/qa/review's prior verdicts. Applies to the independence-from-upstream-verdicts axis.
 axis: independence-from-upstream-verdicts
 rule_count_floor: 8
 ---

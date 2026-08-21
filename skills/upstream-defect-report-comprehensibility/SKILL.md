@@ -1,4 +1,6 @@
 ---
+name: upstream-defect-report-comprehensibility
+description: Use when you need guidance on Comprehensibility — making the report readable by a stranger. Applies to the comprehensibility axis.
 axis: comprehensibility
 rule_count_floor: 5
 role: upstream-defect-report

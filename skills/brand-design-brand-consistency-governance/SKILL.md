@@ -1,4 +1,6 @@
 ---
+name: brand-design-brand-consistency-governance
+description: Use when you need guidance on Brand consistency / asset governance rules. Applies to the brand-consistency-governance axis.
 axis: brand-consistency-governance
 rule_count_floor: 3
 tier: rich
