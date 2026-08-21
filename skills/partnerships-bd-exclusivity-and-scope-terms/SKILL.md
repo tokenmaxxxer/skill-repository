@@ -1,6 +1,6 @@
 ---
 name: partnerships-bd-exclusivity-and-scope-terms
-description: Use when you need guidance on Exclusivity and scope terms rules. Applies to the exclusivity-and-scope-terms axis.
+description: Use when a counterpart requests exclusivity, when drafting how broad an exclusivity grant should be, or when a diligence/negotiation window that justified an existing exclusivity clause has ended.
 axis: exclusivity-and-scope-terms
 rule_count_floor: 3
 tier: sparse
@@ -11,6 +11,34 @@ tier: sparse
 Practitioner + standard-term-sheet-convention rules for when to grant
 exclusivity, how to bound its scope, and when to let it lapse rather
 than renew it by default.
+
+## Trigger
+
+Use when a counterpart requests exclusivity to protect a diligence or
+negotiation window, when drafting or reviewing the scope dimensions
+(product/geography/vertical) an exclusivity grant should cover, or when
+the diligence/negotiation window that originally justified an existing
+exclusivity clause has concluded.
+
+## Procedure
+
+1. If a counterpart requests exclusivity, bound the grant to the time
+   needed to complete diligence, state an explicit expiration date, and
+   require renewal by affirmative action rather than silence (rule 1).
+2. When drafting the exclusivity scope, state it as the narrowest
+   combination of product line + geography + vertical/segment that
+   protects the deal's specific rationale — never default to
+   all-products/all-territories (rule 2).
+3. Once the diligence or negotiation window that justified an
+   exclusivity clause has ended, let it lapse rather than carrying it
+   forward into the definitive agreement by default; re-justify and
+   re-scope it only if a new triggering condition arises (rule 3).
+
+## Output shape
+
+A time-boxed, scope-bounded exclusivity clause (with expiration date and
+scope dimensions stated), or a decision to let an existing clause lapse
+rather than renew it.
 
 ## Decision rules
 

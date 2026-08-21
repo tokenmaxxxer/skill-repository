@@ -1,6 +1,6 @@
 ---
 name: partnerships-bd-governance-cadence-and-kpi
-description: Use when you need guidance on Governance cadence and KPI rules. Applies to the governance-cadence-and-kpi axis.
+description: Use when designing a partnership's recurring governance rhythm, when deciding which KPIs get reported to which governance tier, or when reviewing whether an existing governance layer still produces decisions.
 axis: governance-cadence-and-kpi
 rule_count_floor: 3
 tier: sparse
@@ -12,6 +12,34 @@ Practitioner rules for setting a partnership's ongoing governance
 rhythm (steering committee, working group) and choosing which KPIs to
 track at which tier, plus when to cut a governance layer instead of
 adding one.
+
+## Trigger
+
+Use when designing or revising a partnership's recurring governance
+rhythm, when deciding which KPIs to route to which governance tier, or
+when reviewing an existing governance layer's recent sessions for
+whether it still produces decisions.
+
+## Procedure
+
+1. Assign meeting cadence by decision type — quarterly for strategic
+   direction and top-line KPI review, monthly for policy/cross-functional
+   coordination, biweekly or tighter for tactical execution — rather than
+   one flat cadence for the whole relationship (rule 1).
+2. Route each KPI to the governance tier that owns the decision it
+   informs: enterprise KPIs to the steering committee, functional KPIs to
+   the operating committee, team/sprint metrics only within the working
+   group that produces them (rule 2).
+3. When a governance layer's recent sessions show only status updates
+   with no decision, escalation, or course-correction, retire that layer
+   explicitly and fold any remaining useful reporting into an adjacent
+   tier, rather than keeping it on the calendar "for visibility" (rule 3).
+
+## Output shape
+
+A tiered governance cadence with each KPI assigned to its owning tier,
+or an explicit retirement decision for a governance layer that has
+stopped producing decisions.
 
 ## Decision rules
 
