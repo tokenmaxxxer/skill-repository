@@ -1,6 +1,6 @@
 ---
 name: api-design-payload-design
-description: Use when you need guidance on Payload design (pagination, filtering, field selection). Applies to the payload-design axis.
+description: Use when designing a list/search endpoint's pagination style, continuation signal, page-size limits, field selection, or filter-parameter grammar.
 axis: payload-design
 rule_count_floor: 10
 ---
@@ -8,6 +8,50 @@ rule_count_floor: 10
 # Payload design (pagination, filtering, field selection)
 
 Research trail: fetched/read Stripe's pagination docs, GitHub REST API pagination docs, Slack's cursor pagination docs, Microsoft REST API Guidelines, Google AIP-158 (pagination) and AIP-160 (filtering), the JSON:API v1.1 spec, and independent engineering write-ups on offset vs. keyset performance (GitLab, Sequin, design gurus). Rules below are decision-grade: each names a trigger condition and the choice it forces, not a taxonomy of pagination styles.
+
+## Trigger
+
+Apply this skill when designing or reviewing a list/search HTTP
+endpoint's pagination style, page-size/limit handling, continuation
+signal, sparse-fieldset support, filter-parameter grammar, or a
+client-side auto-pagination helper.
+
+## Procedure
+
+1. For collections that can grow past a few thousand rows with
+   sequential forward paging, use cursor/keyset pagination rather than
+   numeric offsets (rule 1); keep offset pagination available too if
+   random-access page jumps or total counts are needed (rule 2).
+2. Return a boolean continuation flag (`has_more`) alongside the page's
+   data array (rule 3).
+3. Implement server-driven paging with a capped `limit` parameter from
+   the start, even for small resources today (rule 4).
+4. Expose pagination via opaque, server-issued cursor tokens rather
+   than raw internal keys/offsets (rule 5).
+5. If the endpoint has both a list and a search/query variant, give the
+   search variant its own distinct cursor parameter rather than reusing
+   the list's ID-based cursor (rule 6).
+6. Expose a `fields[type]=a,b,c` sparse-fieldset parameter rather than
+   a fixed-shape response (rule 7); do not include rarely-used
+   relationship/attribute data by default (rule 8).
+7. For filterable list/search endpoints, use a single structured
+   filter-expression parameter with a documented grammar rather than
+   one ad hoc parameter per field (rule 9).
+8. Drop an exact `total_count`/`total_size` field (or make it opt-in)
+   once the table is large enough to show the O(n) offset-scan problem
+   (rule 10).
+9. Provide an official-SDK auto-pagination helper for result sets that
+   can strain client memory (rule 11).
+10. For high-volume concurrent access, use `limit`+`cursor` parameters
+    and return the next cursor in a dedicated `response_metadata`-style
+    field, not embedded in `data` (rule 12).
+
+## Output shape
+
+A list/search endpoint design (or review verdict) stating: the chosen
+pagination style and why, the continuation-signal field, the page-size
+cap, the field-selection mechanism, and the filter-parameter grammar,
+each traceable to the rule above that forced the choice.
 
 ## Rules
 
