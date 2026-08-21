@@ -116,3 +116,8 @@ risk-management-appetite-tolerance-threshold
 risk-management-likelihood-impact-scale
 risk-management-monitoring-review-cadence
 risk-management-response-strategy-selection
+market-analysis-competitor-mapping
+market-analysis-evidence-rigor
+market-analysis-five-forces
+market-analysis-jtbd-fit
+market-analysis-mece-proposal
