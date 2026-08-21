@@ -1,6 +1,6 @@
 ---
 name: sales-objection-handling
-description: Use when you need guidance on Objection handling. Applies to the objection-handling axis.
+description: Use when responding to prospect pushback — an emotional objection, a factual objection (price, missing feature), stalling on an already-expressed interest, a social-proof or competitive objection, or an urgency-deferral objection.
 axis: objection-handling
 rule_count_floor: 5
 ---
@@ -10,6 +10,39 @@ rule_count_floor: 5
 Decision rules for responding to prospect pushback, grounded in the
 Feel-Felt-Found technique and Cialdini's empirically studied principles
 of persuasion (the academic layer behind why these responses work).
+
+## Trigger
+
+Apply this skill when a prospect raises pushback in a live or written
+sales conversation: an emotional objection, a purely factual objection
+(a stated price, a missing feature), stalling on a decision they've
+already expressed interest in, a social-proof-sensitive objection about
+fit for their size/segment, a competitive comparison request, or an
+urgency-deferral ("let's revisit next quarter").
+
+## Procedure
+
+1. Classify the objection as emotional or factual (rules 1-2).
+2. If emotional, apply Feel-Felt-Found: acknowledge the feeling, cite a
+   comparable prospect, state what that prospect found (rule 1).
+3. If factual, answer directly with the fact — do not apply
+   Feel-Felt-Found (rule 2).
+4. If the prospect is stalling on already-expressed interest, invoke
+   commitment-and-consistency: ask them to restate their own stated
+   need (rule 3).
+5. If the objection is social-proof-sensitive, cite a same-segment
+   customer reference rather than a generic name (rule 4).
+6. If the objection is competitive, cut the reply to the one or two
+   differentiators mapping to the prospect's stated pain — drop
+   feature-by-feature comparison (rule 5).
+7. If the objection is about urgency, use scarcity only if a real
+   constraint exists; never fabricate scarcity (rule 6).
+
+## Output shape
+
+An objection response: the objection's classification (emotional/
+factual/stalling/social-proof/competitive/urgency), the applicable rule
+number(s), and the response content chosen under that rule.
 
 ## Rules
 

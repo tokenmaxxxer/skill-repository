@@ -1,6 +1,6 @@
 ---
 name: sales-qualification-and-discovery
-description: Use when you need guidance on Qualification and discovery. Applies to the qualification-and-discovery axis.
+description: Use when deciding whether an opportunity is worth advancing, which questions to ask during discovery, or how to scope a MEDDPICC pass under a compressed timeline.
 axis: qualification-and-discovery
 rule_count_floor: 5
 ---
@@ -11,6 +11,35 @@ Decision rules for whether a lead is worth advancing and what to ask
 during discovery, grounded in the MEDDPICC qualification framework and
 Rackham's SPIN research on which question types actually move complex
 B2B deals.
+
+## Trigger
+
+Apply this skill when qualifying an opportunity for stage advancement,
+planning a discovery call's question mix, scoping a MEDDPICC pass under
+time pressure, or mapping decision vs. paper process for a
+multi-stakeholder deal.
+
+## Procedure
+
+1. If no Economic Buyer is identified after two discovery calls, do not
+   advance the stage — map the buying committee first (rule 1).
+2. For an early discovery call, favor Implication and Need-Payoff
+   questions over Situation questions (rule 2).
+3. Under a compressed timeline (close in under 30 days), skip a full
+   MEDDPICC pass and prioritize Metrics + Economic Buyer + Champion
+   (rule 3).
+4. If Champion and Economic Buyer signals are already strong, drop the
+   Situation-question block from the next call (rule 4).
+5. If a prospect states a symptom without its business consequence, ask
+   an Implication question before proposing a solution (rule 5).
+6. For a multi-stakeholder enterprise deal, map Decision Process and
+   Paper Process as two separate fields, not one (rule 6).
+
+## Output shape
+
+A qualification/discovery decision: the applicable rule number(s), the
+next question(s) or MEDDPICC field(s) to pursue, and — when rule 1
+applies — the stage-advancement hold.
 
 ## Rules
 
