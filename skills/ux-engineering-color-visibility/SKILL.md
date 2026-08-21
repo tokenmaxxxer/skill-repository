@@ -1,6 +1,6 @@
 ---
 name: ux-engineering-color-visibility
-description: Use when you need guidance on Color combination visibility. Applies to the color-combination-visibility axis.
+description: Use when choosing or reviewing a color combination for text, a non-text UI component, a color-only distinction, or a multi-value color set. Applies to the color-combination-visibility axis.
 axis: color-combination-visibility
 rule_count_floor: 3
 ---
@@ -11,6 +11,43 @@ Decision rules for contrast minimums and colorblind-safe color
 combinations, sourced from WCAG 2.1 success criteria fetched directly
 from w3.org during issue #1174's ux-engineering research pass
 (2026-08-13).
+
+## Trigger
+
+Apply this skill when choosing or reviewing a color combination for
+text, a non-text UI component, a color-only distinction, or a
+multi-value color set — distinguishing it from control-selection
+(which widget to use), layout-grouping (spatial arrangement), and
+surface-contrast (elevation/chrome around an active edit surface).
+
+## Procedure
+
+1. For normal-size body text on a background, require at least 4.5:1
+   contrast, unrounded (rule 1).
+2. For large-scale text, require at least 3:1 contrast (rule 2).
+3. For a non-text UI component's visible boundary or state indicator,
+   require at least 3:1 contrast against its adjacent background
+   unless the component is inactive (rule 3).
+4. For any UI distinction currently conveyed only through hue, add a
+   second non-color signal (rule 4).
+5. For a distinguishable multi-value color set, vary lightness/
+   luminance between adjacent hues, not hue rotation alone (rule 5).
+6. REMOVAL: when a status system has accumulated more colors than can
+   be told apart at the 3:1 minimum and a colorblind-safe distance,
+   consolidate the palette rather than layering on more non-color cues
+   (rule 6).
+7. Route a color value through one source-of-truth layer shared by
+   design and code rather than a hard-coded literal (rule 7).
+8. When defining a new color token or palette, default to a
+   wide-gamut, perceptually-uniform color space and derive steps
+   systematically rather than hand-picking each one (rule 8).
+
+## Output shape
+
+A pass/fail contrast verdict per checked pair or component state, plus
+— where a rule fires — a concrete remediation: an added non-color
+signal, a consolidated palette, a routed color token, or a
+derived-palette recommendation.
 
 ## Decision rules
 

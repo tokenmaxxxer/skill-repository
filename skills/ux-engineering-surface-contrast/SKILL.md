@@ -1,6 +1,6 @@
 ---
 name: ux-engineering-surface-contrast
-description: Use when you need guidance on Background vs. edit surface contrast. Applies to the background-vs-edit-surface-contrast axis.
+description: Use when deciding elevation, scrim, or chrome treatment for an active editing surface against its surrounding background. Applies to the background-vs-edit-surface-contrast axis.
 axis: background-vs-edit-surface-contrast
 rule_count_floor: 3
 ---
@@ -11,6 +11,39 @@ Decision rules for elevation, chrome, and background treatment around an
 active editing surface, sourced from Material Design elevation
 convention and visual-hierarchy/cognitive-load literature actually
 fetched during issue #1174's ux-engineering research pass (2026-08-13).
+
+## Trigger
+
+Apply this skill when deciding elevation, scrim, or chrome treatment
+for an active editing surface against its surrounding background —
+distinguishing it from color-visibility (contrast minimums for text/
+components generally, not specifically an active-vs-background
+relationship).
+
+## Procedure
+
+1. When a modal or panel becomes the active editing surface, raise its
+   elevation and use a scrim or desaturated background behind it
+   (rule 1).
+2. When a background page recedes behind an active edit surface,
+   reduce its saturation/opacity rather than leaving full intensity
+   (rule 2).
+3. When designing chrome around a focused input, minimize competing
+   saturated colors adjacent to it (rule 3).
+4. REMOVAL: when an edit surface already stacks elevated shadow,
+   scrim, colored border, AND a "You are editing" label, cut back to
+   the minimum combination that still passes a 3:1 contrast check
+   (rule 4).
+5. Check a contrast decision against the element's actual rendered
+   layer and current interaction state, not an isolated swatch pair
+   (rule 5).
+
+## Output shape
+
+An elevation/scrim/chrome treatment for the active surface plus a
+desaturation treatment for the receding background, with the
+triggering rule number and, where rule 4 fires, a flagged
+over-stacked contrast treatment to prune.
 
 ## Decision rules
 
