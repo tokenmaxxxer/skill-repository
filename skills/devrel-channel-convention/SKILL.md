@@ -1,17 +1,52 @@
 ---
 name: devrel-channel-convention
-description: Use when you need guidance on Channel and format convention. Applies to the channel-convention axis.
+description: Use when deciding which content format, channel, code-sample convention, or community-entry behavior a devrel deliverable should follow — code samples for public release, cross-language sample sets, conference-proposal topic matching, talk-vs-writeup sequencing, first community interactions, sample-convention or channel consolidation.
 axis: channel-convention
 rule_count_floor: 8
 ---
 
 # Channel and format convention
 
-Decision rules for which content format, channel, and code-sample
-convention a devrel deliverable should follow, so the same kind of
-decision is made the same way across the program. Research trail:
-layer 1 (practitioner CFP/community convention) plus layer 2 (named
-API-style-guide and usability-heuristic convention).
+## Trigger
+
+Apply this skill when deciding which content format, channel, or
+code-sample convention a devrel deliverable should follow — authoring a
+public code sample, aligning a multi-language sample set, matching a
+conference proposal to a CFP's themes, sequencing a talk against a
+writeup, entering a developer community for the first time, or
+consolidating a sample convention or a publishing channel.
+
+## Procedure
+
+1. Format a public code sample against the product's own API style
+   guide, not the author's personal style (rule 1).
+2. Keep parameter names, variable names, and comment placement
+   consistent across every language variant of the same sample
+   operation (rule 2).
+3. Match a conference-proposal topic to the conference's published
+   themes before submitting (rule 3).
+4. When the same information could become a talk or a writeup, produce
+   the writeup first and treat the talk as derivative of it (rule 4).
+5. In the first several interactions with a new developer community,
+   answer existing questions only and hold off on product promotion
+   (rule 5).
+6. When a sample-convention guide has accumulated two accepted ways to
+   do the same thing, pick one as canonical and delete the other from
+   new samples (rule 6).
+7. Name a new SDK method or sample-repo file to match the existing
+   repo's established naming pattern (rule 7).
+8. When a publishing channel shows measurably declining or negligible
+   developer presence, stop publishing new content there (rule 8).
+
+## Output shape
+
+A format, channel, or convention decision (code-sample style,
+cross-language consistency, CFP topic match, talk/writeup sequencing,
+community-entry behavior, or a consolidation call) attributed to the
+rule that drove it, applied the same way across similar deliverables.
+
+Research trail: layer 1 (practitioner CFP/community convention) plus
+layer 2 (named API-style-guide and usability-heuristic convention).
 
 ## Rules
 
