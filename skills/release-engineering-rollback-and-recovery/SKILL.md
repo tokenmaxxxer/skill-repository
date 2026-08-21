@@ -1,11 +1,56 @@
 ---
 name: release-engineering-rollback-and-recovery
-description: Use when you need guidance on Rollback and recovery. Applies to the rollback-and-recovery axis.
+description: Use when deciding whether/how to roll back a release during an incident, budgeting rollback speed, or confirming a rollback target's build/config pairing.
 axis: rollback-and-recovery
 rule_count_floor: 12
 ---
 
 # Rollback and recovery
+
+## Trigger
+
+Apply this skill when an incident correlates with a recent release and
+a rollback decision is live — whether to roll back, which mechanism to
+use for the deployment strategy in play, what to retain at release time
+to make rollback possible, and what to confirm before or after a
+rollback executes.
+
+## Procedure
+
+1. At release time, retain a detailed change report and the previous
+   build's artifact alongside the new one, so a rollback target exists
+   before an incident starts (rule 1).
+2. When a pre-declared canary/rolling threshold is crossed, roll back
+   automatically rather than page a human to decide (rule 2); for
+   blue-green, switch back to the still-running previous environment
+   immediately rather than attempt a fix-forward patch (rule 3).
+3. When root cause is unclear but a recent release correlates with
+   onset, roll back first and investigate after (rule 4).
+4. At release time, design any accompanying migration as
+   rollback-compatible (additive-first, backward-compatible reads),
+   never discovering at incident time that it has no reverse path (rule
+   5).
+5. Budget incident-response time for rolling deployment's slower,
+   instance-by-instance rollback (rule 6), and prefer flag-flip-off as
+   the first rollback action when feature-flag-gated code carries the
+   risky change, before falling back to a full rollback (rule 9).
+6. After a rollback completes, write a postmortem documenting the
+   trigger and whether the threshold fired at the right sensitivity
+   (rule 7), and confirm the rollback target's build artifact and
+   config bundle are the exact previously-live pairing, not just the
+   previous version number (rule 12).
+7. Where manual rollback steps recur release after release with no
+   growing insight, or engineering time goes disproportionately into
+   reactive rollback firefighting past the toil ceiling, automate the
+   rollback path (rules 8, 10); prune a rollback runbook's steps for
+   scenarios that no longer occur (rule 11).
+
+## Output shape
+
+A rollback decision (execute now / hold) with its mechanism, the
+confirmed build/config pairing being rolled back to, and — once
+complete — a postmortem covering the trigger and threshold accuracy,
+each traceable to the rule above that forced it.
 
 ## Rules
 

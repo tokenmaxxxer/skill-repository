@@ -1,11 +1,49 @@
 ---
 name: release-engineering-release-cadence-and-toil
-description: Use when you need guidance on Release cadence and toil reduction. Applies to the release-cadence-and-toil axis.
+description: Use when deciding release cadence, whether a release-process task is worth automating, or when to create/expire/remove a feature flag.
 axis: release-cadence-and-toil
 rule_count_floor: 12
 ---
 
 # Release cadence and toil reduction
+
+## Trigger
+
+Apply this skill when setting release cadence, judging whether a
+recurring release task counts as toil worth automating, or managing a
+feature flag's lifecycle (creation, expiration, retirement).
+
+## Procedure
+
+1. Favor more frequent, smaller releases when cadence and
+   testing/troubleshooting burden trade off (rule 1), and automate a
+   release task once a machine could do it as well as a human, or the
+   need for it could be designed away (rule 2).
+2. At scale, prefer a self-service, role-based release process over a
+   centralized release engineer approving every release (rule 3).
+3. Give every new feature flag a real expiration date at creation time
+   (rule 4), scoped narrowly rather than as one mega-flag (rule 6).
+4. When a flag's expiration date arrives, force an explicit decision —
+   remove it, or extend with a new date and reason — rather than let it
+   silently pass (rule 7).
+5. When removing a flag, trace every read of its variable to completion
+   before deleting (rule 8), remove it once it reaches 100% rollout
+   with no remaining kill-switch need (rule 5), and archive rather than
+   hard-delete its record (rule 9).
+6. Fold flag removal into the definition of done for the feature it
+   gated, rather than treat cleanup as a deferred special project (rule
+   10).
+7. When toil exceeds roughly half the team's time, prioritize
+   automating it over new release-process feature work (rule 11), and
+   treat "human judgment is needed here" as a prompt to check for poor
+   system design before accepting it as a genuine judgment need (rule
+   12).
+
+## Output shape
+
+A stated release cadence or automation/toil decision, and, where a flag
+lifecycle is involved, its expiration date and removal status — each
+traceable to the rule above that forced it.
 
 ## Rules
 

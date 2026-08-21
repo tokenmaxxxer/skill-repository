@@ -1,11 +1,52 @@
 ---
 name: release-engineering-deployment-rollout-strategy
-description: Use when you need guidance on Deployment rollout strategy. Applies to the deployment-rollout-strategy axis.
+description: Use when choosing between rolling, canary, and blue-green deployment for a service, or setting the rollback threshold and config validation gate for the rollout.
 axis: deployment-rollout-strategy
 rule_count_floor: 13
 ---
 
 # Deployment rollout strategy
+
+## Trigger
+
+Apply this skill when choosing a deployment mechanism (rolling, canary,
+blue-green) for a release, pre-declaring the metric threshold that
+triggers rollback, or deciding whether infrastructure/monitoring
+constraints rule a strategy in or out.
+
+## Procedure
+
+1. Default to rolling deployment for a low-risk service on a recurring
+   cadence (rule 1); choose canary for a customer-facing or high-risk
+   service with monitoring granular enough to detect a problem in a
+   small traffic slice (rule 2); choose blue-green for critical services
+   needing instant rollback where that granular monitoring isn't
+   trusted (rule 3).
+2. Rule out blue-green when infrastructure can't run two full parallel
+   environments (rule 4), and prefer blue-green over rolling for a
+   major all-at-once behavioral change unsafe to run in two versions at
+   once (rule 5); rule out canary when monitoring can't yet detect a
+   small-slice problem (rule 12), falling back to canary when rolling's
+   infrastructure requirements aren't met (rule 8).
+3. Pre-declare the canary's rollback threshold before the rollout
+   starts, never ad hoc mid-rollout (rule 6), and budget for rolling
+   deployment's slower, instance-by-instance rollback path (rule 7).
+4. Scale a canary's traffic exponentially, gating each expansion step on
+   the previous step's health signal (rule 9).
+5. Shorten (not eliminate) a proven service's canary soak time rather
+   than add manual sign-off on top of an already-reliable gate (rule
+   10), and collapse a redundant "canary plus blue-green for the same
+   path" setup to one strategy chosen by the conditions above (rule 11).
+6. Validate any accompanying config/env-var change against a schema and
+   secret-exposure scan before the rollout starts, with stricter
+   required fields in production than lower environments (rule 13).
+
+## Output shape
+
+A chosen deployment strategy (rolling/canary/blue-green) for the
+release, its pre-declared rollback threshold, and, where a config change
+accompanies it, confirmation the config passed schema/secret-exposure
+validation — each traceable to the rule above that forced it.
 
 ## Rules
 

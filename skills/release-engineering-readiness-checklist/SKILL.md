@@ -40,6 +40,47 @@ mechanically by two hooks in this plugin, not by judgment calls. This skill
 is the operator's-eye view of what those hooks actually check, so the state
 file gets written in a shape that passes the gate instead of bouncing off it.
 
+## Trigger
+
+Apply this skill while working the `readiness` state, preparing to move
+`readiness -> rollout`, or checking what `state-gate.sh` requires before a
+write to `ops/state.md` will pass — distinguishing it from the
+specification/feasibility work upstream of ops, which this skill does not
+cover.
+
+## Procedure
+
+1. Write `ops/state.md` with `status: readiness` at `idle -> readiness`
+   (see "Working `idle -> readiness`").
+2. Walk the seven PRR dimensions with the user, recording each as
+   yes/no plus a pointable artifact for every yes, in the `##
+   Checklist` section's exact gate-required shape (see "The state
+   file" and the seven dimensions list).
+3. Before flipping `status: rollout`, re-read every `yes` item and
+   confirm its `artifact:` field points at something a stranger could
+   actually open — if not, mark it `no` instead (see "Working
+   `readiness -> rollout`").
+4. Once every item resolves and every yes has a real artifact, move to
+   `rollout` (agent-owned, no human gate) and hand off to `rollout-plan`
+   for the agent-owned canary/incident rows (see "Working `readiness ->
+   rollout`, and `rollout`'s own agent-owned steps").
+5. For `rollout -> steady`, read the user's own turn for an unambiguous
+   approval statement before writing the transition — never accept a
+   bare "ok" (see "Working `rollout -> steady`").
+6. While `status: steady`, read `error_budget:` before any transition
+   back toward a release and refuse if exhausted, routing a true P0
+   through the user (see "Steady state and the error budget").
+7. For `steady -> incident` and back, require the filed, human-reviewed
+   postmortem before writing `incident -> steady` or `incident ->
+   readiness` (see "Closing an incident").
+
+## Output shape
+
+`ops/state.md`'s `## Checklist` section, one line per PRR dimension in
+the gate's exact `- item: ... | status: yes|no | artifact: ...` shape,
+plus the resulting `status:` transitions (`readiness -> rollout ->
+steady`, and incident handling) each gated per the sections above.
+
 ## The state file
 
 `ops/state.md`, at the repository root the role is being run against.
