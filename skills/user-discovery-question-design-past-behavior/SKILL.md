@@ -1,6 +1,6 @@
 ---
 name: user-discovery-question-design-past-behavior
-description: Use when you need guidance on Question design: past behavior over hypotheticals/opinion/pitching. Applies to the question-design-past-behavior axis.
+description: Use when drafting or reviewing discovery-interview questions or script order — anchoring questions in specific past events rather than hypotheticals/opinions, and sequencing behavioral questions before any pitch or solution reveal.
 axis: question-design-past-behavior
 rule_count_floor: 8
 ---
@@ -8,6 +8,46 @@ rule_count_floor: 8
 # Question design: past behavior over hypotheticals/opinion/pitching
 
 Research trail: Rob Fitzpatrick, *The Mom Test* (three-rule summary and worked examples); UXtweak and koji.so 2026 explainer pieces on Mom-Test-style bias avoidance; behavioral-interviewing literature contrasting behavioral vs. attitudinal question evidence value. All searched this session.
+
+## Trigger
+
+Apply this skill when drafting a discovery-interview question or
+reviewing/sequencing a script — whether a candidate question invites
+hypothetical/opinion fiction, whether the pitch is sequenced after the
+behavioral questions, and which hypothesis's questions go first —
+distinct from how deep to follow up on the answer once asked
+(follow-up-ladder-depth).
+
+## Procedure
+
+1. Draft each question around a specific past event rather than a
+   hypothetical or generic phrasing (rule 1).
+2. Rewrite any "would you"/"do you think" question into a past-event
+   question, or drop it (rule 2).
+3. Do not describe the idea/product before asking the behavioral
+   question (rule 3).
+4. Ask "how are you solving this today" / "when did this last cost you"
+   rather than a direct problem-confirmation question (rule 4).
+5. Let the interviewee finish, then follow with a clarifying behavioral
+   probe rather than filling silence with your own explanation (rule 5).
+6. Phrase a specific-claim check as a request for a recent concrete
+   example rather than an agree/disagree prompt (rule 6).
+7. Sequence every hypothesis's behavioral questions before any question
+   that reveals or pitches the solution (rule 7).
+8. Drop any rating/agreement-scale question from a discovery script
+   (rule 8).
+9. Remove any feature description or demo that front-loads the script
+   ahead of a current-behavior question (rule 9).
+10. When testing more than one hypothesis, rank them by which one would
+    kill the idea if disconfirmed, and script that one's behavioral
+    questions first (rule 10).
+
+## Output shape
+
+An interview script (or a review verdict on one) in which every
+question is anchored to a specific past event, no hypothetical/opinion
+or pitch/demo content precedes the behavioral questions for any
+hypothesis, and the fatal-first hypothesis is scripted earliest.
 
 ## Rules
 
