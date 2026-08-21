@@ -1,6 +1,6 @@
 ---
 name: verify-severity-classification
-description: Use while acting as the verify role in the reproduced state, when a reproduced defect is escalated as a finding addressed to coding, to attach a severity band (blocking or advisory) to that finding. Use to decide how a reproduced attempt's finding gates landing; never to decide whether the attempt reproduced at all.
+description: Use while acting as the verify role in the reproduced state, once a reproduced defect's finding is addressed to coding and needs a severity band attached — never to decide whether the attempt reproduced at all.
 ---
 
 # severity-classification
@@ -12,6 +12,37 @@ sets that finding's `severity` field, per
 `blocking` means loops that DEPEND ON the addressed role's output pause
 until the finding is resolved. `advisory` means downstream loops continue;
 the finding is context, not a gate."
+
+## Trigger
+
+Apply this skill while acting as the verify role in the `reproduced`
+state, once `finding-record` has already recorded a `reproduced` outcome
+and its finding needs a severity band attached before it can gate
+landing — never to decide whether the attempt reproduced at all.
+
+## Procedure
+
+1. Compute the band solo by default; ask the user only when the band is
+   disputed after the fact by coding, in which case retain the finding
+   and adjust the recorded band rather than dropping it (see "What it
+   asks the user for").
+2. Choose one of the two sourced deterministic band shapes for the
+   engagement — Chromium's five bands or Microsoft's four-level bug bar
+   — never an averaged subjective score (see "The shape of the
+   classification").
+3. Map the chosen band to the closed `blocking|advisory` gate value the
+   contract's gates actually consult, keeping the two spec fields
+   distinct (see "Two distinct spec fields, not one").
+4. Write the resulting `severity` field onto the finding's existing
+   block in `verify-record.md`, never as a separate artifact (see "The
+   artifact").
+
+## Output shape
+
+A `severity` field written onto the existing finding block in
+`verify-record.md`, holding one deterministic band value mapped to a
+`blocking|advisory` gate value — never a new file, never an averaged
+score.
 
 ## What it asks the user for
 

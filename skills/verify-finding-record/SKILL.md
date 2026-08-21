@@ -1,6 +1,6 @@
 ---
 name: verify-finding-record
-description: Use while acting as the verify role in the reproducing or reproduced state, to record one outcome per reproduction attempt — and, when a defect reproduces, a finding addressed to coding — in verify-record.md. Use whenever an attempt has been made and needs an outcome written down — never to fix or patch what was found.
+description: Use while acting as the verify role in the reproducing or reproduced state, once an attempt has been made and needs its outcome written down in verify-record.md — never to fix or patch what was found.
 ---
 
 # finding-record
@@ -13,6 +13,43 @@ attempt blocks below the header block.
 
 This skill never writes to any file other than `verify-record.md`. It does
 not fix, patch, or suggest a patch for anything it finds — it reports.
+
+## Trigger
+
+Apply this skill while acting as the verify role in the `reproducing` or
+`reproduced` state, once an attempt has been made and its outcome needs
+to be written down in `verify-record.md` — never to fix or patch what
+was found.
+
+## Procedure
+
+1. Record the outcome solo by default; ask the user only when a
+   reproduction genuinely cannot be attempted from what's available, for
+   the missing access or input (see "What it asks the user for").
+2. Choose exactly one of the three outcomes; never merge them into a
+   bare pass/fail (see "The outcome set").
+3. Fill in the full field list for the attempt block — attempt, outcome,
+   evidence, steps, expected/actual when applicable, evidence_kind, and
+   environment (see "The artifact and its field list").
+4. When the attempt reproduces, additionally write the inline `finding`
+   block per the role-handoff contract's `finding` row, addressed to
+   coding, carrying its severity (see "The artifact and its field
+   list").
+5. Refuse to write `reproduced` with no `evidence` pointer, and require
+   an `evidence` field for `not-reproduced` and
+   `blocked: needs-repro-access` alike (see "Refusal the skill itself
+   enforces").
+6. In `reproduced`, record a disputed finding's re-examination inline
+   rather than treating the dispute as a request to fix anything (see
+   "What it asks the user for").
+
+## Output shape
+
+One `---`-delimited block per attempt inside `verify-record.md`,
+carrying the full field list and exactly one of the three outcome
+values, with an escalating `finding` block attached when the attempt
+reproduces, and a write refused when a required evidence pointer is
+missing.
 
 ## What it asks the user for
 
