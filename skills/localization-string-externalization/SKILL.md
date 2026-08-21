@@ -1,6 +1,6 @@
 ---
 name: localization-string-externalization
-description: Use when you need guidance on Decision axis: string externalization & key management. Applies to the string-externalization-and-key-management axis.
+description: Use when a user-facing string is hard-coded in source, when a variable needs embedding mid-string, when a key could be reused across grammatically different positions, or when a translation batch spans chunks or agents.
 axis: string-externalization-and-key-management
 rule_count_floor: 10
 axes:
@@ -14,6 +14,53 @@ axes:
 # Decision axis: string externalization & key management
 
 Checklist-axis rules (checklist basis: `localization/plugins/verdict-axis/checklists/locale-fitness-checklist.md`).
+
+## Trigger
+
+Apply this skill when a user-facing string is found hard-coded in
+source, when a sentence needs a variable embedded mid-string, when a
+key could be reused across grammatically different positions, when a
+translation batch spans many chunks or agents, or when verifying the
+checklist axis's key-completeness item.
+
+## Procedure
+
+1. When a user-facing string is found hard-coded in source, externalize
+   it into the resource file before any translation work starts
+   (rule 1).
+2. When a sentence needs a variable embedded mid-string, use one
+   complete ICU MessageFormat key rather than concatenating multiple
+   keys around the variable (rule 2).
+3. When a key's value could plausibly be reused for a grammatically
+   different sentence position, split it into a separate key per
+   grammatical role (rule 3).
+4. When a bespoke placeholder/interpolation syntax is requested instead
+   of the project's existing ICU MessageFormat convention, drop the
+   bespoke syntax and route the feature through the existing key
+   (rule 4).
+5. When an error/log string is genuinely developer-only, leave it
+   un-externalized as an N/A-checklist case (rule 5).
+6. When verifying the checklist axis's key-completeness item, run an
+   automated diff of the target locale's key set against the
+   base-locale key set rather than a manual read-through (rule 6).
+7. When a target locale's message would otherwise be forced to mirror
+   the source string's fixed shape, let the target message carry its
+   own structure driven by the source data (rule 7).
+8. When a translation batch spans many keys or agents/passes, extract a
+   canonical terminology table up front and inject it into every
+   chunk's translation prompt before chunk-level translation begins
+   (rule 8).
+9. When translation work is split across chunk or batch boundaries,
+   give each chunk's translator a read-only excerpt of the immediately
+   adjacent chunks so cross-boundary references stay resolvable
+   (rule 9).
+
+## Output shape
+
+A per-string externalization/key verdict: the applicable rule
+number(s), the resource-file key (new or existing) the string maps to,
+and — for a batch/chunk translation run — the terminology table and
+adjacent-chunk context supplied to each chunk's translator.
 
 ## Rules
 

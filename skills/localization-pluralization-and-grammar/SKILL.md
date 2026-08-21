@@ -1,6 +1,6 @@
 ---
 name: localization-pluralization-and-grammar
-description: Use when you need guidance on Decision axis: pluralization & grammar rules. Applies to the pluralization-and-grammar axis.
+description: Use when a message's wording depends on a numeric placeholder, when authoring source plural variants, or when a target locale's grammatical gender/case could change an adjacent word form.
 axis: pluralization-and-grammar
 rule_count_floor: 10
 axes:
@@ -14,6 +14,41 @@ axes:
 # Decision axis: pluralization & grammar rules
 
 Checklist-axis rules.
+
+## Trigger
+
+Apply this skill when a message's wording changes based on a numeric
+placeholder, when authoring or reviewing the source resource file's
+plural variants, when a target locale's grammar (gender/case agreement)
+could change an adjacent word form, or when verifying the checklist
+axis's plural-rule item.
+
+## Procedure
+
+1. When a message's wording changes based on a numeric placeholder, use
+   CLDR's plural category system via ICU MessageFormat rather than an
+   if/else on the raw number (rule 1).
+2. When authoring the source resource file, list all 6 CLDR plural
+   variants even where the source locale only needs a subset (rule 2).
+3. When a UI needs to show a count with text, branch per-locale plural
+   category rather than a hardcoded suffix pattern (rule 3).
+4. When a locale's plural rule set only requires a subset of
+   categories, omit the unused branches for that locale's translated
+   file (rule 4).
+5. When a sentence's noun has grammatical gender that changes an
+   adjacent word form, flag the string for a gendered-variant key and
+   tag it `[Internationalization]` under MQM (rule 5).
+6. When verifying the checklist axis's plural-rule item, confirm
+   plural-category selection is delegated to a maintained, versioned
+   CLDR-data source at runtime, never a hand-copied static table
+   (rule 6).
+
+## Output shape
+
+A per-string plural/grammar verdict: the applicable rule number(s),
+which CLDR plural categories are required or can be omitted for the
+target locale, and — when a gender/case defect is found — the MQM tag
+to apply.
 
 ## Rules
 

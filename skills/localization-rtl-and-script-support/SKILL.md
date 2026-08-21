@@ -1,6 +1,6 @@
 ---
 name: localization-rtl-and-script-support
-description: Use when you need guidance on Decision axis: RTL & script/encoding support. Applies to the rtl-and-script-support axis.
+description: Use when a target locale uses a right-to-left script, when deciding whether an icon or directional CSS property needs mirroring, or when a locale pair has no RTL/bidi requirement to check.
 axis: rtl-and-script-support
 rule_count_floor: 10
 axes:
@@ -14,6 +14,40 @@ axes:
 # Decision axis: RTL & script/encoding support
 
 Checklist-axis rules (encoding / script-fitness).
+
+## Trigger
+
+Apply this skill when a target locale uses a right-to-left script, when
+deciding whether an icon or a directional CSS property needs mirroring,
+when a mirrorable character appears in RTL-resolved text, or when a
+locale pair has no RTL/bidi requirement to check.
+
+## Procedure
+
+1. When a target locale uses a right-to-left script, set `dir` at the
+   document/root level and build layout with CSS logical properties,
+   never physical-direction properties (rule 1).
+2. When deciding whether an icon needs mirroring for RTL, mirror only
+   directional icons and leave non-directional icons unmirrored
+   (rule 2).
+3. When a mirrorable character (per Unicode Bidi_Mirrored) appears in
+   RTL-resolved text, trust the Unicode Bidirectional Algorithm's
+   automatic glyph substitution rather than hand-authoring a mirrored
+   variant (rule 3).
+4. When a component uses a directional `box-shadow`/`text-shadow`/
+   `linear-gradient` offset, flag it as a separate manual-flip
+   requirement rather than assuming logical properties already handled
+   it (rule 4).
+5. When a locale pair has no dedicated RTL/bidi requirement, mark the
+   RTL axis N/A for that pair rather than running the mirroring
+   checklist (rule 5).
+
+## Output shape
+
+A per-component RTL/script verdict: the applicable rule number(s),
+whether `dir`/logical-property coverage is complete, which icons or
+directional CSS properties still need a manual flip, and an N/A marker
+when the locale pair has no RTL requirement.
 
 ## Rules
 
