@@ -156,3 +156,8 @@ brand-design-brand-identity-strategy
 brand-design-color-visibility
 brand-design-logo-clear-space-size
 brand-design-typography-pairing
+marketing-channel-selection
+marketing-message-persuasion
+marketing-positioning-differentiation
+marketing-scope-pruning
+marketing-segment-targeting
