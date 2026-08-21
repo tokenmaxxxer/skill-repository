@@ -1,6 +1,6 @@
 ---
 name: pricing-verdict-report
-description: Use when you need guidance on Verdict-assembly decision rules. Applies to the verdict-assembly axis.
+description: Use when a pricing method has already produced numbers and they need to be assembled into a labeled, six-element verdict — correctly naming what PSM/conjoint outputs mean, stating the residual list, and handing off revenue/volume questions rather than answering them from the same data.
 axis: verdict-assembly
 rule_count_floor: 3
 ---
@@ -10,6 +10,43 @@ rule_count_floor: 3
 Decisions for `pricing-verdict-report` (chain position 4/4): the
 assembled six-element verdict and correct labeling of the numbers it
 carries.
+
+## Trigger
+
+Use at the end of the chain (position 4/4), once a research method has
+already produced raw numbers (PSM crossings or conjoint utilities/share)
+and those numbers need to be assembled into a final, correctly-labeled
+verdict. Use it to catch mislabeling (PSM as "optimal price", conjoint as
+a volume forecast) and to route revenue/profit/volume residuals to
+`finance-unit-economics` rather than answering them from the same
+dataset. Do not use it to choose or design the method itself — that is
+upstream.
+
+## Procedure
+
+1. Cite decision rule 1 when reporting a Van Westendorp output, to label
+   the intersection points by their actual statistical meaning, never as
+   "optimal price."
+2. Cite decision rule 2 when reporting a conjoint output, to label it
+   "preference share," never a unit-volume or revenue forecast.
+3. Cite decision rule 3 when the residual list includes revenue, profit,
+   or unit-volume questions, to name them as residuals and hand off to
+   `finance-unit-economics` rather than answering them from the study's
+   own data.
+4. Cite decision rule 4 every time a verdict is recorded, to assemble all
+   six elements including the "what it cannot answer" line, even when the
+   numeric result looks unambiguous.
+5. Cite decision rule 5 when the residual list is empty, to state that
+   explicitly and skip the `finance-unit-economics` hand-off rather than
+   issuing it out of habit.
+
+## Output shape
+
+Applying this skill produces a six-element verdict record: method,
+family, what it collects, what it therefore cannot answer, the numbers
+with correctly scoped labels, and the residual list — with a conditional
+hand-off to `finance-unit-economics` only when that residual list
+actually contains revenue/profit/volume questions.
 
 ## Decision rules
 

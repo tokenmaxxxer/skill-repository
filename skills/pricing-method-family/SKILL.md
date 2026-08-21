@@ -1,6 +1,6 @@
 ---
 name: pricing-method-family
-description: Use when you need guidance on Method-family selection decision rules. Applies to the method-family-selection axis.
+description: Use when a pricing question has already cleared the scope gate and needs a research method chosen — routing between the Van Westendorp PSM threshold family and the CBC-vs-CVA conjoint family based on what input the decision actually needs.
 axis: method-family-selection
 rule_count_floor: 3
 ---
@@ -10,6 +10,45 @@ rule_count_floor: 3
 Decisions for `pricing-method-family` (chain position 2/4): which
 input the decision needs, which method family collects that input,
 and — if conjoint-family — CBC vs rating-based (CVA).
+
+## Trigger
+
+Use once `pricing-scope-gate` has confirmed a pricing method should be
+fielded (chain position 2/4) and the decision now needs a method family
+chosen — not yet a design-rigor check on a chosen conjoint design (that
+is downstream, `pricing-design-rigor`) and not the scope question of
+whether to field anything at all (that is upstream, `pricing-scope-gate`).
+Use it whenever the input the decision needs (a threshold, a preference
+share, or neither) has not yet been matched to PSM vs. conjoint vs. CBC
+vs. CVA.
+
+## Procedure
+
+1. Cite decision rule 1 when the decision needs a price-perception
+   threshold on a single, largely unbundled product, to choose the Van
+   Westendorp PSM family.
+2. Cite decision rule 2 when the decision needs preference share across
+   competing multi-attribute bundles, to choose the conjoint family over
+   PSM.
+3. Cite decision rule 3, within the conjoint family, when the product has
+   more than 6 attributes or the study needs market-simulator outputs, to
+   choose CBC over CVA.
+4. Cite decision rule 4, within the conjoint family, when the study is
+   small-N and needs only part-worth utilities for a handful of
+   attributes with no simulator need, to choose CVA over CBC.
+5. Cite decision rule 5 when neither PSM's threshold framing nor
+   conjoint's tradeoff framing fits because the question is price
+   structure rather than price level, to state "none of these" and hand
+   off to `pricing-design-rigor` with no method fielded.
+
+## Output shape
+
+Applying this skill produces a method-family routing decision: either a
+named method (PSM, CBC, or CVA) with the reasoning for why it collects
+the input the decision needs, or an explicit "none of these" hand-off
+when the question is structural rather than a price level or threshold.
+It does not itself grade a design's rigor or assemble a verdict — those
+are downstream steps.
 
 ## Decision rules
 

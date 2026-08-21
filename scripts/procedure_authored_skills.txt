@@ -76,3 +76,9 @@ technical-writing-persuasion-trust
 technical-writing-structure-comprehension
 technical-writing-style-guide-compliance
 technical-writing-tool-landscape
+pricing-design-rigor
+pricing-method-family
+pricing-research
+pricing-scope-gate
+pricing-tier-structure
+pricing-verdict-report
