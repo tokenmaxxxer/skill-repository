@@ -1,6 +1,6 @@
 ---
 name: observability-cardinality-budget
-description: Use when you need guidance on Cardinality budgeting for instrumentation dimensions. Applies to the cardinality-budget axis.
+description: Use when a candidate metric label/tag/attribute needs to be classified by cardinality risk before it ships, or when an existing metric already carries a high-cardinality label. Applies to the cardinality-budget axis.
 axis: cardinality-budget
 rule_count_floor: 3
 ---
@@ -12,6 +12,33 @@ cardinality risk and choosing a handling policy before they ship.
 Research trail: layer 2 (Prometheus TSDB cardinality-explosion
 mechanics, OpenTelemetry semconv cardinality guidance) plus layer 1
 (practitioner drop/hash/bucket remediation patterns).
+
+## Trigger
+
+Apply this skill when a candidate metric label/tag/attribute needs to
+be classified by cardinality risk before it ships, or when an existing
+metric already carries a high-cardinality label.
+
+## Procedure
+
+1. Classify the candidate dimension's value space: unbounded and
+   growing with user/request volume routes to trace/log attributes, not
+   a metric label (rule 1).
+2. A continuous numeric value needed for grouping gets bucketed into a
+   small fixed set of ranges before it becomes a label (rule 2).
+3. A stable low-cardinality dimension used across many metrics for
+   correlation stays a shared label (rule 3).
+4. For an existing metric already carrying a high-cardinality label,
+   drop it via relabeling at the collection layer and replace dependent
+   dashboard queries with the bucketed/aggregated replacement, rather
+   than grandfathering it forward (rule 4).
+
+## Output shape
+
+A cardinality classification (unbounded/continuous/stable) per
+candidate dimension with its resulting handling policy — route to
+traces/logs, bucket, keep as shared label, or relabel-and-replace for
+legacy labels.
 
 ## Rules
 

@@ -1,6 +1,6 @@
 ---
 name: observability-phase-trace
-description: Use when you need guidance on Phase-1 to phase-2 methodology-consistency. Applies to the phase-trace axis.
+description: Use when a phase-2 implementation record's signals need to be checked against the methodology phase-1 named for that surface, including a deliberate deviation. Applies to the phase-trace axis.
 axis: phase-trace
 rule_count_floor: 3
 ---
@@ -13,6 +13,30 @@ handling deliberate deviation. Research trail: layer 2 (Google SRE
 Workbook's SLI-definition-to-implementation traceability practice)
 plus layer 1 (practitioner drift-detection patterns for design-vs-build
 divergence).
+
+## Trigger
+
+Apply this skill when a phase-2 record's implemented signals need to be
+checked against the methodology phase-1 named for that surface, or when
+phase-2 reveals the phase-1 classification was wrong.
+
+## Procedure
+
+1. Instrument exactly the methodology phase-1 named for the surface —
+   no silent substitution (rule 1).
+2. When phase-2 reveals the phase-1 classification was wrong, state the
+   deviation and the corrected methodology explicitly in the record
+   (rule 2).
+3. When a record carries signals for a methodology phase-1 did not
+   name, with no stated reclassification, remove the extra unstated
+   signals rather than leave them as an unexplained superset (rule 3).
+
+## Output shape
+
+A phase-2 record whose instrumented signal set matches phase-1's named
+methodology exactly, or — when it doesn't — an explicit stated
+deviation naming the corrected methodology, with no unexplained
+substitution or superset of signals.
 
 ## Rules
 
