@@ -175,3 +175,6 @@ data-modeling-inmon
 devrel-channel-convention
 devrel-program-subtraction
 devrel-content-comprehensibility
+sales-objection-handling
+sales-pitch-scoping-and-messaging-handoff
+sales-qualification-and-discovery
