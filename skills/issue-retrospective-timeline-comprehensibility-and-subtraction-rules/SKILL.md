@@ -1,6 +1,6 @@
 ---
 name: issue-retrospective-timeline-comprehensibility-and-subtraction-rules
-description: Use when you need guidance on Retrospective-record convention, subtraction, and comprehensibility rules. Applies to the convention, subtraction, comprehensibility axis.
+description: Use when composing or reading a records-only cross-role retrospective for a subject issue — drafting its Timeline, Contributing factors, or Action items, or judging whether a draft section restates background instead of citing it.
 axis: convention, subtraction, comprehensibility
 rule_count_floor: 8
 axes: convention,subtraction,comprehensibility
@@ -19,6 +19,58 @@ an established public postmortem canon exists (Google SRE, PagerDuty) but this
 role's specific object (a *records-only* cross-role retrospective, not a live
 incident postmortem) is a narrower analogy than the source literature, flagged
 as such rather than presented as retrospective-native research.
+
+## Trigger
+
+Use this skill when composing or reading a records-only cross-role
+retrospective for a subject issue — this is the records-only
+retrospective moment, distinct from adjacent record-writing moments
+such as mid-incident postmortem drafting or a single role's own
+implementation record:
+- starting or continuing composition of the retrospective record from
+  another role's records (Timeline, Contributing factors, What we
+  learned, Action items sections).
+- drafting or reviewing a contributing-factor or causal-language
+  sentence for whether it names a person/choice instead of a structural
+  gap.
+- drafting, reviewing, or pruning the contributing-factors list or the
+  Action items list.
+- laying out or checking the record's overall section order and
+  completeness.
+- judging whether a draft section restates background already
+  established elsewhere instead of citing it.
+
+## Procedure
+
+1. Draft the Timeline section first, from the subject's other-role
+   records, before drafting Contributing factors or What we learned
+   (rule 1).
+2. While drafting or reviewing Contributing factors, rewrite any
+   sentence that names a person or role's choice as the explanation so
+   it instead names the structural gap that let the choice go wrong
+   (rule 2).
+3. Cap the Contributing factors list at 2-5 systemic items; run the
+   removal pass to cut items that are downstream restatements of one
+   already listed (rules 3, 9).
+4. Draft each Action item with a named owner, checkable phrasing, and a
+   one-clause stated Impact; delete any item that stays vague, unowned,
+   or duplicative rather than keeping it as filler (rules 4, 10, 15).
+5. Lay out the record in the fixed five-section order — Timeline, Impact
+   summary, Contributing factors, What we learned, Action items — even
+   when a section is thin or empty (rule 13).
+6. Before finalizing, run the two subtraction passes: cut any section
+   restating background already established by the issue, a proposal,
+   or another role's record in favor of a citation (rule 8), and cut any
+   Timeline entry or Contributing-factor/Action-item content that does
+   not change the reader's understanding (rules 9, 10, 11).
+
+## Output shape
+
+A five-section retrospective record body — Timeline, Impact summary,
+Contributing factors, What we learned, Action items — in that fixed
+order, with contributing factors capped at 2-5 systemic items, each
+Action item owned and checkable with a stated Impact, and no section
+restating background available elsewhere by citation.
 
 ## Rules
 
