@@ -186,3 +186,5 @@ architecture-module-boundary-definition
 implementation-complexity-coupling-management
 implementation-design-pattern-selection
 implementation-performance-data-structure-choice
+verify-finding-record
+verify-severity-classification
