@@ -121,3 +121,8 @@ market-analysis-evidence-rigor
 market-analysis-five-forces
 market-analysis-jtbd-fit
 market-analysis-mece-proposal
+partnerships-bd-deal-structure-selection
+partnerships-bd-exclusivity-and-scope-terms
+partnerships-bd-governance-cadence-and-kpi
+partnerships-bd-negotiation-positioning
+partnerships-bd-term-sheet-comprehensibility-and-convention

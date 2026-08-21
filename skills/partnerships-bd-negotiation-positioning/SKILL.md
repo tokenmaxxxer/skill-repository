@@ -1,6 +1,6 @@
 ---
 name: partnerships-bd-negotiation-positioning
-description: Use when you need guidance on Negotiation positioning (BATNA/ZOPA) rules. Applies to the negotiation-positioning axis.
+description: Use when preparing to negotiate deal terms, when the counterpart's walk-away position becomes known or inferable mid-negotiation, or when a negotiation has stalled into repeated concession rounds on a single number.
 axis: negotiation-positioning
 rule_count_floor: 3
 tier: sparse
@@ -11,6 +11,34 @@ tier: sparse
 Practitioner + principled-negotiation-theory rules for stating a
 negotiator's own walk-away position and testing whether a deal is
 worth continuing to pursue at all.
+
+## Trigger
+
+Use when preparing for a live negotiation session, when the
+counterpart's walk-away position becomes known or can be reasonably
+inferred during the negotiation, or when a negotiation has stalled into
+repeated concession rounds on a single number with no objective
+criteria invoked.
+
+## Procedure
+
+1. Before the first substantive session, write down the concrete best
+   alternative to a negotiated agreement and use it, not a target number
+   or the counterpart's opening position, as the standard for judging any
+   proposed deal (rule 1).
+2. As soon as the counterpart's walk-away position becomes known or
+   inferable, explicitly estimate whether a zone of possible agreement
+   exists between the two reservation points, and record that estimate
+   before investing further negotiation effort (rule 2).
+3. If a negotiation has stalled into repeated positional concessions with
+   no independent standard invoked, stop counter-offering and reintroduce
+   objective, external criteria instead of adding another concession
+   round (rule 3).
+
+## Output shape
+
+A documented BATNA, a recorded ZOPA estimate, and/or a set of objective
+criteria substituted for a stalled positional exchange.
 
 ## Decision rules
 

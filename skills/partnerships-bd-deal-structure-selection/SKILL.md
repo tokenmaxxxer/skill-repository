@@ -1,6 +1,6 @@
 ---
 name: partnerships-bd-deal-structure-selection
-description: Use when you need guidance on Deal-structure selection rules. Applies to the deal-structure-selection axis.
+description: Use when choosing which partnership vehicle (revenue share, licensing, reseller, joint venture, co-marketing) fits a proposed deal, when more than one vehicle could plausibly work, or when a live revenue-share agreement keeps generating disputes over what counts as revenue.
 axis: deal-structure-selection
 rule_count_floor: 3
 tier: sparse
@@ -12,6 +12,35 @@ Practitioner + transaction-cost-economics rules for choosing which
 partnership vehicle (revenue share, licensing, reseller, joint venture,
 co-marketing) fits a given deal, and when to default to the simplest
 vehicle instead of reaching for a heavier one.
+
+## Trigger
+
+Use when structuring a proposed partnership deal and any of the
+following hold: the governance shape (market/hybrid/hierarchy) has not
+yet been picked for this deal; more than one deal vehicle could
+plausibly accomplish the stated objective; or a live revenue-share
+agreement has generated more than one dispute over what counts as
+"revenue."
+
+## Procedure
+
+1. Assess asset specificity and transaction frequency for the proposed
+   deal; place the governance shape on the market -> hybrid -> hierarchy
+   spectrum accordingly, independent of deal dollar size (rule 1).
+2. Enumerate the deal vehicles that could plausibly meet the stated
+   business objective, rank them lightest to heaviest, and select the
+   lightest one the objective's own requirements do not rule out;
+   require a written reason before picking anything heavier (rule 2).
+3. If a live revenue-share deal is already on its second dispute or
+   clarification request over what counts as "revenue," stop adding
+   clarifying amendments and replace the mechanism with a fixed-fee,
+   flat-license, or per-unit-commission structure instead (rule 3).
+
+## Output shape
+
+A recommended deal vehicle (or a decision to drop/replace an existing
+revenue-share mechanism) with the governance-spectrum placement and/or
+the written reason for escalating past the lightest viable option.
 
 ## Decision rules
 
