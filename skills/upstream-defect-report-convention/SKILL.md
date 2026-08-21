@@ -1,6 +1,6 @@
 ---
 name: upstream-defect-report-convention
-description: Use when you need guidance on Convention — matching the upstream project's own norms. Applies to the convention axis.
+description: Use when preparing to file a defect against an upstream project and its issue template, required pre-submission steps, commit-linking convention, report channel, contributor tone, or duplicate-check surface haven't yet been matched to that project's actual current norms.
 axis: convention
 rule_count_floor: 5
 role: upstream-defect-report
@@ -11,6 +11,48 @@ role: upstream-defect-report
 Decision rules for conforming a defect report to the specific upstream
 project's stated process, so the report enters triage through the
 channel and shape that project's maintainers already expect.
+
+## Trigger
+
+Apply this skill before filing a defect report against an upstream
+project, whenever the report's template conformance, required
+pre-submission steps, cross-link format, channel, tone, or duplicate
+check have not yet been checked against that specific project's own
+current process.
+
+## Procedure
+
+1. If the repo ships an issue template (`.github/ISSUE_TEMPLATE/*` or a
+   CONTRIBUTING.md-stated format), fill every field in that template's
+   own order rather than free-writing (rule 1).
+2. If CONTRIBUTING.md or the template states a required pre-submission
+   step, perform it and state its result in the report, not just the
+   symptom (rule 2).
+3. If the project's commit/PR history shows a consistent linking
+   convention for fix commits, use that project's own convention to
+   reference the defect (rule 3).
+4. If the project designates a specific channel for this report type
+   (security disclosure address, discussion forum for usage questions),
+   route to that channel instead of the general tracker (rule 4).
+5. Check whether CONTRIBUTING.md is stale relative to the last 5-10
+   merged/closed issues of the same type; if it is, pattern-match the
+   convention actually in force instead of the stale written
+   instructions (rule 5).
+6. Check the reporter's habitual tone against the tone visible in past
+   accepted issues from this project's contributor culture, and reduce
+   demanding/impatient phrasing to a plain, patient statement if it
+   doesn't match (rule 6).
+7. Before concluding no duplicate exists, run a concrete title/body
+   overlap comparison against both the open backlog and the last 15-20
+   closed issues, not a single keyword search (rule 7).
+
+## Output shape
+
+A defect report routed to the correct channel, filled into the
+project's own template/field order, carrying a stated pre-submission-
+step result, using the project's own commit-linking convention, in a
+tone matching the project's contributor culture, filed only after a
+backlog-plus-closed-set duplicate check found no hit.
 
 ## Rules
 

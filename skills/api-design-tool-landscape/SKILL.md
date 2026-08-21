@@ -1,6 +1,6 @@
 ---
 name: api-design-tool-landscape
-description: Use when you need guidance on Tool-landscape learnings. Applies to the tool-landscape axis.
+description: Use when an interface spec, payload schema, new API version, or cross-service contract is about to ship without a generated mock server, runtime schema validator, client SDK, or consumer-driven contract test.
 axis: tool-landscape
 rule_count_floor: 4
 ---
@@ -15,6 +15,32 @@ counts, marketplace listing) and fetched-source URLs are in
 `docs/issue-1199/reports/api-design/scout-brief.md` in the
 `on-the-record` repo; this file states only the design move and which
 existing axis it upgrades.
+
+## Trigger
+
+Apply this skill when an interface spec is published, a payload schema
+is defined, a new API version or resource ships, or two services need
+to agree on a resource's shape across a version boundary — before
+declaring any of those done.
+
+## Procedure
+
+1. Generate a mock server directly from the published interface spec
+   rather than hand-writing a separate fixture server (rule 1).
+2. Mirror the payload schema as an enforced runtime validator at the
+   service boundary, not just spec documentation (rule 2).
+3. Generate client SDK(s) from the interface spec as part of the same
+   change that ships a new version or resource (rule 3).
+4. Generate a consumer-driven contract test from the interface spec
+   when two services must agree on a resource's shape across a version
+   boundary (rule 4).
+
+## Output shape
+
+For the interface-spec change under review: a generated mock server, a
+runtime validator wired to the service boundary, regenerated client
+SDK(s), and (when a version boundary is involved) a consumer-driven
+contract test — each an artifact, not a policy statement.
 
 ## Rules
 

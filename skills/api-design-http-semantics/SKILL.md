@@ -1,6 +1,6 @@
 ---
 name: api-design-http-semantics
-description: Use when you need guidance on HTTP method & status code semantics. Applies to the http-semantics axis.
+description: Use when choosing an HTTP method (GET/POST/PUT/PATCH/DELETE), designing idempotency/retry behavior, or selecting a response status code for a create/update/delete/async operation.
 axis: http-semantics
 rule_count_floor: 10
 ---
@@ -8,6 +8,47 @@ rule_count_floor: 10
 # HTTP method & status code semantics
 
 This playbook synthesizes RFC 9110 (HTTP Semantics) and the IANA HTTP status code registry as primary standards, cross-checked against practitioner guidance from Stripe's idempotency docs, Google AIP-131, Microsoft/Azure REST API Guidelines, and the Zalando RESTful API Guidelines, all fetched this session. Rules are ordered decision-first: condition, imperative choice, and the source reasoning.
+
+## Trigger
+
+Apply this skill when choosing an HTTP method for an endpoint, deciding
+which methods a client may safely retry, designing idempotency-key
+behavior for a mutating request, or selecting a response status code
+for a create/update/delete/async-processing operation.
+
+## Procedure
+
+1. For read-only operations, use GET/HEAD/OPTIONS, never POST (rule 1).
+2. For retry-safety, rely only on GET/HEAD/PUT/DELETE/OPTIONS/TRACE as
+   idempotent; treat POST and arbitrary PATCH as not safely retryable
+   without an idempotency key (rule 2).
+3. For POST creates/mutations over an unreliable network, require a
+   client-generated high-entropy `Idempotency-Key` header, cache the
+   first response for a bounded window, and error on mismatched
+   parameters for a reused key (rule 3); do not attach the key to
+   GET/DELETE requests (rule 4).
+4. To fully replace a resource at a known/client-assigned identifier,
+   use PUT (rule 5); to apply a partial update, use PATCH (rule 6).
+5. If POST-based creation needs to be safely retryable, design
+   idempotency via a client-supplied secondary key or an
+   `Idempotency-Key`/`Repeatability-Request-ID` header rather than
+   assuming POST is naturally safe (rule 7).
+6. On successful creation via POST/PUT, return 201 Created with a
+   `Location` header (rule 8). On success with no representation to
+   return, return 204 No Content (rule 9). On async-queued processing,
+   return 202 Accepted (rule 10).
+7. Drop 305 Use Proxy from the design vocabulary; use 307/308/301/302/
+   303 instead (rule 11).
+8. For a standard `Get`-shaped operation, use GET with the resource
+   name in the path rather than a custom "Fetch"/"Retrieve" verb
+   (rule 12).
+
+## Output shape
+
+An endpoint design (or review verdict) stating: the chosen HTTP method
+per operation, the idempotency-key mechanism for any unsafe-to-repeat
+POST, and the response status code for each create/update/delete/async
+path, each traceable to the rule above that forced the choice.
 
 ## Rules
 

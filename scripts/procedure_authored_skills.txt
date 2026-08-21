@@ -1,0 +1,9 @@
+upstream-defect-report-comprehensibility
+upstream-defect-report-convention
+upstream-defect-report-subtraction
+api-design-error-design
+api-design-http-semantics
+api-design-payload-design
+api-design-resource-modeling
+api-design-tool-landscape
+api-design-versioning-evolution

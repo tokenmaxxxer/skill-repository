@@ -1,6 +1,6 @@
 ---
 name: api-design-resource-modeling
-description: Use when you need guidance on Resource modeling. Applies to the resource-modeling axis.
+description: Use when modeling an API's resources — mapping an operation to CRUD vs. a custom method, deciding singleton vs. collection, structuring the resource hierarchy, or scaling a spec across many resources.
 axis: resource-modeling
 rule_count_floor: 10
 ---
@@ -8,6 +8,54 @@ rule_count_floor: 10
 # Resource modeling
 
 Research trail: practitioner layer from Google's AIP-121 (resource-oriented design) and AIP-156 (singleton resources), Microsoft/Azure REST API Guidelines, Zalando RESTful API Guidelines, and a Moesif nested-resources cookbook; named-standard layer from Roy Fielding's REST dissertation (Chapter 5) and the JSON:API v1.1 spec; the academic/HCI layer was thin for this axis beyond Fielding's own architectural-style analysis, which is treated here as the closest available theory source rather than a separate empirical literature.
+
+## Trigger
+
+Apply this skill when modeling an API's resource surface: mapping an
+operation onto a standard method vs. a custom verb, deciding between a
+singleton and a collection, unifying a resource's schema across
+methods, structuring parent-child nesting, or splitting a growing
+interface spec.
+
+## Procedure
+
+1. If an operation maps cleanly onto Get/List/Create/Update/Delete,
+   model it as a standard method on a noun resource (rule 1);
+   otherwise model it as a custom method with a verb in the URI
+   (rule 2).
+2. If a child object always exists exactly once per parent, model it
+   as a singleton resource, not a one-item collection (rule 3).
+3. Unify a resource's request/response schema across its Get, List,
+   and Create methods (rule 4).
+4. Keep the resource hierarchy acyclic (rule 5).
+5. If a sub-resource is many-to-many, changes frequently, or is queried
+   across multiple parents, promote it to a top-level resource
+   (rule 6); if it has a globally unique identifier and independent
+   standing, expose it at the top level too (rule 7).
+6. Where nesting is warranted, cap depth at roughly 2-3 path segments
+   (rule 8).
+7. Model identifiers and paths around domain/conceptual entities, not
+   the storage schema (rule 9).
+8. To represent a relationship between two independent resources, use
+   JSON:API-style relationship objects (type+id), not embedded full
+   copies (rule 10).
+9. If a URL path exceeds ~3 nested segments, collapse the excess into a
+   flatter or query-parameter-based relationship (rule 11); if an
+   endpoint's shape one-to-one mirrors the internal DB schema, drop the
+   mirroring and reshape around the conceptual resource (rule 12).
+10. Once the resource model grows past a handful of resources and its
+    spec becomes hard to review as one document, split the spec into
+    one file per resource (or group), bundled into the published
+    document by a build step (rule 13).
+
+## Output shape
+
+A resource model (or review verdict) stating: which operations are
+standard vs. custom methods, which resources are singletons, the
+hierarchy depth and its justification, which sub-resources are
+top-level vs. nested and why, and — once the spec is large — its
+per-resource file split, each traceable to the rule above that forced
+the choice.
 
 ## Rules
 
