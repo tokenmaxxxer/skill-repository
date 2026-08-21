@@ -183,3 +183,6 @@ architecture-decomposition-strategy
 architecture-dependency-direction
 architecture-interface-contract-shape
 architecture-module-boundary-definition
+implementation-complexity-coupling-management
+implementation-design-pattern-selection
+implementation-performance-data-structure-choice
