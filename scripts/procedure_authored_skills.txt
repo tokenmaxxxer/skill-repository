@@ -146,3 +146,8 @@ capacity-planning-demand-shape-and-forecast-method
 capacity-planning-expansion-trigger-threshold-sizing
 capacity-planning-headroom-band-and-degradation-risk
 capacity-planning-safety-buffer-sizing-by-criticality
+localization-locale-convention-formatting
+localization-pluralization-and-grammar
+localization-rtl-and-script-support
+localization-string-externalization
+localization-text-expansion-and-layout

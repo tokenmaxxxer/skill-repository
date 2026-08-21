@@ -1,6 +1,6 @@
 ---
 name: localization-text-expansion-and-layout
-description: Use when you need guidance on Decision axis: text expansion & layout. Applies to the text-expansion-and-layout axis.
+description: Use when laying out a fixed-width UI element that will carry translated text, budgeting a per-locale character limit, or a container/source string risks breaking under text expansion.
 axis: text-expansion-and-layout
 rule_count_floor: 10
 axes:
@@ -14,6 +14,42 @@ axes:
 # Decision axis: text expansion & layout
 
 Style-guide axis rules.
+
+## Trigger
+
+Apply this skill when laying out a fixed-width UI element that will
+carry translated text, when budgeting a character limit for a
+translated label, when a container is implemented as a fixed
+pixel-fit width, or when a source string is padded with content-free
+filler.
+
+## Procedure
+
+1. When laying out a fixed-width UI element, reserve ~30-40% extra
+   width headroom beyond the English source string's natural width
+   (rule 1).
+2. When budgeting a character limit for a short UI label, size the
+   German variant at roughly 60-70% and the French variant at roughly
+   80-85% of the English character count rather than reusing the
+   English cap unchanged (rule 2).
+3. When a container's width is a fixed pixel/point value that only
+   just fits the English source string, flag it as a checklist-axis
+   N/A-blocking finding and require a responsive/elastic container
+   before translation lands (rule 3).
+4. When an English source string is wordy or redundant with no
+   functional content beyond its literal words, flag it for content
+   design's copy pass to shorten before translation rather than
+   translating the padding into every locale (rule 4).
+5. When a menu header or short label is translated into German, budget
+   roughly 60% of the English character allowance rather than treating
+   short and long strings as having the same expansion ratio (rule 5).
+
+## Output shape
+
+A per-element expansion/layout verdict: the applicable rule number(s),
+the width-headroom or per-locale character-budget figure to apply, and
+— when a fixed-width container or padded source string is found — the
+specific fix required before translation lands.
 
 ## Rules
 
