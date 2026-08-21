@@ -1,4 +1,6 @@
 ---
+name: technical-feasibility-license-and-regulatory-risk
+description: Use when you need guidance on Decision axis: license & regulatory risk. Applies to the license-and-regulatory-risk axis.
 axis: license-and-regulatory-risk
 rule_count_floor: 10
 axes:

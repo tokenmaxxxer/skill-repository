@@ -1,4 +1,6 @@
 ---
+name: ux-engineering-color-visibility
+description: Use when you need guidance on Color combination visibility. Applies to the color-combination-visibility axis.
 axis: color-combination-visibility
 rule_count_floor: 3
 ---

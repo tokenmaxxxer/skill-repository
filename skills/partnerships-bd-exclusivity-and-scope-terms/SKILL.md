@@ -1,4 +1,6 @@
 ---
+name: partnerships-bd-exclusivity-and-scope-terms
+description: Use when you need guidance on Exclusivity and scope terms rules. Applies to the exclusivity-and-scope-terms axis.
 axis: exclusivity-and-scope-terms
 rule_count_floor: 3
 tier: sparse

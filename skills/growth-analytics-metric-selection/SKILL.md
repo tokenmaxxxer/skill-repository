@@ -1,4 +1,6 @@
 ---
+name: growth-analytics-metric-selection
+description: Use when you need guidance on One-metric-that-matters selection rules. Applies to the metric-selection axis.
 axis: metric-selection
 rule_count_floor: 2
 ---

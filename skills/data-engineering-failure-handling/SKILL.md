@@ -1,4 +1,6 @@
 ---
+name: data-engineering-failure-handling
+description: Use when you need guidance on Failure handling — decision rules. Applies to the failure-handling axis.
 axis: failure-handling
 rule_count_floor: 10
 ---

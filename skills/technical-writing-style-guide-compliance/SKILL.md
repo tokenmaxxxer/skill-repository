@@ -1,4 +1,6 @@
 ---
+name: technical-writing-style-guide-compliance
+description: Use when you need guidance on Style-guide compliance (Google Developer Documentation Style Guide). Applies to the style-guide-compliance axis.
 axis: style-guide-compliance
 rule_count_floor: 11
 ---

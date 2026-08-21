@@ -1,5 +1,5 @@
 ---
-name: rollout-plan
+name: release-engineering-rollout-plan
 description: >-
   Use when working the ops role's rollout state (ops/state.md status:
   rollout). Asks the user for (or derives from the readiness record) the

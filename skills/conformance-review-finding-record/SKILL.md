@@ -1,5 +1,5 @@
 ---
-name: finding-record
+name: conformance-review-finding-record
 description: Use while acting as the review role in the auditing or draft-reported state, to record one verdict per specification requirement in review-record.md. Use whenever a requirement has been checked and needs a verdict written down — never to fix or patch what was found.
 ---
 

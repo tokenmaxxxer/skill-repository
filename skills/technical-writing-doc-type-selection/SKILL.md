@@ -1,4 +1,6 @@
 ---
+name: technical-writing-doc-type-selection
+description: Use when you need guidance on Doc-type selection (Diátaxis). Applies to the doc-type-selection axis.
 axis: doc-type-selection
 rule_count_floor: 12
 ---

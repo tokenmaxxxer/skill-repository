@@ -1,4 +1,6 @@
 ---
+name: localization-string-externalization
+description: Use when you need guidance on Decision axis: string externalization & key management. Applies to the string-externalization-and-key-management axis.
 axis: string-externalization-and-key-management
 rule_count_floor: 10
 axes:

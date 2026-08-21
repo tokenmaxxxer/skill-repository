@@ -1,4 +1,6 @@
 ---
+name: performance-engineering-operational-playbook
+description: Use when you need guidance on Performance-engineering operational playbook.
 subject: issue-1174
 layer_program: docs/issue-1174/proposals/operational-playbook-program.md
 ---

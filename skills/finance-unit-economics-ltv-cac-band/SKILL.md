@@ -1,4 +1,6 @@
 ---
+name: finance-unit-economics-ltv-cac-band
+description: Use when you need guidance on LTV:CAC band — decision rules. Applies to the ltv-cac-band axis.
 axis: ltv-cac-band
 rule_count_floor: 12
 tier: moderate

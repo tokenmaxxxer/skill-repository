@@ -1,4 +1,6 @@
 ---
+name: incident-response-tool-landscape
+description: Use when you need guidance on Tool-landscape learnings. Applies to the tool-landscape axis.
 axis: tool-landscape
 rule_count_floor: 4
 ---

@@ -1,4 +1,6 @@
 ---
+name: legal-compliance-cross-border-transfer
+description: Use when you need guidance on Cross-border data transfer mechanism selection. Applies to the cross-border-transfer-mechanism axis.
 axis: cross-border-transfer-mechanism
 rule_count_floor: 2
 ---

@@ -1,4 +1,6 @@
 ---
+name: customer-support-research-log
+description: Use when you need guidance on Research log — customer-support operational playbook.
 role: customer-support
 rule_count_floor: 5
 axes:

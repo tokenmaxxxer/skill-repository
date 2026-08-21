@@ -1,5 +1,5 @@
 ---
-name: finding-record
+name: verify-finding-record
 description: Use while acting as the verify role in the reproducing or reproduced state, to record one outcome per reproduction attempt — and, when a defect reproduces, a finding addressed to coding — in verify-record.md. Use whenever an attempt has been made and needs an outcome written down — never to fix or patch what was found.
 ---
 

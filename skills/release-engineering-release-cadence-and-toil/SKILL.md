@@ -1,4 +1,6 @@
 ---
+name: release-engineering-release-cadence-and-toil
+description: Use when you need guidance on Release cadence and toil reduction. Applies to the release-cadence-and-toil axis.
 axis: release-cadence-and-toil
 rule_count_floor: 12
 ---

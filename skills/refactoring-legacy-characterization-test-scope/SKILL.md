@@ -1,4 +1,6 @@
 ---
+name: refactoring-legacy-characterization-test-scope
+description: Use when you need guidance on Characterization test scope. Applies to the characterization-test-scope axis.
 axis: characterization-test-scope
 rule_count_floor: 5
 ---

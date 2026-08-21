@@ -1,4 +1,6 @@
 ---
+name: product-discovery-guardrail-metric-status
+description: Use when you need guidance on Guardrail metric naming and status reporting. Applies to the guardrail-metric-status axis.
 axis: guardrail-metric-status
 rule_count_floor: 10
 ---

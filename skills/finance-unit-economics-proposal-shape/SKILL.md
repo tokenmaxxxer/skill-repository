@@ -1,4 +1,6 @@
 ---
+name: finance-unit-economics-proposal-shape
+description: Use when you need guidance on Proposal shape — decision rules. Applies to the proposal-shape axis.
 axis: proposal-shape
 rule_count_floor: 12
 tier: moderate

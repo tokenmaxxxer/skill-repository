@@ -1,4 +1,6 @@
 ---
+name: data-modeling-structure
+description: Use when you need guidance on Structure — normalization, keys, and index design. Applies to the structure axis.
 axis: structure
 rule_count_floor: 10
 ---

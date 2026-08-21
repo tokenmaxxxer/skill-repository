@@ -1,4 +1,6 @@
 ---
+name: upstream-defect-report-convention
+description: Use when you need guidance on Convention — matching the upstream project's own norms. Applies to the convention axis.
 axis: convention
 rule_count_floor: 5
 role: upstream-defect-report

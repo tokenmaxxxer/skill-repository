@@ -1,4 +1,6 @@
 ---
+name: architecture-dependency-direction
+description: Use when you need guidance on Dependency Direction Playbook. Applies to the dependency-direction axis.
 axis: dependency-direction
 rule_count_floor: 12
 ---

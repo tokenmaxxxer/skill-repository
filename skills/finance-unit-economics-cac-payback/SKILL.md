@@ -1,4 +1,6 @@
 ---
+name: finance-unit-economics-cac-payback
+description: Use when you need guidance on CAC payback — decision rules. Applies to the cac-payback axis.
 axis: cac-payback
 rule_count_floor: 12
 tier: moderate

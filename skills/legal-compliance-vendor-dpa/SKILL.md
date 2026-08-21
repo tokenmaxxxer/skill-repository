@@ -1,4 +1,6 @@
 ---
+name: legal-compliance-vendor-dpa
+description: Use when you need guidance on Vendor / sub-processor DPA requirements. Applies to the vendor-dpa-requirements axis.
 axis: vendor-dpa-requirements
 rule_count_floor: 2
 ---

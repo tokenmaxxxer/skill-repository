@@ -1,4 +1,6 @@
 ---
+name: conformance-review-verification-method-selection
+description: Use when you need guidance on Verification method selection. Applies to the verification-method-selection axis.
 axis: verification-method-selection
 rule_count_floor: 3
 ---

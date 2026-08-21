@@ -1,4 +1,6 @@
 ---
+name: api-design-http-semantics
+description: Use when you need guidance on HTTP method & status code semantics. Applies to the http-semantics axis.
 axis: http-semantics
 rule_count_floor: 10
 ---

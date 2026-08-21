@@ -1,4 +1,6 @@
 ---
+name: defect-verification-evidence-artifact-completeness
+description: Use when you need guidance on Evidence-artifact completeness for a reproduction attempt. Applies to the evidence-artifact-completeness axis.
 axis: evidence-artifact-completeness
 rule_count_floor: 8
 ---

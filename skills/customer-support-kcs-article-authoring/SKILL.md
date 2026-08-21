@@ -1,3 +1,8 @@
+---
+name: customer-support-kcs-article-authoring
+description: Use when you need guidance on KCS article-authoring decision rules.
+---
+
 # KCS article-authoring decision rules
 
 Axis: kcs-article. Consortium for Service Innovation KCS v6 practice:

@@ -1,4 +1,6 @@
 ---
+name: capacity-planning-cost-attribution-at-trigger
+description: Use when you need guidance on Cost attribution and cost-tradeoff at the firing threshold. Applies to the cost-attribution-at-trigger axis.
 axis: cost-attribution-at-trigger
 rule_count_floor: 8
 ---

@@ -1,4 +1,6 @@
 ---
+name: ml-engineering-ml-test-score-scoring
+description: Use when you need guidance on ML Test Score scoring discipline (Breck et al. 2017). Applies to the ml-test-score-scoring axis.
 axis: ml-test-score-scoring
 rule_count_floor: 5
 ---

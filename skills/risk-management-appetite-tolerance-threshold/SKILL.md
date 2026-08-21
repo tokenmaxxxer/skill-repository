@@ -1,4 +1,6 @@
 ---
+name: risk-management-appetite-tolerance-threshold
+description: Use when you need guidance on Risk appetite / tolerance threshold setting. Applies to the appetite-tolerance-threshold axis.
 axis: appetite-tolerance-threshold
 rule_count_floor: 10
 ---

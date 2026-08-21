@@ -1,4 +1,6 @@
 ---
+name: marketing-positioning-differentiation
+description: Use when you need guidance on Positioning and differentiation. Applies to the positioning-differentiation axis.
 axis: positioning-differentiation
 rule_count_floor: 5
 ---

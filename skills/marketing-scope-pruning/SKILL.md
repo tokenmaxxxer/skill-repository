@@ -1,4 +1,6 @@
 ---
+name: marketing-scope-pruning
+description: Use when you need guidance on Subtraction: what to cut from a campaign. Applies to the scope-pruning axis.
 axis: scope-pruning
 rule_count_floor: 5
 ---

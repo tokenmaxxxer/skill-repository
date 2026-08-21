@@ -1,4 +1,6 @@
 ---
+name: conformance-review-requirement-extraction
+description: Use when you need guidance on Requirement extraction. Applies to the requirement-extraction axis.
 axis: requirement-extraction
 rule_count_floor: 3
 ---

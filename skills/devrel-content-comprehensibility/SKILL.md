@@ -1,4 +1,6 @@
 ---
+name: devrel-content-comprehensibility
+description: Use when you need guidance on Content comprehensibility (cognitive load / schema theory). Applies to the content-comprehensibility axis.
 axis: content-comprehensibility
 rule_count_floor: 8
 ---

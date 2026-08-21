@@ -1,4 +1,6 @@
 ---
+name: capacity-planning-safety-buffer-sizing-by-criticality
+description: Use when you need guidance on Safety-buffer sizing by criticality and blast radius. Applies to the safety-buffer-sizing-by-criticality axis.
 axis: safety-buffer-sizing-by-criticality
 rule_count_floor: 8
 ---

@@ -1,4 +1,6 @@
 ---
+name: localization-pluralization-and-grammar
+description: Use when you need guidance on Decision axis: pluralization & grammar rules. Applies to the pluralization-and-grammar axis.
 axis: pluralization-and-grammar
 rule_count_floor: 10
 axes:

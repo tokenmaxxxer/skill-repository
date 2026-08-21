@@ -1,5 +1,5 @@
 ---
-name: error-budget-policy
+name: release-engineering-error-budget-policy
 description: >-
   Use when working the ops role's steady state (ops/state.md status:
   steady). Defines, per SLI, the measurement method, SLO target,

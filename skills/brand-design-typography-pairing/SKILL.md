@@ -1,4 +1,6 @@
 ---
+name: brand-design-typography-pairing
+description: Use when you need guidance on Typography pairing rules. Applies to the typography-pairing axis.
 axis: typography-pairing
 rule_count_floor: 3
 tier: rich

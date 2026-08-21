@@ -1,4 +1,6 @@
 ---
+name: release-engineering-deployment-rollout-strategy
+description: Use when you need guidance on Deployment rollout strategy. Applies to the deployment-rollout-strategy axis.
 axis: deployment-rollout-strategy
 rule_count_floor: 13
 ---

@@ -1,4 +1,6 @@
 ---
+name: secure-coding-authorization-access-control
+description: Use when you need guidance on Authorization / access control. Applies to the authorization-access-control axis.
 axis: authorization-access-control
 rule_count_floor: 8
 ---

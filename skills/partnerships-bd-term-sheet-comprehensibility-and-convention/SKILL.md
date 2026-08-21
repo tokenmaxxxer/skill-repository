@@ -1,4 +1,6 @@
 ---
+name: partnerships-bd-term-sheet-comprehensibility-and-convention
+description: Use when you need guidance on Term-sheet comprehensibility and convention rules. Applies to the term-sheet-comprehensibility-and-convention axis.
 axis: term-sheet-comprehensibility-and-convention
 rule_count_floor: 3
 tier: sparse

@@ -1,4 +1,6 @@
 ---
+name: release-engineering-rollback-and-recovery
+description: Use when you need guidance on Rollback and recovery. Applies to the rollback-and-recovery axis.
 axis: rollback-and-recovery
 rule_count_floor: 12
 ---

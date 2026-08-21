@@ -1,4 +1,6 @@
 ---
+name: architecture-coupling-classification
+description: Use when you need guidance on Coupling Classification — Operational Decision Rules. Applies to the coupling-classification axis.
 axis: coupling-classification
 rule_count_floor: 12
 ---

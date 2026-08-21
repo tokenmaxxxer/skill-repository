@@ -1,4 +1,6 @@
 ---
+name: user-discovery-saturation-stopping-rule
+description: Use when you need guidance on Saturation: when to stop interviewing. Applies to the saturation-stopping-rule axis.
 axis: saturation-stopping-rule
 rule_count_floor: 8
 ---

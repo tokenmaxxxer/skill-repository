@@ -1,5 +1,5 @@
 ---
-name: hypothesis-testing
+name: product-discovery-hypothesis-testing
 description: >
   Use this skill whenever the product role is moving a specification file
   through product-cycle's state machine — scoping an idea, registering a

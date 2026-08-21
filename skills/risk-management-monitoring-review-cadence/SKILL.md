@@ -1,4 +1,6 @@
 ---
+name: risk-management-monitoring-review-cadence
+description: Use when you need guidance on Monitoring / review cadence selection. Applies to the monitoring-review-cadence axis.
 axis: monitoring-review-cadence
 rule_count_floor: 10
 ---

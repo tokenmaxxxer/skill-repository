@@ -1,4 +1,6 @@
 ---
+name: technical-writing-structure-comprehension
+description: Use when you need guidance on Structure for comprehension (cognitive load). Applies to the structure-comprehension axis.
 axis: structure-comprehension
 rule_count_floor: 10
 ---

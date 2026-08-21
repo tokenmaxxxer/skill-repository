@@ -1,4 +1,6 @@
 ---
+name: data-modeling-kimball
+description: Use when you need guidance on Kimball — dimensional modeling, star schema, SCD selection. Applies to the kimball axis.
 axis: kimball
 rule_count_floor: 10
 ---

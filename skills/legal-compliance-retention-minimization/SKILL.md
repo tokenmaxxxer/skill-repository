@@ -1,4 +1,6 @@
 ---
+name: legal-compliance-retention-minimization
+description: Use when you need guidance on Data retention and minimization. Applies to the retention-and-minimization axis.
 axis: retention-and-minimization
 rule_count_floor: 2
 ---

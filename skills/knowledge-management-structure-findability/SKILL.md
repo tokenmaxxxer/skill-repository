@@ -1,4 +1,6 @@
 ---
+name: knowledge-management-structure-findability
+description: Use when you need guidance on Structure and findability (Diátaxis-informed). Applies to the structure-findability axis.
 axis: structure-findability
 rule_count_floor: 10
 ---

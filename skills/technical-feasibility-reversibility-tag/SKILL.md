@@ -1,6 +1,7 @@
 ---
-name: reversibility-tag
-description: Cross-cutting standing directive across all four feasibility probes — classify every finding as a one-way or two-way door before it is written to a probe-resolution field. Not a user-facing question; a discipline the agent applies to itself.
+name: technical-feasibility-reversibility-tag
+description: Use when applying Reversibility tag. Cross-cutting standing directive across all four feasibility probes — classify every finding as a one-way or two-way door before it is written to a probe-resolution field. Not a user-facing question; a discipline the agent applies to itself.
+
 ---
 
 # Reversibility tag

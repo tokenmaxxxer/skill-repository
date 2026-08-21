@@ -1,4 +1,6 @@
 ---
+name: api-design-payload-design
+description: Use when you need guidance on Payload design (pagination, filtering, field selection). Applies to the payload-design axis.
 axis: payload-design
 rule_count_floor: 10
 ---

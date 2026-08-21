@@ -1,4 +1,6 @@
 ---
+name: ml-engineering-evaluation-discipline
+description: Use when you need guidance on Evaluation discipline: offline vs online. Applies to the evaluation-discipline axis.
 axis: evaluation-discipline
 rule_count_floor: 5
 ---

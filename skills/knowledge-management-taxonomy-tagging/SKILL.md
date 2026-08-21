@@ -1,4 +1,6 @@
 ---
+name: knowledge-management-taxonomy-tagging
+description: Use when you need guidance on Taxonomy, tagging, and controlled vocabulary. Applies to the taxonomy-tagging axis.
 axis: taxonomy-tagging
 rule_count_floor: 10
 ---

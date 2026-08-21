@@ -1,4 +1,6 @@
 ---
+name: product-discovery-hypothesis-preregistration
+description: Use when you need guidance on Hypothesis pre-registration (metric, threshold, decision rule fixed before data). Applies to the hypothesis-preregistration axis.
 axis: hypothesis-preregistration
 rule_count_floor: 10
 ---

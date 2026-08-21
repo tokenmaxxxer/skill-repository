@@ -1,4 +1,6 @@
 ---
+name: release-engineering-branching-release-strategy
+description: Use when you need guidance on Branching and release strategy. Applies to the branching-release-strategy axis.
 axis: branching-release-strategy
 rule_count_floor: 12
 ---

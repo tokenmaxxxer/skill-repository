@@ -1,4 +1,6 @@
 ---
+name: ml-engineering-rollout-promotion-rollback
+description: Use when you need guidance on Rollout staging, promotion, and rollback. Applies to the rollout-promotion-rollback axis.
 axis: rollout-promotion-rollback
 rule_count_floor: 5
 ---

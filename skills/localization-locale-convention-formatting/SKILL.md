@@ -1,4 +1,6 @@
 ---
+name: localization-locale-convention-formatting
+description: Use when you need guidance on Decision axis: locale-convention formatting (dates, numbers, currency, address). Applies to the locale-convention-formatting axis.
 axis: locale-convention-formatting
 rule_count_floor: 10
 axes:

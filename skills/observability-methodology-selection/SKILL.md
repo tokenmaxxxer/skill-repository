@@ -1,4 +1,6 @@
 ---
+name: observability-methodology-selection
+description: Use when you need guidance on Signal-methodology selection (RED / USE / Golden Signals). Applies to the methodology-selection axis.
 axis: methodology-selection
 rule_count_floor: 3
 ---

@@ -1,4 +1,6 @@
 ---
+name: pricing-verdict-report
+description: Use when you need guidance on Verdict-assembly decision rules. Applies to the verdict-assembly axis.
 axis: verdict-assembly
 rule_count_floor: 3
 ---

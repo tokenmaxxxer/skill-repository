@@ -1,4 +1,6 @@
 ---
+name: legal-compliance-consent-ux
+description: Use when you need guidance on Consent mechanism UX. Applies to the consent-mechanism-ux axis.
 axis: consent-mechanism-ux
 rule_count_floor: 2
 ---

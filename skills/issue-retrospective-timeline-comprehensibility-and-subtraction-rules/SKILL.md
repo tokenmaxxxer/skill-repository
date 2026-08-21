@@ -1,4 +1,6 @@
 ---
+name: issue-retrospective-timeline-comprehensibility-and-subtraction-rules
+description: Use when you need guidance on Retrospective-record convention, subtraction, and comprehensibility rules. Applies to the convention, subtraction, comprehensibility axis.
 axis: convention, subtraction, comprehensibility
 rule_count_floor: 8
 axes: convention,subtraction,comprehensibility
