@@ -1,6 +1,6 @@
 ---
 name: security-threat-model-threat-modeling-decision-rules
-description: Use when you need guidance on Operational playbook: trust-boundary threat modeling decision rules (issue-1174).
+description: Use when drawing or scoping a DFD's trust boundaries, classifying an asset's sensitivity, running a STRIDE pass on a DFD element, CVSS-rating a threat, choosing a mitigation disposition (mitigate/avoid/transfer/accept), or signing off residual risk — distinct from generic STRIDE/FMEA walkthroughs or a feasibility-scoped threat disposition call.
 rule_count_floor: 12
 tier: moderate
 axes:
@@ -19,6 +19,67 @@ role. Practitioner-depth decision rules, not methodology-name pointers.
 Each rule cites the fetched source it is derived from; rules marked
 `[REMOVAL]` are subtractive (drop/simplify/de-scope), per amendment 4 —
 at least one removal rule is recorded per axis below.
+
+## Trigger
+
+Apply this skill — rather than `stride`, `fmea`, a generic
+`risk-management-*` skill, or
+`technical-feasibility-threat-model-disposition` — when the work is one
+of: drawing or scoping a DFD and deciding where its trust boundaries sit
+(rules 1.1–1.4); classifying a data store or field's sensitivity for
+threat-modeling purposes, not just for storage/compliance labeling
+(rules 2.1–2.3); running a STRIDE enumeration pass keyed to a specific
+DFD element type and logging its findings with an owner and disposition
+(rules 3.1–3.5, 5.6); CVSS-rating a specific threat's Attack Vector,
+Attack Complexity, Privileges Required, or Scope (rules 4.1–4.5);
+choosing among mitigate/avoid/transfer/accept for a rated threat (rules
+5.1–5.5); or rating and signing off a threat's residual risk after
+mitigation (rules 6.1–6.3).
+
+## Procedure
+
+1. Trust boundary scoping (rules 1.1–1.4): mark a trust boundary at
+   every privilege/trust change, not only network edges; scope the DFD
+   to one side per model; collapse same-technology same-boundary
+   elements into one node (`[REMOVAL]`, rule 1.3); still record threats
+   for flows that stay inside one boundary.
+2. Asset/data sensitivity classification (rules 2.1–2.3): model the
+   system before scoring any threat; drop asset nodes with no
+   reader/writer (`[REMOVAL]`, rule 2.2); classify an asset by its most
+   sensitive plausible field content, not its nominal label.
+3. STRIDE enumeration by DFD element type (rules 3.1–3.5, 5.6): apply
+   only the STRIDE categories an element type is exposed to; run the
+   full checklist at every trust-boundary crossing; do not chase
+   downstream consequences mid-enumeration (`[REMOVAL]`, rule 3.3); log
+   every finding with an owner and a fix/accept/backlog decision; triage
+   an ambiguous candidate against the fixed accept/dismiss/investigate
+   question set; cite where an existing mitigating control actually
+   lives before crediting a `mitigate` disposition (rule 5.6).
+4. CVSS-style risk rating (rules 4.1–4.5): rate Attack Vector by what
+   the exploit chain requires; score Local when malicious data crosses
+   components before the vulnerability triggers; rate Attack Complexity
+   against the standard undisabled configuration; rate Privileges
+   Required by the delta gained; only mark Scope Changed across a
+   security-authority boundary, not within one (`[REMOVAL]`, rule 4.5).
+5. Mitigation disposition selection (rules 5.1–5.5): rank mitigation
+   attention by likelihood × impact; prefer eliminating a non-load-bearing
+   feature over compensating controls (`[REMOVAL]`, rule 5.2); disable
+   unused services/ports/accounts directly (`[REMOVAL]`, rule 5.3);
+   transfer only risks a named contract/insurance instrument actually
+   covers; accept only against a stated tolerance threshold.
+6. Residual risk sign-off (rules 6.1–6.3): record the post-mitigation
+   rating, not the pre-mitigation one restated; escalate to the named
+   approver when residual severity still exceeds tolerance; drop an
+   already-accepted, unchanged item from the active findings list
+   (`[REMOVAL]`, rule 6.3).
+
+## Output shape
+
+A per-threat condition → choice → source decision at whichever axis
+triggered the skill, and — when the session spans a full pass — a
+dispositioned STRIDE table (finding, owner, fix/accept/backlog) plus
+residual-risk-notes carrying the post-mitigation rating and, where
+above tolerance, the named approver's sign-off decision.
 
 ## 1. Trust boundary scoping (axis: trust-boundary-scoping)
 
