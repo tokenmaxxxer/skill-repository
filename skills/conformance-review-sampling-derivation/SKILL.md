@@ -1,6 +1,6 @@
 ---
 name: conformance-review-sampling-derivation
-description: Use when you need guidance on Sampling derivation. Applies to the sampling-derivation axis.
+description: Use when full enumeration of every requirement/file under review is infeasible and the review needs a defensible sampling scope instead. Applies to the sampling-derivation axis.
 axis: sampling-derivation
 rule_count_floor: 3
 ---
@@ -9,6 +9,37 @@ rule_count_floor: 3
 
 When full enumeration of every requirement/file is infeasible and a review
 must state a defensible sampling scope instead.
+
+## Trigger
+
+Apply this skill when full enumeration of every requirement/file under
+review is infeasible and the review must state a defensible sampling
+scope instead of a complete enumeration.
+
+## Procedure
+
+1. Stratify by risk/change-recency before sampling, drawing a sample
+   from each stratum rather than one flat random draw across the whole
+   population (rule 1).
+2. When items combine along more than one independent dimension, use
+   pairwise/t-wise coverage instead of full cross-product enumeration
+   (rule 2).
+3. State the sampling derivation explicitly in the record — population
+   size, stratum definitions, sample size per stratum, and selection
+   method — not only the resulting count (rule 3).
+4. When a sampled subset returns zero findings, report the zero-finding
+   result as-is with the stated sample scope; do not silently extend the
+   sample to search for a finding (rule 4).
+5. Assign each stratum an impact tier from the requirement's own stated
+   consequence of failure, and exempt the highest tier from sampling
+   entirely — inspect every item in it (rule 5).
+
+## Output shape
+
+A stated sampling derivation — population size, strata, sample size per
+stratum, and selection method — with the highest-impact stratum fully
+inspected rather than sampled, and a zero-finding result reported without
+post-hoc sample expansion.
 
 ## Rules
 

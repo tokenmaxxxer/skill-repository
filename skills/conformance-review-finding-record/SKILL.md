@@ -1,6 +1,6 @@
 ---
 name: conformance-review-finding-record
-description: Use while acting as the review role in the auditing or draft-reported state, to record one verdict per specification requirement in review-record.md. Use whenever a requirement has been checked and needs a verdict written down — never to fix or patch what was found.
+description: Use while acting as the review role in the auditing or draft-reported state, once a requirement has been checked and needs its verdict recorded in review-record.md — never to fix or patch what was found.
 ---
 
 # finding-record
@@ -12,6 +12,39 @@ file, at the requirement blocks below the header block.
 
 This skill never writes to any file other than `review-record.md`. It does
 not fix, patch, or suggest a patch for anything it finds — it reports.
+
+## Trigger
+
+Apply this skill while acting as the review role in the `auditing` or
+`draft-reported` state, once a requirement has been checked and its
+verdict needs to be written down in `review-record.md` — never to fix or
+patch what was found.
+
+## Procedure
+
+1. Record the verdict solo by default; ask the user only when the
+   requirement genuinely cannot be checked from what's available, for
+   the missing evidence or access (see "What it asks the user for").
+2. Choose exactly one of the five verdicts; never merge them into a bare
+   pass/fail (see "The verdict set").
+3. Fill in the full field list for the requirement block — requirement,
+   spec_ref, verdict, evidence, rationale, and spec_vs_built when the
+   verdict is Incorrect (see "The artifact and its field list").
+4. Refuse to write Present, Surface, Absent, or Incorrect with no
+   evidence pointer or no spec_ref (see "Refusal the skill itself
+   enforces").
+5. In `draft-reported`, record a disputed finding's re-examination
+   inline rather than treating the dispute as a request to fix anything
+   (see "What it asks the user for").
+6. Before writing, run the per-requirement checklist (see
+   "Per-requirement checklist").
+
+## Output shape
+
+One `---`-delimited block per requirement inside `review-record.md`,
+carrying the full field list and a verdict from the fixed five-value
+set, with a write refused when a required evidence pointer or spec_ref
+is missing.
 
 ## What it asks the user for
 
