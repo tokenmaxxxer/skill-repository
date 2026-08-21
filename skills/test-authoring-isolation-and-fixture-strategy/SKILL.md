@@ -1,6 +1,6 @@
 ---
 name: test-authoring-isolation-and-fixture-strategy
-description: Use when you need guidance on Operational playbook — isolation & fixture strategy.
+description: Use when deciding how to build or scope a test's fixture, whether tests can safely share state, or which test-double kind (real/fake/stub/mock) a dependency should get.
 ---
 
 # Operational playbook — isolation & fixture strategy
@@ -8,6 +8,66 @@ description: Use when you need guidance on Operational playbook — isolation & 
 Condition → choice → source rules for this role's decides: 테스트 코드 자체가
 격리성·fixture 전략 면에서 좋은 설계인가. Numbered, one rule per line item.
 REMOVAL-category rules are marked `[REMOVAL]`.
+
+## Trigger
+
+Apply this skill when authoring or reviewing test code and the decision
+at hand is one of: how to construct a test's fixture — factory/Creation
+Method vs. in-line setup, and per-test vs. shared build (rules 1-6);
+what scope to give a pytest/xUnit fixture — function vs. module/session,
+including a fixture reused by groups needing different scopes (rules
+7-10); whether tests are safely independent of each other and of run
+order, and how to fix a polluter/victim or shared-state dependency
+(rules 11-14); how a database-backed test should isolate and clean up
+its data, including when transaction-rollback teardown does not apply
+(rules 15-17); or which test-double kind — real, fake, stub, or mock —
+a SUT's dependency should get (rules 18-21). Distinct from generic test
+coverage or naming-convention concerns, which this skill does not cover.
+
+## Procedure
+
+1. Locate the specific fixture/isolation/double decision facing the test
+   under authoring or review — construction, scope, independence,
+   database cleanup, or double selection — and route to the matching
+   section (A-E) below.
+2. For fixture construction (rules 1-6): check for duplicated setup
+   across tests or a SUT needing many collaborators (rules 1-2) and
+   whether the fixture is expensive-and-read-only vs. cheap-and-mutable
+   (rules 3-4); flag Implicit Setup for removal (rule 5); pair any
+   persistent fixture with Automated Teardown (rule 6).
+3. For pytest/xUnit fixture scope (rules 7-10): default to function
+   scope for fast or mutable fixtures (rule 7); widen to module/session
+   scope only for expensive, read-only fixtures (rule 8); remove a wide
+   scope whose object gets mutated (rule 9); split into separately named
+   fixtures rather than force one fixture across mismatched scope needs
+   (rule 10).
+4. For test isolation/independence (rules 11-14): if pass/fail depends
+   on run order, identify the polluter/victim pair and remove the
+   pollution rather than pin order (rule 11); remove reliance on a
+   state-setter test having already run (rule 12); convert shared
+   globals/singletons/paths into per-test fixtures (rule 13); give
+   parallel workers their own DB schema/tmp directory rather than a
+   shared store (rule 14).
+5. For database-backed fixtures (rules 15-17): wrap same-transaction
+   tests in rollback-based Automated Teardown (rule 15); remove that
+   assumption when the SUT commits via a separate HTTP client/thread
+   (rule 16); use explicit cleanup, not DB rollback, for out-of-process
+   side effects (rule 17).
+6. For test double selection (rules 18-21): prefer the real dependency
+   when it is fast and side-effect-free (rule 18); use a Fake over a
+   Mock when only end-state matters (rule 19); replace over-specified
+   Mocks with Stubs plus state assertions (rule 20); keep a Mock only
+   when the interaction/protocol itself is under test (rule 21).
+7. Record the chosen fixture/isolation/double approach against the
+   condition that triggered it, and check it against `## Conflicts
+   noted` if the decision touches both fixture construction and
+   test-double selection.
+
+## Output shape
+
+A fixture/isolation/test-double decision keyed to the specific condition
+that triggered it (e.g. "expensive read-only dependency → session-scoped
+Fake"), citable back to its rule number(s) and source.
 
 ## A. Fixture construction
 
