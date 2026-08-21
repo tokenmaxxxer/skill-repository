@@ -1,6 +1,6 @@
 ---
 name: content-design-operational-playbook
-description: Use when you need guidance on Content-design operational playbook.
+description: Use when writing or reviewing user-facing copy — error messages, button/CTA and confirmation-dialog labels, plain-language phrasing, empty-state or onboarding text, tone-of-voice, copy-inventory reuse, or a staged revision pass — and need the condition-matched wording/action to choose.
 ---
 
 # Content-design operational playbook
@@ -17,6 +17,61 @@ field guidance), (2) named methodologies verified at source (NN/G
 error-message rubric, GOV.UK content style guide), (3) academic/
 empirical theory layer (progressive disclosure, readability formulas,
 tone-of-voice research).
+
+## Trigger
+
+Apply this skill when drafting or reviewing any user-facing copy
+decision: a form field fails validation and needs an error message
+(rules 1–10), an action button, CTA, or destructive-action confirmation
+dialog needs a label (rules 11–15), body copy or microcopy needs a
+plain-language pass (rules 16–19), an empty state or first-run/
+progressive-disclosure surface needs copy (rules 20–23), tone-of-voice
+needs setting on an error, failure, or success surface (rules 24–25), a
+new string is being drafted where an existing shipped string might
+already serve the same need, or a `plain_language_check`/severity
+classification needs recording (rules 26–28), or a copy draft is being
+revised against more than one quality dimension at once, or drafted
+from scratch for a recurring UI-element category (rules 29–31).
+
+## Procedure
+
+1. If the copy responds to a form-validation failure, classify whether
+   the field is empty, format-invalid, or system-caused, then apply the
+   matching wording pattern and reuse the field's exact noun (rules
+   1–9); pick banner vs. modal severity by consequence (rule 10).
+2. If the copy labels a button, CTA, or confirmation dialog, name the
+   concrete outcome rather than a generic verb, and for destructive
+   actions restate the destroyed object and add extra friction when the
+   action is irreversible (rules 11–15).
+3. If the copy is body text, instructions, or microcopy, check sentence
+   length and reading-level ceilings and swap technical terms for plain
+   equivalents already in rule 6's banned-jargon list (rules 16–19).
+4. If the copy is for an empty state or a first-run/feature-rich
+   surface, reduce it to one obvious next action and defer secondary
+   options behind progressive disclosure, gated by usage frequency
+   (rules 20–23).
+5. If the copy sits in a transactional/error/failure flow, set the
+   humor and enthusiasm tone-axis values low and strip enthusiasm
+   markers from failure copy (rules 24–25).
+6. Before drafting any new string, check whether an existing shipped
+   string already serves the same `content_id`/decision-need and reuse
+   it verbatim unless a stated reason disqualifies it (rule 26); when
+   recording a `plain_language_check`, name the failing category per
+   failure (rule 27); when a prohibition is violated, classify it block
+   or advisory, defaulting to block (rule 28).
+7. When revising a draft against more than one quality dimension, run
+   goal-fit, length, naturalness, and clarity as four separate
+   sequential passes rather than one holistic read-through (rule 29),
+   applying numeric length ceilings rather than a subjective "feels
+   long" judgment (rule 30); when drafting a recurring UI-element
+   category with no existing `content_id` match, start from that
+   category's format+purpose+tone template (rule 31).
+
+## Output shape
+
+A content-design decision: the matched condition, the applicable rule
+number(s), the concrete wording or action to apply (not just the
+problem named), and the source citation backing it.
 
 ## Axis 1 — Error messages
 
