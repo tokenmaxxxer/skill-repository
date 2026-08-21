@@ -1,17 +1,59 @@
 ---
 name: devrel-content-comprehensibility
-description: Use when you need guidance on Content comprehensibility (cognitive load / schema theory). Applies to the content-comprehensibility axis.
+description: Use when shaping developer-facing content for comprehension — sizing new-concept chunks, deciding whether to re-explain or link a foundational concept, avoiding split-attention across sources, trimming a getting-started path, choosing sample idioms for a reader's skill level, or splitting content by audience competence.
 axis: content-comprehensibility
 rule_count_floor: 8
 ---
 
 # Content comprehensibility (cognitive load / schema theory)
 
-Decision rules for how developer-facing content should be shaped so a
-reader can actually comprehend it, grounded in cognitive load theory
-(Sweller) and schema theory. Research trail: layer 3 (academic —
-cognitive load theory, working-memory capacity, schema acquisition)
-plus layer 1 (practitioner onboarding-speed data).
+## Trigger
+
+Apply this skill when shaping developer-facing content for
+comprehension — introducing a new concept in onboarding content,
+deciding whether to re-explain or link a foundational concept, laying
+out a tutorial that spans multiple sources, trimming a getting-started
+path, choosing sample idioms for a reader's skill level, deduplicating a
+concept across a tutorial and a reference page, retiring a stale code
+path from a sample, or splitting content for novice vs. expert
+audiences.
+
+## Procedure
+
+1. Present no more than about 4-7 new distinct pieces of information in
+   one onboarding section; move anything past that into a separate
+   step (rule 1).
+2. Do not re-explain a foundational concept inline for a reader already
+   fluent in it; link out instead (rule 2).
+3. Consolidate a tutorial step's code block and its parameter table
+   into the same place instead of cross-referencing across pages
+   (rule 3).
+4. Cut prerequisite and background material out of a getting-started
+   path exceeding about 10 minutes to first success, moving it to an
+   appendix or reference link (rule 4).
+5. Use only the language idioms and API surface a first-time reader's
+   stated skill level already has as schema; do not introduce an
+   advanced feature and a new API concept in the same quickstart sample
+   (rule 5).
+6. When the same concept appears in a tutorial and a reference page,
+   give the tutorial a short pointer to the reference's canonical
+   definition instead of restating the explanation (rule 6).
+7. Delete an older, no-longer-recommended code path from a sample
+   repository rather than leaving it commented out or marked
+   deprecated inline (rule 7).
+8. Split content serving both a novice and an expert audience by
+   competence stage instead of writing one document for both (rule 8).
+
+## Output shape
+
+A content-shaping decision (chunk size, re-explain-vs-link, co-location
+vs. cross-reference, path length, sample idiom level, tutorial/reference
+dedup, dead-path removal, or audience split) attributed to the rule
+that drove it, sized to the target reader's existing schema.
+
+Research trail: layer 3 (academic — cognitive load theory,
+working-memory capacity, schema acquisition) plus layer 1 (practitioner
+onboarding-speed data).
 
 ## Rules
 
@@ -85,3 +127,4 @@ plus layer 1 (practitioner onboarding-speed data).
    same material, so one document calibrated for either stage
    under-serves or overloads the other. source:
    https://www.instructionaldesign.org/theories/cognitive-load/
+</content>
