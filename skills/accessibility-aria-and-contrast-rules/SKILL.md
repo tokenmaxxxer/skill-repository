@@ -1,6 +1,6 @@
 ---
 name: accessibility-aria-and-contrast-rules
-description: Use when you need guidance on Operational playbook: ARIA usage, contrast, and focus (issue-1174).
+description: Use when you are deciding an ARIA role, an accessible name, a text/background contrast pair, a focus-order or focus-visibility change, or an evidence-field entry for an accessibility criterion, and need a condition-matched rule rather than a general accessibility overview.
 ---
 
 # Operational playbook: ARIA usage, contrast, and focus (issue-1174)
@@ -8,6 +8,67 @@ description: Use when you need guidance on Operational playbook: ARIA usage, con
 Numbered condition → choice → source rules. Practitioner-depth decision
 rules, not methodology-name pointers. Each rule cites the fetched source
 it is derived from; conflicting guidance is flagged where found.
+
+## Trigger
+
+Use this skill when a concrete change or evaluation touches one of:
+- an ARIA `role` is being added, removed, or reconsidered on an element
+  (native vs. custom widget) — not a general "is this accessible?"
+  question.
+- an element's accessible name is being set or is ambiguous between
+  visible text, `aria-label`/`aria-labelledby`, and `title`/`placeholder`.
+- a text/background color pair's WCAG 1.4.3 contrast ratio is in
+  question, including whether an exemption (disabled, decorative, logo,
+  incidental-in-photo, invisible) applies.
+- a component's focus order diverges from its visual order, or a
+  `:focus` style change risks suppressing the visible focus indicator.
+- an accessibility checklist/evaluation entry's `evidence` or
+  `assertedBy`/`verdict` field needs to state AT-tool specificity,
+  machine-suggestion provenance, automated-scan coverage limits, or a
+  `not-applicable` tradeoff rationale.
+Do not use this skill for accessibility topics outside these five axes
+(e.g. captions, motion/animation, internationalization) — it carries no
+rules for those.
+
+## Procedure
+
+1. Identify which of the five rule sections (`## 1`–`## 5`) matches the
+   decision at hand from the Trigger conditions above.
+2. Within that section, match the specific `Condition:` line of each
+   rule to the case in front of you; more than one rule in a section can
+   apply (e.g. Rule 1.1 and Rule 1.3 can both bear on the same widget).
+3. For an ARIA role decision: apply Rule 1.1 (can you fully implement
+   the role?), then Rule 1.2 (does an existing role cloak native
+   semantics and need removal?), then Rule 1.3 (is this actually a state
+   attribute, not a role/name change?).
+4. For an accessible-name decision: apply Rule 2.1 (remove an
+   overriding `aria-label`/`aria-labelledby` on a naming-from-content
+   role), Rule 2.2 (prefer visible text as the name source), and Rule
+   2.3 (never let `title`/`placeholder` be the only name source).
+5. For a contrast decision: determine text size/weight first to select
+   Rule 3.1 (standard, ≥4.5:1) vs. Rule 3.2 (large text, ≥3:1) without
+   rounding, then check Rule 3.3's five exemption conditions before
+   flagging or remediating.
+6. For a focus decision: apply Rule 4.1 (DOM order vs. visual order) and
+   Rule 4.2 (never suppress the focus indicator without an equivalent
+   replacement); consult the recorded Open gap note under `## 4` before
+   asserting a roving-tabindex rule not present in this playbook.
+7. For an evidence-field decision: apply Rule 5.1 (name the specific AT
+   tool), Rule 5.2 (treat a machine-suggested name/alt text as a draft
+   pending human review), Rule 5.3 (automated-scan evidence alone does
+   not close a criterion outside its coverage ceiling), and Rule 5.4 (a
+   tradeoff-driven `not-applicable` note states the rationale, not just
+   the boundary).
+8. Cite the matched rule number(s) and source URL alongside the
+   resulting decision so it is traceable back to this playbook.
+
+## Output shape
+
+A single decision (ARIA role kept/removed/added, accessible-name source
+chosen, contrast pass/fail/exempt verdict, focus-order/visibility fix,
+or evidence-field wording) paired with the rule number(s) it was derived
+from and that rule's `Source:` citation — not a general accessibility
+audit or a restatement of the whole playbook.
 
 ## 1. ARIA role selection
 
