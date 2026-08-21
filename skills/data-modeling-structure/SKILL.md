@@ -1,6 +1,6 @@
 ---
 name: data-modeling-structure
-description: Use when you need guidance on Structure — normalization, keys, and index design. Applies to the structure axis.
+description: Use when choosing a target normal form, breaking it deliberately for a measured read-path bottleneck, or selecting keys, indexes, and model-layer traceability for any schema, independent of Inmon/Kimball/Data Vault.
 axis: structure
 rule_count_floor: 10
 ---
@@ -10,6 +10,55 @@ rule_count_floor: 10
 Methodology-agnostic decisions that apply before choosing Inmon,
 Kimball, or Data Vault: what normal form to target, when to break it,
 and how to key and index the result.
+
+## Trigger
+
+Apply this skill when choosing a target normal form for a table,
+deciding whether to denormalize, selecting or indexing a primary/
+foreign key, or declaring conceptual/logical/physical model layers for
+a schema deliverable — before any Inmon/Kimball/Data Vault-specific
+decision is made.
+
+## Procedure
+
+1. For an OLTP/transactional table whose writes must stay consistent
+   under concurrent updates, normalize to 3NF (rule 1).
+2. When a table has two or more overlapping composite candidate keys,
+   push past 3NF to BCNF (rule 2).
+3. Only after query profiling identifies read-path latency as the
+   measured bottleneck on a normalized table, denormalize selectively —
+   duplicate or pre-join only the specific columns the slow query needs
+   (rule 3).
+4. Check each join path and index for removal: when a normalized
+   schema has a join path no current or planned query traverses, drop
+   its supporting index and any denormalized copy kept for it (rule 4);
+   when a candidate index has not served a query plan in the platform's
+   lookback window, drop it (rule 8).
+5. When no natural attribute is both guaranteed-unique and immutable,
+   assign a surrogate key as the primary key (rule 5); when a stable
+   natural key exists, still enforce it as a UNIQUE constraint alongside
+   the surrogate (rule 6).
+6. When a composite natural key is used as a foreign key on a child
+   table, index the leading column(s) applications actually filter by,
+   not the full composite (rule 7).
+7. When producing a schema/relationship deliverable, declare
+   conceptual, logical, and physical model layers explicitly, or state
+   which layer(s) don't apply and why (rule 9).
+8. When two components across model layers represent the same business
+   concept, record the lineage link between them explicitly in the data
+   dictionary (rule 10); when a conceptual entity has no corresponding
+   logical or physical artifact after shipping, build the missing layer
+   or delete the orphaned entity (rule 11).
+9. When justifying a decision to stop short of full normalization,
+   state the measured cost avoided and the specific normalization step
+   skipped (rule 12).
+
+## Output shape
+
+A structural decision: the applicable rule number(s), the schema
+element affected (table, key, index, or model layer), and the specific
+action taken (normalize, denormalize, key/index choice, or lineage/
+layer declaration).
 
 ## Rules
 

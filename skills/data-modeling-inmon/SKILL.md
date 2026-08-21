@@ -1,6 +1,6 @@
 ---
 name: data-modeling-inmon
-description: Use when you need guidance on Inmon — subject-oriented, 3NF enterprise warehouse modeling. Applies to the inmon axis.
+description: Use when deciding whether a top-down, subject-oriented 3NF enterprise warehouse fits the project, structuring the central model and its downstream marts, or checking a subject area for unfed or unconsumed scope.
 axis: inmon
 rule_count_floor: 10
 ---
@@ -10,6 +10,55 @@ rule_count_floor: 10
 Decision rules for when and how to apply Bill Inmon's top-down,
 subject-oriented, centrally-normalized warehouse methodology, as
 distinct from Kimball's bottom-up bus architecture.
+
+## Trigger
+
+Apply this skill when deciding whether a top-down, subject-oriented
+enterprise warehouse fits the project (vs. Kimball's bottom-up
+approach), structuring the central 3NF model and the marts derived from
+it, or resolving a conflicting source definition or duplicated
+transformation across marts.
+
+## Procedure
+
+1. When the requirement is a single enterprise-wide source of truth
+   many marts must derive from consistently, model the central
+   warehouse subject-oriented (grouped by real-world subject, not
+   department/report) rather than building department-local stars
+   directly (rule 1).
+2. When choosing the central warehouse's normal form, target 3NF, not a
+   dimensional/star shape (rule 2).
+3. When the business is stable and can afford longer upfront design
+   time, choose Inmon's top-down build; when the project needs a fast,
+   narrow win instead, do NOT default to Inmon — reach for Kimball
+   (rule 3, rule 8).
+4. When a business condition changes, extend the existing model to
+   accommodate it rather than redesigning (rule 4).
+5. When a downstream mart is needed, derive it FROM the central 3NF
+   warehouse rather than building the mart first and back-filling the
+   warehouse (rule 5).
+6. When two OLTP sources feed the same subject area with conflicting
+   attribute definitions, resolve the conflict once in the central
+   model, not per-mart (rule 6).
+7. Check subject areas for removal: when a subject area has no OLTP
+   source feeding it and no mart consuming it, drop it rather than
+   pre-building it speculatively (rule 7); when a mart duplicates a
+   transformation the central model already computes, delete the
+   duplicated logic from the mart and reference the central computation
+   (rule 9).
+8. When documenting an Inmon-methodology deliverable, name which
+   subject area(s) the change touches explicitly, not just table names
+   (rule 10).
+9. When atomic data is required for a future unknown query, keep it in
+   the central warehouse at full grain rather than only at a mart's
+   pre-aggregated grain (rule 11).
+
+## Output shape
+
+A subject-oriented modeling decision: the applicable rule number(s),
+the subject area or mart affected, and the specific action taken
+(central-model change, mart derivation, conflict resolution, or
+removal).
 
 ## Rules
 

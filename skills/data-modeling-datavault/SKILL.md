@@ -1,6 +1,6 @@
 ---
 name: data-modeling-datavault
-description: Use when you need guidance on Data Vault — hubs, links, satellites, raw/business vault split. Applies to the datavault axis.
+description: Use when choosing whether Data Vault fits a multi-source, evolving-schema ingestion problem, or when structuring hubs, links, satellites, and the raw/business vault split.
 axis: datavault
 rule_count_floor: 10
 ---
@@ -10,6 +10,54 @@ rule_count_floor: 10
 Decision rules for when to reach for Data Vault 2.0 over Inmon/Kimball,
 and how to structure hubs, links, satellites, and the raw/business
 vault boundary.
+
+## Trigger
+
+Apply this skill when deciding whether Data Vault is the right
+methodology for a multi-source, schema-evolving ingestion problem, or
+when structuring hubs, links, satellites, the raw/business vault
+boundary, or hash vs. sequence keys for an existing Data Vault model.
+
+## Procedure
+
+1. Before committing to Data Vault, check whether the project ingests
+   from many source systems with heavy schema evolution and a hard
+   auditability requirement — if so, choose Data Vault over
+   Inmon/Kimball; if the project has a single stable source with no
+   such requirement, do NOT default to Data Vault (rule 1, rule 8).
+2. When modeling a business object, create a Hub keyed by its business
+   key, holding only the key and load metadata (rule 2).
+3. When modeling a relationship or transaction between Hubs, create a
+   Link kept structurally separate from the Hubs (rule 3).
+4. When a Hub or Link needs descriptive, time-varying attributes,
+   attach a Satellite or Link Satellite rather than adding columns
+   directly to the Hub/Link (rule 4).
+5. When extending an already-loaded Raw Vault with a new attribute,
+   relationship, or rule, add a new Satellite or Link rather than
+   altering existing tables (rule 5).
+6. When a calculation, derived metric, or soft business rule is needed
+   on top of ingested data, place it in the Business Vault layer
+   without mutating the Raw Vault (rule 6).
+7. When multiple sources report conflicting values for the same
+   business object, load both source-tagged Satellites as-is in the
+   Raw Vault and resolve the conflict via a Derived Satellite in the
+   Business Vault (rule 7).
+8. Check each Satellite for removal: when no source has updated it
+   since initial load and no downstream consumer reads its history,
+   collapse it into the parent Hub/Link's initial-load record and drop
+   it (rule 9); when a Business Vault Derived Satellite duplicates a
+   calculation a downstream BI tool already computes natively, delete
+   the Derived Satellite (rule 10).
+9. When choosing hash keys vs. sequence keys for Hub/Link business
+   keys, use deterministic hash keys if loads happen in parallel across
+   independent pipelines (rule 11).
+
+## Output shape
+
+A Data Vault modeling decision: the applicable rule number(s), the
+methodology choice or component (Hub/Link/Satellite/Business Vault
+element) affected, and the specific structural action taken (create,
+extend, collapse, or delete).
 
 ## Rules
 

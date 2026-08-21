@@ -172,3 +172,7 @@ data-modeling-datavault
 data-modeling-structure
 data-modeling-kimball
 data-modeling-inmon
+data-modeling-datavault
+data-modeling-structure
+data-modeling-kimball
+data-modeling-inmon
