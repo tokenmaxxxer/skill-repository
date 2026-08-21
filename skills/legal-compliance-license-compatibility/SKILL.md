@@ -1,6 +1,6 @@
 ---
 name: legal-compliance-license-compatibility
-description: Use when you need guidance on Open-source license compatibility. Applies to the oss-license-compatibility axis.
+description: Use when adding, auditing, or replacing an open-source dependency and its license must be checked for compatibility with the project's own license.
 axis: oss-license-compatibility
 rule_count_floor: 2
 ---
@@ -10,6 +10,35 @@ rule_count_floor: 2
 Decision rules for whether a dependency's license can be combined into
 the product being reviewed, sourced live during issue #1174's
 legal-compliance research pass (2026-08-13).
+
+## Trigger
+
+Apply this skill when a new dependency, vendored asset, or bundled
+component is being added or audited and its license's compatibility
+with the project's own license is the open question — distinguishing it
+from the other legal-compliance axes, which govern personal-data
+handling rather than dependency licensing.
+
+## Procedure
+
+1. If the dependency is permissive (MIT/Apache-2.0) and the project is
+   not GPL-only, allow it (rule 1).
+2. If any GPL dependency is added, treat the whole distributed combined
+   work as GPL from that point (rule 2).
+3. For an Apache-2.0 dependency entering a strict GPLv2 project, pick a
+   different dependency or upgrade the project's license first (rule 3).
+4. If two GPL components at incompatible major versions are both
+   required, remove one or replace it with a dual-licensed/"or-later"
+   alternative (rule 4).
+5. For any vendored third-party code or bundled asset, check its
+   license individually rather than assuming the top-level LICENSE
+   covers it (rule 5).
+
+## Output shape
+
+A per-dependency compatibility verdict (allow / block / replace) citing
+the triggering rule, and — when rule 5 applies — a per-component license
+list distinct from the top-level LICENSE file.
 
 ## Decision rules
 

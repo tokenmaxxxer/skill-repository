@@ -1,6 +1,6 @@
 ---
 name: legal-compliance-retention-minimization
-description: Use when you need guidance on Data retention and minimization. Applies to the retention-and-minimization axis.
+description: Use when deciding what personal data to collect, how long to keep it, or whether an already-collected category may be reused for a new purpose.
 axis: retention-and-minimization
 rule_count_floor: 2
 ---
@@ -10,6 +10,37 @@ rule_count_floor: 2
 Decision rules for setting how much personal data to collect and how
 long to keep it, sourced live during issue #1174's legal-compliance
 research pass (2026-08-13).
+
+## Trigger
+
+Apply this skill when a field/data point collection decision, a
+retention-period decision, or a reuse-of-already-collected-data decision
+is open — distinguishing it from the lawful-basis axis
+(`legal-compliance-lawful-basis-selection`), which governs why data may
+be processed at all, rather than how much is collected or how long it
+is kept.
+
+## Procedure
+
+1. If a field is not required to fulfill the stated purpose, drop it
+   from collection entirely (rule 1).
+2. Set the shortest retention period that satisfies the operational,
+   contractual, and legal-duty need for that specific purpose — never a
+   flat org-wide period (rule 2).
+3. When a period lapses with no active hold, delete or irreversibly
+   anonymize the record rather than archiving it (rule 3).
+4. When a new feature proposes reusing already-collected data for an
+   undisclosed purpose, treat it as new collection requiring its own
+   necessity check and lawful basis (rule 4).
+5. For any defined retention period, name the actual enforcement
+   mechanism (scheduled job/TTL or a named-owner manual process) that
+   deletes or anonymizes at expiry (rule 5).
+
+## Output shape
+
+Per data category: a collection go/no-go (rule 1), a shortest-fit
+retention period (rule 2), a named deletion/anonymization mechanism
+(rule 5), and a flagged reuse-requires-recheck note when rule 4 applies.
 
 ## Decision rules
 
