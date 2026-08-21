@@ -1,6 +1,6 @@
 ---
 name: customer-support-kcs-article-authoring
-description: Use when you need guidance on KCS article-authoring decision rules.
+description: Use when authoring or reusing a KCS knowledge article — scoping the Environment field, populating Cause from a five-whys chain, writing Problem in requester language, or deciding reuse vs. a new article.
 ---
 
 # KCS article-authoring decision rules
@@ -10,6 +10,36 @@ articles carry Title, Problem/Issue, Environment, Resolution, Cause —
 integrating requestor, responder, and organizational perspective.
 Source: https://library.serviceinnovation.org/KCS/KCS_v6/KCS_v6_Practices_Guide/030/040/010/020
 and https://library.serviceinnovation.org/KCS/KCS_v6/KCS_v6_Practices_Guide/030/020
+
+## Trigger
+
+Apply this skill when authoring a KCS knowledge article from a resolved
+ticket: scoping an environment-specific fix, populating Cause from a
+five-whys chain, writing the Problem field, deciding whether to reuse an
+existing article, or trimming a Resolution field before publishing.
+
+## Procedure
+
+1. When a resolution only works under a specific product version, OS, or
+   plan tier, add an explicit Environment field naming that scope (rule 1).
+2. When an article also carries a five-whys block, populate the Cause
+   field with the five-whys chain's converged answer instead of leaving
+   Cause blank (rule 2).
+3. Under KCS's requestor/responder/organization split, write the Problem
+   field in the requester's own symptom language and keep diagnostic
+   jargon out of it (rule 3).
+4. When a ticket's fix is identical to an existing article's Resolution,
+   reuse and link that article instead of authoring a near-duplicate
+   (rule 4).
+5. When drafting Resolution, cut it down to the steps that actually
+   changed the outcome, deleting narrated dead-ends (rule 5).
+
+## Output shape
+
+One KCS article (Title, Problem, Environment, Resolution, Cause) or a
+link to an existing article being reused, with Environment scoped,
+Cause populated from any five-whys chain, and Resolution trimmed to the
+steps that worked.
 
 ## Rules
 

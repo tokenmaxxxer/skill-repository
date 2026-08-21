@@ -1,6 +1,6 @@
 ---
 name: customer-support-subtraction-comprehensibility
-description: Use when you need guidance on Subtraction / comprehensibility decision rules.
+description: Use when drafting or reviewing a customer-facing reply, KCS Resolution field, canned-response macro, or playbook rule set and need to cut content that adds load without adding comprehension.
 ---
 
 # Subtraction / comprehensibility decision rules
@@ -18,6 +18,35 @@ These two findings jointly justify treating removal as a first-class,
 not optional, playbook category: subtraction is the lever cognitive-load
 theory says lowers extraneous load, and the Nature finding says agents
 will not reach for that lever unless a rule cues them to.
+
+## Trigger
+
+Apply this skill when drafting or reviewing a customer-facing reply, a
+KCS Resolution field, a canned-response macro, or a playbook rule set,
+and need to identify content to remove rather than only content to add.
+
+## Procedure
+
+1. When drafting a customer-facing reply, cut any sentence that restates
+   the customer's own problem back to them before the fix (rule 1).
+2. When a KCS Resolution field lists more than one working fix for the
+   same environment, delete every fix but the one actually verified
+   (rule 2).
+3. Under time pressure to close a ticket, explicitly ask "what can be
+   removed from this reply" as its own step rather than only asking
+   "what is missing" (rule 3).
+4. When a canned-response macro accumulates a new clause for every edge
+   case it has ever handled, review it on a fixed cadence and remove
+   clauses that serve fewer than 5% of the macro's use volume (rule 4).
+5. When onboarding a new agent to a playbook rule set, cut any rule
+   whose condition never fired in the last quarter's ticket volume from
+   the mandatory-read set, moving it to reference-only (rule 5).
+
+## Output shape
+
+The same reply, Resolution field, macro, or rule set with the
+identified content removed (not merely flagged), and no compensating
+addition introduced in its place.
 
 ## Rules
 
