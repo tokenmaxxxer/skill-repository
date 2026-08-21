@@ -1,6 +1,6 @@
 ---
 name: data-engineering-pipeline-design
-description: Use when you need guidance on Pipeline design — decision rules. Applies to the pipeline-design axis.
+description: Use when choosing ETL vs ELT, picking an idempotency pattern, requiring exactly-once-effective semantics, naming a data owner/steward, routing a schema change through change control, retiring an unused hop, structuring a task graph, or authoring a dbt-style model.
 axis: pipeline-design
 rule_count_floor: 10
 ---
@@ -8,6 +8,58 @@ rule_count_floor: 10
 # Pipeline design — decision rules
 
 Condition → choice → source. Each rule is `addition` or `**REMOVAL**`.
+
+## Trigger
+
+Apply this skill when choosing ETL vs ELT (or a split) for a new
+pipeline, choosing an idempotency pattern for a batch or streaming
+sink, deciding whether a business-critical use case needs
+exactly-once-effective semantics, naming a data owner/steward,
+routing a schema-affecting change through change control, retiring
+an unused hop or a duplicated pre-load check, structuring multi-step
+dependencies as a task graph, or authoring/reviewing a dbt-style
+transform model's naming and test conventions. This is distinct from
+data-quality (authoring completeness/uniqueness/accuracy/freshness
+checks) and failure-handling (retry/DLQ classification, recovery,
+RTO) — both are separate axes in this family.
+
+## Procedure
+
+1. Choose ETL, ELT, or a per-domain split by compute location, team
+   skill, and regulatory constraints (rules 1-3).
+2. Design any retryable transform/sink step to be idempotent before
+   it ships (rule 4).
+3. Pick the idempotency pattern for the step: overwrite-partition for
+   a batch load, upsert-on-primary-key for a streaming/incremental
+   sink (rules 5-6).
+4. For an aggregation-sensitive or business-critical use case,
+   require exactly-once-effective semantics via idempotent upsert
+   (rule 7).
+5. Name an accountable owner and a day-to-day steward before the
+   pipeline ships (rule 8).
+6. Route any schema- or semantics-affecting change through the named
+   owner as change control, not a silent deploy (rule 9).
+7. Drop a transform step or table that no downstream consumer reads,
+   and remove a pre-load check that duplicates an existing
+   warehouse-side gate (rules 10-11).
+8. Express real multi-step dependencies as an explicit task graph
+   with per-task retry/backfill, rather than a flat script (rule 12).
+9. In a SQL transform chain, reference each upstream model by name
+   and attach at least one machine-checkable test to its output
+   (rule 13).
+10. Once ownership spans more than a few pipelines, publish each
+    dataset's owner, schema, and lineage to a queryable central
+    location (rule 14).
+11. Before authoring a new dbt-style model, read 2-3 existing models
+    in the project and match their naming/layering convention
+    (rule 15).
+
+## Output shape
+
+A pipeline-design decision: the applicable rule number(s), the
+pattern chosen (ETL/ELT, idempotency approach, orchestration shape,
+or ownership/change-control action), and the resulting design or
+governance artifact.
 
 1. When the destination warehouse/lakehouse has enough spare compute to
    run transforms in-place and the team's strongest skill is SQL, choose

@@ -1,6 +1,6 @@
 ---
 name: data-modeling-kimball
-description: Use when you need guidance on Kimball — dimensional modeling, star schema, SCD selection. Applies to the kimball axis.
+description: Use when declaring a fact table's grain, selecting an SCD type per dimension attribute, building or integrating a data mart, or checking a star schema for unused history or duplicated columns.
 axis: kimball
 rule_count_floor: 10
 ---
@@ -10,6 +10,49 @@ rule_count_floor: 10
 Decision rules for fact/dimension design, grain declaration, and
 slowly-changing-dimension (SCD) type selection under Ralph Kimball's
 bus architecture.
+
+## Trigger
+
+Apply this skill when starting a fact table design, choosing an SCD
+type for a dimension attribute, deciding whether to build a bottom-up
+data mart or integrate marts via conformed dimensions, or auditing a
+star schema for unused SCD history or duplicated fact columns.
+
+## Procedure
+
+1. Before adding any column to a fact table, declare the grain — the
+   exact business event/measurement one row represents (rule 1).
+2. For each dimension attribute, select the SCD type per attribute, not
+   per dimension: Type 1 (overwrite) when history has no business
+   value (rule 2); Type 2 (new row + effective dating) when attribute
+   changes must be attributable to specific historical facts (rule 3);
+   Type 3 (previous-value column) when only the immediately-prior value
+   matters (rule 4); mix types across attributes of the same dimension
+   as needed (rule 5); reserve Type 6 for when both "current value on
+   old facts" and full history are simultaneously required (rule 11).
+3. When two or more marts must support cross-functional queries, build
+   shared dimensions as conformed dimensions with identical structure/
+   keys/values across marts (rule 6).
+4. When the project needs a fast, narrow win on one business process,
+   build that process's data mart bottom-up first and integrate marts
+   later via conformed dimensions (rule 7).
+5. Check the schema for removal: when a Type 2 dimension attribute has
+   never been queried for its historical value across the platform's
+   lookback window, collapse it to Type 1 (rule 8); when a fact table
+   carries a degenerate/junk column duplicating an attribute already
+   available via a conformed dimension join, drop the duplicated column
+   (rule 9).
+6. When a reporting requirement needs drill-down through a rarely
+   queried, rarely changing hierarchical attribute set, prefer
+   snowflaking that one dimension over flattening it into the star
+   (rule 10).
+
+## Output shape
+
+A dimensional-modeling decision: the applicable rule number(s), the
+fact table or dimension attribute affected, and the specific action
+taken (grain declaration, SCD type assignment, mart build/integration
+step, or removal).
 
 ## Rules
 
