@@ -1,12 +1,47 @@
 ---
 name: finance-unit-economics-ltv-churn-assumption
-description: Use when you need guidance on LTV churn-assumption — decision rules. Applies to the ltv-churn-assumption axis.
+description: Use when the churn assumption feeding an LTV figure needs a confidence band, a gross-margin adjustment, deduplication against a bull/base/bear scenario table, or a substance-based (not action-based) definition.
 axis: ltv-churn-assumption
 rule_count_floor: 12
 tier: moderate
 ---
 
 # LTV churn-assumption — decision rules
+
+## Trigger
+
+Use when the churn rate feeding an LTV calculation needs to be
+assessed — a young or thin cohort's churn is being treated as a point
+estimate, LTV is being modeled for a usage-based-expansion business, an
+"optimistic case" LTV line is sitting alongside a scenario table, or the
+churn/acquisition event definitions themselves need checking. Use it
+downstream of `finance-unit-economics-sensitivity-scenario`'s framework
+for the churn-specific case, not as a substitute for that skill's
+general scenario structure.
+
+## Procedure
+
+1. Cite the 1st ADDITION bullet when a churn rate is derived from a
+   single cohort younger than 12 months, to apply a wider confidence
+   band rather than a point estimate.
+2. Cite the 2nd ADDITION bullet for a subscription business with
+   usage-based expansion, to model gross-margin-adjusted LTV rather
+   than revenue-only LTV.
+3. Cite the REMOVAL bullet when a churn assumption is already
+   stress-tested via bull/base/bear scenario analysis, to drop a
+   separately maintained "optimistic case" LTV line.
+4. Cite the 4th (final) ADDITION bullet when defining the churn/
+   acquisition events feeding the retention figure, to define them by
+   economic substance (last-paid-period end, reactivation) rather than
+   a user-initiated action.
+
+## Output shape
+
+A churn-assumption verdict: a confidence-banded (not point-estimate)
+churn rate when the cohort is young or thin, a gross-margin-adjusted
+LTV for usage-based-expansion businesses, no duplicate ad hoc
+optimistic-case line alongside an existing scenario table, and
+substance-based (not action-based) churn/acquisition event definitions.
 
 ## Decision rules
 
