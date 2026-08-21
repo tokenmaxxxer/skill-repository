@@ -1,6 +1,6 @@
 ---
 name: technical-writing-minimalism-scoping
-description: Use when you need guidance on Minimalism / scoping. Applies to the minimalism-scoping axis.
+description: Use when deciding what to cut vs. keep in a draft section, or auditing an over-long doc for redundant or unrequested content. Applies to the minimalism-scoping axis.
 axis: minimalism-scoping
 rule_count_floor: 11
 ---
@@ -11,6 +11,51 @@ Decision rules for what to include vs. cut per section (this rulebook's
 `produces.minimalism check` field). Research trail: layer 1 (practitioner
 depth per John Carroll's minimalist-instruction canon) plus layer 3
 (academic: subtraction neglect, cognitive-load/extraneous-load theory).
+
+## Trigger
+
+Apply this skill when deciding what to include vs. cut in a draft
+section, or when a doc has grown over-long and needs a subtraction
+pass, distinguishing it from doc-type-selection (which quadrant a doc
+belongs to) and structure-comprehension (how kept content is
+organized).
+
+## Procedure
+
+1. Scan for restated information already stated earlier in the doc or
+   a linked doc; remove the restatement and link instead (rule 1).
+2. Scan for background the reader doesn't need for the immediate task;
+   move it to an explanation doc or a collapsed aside (rule 2).
+3. When drafting a first version, write task-oriented steps first and
+   add explanation only where a reviewer flags a specific gap (rule
+   3).
+4. Group advanced/edge-case options behind a labeled, collapsed
+   subsection rather than inlining them into the main procedure (rule
+   4).
+5. When shortening an over-long draft, run a dedicated cut-search pass
+   before or separate from a compression/line-edit pass (rule 5).
+6. Delete purely definitional sections with no attached task or
+   decision (rule 6).
+7. When both a subtractive and an additive fix are available for the
+   same comprehension problem, evaluate the subtractive option first
+   (rule 7).
+8. Centralize recurring boilerplate in one linked location instead of
+   duplicating it across docs (rule 8).
+9. Cut a paragraph that took effort to write but doesn't change what
+   the reader does next (rule 9).
+10. Add missing error-recovery content even though this axis otherwise
+    biases toward cutting — name it as the deliberate exception (rule
+    10).
+11. When producing an editorial-style diagram, cap it to one accent
+    color, 1-2 focal elements, and a small fixed typeface set (rule
+    11).
+
+## Output shape
+
+A scoped section or doc with duplicate/unrequested/definitional
+content removed, boilerplate centralized, and — per rule 10 — any
+missing error-recovery content added as the named exception to the
+otherwise cut-biased pass.
 
 ## Rules
 

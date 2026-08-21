@@ -1,6 +1,6 @@
 ---
 name: technical-writing-persuasion-trust
-description: Use when you need guidance on Persuasion and trust (adoption-facing docs). Applies to the persuasion-trust axis.
+description: Use when writing or reviewing adoption-facing docs whose reader must decide to adopt or trust the product, not just execute a known task. Applies to the persuasion-trust axis.
 axis: persuasion-trust
 rule_count_floor: 10
 ---
@@ -11,6 +11,44 @@ Decision rules for docs whose target-reader must decide to adopt/trust,
 not just execute a known task. Research trail: layer 3 (academic:
 Elaboration Likelihood Model, central vs. peripheral persuasion routes)
 plus layer 1 (practitioner: developer-adoption documentation research).
+
+## Trigger
+
+Apply this skill when writing or reviewing a doc whose target reader
+must decide to adopt or trust the product — not just execute an
+already-decided task — distinguishing it from structure-comprehension,
+which governs how content is organized once the reader is already
+reading to act.
+
+## Procedure
+
+1. Classify the reader's elaboration likelihood: technically
+   motivated and evaluating (high) → central-route content — working
+   examples, exact behavior, verifiable claims (rule 1); skimming
+   decision-maker (low) → surface peripheral cues (named adopters,
+   certifications, SLAs) early (rule 2).
+2. For onboarding as first contact, scope the fastest path to a
+   working first call under ~10 minutes (rule 3), preferring a
+   runnable sandbox over a read-only snippet (rule 4).
+3. Remove unbacked marketing-style superlative claims rather than tone
+   them down (rule 5).
+4. For a low-personal-relevance reader, lead with a peripheral hook
+   before central-route detail (rule 6).
+5. Treat clear docs as a strategic asset when scoping doc work, not a
+   cosmetic pass (rule 7).
+6. Place the verifiable artifact backing a claim inline next to the
+   claim, not in an appendix (rule 8).
+7. For a low-prior-knowledge but motivated reader, still deliver
+   central-route content, written at their comprehension level, rather
+   than relying on authority cues alone (rule 9).
+8. Cut a repeated trust-building claim down to one placement near the
+   reader's decision point (rule 10).
+
+## Output shape
+
+An adoption-facing doc with route (central vs. peripheral) matched to
+each target reader's elaboration likelihood, one verifiable artifact
+placed inline per claim, no repeated or unbacked trust claims.
 
 ## Rules
 
