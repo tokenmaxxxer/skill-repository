@@ -1,6 +1,6 @@
 ---
 name: pr-communications-message-planning-and-evaluation-rules
-description: Use when you need guidance on pr-communications operational playbook.
+description: Use when planning, drafting, clearing, or evaluating an external communications activity (PR description, release note, crisis/Q&A material) and the audience, message hierarchy, approval routing, or success criteria aren't yet decided.
 role: pr-communications
 axes:
   - objective-channel-fit
@@ -23,6 +23,73 @@ pretrained recall — see the evidence trail in
 `docs/issue-1174/reports/pr-communications/scout-brief.md` and
 `playbook-evidence-trail.md` in the `on-the-record` repo for the query
 log.
+
+## Trigger
+
+Apply this skill whenever an external communications activity (PR
+description, release note, crisis/Q&A material) is being planned,
+drafted, cleared, or evaluated and any of: the channel hasn't been
+chosen against a named audience yet (rule 1); more than one audience
+segment or more than one core message exists for the same activity
+(rules 2-3, 13); a key message lacks a proof point or the ethos/pathos/
+logos lead hasn't been matched to the audience's objection, including a
+gain-or-loss trade-off not yet framed explicitly (rules 4-6); the
+activity touches a live incident or negative news, or a Q&A entry
+lacks a routed approval or a shared spokesperson statement, including a
+stale Q&A entry still on file (rules 7-10); or success criteria for the
+activity aren't yet defined across outputs/outtakes/outcomes, or an
+outcome claim lacks outtake-level evidence (rules 11-12).
+
+## Procedure
+
+1. Before choosing a channel, name the objective's target audience;
+   choose the channel (paid/earned/shared/owned) by who that audience
+   is, not by which channel is easiest to publish to (rule 1).
+2. If more than one audience segment exists for the activity, split
+   into separate messages per segment; if a plan lists more than one
+   core message, cut to exactly one core message and demote the rest to
+   supporting messages (rules 2-3).
+3. If a key message has no proof point attached, attach one (data,
+   example, quote, or artifact link) or drop the message (rule 4).
+4. Match the lead persuasive appeal to the audience's actual objection —
+   logos for technical/regulatory audiences, ethos for skeptical
+   stakeholders, pathos only for genuinely emotional resistance (rule
+   5).
+5. If a message states a change as a gain-or-loss trade-off, frame the
+   loss explicitly rather than folding it into neutral language (rule
+   6).
+6. If the activity touches a live incident or negative news, prepare
+   Q&A material (question + pre-approved answer) before the first
+   public statement goes out (rule 7).
+7. Route each drafted Q&A answer through an explicit approval workflow
+   (PR/comms owner, then legal if it makes a factual/liability claim,
+   then the accountable executive) and record the named approver (rule
+   8).
+8. If more than one spokesperson may face the same question, give them
+   one shared pre-approved holding statement rather than letting each
+   improvise (rule 9).
+9. Delete Q&A entries that stopped being plausible (feature shipped,
+   concern already resolved publicly) rather than leaving them to
+   accumulate (rule 10).
+10. Before the activity is sent, define success criteria across all
+    three of outputs, outtakes, and outcomes — never backfilled after
+    (rule 11).
+11. If an outcome claim has no outtake-level evidence under it, report
+    it as unverified and route it back to add an outtake-level check
+    rather than reporting the outcome as measured (rule 12).
+12. If a supporting message restates the core message in different
+    words without adding a distinct sub-claim, cut it (rule 13).
+
+## Output shape
+
+A cited condition -> choice -> source decision for the communications
+activity at hand: the chosen channel and audience segmentation, a
+single core message with distinct supporting messages each carrying a
+proof point, the matched persuasive appeal, any Q&A material with its
+named approver, and outputs/outtakes/outcomes success criteria defined
+before send — with each REMOVAL-category rule (3, 10, 13) applied as a
+cut (an extra core message, a stale Q&A entry, or a restated supporting
+message removed) rather than an addition.
 
 ## Rules
 
