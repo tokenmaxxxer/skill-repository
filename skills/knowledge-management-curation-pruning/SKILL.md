@@ -1,6 +1,6 @@
 ---
 name: knowledge-management-curation-pruning
-description: Use when you need guidance on Curation quality gate and pruning. Applies to the curation-pruning axis.
+description: Use when an entry has gone uncited past a review cycle, when auditing a flagged entry, or when deciding whether to update, merge, supersede, or remove a knowledge-library entry.
 axis: curation-pruning
 rule_count_floor: 10
 ---
@@ -8,6 +8,50 @@ rule_count_floor: 10
 # Curation quality gate and pruning
 
 Research trail: G2's "What Is Content Pruning?", Conductor's content-pruning step-by-step guide, The Influence Agency's content-pruning guide, Backlink Manager's "Content Curation vs. Content Pruning", and Wikipedia's community-moderation model as referenced in the same sweep, all fetched this session — the literature here is SEO/content-ops in origin, applied to an internal knowledge library rather than a public site; the underlying mechanism (stale content erodes trust and buries good content) transfers, and is flagged as such rather than presented as knowledge-management-native research.
+
+## Trigger
+
+Apply this skill when an entry has gone uncited or unreused past a
+review cycle, when auditing a flagged entry, when entries overlap or
+duplicate each other, when prioritizing what to audit first, or when
+deciding whether to update, merge, supersede, or remove a
+knowledge-library entry.
+
+## Procedure
+
+1. Flag an entry for audit when it has not been cited, reused, or
+   confirmed for a full review cycle, rather than waiting to notice it
+   by accident (rule 1).
+2. During an audit, aim to curate (fix, merge, or explicitly retire)
+   rather than delete-by-default (rule 2).
+3. If an entry's factual detail has changed but the underlying decision
+   still holds, update it in place; if the decision itself no longer
+   holds, supersede it per [[knowledge-management-supersession-lifecycle]]
+   (rule 3).
+4. Merge overlapping entries during the audit rather than leaving
+   near-duplicates live (rule 4).
+5. Prioritize auditing entries under high-traffic/high-reuse tags first
+   (rule 5).
+6. Rely on distributed review across all contributors in addition to
+   scheduled audits, not a single-owner bottleneck (rule 6).
+7. Record the audit date on an entry that passes with no changes, so
+   the next cycle can tell "reviewed" from "never reviewed" (rule 7).
+8. Remove an entry from the actively-searched index once an audit
+   confirms it obsolete (rule 8).
+9. When curating near-duplicates, keep the single best-written version
+   and fold others' unique content into it, moving attribution to the
+   provenance field rather than keeping redundant entries (rule 9).
+10. Do not prune an entry solely for low use — target inaccurate,
+    outdated, or redundant content, not merely unpopular content
+    (rule 10).
+11. Tie audit cadence to the underlying system's rate of change rather
+    than a fixed calendar interval applied uniformly (rule 11).
+
+## Output shape
+
+An audit decision per flagged entry — update in place, merge, supersede,
+or remove — dated on the entry, prioritized by tag traffic and system
+change rate.
 
 ## Rules
 

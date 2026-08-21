@@ -1,6 +1,6 @@
 ---
 name: knowledge-management-structure-findability
-description: Use when you need guidance on Structure and findability (Diátaxis-informed). Applies to the structure-findability axis.
+description: Use when filing a new entry, naming a file or title, or structuring content for retrieval — classifying it as tutorial-, how-to-, reference-, or explanation-shaped per Diátaxis.
 axis: structure-findability
 rule_count_floor: 10
 ---
@@ -8,6 +8,51 @@ rule_count_floor: 10
 # Structure and findability (Diátaxis-informed)
 
 Research trail: diataxis.fr (the Diátaxis framework's own reference site), Ubuntu/Canonical's "Diátaxis, a new foundation for Canonical documentation", I'd Rather Be Writing's Diátaxis explainer, and bssw.io's "Diátaxis: A Systematic Approach to Technical Documentation Authoring", all fetched this session.
+
+## Trigger
+
+Apply this skill when filing a new entry, naming a file or entry title,
+splitting or combining content by reader need, structuring content for
+a search/RAG pipeline, or cross-linking entries.
+
+## Procedure
+
+1. Classify a new entry by the reader need it serves (tutorial, how-to,
+   reference, or explanation) and store it under that type rather than
+   one flat bucket (rule 1).
+2. Recognize a pattern-library entry (per
+   [[knowledge-management-pattern-extraction]]) as reference-shaped and
+   write/title it for scanning, not narrative flow (rule 2).
+3. Name a file or entry so the name states the condition or topic a
+   searcher would query for (rule 3).
+4. Split a topic that requires both a how-to and an explanation into
+   two cross-linked entries rather than one combined document (rule 4).
+5. Keep the four Diátaxis quadrants as separate top-level directories or
+   clearly distinguishable path prefixes for retrieval-system readers
+   (rule 5).
+6. Prefer a specific condition-led title over a broad topic-only title
+   (rule 6).
+7. Cross-link entries at the point where the connection is load-bearing
+   for the current rule, not as a bottom-of-file "see also" list
+   (rule 7).
+8. Keep reference-shaped entries short and self-contained so one entry
+   answers one query (rule 8).
+9. Strip narrative prose out of a reference-shaped entry into a separate
+   explanation-type entry, or drop it if it adds no retrievable fact
+   (rule 9).
+10. Flatten headings nested more than two or three levels deep purely to
+    preserve narrative order, unless the nesting reflects a real
+    broader/narrower relationship per
+    [[knowledge-management-taxonomy-tagging]] (rule 10).
+11. State a fact needed in both a how-to and a reference once, in the
+    reference entry, and link to it from the how-to rather than
+    duplicating it (rule 11).
+
+## Output shape
+
+A Diátaxis-classified entry (tutorial/how-to/reference/explanation),
+condition-led title, placed under its type's path, with load-bearing
+cross-links inline rather than a bottom "see also" list.
 
 ## Rules
 

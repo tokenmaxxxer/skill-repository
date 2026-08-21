@@ -136,3 +136,8 @@ growth-analytics-funnel-stage-attribution
 growth-analytics-metric-selection
 growth-analytics-reporting-reduction
 growth-analytics-segmentation
+knowledge-management-curation-pruning
+knowledge-management-pattern-extraction
+knowledge-management-structure-findability
+knowledge-management-supersession-lifecycle
+knowledge-management-taxonomy-tagging
