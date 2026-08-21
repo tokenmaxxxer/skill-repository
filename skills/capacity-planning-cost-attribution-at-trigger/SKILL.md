@@ -1,6 +1,6 @@
 ---
 name: capacity-planning-cost-attribution-at-trigger
-description: Use when you need guidance on Cost attribution and cost-tradeoff at the firing threshold. Applies to the cost-attribution-at-trigger axis.
+description: Use when recording or reviewing the cost of a capacity expansion — attributing spend to the threshold that fired it, sizing scale-out/scale-in caps, splitting baseline from spike cost, or investigating a cost anomaly.
 axis: cost-attribution-at-trigger
 rule_count_floor: 8
 ---
@@ -8,6 +8,52 @@ rule_count_floor: 8
 # Cost attribution and cost-tradeoff at the firing threshold
 
 Research trail: FinOps Foundation working-group guidance on shared-cost allocation and AWS EC2 autoscaling cost optimization, plus general cloud-cost-allocation/anomaly-threshold practitioner literature. All fetched/searched this session.
+
+## Trigger
+
+Apply this skill when recording or reviewing the cost of a capacity
+expansion: attributing incremental spend to the threshold that fired
+it, sizing a scale-out cap and scale-in threshold, splitting baseline
+from spike cost, expressing a cost note in unit-economic terms, naming
+the percentile driving the spend, or investigating an anomalous
+expansion cost.
+
+## Procedure
+
+1. Attribute the expansion's incremental spend to the specific
+   threshold, resource, and forecast that fired it, at the granularity
+   of the resource/workload that actually fired the threshold when more
+   than one shares an umbrella (rule 1, rule 11).
+2. When the mechanism is autoscaling or similarly elastic, define an
+   explicit scale-out cap and pair it with a scale-in threshold and
+   condition (rule 2, rule 3).
+3. Cost baseline (organic) and spike (inorganic) demand separately,
+   provisioning each via the pricing model suited to it (rule 4).
+4. Express the cost note in unit-economic terms tied to the workload
+   rather than an absolute figure (rule 5).
+5. Name the safety percentile that sized the triggering threshold as
+   part of the cost note (rule 6).
+6. When an anomalous or unexpectedly large cost appears, state a
+   remediation owner and threshold rather than approving on inspection
+   alone (rule 7).
+7. When multiple teams/workloads share the expanded resource, allocate
+   cost using tagging/metadata established before the expansion lands
+   (rule 8).
+8. Retune an autoscaling trigger off a signal that doesn't track the
+   real bottleneck (rule 9), and shift a stabilized, predictable
+   baseline off on-demand pricing onto reserved/committed pricing
+   (rule 10).
+9. Derive the cost note from the triggering workload's actual per-unit
+   consumption records, not an estimated blended average rate
+   (rule 12).
+
+## Output shape
+
+A cost note attributing incremental spend to the specific threshold,
+resource, and percentile that drove it, expressed in unit-economic
+terms and decomposed by baseline vs. spike and by contributing
+resource/workload, with scale-out/scale-in caps defined and an
+anomaly-remediation owner named where applicable.
 
 ## Rules
 

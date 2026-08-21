@@ -1,6 +1,6 @@
 ---
 name: capacity-planning-expansion-trigger-threshold-sizing
-description: Use when you need guidance on Expansion-trigger threshold sizing (growth_rate x lead_time x safety_buffer). Applies to the expansion-trigger-threshold-sizing axis.
+description: Use when sizing an expansion-trigger threshold — computing required occupancy, decomposing growth_rate x lead_time x safety_buffer, choosing a target percentile, or sizing lead_time including provisioning ramp-up.
 axis: expansion-trigger-threshold-sizing
 rule_count_floor: 8
 ---
@@ -8,6 +8,51 @@ rule_count_floor: 8
 # Expansion-trigger threshold sizing (growth_rate x lead_time x safety_buffer)
 
 Research trail: Little's Law (L = λW; Little 1961), Dan Slimmon's applied Little's-Law capacity-scaling writeup (worker-thread occupancy example), production-system utilization-threshold findings (Project Production Institute), and percentile-occupancy planning practice. All fetched/searched this session.
+
+## Trigger
+
+Apply this skill when sizing the threshold at which an expansion
+should fire: computing required occupancy, decomposing the threshold
+into growth_rate x lead_time x safety_buffer, picking a target
+percentile, or accounting for provisioning lead time and ramp-up.
+
+## Procedure
+
+1. Compute required occupancy via Little's Law (L = λW) before sizing
+   the expansion (rule 1).
+2. State the threshold as growth_rate x lead_time x safety_buffer with
+   each term labeled and traceable, not a bare flat percentage
+   (rule 2).
+3. Size the threshold off a stated percentile of the occupancy
+   distribution, never the mean alone (rule 3).
+4. Treat roughly 80-85% utilization as the practical trigger zone under
+   queueing dynamics (rule 4).
+5. Size lead_time as the full span from trigger firing to new capacity
+   actually serving traffic, including provisioning and warm-up
+   (rule 5), and extend it further to cover a ramp-up window in which
+   throughput climbs to 100% rather than treating the endpoint as
+   instantly fully productive (rule 12).
+6. Use the combined organic-plus-inorganic forecast as the growth_rate
+   input (rule 6).
+7. Size safety_buffer from demand variability, lead-time variability,
+   and the required service level (rule 7), choosing the target
+   percentile by the resource's failure consequence rather than a
+   house-wide default (rule 8).
+8. Never carry forward an inherited bare-percentage threshold with no
+   growth_rate/lead_time/safety_buffer decomposition; recompute all
+   three terms explicitly (rule 9), and never stop at the mean/average
+   without taking the percentile step (rule 10).
+9. For a resource with genuine elastic on-demand provisioning, size
+   safety_buffer to the residual lead_time-window risk only, not a
+   static buffer computed as if all future growth had to be
+   pre-provisioned (rule 11).
+
+## Output shape
+
+A threshold stated as growth_rate x lead_time x safety_buffer with
+each term labeled and traceable to its source, sized off a stated
+percentile matched to the resource's failure consequence, with
+lead_time covering the full trigger-to-serving span including ramp-up.
 
 ## Rules
 
