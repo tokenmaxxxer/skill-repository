@@ -44,3 +44,10 @@ conformance-review-severity-classification
 conformance-review-traceability-and-evidence
 conformance-review-verdict-assignment
 conformance-review-verification-method-selection
+observability-cardinality-budget
+observability-explorability
+observability-methodology-selection
+observability-phase-trace
+observability-signal-golden
+observability-signal-red
+observability-signal-use
