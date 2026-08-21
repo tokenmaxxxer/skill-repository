@@ -100,3 +100,9 @@ finance-unit-economics-ltv-cac-band
 finance-unit-economics-ltv-churn-assumption
 finance-unit-economics-proposal-shape
 finance-unit-economics-sensitivity-scenario
+customer-support-escalation-path
+customer-support-five-whys-recurring-scope
+customer-support-kcs-article-authoring
+customer-support-research-log
+customer-support-sla-tier-priority
+customer-support-subtraction-comprehensibility
