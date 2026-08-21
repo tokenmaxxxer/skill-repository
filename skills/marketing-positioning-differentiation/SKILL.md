@@ -1,6 +1,6 @@
 ---
 name: marketing-positioning-differentiation
-description: Use when you need guidance on Positioning and differentiation. Applies to the positioning-differentiation axis.
+description: Use when drafting a positioning statement, selecting which unique attribute or proof point to lead with, or picking a category frame for an unfamiliar audience.
 axis: positioning-differentiation
 rule_count_floor: 5
 ---
@@ -11,6 +11,40 @@ Research trail: Miro's 2026 product-positioning guide, Digital Applied's
 2026 B2B competitive-positioning playbook, FasterCapital's UVP/
 differentiation/positioning survey, and monday.com's 2026 positioning
 guide, all fetched this session.
+
+## Trigger
+
+Apply this skill when drafting a positioning statement, choosing which
+unique attribute or proof point to lead with, picking a category frame
+for an unfamiliar audience, or when the target segment has shifted and
+the competitive frame needs re-evaluating.
+
+## Procedure
+
+1. Before drafting the value proposition, name the specific alternative
+   customers currently use (competitor, workaround, or doing nothing)
+   in the "instead of" clause (rule 1).
+2. When claiming a unique attribute, choose only ones both meaningful
+   to the buyer and hard for a competitor to replicate quickly
+   (rule 2).
+3. For an audience unfamiliar with the category, pick a category frame
+   borrowing an existing mental model rather than inventing a new
+   category name (rule 3).
+4. When drafting proof points, keep only independently-verifiable
+   claims and cut adjective-only claims with no verifiable referent
+   (rule 4).
+5. When a positioning statement lists more than one UVP, cut it down to
+   the single most meaningful, least replicable proposition and move
+   the rest to supporting proof points (rule 5).
+6. When the target segment shifts (per [[segment-targeting]]), pick the
+   "instead of" alternative for that segment specifically rather than
+   reusing the prior segment's competitive frame (rule 6).
+
+## Output shape
+
+A positioning decision: the applicable rule number(s), the "instead
+of" alternative and category frame chosen, and the single UVP plus its
+supporting proof points.
 
 ## Rules
 

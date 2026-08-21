@@ -1,6 +1,6 @@
 ---
 name: marketing-channel-selection
-description: Use when you need guidance on Channel selection and budget allocation. Applies to the channel-selection axis.
+description: Use when choosing which channel to fund, allocating or shifting budget across an existing channel mix, or deciding whether to cut an underperforming channel.
 axis: channel-selection
 rule_count_floor: 5
 ---
@@ -11,6 +11,37 @@ Research trail: Growth Method's B2B channel-strategy framework, Belkins'
 2026 B2B-channel-effectiveness study, INFUSE's channel-orchestration
 guide, and Cometly's/Prescient AI's 2026 budget-allocation guides, all
 fetched this session.
+
+## Trigger
+
+Apply this skill when selecting a new channel to fund, allocating or
+rebalancing budget across an existing channel mix, or deciding whether
+an underperforming channel should be cut or kept at minimum spend.
+
+## Procedure
+
+1. Before allocating budget to a candidate channel, verify the target
+   segment actually spends time there (rule 1).
+2. Match channel type to audience type — firmographic/professional
+   channels for a B2B segment, broad consumer channels for a B2C
+   segment (rule 2).
+3. When choosing between similarly-reaching channels, prefer the one
+   backed by quarterly-refreshed audience-preference data (rule 3).
+4. When a channel's incremental ROI/ROAS lags the mix over a full
+   attribution cycle, shift the marginal dollar in 5-10% increments
+   rather than all at once (rule 4).
+5. When a channel is confirmed underperforming across a full
+   attribution cycle with no upstream contribution, cut it from the
+   active mix (rule 5).
+6. Before cutting an underperforming channel, check whether it powers
+   conversions attributed to a better-performing channel downstream,
+   and if so keep a minimum-viable spend there instead (rule 6).
+
+## Output shape
+
+A channel decision: the applicable rule number(s), the channel(s)
+affected, and the budget action (fund, shift by an increment, keep at
+minimum spend, or cut).
 
 ## Rules
 

@@ -1,6 +1,6 @@
 ---
 name: marketing-segment-targeting
-description: Use when you need guidance on Segment selection and targeting. Applies to the segment-targeting axis.
+description: Use when evaluating or ranking candidate segments, defining a B2B vs. B2C target segment, or reviewing whether a previously-selected segment should stay in the active target list.
 axis: segment-targeting
 rule_count_floor: 5
 ---
@@ -11,6 +11,39 @@ Research trail: the STP (Segmentation-Targeting-Positioning) framework
 survey via Umbrex's marketing-frameworks reference and CMU Swartz
 Center's STP teaching deck, and Adience's B2B-vs-B2C marketer guide, all
 fetched this session.
+
+## Trigger
+
+Apply this skill when evaluating or ranking candidate segments,
+defining a B2B vs. B2C target segment, or reviewing whether a
+previously-selected segment should stay in the active target list.
+
+## Procedure
+
+1. When evaluating candidate segments, choose only ones that clear
+   measurable, substantial, accessible, and actionable together
+   (rule 1).
+2. When ranking segments for prioritization, weigh size/growth,
+   profitability/CLV, competitive intensity, access, and capability/
+   brand fit together rather than size alone (rule 2).
+3. For a B2B target market, define the segment by firmographics plus
+   buying-persona job role rather than consumer demographics alone
+   (rule 3).
+4. When a segment's competitive intensity is high and the UVP from
+   [[positioning-differentiation]] rule 2 is weak there, deprioritize
+   that segment in favor of one where the UVP is harder to match
+   (rule 4).
+5. When a segment fails the actionable test, drop it from the active
+   target list rather than keeping it for future reference (rule 5).
+6. When a previously-selected segment's growth or profitability signal
+   degrades over successive review cycles, cut it and redirect its
+   budget to a segment currently clearing the CLV/competitive-intensity
+   bar (rule 6).
+
+## Output shape
+
+A targeting decision: the applicable rule number(s), the segment(s)
+evaluated, and the prioritize/deprioritize/drop verdict.
 
 ## Rules
 
