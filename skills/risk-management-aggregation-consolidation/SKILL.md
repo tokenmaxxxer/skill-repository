@@ -1,11 +1,43 @@
 ---
 name: risk-management-aggregation-consolidation
-description: Use when you need guidance on Risk aggregation / consolidation (removal-heavy axis). Applies to the aggregation-consolidation axis.
+description: Use when combining or rolling up scores across related register entries, flagging concentration risk, merging duplicate entries, retiring stale entries, or ordering a consolidated action queue. Applies to the aggregation-consolidation axis.
 axis: aggregation-consolidation
 rule_count_floor: 10
 ---
 
 # Risk aggregation / consolidation (removal-heavy axis)
+
+## Trigger
+
+Apply this skill when combining or rolling up scores across related
+register entries, when several entries share an underlying counterparty,
+vendor, or asset class, when two entries may describe the same
+underlying exposure, when a mitigated entry's staleness is in question,
+or when ordering a consolidated action queue across entries.
+
+## Procedure
+
+1. When combining scores across positively correlated risks, do not sum
+   them linearly (rule 1).
+2. When a single counterparty, vendor, or asset class underlies several
+   entries, flag the set as a concentration risk and record the
+   combined exposure as its own entry (rule 2).
+3. When two entries describe the same underlying exposure, merge them
+   and delete the duplicate (rule 3).
+4. When a mitigated entry's residual score has held at the lowest band
+   for multiple cycles with no credible recurrence trigger, retire it
+   (rule 4).
+5. When ordering a consolidated action queue, sort by severity band
+   first and use likelihood/velocity only to break ties within a band
+   (rule 5).
+
+## Output shape
+
+A consolidated register view in which correlated/concentrated exposures
+are represented as single rolled-up entries (not double-counted or
+left implicit), duplicate and stale entries are removed, and the action
+queue is ordered by severity band with likelihood/velocity used only as
+a tiebreaker.
 
 ## Decision rules
 
