@@ -1,6 +1,6 @@
 ---
 name: secure-coding-session-authentication
-description: Use when you need guidance on Session & authentication management. Applies to the session-authentication axis.
+description: Use when you need to decide how a session identifier is issued, stored, timed out, or resumed — cookie flags, storage location, timeout tiering, or multi-tab/device session linking.
 axis: session-authentication
 rule_count_floor: 9
 ---
@@ -11,6 +11,50 @@ Decision rules for issuing, storing, and expiring session state and
 credentials. Research trail: layer 1 (OWASP Session Management Cheat
 Sheet) plus layer 2 (ASVS V3 "Session Management" chapter, CWE-384
 Session Fixation).
+
+## Trigger
+
+Use when a design or review is deciding how a session identifier is
+issued, stored, cached, timed out, or resumed across tabs/devices —
+cookie flag selection, storage location, timeout tiering, or
+session-fixation-prone resume flows. Do not use it for the
+access-control decision of what an authenticated identity may do (that
+is `secure-coding-authorization-access-control`).
+
+## Procedure
+
+1. Cite rule 1 when a user's privilege level changes, to regenerate the
+   session identifier immediately rather than keep the pre-change ID
+   live.
+2. Cite rule 2 when issuing a session cookie over HTTPS, to set Secure
+   and HttpOnly unconditionally.
+3. Cite rule 3 when choosing a `SameSite` value for a session cookie, to
+   choose Strict or Lax, never None without Secure, and never rely on
+   the browser default.
+4. Cite rule 4 when setting an idle timeout, to tier it by session
+   value — 2-5 minutes for high-value sessions, 15-30 minutes for
+   low-risk ones.
+5. Cite rule 5 when implementing session expiry, to enforce both idle
+   and absolute timeouts server-side rather than client-side-only.
+6. Cite rule 6 when choosing where to store an auth token in a browser
+   client, to choose an HttpOnly cookie or backend-for-frontend pattern
+   and remove any existing Web Storage token storage.
+7. Cite rule 7 when a session ID currently arrives via URL query
+   parameter, to remove that acceptance path and require the cookie
+   mechanism only.
+8. Cite rule 8 when a response carries a session identifier, to set
+   `Cache-Control: no-store` on that response.
+9. Cite rule 9 when designing multi-tab or multi-device session support,
+   to require re-authentication or a server-issued linking token rather
+   than accept an arbitrary client-supplied session ID.
+
+## Output shape
+
+A session-management verdict: the regeneration/cookie-flag/timeout
+choices with their rule citations, any Web-Storage or URL-carried
+session ID flagged for removal, and — for multi-device/tab support — the
+re-authentication or linking-token mechanism chosen instead of a
+client-supplied session ID.
 
 ## Rules
 
