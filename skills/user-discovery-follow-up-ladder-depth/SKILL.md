@@ -1,0 +1,28 @@
+---
+axis: follow-up-ladder-depth
+rule_count_floor: 8
+---
+
+# Follow-up ladder: laddering / Five Whys depth per hypothesis
+
+Research trail: Toyota's Five Whys (via hyperlatam and playbookux explainer pieces on customer-interview application); UXmatters and IxDF (Interaction Design Foundation) laddering-technique literature distinguishing attribute→consequence→value chains from bare root-cause chains. All searched this session.
+
+## Rules
+
+1. When an interviewee states a surface-level complaint or attribute preference ("I chose X because it's fast"), ask "why is that good/important" rather than moving to the next script question — laddering's core move is chaining "why" questions from attribute to consequence to personal value, and stopping at the first stated attribute discards the two deeper rungs. source: https://www.uxmatters.com/mt/archives/2009/07/laddering-a-research-interview-technique-for-uncovering-core-values.php
+
+2. When probing the root cause of a stated problem, ask "why" up to five times in sequence, stopping earlier only once an answer names a cause the interviewee cannot further explain (a true root cause, not a deflection) — the Five Whys rule targets root-cause discovery, and stopping after one or two whys usually surfaces a symptom, not the cause. source: https://www.hyperlatam.com/the-power-of-the-five-whys-rule-in-customer-interviews/
+
+3. When the interviewee's answer to a "why" is itself another surface fact rather than a value or root cause, continue laddering on that new fact instead of accepting it as the endpoint — a chain that terminates on a still-factual (not motivational/causal) answer has not reached the value or root-cause rung the technique is for. source: https://ixdf.org/literature/topics/why-how-laddering
+
+4. When you need to connect a stated preference to a design/product decision, ladder sideways with "how" as well as "why" — laddering explores both why (uncovers emotional/value drivers) and how (connects those values to concrete features), so a why-only chain misses the how-linkage needed to act on the value once found. source: https://ixdf.org/literature/article/laddering-questions-drilling-down-deep-and-moving-sideways-in-ux-research
+
+5. When an interviewee gives a vague or generic root-cause answer ("it's just always been slow"), press with a concrete-instance follow-up ("what specifically was slow, the last time") before continuing the why-chain — a why-chain built on a vague premise ladders to a vague, unusable value statement regardless of how many whys are asked. source: https://www.playbookux.com/five-whys/
+
+6. When laddering toward a personal/organizational value ("why does that matter to you/your business"), treat that value-level answer as the ladder's endpoint and stop — laddering's three-question core (attribute → consequence → value) is complete once a value or core-business-relevance answer is reached; continuing to ladder past a genuine value answer yields diminishing, off-topic returns. source: https://study.com/academy/lesson/ladder-interviews-in-qualitative-marketing-research.html
+
+7. When competitive/differentiation intelligence is the goal (not just usability insight), apply the Five Whys and laddering together rather than either alone — the two techniques are complementary (Five Whys for root cause, laddering for value structure), and the combination surfaces both what happened and why it mattered to the interviewee. source: https://www.octopusintelligence.com/the-five-whys-and-laddering-competitive-intelligence-techniques-for-that-matter/
+
+8. **REMOVAL**: When a scripted interview guide lists a fixed single follow-up per question with no room to re-ladder, drop the fixed-depth-one script structure — a rigid one-follow-up script structurally caps every hypothesis at the surface-attribute rung and can never reach the root cause or value rung rules 1-3 require. source: https://www.hyperlatam.com/the-power-of-the-five-whys-rule-in-customer-interviews/
+
+9. **REMOVAL**: When the interviewer has already reached a root-cause or value-level answer (rule 6), drop any remaining scripted "why" prompts for that thread rather than mechanically exhausting a fixed why-count — Five Whys is a stopping heuristic keyed to reaching the cause, not a mandatory five-question quota, and continuing past the cause wastes interview time the ladder no longer needs. source: https://www.playbookux.com/five-whys/
