@@ -1,6 +1,6 @@
 ---
 name: brand-design-brand-consistency-governance
-description: Use when you need guidance on Brand consistency / asset governance rules. Applies to the brand-consistency-governance axis.
+description: Use when checking a new or changed brand asset against the standing brand system, defining who can edit a template's core identity elements, routing an asset through the right review tier, or auditing a shared asset library for stale/unapproved versions.
 axis: brand-consistency-governance
 rule_count_floor: 3
 tier: rich
@@ -12,6 +12,33 @@ Rules for the `produces: ... consistency check vs existing guide` half
 of this role's contract — how a new/changed asset is checked against
 the standing brand system, and how the system itself stays governable
 rather than drifting.
+
+## Trigger
+
+Apply this skill when producing or reviewing a template/asset-generation
+surface that non-design teams will use, when defining or auditing the
+approval workflow an asset must pass through before it ships, or when a
+shared brand asset library is being reviewed for outdated or
+unapproved versions.
+
+## Procedure
+
+1. When producing a template or asset-generation surface, lock core
+   identity elements (logo, primary color, primary type) at the
+   template level and expose only content zones as editable (rule 1).
+2. When defining or auditing an approval workflow, classify asset
+   types into at least two risk-based review tiers rather than routing
+   every asset through the same gate (rule 2).
+3. When a shared asset library is reviewed, expire and remove assets
+   superseded by a newer approved version instead of leaving old and
+   new versions co-located (rule 3).
+
+## Output shape
+
+A locked-vs-editable zone map for each template surface, a risk-tiered
+review-workflow definition (which asset classes require brand-manager
+sign-off vs. none), and a library audit result listing stale/unapproved
+assets flagged for expiration or removal.
 
 ## Decision rules
 

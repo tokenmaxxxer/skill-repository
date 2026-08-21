@@ -1,6 +1,6 @@
 ---
 name: brand-design-brand-identity-strategy
-description: Use when you need guidance on Brand identity strategy rules. Applies to the brand-identity-strategy axis.
+description: Use when proposing a new visual direction for a brand asset, auditing whether a shipped asset is consistent with the brand's declared identity, or reviewing an identity guide for facets the brand no longer actually delivers on.
 axis: brand-identity-strategy
 rule_count_floor: 3
 tier: rich
@@ -14,6 +14,33 @@ back to the brand's declared identity rather than being style-work in
 isolation. Grounded in Kapferer's Brand Identity Prism (this role's
 own rulebook plugin is already named `brand-design-kapferer-scope-guard`,
 confirming the prism as this repo's chosen framework).
+
+## Trigger
+
+Apply this skill when a new visual direction is proposed for a brand
+asset, when auditing whether a shipped asset is consistent with the
+brand's identity rather than merely internally attractive, or during a
+periodic identity-guide review.
+
+## Procedure
+
+1. When a new visual direction is proposed, require it to trace to a
+   stated Physique or Personality facet before shipping, and reject a
+   direction that cannot be tied to either facet (rule 1).
+2. When auditing a shipped asset's consistency, check the sender
+   facets (Physique, Personality, Culture) and the receiver facets
+   (Reflection, Self-image, Relationship) separately — a sender-only
+   pass is not a full consistency check (rule 2).
+3. During a periodic identity-guide review, drop facets the brand no
+   longer actually delivers on from the active identity statement
+   rather than leaving them listed as aspirational (rule 3).
+
+## Output shape
+
+A facet-traceability note for each proposed visual direction, a
+two-sided (sender/receiver) consistency audit result for each shipped
+asset reviewed, and an updated identity statement with stale facets
+removed or moved to a retired/under-consideration note.
 
 ## Decision rules
 

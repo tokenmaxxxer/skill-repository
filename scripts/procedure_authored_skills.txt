@@ -151,3 +151,8 @@ localization-pluralization-and-grammar
 localization-rtl-and-script-support
 localization-string-externalization
 localization-text-expansion-and-layout
+brand-design-brand-consistency-governance
+brand-design-brand-identity-strategy
+brand-design-color-visibility
+brand-design-logo-clear-space-size
+brand-design-typography-pairing
