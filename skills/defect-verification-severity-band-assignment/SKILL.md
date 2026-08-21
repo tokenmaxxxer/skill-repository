@@ -1,11 +1,53 @@
 ---
 name: defect-verification-severity-band-assignment
-description: Use when you need guidance on Severity-band assignment for a reproduced defect. Applies to the severity-band-assignment axis.
+description: Use when assigning a severity band to a reproduced defect — reading the band off the fixed technical-impact lookup table by halting/degrading/cosmetic tier, independent of business priority or how clean the upstream review record looks.
 axis: severity-band-assignment
 rule_count_floor: 8
 ---
 
 # Severity-band assignment for a reproduced defect
+
+## Trigger
+
+Apply this skill when assigning a severity band to a reproduced
+defect.
+
+## Procedure
+
+1. Assign severity by technical impact on functionality alone — never
+   by business urgency, deadline pressure, or reporter annoyance
+   (rule 1).
+2. Band a defect that halts the system, blocks the user from
+   proceeding, or blocks further verification work at the top tier
+   (blocking) (rule 2).
+3. Band a defect that degrades core functionality without halting it
+   below the halting tier (rule 3).
+4. Apply the same band criteria the same way every time rather than
+   re-deriving them per finding (rule 4).
+5. Band a cosmetic or non-required, non-functional defect at the
+   lowest tier rather than the mid tier (rule 5).
+6. Do not let a clean review record pull a reproduced defect's
+   severity down (rule 6).
+7. When a reproduced defect only manifests under a narrow, hard-to-hit
+   precondition, band by the impact if it fires, not by how rarely it
+   fires (rule 7).
+8. State which band criterion actually drove the assignment (halts the
+   system / degrades core function / cosmetic only) alongside the band
+   itself (rule 8).
+9. Retire any locally-improvised severity vocabulary outside the
+   deterministic band's defined tiers (rule 9), and retire treating
+   priority language (urgent, do this sprint, can wait) as an input to
+   the severity call (rule 10).
+10. Apply the band lookup as a fixed intersection table (technical-
+    impact tier x criterion), not a per-finding freehand weighing
+    (rule 11).
+
+## Output shape
+
+A severity band read off the fixed technical-impact x criterion lookup
+table, attributed to the criterion that drove it, held independent of
+priority language and upstream review cleanliness, and applied
+consistently across similar defects.
 
 Research trail: bug severity vs. priority literature (QAmadness defect-management guide, Kualitee severity-level and severity-vs-priority guides, Bird Eats Bug severity guide, QATestLab severity-levels article). All fetched/searched this session.
 

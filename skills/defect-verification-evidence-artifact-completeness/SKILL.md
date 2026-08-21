@@ -1,11 +1,54 @@
 ---
 name: defect-verification-evidence-artifact-completeness
-description: Use when you need guidance on Evidence-artifact completeness for a reproduction attempt. Applies to the evidence-artifact-completeness axis.
+description: Use when capturing, bundling, or labeling the evidence artifact for a defect-reproduction attempt — bundling steps, artifact, and environment into one self-contained pointer captured at attempt time rather than reconstructed afterward.
 axis: evidence-artifact-completeness
 rule_count_floor: 8
 ---
 
 # Evidence-artifact completeness for a reproduction attempt
+
+## Trigger
+
+Apply this skill when capturing, bundling, or labeling the evidence
+artifact for a reproduction attempt.
+
+## Procedure
+
+1. Capture the reproduction artifact once, at attempt time, as a
+   single self-contained recording rather than relying on a live
+   re-run to reproduce the same evidence later (rule 1).
+2. Bundle every signal available at attempt time (steps, console/log
+   output, the state snapshot, environment/sha) into one evidence
+   pointer rather than splitting them across separate fields (rule 2).
+3. Record the run environment (commit sha, run/build context) at the
+   moment the attempt is made, not reconstructed afterward from memory
+   (rule 3).
+4. When an attempt could be captured as a durable artifact rather than
+   only described in prose, capture the artifact (rule 4).
+5. For a `blocked: needs-repro-access` outcome, still capture the
+   artifact that exists — the exact command attempted and its actual
+   output — rather than a bare prose note (rule 5).
+6. When a candidate attempt names a specific runtime state, state that
+   starting state explicitly before the steps (rule 6).
+7. Do not let evidence-artifact richness change what counts as
+   `reproduced` — richness is an evidence-quality axis, never grounds
+   for treating a richly-captured attempt as more conclusive than a
+   thinly-captured one (rule 7).
+8. State which artifact type backs a given evidence pointer (recording,
+   transcript, log excerpt, diff, command output) rather than leaving
+   the evidence field's shape implicit (rule 8).
+9. Retire accepting "see the linked recording" with no accompanying
+   steps/state summary as a complete attempt record (rule 9), and
+   retire treating environment capture as optional metadata tacked on
+   after the fact rather than captured while making the attempt
+   (rule 10).
+
+## Output shape
+
+One self-contained, labeled evidence pointer per attempt — steps/
+state, artifact, and environment/sha bundled together and captured at
+attempt time — with artifact richness never changing the three-value
+outcome it supports.
 
 Research trail: adoption-evidence survey of reproduction/debugging tooling
 practitioners actually use (rr record-and-replay debugger, 10,421 GitHub
