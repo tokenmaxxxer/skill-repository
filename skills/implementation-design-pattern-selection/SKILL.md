@@ -1,6 +1,6 @@
 ---
 name: implementation-design-pattern-selection
-description: Use when you need guidance on Design-pattern selection. Applies to the design-pattern-selection axis.
+description: Use when deciding whether to introduce a GoF-style design pattern (Strategy, Factory, Visitor, Observer, Decorator) or keep the direct/procedural form, including when an existing pattern's indirection has only ever served one concrete case.
 axis: design-pattern-selection
 rule_count_floor: 6
 tier: sparse
@@ -10,6 +10,39 @@ tier: sparse
 
 Decision rules for when a GoF-style pattern earns its indirection, and
 when the plain procedural/direct form is the correct choice instead.
+
+## Trigger
+
+Apply this skill when writing or reviewing code that introduces or
+already carries pattern-shaped indirection: a class is being split into
+a pattern "for future extensibility," a pattern is being added to
+satisfy a hypothetical requirement, a pattern is being reached for
+because it is the textbook answer, two call sites diverge only in a
+data value, or a Factory/Builder/Visitor/Observer layer is under review
+for whether it still earns its indirection.
+
+## Procedure
+
+1. If a class has one reason to change today and no second concrete
+   caller, keep it as one class rather than pre-splitting (rule 1).
+2. If a pattern is being added for a hypothetical future requirement
+   with no current caller, implement the concrete case directly instead
+   (rule 2).
+3. If a pattern is being chosen because it's "the textbook answer"
+   rather than because the code's shape demands it, reject it (rule 3).
+4. If two call sites diverge only in a data value, not behavior, use a
+   parameter or lookup table instead of Strategy (rule 4).
+5. If a Factory/Builder/Abstract-Factory layer only ever constructs one
+   concrete product, delete it and call the constructor directly
+   (rule 5).
+6. If a Visitor/Observer's indirection decouples two objects that only
+   ever have one pairing, collapse the pair into direct calls (rule 6).
+
+## Output shape
+
+A pattern decision: whether to add, keep, or remove a pattern's
+indirection, the applicable rule number, and the direct-form alternative
+when the pattern is rejected or removed.
 
 ## Rules
 
