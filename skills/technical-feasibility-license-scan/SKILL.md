@@ -1,11 +1,51 @@
 ---
 name: technical-feasibility-license-scan
-description: Use this skill when running the legal-regulatory probe inside the feasibility role's `probing` state — produces a per-dependency license verdict and a regulatory-applicability note before that probe can resolve.
+description: Use when the feasibility role is in its `probing` state and needs to run the legal-regulatory probe — i.e. dependencies (packages, SaaS, third-party services) are being pulled into the specification and their licenses and applicable regulatory regimes have not yet been recorded.
 ---
 
 # License scan
 
 **Belongs to state:** `probing`, legal-regulatory probe.
+
+## Trigger
+
+This applies whenever the feasibility role is in its `probing` state and the
+legal-regulatory probe for the current specification has not yet resolved —
+concretely, when the specification names or implies dependencies (packages,
+SaaS, third-party services) whose licenses have not been verdicted, or when
+it touches a data category, customer base, or region whose regulatory
+applicability has not yet been noted.
+
+## Procedure
+
+1. Identify the dependencies (packages, SaaS, third-party services) the
+   specification would pull in, asking the user if they are not already
+   listed (see ## What it asks the user for).
+2. Ask the user what regulatory regime, if any, they believe applies (data
+   category, customer/region), so the applicability note is grounded rather
+   than guessed, and be plain that this is research and not a legal opinion
+   (see ## What it asks the user for).
+3. Record findings by writing to `feasibility-record.md`'s legal-regulatory
+   probe field, pointing to or inlining a project-local file such as
+   `feasibility/license-scan.md`; note that this artifact write is not
+   itself gated, only the state file's `status` transition is (see ##
+   Artifact).
+4. For each dependency, produce a per-dependency license verdict — package
+   name, declared license, compatibility verdict, and any custom or
+   dual-licensing edge case — and write the regulatory-applicability note,
+   stating plainly where it is research rather than legal advice (see ##
+   Field list).
+5. Before treating the probe as resolved, confirm every named dependency
+   has a license verdict and that the regulatory-applicability note has
+   been written explicitly, even if it states "none identified" (see ##
+   Resolution rule).
+
+## Output shape
+
+Applying this skill produces (or updates) a per-dependency license-verdict
+table and a regulatory-applicability note, written into a project-local
+file such as `feasibility/license-scan.md` and pointed to from (or inlined
+in) `feasibility-record.md`'s legal-regulatory probe field.
 
 ## What it asks the user for
 

@@ -1,6 +1,6 @@
 ---
 name: technical-feasibility-verdict-and-timebox-selection
-description: Use when you need guidance on Decision axis: verdict selection & timebox governance. Applies to the verdict-and-timebox-selection axis.
+description: Use when the four feasibility probes have resolved (or a spike timebox has expired) and you must set the bare verdict field, route conditions/prerequisites/scope-constraints to the correct record location, or decide whether a blocked probe, an inconclusive timebox, or new post-verdict evidence changes the verdict rather than being logged as prose.
 axis: verdict-and-timebox-selection
 rule_count_floor: 10
 axes:
@@ -12,6 +12,66 @@ axes:
 ---
 
 # Decision axis: verdict selection & timebox governance
+
+## Trigger
+
+Use this axis once the other four probes (technical, prior_art,
+legal_regulatory, threat_model) have each individually reported a
+pass/fail/blocked result, or once an in-flight spike's timebox has
+expired — the question here is not whether a dependency is healthy, a
+license is compatible, or a threat is disposed (those are the sibling
+axes' job), but how to fold those already-settled findings into the
+single `verdict` field, where to place any condition/prerequisite/
+scope-constraint text, and whether a blocked probe, an inconclusive
+timebox, or fresh post-verdict evidence should change that field at
+all.
+
+## Procedure
+
+1. If a blocker can only be resolved by an outside party (vendor,
+   third party, legal), set `verdict: conditional` and record the
+   blocker in `conditions:` (rule 1).
+2. If a prerequisite is reversible and resolvable entirely in-repo,
+   set `verdict: go` and record it via the `verdict_provisional`
+   convention, not in `conditions:` (rule 2).
+3. If the evaluation only covered a bounded scope and found no
+   blocker there, set `verdict: go` and state the scope boundary
+   plainly in the record body (rule 3).
+4. When writing the `verdict` field, use only the bare enum value
+   (`go`, `no-go`, `conditional`) and keep all narrative in the record
+   body (rule 4).
+5. Withhold any verdict, including a placeholder `conditional`, until
+   all four probes have each resolved with cited evidence (rule 5).
+6. If a market argument accompanied the spec, evaluate the spec with
+   that argument set aside and record `market_argument_supplied`
+   explicitly (rule 6).
+7. When a spike's timebox expires inconclusively, stop and escalate
+   extend-vs-stop to a human — do not silently extend or force a
+   verdict (rule 7).
+8. Refuse to revise an already-reached verdict unless new evidence
+   from one of the four probes supports the revision (rule 8).
+9. When conditions would only block part of the spec's scope, split
+   the spec into a feasible slice plus a separately-gated remainder
+   instead of bundling everything under one `conditional` verdict
+   (rule 9).
+10. When an earlier `go` record's `verdict_provisional` prerequisite
+    has since been completed and merged, remove the stale line on the
+    next update rather than leaving it dangling (rule 10).
+11. Treat any probe finding resolved as `blocked:<evidence>` as a
+    mechanical hard stop on the verdict field itself, not merely a
+    caveat noted in the body next to an otherwise-passing verdict
+    (rule 11).
+
+## Output shape
+
+Applying this skill produces a feasibility record's final `verdict`
+field carrying a bare `go` / `no-go` / `conditional` value, together
+with any conditions, provisional prerequisites, or scope constraints
+placed in their correct dedicated location in the record body (never
+folded into the field itself) — this is the axis that closes out the
+record, so its output is the durable, mechanically parseable verdict
+for the record, not a new timebox or reversibility tag (those are set
+upstream by the sibling axes and only carried forward here).
 
 ## Rules
 
