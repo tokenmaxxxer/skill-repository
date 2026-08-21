@@ -1,6 +1,6 @@
 ---
 name: incident-response-tool-landscape
-description: Use when you need guidance on Tool-landscape learnings. Applies to the tool-landscape axis.
+description: Use when applying an incident-management tool ecosystem's design moves — auto-timeline capture, severity-driven escalation, blocking action-item gates, or linking instead of re-typing — to one of this role's own axes. Applies to the tool-landscape axis.
 axis: tool-landscape
 rule_count_floor: 4
 ---
@@ -15,6 +15,40 @@ customer counts, acquisition/market signal, multi-source comparison
 mentions) are in `docs/issue-1199/reports/incident-response/scout-brief.md`
 in the `on-the-record` repo; this file states only the design move and
 which existing axis it upgrades.
+
+## Trigger
+
+Apply this skill when a design move from the incident-management tool
+ecosystem (auto-timeline capture, severity-driven escalation routing,
+blocking action-item gates, link-don't-duplicate) would upgrade one of
+this role's existing axis skills, distinguishing it from those axis
+skills themselves — this skill states which existing rule the move
+upgrades, it does not replace that rule.
+
+## Procedure
+
+1. When building the timeline field, capture events into it as the
+   incident unfolds rather than reconstructing from memory afterward
+   (rule 1; upgrades [[timeline-construction]] rule 1).
+2. When classifying an incident SEV1 or SEV2, name the escalation-chain
+   shape as part of the severity classification itself (rule 2; upgrades
+   [[severity-classification-scoping]]).
+3. When drafting an action item, treat a missing owner, verb, outcome,
+   or deadline as a blocking gap, not an advisory check (rule 3;
+   upgrades [[action-item-quality]] rule 1).
+4. When the org already tracks the live incident elsewhere, link the
+   postmortem's sections to that live record instead of re-typing its
+   content (rule 4; upgrades [[timeline-construction]] and
+   [[blameless-language-editing]]).
+5. When a postmortem draft re-types content that already exists
+   verbatim in a linked live record, delete the re-typed copy and
+   replace it with a link (rule 5).
+
+## Output shape
+
+A named upgrade — which existing axis rule changes behavior and how —
+applied at the point that axis skill's own procedure runs, never a
+standalone tool catalog or a new axis of its own.
 
 ## Rules
 
