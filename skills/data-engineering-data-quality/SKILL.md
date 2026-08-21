@@ -1,6 +1,6 @@
 ---
 name: data-engineering-data-quality
-description: Use when you need guidance on Data quality — decision rules. Applies to the data-quality axis.
+description: Use when defining or reviewing data-quality checks — completeness, uniqueness, accuracy, freshness, or volume — formalizing a cross-column rule or data contract, or layering anomaly monitoring on authored checks.
 axis: data-quality
 rule_count_floor: 10
 ---
