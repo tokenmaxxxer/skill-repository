@@ -1,6 +1,6 @@
 ---
 name: marketing-scope-pruning
-description: Use when you need guidance on Subtraction: what to cut from a campaign. Applies to the scope-pruning axis.
+description: Use when drafting a campaign brief, running a pre-launch review of a draft asset, or evaluating whether an existing channel, segment, claim, or brand element should be cut.
 axis: scope-pruning
 rule_count_floor: 5
 ---
@@ -14,6 +14,37 @@ Media) on claim/CTA reduction, fetched this session — the subtraction-
 neglect finding is general-cognition research applied here to campaign
 review practice, flagged as such rather than presented as marketing-
 native research.
+
+## Trigger
+
+Apply this skill when drafting a campaign brief, running a pre-launch
+review of a draft asset, or evaluating whether an existing channel,
+segment, claim, or brand element should be cut from active use.
+
+## Procedure
+
+1. When drafting a campaign brief, cap the message to one core benefit
+   and one CTA rather than including every true claim (rule 1).
+2. When reviewing a draft asset before launch, add an explicit "what
+   can we remove" pass separate from the "what's missing" pass
+   (rule 2).
+3. When a channel, segment, or claim has run a full review cycle with
+   no measurable contribution and no upstream effect, cut it rather
+   than keeping it on the assumption removal is riskier (rule 3).
+4. When two campaign assets serve overlapping segments with overlapping
+   messages, merge them into one asset rather than running both
+   (rule 4).
+5. When an approved brand element stops matching current positioning,
+   remove it from active use immediately rather than keeping it "just
+   in case" (rule 5).
+6. When a message includes an emotional appeal that only weakly
+   connects to the audience's stated values, drop it in favor of one
+   stronger pathos element per [[message-persuasion]] rule 3 (rule 6).
+
+## Output shape
+
+A pruning decision: the applicable rule number(s), the asset/channel/
+segment/element evaluated, and the cut-or-keep verdict.
 
 ## Rules
 

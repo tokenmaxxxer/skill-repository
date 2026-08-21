@@ -1,6 +1,6 @@
 ---
 name: marketing-message-persuasion
-description: Use when you need guidance on Message construction and persuasion. Applies to the message-persuasion axis.
+description: Use when drafting or reviewing persuasive copy — choosing which rhetorical appeal to use, structuring sentences for a first-time reader, or deciding how many claims a single message should carry.
 axis: message-persuasion
 rule_count_floor: 5
 ---
@@ -14,6 +14,37 @@ model per the Medium/Atlantis-Press surveys of Kintsch's and schema-
 theory research (working-memory-limited normalization), and Presslink
 Media / Hritik Chhangani's minimalist-messaging surveys, all fetched
 this session.
+
+## Trigger
+
+Apply this skill when drafting or reviewing persuasive copy: choosing
+which rhetorical appeal (ethos/pathos/logos) to lead with, structuring
+sentences for a first-time reader, framing against an existing audience
+schema, or deciding how many benefit claims a single message should
+carry.
+
+## Procedure
+
+1. For price-sensitive or high-consideration buyers, include a logos
+   component alongside any emotional appeal (rule 1).
+2. With no prior brand relationship, open with an ethos element before
+   the pitch's core claim (rule 2).
+3. For a message aimed at driving action, apply a pathos element tied
+   to the audience's own stated values (rule 3).
+4. For a first-time reader, keep sentence/paragraph structure within
+   working-memory span rather than stacking multiple claims (rule 4).
+5. When the audience already holds a relevant schema, frame the message
+   against that schema rather than building from a blank slate
+   (rule 5).
+6. Once a message carries one core benefit, one CTA, and sufficient
+   ethos/logos/pathos support for that claim, cut every additional
+   benefit claim from the same message (rule 6).
+
+## Output shape
+
+A copy decision: the applicable rule number(s), the rhetorical
+appeal(s) or structural choice applied, and — when rule 6 applies —
+which additional claims were cut.
 
 ## Rules
 
