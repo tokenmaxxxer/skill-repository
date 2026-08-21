@@ -1,11 +1,57 @@
 ---
 name: defect-verification-reproduction-evidence-quality
-description: Use when you need guidance on Reproduction-evidence quality for a defect attempt. Applies to the reproduction-evidence-quality axis.
+description: Use when recording an attempt to reproduce a candidate defect and its supporting evidence — building the numbered repro steps, attaching the artifact, or judging whether a green suite or Present requirement actually exercised the claimed behavior.
 axis: reproduction-evidence-quality
 rule_count_floor: 8
 ---
 
 # Reproduction-evidence quality for a defect attempt
+
+## Trigger
+
+Apply this skill when recording an attempt to reproduce a candidate
+defect and its supporting evidence, including judging whether a green
+test suite or a requirement marked Present actually exercised the
+claimed behavior.
+
+## Procedure
+
+1. Start from a known, stated state and list exact inputs/values/
+   timing in a numbered sequence (rule 1).
+2. Reduce the reproduction to its minimum necessary path before
+   recording it (rule 2), keeping it within roughly 2-8 steps where the
+   underlying path allows (rule 3).
+3. Record expected vs. actual result explicitly alongside the steps
+   (rule 4).
+4. Attach the actual artifact (command output, log excerpt, run
+   transcript) rather than a paraphrase of what it showed (rule 5).
+5. For an intermittent attempt, record the actual hit rate observed
+   instead of a bare reproduced/not-reproduced label (rule 6).
+6. Capture the environment the attempt actually ran in (commit sha,
+   build/run context) alongside the repro steps (rule 7).
+7. When a first pass does not reproduce, confirm the starting state
+   matches what the candidate source described before recording
+   not-reproduced (rule 8).
+8. Retire accepting a screenshot or log excerpt with no accompanying
+   numbered steps as sufficient evidence (rule 9), and retire carrying
+   an exploration trail into the finding record instead of the reduced
+   minimal path (rule 10).
+9. Judge a "Present" requirement or a green test suite by whether it
+   exercised the claimed behavior, not merely whether it executed the
+   code path (rule 11).
+10. When a verdict rests on more than one linked causal step, attach
+    evidence to each step individually rather than one pointer for the
+    chain's end state (rule 12).
+11. Treat an empty/pass-through catch, a caught-and-logged-only error,
+    or a substituted-default fallback as its own attempt category to
+    check even when no upstream source names it (rule 13).
+
+## Output shape
+
+A reproduction record: numbered minimal-path steps from a stated
+starting state, expected vs. actual result, the attached artifact,
+environment/sha, the observed hit rate when intermittent, and
+per-step evidence when the verdict rests on a causal chain.
 
 Research trail: bug-report/reproduction-steps best-practice literature (QA Wolf bug-report guide, Marker.io steps-to-reproduce guide, TestDevLab reproduction-matters article, Supportbench reproduction-steps standardization guide, QATestLab reproduction-steps course material), plus (rules 11-13, 2026-08-14) adoption-evidence survey of the Claude Code plugin/skill ecosystem's own verification tooling (Anthropic's official plugin marketplace's PR-review toolkit and a widely-installed root-cause-analysis skill). All fetched/searched this session.
 

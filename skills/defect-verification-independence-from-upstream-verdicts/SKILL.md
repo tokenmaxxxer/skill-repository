@@ -1,11 +1,52 @@
 ---
 name: defect-verification-independence-from-upstream-verdicts
-description: Use when you need guidance on Preserving independence from coding/qa/review's prior verdicts. Applies to the independence-from-upstream-verdicts axis.
+description: Use when devising or running a defect-verification attempt against a review requirement marked Present, a qa defect report, or a closed_checks entry — keeping the attempt independent of coding/qa/review's prior verdict rather than letting it pre-shape scope, rigor, or which attempts get made.
 axis: independence-from-upstream-verdicts
 rule_count_floor: 8
 ---
 
 # Preserving independence from coding/qa/review's prior verdicts
+
+## Trigger
+
+Apply this skill when devising or running a verification attempt
+against a review requirement marked Present, a qa defect report, or a
+closed_checks entry carried over from coding/qa/review.
+
+## Procedure
+
+1. Treat a review requirement marked Present as a claim to
+   independently test, not as a fact already settled (rule 1).
+2. When devising a self-devised attempt, deliberately include at least
+   one edge case or negative path rather than only happy-path checks
+   (rule 2).
+3. Re-derive a closed_checks entry from primary evidence rather than
+   citing it against a stale sha (rule 3).
+4. When an attempt comes up not-reproduced, keep looking for other
+   candidate attempts on the same area rather than treating the whole
+   area as settled (rule 4).
+5. Do not adjust an attempt's scope or rigor based on which role
+   (coding, qa, or review) is credited with the underlying work
+   (rule 5).
+6. When qa's defect report and review's Present verdict disagree about
+   the same area, attempt both independently rather than resolving the
+   disagreement by deferring to the more authoritative-sounding source
+   (rule 6).
+7. Record a not-reproduced outcome with the same evidentiary rigor as
+   a reproduced one (rule 7).
+8. Under time or attempt-budget pressure, do not let it default-favor
+   citing closed_checks over re-deriving (rule 8).
+9. Retire treating a clean review record as lowering the bar for how
+   many self-devised attempts a pass should include (rule 9), and
+   retire writing an attempt's expected outcome in prose that leaks
+   into the outcome record before the attempt runs (rule 10).
+
+## Output shape
+
+An independently-derived verdict per attempt: not-reproduced attempts
+written with the same rigor as reproduced ones, closed_checks entries
+re-derived rather than cited stale, and scope/rigor held constant
+regardless of which upstream role or verdict is in play.
 
 Research trail: cognitive-bias-in-testing literature (MagicPod confirmation-bias-in-QA article, Xebia bias-mapping article, PractiTest cognitive-bias article, Katalon cognitive-biases guide). All fetched/searched this session.
 
