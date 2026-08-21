@@ -1,6 +1,6 @@
 ---
 name: market-analysis-five-forces
-description: Use when you need guidance on Five-forces verdict rules (Porter). Applies to the five-forces axis.
+description: Use when rating one of Porter's five forces (rivalry, buyer power, supplier power, threat of new entrants, threat of substitutes), turning force ratings into an overall attractiveness verdict, or checking that a force rating is quantified and appropriately hedged. Applies to the five-forces axis.
 axis: five-forces
 rule_count_floor: 10
 ---
@@ -14,6 +14,45 @@ rulebook's `produces.five-forces summary` field). Research trail: layer
 thresholds) plus layer 1 (practitioner scoring practice) plus layer 3
 (overconfidence-in-forecasting literature bearing on how a verdict
 should be hedged).
+
+## Trigger
+
+Apply this skill when rating competitive rivalry, buyer power, supplier
+power, threat of new entrants, or threat of substitutes for a segment,
+or when combining those five ratings into an overall attractiveness
+verdict.
+
+## Procedure
+
+1. When rating rivalry, compute or source an HHI against the current
+   DOJ/FTC thresholds rather than eyeballing competitor count, and
+   treat low switching costs plus undifferentiated products as another
+   signal of strong rivalry (rules 1, 3).
+2. When rating buyer or supplier power, check for concentration
+   asymmetry (few large buyers/suppliers vs. many sellers, or an
+   irreplaceable input) rather than stated negotiating posture (rules
+   2, 6).
+3. When rating threat of new entrants, check capital requirements to
+   reach minimum efficient scale and any regulatory licensing gate
+   (rule 4).
+4. When rating threat of substitutes, check whether a substitute
+   satisfies the same underlying job at lower total cost of ownership,
+   even if its category looks unrelated (rule 5).
+5. Before publishing any force's rating, pair it with at least one
+   quantified data point, and drop any rating that rests only on a
+   self-interested competitor statement (rules 7-8).
+6. When a force's rating is supported by only one independent data
+   source, state the verdict as provisional/low-confidence rather than
+   with full certainty (rule 9).
+7. When combining the five ratings into a verdict, report them
+   separately with the strongest (worst) force named as the binding
+   constraint rather than averaging into one bland rating (rule 10).
+
+## Output shape
+
+Each of the five forces rated with a quantified, cited data point,
+hedged to its evidence base, and an overall verdict that names the
+binding constraint force rather than an averaged score.
 
 ## Rules
 

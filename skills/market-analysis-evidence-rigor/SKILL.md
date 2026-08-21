@@ -1,6 +1,6 @@
 ---
 name: market-analysis-evidence-rigor
-description: Use when you need guidance on Evidence-rigor rules. Applies to the evidence-rigor axis.
+description: Use when deciding whether a market/competitor claim needs a primary source, tracing a secondary citation to its primary source, labeling an unsourced claim as an assumption, hedging a forecast or count claim, or checking a citation list for padding or staleness. Applies to the evidence-rigor axis.
 axis: evidence-rigor
 rule_count_floor: 10
 ---
@@ -13,6 +13,42 @@ list / evidence-appendix requirement). Research trail: layer 1
 (practitioner sourcing standards) plus layer 3 (overconfidence/
 forecasting-bias literature bearing on how unlabeled certainty should
 be treated).
+
+## Trigger
+
+Apply this skill when a market or competitor claim is being written
+down, when only a secondary source is available for a claim, when no
+source can be found at all, when a forecast or count claim is being
+stated, or when reviewing a citation list for redundancy or staleness.
+
+## Procedure
+
+1. When stating a factual market/competitor claim, attach a primary
+   source; if only a secondary source is available, trace its citation
+   chain to the primary source rather than citing the secondary
+   summary (rules 1-2, 4).
+2. When no source can be found after a genuine search, label the claim
+   explicitly as an assumption rather than stating it as fact (rule 3).
+3. When presenting a market-sizing or forecast number, hedge it as a
+   range or with an explicit confidence qualifier rather than a single
+   precise figure (rule 5).
+4. When citing a competitor's own marketing claim, flag it as
+   self-interested testimony and pair it with an independent source
+   before it counts as evidence (rule 6).
+5. When a count or ratio claim appears in the record, require it to be
+   reproducible from a named, checkable source rather than stated as a
+   bare number (rule 8).
+6. When reviewing a citation list, drop redundant secondary citations
+   that restate the same primary fact, keep the primary-vs-secondary
+   type visibly distinguishable, and note the source date for any
+   time-sensitive claim (rules 7, 9-10).
+
+## Output shape
+
+Every factual, count, or forecast claim in the record either carries a
+traceable primary source or is explicitly labeled an assumption, with
+secondary sources reserved for context, redundant citations removed,
+and time-sensitive claims dated.
 
 ## Rules
 

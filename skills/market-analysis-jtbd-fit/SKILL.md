@@ -1,6 +1,6 @@
 ---
 name: market-analysis-jtbd-fit
-description: Use when you need guidance on JTBD-landscape verdict rules. Applies to the jtbd-fit axis.
+description: Use when naming a customer job for JTBD analysis, identifying the strongest competing alternative, drafting a job statement or outcome statement, or judging whether a spec's differentiation verdict holds against that alternative. Applies to the jtbd-fit axis.
 axis: jtbd-fit
 rule_count_floor: 10
 ---
@@ -13,6 +13,49 @@ alternative (this rulebook's `produces.JTBD-landscape verdict` field).
 Research trail: layer 2 (Christensen JTBD, Ulwick Outcome-Driven
 Innovation, verified at source) plus layer 1 (practitioner job-framing
 practice).
+
+## Trigger
+
+Apply this skill when naming the customer job a spec competes for,
+identifying the strongest competing alternative, drafting a job or
+outcome statement, or writing the differentiation verdict against that
+alternative.
+
+## Procedure
+
+1. When naming the job, phrase it at the level of underlying progress,
+   not product category, using the circumstance-plus-motivation
+   structured form (rules 1, 4).
+2. When identifying the strongest competing alternative, ask what the
+   customer would do instead if this product did not exist, including
+   "do nothing," rather than defaulting to the nearest same-category
+   competitor (rule 2).
+3. When the job has a measurable outcome, state the differentiation
+   verdict directly against that outcome metric rather than as an
+   unquantified feature comparison, and require any "better" verdict to
+   name the specific outcome and evidence (rules 3, 5).
+4. When the differentiation is actually about price rather than job
+   performance, state it as "price-differentiated" rather than folding
+   it into a "wins the job" verdict (rule 6).
+5. When multiple candidate jobs are listed, cut to the one the
+   strongest evidence supports as primary before finalizing the verdict
+   (rule 7).
+6. When the competing alternative is "doing nothing," address why now
+   in the verdict rather than only comparing features against a
+   nonexistent baseline (rule 8).
+7. When the job statement and the competitor-mapping/five-forces
+   sections name different competitors, reconcile them explicitly
+   before publishing (rule 9).
+8. When collecting outcome statements from interviews, phrase each in
+   Ulwick's "minimize/increase the <metric> when <context>" syntax
+   rather than as a restated feature request (rule 10).
+
+## Output shape
+
+A job statement in circumstance-plus-motivation form, a named strongest
+competing alternative, and a differentiation verdict stated against a
+measurable outcome (or explicitly price-differentiated), reconciled
+against the competitor-mapping/five-forces sections.
 
 ## Rules
 
