@@ -4,7 +4,7 @@ subject: issue-1174
 rule_count_floor: 23
 axes: 7
 tier: rich
-description: Use when you need guidance on Requirements-engineering operational playbook.
+description: Use when selecting an EARS sentence template while drafting a requirement, assigning a requirement's verification method, spotting a weak/ambiguous word or double reading, spotting a conjunction or mixed-verification-method requirement, deciding traceability-link granularity, breaking a MoSCoW-tier tie, or reviewing a spec for gold-plating/redundancy/staleness.
 
 ---
 
@@ -16,6 +16,64 @@ research per issue #1174 amendment 1; evidence trail in
 docs/issue-1174/reports/scout-brief.md. Rules are decisions, not
 definitions: each names the triggering condition and the choice it
 forces.
+
+## Trigger
+
+Use this skill when: selecting an EARS sentence template while drafting a
+requirement (rules 1-6); assigning a requirement's verification method
+(rules 7-11b); spotting a weak/ambiguous word or a statement admitting two
+or more readings (rules 12-15); spotting a conjunction joining two
+capabilities or a requirement needing two verification methods (rules
+16-17); deciding traceability-link granularity or updating a stale link
+(rules 18-20); breaking a MoSCoW-tier tie or classifying an unstated-
+necessity requirement (rules 21-22); or reviewing a spec for gold-plating,
+redundant coverage, supersession, missing subtraction pass, or an
+unresolvable requirement (rules 23-27).
+
+## Procedure
+
+1. EARS-pattern selection (rules 1-6): classify the requirement's
+   condition — always-true, event-triggered, state-persistent,
+   error/fault, optional-feature, or multi-clause — and write it in the
+   matching EARS template (ubiquitous, event-driven, state-driven,
+   unwanted-behavior, feature, or complex).
+2. Verification-method selection (rules 7-11b): assign one of Inspection,
+   Demonstration, Test, or Analysis per the requirement's confirmability;
+   never leave the method unset; pair a Test/Demonstration requirement
+   with a literal runnable check when one exists; run a whole-batch
+   consistency/coverage pass before handoff.
+3. Ambiguity detection & resolution (rules 12-15): flag listed weak
+   words, superlatives, and open-ended terms for a measurable/bounded
+   restatement; log any statement admitting two or more readings and
+   resolve to one before assigning an ID; rewrite negative statements as
+   the positive capability they assert.
+4. Singularity/atomicity (rules 16-17): split a requirement joined by a
+   conjunction into independently verifiable requirements, and split a
+   requirement that would need two different verification methods to
+   close.
+5. Traceability-link granularity (rules 18-20): link at requirement-to-
+   test granularity for regulated/high-blast-radius work, coarser
+   feature-to-group granularity for low-risk/exploratory work (stated in
+   the matrix's status field), and always update a row's link/status in
+   the same change a requirement changes in.
+6. Prioritization tie-break (rules 21-22): break same-tier MoSCoW ties by
+   Kano category (Must-Be > Performance > Delighter); return an
+   unclassifiable requirement to elicitation rather than defaulting it to
+   Could-Have.
+7. REMOVAL (rules 23-27): delete gold-plated requirements outright, merge
+   redundant requirements to one surviving ID, archive superseded
+   requirements, run a dedicated subtraction-only review pass, and
+   recommend removal (logged `unverifiable`/`source-unresolvable`) for a
+   requirement that repeatedly fails ambiguity resolution.
+
+## Output shape
+
+A cited condition -> choice -> source decision per requirement-engineering
+judgment point: the EARS template chosen, the verification method
+assigned, the ambiguity flagged and its resolution, the singularity split
+performed, the traceability granularity chosen, the MoSCoW+Kano tie-break
+result, or the removal/merge/archive action taken — each traceable to the
+rule number(s) it was derived from.
 
 ## Axis 1 — EARS-pattern selection
 
