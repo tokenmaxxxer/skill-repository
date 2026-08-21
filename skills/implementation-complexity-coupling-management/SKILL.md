@@ -1,6 +1,6 @@
 ---
 name: implementation-complexity-coupling-management
-description: Use when you need guidance on Complexity / coupling management. Applies to the complexity-coupling-management axis.
+description: Use when a class's coupling or cohesion metric crosses a threshold, a caller chains through nested accessors, a cross-module import direction is being introduced, or a pre-merge check pipeline needs ordering — decide whether to split, restructure, widen a contract, remove indirection, or reorder checks.
 axis: complexity-coupling-management
 rule_count_floor: 6
 tier: sparse
@@ -11,6 +11,44 @@ tier: sparse
 Decision rules for keeping module interdependence low and cohesion high,
 with a numeric threshold to trigger refactor, plus removal rules for
 shedding coupling that already exists.
+
+## Trigger
+
+Apply this skill when writing or reviewing code that touches module
+boundaries: a class's CBO or LCOM metric is being evaluated, a caller
+chains through an object's internal object, a new feature could either
+widen an existing contract or add a new cross-module dependency edge, a
+dependency-injection interface or shared "utils" module is under review
+for removal, a cross-module import direction is being introduced, or a
+local pre-merge check pipeline's tool set or step order is being decided.
+
+## Procedure
+
+1. If evaluating a class's coupling, check its CBO count; at 9, split
+   the class or introduce a narrower interface (rule 1).
+2. If a caller chains through nested accessors (`a.getB().getC()`),
+   restructure to a delegating method instead (rule 2).
+3. If evaluating cohesion, check for methods operating on disjoint
+   field subsets (high LCOM) and split along that boundary (rule 3).
+4. If a new feature could widen an existing contract instead of adding a
+   dependency edge, prefer widening the contract (rule 4).
+5. If a DI interface has exactly one implementation and no test double
+   substitutes a second one, flag it for removal (rule 5).
+6. If a shared "utils"/"common" module serves unrelated callers for
+   unrelated functions, split it back apart by consumer group (rule 6).
+7. If a cross-module import direction is forbidden by the architecture,
+   encode it as a checked rule at the point of introduction, not after a
+   cycle accumulates (rule 7).
+8. If two or more local checks overlap in what they catch, consolidate
+   onto the one covering the union (rule 8).
+9. If ordering a local pre-merge check pipeline, order cheapest-and-
+   narrowest checks first and most-expensive-and-broadest last (rule 9).
+
+## Output shape
+
+A coupling/cohesion decision: the metric or condition that triggered it,
+the applicable rule number, and the concrete action (split, restructure,
+widen, remove, reorder) to take.
 
 ## Rules
 
