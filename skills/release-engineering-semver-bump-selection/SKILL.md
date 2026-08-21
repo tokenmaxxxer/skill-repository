@@ -1,11 +1,50 @@
 ---
 name: release-engineering-semver-bump-selection
-description: Use when you need guidance on Semver bump selection. Applies to the semver-bump-selection axis.
+description: Use when selecting a MAJOR/MINOR/PATCH version bump for a release, deciding whether a change is actually breaking, or versioning a pre-release/build-metadata artifact.
 axis: semver-bump-selection
 rule_count_floor: 12
 ---
 
 # Semver bump selection
+
+## Trigger
+
+Apply this skill when a release needs a version number: classifying a
+change's severity (breaking / additive / fix-only), resolving which
+bump wins when multiple changes land together, or versioning a
+pre-release or build-metadata artifact.
+
+## Procedure
+
+1. Classify the change: removing/renaming a public export, signature,
+   config key, or CLI flag is MAJOR (rule 1); an additive, non-breaking
+   change is MINOR (rule 2); an internal-only bug fix is PATCH (rule 3).
+2. When changes of different severities land in the same release, the
+   release's version is set by the highest-severity change, never
+   averaged (rule 4); when unsure whether a change is actually breaking,
+   treat it as breaking (rule 5).
+3. Accompany any MAJOR bump with a migration note (what changed, who's
+   affected, what to do, when the old behavior disappears) (rule 6),
+   and hold a scheduled-for-removal deprecated surface's actual removal
+   for the next MAJOR rather than removing it in a MINOR/PATCH (rule
+   7).
+4. Correct over-cautious version churn by re-auditing releases against
+   the actual API diff, rather than adding a second parallel versioning
+   scheme (rule 8).
+5. Version a pre-release/experimental feature with a pre-release
+   identifier rather than a MINOR/MAJOR bump (rule 9), and use a `+`
+   build-metadata suffix (never a new version) for artifacts differing
+   only in build metadata (rule 10).
+6. Propagate a MAJOR bump to a consuming library when a dependency's own
+   MAJOR bump forces a change to the consumer's public contract (rule
+   11), and when in doubt between two adjacent severities, bump higher
+   (rule 12).
+
+## Output shape
+
+A selected version bump (MAJOR/MINOR/PATCH, or pre-release/build-
+metadata identifier) for the release, with a migration note attached
+when MAJOR, each traceable to the rule above that forced it.
 
 ## Rules
 

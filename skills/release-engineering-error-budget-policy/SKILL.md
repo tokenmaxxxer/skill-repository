@@ -2,11 +2,10 @@
 name: release-engineering-error-budget-policy
 description: >-
   Use when working the ops role's steady state (ops/state.md status:
-  steady). Defines, per SLI, the measurement method, SLO target,
-  measurement window, and consequence table Google's error-budget policy
-  describes. Read (not written) by the steady -> readiness refusal rule:
-  if error_budget reads exhausted, that transition is refused regardless
-  of how ready the next change looks.
+  steady) to write, per SLI, the measurement method, SLO target,
+  measurement window, and consequence table that gates steady ->
+  readiness on error_budget: ok, or when a true P0/security-fix exception
+  needs to be routed around an exhausted budget.
   Do NOT use to define what "healthy" means from scratch — this role
   consumes the SLO/measurement design feasibility already produced; it
   does not invent it.
@@ -19,6 +18,35 @@ that is the measurement design `feasibility` already produced and `ops`
 was handed at `idle -> readiness`. This skill's job is only to write down
 the policy consequence, per SLI, so the `steady` refusal rule has something
 mechanical to read.
+
+## Trigger
+
+Apply this skill while working the `steady` state: writing or updating
+the per-SLI error-budget policy that `error_budget:` reads before any
+`steady -> readiness` transition, or handling a dispute about whether the
+budget calculation is right or an exception applies.
+
+## Procedure
+
+1. For each SLI, record the fields per "Fields, per SLI" below into
+   `ops/error-budget-policy.md` (see "Where it is written").
+2. Leave `ops/state.md`'s `error_budget:` field for the mechanical
+   `steady -> readiness` check to read; do not edit it to unblock a
+   transition (see "How it is read").
+3. If the field reads `exhausted`, refuse the transition outright,
+   regardless of readiness, except for true P0/security-fix work — route
+   that exception through the user rather than editing the field (see
+   "How it is read").
+4. If the user disputes the budget reading or an exception's validity,
+   escalate to the named human path (the CTO, in the sourced practice)
+   rather than resolve it by editing the field (see "How it is read").
+
+## Output shape
+
+`ops/error-budget-policy.md`, one section per SLI (measurement method,
+SLO target, measurement window, consequence table), read by
+`ops/state.md`'s `error_budget:` field, which the `steady -> readiness`
+transition checks mechanically before proceeding.
 
 ## Fields, per SLI (Google's error-budget-policy shape)
 

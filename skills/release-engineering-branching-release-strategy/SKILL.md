@@ -1,11 +1,55 @@
 ---
 name: release-engineering-branching-release-strategy
-description: Use when you need guidance on Branching and release strategy. Applies to the branching-release-strategy axis.
+description: Use when choosing between trunk-based development, release branches, feature flags, or hotfix branching for a service, or deciding when to retire a stale release/feature branch.
 axis: branching-release-strategy
 rule_count_floor: 12
 ---
 
 # Branching and release strategy
+
+## Trigger
+
+Apply this skill when choosing how a team should branch and release —
+trunk-based development vs. long-lived release branches, whether
+incomplete multi-day work should live behind a feature flag instead of a
+branch, how to patch an old release, how to bundle config with a
+release, or when to retire a release branch or a long-lived-branch
+habit in favor of trunk-based development.
+
+## Procedure
+
+1. Default to trunk-based development for a team integrating at least
+   daily (rule 1), using feature flags rather than long-lived branches
+   for multi-day work (rule 2).
+2. For a service needing a stabilization window before a scheduled
+   release, cut a release branch from trunk near the release date and
+   restrict it to cherry-picked fixes only (rule 3).
+3. When patching an old release, cherry-pick onto that release's branch
+   using the original toolchain, not the current one (rule 4).
+4. Decide how to bundle config by its change frequency relative to the
+   binary (rule 5), and favor smaller, more frequent releases when
+   velocity and testing burden are in tension (rule 6).
+5. At scale, prefer a self-service release process over a centralized
+   gatekeeper (rule 7).
+6. Where long-lived feature branches are accumulating conflicts, or a
+   codebase runs both long-lived branches and feature flags for the
+   same class of change, migrate toward trunk-based development and
+   retire the redundant path rather than invest further in either
+   (rules 8, 10).
+7. Retire a release branch once its stabilization window has shipped,
+   rather than leave it open indefinitely (rule 9), and prefer
+   trunk-based development's per-commit control once branching overhead
+   itself is the release bottleneck (rule 11).
+8. For a production hotfix while trunk holds unreleased work, cut from
+   the last known-good release tag and cherry-pick forward, not from
+   current trunk (rule 12).
+
+## Output shape
+
+A stated branching/release strategy (trunk-based, release-branch, or
+hotfix-branch) for the situation at hand, each choice traceable to the
+rule above that forced it, plus, where applicable, a stale
+branch/flag-retirement action.
 
 ## Rules
 
