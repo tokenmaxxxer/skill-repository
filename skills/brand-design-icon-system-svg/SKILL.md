@@ -3,6 +3,8 @@ name: brand-design-icon-system-svg
 description: Use when drawing or reviewing an icon for an SVG icon system, sizing an icon to a keyline grid, deciding an icon's color/viewBox/aria attributes, or checking an icon's pixel-fitting at its target render size.
 axis: icon-system-svg
 rule_count_floor: 5
+globs:
+  - "**/*.svg"
 ---
 
 # SVG icon system rules
