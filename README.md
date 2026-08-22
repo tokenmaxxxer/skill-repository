@@ -40,6 +40,26 @@ git -C ~/skill-registry pull
      드러나게 (자동 호출 판단 기준, 1024자 이하)
 2. PR → merge되면 각자 `git -C ~/skill-registry pull`로 반영.
 
+### `globs:` (opt-in, 파일 패턴 트리거)
+
+트리거가 산문(prose)이 아니라 파일 패턴으로 결정되는 스킬(예: YAML manifest,
+`package.json`, `*.svg`)은 frontmatter에 `globs:` 필드를 추가로 선언할 수
+있다. 없어도 무방한 opt-in 필드이며, 있을 경우 conformance 스크립트가 형식을
+검증한다.
+
+```yaml
+globs:
+  - "**/*.yaml"
+  - "**/requirements*.txt"
+```
+
+- 값은 반드시 YAML 리스트여야 한다 (스칼라 값은 malformed로 거부됨).
+- 리스트가 비어 있으면 malformed.
+- 각 패턴은 최소 하나의 glob 와일드카드(`*` 또는 `?`)를 포함해야 한다.
+- `globs:`는 `description:`의 "Use when" 트리거 문장을 대체하지 않는다 —
+  파일 패턴은 자동 호출을 보조하는 추가 신호일 뿐, 트리거 서술 자체는
+  여전히 `description:`이 담당한다.
+
 ## 구조
 
 ```
