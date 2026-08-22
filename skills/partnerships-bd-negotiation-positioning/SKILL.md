@@ -50,3 +50,16 @@ criteria substituted for a stalled positional exchange.
 
 ### 3. Drop objective-criteria-free positional bargaining rather than adding another concession round on top of it
 - **Condition**: when a negotiation has stalled into repeated back-and-forth concessions on a single number (price, revenue split, exclusivity term) with no independent standard being invoked by either side **Choice**: instead of responding to a stalled positional exchange with yet another counter-offer, remove the positional-bargaining frame itself — reintroduce objective, external criteria (market comparables, cost data, independent benchmarks) that both sides can test the number against, and separate the people/relationship issue from the substantive number **Why**: principled negotiation (Fisher, Ury & Patton, Harvard Negotiation Project) is designed to produce wise outcomes efficiently by focusing on interests and objective criteria rather than positions; teams under negotiation pressure default to the additive move (one more concession) because removing the positional frame and resetting to objective criteria is the harder, subtractive move to reach for **Source**: PON, Harvard Law School, "Principled Negotiation: Focus on Interests to Create Value", https://www.pon.harvard.edu/daily/negotiation-skills-daily/principled-negotiation-focus-interests-create-value/ ; Beyond Intractability, "Summary of Getting to Yes: Negotiating Agreement Without Giving In", https://www.beyondintractability.org/bksum/fisher-getting **Counter-example test**: a revenue-split negotiation on its fifth counter-offer (22% -> 23% -> 24%...) with neither side having cited a market-comparable split or any external benchmark fails this rule — the pattern of pure concession-trading with no objective criteria is the violation.
+
+## Related skills
+
+- `negotiation-batna-and-zopa-preparation` — the generic (non-BD-scoped)
+  BATNA/ZOPA mechanics behind rules 1-2 above; chains there for
+  procurement, vendor, or internal-resource negotiations that fall
+  outside this skill's BD-deal scope.
+- `negotiation-interests-vs-positions-framing` — the interests-
+  identification step behind rule 3 above, developed as a first-class
+  procedure rather than a single sub-clause.
+- `negotiation-vendor-evaluation-rfp-scoring` — when the counterpart is
+  a vendor being compared against others via weighted criteria, rather
+  than a single BD partner in a live negotiation.
