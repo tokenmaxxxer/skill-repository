@@ -37,14 +37,17 @@ rules for those.
 2. Within that section, match the specific `Condition:` line of each
    rule to the case in front of you; more than one rule in a section can
    apply (e.g. Rule 1.1 and Rule 1.3 can both bear on the same widget).
-3. For an ARIA role decision: apply Rule 1.1 (can you fully implement
-   the role?), then Rule 1.2 (does an existing role cloak native
+3. For an ARIA role decision: apply Rule 1.4 (does a native element
+   already give you this for free?) first, then Rule 1.1 (can you fully
+   implement the role?), Rule 1.2 (does an existing role cloak native
    semantics and need removal?), then Rule 1.3 (is this actually a state
    attribute, not a role/name change?).
 4. For an accessible-name decision: apply Rule 2.1 (remove an
    overriding `aria-label`/`aria-labelledby` on a naming-from-content
-   role), Rule 2.2 (prefer visible text as the name source), and Rule
-   2.3 (never let `title`/`placeholder` be the only name source).
+   role), Rule 2.2 (prefer visible text as the name source), Rule 2.3
+   (never let `title`/`placeholder` be the only name source), and Rule
+   2.4 (when the computed name is wrong, walk the accname precedence
+   order to find which source is actually winning).
 5. For a contrast decision: determine text size/weight first to select
    Rule 3.1 (standard, ≥4.5:1) vs. Rule 3.2 (large text, ≥3:1) without
    rounding, then check Rule 3.3's five exemption conditions before
@@ -107,6 +110,19 @@ Choice: add the single state attribute (`aria-pressed`, `aria-expanded`,
 `aria-selected`) without touching role or name.
 Source: https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/ (fetched 2026-08-13)
 
+**Rule 1.4 — First Rule of ARIA: prefer a native element over ARIA-on-a-`<div>`.**
+Condition: a component is being built and a native HTML element
+(`<button>`, `<nav>`, `<input>`, `<a href>`, ...) already provides the
+role, state, and keyboard behavior the component needs.
+Choice: use the native element; do not reach for `role`/`aria-*`
+attributes on a generic `<div>`/`<span>` to re-implement semantics and
+keyboard handling a native element gives for free.
+Why: the WAI-ARIA Authoring Practices' own "No ARIA is better than Bad
+ARIA" / First Rule of ARIA states that if a native HTML element or
+attribute has the semantics and behavior you require, use it instead of
+re-purposing an element and adding ARIA to make it accessible.
+Source: https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/ (fetched 2026-08-22)
+
 ## 2. Accessible naming
 
 **Rule 2.1 [REMOVAL] — Remove `aria-label`/`aria-labelledby` that
@@ -148,6 +164,25 @@ Why: "Because the purpose of these attributes is not naming, their
 content typically yields low quality accessible names that are not
 effective."
 Source: https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/ (fetched 2026-08-13)
+
+**Rule 2.4 — Know the accname precedence order before debugging a wrong
+accessible name.**
+Condition: an element's computed accessible name does not match what
+was intended, and multiple naming sources are present at once
+(`aria-labelledby`, `aria-label`, native labeling (e.g. `<label>`),
+visible content, `title`).
+Choice: resolve the mismatch by walking the Accessible Name and
+Description Computation precedence order, highest first:
+`aria-labelledby` > `aria-label` > native host-language labeling
+mechanism (e.g. `<label for>`) > element content/subtree > `title`
+attribute. Fix the highest-precedence source that is present and wrong,
+not a lower one — editing a `<label>` has no effect if an
+`aria-labelledby` elsewhere is already winning.
+Why: the accname computation is a strict precedence chain, not a merge
+of all present sources — a lower-precedence value is silently ignored
+whenever a higher one is present, which is the single most common cause
+of "I changed the label but the accessible name didn't change."
+Source: https://www.w3.org/TR/accname-1.2/ (fetched 2026-08-22)
 
 ## 3. Contrast (WCAG 1.4.3)
 
@@ -286,3 +321,4 @@ Source: Architecture Decision Record rationale-capture convention
 - https://webaim.org/projects/screenreadersurvey10/
 - https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html
 - https://www.a11yflow.dev/blog/axe-vs-lighthouse-vs-wave-vs-pa11y
+- https://www.w3.org/TR/accname-1.2/

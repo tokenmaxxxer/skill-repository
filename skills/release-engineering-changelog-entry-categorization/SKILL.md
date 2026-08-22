@@ -2,7 +2,7 @@
 name: release-engineering-changelog-entry-categorization
 description: Use when categorizing a changelog entry (Added/Changed/Deprecated/Removed/Fixed/Security), deciding whether an entry belongs at all, or ordering/dating a release's changelog section.
 axis: changelog-entry-categorization
-rule_count_floor: 12
+rule_count_floor: 13
 ---
 
 # Changelog entry categorization
@@ -114,3 +114,16 @@ per the rules above.
     to omit that category heading rather than print it with no entries
     under it — an empty heading adds scanning cost with zero information.
     source: Keep a Changelog v1.1.0 — https://keepachangelog.com/en/1.1.0/
+
+13. **When** the project's commit history follows Conventional Commits
+    and a changelog entry is being derived from a commit's type prefix,
+    **choose** the mapping `feat` -> `Added` (or `Changed` if it alters
+    existing behavior rather than adding new), `fix` -> `Fixed`,
+    a commit carrying a `BREAKING CHANGE:` footer or a `!` after the
+    type/scope -> `Changed` (and treat it as the release's MAJOR-bump
+    driver per `release-engineering-semver-bump-selection`) — never
+    invent an ad hoc category name from the raw commit type string,
+    since Conventional Commits' own type vocabulary (`feat`, `fix`,
+    `chore`, `refactor`, `docs`, ...) is not the same vocabulary as Keep
+    a Changelog's six categories and the two must be mapped, not copied.
+    source: Conventional Commits v1.0.0 — https://www.conventionalcommits.org/en/v1.0.0/
