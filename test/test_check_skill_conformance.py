@@ -89,6 +89,41 @@ class CheckSkillConformanceTest(unittest.TestCase):
         line, _ = matches[0]
         self.assertEqual(content.splitlines()[line - 1].strip(), "### 1. Sample rule title")
 
+    def test_valid_globs_field_has_no_violations(self):
+        content = VALID_SKILL.replace(
+            "rule_count_floor: 1\n",
+            'rule_count_floor: 1\nglobs:\n  - "**/*.yaml"\n  - "**/requirements*.txt"\n',
+        )
+        skill_md = write_skill(self.tmp_path, "sample-skill", content)
+        self.assertEqual(conformance.check_skill(skill_md, "sample-skill"), [])
+
+    def test_malformed_globs_scalar_is_flagged(self):
+        content = VALID_SKILL.replace(
+            "rule_count_floor: 1\n",
+            "rule_count_floor: 1\nglobs: **/*.yaml\n",
+        )
+        skill_md = write_skill(self.tmp_path, "sample-skill", content)
+        reasons = conformance.check_skill(skill_md, "sample-skill")
+        self.assertTrue(any("inline scalar" in m for _, m in reasons), reasons)
+
+    def test_globs_pattern_without_wildcard_is_flagged(self):
+        content = VALID_SKILL.replace(
+            "rule_count_floor: 1\n",
+            'rule_count_floor: 1\nglobs:\n  - "package.json"\n',
+        )
+        skill_md = write_skill(self.tmp_path, "sample-skill", content)
+        reasons = conformance.check_skill(skill_md, "sample-skill")
+        self.assertTrue(any("no glob wildcard" in m for _, m in reasons), reasons)
+
+    def test_empty_globs_list_is_flagged(self):
+        content = VALID_SKILL.replace(
+            "rule_count_floor: 1\n",
+            "rule_count_floor: 1\nglobs:\n",
+        )
+        skill_md = write_skill(self.tmp_path, "sample-skill", content)
+        reasons = conformance.check_skill(skill_md, "sample-skill")
+        self.assertTrue(any("empty or malformed" in m for _, m in reasons), reasons)
+
     def test_full_repo_tree_is_conformant(self):
         skills_dir = REPO_ROOT / "skills"
         violations = []

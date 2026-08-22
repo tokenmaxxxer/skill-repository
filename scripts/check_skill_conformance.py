@@ -12,6 +12,9 @@ block (delimited by `---` lines) that contains:
     TRIGGER_MARKERS)
   - a non-empty `axis:` or `axes:` field, when the skill declares
     `rule_count_floor:` (i.e. is a numbered-decision-rule skill)
+  - a well-formed `globs:` field, when present (issue #62): an opt-in
+    YAML list of one or more non-empty glob patterns, each containing at
+    least one wildcard character (`*` or `?`)
 
 and, when its body has a `## Rules` section of `### N. <title>` blocks,
 every such numbered rule block contains at least one `source: <https?://
@@ -57,6 +60,7 @@ TRIGGER_MARKERS = (
     "invoke whenever",
 )
 
+GLOB_ITEM_RE = re.compile(r'^-\s*"?([^"\n]+)"?\s*$')
 SOURCE_LINE_RE = re.compile(r"(?im)^.*source:.*https?://\S+")
 RULE_HEADING_RE = re.compile(r"^### *(\d+)\.", re.MULTILINE)
 NEXT_TOP_HEADING_RE = re.compile(r"\n## [^#]")
@@ -137,6 +141,43 @@ def has_axis_field(frontmatter):
     return False
 
 
+def check_globs_field(text, frontmatter):
+    """Validate an optional `globs:` frontmatter field. Absent is fine
+    (opt-in). Present, it must be a YAML list of one or more non-empty
+    string patterns, each containing at least one glob wildcard
+    character (`*` or `?`)."""
+    m = re.search(r"^globs:[ \t]*(.*)$", frontmatter, re.MULTILINE)
+    if m is None:
+        return []
+    globs_line = line_of(text, 4 + m.start())
+    inline_value = m.group(1).strip()
+    if inline_value:
+        return [(globs_line, f"globs: must be a YAML list, not an inline scalar ('{inline_value}')")]
+
+    items = []
+    for line in frontmatter[m.end():].splitlines():
+        stripped = line.strip()
+        if not stripped:
+            continue
+        if not line.startswith(("  ", "\t", "-")):
+            break
+        item_match = GLOB_ITEM_RE.match(stripped)
+        if not item_match:
+            break
+        items.append(item_match.group(1).strip())
+
+    if not items:
+        return [(globs_line, "globs: list is empty or malformed")]
+
+    reasons = []
+    for item in items:
+        if not item:
+            reasons.append((globs_line, "globs: contains an empty pattern"))
+        elif "*" not in item and "?" not in item:
+            reasons.append((globs_line, f"globs: pattern '{item}' has no glob wildcard (* or ?)"))
+    return reasons
+
+
 def check_use_when_and_source(skill_md, description):
     reasons = []
     if description is None or "use when" not in description.lower():
@@ -209,6 +250,7 @@ def check_skill(skill_md, dirname):
         reasons.append((1, "missing or empty axis:/axes: (required alongside rule_count_floor:)"))
 
     reasons += check_rule_sources(text)
+    reasons += check_globs_field(text, frontmatter)
 
     return reasons
 
