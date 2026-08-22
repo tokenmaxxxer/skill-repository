@@ -17,6 +17,13 @@ and lines starting with `#` ignored) must have a SKILL.md body
 containing `## Trigger`, `## Procedure`, and `## Output shape` headings
 (any order). Skills not listed in the manifest are unaffected by this
 check.
+
+Optional --require-use-when-and-source <path> adds an additive, opt-in
+check: every skill directory name listed in that file (same one-per-
+line format as --manifest) must have a `description:` containing the
+literal substring "use when" (case-insensitive) and a SKILL.md body
+citing at least one `source:`/`Source:` URL (an http(s):// URL
+following that marker anywhere in the body, case-insensitive).
 """
 import argparse
 import re
@@ -88,6 +95,19 @@ def parse_field(frontmatter, field):
     return value.strip('"').strip("'")
 
 
+SOURCE_LINE_RE = re.compile(r"(?im)^.*source:.*https?://\S+")
+
+
+def check_use_when_and_source(skill_md, description):
+    reasons = []
+    if description is None or "use when" not in description.lower():
+        reasons.append('description: missing a literal "Use when" clause')
+    text = skill_md.read_text(encoding="utf-8")
+    if not SOURCE_LINE_RE.search(text):
+        reasons.append("missing at least one 'source: <https?:// URL>' citation")
+    return reasons
+
+
 def check_skill(skill_md, dirname):
     text = skill_md.read_text(encoding="utf-8")
     frontmatter = extract_frontmatter(text)
@@ -116,12 +136,18 @@ def check_skill(skill_md, dirname):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", type=Path, default=None)
+    parser.add_argument("--require-use-when-and-source", type=Path, default=None)
     args = parser.parse_args()
 
     repo_root = Path(__file__).resolve().parent.parent
     skills_dir = repo_root / "skills"
 
     manifest_names = load_manifest(args.manifest) if args.manifest else set()
+    use_when_source_names = (
+        load_manifest(args.require_use_when_and_source)
+        if args.require_use_when_and_source
+        else set()
+    )
 
     skill_dirs = sorted(p for p in skills_dir.iterdir() if p.is_dir()) if skills_dir.is_dir() else []
 
@@ -136,6 +162,11 @@ def main():
         reasons = check_skill(skill_md, skill_dir.name)
         if skill_dir.name in manifest_names:
             reasons += check_procedure_sections(skill_md)
+        if skill_dir.name in use_when_source_names:
+            text = skill_md.read_text(encoding="utf-8")
+            frontmatter = extract_frontmatter(text)
+            description = parse_field(frontmatter, "description") if frontmatter else None
+            reasons += check_use_when_and_source(skill_md, description)
         if reasons:
             violations.append((skill_dir.name, reasons))
 

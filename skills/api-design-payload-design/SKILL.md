@@ -2,7 +2,7 @@
 name: api-design-payload-design
 description: Use when designing a list/search endpoint's pagination style, continuation signal, page-size limits, field selection, or filter-parameter grammar.
 axis: payload-design
-rule_count_floor: 10
+rule_count_floor: 13
 ---
 
 # Payload design (pagination, filtering, field selection)
@@ -78,3 +78,5 @@ each traceable to the rule above that forced the choice.
 11. When a list endpoint's result set can be large enough to strain client memory or a single response payload, provide a client-side auto-pagination helper in official SDKs (looping on the continuation flag/cursor until exhausted) instead of expecting every caller to hand-roll pagination loops — Stripe ships this as a standard SDK feature to reduce the chance of naive integrations dropping objects or looping incorrectly. source: https://docs.stripe.com/pagination
 
 12. When a collection is accessed by many concurrent, high-volume API clients (e.g. Slack's channel/user lists), use cursor pagination with a `limit` and `cursor` parameter pair and return the next cursor in a dedicated `response_metadata.next_cursor` field rather than embedding it in `data`, so the continuation token is unambiguous and stable even as the underlying set mutates between calls. source: https://docs.slack.dev/apis/web-api/pagination/
+
+13. When designing the payload contract for a mutating (POST) endpoint that a client may need to retry, document a client-supplied `Idempotency-Key` header as part of the request payload shape itself — not just as an HTTP-semantics footnote — so the endpoint's documented contract states which fields participate in the idempotency cache key and what response the client gets on a replayed key; the idempotency mechanism itself (key generation, response caching window, mismatched-parameter error) is `api-design-http-semantics`'s rule 3, cross-referenced here rather than restated. source: https://docs.stripe.com/idempotency
