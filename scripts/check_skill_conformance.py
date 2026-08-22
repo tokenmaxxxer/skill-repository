@@ -219,6 +219,37 @@ def check_rule_sources(text):
     return reasons
 
 
+RELATED_LINK_RE = re.compile(r"\[[^\]]+\]\(([^)\s]+)\)")
+
+
+def check_related_skills_links(text, skill_dir):
+    """Every markdown link under a '## Related skills' section must be a
+    relative path (not http(s)://) that resolves to a real file on disk,
+    relative to the skill's own directory."""
+    marker = "\n## Related skills"
+    start = text.find(marker)
+    if start == -1:
+        return []
+    start += 1
+    section_start = start + len("## Related skills")
+    tail = text[section_start:]
+    end_match = NEXT_TOP_HEADING_RE.search(tail)
+    section = tail[: end_match.start()] if end_match else tail
+
+    reasons = []
+    for match in RELATED_LINK_RE.finditer(section):
+        link = match.group(1)
+        abs_index = section_start + match.start()
+        line = line_of(text, abs_index)
+        if link.startswith("http://") or link.startswith("https://"):
+            reasons.append((line, f"Related skills: link '{link}' is not a relative link"))
+            continue
+        resolved = (skill_dir / link).resolve()
+        if not resolved.is_file():
+            reasons.append((line, f"Related skills: link '{link}' does not resolve to a file"))
+    return reasons
+
+
 def check_skill(skill_md, dirname):
     text = skill_md.read_text(encoding="utf-8")
     frontmatter = extract_frontmatter(text)
@@ -251,6 +282,7 @@ def check_skill(skill_md, dirname):
 
     reasons += check_rule_sources(text)
     reasons += check_globs_field(text, frontmatter)
+    reasons += check_related_skills_links(text, skill_md.parent)
 
     return reasons
 

@@ -98,3 +98,7 @@ split with 2-5 systemic, blame-neutral contributing factors.
    requires; cut the unconverted fishbone from the final record and
    replace it with the 5-Whys chain(s) run on its top branches. source:
    https://www.soter.com/blog/5-whys-vs-fishbone-vs-fault-tree
+
+## Related skills
+
+- [incident-response-timeline-construction](../incident-response-timeline-construction/SKILL.md) — before selecting an RCA method, timeline-construction should have already fixed the incident's event sequence.

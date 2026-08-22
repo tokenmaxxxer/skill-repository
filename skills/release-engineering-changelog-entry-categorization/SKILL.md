@@ -127,3 +127,7 @@ per the rules above.
     `chore`, `refactor`, `docs`, ...) is not the same vocabulary as Keep
     a Changelog's six categories and the two must be mapped, not copied.
     source: Conventional Commits v1.0.0 — https://www.conventionalcommits.org/en/v1.0.0/
+
+## Related skills
+
+- [release-engineering-semver-bump-selection](../release-engineering-semver-bump-selection/SKILL.md) — an entry's category should agree with the semver bump semver-bump-selection assigns the same change.

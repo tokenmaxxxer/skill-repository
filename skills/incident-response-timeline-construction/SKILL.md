@@ -79,3 +79,7 @@ severity tier.
    without adding checkable information, the same defect this program's
    depth gate rejects when a playbook rule reads like a definition
    instead of a decision. source: https://www.pagerduty.com/resources/insights/learn/how-to-write-postmortem/
+
+## Related skills
+
+- [incident-response-rca-method-selection](../incident-response-rca-method-selection/SKILL.md) — a constructed timeline is the input rca-method-selection reasons over to pick a root-cause method.

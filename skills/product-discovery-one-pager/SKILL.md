@@ -131,3 +131,7 @@ response is a prompt to re-ask for its evidentiary source.
   affirmation without asking where the read came from.
 - Stating a market size with no rationale, or a differentiator with no
   named competitive alternative to differentiate against.
+
+## Related skills
+
+- [prose-modes](../prose-modes/SKILL.md) — once the one-pager's problem statement is drafted, route the prose itself through prose-modes for document-type-appropriate style.

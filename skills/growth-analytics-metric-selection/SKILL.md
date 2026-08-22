@@ -46,3 +46,7 @@ bottleneck, with any competing candidates removed.
    org will actually act on.
    Source: Croll & Yoskovitz, *Lean Analytics* (2013), ch. 3 (OMTM
    uniqueness argument), same citation as above.
+
+## Related skills
+
+- [growth-analytics-segmentation](../growth-analytics-segmentation/SKILL.md) — once a metric is selected, segmentation decides how to slice it for analysis.
