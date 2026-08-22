@@ -152,3 +152,7 @@ Written before there was any reason to want it softer:
 - **Permitted:** "This skill applies rules R1–R9, graded as marked."
 - **Forbidden:** "verified to improve prose quality", "A/B verified", "makes writing clearer/deeper". None of that has been measured. The test is frozen and has not run.
 - **Rules whose evidence is [카탈로그] or [가설] or [현장] are prescriptions.** Say so when citing them. R1, R2, R3's symptom, R4, and the connective/reference findings are the only [검증] items.
+
+## Related skills
+
+- [product-discovery-one-pager](../product-discovery-one-pager/SKILL.md) — a one-pager is a common decision-record-shaped input this skill's style rules apply to.

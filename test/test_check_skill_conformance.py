@@ -124,6 +124,24 @@ class CheckSkillConformanceTest(unittest.TestCase):
         reasons = conformance.check_skill(skill_md, "sample-skill")
         self.assertTrue(any("empty or malformed" in m for _, m in reasons), reasons)
 
+    def test_related_skills_relative_link_resolves(self):
+        write_skill(self.tmp_path, "other-skill", VALID_SKILL.replace("sample-skill", "other-skill"))
+        content = VALID_SKILL + "\n## Related skills\n\n- [other-skill](../other-skill/SKILL.md) — chains here.\n"
+        skill_md = write_skill(self.tmp_path, "sample-skill", content)
+        self.assertEqual(conformance.check_skill(skill_md, "sample-skill"), [])
+
+    def test_related_skills_broken_link_is_flagged(self):
+        content = VALID_SKILL + "\n## Related skills\n\n- [missing-skill](../missing-skill/SKILL.md) — nope.\n"
+        skill_md = write_skill(self.tmp_path, "sample-skill", content)
+        reasons = conformance.check_skill(skill_md, "sample-skill")
+        self.assertTrue(any("does not resolve" in m for _, m in reasons), reasons)
+
+    def test_related_skills_absolute_link_is_flagged(self):
+        content = VALID_SKILL + "\n## Related skills\n\n- [other](https://example.com/skill) — nope.\n"
+        skill_md = write_skill(self.tmp_path, "sample-skill", content)
+        reasons = conformance.check_skill(skill_md, "sample-skill")
+        self.assertTrue(any("is not a relative link" in m for _, m in reasons), reasons)
+
     def test_full_repo_tree_is_conformant(self):
         skills_dir = REPO_ROOT / "skills"
         violations = []

@@ -63,3 +63,7 @@ separately if needed.
 9. **REMOVAL**: When drafting a current-state survey's problem section, strip any sentence that names a UI element, a technology, an API, or a specific mechanism from the problem statement itself — move that content to a separate "solution being considered" note if it must be preserved, because leaving it embedded in the problem statement silently re-introduces the solution-first bias JTBD framing is meant to remove. source: https://www.uxtweak.com/jobs-to-be-done/framework/
 
 10. **REMOVAL**: When a circumstance description trails into justification for a specific fix ("...so we should add a toggle"), delete the justification clause and keep only the situational trigger — circumstances describe when/why the job arises, not what to build in response; conflating the two lets a favored solution smuggle itself back into the "problem" section under cover of context. source: https://digitalleadership.com/blog/jobs-to-be-done/
+
+## Related skills
+
+- [market-analysis-jtbd-fit](../market-analysis-jtbd-fit/SKILL.md) — once a job is framed here, jtbd-fit checks whether a given product/position actually fits it.

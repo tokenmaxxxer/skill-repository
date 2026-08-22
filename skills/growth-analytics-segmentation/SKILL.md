@@ -46,3 +46,7 @@ hypothesis traceable to the segment evidence that produced it.
    Source: Croll & Yoskovitz, *Lean Analytics* (2013), ch. 3 (metric
    must be actionable, comparable, and tied to a specific segment to
    support a decision) — same citation as metric-selection.md.
+
+## Related skills
+
+- [growth-analytics-metric-selection](../growth-analytics-metric-selection/SKILL.md) — segmentation choices assume a metric already selected by metric-selection.

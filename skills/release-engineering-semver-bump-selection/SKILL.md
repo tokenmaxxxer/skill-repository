@@ -129,3 +129,7 @@ when MAJOR, each traceable to the rule above that forced it.
     a missed MAJOR is a silent production break.
     source: jsmanifest, "Semantic Versioning: When to Bump Major, Minor,
     or Patch" — https://jsmanifest.com/semantic-versioning-when-to-bump
+
+## Related skills
+
+- [release-engineering-changelog-entry-categorization](../release-engineering-changelog-entry-categorization/SKILL.md) — a semver bump and a changelog entry's category are usually decided from the same change; check both together.

@@ -95,3 +95,7 @@ applies because the decision was never a packaging question.
    "tier structure" as one of three outputs, not a mandatory element of
    every verdict) — tiering is conditional on the decision actually
    being a packaging question.
+
+## Related skills
+
+- [pricing-design-rigor](../pricing-design-rigor/SKILL.md) — after structuring tiers, run pricing-design-rigor to check the result for honesty gaps.

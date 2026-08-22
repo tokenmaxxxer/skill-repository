@@ -116,3 +116,7 @@ and time-sensitive claims dated.
     current — an undated time-sensitive claim silently overstates its
     own freshness to a reader relying on the record today.
     source: https://researcher.life/blog/article/primary-vs-secondary-sources-differences-and-examples/
+
+## Related skills
+
+- [market-analysis-competitor-mapping](../market-analysis-competitor-mapping/SKILL.md) — the competitor claims this skill vets typically originate from a competitor-mapping pass.

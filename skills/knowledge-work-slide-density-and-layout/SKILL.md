@@ -94,3 +94,7 @@ just human review.
    keyword directives (resizing, filters, background-image markers),
    so a naive "bracket is non-empty" check will misclassify a directive
    as descriptive alt text.
+
+## Related skills
+
+- [knowledge-work-deck-structure-narrative-arc](../knowledge-work-deck-structure-narrative-arc/SKILL.md) — slide density decisions assume a narrative arc already fixed the deck's structure.

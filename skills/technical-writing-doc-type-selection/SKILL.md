@@ -158,3 +158,7 @@ explicit polish-vs-update-cheapness choice recorded in the outline.
     choice when both tradeoffs collide on one deliverable. Evidence
     trail: docs/issue-1199/reports/technical-writing.md
     (on-the-record).
+
+## Related skills
+
+- [technical-writing-structure-comprehension](../technical-writing-structure-comprehension/SKILL.md) — once a doc's Diátaxis quadrant is chosen, structure-comprehension governs sentence/paragraph-level shape within it.
