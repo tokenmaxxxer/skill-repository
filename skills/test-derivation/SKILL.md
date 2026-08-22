@@ -10,8 +10,9 @@ description: >-
   wants requirements and tests linked — e.g. "이 수용 기준으로 테스트 케이스 뽑아줘", "어떤 테스트 기법 써야 해",
   "derive test cases from these acceptance criteria", "build a traceability matrix". The value is
   coverage discipline and technique-fit routing. Do NOT use when there are no written requirements
-  yet (that's requirements-quality), when a full test suite and matrix already exist, or for
-  non-functional testing (performance, security, usability) that these techniques don't cover.
+  yet (that's requirements-quality), when the ask is judging whether *existing* tests actually
+  verify anything rather than deriving new ones (test-depth-audit), or for non-functional testing
+  (performance, security, usability) that these techniques don't cover.
 ---
 
 # Test Derivation
