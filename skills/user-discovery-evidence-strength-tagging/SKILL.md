@@ -68,3 +68,7 @@ untaggable entries dropped rather than defaulted.
 8. **REMOVAL**: When an evidence log entry has no clear underlying event to point to (the interviewee gave a vague, ungrounded impression), do not force a tag onto it by defaulting to `opinion` and counting it anyway — drop untaggable entries from the evidence log rather than padding the opinion tier with noise that was never a real data point. source: https://www.ventureforall.com/p/from-assumptions-to-evidence-are
 
 9. **REMOVAL**: When a prior interview log used a binary "confirmed/not confirmed" tag per claim instead of the three-tier scheme, drop the binary tag entirely rather than layering the three-tier scheme on top of it — a binary tag collapses exactly the behavioral/recounted/opinion distinction this axis exists to preserve, so keeping both invites confusion about which tag is authoritative. source: https://www.ventureforall.com/p/from-assumptions-to-evidence-are
+
+## Related skills
+
+- [research-evidence-discipline](../research-evidence-discipline/SKILL.md) — generalizes this skill's behavioral/recounted/opinion tiering into Fact/Inference/Assumption labeling for non-interview research records.
