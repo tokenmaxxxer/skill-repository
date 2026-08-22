@@ -205,3 +205,7 @@ product-cycle's state machine, with `hypothesis_statement`,
 - Collapsing `recommendation` and `verdict` into one line, or writing a
   verdict when the cited evidence log does not actually resolve
   (`evidence-log-unreadable` exists precisely for that case).
+
+## Related skills
+
+- [research-evidence-discipline](../research-evidence-discipline/SKILL.md) — a `hypothesis_statement` is exactly a claim that needs a Fact/Inference/Assumption label before it is registered for testing.

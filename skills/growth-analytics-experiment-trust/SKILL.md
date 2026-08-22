@@ -61,3 +61,7 @@ every guardrail metric reported regardless of significance.
    Source: Kohavi, Tang & Xu, *Trustworthy Online Controlled
    Experiments* (2020), guardrail-metric chapter — same citation as
    above.
+
+## Related skills
+
+- [research-evidence-discipline](../research-evidence-discipline/SKILL.md) — a trust verdict already turns on whether a result is real evidence or an unconfirmed/fabricated signal; this skill adds Fact/Inference/Assumption labeling and a do-not-invent list on top.

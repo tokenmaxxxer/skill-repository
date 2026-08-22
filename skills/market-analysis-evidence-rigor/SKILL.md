@@ -120,3 +120,4 @@ and time-sensitive claims dated.
 ## Related skills
 
 - [market-analysis-competitor-mapping](../market-analysis-competitor-mapping/SKILL.md) — the competitor claims this skill vets typically originate from a competitor-mapping pass.
+- [research-evidence-discipline](../research-evidence-discipline/SKILL.md) — adds Fact/Inference/Assumption labeling, a do-not-invent list, and a question-budget cap on top of this skill's per-claim sourcing discipline.
