@@ -93,6 +93,20 @@ cross-references (`pricing-method-family`, `pricing-tier-structure`,
 resolve to real, existing skill directories confirmed present under
 `skills/`.
 
+## Skill-check addendum (2026-08-23)
+
+This session re-opened against an already-merged deliverable (PR #68
+phase-1, PR #69 phase-2); no new deliverable content was produced this
+turn beyond this addendum and consult-trace bookkeeping.
+
+skill-verdict: market-analysis-competitor-mapping — not-applicable: no competitor classification or evidence-attachment work this turn
+skill-verdict: market-analysis-evidence-rigor — not-applicable: no new market/competitor claim sourced this turn; existing citations were already verified in the merged phase-1 proposal (PR #68)
+skill-verdict: market-analysis-five-forces — not-applicable: no five-forces rating task this turn
+skill-verdict: market-analysis-jtbd-fit — not-applicable: no JTBD job/statement drafting or alternative-competition judgment this turn
+skill-verdict: market-analysis-mece-proposal — not-applicable: the phase-1 proposal is already written and merged; no new proposal section structuring this turn
+skill-verdict: finance-unit-economics-proposal-shape — not-applicable: no unit-economics proposal being assembled; this is a skill-family research proposal, not a finance deliverable
+skill-verdict: observability-phase-trace — invoked; not-applicable: this record's phase-2 deliverable (skill files + conformance run) does not instrument RED/USE/Golden-Signals observability surfaces, so the skill's methodology-consistency check has no signal set to compare
+
 ## kind
 
 implementation
