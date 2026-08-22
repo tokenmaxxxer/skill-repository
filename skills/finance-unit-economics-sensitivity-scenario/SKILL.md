@@ -87,3 +87,7 @@ Sensitivity and scenario analysis are complementary, not
 interchangeable — sensitivity narrows the field, scenario tells the
 story on the narrowed set. See ltv-churn-assumption.md for the churn
 case this axis most often gets applied to.
+
+## Related skills
+
+- [finance-unit-economics-proposal-shape](../finance-unit-economics-proposal-shape/SKILL.md) — a sensitivity scenario needs a shaped proposal from this skill as its baseline case.

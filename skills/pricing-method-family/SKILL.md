@@ -108,3 +108,7 @@ are downstream steps.
    `pricing-method-family` ("if 'none of these' methods fit ... state
    that explicitly and continue to pricing-design-rigor with no method
    fielded").
+
+## Related skills
+
+- [pricing-research](../pricing-research/SKILL.md) — method-family picks the PSM-vs-conjoint family; pricing-research runs the chosen method honestly.

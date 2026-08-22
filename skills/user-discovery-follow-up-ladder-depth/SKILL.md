@@ -66,3 +66,7 @@ yet reach an endpoint) — rather than a single unfollowed first answer.
 8. **REMOVAL**: When a scripted interview guide lists a fixed single follow-up per question with no room to re-ladder, drop the fixed-depth-one script structure — a rigid one-follow-up script structurally caps every hypothesis at the surface-attribute rung and can never reach the root cause or value rung rules 1-3 require. source: https://www.hyperlatam.com/the-power-of-the-five-whys-rule-in-customer-interviews/
 
 9. **REMOVAL**: When the interviewer has already reached a root-cause or value-level answer (rule 6), drop any remaining scripted "why" prompts for that thread rather than mechanically exhausting a fixed why-count — Five Whys is a stopping heuristic keyed to reaching the cause, not a mandatory five-question quota, and continuing past the cause wastes interview time the ladder no longer needs. source: https://www.playbookux.com/five-whys/
+
+## Related skills
+
+- [user-discovery-question-design-past-behavior](../user-discovery-question-design-past-behavior/SKILL.md) — the ladder's starting rung is the past-behavior question this skill designs.

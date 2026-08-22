@@ -118,3 +118,7 @@ rows.
     not as separate unrelated rows — treating sibling brands as
     independent competitors double-counts one strategic actor's market
     share. source: https://www.justice.gov/atr/herfindahl-hirschman-index
+
+## Related skills
+
+- [market-analysis-evidence-rigor](../market-analysis-evidence-rigor/SKILL.md) — before citing a competitor claim this mapping surfaces, route it through evidence-rigor's sourcing bar.

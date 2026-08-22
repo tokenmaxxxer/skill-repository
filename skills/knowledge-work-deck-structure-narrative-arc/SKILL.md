@@ -89,3 +89,7 @@ and the one reason it fits this audience.
    https://www.antonilacinai.com/news/signposts-in-speech/): summary
    signposts "communicate key takeaways" using language such as "in
    summary," helping audiences retain the deck's essential points.
+
+## Related skills
+
+- [knowledge-work-slide-density-and-layout](../knowledge-work-slide-density-and-layout/SKILL.md) — once the narrative arc is set, slide-density-and-layout governs how much each slide can hold.

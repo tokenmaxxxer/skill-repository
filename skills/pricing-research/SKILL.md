@@ -291,3 +291,7 @@ Match the report's weight to the decision's weight:
 - **Directional / early-stage**: the six numbered elements from Step 6's gate plus the evidence-grade asymmetry note are sufficient — the per-step walkthrough is not required.
 
 In all cases the number must be traceable to a named method and family, a stated set of inputs it actually collected, and gates that were checked before the number was trusted. State explicitly which format you used and why, so the reader knows whether a compressed report reflects low stakes or omitted procedure.
+
+## Related skills
+
+- [pricing-method-family](../pricing-method-family/SKILL.md) — route back to method-family first if the family choice (PSM vs. conjoint) itself is still open.

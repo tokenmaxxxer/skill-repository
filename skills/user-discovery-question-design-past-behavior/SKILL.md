@@ -70,3 +70,7 @@ hypothesis, and the fatal-first hypothesis is scripted earliest.
 9. **REMOVAL**: When an interview script front-loads a feature description or demo before any current-behavior question, remove the pitch from the front of the script — a description given before the behavioral baseline is established collapses the interview into a pitch-and-react session instead of a discovery session, forfeiting the "blind to the solution" evidence quality rule 7 depends on. source: https://blog.uxtweak.com/the-mom-test/
 
 10. When a study is testing more than one hypothesis, rank them by which one, if disconfirmed, kills the underlying idea outright, and script that hypothesis's behavioral questions first — running hypotheses in an arbitrary or convenience-driven order risks spending the whole saturation budget confirming a minor assumption while the fatal one goes untested, so the order itself is a design decision, not an afterthought.
+
+## Related skills
+
+- [user-discovery-follow-up-ladder-depth](../user-discovery-follow-up-ladder-depth/SKILL.md) — past-behavior questions set the opening; follow-up-ladder-depth governs how far to probe from there.

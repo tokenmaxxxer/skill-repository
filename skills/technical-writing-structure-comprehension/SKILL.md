@@ -121,3 +121,7 @@ rules.
     subordinate content clauses, this targets zero-information filler
     phrasing, so both passes are needed on a dense draft. source:
     https://www.trinka.ai/blog/how-sentence-length-variation-improves-academic-readability/
+
+## Related skills
+
+- [technical-writing-doc-type-selection](../technical-writing-doc-type-selection/SKILL.md) — structure rules assume the doc-type quadrant was already fixed by doc-type-selection.

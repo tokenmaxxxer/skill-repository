@@ -86,3 +86,7 @@ definition-only glossary section standing in for decision rules.
 This axis is where the other five axes' outputs get assembled for a
 reader; a proposal that cites cac-payback.md and ltv-cac-band.md but
 skips evidence-chain.md's sourcing rule is incomplete.
+
+## Related skills
+
+- [finance-unit-economics-sensitivity-scenario](../finance-unit-economics-sensitivity-scenario/SKILL.md) — once a unit-economics proposal is shaped, sensitivity-scenario stress-tests its assumptions.

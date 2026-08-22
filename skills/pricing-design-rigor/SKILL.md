@@ -116,3 +116,7 @@ method choice — only a rigor judgment on the design already chosen.
    (https://www.econstor.eu/bitstream/10419/330642/1/11002_2025_Article_9764.pdf) —
    the reported benefit is a predictive-validity gain, which is only
    decision-relevant when the ranking is actually close enough to flip.
+
+## Related skills
+
+- [pricing-tier-structure](../pricing-tier-structure/SKILL.md) — rigor checks apply to a tier structure once pricing-tier-structure has laid one out.

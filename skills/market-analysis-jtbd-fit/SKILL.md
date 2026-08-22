@@ -124,3 +124,7 @@ against the competitor-mapping/five-forces sections.
     — feature requests describe a solution the customer imagined, not
     the outcome the differentiation verdict should actually be judged
     against. source: https://strategyn.com/jobs-to-be-done-template/
+
+## Related skills
+
+- [product-discovery-jtbd-problem-framing](../product-discovery-jtbd-problem-framing/SKILL.md) — jtbd-fit checks a positioning claim against a job; problem-framing is where that job statement gets constructed.
