@@ -1,0 +1,1 @@
+- 2026-08-22T18:27:13.613205+00:00 | role=knowledge-management | verb=skill_judge | issue=77 | question='과제:\nskill-repository issue #77 phase 1: research-first survey + proposal for the organization/HR-design skill family per the frozen ## Acceptance — primary sources (Schmidt & Hunter structured-intervi' | outcome='error: 시간초과(45s)'
