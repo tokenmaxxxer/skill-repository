@@ -1,6 +1,15 @@
 ---
 name: data-modeling-kimball
-description: Use when declaring a fact table's grain, selecting an SCD type per dimension attribute, building or integrating a data mart, or checking a star schema for unused history or duplicated columns.
+description: >-
+  Use when declaring a fact table's grain, selecting an SCD type per dimension
+  attribute, building or integrating a data mart, or checking a star schema for
+  unused history or duplicated columns. Fits the bottom-up,
+  fast-win-per-business-process condition — dimensional marts integrated later
+  via conformed dimensions. Trigger on requests like "팩트 테이블 그레인 잡아줘", "SCD type
+  2로 할까", "star schema design", "conformed dimensions". Do NOT use when the
+  requirement is a single top-down 3NF enterprise source of truth feeding all
+  marts (use data-modeling-inmon), or multi-source ingestion with heavy schema
+  evolution and hard auditability (use data-modeling-datavault).
 metadata:
   axis: kimball
   rule_count_floor: 10

@@ -1,6 +1,11 @@
 ---
 name: design-artifact-information-architecture
-description: Use when structuring or labeling a site or app's content hierarchy — organizing categories, choosing depth vs. breadth, and naming labels for findability.
+description: >-
+  Use when structuring or labeling a site or app's content hierarchy — organizing categories,
+  choosing depth vs. breadth, and naming labels for findability. Trigger on requests like
+  "sitemap structure", "category depth vs breadth", "label naming for findability", "IA 구조
+  잡아줘". Do NOT use for the step-by-step path a user takes through one task (use
+  design-artifact-user-flow).
 metadata:
   axis: ia-findability-vs-depth
   rule_count_floor: 3

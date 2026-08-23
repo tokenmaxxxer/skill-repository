@@ -1,17 +1,17 @@
 ---
 name: model-routing
 description: >-
-  Tiered orchestration policy: the session model orchestrates, decomposes,
-  and synthesizes, pushing heavy judgment to a high-capability reasoner and
-  production/exploration work to a low-cost executor. Use this skill on EVERY
-  non-trivial task in any domain — development, design, architecture, data,
-  docs, or multi-step orchestration — to decide what you do yourself, what
-  goes to the reasoner, and what goes to the executor. It also carries the
-  rule for accepting delegated work: the brief names an executable check,
-  and neither a reasoner's approval nor the delegate's own narration of a
-  test run substitutes for that check's traceable output. Trigger even if
-  the user never mentions cost, models, or delegation. Do not use for pure
-  conversation or single trivial edits.
+  Use this skill on EVERY non-trivial task in any domain — development, design, architecture,
+  data, docs, or multi-step orchestration — to decide what you do yourself, what goes to a high-
+  capability reasoner, and what goes to a low-cost executor. Tiered orchestration policy: the
+  session model orchestrates, decomposes, and synthesizes, pushing heavy judgment to the reasoner
+  and production/exploration work to the executor. It also carries the rule for accepting
+  delegated work: the brief names an executable check, and neither a reasoner's approval nor the
+  delegate's own narration of a test run substitutes for that check's traceable evidence. Trigger
+  even if the user never mentions cost, models, or delegation — e.g. "이 작업 어느 모델한테 맡길까", "which
+  model should handle this", "delegate this to a cheaper model", "opus vs haiku for this task". Do
+  NOT use for pure conversation or single trivial edits, or for cutting work into non-colliding
+  pieces (use parallel-decomposition).
 ---
 
 # Model Routing: orchestrate expensive, execute cheap

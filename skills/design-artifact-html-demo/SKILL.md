@@ -1,6 +1,11 @@
 ---
 name: design-artifact-html-demo
-description: Use when building an HTML/CSS demo or no-build single-file prototype — choosing semantic elements, heading structure, and responsive/accessible defaults over generic markup.
+description: >-
+  Use when building an HTML/CSS demo or no-build single-file prototype — choosing semantic
+  elements, heading structure, and responsive/accessible defaults over generic markup. Trigger
+  on requests like "single-file HTML prototype", "semantic markup for this demo", "no-build
+  demo page", "시맨틱 HTML로 데모 만들어줘". Do NOT use for structuring the site's content hierarchy and
+  labels (use design-artifact-information-architecture).
 metadata:
   axis: semantic-html-vs-generic-div-soup
   rule_count_floor: 3

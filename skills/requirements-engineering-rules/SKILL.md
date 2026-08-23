@@ -1,7 +1,15 @@
 ---
 name: requirements-engineering-rules
-description: Use when selecting an EARS sentence template while drafting a requirement, assigning a requirement's verification method, spotting a weak/ambiguous word or double reading, spotting a conjunction or mixed-verification-method requirement, deciding traceability-link granularity, breaking a MoSCoW-tier tie, or reviewing a spec for gold-plating/redundancy/staleness.
-
+description: >-
+  Use when selecting an EARS sentence template while drafting a requirement, assigning a
+  requirement's verification method, spotting a weak/ambiguous word or double reading, spotting a
+  conjunction or mixed-verification-method requirement, deciding traceability-link granularity,
+  breaking a MoSCoW-tier tie, or reviewing a spec for gold-plating/redundancy/staleness.
+  Condition-matched drafting rules for the requirements-engineering role. Trigger on requests like
+  "이 요구사항 EARS 템플릿으로 써줘", "검증 방법 뭐로 지정하지", "write this as an event-driven EARS requirement",
+  "assign a verification method for this requirement", "break this MoSCoW tie". Do NOT use for
+  auditing a finished requirements document or user story against QUS/INVEST checklists (use
+  requirements-quality) or for pulling test cases out of acceptance criteria (test-derivation).
 metadata:
   subject: issue-1174
   rule_count_floor: 23

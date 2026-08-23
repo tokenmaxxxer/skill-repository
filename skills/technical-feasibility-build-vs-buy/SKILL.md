@@ -1,6 +1,16 @@
 ---
 name: technical-feasibility-build-vs-buy
-description: Use when the feasibility role's `probing` state reaches the prior-art probe and needs a build-vs-buy comparison with per-dependency health scores before that probe can resolve.
+description: >-
+  Use when the feasibility role's `probing` state reaches the prior-art probe
+  and needs a build-vs-buy comparison with per-dependency health scores before
+  that probe can resolve. Trigger on requests like "build vs buy comparison",
+  "prior art probe", "is there an existing library for this", "빌드할지 사서 쓸지 비교해줘".
+  Fills feasibility-record.md's prior-art probe field with a comparison table
+  (cost/TCO, lock-in, reversibility tag) plus health scores. Do NOT use for
+  scoring one candidate's per-check Scorecard or vendor-SLA health evidence by
+  decision rule (use technical-feasibility-build-vs-buy-dependency-health); for
+  a quick standalone feasibility take outside this state machine,
+  tech-feasibility is the alternative.
 ---
 
 # Build vs buy

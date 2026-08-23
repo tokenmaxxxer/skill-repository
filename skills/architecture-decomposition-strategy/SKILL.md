@@ -1,6 +1,12 @@
 ---
 name: architecture-decomposition-strategy
-description: Use when deciding whether to split a system into more services/modules, keep it consolidated, or merge an existing split back — including choosing extraction mechanics, boundary placement, and whether a proposed split has enough operational evidence behind it.
+description: >-
+  Use when deciding whether to split a system into more services/modules, keep it consolidated,
+  or merge an existing split back — including Strangler Fig extraction mechanics,
+  bounded-context boundary placement, and whether a proposed split has enough operational
+  evidence behind it. Trigger on requests like "should we go microservices", "모놀리스 쪼갤까 말까",
+  "merge these two services back", "이 서비스 분리 근거 있어?". Do NOT use for judging what belongs
+  together inside one module by cohesion (use architecture-module-boundary-definition).
 metadata:
   axis: decomposition-strategy
   rule_count_floor: 12

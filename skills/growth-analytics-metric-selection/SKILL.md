@@ -1,6 +1,13 @@
 ---
 name: growth-analytics-metric-selection
-description: Use when choosing a team's North Star / one metric that matters for its current business stage, or when a record proposes more than one metric as the live North Star. Applies to the metric-selection axis.
+description: >-
+  Use when choosing a team's North Star / one metric that matters for its current business
+  stage, or when a record proposes more than one metric as the live North Star. Applies to
+  the metric-selection axis. Trigger on requests like "노스스타 지표 뭐로 할까", "pick our one metric
+  that matters", "we have three North Stars — fix it", "should the OMTM change now that the
+  stage changed". Ties the pick to the stage's current bottleneck and enforces exactly one
+  live North Star. Do NOT use for slicing an already-chosen metric by channel/cohort/device
+  (use growth-analytics-segmentation).
 metadata:
   axis: metric-selection
   rule_count_floor: 2

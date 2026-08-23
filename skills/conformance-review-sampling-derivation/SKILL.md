@@ -1,9 +1,18 @@
 ---
 name: conformance-review-sampling-derivation
-description: Use when full enumeration of every requirement/file under review is infeasible and the review needs a defensible sampling scope instead. Applies to the sampling-derivation axis.
+description: >-
+  Use when full enumeration of every requirement/file under review is
+  infeasible and the review needs a defensible sampling scope instead. Applies
+  to the sampling-derivation axis. Trigger on requests like "spot-check a
+  sample of these files", "how many endpoints should we review", "전수 검사 대신 샘플링
+  기준 정해줘". Covers risk-stratified strata, pairwise coverage over
+  cross-products, full inspection of the highest-impact tier, and stating the
+  derivation in the record. Do NOT use for turning the spec into the checkable
+  list itself (use conformance-review-requirement-extraction).
 metadata:
   axis: sampling-derivation
   rule_count_floor: 3
+
 ---
 
 # Sampling derivation

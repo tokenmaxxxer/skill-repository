@@ -1,15 +1,16 @@
 ---
 name: launch-readiness
 description: >-
-  A pre-launch readiness review procedure for user-facing launches and significant changes,
-  in the Google Launch Coordination Engineering (LCE) lineage. Use when the user wants to
-  check whether a launch is actually ready to ship, or wants a canary/staged-rollout plan —
-  e.g. "출시 준비됐는지 점검해줘", "런치 체크리스트 만들어줘", "go/no-go 체크리스트", "canary 배포
-  계획 세워줘", "launch readiness review", "rollout plan before we ship this". The hard rule:
-  every checklist item must resolve to a yes/no backed by a pointable artifact (a config, a
-  dashboard URL, a runbook document) — "we have monitoring" with nothing to link is a FAIL.
-  Do NOT use for routine deploys of unchanged behavior with no user-visible or load-profile
-  change, for post-incident retrospectives, or for doing the underlying implementation work.
+  Use when the user wants to check whether a launch is actually ready to ship, or wants a
+  canary/staged-rollout plan. A pre-launch readiness review procedure for user-facing
+  launches and significant changes, in the Google Launch Coordination Engineering (LCE)
+  lineage; the hard rule is that every checklist item must resolve to a yes/no backed by a
+  pointable artifact (a config, a dashboard URL, a runbook document) — "we have monitoring"
+  with nothing to link is a FAIL. Trigger on "출시 준비됐는지 점검해줘", "런치 체크리스트 만들어줘", "go/no-go
+  체크리스트", "launch readiness review", "rollout plan before we ship this". Do NOT use for
+  routine deploys of unchanged behavior with no user-visible or load-profile change, for
+  post-incident retrospectives (use blameless-postmortem), or for doing the underlying
+  implementation work.
 ---
 
 # Launch Readiness

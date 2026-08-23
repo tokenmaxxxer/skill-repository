@@ -1,7 +1,16 @@
 ---
 name: silent-failure-audit
-description: Use when applying Silent Failure Audit. An audit procedure that enumerates every error-handling path in an implementation (try/catch, Promise rejection, error callback, result type) and classifies each as Handled, Silently Absorbed, or Unreachable — with a catalog of silent-failure signatures that catch the most common AI-generated code quality defect: catching errors and doing nothing with them. Use after AI produces code that involves error handling — API calls, file I/O, database operations, user input validation — and you need to verify that failure paths aren't just stubbed out. e.g. "에러 처리 제대로 됐는지 감사해줘", "catch 블록 다 비었는지 확인해줘", "audit error handling", "check for silent failures", "이 코드 에러 나면 어떻게 되는지 점검". Do NOT use for checking linter-level syntax (that's linting), for designing error handling strategy (that's architecture), or for performance profiling (that's diagnose-first).
-
+description: >-
+  Use when AI-written code involves error handling — API calls, file I/O, database operations,
+  user input validation — and you need to verify failure paths aren't just stubbed out. The audit
+  enumerates every error-handling path in the implementation (try/catch, Promise rejection, error
+  callback, result type) and classifies each as Handled, Silently Absorbed, or Unreachable, with a
+  catalog of silent-failure signatures for the most common AI code defect: catching errors and
+  doing nothing with them. Trigger on requests like "에러 처리 제대로 됐는지 감사해줘", "catch 블록 다 비었는지 확인해줘",
+  "audit error handling", "check for silent failures", "이 코드 에러 나면 어떻게 되는지 점검". Do NOT use for
+  linter-level syntax checks, for designing an error-handling strategy (architecture), for
+  performance profiling (diagnose-first), or for judging whether existing tests actually verify
+  anything (use test-depth-audit).
 ---
 
 # Silent Failure Audit

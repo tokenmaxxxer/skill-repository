@@ -1,9 +1,17 @@
 ---
 name: release-engineering-rollback-and-recovery
-description: Use when deciding whether/how to roll back a release during an incident, budgeting rollback speed, or confirming a rollback target's build/config pairing.
+description: >-
+  Use when deciding whether/how to roll back a release during an incident,
+  budgeting rollback speed, or confirming a rollback target's build/config
+  pairing. Trigger on requests like "should we roll back now", "blue-green
+  switch back vs fix forward", "rollback target build and config pairing", "장애
+  났는데 롤백할까". Do NOT use for pre-declaring the canary thresholds that trigger
+  the rollback in the first place (use
+  release-engineering-deployment-rollout-strategy).
 metadata:
   axis: rollback-and-recovery
   rule_count_floor: 12
+
 ---
 
 # Rollback and recovery

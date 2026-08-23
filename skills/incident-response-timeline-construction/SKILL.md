@@ -1,9 +1,17 @@
 ---
 name: incident-response-timeline-construction
-description: Use when building or reviewing an incident postmortem's timeline field — what events to log, at what resolution, and how to verify them. Applies to the timeline-construction axis.
+description: >-
+  Use when building or reviewing an incident postmortem's timeline field —
+  what events to log, at what resolution, and how to verify them. Applies to
+  the timeline-construction axis. Trigger on requests like "build the incident
+  timeline", "timestamped detection vs mitigation events", "cross-check
+  responder memories against logs", "장애 타임라인 정리해줘". Do NOT use for how the
+  entries are worded once chosen (use
+  incident-response-blameless-language-editing).
 metadata:
   axis: timeline-construction
   rule_count_floor: 4
+
 ---
 
 # Timeline construction

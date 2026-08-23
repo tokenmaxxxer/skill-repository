@@ -1,6 +1,15 @@
 ---
 name: data-modeling-datavault
-description: Use when choosing whether Data Vault fits a multi-source, evolving-schema ingestion problem, or when structuring hubs, links, satellites, and the raw/business vault split.
+description: >-
+  Use when choosing whether Data Vault fits a multi-source, evolving-schema
+  ingestion problem, or when structuring hubs, links, satellites, and the
+  raw/business vault split. Fits the many-sources, heavy-schema-evolution,
+  hard-auditability condition; extend by adding satellites/links, never altering
+  loaded tables. Trigger on requests like "데이터 볼트로 모델링해줘", "hub link satellite
+  구조", "raw vault vs business vault", "hash key or sequence key". Do NOT use for
+  a single stable source needing dimensional star-schema reporting (use
+  data-modeling-kimball), or a top-down 3NF enterprise warehouse (use
+  data-modeling-inmon).
 metadata:
   axis: datavault
   rule_count_floor: 10

@@ -1,6 +1,13 @@
 ---
 name: partnerships-bd-exclusivity-and-scope-terms
-description: Use when a counterpart requests exclusivity, when drafting how broad an exclusivity grant should be, or when a diligence/negotiation window that justified an existing exclusivity clause has ended.
+description: >-
+  Use when a counterpart requests exclusivity, when drafting how broad an
+  exclusivity grant should be across product, geography, and vertical, or when
+  the diligence/negotiation window that justified an existing exclusivity clause
+  has ended. Trigger on requests like "독점 조항 어떻게 써야 해", "partner is asking for
+  exclusivity", "scope the exclusivity grant by geography and product line",
+  "should this exclusivity clause lapse or renew". Do NOT use for choosing the
+  overall deal vehicle itself (use partnerships-bd-deal-structure-selection).
 metadata:
   axis: exclusivity-and-scope-terms
   rule_count_floor: 3

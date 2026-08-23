@@ -1,6 +1,13 @@
 ---
 name: data-engineering-pipeline-design
-description: Use when choosing ETL vs ELT, picking an idempotency pattern, requiring exactly-once-effective semantics, naming a data owner/steward, routing a schema change through change control, retiring an unused hop, structuring a task graph, or authoring a dbt-style model.
+description: >-
+  Use when choosing ETL vs ELT, picking an idempotency pattern, requiring
+  exactly-once-effective semantics, naming a data owner/steward, routing a
+  schema change through change control, retiring an unused hop, structuring a
+  task graph, or authoring a dbt-style model. Trigger on requests like "ETL이 나아
+  ELT가 나아", "idempotent pipeline design", "exactly-once semantics", "dbt model
+  naming conventions". Do NOT use for classifying failures, DLQ routing, and
+  recovery once the pipeline breaks (use data-engineering-failure-handling).
 metadata:
   axis: pipeline-design
   rule_count_floor: 10

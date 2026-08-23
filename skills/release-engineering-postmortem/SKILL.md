@@ -1,17 +1,17 @@
 ---
 name: release-engineering-postmortem
 description: >-
-  Use when working the ops role's incident state (ops/state.md status:
-  incident) once the incident is over and a blameless postmortem is owed.
-  Enforces Google's required trigger criteria and required sections, and
-  incident.io's four named action-item failure patterns, as mechanical
-  field checks. Writes ops/postmortem-<incident-id>.md from
-  postmortem/templates/postmortem-template.md. Does NOT itself mark the
-  postmortem "reviewed" — that human gate belongs to the
-  incident -> steady row in transition-rules.md, not to this skill.
-  Do NOT use for the live incident timeline itself (build that as the
-  incident unfolds, before this skill runs) or for the rollout thresholds
-  (rollout-plan).
+  Use when working the ops role's incident state (ops/state.md status
+  incident) once the incident is over and a blameless postmortem is owed —
+  enforcing Google's required trigger criteria and required sections, and
+  incident.io's action-item failure patterns, as mechanical field checks on
+  ops/postmortem-<incident-id>.md. Trigger on requests like "write the
+  postmortem for this incident", "is a postmortem owed here", "action item
+  owner and closing condition check", "장애 포스트모템 작성해줘". Never self-certifies
+  rollback, IC appointment, or resolution, and never marks itself reviewed. Do
+  NOT use for the live incident timeline built while the incident unfolds, or
+  for rollout thresholds (use release-engineering-rollout-plan).
+
 ---
 
 # postmortem — the blameless incident writeup, and what NOT to self-certify

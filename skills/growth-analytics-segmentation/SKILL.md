@@ -1,6 +1,13 @@
 ---
 name: growth-analytics-segmentation
-description: Use when stage-to-stage drop-off is being reported, or when a funnel-diagnosis report states a bottleneck hypothesis with no named segment behind it. Applies to the segmentation axis.
+description: >-
+  Use when stage-to-stage drop-off is being reported, or when a funnel-diagnosis report
+  states a bottleneck hypothesis with no named segment behind it. Applies to the
+  segmentation axis. Trigger on requests like "이탈 구간 세그먼트별로 쪼개줘", "which cohort is driving
+  the drop-off", "break the funnel down by channel", "this bottleneck claim has no segment
+  evidence". Names the specific segment cell where the drop concentrates and cuts
+  unsupported hypotheses. Do NOT use for picking which metric is the North Star in the first
+  place (use growth-analytics-metric-selection).
 metadata:
   axis: segmentation
   rule_count_floor: 2

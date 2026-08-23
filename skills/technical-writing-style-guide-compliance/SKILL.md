@@ -1,6 +1,14 @@
 ---
 name: technical-writing-style-guide-compliance
-description: Use when reviewing or drafting prose for Google Developer Documentation Style Guide compliance — mood, voice, person, tone, word choice. Applies to the style-guide-compliance axis.
+description: >-
+  Use when reviewing or drafting prose for Google Developer Documentation Style
+  Guide compliance — mood, voice, person, tone, word choice. Applies to the
+  style-guide-compliance axis — imperative mood in steps, active voice with
+  named actors, second person present tense, "please" stripping, first-use
+  jargon glosses. Trigger on requests like "구글 스타일 가이드에 맞춰줘", "style guide
+  compliance check", "imperative mood로 고쳐줘", "active voice pass". Do NOT use for
+  sentence-length and chunking decisions driven by cognitive load rather than
+  guide conformance (use technical-writing-structure-comprehension).
 metadata:
   axis: style-guide-compliance
   rule_count_floor: 11

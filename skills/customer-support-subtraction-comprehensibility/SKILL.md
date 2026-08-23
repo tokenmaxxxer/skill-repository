@@ -1,6 +1,12 @@
 ---
 name: customer-support-subtraction-comprehensibility
-description: Use when drafting or reviewing a customer-facing reply, KCS Resolution field, canned-response macro, or playbook rule set and need to cut content that adds load without adding comprehension.
+description: >-
+  Use when drafting or reviewing a customer-facing reply, KCS Resolution
+  field, canned-response macro, or playbook rule set and need to cut content
+  that adds load without adding comprehension. Trigger on requests like "trim
+  this support reply", "macro too long", "고객 답변 간결하게 다듬어줘", "delete narrated
+  dead-ends". Do NOT use for the article's field structure and reuse decision
+  (use customer-support-kcs-article-authoring).
 ---
 
 # Subtraction / comprehensibility decision rules

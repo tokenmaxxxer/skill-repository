@@ -1,14 +1,15 @@
 ---
 name: implementation-blueprint
 description: >-
-  Situational code-architecture selection backed by a queryable database and a
-  deterministic CLI. Use whenever you are about to produce non-trivial code
-  spanning multiple modules or files and need to decide structure — "how should
-  I structure this", "what pattern should I use", "design the architecture",
-  "이 코드 어떻게 구조화할까", "아키텍처 잡아줘" — or before fanning work out
-  to parallel workers and needing the contract to freeze. Do NOT use for a
-  single-file script, a one-line fix, or purely algorithmic work: run the
-  classify step anyway if unsure — it vetoes structure for those cases.
+  Use whenever you are about to write non-trivial code spanning multiple modules or files and
+  need to decide structure, or before fanning work out to parallel workers and needing the
+  contract to freeze — situational code-architecture selection backed by a queryable archetype
+  database and a deterministic classify/recommend CLI. Trigger on requests like "how should I
+  structure this", "what pattern should I use", "design the architecture", "이 코드 어떻게 구조화할까",
+  "아키텍처 잡아줘". Do NOT use for a single-file script, a one-line fix, or purely algorithmic work
+  (run the classify step anyway if unsure — it vetoes structure for those cases), nor for
+  judging whether one GoF pattern earns its indirection (use
+  implementation-design-pattern-selection).
 ---
 
 # blueprint — the course is set by the situation

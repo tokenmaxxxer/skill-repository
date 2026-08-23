@@ -1,15 +1,15 @@
 ---
 name: premortem
 description: >-
-  A plan-evaluation exercise run BEFORE committing to a plan: assume the plan has already failed,
-  generate reasons independently, then convert every reason into a mitigation, a detection signal,
-  or an explicit accepted risk. Use whenever the user wants to pressure-test a plan before it's
-  locked in — e.g. "이 계획 시작 전에 프리모템 해줘", "실패 가정하고 점검해줘", "premortem this plan", "assume this
-  fails, why", "what could go wrong before we commit". The exercise only works with a specific
-  certainty-framed failure prompt and independent-then-merged generation — a loose "what are the
-  risks?" brainstorm is a different exercise. Do NOT use on a plan already executed or irreversibly
-  committed (that's a postmortem), when there is no written plan at all, or for a quick gut-check
-  on a small reversible decision that doesn't warrant a full disposition table.
+  Use whenever the user wants to pressure-test a written plan BEFORE committing to it: assume the
+  plan has already failed, gather reasons independently, then convert every reason into a
+  mitigation, a detection signal, or an explicit accepted risk. Trigger on requests like "이 계획 시작
+  전에 프리모템 해줘", "실패 가정하고 점검해줘", "premortem this plan", "assume this fails, why", "what could go
+  wrong before we commit". The exercise only works with a specific certainty-framed failure prompt
+  and independent-then-merged reason gathering — a loose "what are the risks?" brainstorm is a
+  different exercise. Do NOT use on a plan already executed or irreversibly committed (use
+  blameless-postmortem), when there is no written plan at all, or for a quick gut-check on a small
+  reversible decision that doesn't warrant a full disposition table.
 ---
 
 # Premortem

@@ -1,6 +1,13 @@
 ---
 name: observability-signal-use
-description: Use when placing Utilization, Saturation, or Errors signals on a resource-bound surface. Applies to the signal-use axis.
+description: >-
+  Use when placing Utilization, Saturation, or Errors signals on a
+  resource-bound surface (CPU, disk, memory, connection pool, thread pool,
+  queue). Trigger on requests like "connection pool saturation metric", "queue
+  depth vs utilization", "스레드풀 포화도 계측해줘", "disk busy percent panel". Do NOT
+  use for a request-driven endpoint's rate/error/duration placement (use
+  observability-signal-red) nor for a service-rollup aggregating children's
+  series (use observability-signal-golden).
 metadata:
   axis: signal-use
   rule_count_floor: 3

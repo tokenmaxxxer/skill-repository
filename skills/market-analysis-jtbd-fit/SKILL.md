@@ -1,6 +1,13 @@
 ---
 name: market-analysis-jtbd-fit
-description: Use when naming a customer job for JTBD analysis, identifying the strongest competing alternative, drafting a job statement or outcome statement, or judging whether a spec's differentiation verdict holds against that alternative. Applies to the jtbd-fit axis.
+description: >-
+  Use when naming a customer job for JTBD analysis, identifying the strongest competing
+  alternative, drafting a job statement or outcome statement, or judging whether a spec's
+  differentiation verdict holds against that alternative. Applies to the jtbd-fit axis.
+  Trigger on requests like "고객이 진짜 하려는 일이 뭐야", "what job does this product compete for",
+  "who is the strongest alternative including doing nothing", "does our differentiation
+  actually hold". Do NOT use for rating structural forces like rivalry or buyer power (use
+  market-analysis-five-forces).
 metadata:
   axis: jtbd-fit
   rule_count_floor: 10

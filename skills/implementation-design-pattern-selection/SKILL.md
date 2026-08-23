@@ -1,6 +1,12 @@
 ---
 name: implementation-design-pattern-selection
-description: Use when deciding whether to introduce a GoF-style design pattern (Strategy, Factory, Visitor, Observer, Decorator) or keep the direct/procedural form, including when an existing pattern's indirection has only ever served one concrete case.
+description: >-
+  Use when deciding whether to introduce a GoF-style design pattern (Strategy, Factory, Visitor,
+  Observer, Decorator) or keep the direct/procedural form, including when an existing pattern's
+  indirection has only ever served one concrete case. Trigger on requests like "should I use
+  Strategy here", "Factory 패턴 쓸까", "이 추상화 걷어낼까", "delete this builder that only ever constructs
+  one product". Do NOT use for coupling/cohesion metric thresholds or check-pipeline ordering
+  (use implementation-complexity-coupling-management).
 metadata:
   axis: design-pattern-selection
   rule_count_floor: 6

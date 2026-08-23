@@ -1,6 +1,13 @@
 ---
 name: partnerships-bd-term-sheet-comprehensibility-and-convention
-description: Use when laying out a new term sheet's section structure, when drafting or reviewing a clause a non-lawyer stakeholder must approve, or when a term-sheet review finds a clause restating another section.
+description: >-
+  Use when laying out a new term sheet's section structure, when drafting or
+  reviewing a clause a non-lawyer stakeholder must approve, or when a term-sheet
+  review finds a clause restating another section. Trigger on requests like "텀시트
+  초안 잡아줘", "market-standard term sheet section order", "simplify this clause for
+  business-side approval", "this clause duplicates the governance section". Do
+  NOT use for setting the governance cadence and KPI routing content itself (use
+  partnerships-bd-governance-cadence-and-kpi).
 metadata:
   axis: term-sheet-comprehensibility-and-convention
   rule_count_floor: 3

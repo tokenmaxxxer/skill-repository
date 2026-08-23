@@ -1,6 +1,13 @@
 ---
 name: negotiation-vendor-evaluation-rfp-scoring
-description: Use when designing an RFP's evaluation-criteria section, scoring competing vendor proposals against weighted criteria, or reviewing an existing vendor-scoring matrix for a criterion that can single-handedly decide the award.
+description: >-
+  Use when designing an RFP's evaluation-criteria section, scoring competing
+  vendor proposals against weighted criteria, or reviewing an existing
+  vendor-scoring matrix for a criterion that can single-handedly decide the
+  award. Trigger on requests like "RFP 평가 기준 만들어줘", "weight the vendor scoring
+  criteria", "can price alone decide this award", "score these three vendor
+  proposals". Do NOT use for the live negotiation with the selected vendor
+  afterward (use negotiation-batna-and-zopa-preparation).
 metadata:
   axis: weighted-criteria-scoring-integrity
   rule_count_floor: 3

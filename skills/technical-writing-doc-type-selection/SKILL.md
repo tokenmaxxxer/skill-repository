@@ -1,6 +1,14 @@
 ---
 name: technical-writing-doc-type-selection
-description: Use when choosing which Diátaxis quadrant a deliverable should be, or auditing a draft that mixes more than one quadrant's content. Applies to the doc-type-selection axis.
+description: >-
+  Use when choosing which Diátaxis quadrant a deliverable should be, or auditing
+  a draft that mixes more than one quadrant's content. Applies to the
+  doc-type-selection axis. Trigger on requests like "tutorial vs how-to 뭐로 써야
+  해", "which doc type is this", "Diátaxis quadrant", "this draft mixes reference
+  and tutorial". Do NOT use for deciding what to cut once the doc-type is fixed
+  (use technical-writing-minimalism-scoping); for routing general prose style by
+  reader background knowledge rather than picking a documentation quadrant,
+  prose-modes is the alternative.
 metadata:
   axis: doc-type-selection
   rule_count_floor: 12

@@ -1,6 +1,11 @@
 ---
 name: game-character-animation-and-motion
-description: Use when defining a character's animation state machine, choosing keyframes vs tween vs steps() for a state, setting anticipation/follow-through timing, or animating a DOM/SVG character. Applies to the character-animation-and-motion axis.
+description: >-
+  Use when defining a character's animation state machine, choosing keyframes vs tween vs
+  steps() for a state, setting anticipation/follow-through timing, or animating a DOM/SVG
+  character. Trigger on requests like "idle/run/attack animation states", "sprite sheet
+  steps() animation", "hit pose transition timing", "점프 애니메이션 타이밍 잡아줘". Do NOT use for how the
+  character is drawn, layered, or flipped (use game-character-rendering-composition).
 metadata:
   axis: character-animation-and-motion
   rule_count_floor: 9

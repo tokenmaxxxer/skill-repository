@@ -1,6 +1,12 @@
 ---
 name: game-feel-juice-and-feedback
-description: Use when deciding whether a build is ready to receive juice, choosing what feedback an input needs, adding or capping a juice effect (screen shake, squash-and-stretch, anticipation), or pruning a stack of effects that has stopped reading clearly. Applies to the juice-and-feedback axis.
+description: >-
+  Use when deciding whether a build is ready to receive juice, choosing what feedback an input
+  needs, adding or capping a juice effect (screen shake, squash-and-stretch, anticipation,
+  particles, sound), or pruning a stack of effects that has stopped reading clearly. Trigger
+  on requests like "add screen shake", "squash and stretch on jump", "game feel polish", "타격감
+  살려줘". Do NOT use for a hit's stop/knockback numbers, damage numbers, or i-frames (use
+  game-hit-reaction-and-impact).
 metadata:
   axis: juice-and-feedback
   rule_count_floor: 4

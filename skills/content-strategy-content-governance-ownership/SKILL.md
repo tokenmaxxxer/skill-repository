@@ -1,6 +1,12 @@
 ---
 name: content-strategy-content-governance-ownership
-description: Use when assigning ownership for a content domain, resolving who has final sign-off on a content decision, or choosing between a centralized, decentralized, or hybrid governance model for content across teams.
+description: >-
+  Use when assigning ownership for a content domain, resolving who has final sign-off on a
+  content decision, or choosing between a centralized, decentralized, or hybrid governance
+  model for content across teams. Trigger on requests like "who owns this content", "content
+  RACI", "콘텐츠 승인 권한 누구한테 줘야 해", "centralized vs decentralized content team". Do NOT use for
+  enumerating or judging existing content assets (use
+  content-strategy-content-audit-and-inventory).
 metadata:
   axis: accountability-and-decision-rights
   rule_count_floor: 2

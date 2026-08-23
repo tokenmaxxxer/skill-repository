@@ -1,17 +1,16 @@
 ---
 name: parallel-decomposition
 description: >-
-  A gate for cutting build work into pieces several agents can produce at once without colliding:
+  Use whenever you are about to spawn more than one agent to BUILD on a shared codebase: a gate
+  for cutting build work into pieces several agents can work on at once without colliding —
   classify pieces by collision risk, enumerate write sets and list shared identifiers at depth
-  proportional to risk, freeze those as a contract before fan-out, and refuse the fan-out when
-  discovered by doing the work. This is the upstream half of parallel work — it decides the cut
-  before any agent is spawned; `merge-gates` decides what must be true before a branch lands. Use
-  before spawning more than one agent to BUILD — e.g. "이 작업 병렬로 쪼개서 시켜줘", "에이전트 여러 개로 나눠서
-  돌려", "split this across agents", "fan this out in parallel", "can these run concurrently",
-  "parallelize this". Trigger whenever someone is about to fan out production work on a shared
-  codebase. Do NOT use for merge/landing questions (`merge-gates`), for research fan-out where
-  agents share no artifact (`market-recon`, `tech-feasibility`), for model-tier routing
-  (`model-routing`), or for work small enough that briefing costs more than doing it.
+  proportional to risk, freeze those as a contract before fan-out, and refuse the fan-out when the
+  cut can only be discovered by doing the work. This is the upstream half of parallel work — it
+  decides the cut before any agent is spawned. Trigger on requests like "이 작업 병렬로 쪼개서 시켜줘", "에이전트
+  여러 개로 나눠서 돌려", "split this across agents", "fan this out in parallel", "can these run
+  concurrently". Do NOT use for merge/landing questions (use merge-gates), for research fan-out
+  where agents share no artifact (market-recon, tech-feasibility), for model-tier routing (model-
+  routing), or for work small enough that briefing costs more than doing it.
 ---
 
 # Parallel Decomposition

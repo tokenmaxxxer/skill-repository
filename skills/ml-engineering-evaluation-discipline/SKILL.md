@@ -1,6 +1,15 @@
 ---
 name: ml-engineering-evaluation-discipline
-description: Use when validating a model's quality before or during launch, distinguishing offline metrics from online-experiment results, or checking whether an online evaluation's arm split and decision rule are trustworthy. Applies to the evaluation-discipline axis.
+description: >-
+  Use when validating a model's quality before or during launch, distinguishing
+  offline metrics from online-experiment results, or checking whether an online
+  evaluation's arm split and decision rule are trustworthy. Applies to the
+  evaluation-discipline axis — SRM chi-square checks, A/B vs shadow vs canary
+  selection by goal, pre-registered thresholds. Trigger on requests like "A/B 결과
+  믿어도 돼?", "sample ratio mismatch check", "offline vs online eval", "is this
+  launch metric trustworthy". Do NOT use for staging the rollout and its
+  rollback trigger once the decision is trusted (use
+  ml-engineering-rollout-promotion-rollback).
 metadata:
   axis: evaluation-discipline
   rule_count_floor: 5

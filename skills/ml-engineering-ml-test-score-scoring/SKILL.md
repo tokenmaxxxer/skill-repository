@@ -1,6 +1,15 @@
 ---
 name: ml-engineering-ml-test-score-scoring
-description: Use when scoring a model's production readiness against the ML Test Score rubric (Breck et al. 2017) across Data, Model, Infrastructure, and Monitoring Tests. Applies to the ml-test-score-scoring axis.
+description: >-
+  Use when scoring a model's production readiness against the ML Test Score
+  rubric (Breck et al. 2017) across Data, Model, Infrastructure, and Monitoring
+  Tests. Applies to the ml-test-score-scoring axis — per-item numeric scores,
+  training-serving skew comparators, paging drift alerts, no partial credit for
+  manual steps. Trigger on requests like "ML Test Score 채점해줘", "production
+  readiness rubric", "training-serving skew check", "is this model really
+  production ready". Do NOT use for judging whether one launch decision's
+  offline/online metric is trustworthy (use
+  ml-engineering-evaluation-discipline).
 metadata:
   axis: ml-test-score-scoring
   rule_count_floor: 5

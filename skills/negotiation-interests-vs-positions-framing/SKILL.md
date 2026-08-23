@@ -1,6 +1,14 @@
 ---
 name: negotiation-interests-vs-positions-framing
-description: Use when a negotiation has stalled into repeated positional concessions with no underlying interest identified, when drafting an opening proposal that states a position without the interest behind it, or when a counterpart's stated position seems irreconcilable with your own and neither side has yet asked what interest the position protects.
+description: >-
+  Use when a negotiation has stalled into repeated positional concessions with
+  no underlying interest identified, when drafting an opening proposal that
+  states a position without the interest behind it, or when a counterpart's
+  stated position seems irreconcilable with your own and neither side has asked
+  what interest it protects. Trigger on requests like "협상이 교착 상태야", "we keep
+  haggling over one number", "reframe their position as an interest", "their
+  position looks irreconcilable with ours". Do NOT use for pre-session fallback
+  and agreement-zone preparation (use negotiation-batna-and-zopa-preparation).
 metadata:
   axis: positional-vs-interest-based-framing
   rule_count_floor: 2

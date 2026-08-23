@@ -1,9 +1,19 @@
 ---
 name: incident-response-severity-classification-scoping
-description: Use when classifying an incident's severity tier or scoping how much postmortem depth it earns, or when a draft's depth doesn't match its tier. Applies to the severity-classification-scoping axis.
+description: >-
+  Use when classifying an incident's severity tier or scoping how much
+  postmortem depth it earns, or when a draft's depth doesn't match its tier.
+  Applies to the severity-classification-scoping axis. Trigger on requests
+  like "is this SEV1 or SEV2", "how deep should this postmortem be", "장애 심각도
+  티어 분류해줘". Classifies by affected-user blast radius, not response effort, and
+  strips a SEV3 draft back to summary-only. Do NOT use for picking the RCA
+  method at that depth (use incident-response-rca-method-selection); for
+  banding a reproduced code defect, see
+  defect-verification-severity-band-assignment.
 metadata:
   axis: severity-classification-scoping
   rule_count_floor: 4
+
 ---
 
 # Severity classification / postmortem depth scoping

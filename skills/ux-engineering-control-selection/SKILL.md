@@ -1,6 +1,11 @@
 ---
 name: ux-engineering-control-selection
-description: Use when picking which UI control fits a given field's type, option count, or interaction contract. Applies to the control-selection-by-field-type axis.
+description: >-
+  Use when picking which UI control fits a given field's type, option count, or interaction
+  contract. Applies to the control-selection-by-field-type axis. Trigger on requests like
+  "radio group vs dropdown", "which control for this field", "date picker or text input", "어떤
+  컨트롤 쓸지 정해줘". Do NOT use for arranging already-chosen controls into columns or groups (use
+  ux-engineering-layout-grouping).
 metadata:
   axis: control-selection-by-field-type
   rule_count_floor: 3

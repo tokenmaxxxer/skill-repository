@@ -1,6 +1,11 @@
 ---
 name: ux-engineering-navigation-depth
-description: Use when deciding where an action or item sits in a navigation hierarchy, top level vs. nested, and in what order. Applies to the nav-order-vs-usage-frequency axis.
+description: >-
+  Use when deciding where an action or item sits in a navigation hierarchy, top level vs.
+  nested, and in what order. Applies to the nav-order-vs-usage-frequency axis. Trigger on
+  requests like "top level vs nested menu", "nav ordering by usage frequency", "settings
+  buried too deep", "메뉴 구조 정해줘". Do NOT use for within-screen arrangement of fields and
+  controls (use ux-engineering-layout-grouping).
 metadata:
   axis: nav-order-vs-usage-frequency
   rule_count_floor: 3

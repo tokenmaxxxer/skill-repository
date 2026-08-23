@@ -1,17 +1,17 @@
 ---
 name: stride
 description: >-
-  A design-stage security threat analysis procedure (STRIDE per-element threat modeling):
-  decompose a system as a data flow diagram (external entities, processes, data stores, data
-  flows, trust boundaries), enumerate threats per element against the STRIDE applicability table
-  (Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, Elevation of
-  privilege), and disposition every threat as mitigate/accept/redesign. Structurally the security
-  sibling of `fmea` — same enumerate-and-disposition shape, applied to threats instead of failure
-  modes. Use when the user wants to find what could be attacked in a design before it ships — e.g.
-  "이 설계 보안 위협 분석해줘", "위협 모델링 해줘", "threat model this design", "run a STRIDE analysis". Do
-  NOT use for code-level vulnerability scanning, for compliance/regulatory mapping (point to
-  `compliance-scan`), for privacy threats (identifiability, linkability — that's LINDDUN), or
-  when there is no concrete design with enumerable elements yet.
+  Use when the user wants to find what could be attacked in a design before it ships: a design-
+  stage security threat analysis (STRIDE per-element threat modeling) that decomposes the system
+  as a data flow diagram (external entities, processes, data stores, data flows, trust
+  boundaries), enumerates threats per element against the STRIDE applicability table, and
+  dispositions every threat as mitigate/accept/redesign. Structurally the security sibling of fmea
+  — same enumerate-and-disposition shape, applied to threats instead of failure modes. Trigger on
+  requests like "이 설계 보안 위협 분석해줘", "위협 모델링 해줘", "threat model this design", "run a STRIDE
+  analysis". Do NOT use for code-level vulnerability scanning, compliance/regulatory mapping
+  (compliance-scan), privacy threats — identifiability, linkability — (LINDDUN), fine-grained
+  boundary/CVSS/disposition rule calls (use security-threat-model-threat-modeling-decision-rules),
+  or a feasibility spike's STRIDE table (technical-feasibility-stride-table).
 ---
 
 # STRIDE (per-element threat modeling)

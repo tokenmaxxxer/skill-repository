@@ -1,6 +1,13 @@
 ---
 name: marketing-channel-selection
-description: Use when choosing which channel to fund, allocating or shifting budget across an existing channel mix, or deciding whether to cut an underperforming channel.
+description: >-
+  Use when choosing which channel to fund, allocating or shifting budget across an existing
+  channel mix, or deciding whether to cut an underperforming channel. Trigger on requests
+  like "어떤 채널에 예산 쓸까", "should we cut this channel", "rebalance the channel budget", "is
+  LinkedIn worth funding for this segment". Covers audience-presence checks, B2B vs B2C
+  channel fit, incremental ROI shifts in 5-10% steps, and upstream-contribution checks
+  before a cut. Do NOT use for deciding which segment to target in the first place (use
+  marketing-segment-targeting).
 metadata:
   axis: channel-selection
   rule_count_floor: 5

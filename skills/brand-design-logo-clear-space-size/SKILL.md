@@ -1,6 +1,11 @@
 ---
 name: brand-design-logo-clear-space-size
-description: Use when specifying a logo's required clear space, setting minimum-size floors for print or digital reproduction, or pruning a logo-variant appendix of versions tied to a discontinued campaign or medium.
+description: >-
+  Use when specifying a logo's required clear space, setting minimum-size floors for print or
+  digital reproduction, or pruning a logo-variant appendix of versions tied to a discontinued
+  campaign or medium. Trigger on requests like "logo minimum size", "clear space spec for the
+  lockup", "logo variant pruning", "로고 여백 규정 정해줘". Do NOT use for broader shipped-asset audits
+  or approval workflow (use brand-design-brand-consistency-governance).
 metadata:
   axis: logo-clear-space-and-minimum-size
   rule_count_floor: 3

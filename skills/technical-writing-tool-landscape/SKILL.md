@@ -1,6 +1,15 @@
 ---
 name: technical-writing-tool-landscape
-description: Use when applying a Claude Code plugin/skill-ecosystem tool learning to a diagram, redraw, or accuracy-review-evidence decision elsewhere in this family. Applies to the tool-landscape axis.
+description: >-
+  Use when applying a Claude Code plugin/skill-ecosystem tool learning to a
+  diagram, redraw, or accuracy-review-evidence decision elsewhere in this
+  family. Applies to the tool-landscape axis — adoption evidence backing diagram
+  cap values, "what changed" ledgers for redrawn diagrams, deterministic
+  doc-code drift checkers. Trigger on requests like "다이어그램 도구 근거 대줘", "redraw
+  ledger", "doc-code drift checker", "editorial diagram constraints evidence".
+  Do NOT use for the diagram judgment rules themselves, such as choosing a
+  deliverable's quadrant or its diagram polish-vs-update-cheapness call (use
+  technical-writing-doc-type-selection).
 metadata:
   axis: tool-landscape
   rule_count_floor: 3

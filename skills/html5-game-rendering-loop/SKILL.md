@@ -1,6 +1,12 @@
 ---
 name: html5-game-rendering-loop
-description: Use when structuring or reviewing a game's frame loop, timestep, or render/logic separation — choosing a single requestAnimationFrame driver, a fixed-timestep accumulator, state interpolation, delta clamping, or tab-visibility handling. Applies to the rendering-loop axis.
+description: >-
+  Use when structuring or reviewing a game's frame loop, timestep, or render/logic separation
+  — choosing a single requestAnimationFrame driver, a fixed-timestep accumulator, state
+  interpolation, delta clamping, or tab-visibility handling. Trigger on requests like
+  "requestAnimationFrame game loop", "fixed timestep accumulator", "delta time clamping", "게임
+  루프 구조 잡아줘". Do NOT use for the content of transient effects like shake or particles (use
+  game-feel-juice-and-feedback).
 metadata:
   axis: rendering-loop
   rule_count_floor: 5

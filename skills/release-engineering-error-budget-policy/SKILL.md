@@ -1,14 +1,16 @@
 ---
 name: release-engineering-error-budget-policy
 description: >-
-  Use when working the ops role's steady state (ops/state.md status:
-  steady) to write, per SLI, the measurement method, SLO target,
-  measurement window, and consequence table that gates steady ->
-  readiness on error_budget: ok, or when a true P0/security-fix exception
-  needs to be routed around an exhausted budget.
-  Do NOT use to define what "healthy" means from scratch — this role
-  consumes the SLO/measurement design feasibility already produced; it
-  does not invent it.
+  Use when working the ops role's steady state (ops/state.md status steady) to
+  write, per SLI, the measurement method, SLO target, measurement window, and
+  consequence table that gates steady -> readiness on error_budget ok, or when
+  a true P0/security-fix exception needs to be routed around an exhausted
+  budget. Trigger on requests like "write the error-budget policy", "budget
+  exhausted, can we still ship", "SLO consequence table per SLI", "에러 버짓 정책
+  작성해줘". Do NOT use to define what "healthy" means from scratch — this role
+  consumes the SLO/measurement design feasibility it was already handed; for
+  the readiness gate itself, use release-engineering-readiness-checklist.
+
 ---
 
 # error-budget-policy — the steady-state handoff contract

@@ -1,6 +1,14 @@
 ---
 name: capacity-planning-cost-attribution-at-trigger
-description: Use when recording or reviewing the cost of a capacity expansion — attributing spend to the threshold that fired it, sizing scale-out/scale-in caps, splitting baseline from spike cost, or investigating a cost anomaly.
+description: >-
+  Use when recording or reviewing the cost of a capacity expansion —
+  attributing incremental spend to the expansion threshold that fired it,
+  splitting baseline from spike cost, or investigating an anomalous expansion
+  cost. Trigger on requests like "why did the autoscaling bill jump",
+  "attribute this capacity spend to its trigger", "확장 비용 원인 추적해줘",
+  "unit-economic cost note for the expansion". Do NOT use for sizing the
+  expansion threshold itself (use
+  capacity-planning-expansion-trigger-threshold-sizing).
 metadata:
   axis: cost-attribution-at-trigger
   rule_count_floor: 8

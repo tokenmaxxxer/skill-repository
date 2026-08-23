@@ -1,16 +1,17 @@
 ---
 name: reference-forecast
 description: >-
-  Correct schedule/cost/effort forecasts by anchoring them to the measured outcome distribution
-  of comparable past projects (the external approach) instead of building the number up from the
-  case's own components (the internal approach). Use whenever someone needs to produce or audit a
-  duration, cost, or effort estimate and comparable completed cases exist — e.g. "이거 얼마나 걸릴까",
-  "일정 추정해줘", "예산 얼마나 잡아야 해", "how long will this actually take", "sanity-check our schedule
-  estimate", "correct for optimism bias", "reference class forecasting". Trigger whenever a
-  quantitative forecast is about to be built bottom-up, or an existing bottom-up estimate needs
-  auditing against outside evidence. Do NOT use for one-of-a-kind work with no comparable case
-  (state the internal estimate as uncorrected), for trivial tasks where estimation overhead
-  exceeds the stake, or for qualitative calls with no quantitative forecast.
+  Use whenever someone needs to build or audit a duration, cost, or effort estimate and comparable
+  completed cases exist: correct the forecast by anchoring it to the measured outcome distribution
+  of comparable past projects (the external view) instead of building the number up from the
+  case's own components. Trigger on requests like "이거 얼마나 걸릴까", "일정 추정해줘", "예산 얼마나 잡아야 해", "how
+  long will this actually take", "sanity-check our schedule estimate", "correct for optimism
+  bias", "reference class forecasting" — whenever a quantitative forecast is about to be built
+  bottom-up, or an existing bottom-up estimate needs auditing against outside evidence. Do NOT use
+  for one-of-a-kind work with no comparable case (state the internal estimate as uncorrected), for
+  trivial tasks where estimation overhead exceeds the stake, for qualitative calls with no
+  quantitative forecast, or for infrastructure demand forecasting (use capacity-planning-demand-
+  shape-and-forecast-method).
 ---
 
 # Reference Class Forecasting

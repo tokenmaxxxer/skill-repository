@@ -1,6 +1,13 @@
 ---
 name: market-analysis-mece-proposal
-description: Use when structuring a phase-1 proposal's required elements to check for content overlap between sections, choosing a MECE split for the analysis, or verifying the section set is collectively exhaustive against the rulebook's PRODUCES field. Applies to the mece-proposal axis.
+description: >-
+  Use when structuring a phase-1 proposal's required elements to check for content overlap
+  between sections, choosing a MECE split for the analysis, or verifying the section set is
+  collectively exhaustive against the rulebook's required-elements field. Applies to the
+  mece-proposal axis. Trigger on requests like "제안서 섹션 구조 MECE하게 잡아줘", "do these sections
+  overlap", "is the proposal missing a required element", "re-cut this issue tree". Do NOT
+  use for judging whether the claims inside a section are properly sourced (use
+  market-analysis-evidence-rigor).
 metadata:
   axis: mece-proposal
   rule_count_floor: 10

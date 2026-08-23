@@ -1,18 +1,16 @@
 ---
 name: test-derivation
 description: >-
-  Derives test cases from written requirements/acceptance criteria using standardized black-box
-  techniques (equivalence partitioning, boundary value analysis, decision tables, state transition
-  testing, pairwise/t-way combinatorial testing, MC/DC branch coverage, and Given-When-Then
-  scenarios), routes each requirement to the right technique by its problem shape, and maintains
-  the requirements-to-tests traceability matrix. Use whenever the user wants test cases pulled
-  from acceptance criteria, wants help deciding which testing technique fits a requirement, or
-  wants requirements and tests linked — e.g. "이 수용 기준으로 테스트 케이스 뽑아줘", "어떤 테스트 기법 써야 해",
-  "derive test cases from these acceptance criteria", "build a traceability matrix". The value is
-  coverage discipline and technique-fit routing. Do NOT use when there are no written requirements
-  yet (that's requirements-quality), when the ask is judging whether *existing* tests actually
-  verify anything rather than deriving new ones (test-depth-audit), or for non-functional testing
-  (performance, security, usability) that these techniques don't cover.
+  Use whenever the user wants test cases pulled from written requirements/acceptance criteria,
+  wants help deciding which black-box technique fits a requirement, or wants requirements and
+  tests linked in a traceability matrix — routing each requirement by problem shape to
+  equivalence partitioning, boundary value analysis, decision tables, state transition testing,
+  pairwise/t-way combinatorial testing, MC/DC, or Given-When-Then scenarios. Trigger on requests
+  like "이 수용 기준으로 테스트 케이스 뽑아줘", "어떤 테스트 기법 써야 해", "derive test cases from these acceptance
+  criteria", "build a traceability matrix". Do NOT use when there are no written requirements
+  yet (requirements-quality), when the ask is judging whether existing tests actually verify
+  anything (use test-depth-audit), or for non-functional testing (performance, security,
+  usability) these techniques don't cover.
 ---
 
 # Test Derivation

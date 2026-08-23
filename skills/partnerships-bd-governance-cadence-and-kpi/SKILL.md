@@ -1,6 +1,14 @@
 ---
 name: partnerships-bd-governance-cadence-and-kpi
-description: Use when designing a partnership's recurring governance rhythm, when deciding which KPIs get reported to which governance tier, or when reviewing whether an existing governance layer still produces decisions.
+description: >-
+  Use when designing a partnership's recurring governance rhythm, deciding which
+  KPIs get reported to which governance tier, or reviewing whether an existing
+  governance layer still decides anything in its recent sessions. Trigger on
+  requests like "파트너십 거버넌스 어떻게 잡을까", "steering committee cadence for this
+  partnership", "which KPIs go to the quarterly review vs the monthly working
+  group", "this governance meeting never decides anything". Do NOT use for
+  drafting the term-sheet sections those governance terms live in (use
+  partnerships-bd-term-sheet-comprehensibility-and-convention).
 metadata:
   axis: governance-cadence-and-kpi
   rule_count_floor: 3

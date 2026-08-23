@@ -1,6 +1,11 @@
 ---
 name: knowledge-management-taxonomy-tagging
-description: Use when adding, merging, or scoping a term in the controlled vocabulary, or when tagging an entry with an ambiguous, cross-cutting, or synonym-prone concept.
+description: >-
+  Use when adding, merging, or scoping a term in the controlled vocabulary, or when tagging
+  an entry with an ambiguous, cross-cutting, or synonym-prone concept. Trigger on requests
+  like "which tag should this get", "merge these synonym tags", "태그 체계 정리해줘", "SKOS
+  broader/narrower mapping". Do NOT use for choosing an entry's Diátaxis type, title, or
+  file path (use knowledge-management-structure-findability).
 metadata:
   axis: taxonomy-tagging
   rule_count_floor: 10

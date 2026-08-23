@@ -1,6 +1,13 @@
 ---
 name: secure-coding-authorization-access-control
-description: Use when a design or review is deciding who may act on what, choosing between RBAC and ABAC/ReBAC, closing a client-side-only or single-entry-path check, or auditing accumulated role permissions.
+description: >-
+  Use when a design or review is deciding who may act on what and where that check runs —
+  choosing deny-by-default for unmatched requests, granting a new permission, picking between
+  RBAC and ABAC/ReBAC, modeling a multi-tenant resource, closing a client-side-only or
+  single-entry-path check, or auditing accumulated role permissions. Trigger on requests like
+  "RBAC vs ABAC 뭐가 맞아", "권한 체크 어디서 해야 해", "tenant isolation for this resource", "audit these
+  role grants". Do NOT use for session/credential lifecycle once identity is established (use
+  secure-coding-session-authentication).
 metadata:
   axis: authorization-access-control
   rule_count_floor: 8

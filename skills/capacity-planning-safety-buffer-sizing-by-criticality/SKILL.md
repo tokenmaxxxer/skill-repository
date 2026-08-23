@@ -1,6 +1,14 @@
 ---
 name: capacity-planning-safety-buffer-sizing-by-criticality
-description: Use when sizing a safety_buffer term by a resource's criticality and blast radius — choosing a service-level target, ranking criticality against demand history, or sizing a buffer for a shared or sparse-history resource.
+description: >-
+  Use when sizing a safety_buffer term by a resource's criticality and blast
+  radius — choosing a service-level target, ranking criticality against demand
+  history, or sizing a buffer for a shared or sparse-history resource. Trigger
+  on requests like "how big a capacity buffer for this tier-1 service",
+  "safety buffer p99 or p90", "세이프티 버퍼 크기 정해줘", "mixed-criticality shared
+  resource buffer". Do NOT use for the overall threshold decomposition the
+  buffer plugs into (use
+  capacity-planning-expansion-trigger-threshold-sizing).
 metadata:
   axis: safety-buffer-sizing-by-criticality
   rule_count_floor: 8

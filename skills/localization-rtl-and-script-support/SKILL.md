@@ -1,6 +1,12 @@
 ---
 name: localization-rtl-and-script-support
-description: Use when a target locale uses a right-to-left script, when deciding whether an icon or directional CSS property needs mirroring, or when a locale pair has no RTL/bidi requirement to check.
+description: >-
+  Use when a target locale uses a right-to-left script, when deciding whether an icon or
+  directional CSS property needs mirroring, or when a locale pair has no RTL/bidi
+  requirement to check. Trigger on requests like "RTL support for Arabic", "should this icon
+  mirror", "아랍어 레이아웃 미러링 해줘", "CSS logical properties for dir=rtl". Do NOT use for width
+  headroom or character budgets for translated text (use
+  localization-text-expansion-and-layout).
 metadata:
   axis: rtl-and-script-support
   rule_count_floor: 10

@@ -1,6 +1,14 @@
 ---
 name: finance-unit-economics-ltv-churn-assumption
-description: Use when the churn assumption feeding an LTV figure needs a confidence band, a gross-margin adjustment, deduplication against a bull/base/bear scenario table, or a substance-based (not action-based) definition.
+description: >-
+  Use when the churn assumption feeding an LTV figure needs a confidence band
+  instead of a point estimate, a gross-margin adjustment, deduplication against
+  a bull/base/bear scenario table, or a substance-based (not action-based) churn
+  event definition. Trigger on requests like "LTV의 churn 가정 점검해줘", "our churn
+  cohort is only 6 months old", "gross-margin-adjusted LTV for usage-based
+  expansion", "how should we define the churn event". Do NOT use for general
+  sensitivity-vs-scenario sequencing across the model (use
+  finance-unit-economics-sensitivity-scenario).
 metadata:
   axis: ltv-churn-assumption
   rule_count_floor: 12

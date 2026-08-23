@@ -1,6 +1,13 @@
 ---
 name: ux-engineering-service-design-blueprint-construction
-description: Use when building a service blueprint for an omnichannel or cross-functional service — laying out Physical Evidence, Customer Actions, Onstage, Backstage, and Support Processes layers, placing the Line of Interaction/Visibility/Internal Interaction, or scoping which journey/segment a blueprint should cover before starting.
+description: >-
+  Use when building a service blueprint for an omnichannel or cross-functional service —
+  laying out Physical Evidence, Customer Actions, Onstage, Backstage, and Support Processes
+  layers, placing the Line of Interaction/Visibility/Internal Interaction, or scoping which
+  journey/segment a blueprint should cover before starting. Trigger on requests like "service
+  blueprint", "line of visibility placement", "blueprint scope for this journey", "서비스 블루프린트
+  그려줘". Do NOT use just to classify one action as customer-visible or not (use
+  ux-engineering-service-design-frontstage-backstage-separation).
 metadata:
   axis: blueprint-construction-scope-and-layering
   rule_count_floor: 5

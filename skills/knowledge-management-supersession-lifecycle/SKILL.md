@@ -1,6 +1,11 @@
 ---
 name: knowledge-management-supersession-lifecycle
-description: Use when a knowledge-library entry is replaced, dropped, or edited — deciding whether to mark it superseded or deprecated, and how to record the change without deleting history.
+description: >-
+  Use when a knowledge-library entry is replaced, dropped, or edited — deciding whether to
+  mark it superseded or deprecated, and how to record the change without deleting history.
+  Trigger on requests like "supersede this ADR", "deprecated vs superseded", "이 결정 문서 대체됐는데
+  어떻게 처리해", "two teams proposed competing replacements". Do NOT use for flagging stale
+  entries for audit or merge (use knowledge-management-curation-pruning).
 metadata:
   axis: supersession-lifecycle
   rule_count_floor: 10

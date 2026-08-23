@@ -1,6 +1,13 @@
 ---
 name: sales-objection-handling
-description: Use when responding to prospect pushback — an emotional objection, a factual objection (price, missing feature), stalling on an already-expressed interest, a social-proof or competitive objection, or an urgency-deferral objection.
+description: >-
+  Use when responding to prospect pushback — an emotional objection, a factual
+  objection (price, missing feature), stalling on an already-expressed interest,
+  a social-proof or competitive objection, or an urgency-deferral objection.
+  Trigger on requests like "고객 이의 제기에 어떻게 대응해", "prospect says we're too
+  expensive", "handle the let's-revisit-next-quarter stall", "Feel-Felt-Found 써도
+  되나". Do NOT use for qualifying whether the opportunity is worth advancing at
+  all (use sales-qualification-and-discovery).
 metadata:
   axis: objection-handling
   rule_count_floor: 5

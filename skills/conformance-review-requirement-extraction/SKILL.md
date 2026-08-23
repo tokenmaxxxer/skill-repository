@@ -1,9 +1,18 @@
 ---
 name: conformance-review-requirement-extraction
-description: Use when decomposing a spec/issue into a discrete, checkable requirement list, before any verdict is rendered. Applies to the requirement-extraction axis.
+description: >-
+  Use when decomposing a spec/issue into a discrete, checkable requirement
+  list, before any verdict is rendered. Applies to the requirement-extraction
+  axis. Trigger on requests like "extract requirements from this spec", "split
+  the acceptance criteria into checkable items", "스펙에서 요구사항 목록 뽑아줘". Splits
+  bundled obligations, flags unverifiable-as-written items, drops redundant
+  summary lines, and dimension-tags each item. Do NOT use for deciding how
+  many of the extracted items to actually inspect (use
+  conformance-review-sampling-derivation).
 metadata:
   axis: requirement-extraction
   rule_count_floor: 3
+
 ---
 
 # Requirement extraction

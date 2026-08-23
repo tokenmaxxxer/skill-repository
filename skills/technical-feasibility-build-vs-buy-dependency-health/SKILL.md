@@ -1,6 +1,14 @@
 ---
 name: technical-feasibility-build-vs-buy-dependency-health
-description: Use when a comparison record must score a candidate dependency or vendor's per-check health (Scorecard Maintained/Code-Review/Vulnerabilities, or vendor SLA/incident history) and decide build vs. buy on that graded, cited evidence rather than on license terms, threat modeling, or timebox/verdict selection.
+description: >-
+  Use when a comparison record must score a candidate dependency or vendor's
+  per-check health (Scorecard Maintained/Code-Review/Vulnerabilities, or vendor
+  SLA/incident history) and decide build vs. buy on that graded, cited evidence
+  rather than on license terms, threat modeling, or timebox/verdict selection.
+  Trigger on requests like "OpenSSF Scorecard check", "is this library still
+  maintained", "dependency health 평가해줘", "vendor SLA evidence for buy decision".
+  Do NOT use for running the feasibility role's prior-art probe and its
+  comparison-table workflow (use technical-feasibility-build-vs-buy).
 metadata:
   axis: build-vs-buy-dependency-health
   rule_count_floor: 10

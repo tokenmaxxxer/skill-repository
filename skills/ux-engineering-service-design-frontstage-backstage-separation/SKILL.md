@@ -1,6 +1,13 @@
 ---
 name: ux-engineering-service-design-frontstage-backstage-separation
-description: Use when deciding whether a service action, system, or actor belongs frontstage (customer-visible), backstage (invisible support for an onstage moment, possibly performed by the same frontstage employee), or a support process (infrastructural, never customer-facing) inside an already-scoped blueprint or touchpoint map.
+description: >-
+  Use when deciding whether a service action, system, or actor belongs frontstage
+  (customer-visible), backstage (invisible support for an onstage moment, possibly performed
+  by the same frontstage employee), or a support process (infrastructural, never
+  customer-facing) inside an already-scoped blueprint or touchpoint map. Trigger on requests
+  like "frontstage or backstage", "is this a support process", "customer-visible
+  classification", "백스테이지로 분류해줘". Do NOT use to construct the blueprint's layers from scratch
+  (use ux-engineering-service-design-blueprint-construction).
 metadata:
   axis: frontstage-backstage-support-perceptibility-test
   rule_count_floor: 4

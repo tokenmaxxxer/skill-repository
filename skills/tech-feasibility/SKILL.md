@@ -1,17 +1,17 @@
 ---
 name: tech-feasibility
 description: >-
-  An execution harness for technical feasibility research and technology selection: it actually
-  investigates the candidate technologies/libraries/vendors (web research on maintenance health,
-  security posture, licenses, real production experience), runs sandboxed PoC code when the
-  question is testable, and delivers a graded comparison with an architecture decision record.
-  Use whenever the user is choosing or validating technology — "이 기술로 가능한지 검토해줘", "is
-  this technically feasible", "which library/framework/database should we use", "build vs buy",
-  "evaluate this vendor/SaaS", "compare X and Y for our stack", "is this open-source project safe
-  to depend on", "design a PoC for this". Trigger it when a team is about to commit to a
-  technology on hype, a single blog post, or familiarity alone. Do NOT use for a quick syntax/API
-  question (just answer), for market opportunity sizing (market-recon), or for debugging an
-  existing system (diagnose-first).
+  Use whenever the user is choosing or validating technology: an execution harness for technical
+  feasibility research and technology selection that actually investigates the candidate
+  technologies/libraries/vendors (web research on maintenance health, security posture, licenses,
+  real production experience), runs sandboxed PoC code when the question is testable, and delivers
+  a graded comparison with an architecture decision record. Trigger on requests like "이 기술로 가능한지
+  검토해줘", "is this technically feasible", "which library/framework/database should we use", "build
+  vs buy", "evaluate this vendor/SaaS", "compare X and Y for our stack" — or when a team is about
+  to commit to a technology on hype, a single blog post, or familiarity alone. Do NOT use for a
+  quick syntax/API question (just answer), market opportunity sizing (market-recon), debugging an
+  existing system (diagnose-first), or the rulebook role's verdict/timebox call (use technical-
+  feasibility-verdict-and-timebox-selection).
 ---
 
 # Tech Feasibility — an execution harness for technology decisions

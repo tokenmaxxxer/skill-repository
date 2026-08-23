@@ -1,16 +1,17 @@
 ---
 name: prose-modes
 description: >-
-  Routes a writing task to the right style regime, on two axes — document type (tutorial / how-to
-  / reference / explanation / decision record / book chapter) and the reader's background
-  knowledge — then applies only the rules that regime licenses. The reader axis is load-bearing
-  and evidenced: raising cohesion helps low-knowledge readers and HURTS high-knowledge readers on
-  deep-comprehension measures, so a single universal style is wrong. Use when writing or revising
-  prose a human will read — explanation, report, book/article draft, teaching material, design
-  writeup — in Korean or English. Also use when a draft reads badly and you need to find which
-  rule it is breaking. Do NOT use for code, or for a document whose nature is a list with no
-  explanatory prose. Every rule carries an evidence grade; NONE has passed an A/B test — it is a
-  graded prescription, not a verified instrument.
+  Use when writing or revising prose a human will read — explanation, report, book/article draft,
+  teaching material, design writeup — in Korean or English, or when a draft reads badly and you
+  need to find which rule it is breaking. It matches the task to a style regime on two axes —
+  document type (tutorial / how-to / reference / explanation / decision record / book chapter) and
+  the reader's background knowledge — and applies only the rules that regime licenses. The reader
+  axis is evidenced: raising cohesion helps low-knowledge readers and HURTS high-knowledge readers
+  on deep comprehension, so no single universal style. Trigger on requests like "이 글 좀 다듬어줘", "보고서
+  문체 점검해줘", "make this explanation readable", "why does this draft read badly". Every rule carries
+  an evidence grade; none has passed an A/B test. Do NOT use for code, for a list document with no
+  explanatory prose, or for picking which document type to write (use technical-writing-doc-type-
+  selection).
 ---
 
 # Prose Modes

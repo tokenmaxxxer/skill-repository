@@ -1,9 +1,18 @@
 ---
 name: conformance-review-verdict-assignment
-description: Use when choosing among Present, Surface, Absent, Incorrect, or Unverifiable once evidence for a requirement has been located, or not. Applies to the verdict-assignment axis.
+description: >-
+  Use when choosing among Present, Surface, Absent, Incorrect, or Unverifiable
+  once evidence for a requirement has been located, or not. Applies to the
+  verdict-assignment axis. Trigger on requests like "Present or Surface for
+  this requirement", "is this Absent or Incorrect", "이 요구사항 판정 뭐로 해야 해".
+  Reserves Present for implemented-and-reachable, names the failing clause on
+  Incorrect/Absent, and carries prior Present verdicts forward by sha. Do NOT
+  use for writing the finished verdict into review-record.md (use
+  conformance-review-finding-record).
 metadata:
   axis: verdict-assignment
   rule_count_floor: 3
+
 ---
 
 # Verdict assignment

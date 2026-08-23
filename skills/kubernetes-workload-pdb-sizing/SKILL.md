@@ -1,6 +1,13 @@
 ---
 name: kubernetes-workload-pdb-sizing
-description: Use when creating or sizing a PodDisruptionBudget for a Kubernetes workload, or deciding whether minAvailable or maxUnavailable is the right field for a given replica count.
+description: >-
+  Use when creating or sizing a PodDisruptionBudget for a Kubernetes workload,
+  or deciding whether minAvailable or maxUnavailable is the right field for a
+  given replica count. Trigger on requests like "node drain blocked by PDB",
+  "minAvailable vs maxUnavailable", "PDB 값 어떻게 잡아", "cluster upgrade dropped
+  availability". Do NOT use for a full pre-production manifest audit across
+  all readiness properties (use
+  kubernetes-workload-production-readiness-checklist).
 metadata:
   axis: pdb-sizing
   rule_count_floor: 5

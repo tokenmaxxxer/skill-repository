@@ -1,6 +1,12 @@
 ---
 name: user-discovery-question-design-past-behavior
-description: Use when drafting or reviewing discovery-interview questions or script order — anchoring questions in specific past events rather than hypotheticals/opinions, and sequencing behavioral questions before any pitch or solution reveal.
+description: >-
+  Use when drafting or reviewing discovery-interview questions or script order — anchoring
+  questions in specific past events rather than hypotheticals/opinions, and sequencing
+  behavioral questions before any pitch or solution reveal. Trigger on requests like "인터뷰 질문
+  검토해줘", "rewrite this 'would you use it' question", "order the interview script", "which
+  hypothesis do we ask about first". Do NOT use for deciding how deep to probe once an
+  answer arrives (use user-discovery-follow-up-ladder-depth).
 metadata:
   axis: question-design-past-behavior
   rule_count_floor: 8

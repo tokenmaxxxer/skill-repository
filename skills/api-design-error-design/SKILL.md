@@ -1,6 +1,12 @@
 ---
 name: api-design-error-design
-description: Use when designing or reviewing an HTTP API's error response shape — envelope, machine-readable codes, field-level validation errors, retryability signaling, or error-message text — before or during implementation.
+description: >-
+  Use when designing or reviewing an HTTP API's error response shape — the problem+json (RFC
+  9457) envelope, machine-readable error codes and namespacing, field-level validation errors,
+  retryability signaling and idempotency keys, or error-message text — before or during
+  implementation. Trigger on requests like "design our API error format", "problem+json 적용해줘",
+  "에러 응답 스키마 잡아줘", "should clients branch on 4xx status or error code". Do NOT use for choosing
+  the HTTP method or the success/redirect status code itself (use api-design-http-semantics).
 metadata:
   axis: error-design
   rule_count_floor: 10

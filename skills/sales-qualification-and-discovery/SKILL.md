@@ -1,6 +1,12 @@
 ---
 name: sales-qualification-and-discovery
-description: Use when deciding whether an opportunity is worth advancing, which questions to ask during discovery, or how to scope a MEDDPICC pass under a compressed timeline.
+description: >-
+  Use when deciding whether an opportunity is worth advancing, which questions
+  to ask during discovery, or how to scope a MEDDPICC pass under a compressed
+  timeline. Trigger on requests like "이 딜 진행할 가치 있어?", "plan my discovery call
+  question mix", "MEDDPICC with a 30-day close", "no Economic Buyer identified
+  after two calls". Do NOT use for responding to a prospect's pushback
+  mid-conversation (use sales-objection-handling).
 metadata:
   axis: qualification-and-discovery
   rule_count_floor: 5

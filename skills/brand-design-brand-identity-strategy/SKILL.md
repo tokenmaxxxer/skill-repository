@@ -1,6 +1,12 @@
 ---
 name: brand-design-brand-identity-strategy
-description: Use when proposing a new visual direction for a brand asset, auditing whether a shipped asset is consistent with the brand's declared identity, or reviewing an identity guide for facets the brand no longer actually delivers on.
+description: >-
+  Use when proposing a new visual direction for a brand asset, auditing whether a shipped
+  asset is consistent with the brand's declared identity, or reviewing an identity guide for
+  facets the brand no longer actually delivers on. Trigger on requests like "new visual
+  direction", "does this fit our brand identity", "identity guide facet review", "브랜드 아이덴티티에
+  맞는지 검토해줘". Do NOT use for approval workflow, edit permissions, or asset-library hygiene (use
+  brand-design-brand-consistency-governance).
 metadata:
   axis: brand-identity-strategy
   rule_count_floor: 3

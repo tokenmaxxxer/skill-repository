@@ -1,16 +1,17 @@
 ---
 name: diagnose-first
 description: >-
-  A gated problem-solving procedure that forces diagnosis before action. Use this whenever
-  the user wants to reduce a cost, speed something up, fix a recurring problem, decide between
-  options, or figure out where to focus — e.g. "our cloud bill is too high", "the app feels
-  slow", "why does this keep breaking", "which of these should we build first", "how do we
-  make onboarding cheaper". Trigger it even when the user hasn't named a method and is just
-  describing a problem they want solved, especially if they seem about to jump to a solution
-  before locating the real cause. The whole point is to stop the reflex of acting on a guess:
-  first locate where the cost/slowness/failure actually lives, verify the cause with objective
-  criteria, then act on the part that matters. Do NOT use it for pure execution tasks where the
-  cause is already known and agreed (just do the work), or for creative/subjective work.
+  Use whenever the user wants to reduce a cost, speed something up, fix a recurring problem,
+  decide between options, or figure out where to focus — a gated problem-solving procedure
+  that forces diagnosis before action. Trigger on "our cloud bill is too high", "the app
+  feels slow", "왜 자꾸 깨지는 거야", "which of these should we build first", "how do we make
+  onboarding cheaper" — even when the user hasn't named a method and seems about to jump to
+  a solution before locating the real cause. The whole point is to stop the reflex of acting
+  on a guess: first locate where the cost/slowness/failure actually lives, verify the cause
+  with objective criteria, then act on the part that matters. Do NOT use for pure execution
+  tasks where the cause is already known and agreed, for creative/subjective work, or for
+  outward-looking market, demand, and competitor questions (use market-recon — the external
+  companion to this inward-looking skill).
 ---
 
 # Diagnose First

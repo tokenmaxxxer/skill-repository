@@ -1,17 +1,17 @@
 ---
 name: experiment-trust
 description: >-
-  Trustworthiness gates for online controlled experiments (A/B tests): validate the experimentation
-  setup and data quality BEFORE anyone interprets the result. Checks Sample Ratio Mismatch (SRM)
-  via chi-square, platform A/A validation status, pre-committed design, and Twyman's-law skepticism
-  on anomalous wins. Use whenever someone is about to trust, report, or act on an A/B experiment
-  result — e.g. "A/B 테스트 결과 믿어도 돼?", "실험 결과 해석해줘", "can we trust this experiment", "check this
-  experiment for SRM", "is our A/B testing platform reliable". Trigger BEFORE interpreting any
-  variant-comparison result, especially a big win about to drive a launch decision. Companion to
-  `usability-eval` (study design) and `hypothesis-testing` (decision rule). Do NOT use for
-  designing a NEW experiment (route to `usability-eval` or `hypothesis-testing`), for an
-  observational comparison with no random assignment, or for a qualitative usability question with
-  no metric contrast.
+  Use whenever someone is about to trust, report, or act on an A/B experiment result —
+  BEFORE interpreting any variant-comparison result, especially a big win about to drive a
+  launch decision. Trustworthiness gates for online controlled experiments: validate the
+  experimentation setup and data quality before anyone interprets the result — Sample Ratio
+  Mismatch via chi-square, platform A/A validation status, pre-committed design, and
+  Twyman's-law skepticism on anomalous wins. Trigger on "A/B 테스트 결과 믿어도 돼?", "can we trust
+  this experiment", "check this experiment for SRM", "is our A/B testing platform reliable".
+  Companion to usability-eval (study design) and hypothesis-testing (decision rule). Do NOT
+  use for designing a NEW experiment, for an observational comparison with no random
+  assignment, for a qualitative usability question with no metric contrast, or for the
+  growth-role in-repo variant (use growth-analytics-experiment-trust).
 ---
 
 # Experiment Trust

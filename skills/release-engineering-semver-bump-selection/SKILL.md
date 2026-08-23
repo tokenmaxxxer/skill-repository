@@ -1,9 +1,16 @@
 ---
 name: release-engineering-semver-bump-selection
-description: Use when selecting a MAJOR/MINOR/PATCH version bump for a release, deciding whether a change is actually breaking, or versioning a pre-release/build-metadata artifact.
+description: >-
+  Use when selecting a MAJOR/MINOR/PATCH version bump for a release, deciding
+  whether a change is actually breaking, or versioning a
+  pre-release/build-metadata artifact. Trigger on requests like "major or
+  minor bump", "is this change breaking", "pre-release identifier vs minor",
+  "이번 릴리스 버전 어떻게 올릴까". Do NOT use for categorizing the release's changelog
+  entries (use release-engineering-changelog-entry-categorization).
 metadata:
   axis: semver-bump-selection
   rule_count_floor: 12
+
 ---
 
 # Semver bump selection

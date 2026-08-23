@@ -1,6 +1,13 @@
 ---
 name: kubernetes-workload-production-readiness-checklist
-description: Use when reviewing a Kubernetes workload manifest before it goes to production, or auditing an existing workload for missing production-readiness basics (resources, probes, PDB, HPA, non-root, graceful shutdown).
+description: >-
+  Use when reviewing a Kubernetes workload manifest before it goes to
+  production, or auditing an existing workload for missing
+  production-readiness basics (resources, probes, PDB, HPA, non-root, graceful
+  shutdown). Trigger on requests like "is this Deployment production-ready",
+  "prod 배포 전 매니페스트 점검해줘", "readiness audit after the incident", "SIGTERM
+  graceful shutdown check". Do NOT use to deep-dive one property alone, e.g.
+  probe timing (use kubernetes-workload-probe-selection).
 metadata:
   axis: production-readiness-checklist
   rule_count_floor: 6

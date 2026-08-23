@@ -1,9 +1,18 @@
 ---
 name: defect-verification-independence-from-upstream-verdicts
-description: Use when devising or running a defect-verification attempt against a review requirement marked Present, a qa defect report, or a closed_checks entry — keeping the attempt independent of coding/qa/review's prior verdict rather than letting it pre-shape scope, rigor, or which attempts get made.
+description: >-
+  Use when devising or running a defect-verification attempt against a review
+  requirement marked Present, a qa defect report, or a closed_checks entry —
+  keeping the attempt independent of coding/qa/review's prior verdict rather
+  than letting it pre-shape scope, rigor, or which attempts get made. Trigger
+  on requests like "re-verify this Present requirement independently",
+  "re-derive the closed_checks entry instead of citing it", "리뷰가 Present라 했어도
+  독립 재검증해줘". Do NOT use for how the attempt's steps and artifacts get recorded
+  (use defect-verification-reproduction-evidence-quality).
 metadata:
   axis: independence-from-upstream-verdicts
   rule_count_floor: 8
+
 ---
 
 # Preserving independence from coding/qa/review's prior verdicts

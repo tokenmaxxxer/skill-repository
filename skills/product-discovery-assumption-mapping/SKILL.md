@@ -1,12 +1,15 @@
 ---
 name: product-discovery-assumption-mapping
-description: >
-  Use this skill when the product role is in the `researching` state and
-  needs to decompose a candidate solution into testable assumptions, or
-  whenever the agent is about to draft interview questions while in this
-  state. Trigger it right after `scoping -> researching`. Do NOT use it
-  to write the hypothesis statement itself — that is the last step of
-  `researching`, done once a top-quadrant assumption has enough evidence.
+description: >-
+  Use this skill when the product role is in the `researching` state and needs to decompose
+  a candidate solution into testable assumptions, or whenever the agent is about to draft
+  interview questions while in this state. Trigger it right after `scoping -> researching`,
+  on requests like "가정 맵 만들어줘", "map the assumptions behind this idea", "which assumptions
+  are riskiest", "plot evidence strength vs importance". It plots each assumption on the 2x2
+  evidence-strength x importance grid across
+  desirability/viability/feasibility/usability/ethical and picks assumption-test types for
+  the critical+weak quadrant. Do NOT use it to write the hypothesis statement itself or move
+  product-cycle state (use product-discovery-hypothesis-testing).
 ---
 
 # Assumption mapping for `researching`

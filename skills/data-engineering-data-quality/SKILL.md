@@ -1,6 +1,14 @@
 ---
 name: data-engineering-data-quality
-description: Use when defining or reviewing data-quality checks — completeness, uniqueness, accuracy, freshness, or volume — formalizing a cross-column rule or data contract, or layering anomaly monitoring on authored checks.
+description: >-
+  Use when defining or reviewing data-quality checks — completeness, uniqueness,
+  accuracy, freshness, or volume — formalizing a cross-column rule or data
+  contract, or layering anomaly monitoring on authored checks. Trigger on
+  requests like "데이터 품질 체크 정의해줘", "freshness check on this table", "data
+  contract across teams", "uniqueness check on the join key". Do NOT use for
+  what happens once a check or job fails — retry/DLQ classification, alerts,
+  recovery (use data-engineering-failure-handling) — nor for ETL/ELT,
+  idempotency, or ownership structure (use data-engineering-pipeline-design).
 metadata:
   axis: data-quality
   rule_count_floor: 10

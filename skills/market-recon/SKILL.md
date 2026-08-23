@@ -1,17 +1,17 @@
 ---
 name: market-recon
 description: >-
-  An execution harness that PERFORMS external market, demand, and competitive research —
-  running the actual web searches and source sweeps, verifying its own coverage with objective
-  stopping criteria (saturation), and delivering a confidence-graded evidence report. Use
-  whenever the user asks to research, size, or judge a market or opportunity — "이 시장 조사해줘",
-  "research this market", "how big is the market for X", "is there real demand for this",
-  "who are the real competitors", "should we enter X — look into it", "size the TAM/SAM/SOM",
-  "find the gap in this market", "market research for a new product/segment/region". Trigger
-  it even when the user just describes a market bet and wants it investigated. It is the
-  outward-looking companion to diagnose-first (which looks inward at causes). Do NOT use for
-  a quick factual lookup (one market cap or pricing page — just answer), for internal
-  root-cause/bottleneck problems (diagnose-first), or for creative/subjective work.
+  Use whenever the user asks to research, size, or judge a market or opportunity — "이 시장
+  조사해줘", "research this market", "how big is the market for X", "is there real demand for
+  this", "who are the real competitors", "size the TAM/SAM/SOM", "find the gap in this
+  market", "market research for a new product/segment/region". An execution harness that
+  runs the actual web searches and source sweeps itself, verifies its own coverage with
+  objective stopping criteria (saturation), and hands back a confidence-graded evidence
+  report. Trigger it even when the user just describes a market bet and wants it
+  investigated; it is the outward-looking companion to diagnose-first (which looks inward at
+  causes). Do NOT use for a quick factual lookup (one market cap or pricing page — just
+  answer), for internal root-cause/bottleneck problems (diagnose-first), or for
+  creative/subjective work.
 ---
 
 # Market Recon — a research execution harness

@@ -1,6 +1,12 @@
 ---
 name: customer-support-research-log
-description: Use when verifying that every rule across the customer-support playbook traces to a fetched source, or when auditing this family's rule_count_floor derivation against its axis count and tier.
+description: >-
+  Use when verifying that every rule across the customer-support playbook
+  traces to a fetched source, or when auditing this family's rule_count_floor
+  derivation against its axis count and tier. Trigger on requests like "source
+  for this SLA rule", "규칙 출처 검증해줘", "rule_count_floor audit", "playbook
+  provenance". Do NOT use to apply the rules to a live ticket (use
+  customer-support-sla-tier-priority).
 metadata:
   role: customer-support
   rule_count_floor: 5

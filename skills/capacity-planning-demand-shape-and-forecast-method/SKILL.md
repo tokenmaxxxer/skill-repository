@@ -1,6 +1,13 @@
 ---
 name: capacity-planning-demand-shape-and-forecast-method
-description: Use when classifying a resource's demand shape (organic vs. inorganic) and choosing a forecast method — regression trend, scenario/step model, Holt-Winters, ARIMA/SARIMA, or a hybrid — and reporting or reconciling that forecast against actuals.
+description: >-
+  Use when classifying a resource's demand shape (organic vs. inorganic) and
+  choosing a forecast method — regression trend, scenario/step model,
+  Holt-Winters, ARIMA/SARIMA, or a hybrid — or reconciling that forecast
+  against actuals. Trigger on requests like "forecast next quarter's capacity
+  demand", "Holt-Winters or ARIMA for this series", "수요 예측 방법 골라줘",
+  "launch-driven demand step". Do NOT use for turning the forecast into a
+  firing threshold (use capacity-planning-expansion-trigger-threshold-sizing).
 metadata:
   axis: demand-shape-and-forecast-method
   rule_count_floor: 8

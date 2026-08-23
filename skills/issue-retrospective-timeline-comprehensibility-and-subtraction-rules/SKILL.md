@@ -1,6 +1,12 @@
 ---
 name: issue-retrospective-timeline-comprehensibility-and-subtraction-rules
-description: Use when composing or reading a records-only cross-role retrospective for a subject issue — drafting its Timeline, Contributing factors, or Action items, or judging whether a draft section restates background instead of citing it.
+description: >-
+  Use when composing or reading a records-only cross-role retrospective for a subject issue
+  — drafting its Timeline, Contributing factors, or Action items, or judging whether a draft
+  section restates background instead of citing it. Trigger on requests like "write the
+  issue retrospective", "회고 타임라인 정리해줘", "trim this retrospective draft", "does this section
+  restate the record". Adjacent to blameless-postmortem, which owns declared-incident
+  postmortems rather than per-issue records-only retrospectives.
 metadata:
   axis: convention, subtraction, comprehensibility
   rule_count_floor: 8

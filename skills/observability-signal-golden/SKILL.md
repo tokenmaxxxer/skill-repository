@@ -1,6 +1,14 @@
 ---
 name: observability-signal-golden
-description: Use when placing the four Golden Signals on a service-rollup surface aggregating multiple request-driven and resource-bound children. Applies to the signal-golden axis.
+description: >-
+  Use when placing the four Golden Signals (latency, traffic, errors,
+  saturation) on a service-rollup surface aggregating multiple request-driven
+  and resource-bound children. Trigger on requests like "service-level rollup
+  dashboard", "aggregate children's RED/USE series into Golden Signals", "골든
+  시그널 롤업 대시보드 설계해줘", "saturation panel for the service view". Do NOT use for
+  instrumenting a single request-driven endpoint's own Rate/Errors/Duration
+  (use observability-signal-red) or a single resource such as a pool or CPU
+  (use observability-signal-use).
 metadata:
   axis: signal-golden
   rule_count_floor: 3

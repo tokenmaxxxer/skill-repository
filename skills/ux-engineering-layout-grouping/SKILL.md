@@ -1,6 +1,11 @@
 ---
 name: ux-engineering-layout-grouping
-description: Use when arranging related fields into groups, choosing single- vs. multi-column layout, placing labels, or adding a visible group boundary. Applies to the layout-grouping axis.
+description: >-
+  Use when arranging related fields into groups, choosing single- vs. multi-column layout,
+  placing labels, or adding a visible group boundary. Applies to the layout-grouping axis.
+  Trigger on requests like "single vs multi column form", "label placement", "fieldset
+  grouping", "폼 레이아웃 그룹핑해줘". Do NOT use for deciding which widget fits a field in the first
+  place (use ux-engineering-control-selection).
 metadata:
   axis: layout-grouping
   rule_count_floor: 3

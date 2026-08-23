@@ -1,6 +1,13 @@
 ---
 name: business-model-design-canvas-construction
-description: Use when choosing between the Business Model Canvas and Lean Canvas for a given business stage, filling a canvas's blocks in an order that surfaces the riskiest assumption last, or checking a filled canvas for a known construction failure mode.
+description: >-
+  Use when choosing between the Business Model Canvas and Lean Canvas for a
+  given business stage, filling a canvas's blocks in an order that surfaces the
+  riskiest assumption last, or checking a filled canvas for a known construction
+  failure mode. Trigger on requests like "린 캔버스 그려줘", "BMC or Lean Canvas for a
+  pre-PMF startup", "what order do I fill the canvas blocks", "review my
+  business model canvas". Do NOT use for building a Value Proposition Canvas for
+  a single segment (use business-model-design-value-proposition-fit).
 metadata:
   axis: canvas-construction
   rule_count_floor: 6

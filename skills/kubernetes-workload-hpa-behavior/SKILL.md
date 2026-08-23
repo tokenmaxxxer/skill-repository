@@ -1,6 +1,13 @@
 ---
 name: kubernetes-workload-hpa-behavior
-description: Use when configuring a HorizontalPodAutoscaler's scaling behavior (stabilization windows, scale-up/down policies), choosing HPA metrics, or diagnosing flapping/thrashing replica counts.
+description: >-
+  Use when configuring a HorizontalPodAutoscaler's scaling behavior
+  (stabilization windows, scale-up/down policies), choosing HPA metrics, or
+  diagnosing flapping/thrashing replica counts. Trigger on requests like "HPA
+  keeps flapping", "stabilizationWindowSeconds tuning", "HPA 메트릭 뭐로 잡을까",
+  "replicas oscillating under load". Do NOT use for sizing a container's
+  CPU/memory requests and limits (use
+  kubernetes-workload-requests-limits-decision).
 metadata:
   axis: hpa-behavior
   rule_count_floor: 5

@@ -1,6 +1,13 @@
 ---
 name: org-design-hiring-rubric-structured-interview
-description: Use when designing or reviewing a hiring interview rubric, or judging whether an interview process is structured enough to trust its validity claim. Do NOT use for measuring an existing team's psychological safety (route to team-safety-measure) or for defining what a role's competencies are (route to org-design-role-competency-definition).
+description: >-
+  Use when designing or reviewing a hiring interview rubric, or judging whether
+  an interview process is structured enough to trust its validity claim. Trigger
+  on requests like "면접 루브릭 만들어줘", "design a structured interview", "behaviorally
+  anchored rating scales for interviewers", "can we trust this interview's
+  validity". Do NOT use for defining what a role's competencies are in the first
+  place (use org-design-role-competency-definition) or for measuring an existing
+  team's psychological safety (route to team-safety-measure).
 metadata:
   axis: interview-structure-vs-validity-tradeoff
   rule_count_floor: 3

@@ -1,17 +1,16 @@
 ---
 name: blameless-postmortem
 description: >-
-  A structured-writing procedure for blameless incident postmortems in the Google SRE lineage:
-  reconstruct a timestamped timeline, quantify impact, fill the four required sections (impact /
-  actions taken / root cause / prevention follow-ups), scan the draft to strip blame language, and
-  assign owner+deadline to every action item. Use this whenever the user needs to write up an
-  incident after the fact — e.g. "포스트모템 써줘", "장애 회고 정리해줘", "인시던트 분석 문서 만들어줘", "이번 장애 재발
-  방지 정리", "write a postmortem for this outage", "help me document this incident", "blameless
-  postmortem template", "incident review writeup". Do NOT use it for a routine bugfix that caused
-  no declared incident (that's code review territory, not a postmortem — see the scope gate
-  below), for live incident response while the fire is still active (this is the after-the-fact
-  written record, not a runbook), or when the user wants to assign blame to a specific person
-  (state plainly that this procedure structurally excludes that and point out why).
+  Use whenever the user needs to write up an incident after the fact. A structured-writing
+  procedure for blameless incident postmortems in the Google SRE lineage: reconstruct a
+  timestamped timeline, quantify impact, fill the four required sections (impact / actions
+  taken / root cause / prevention follow-ups), strip blame language from the draft, and
+  assign owner+deadline to every action item. Trigger on "포스트모템 써줘", "장애 회고 정리해줘", "write a
+  postmortem for this outage", "blameless postmortem template", "incident review writeup".
+  Do NOT use for a routine bugfix that caused no declared incident, for live incident
+  response while the fire is still active (this is the after-the-fact written record, not a
+  runbook), when the user wants to assign blame to a specific person, or for the
+  release-role record inside this repo's role system (use release-engineering-postmortem).
 ---
 
 # Blameless Postmortem

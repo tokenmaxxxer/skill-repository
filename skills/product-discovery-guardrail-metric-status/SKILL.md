@@ -1,6 +1,13 @@
 ---
 name: product-discovery-guardrail-metric-status
-description: Use when naming guardrail metrics for a hypothesis or reporting a guardrail's measured status alongside a primary-metric result. Applies to the guardrail-metric-status axis.
+description: >-
+  Use when naming guardrail metrics for a hypothesis or reporting a guardrail's measured
+  status alongside a primary-metric result. Applies to the guardrail-metric-status axis.
+  Trigger on requests like "가드레일 지표 정해줘", "name guardrail metrics for this experiment", "did
+  any guardrail trip", "report guardrail status next to the win", or when a guardrail must
+  be distinguished from a secondary metric. Do NOT use to fix a guardrail's numeric
+  degradation threshold or the ship criterion (use
+  product-discovery-hypothesis-preregistration).
 metadata:
   axis: guardrail-metric-status
   rule_count_floor: 10

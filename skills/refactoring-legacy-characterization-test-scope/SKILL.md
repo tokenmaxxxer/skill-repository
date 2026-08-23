@@ -1,6 +1,14 @@
 ---
 name: refactoring-legacy-characterization-test-scope
-description: Use when writing characterization tests before a legacy refactor, choosing what and how many inputs to capture, deciding a unit is safety-net "done," or handling an observed defect in legacy behavior.
+description: >-
+  Use when writing characterization tests before a legacy refactor, choosing
+  what and how many inputs to capture, deciding a unit is safety-net "done," or
+  handling an observed defect in legacy behavior. Covers golden-master
+  snapshots, plateau-based stopping, and mutation-checking each captured test.
+  Trigger on requests like "레거시 코드에 테스트부터 씌워줘", "characterization test", "golden
+  master snapshot", "how many inputs to capture". Do NOT use for deciding how
+  often to re-run the captured suite between refactoring steps (use
+  refactoring-legacy-verification-cadence).
 metadata:
   axis: characterization-test-scope
   rule_count_floor: 5

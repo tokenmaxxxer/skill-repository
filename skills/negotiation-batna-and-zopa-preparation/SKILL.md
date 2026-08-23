@@ -1,6 +1,14 @@
 ---
 name: negotiation-batna-and-zopa-preparation
-description: Use when preparing for any negotiation (procurement, vendor contract, partnership term, internal resource ask) before the first substantive session, or when the counterpart's walk-away position becomes known or inferable mid-negotiation and the zone of possible agreement needs re-checking.
+description: >-
+  Use when preparing for any negotiation (procurement, vendor contract,
+  partnership term, internal resource ask) before the first substantive session,
+  or when the counterpart's walk-away position becomes known or inferable
+  mid-negotiation and the zone of possible agreement needs re-checking. Trigger
+  on requests like "BATNA 정리해줘", "what's our walk-away for this vendor
+  contract", "is there even a ZOPA here", "prep me for tomorrow's negotiation".
+  Do NOT use for a stall caused by positional trading with no underlying
+  interests surfaced (use negotiation-interests-vs-positions-framing).
 metadata:
   axis: reservation-point-and-agreement-zone
   rule_count_floor: 2

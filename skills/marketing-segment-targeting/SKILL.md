@@ -1,6 +1,13 @@
 ---
 name: marketing-segment-targeting
-description: Use when evaluating or ranking candidate segments, defining a B2B vs. B2C target segment, or reviewing whether a previously-selected segment should stay in the active target list.
+description: >-
+  Use when evaluating or ranking candidate segments, defining a B2B vs. B2C target segment,
+  or reviewing whether a previously-selected segment should stay in the active target list.
+  Trigger on requests like "타깃 세그먼트 정해줘", "rank these segments", "is this segment still
+  worth targeting", "define the B2B segment by firmographics". Applies the
+  measurable/substantial/accessible/actionable test and CLV/competitive-intensity ranking.
+  Do NOT use for drafting the positioning statement once the segment is chosen (use
+  marketing-positioning-differentiation).
 metadata:
   axis: segment-targeting
   rule_count_floor: 5

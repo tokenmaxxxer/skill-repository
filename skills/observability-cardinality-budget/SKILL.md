@@ -1,6 +1,13 @@
 ---
 name: observability-cardinality-budget
-description: Use when a candidate metric label/tag/attribute needs to be classified by cardinality risk before it ships, or when an existing metric already carries a high-cardinality label. Applies to the cardinality-budget axis.
+description: >-
+  Use when a candidate metric label/tag/attribute needs to be classified by
+  cardinality risk before it ships, or when an existing metric already carries
+  a high-cardinality label. Trigger on requests like "can I add user_id as a
+  metric label", "Prometheus series explosion", "high-cardinality label 정리해줘",
+  "bucket this latency label". Do NOT use for choosing which methodology
+  (RED/USE/Golden) instruments a surface (use
+  observability-methodology-selection).
 metadata:
   axis: cardinality-budget
   rule_count_floor: 3

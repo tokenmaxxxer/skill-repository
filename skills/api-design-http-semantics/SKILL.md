@@ -1,6 +1,11 @@
 ---
 name: api-design-http-semantics
-description: Use when choosing an HTTP method (GET/POST/PUT/PATCH/DELETE), designing idempotency/retry behavior, or selecting a response status code for a create/update/delete/async operation.
+description: >-
+  Use when choosing an HTTP method (GET/POST/PUT/PATCH/DELETE), designing idempotency/retry
+  behavior, or selecting a response status code for a create/update/delete/async operation.
+  Trigger on requests like "PUT vs PATCH for this update", "should this endpoint use 201 or
+  200", "Idempotency-Key 헤더 설계해줘", "POST 재시도 안전하게 만들어줘". Do NOT use for the error-response body
+  shape, problem+json envelope, or error-code scheme (use api-design-error-design).
 metadata:
   axis: http-semantics
   rule_count_floor: 10

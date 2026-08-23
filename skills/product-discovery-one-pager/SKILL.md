@@ -1,11 +1,15 @@
 ---
 name: product-discovery-one-pager
-description: >
-  Use this skill when the product role is in the `scoping` state and a
-  handed-in idea needs to become a structured one-pager before evidence
-  gathering starts, keeping the problem statement separate from any
-  proposed solution. Trigger it right after `idle -> scoping`. Do NOT use
-  it to draft a solution spec.
+description: >-
+  Use this skill when the product role is in the `scoping` state and a handed-in idea needs
+  to become a structured one-pager before evidence gathering starts, keeping the problem
+  statement separate from any proposed solution. Trigger it right after `idle -> scoping`,
+  on requests like "원페이저 써줘", "draft a one-pager for this idea", "scope this idea before
+  research", "capture target market and differentiator". It walks background, problem,
+  candidate hypotheses, risks, metrics, target_market, market_size_rationale,
+  competitive_alternatives, differentiator, timing_rationale, and go_to_market_plan into
+  product/one-pager.md. Do NOT use it to draft a solution spec, nor for the bare
+  solution-free job-statement rewrite (use product-discovery-jtbd-problem-framing).
 ---
 
 # One-pager drafting

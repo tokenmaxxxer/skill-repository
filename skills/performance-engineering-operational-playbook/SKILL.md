@@ -1,6 +1,16 @@
 ---
 name: performance-engineering-operational-playbook
-description: Use when diagnosing an unexplained slowdown with no prior hypothesis, setting or reporting a latency/SLO/error-budget target, assessing queue/pool/connection-pool pressure, or choosing between a removal-shaped and addition-shaped fix.
+description: >-
+  Use when diagnosing an unexplained slowdown with no prior hypothesis, setting or reporting a
+  latency/SLO/error-budget target, assessing queue/pool/connection-pool pressure, or choosing
+  between a removal-shaped and addition-shaped fix. Condition-matched decision rules: USE-method
+  checks before profiling, percentile (never mean) latency reporting, SLI then SLO then error-
+  budget ordering before alerts, Little's Law grounding for wait-time claims, and removal-first
+  fixes (N+1 queries, connection leaks) before scaling a database or pool. Trigger on requests
+  like "서비스가 왜 이렇게 느리지", "레이턴시 SLO 잡아줘", "p99 latency is spiking", "our queue keeps backing up",
+  "set an error budget". Do NOT use for choosing a data structure or algorithm inside code (use
+  implementation-performance-data-structure-choice) or for non-performance root-cause hunts
+  (diagnose-first).
 metadata:
   subject: issue-1174
   layer_program: docs/issue-1174/proposals/operational-playbook-program.md

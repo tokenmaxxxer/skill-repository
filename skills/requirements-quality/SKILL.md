@@ -1,17 +1,17 @@
 ---
 name: requirements-quality
 description: >-
-  A procedure for auditing and rewriting natural-language requirements and user stories against
-  objective, checkable criteria: EARS pattern conformance for system/functional requirements, and
-  the Connextra template plus the QUS 13-criteria checklist for agile user stories. Use it when
-  someone wants requirements or user stories reviewed, tightened, or written to a standard — e.g.
-  "이 요구사항 문서 검토해줘", "유저스토리 좀 다듬어줘", "이 스펙에 요구사항 품질 체크 해줘", "review these
-  requirements", "check this story against INVEST/QUS", "우리 요구사항이 모호한지 감사해줘", "write this as
-  an EARS requirement". Every step here produces a binary pass/fail against a named pattern or
-  checklist item — never a subjective "does this feel clear" call. Do NOT use it to figure out
-  what the requirements *should be* (that's discovery, not audit — see user-discovery), to decide
-  whether a feature is worth building at all (diagnose-first / market-recon), or for a single
-  already-conformant item that just needs one obvious edit — for that, just make the edit.
+  Use when someone wants requirements or user stories reviewed, tightened, or written to a
+  standard: a procedure for auditing and rewriting natural-language requirements against
+  objective, checkable criteria — EARS pattern conformance for system/functional requirements, and
+  the Connextra template plus the QUS 13-criteria checklist for agile user stories. Trigger on
+  requests like "이 요구사항 문서 검토해줘", "유저스토리 좀 다듬어줘", "review these requirements", "check this story
+  against INVEST/QUS", "write this as an EARS requirement". Every step is a binary pass/fail
+  against a named pattern or checklist item — never a subjective "does this feel clear" call. Do
+  NOT use to figure out what the requirements should be (that's discovery — user-discovery), to
+  decide whether a feature is worth building (diagnose-first / market-recon), to pick a single
+  mid-draft rule like an EARS template or verification method (use requirements-engineering-
+  rules), or to derive test cases from acceptance criteria (test-derivation).
 ---
 
 # Requirements Quality

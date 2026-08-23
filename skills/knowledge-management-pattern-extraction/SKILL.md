@@ -1,6 +1,11 @@
 ---
 name: knowledge-management-pattern-extraction
-description: Use when a retrospective surfaces a candidate lesson, when deciding whether a finding is pattern-shaped, or when extracting, merging, or promoting a pattern-library entry from issue retrospectives.
+description: >-
+  Use when a retrospective surfaces a candidate lesson, when deciding whether a finding is
+  pattern-shaped, or when extracting, merging, or promoting a pattern-library entry from
+  issue retrospectives. Trigger on requests like "extract lessons from this postmortem", "is
+  this a reusable pattern", "회고에서 패턴 뽑아줘", "promote this candidate pattern". Do NOT use for
+  auditing or pruning already-filed entries (use knowledge-management-curation-pruning).
 metadata:
   axis: pattern-extraction
   rule_count_floor: 10

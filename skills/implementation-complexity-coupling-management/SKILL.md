@@ -1,6 +1,13 @@
 ---
 name: implementation-complexity-coupling-management
-description: Use when a class's coupling or cohesion metric crosses a threshold, a caller chains through nested accessors, a cross-module import direction is being introduced, or a pre-merge check pipeline needs ordering — decide whether to split, restructure, widen a contract, remove indirection, or reorder checks.
+description: >-
+  Use when a class's coupling or cohesion metric (CBO, LCOM) crosses a threshold, a caller
+  chains through nested accessors, a cross-module import direction is being introduced, or a
+  pre-merge check pipeline needs ordering — decide whether to split, restructure, widen a
+  contract, remove indirection, or reorder checks. Trigger on requests like "this class talks to
+  too many others", "결합도 낮춰줘", "utils 모듈 정리해줘", "getB().getC() accessor chain smells". Do NOT
+  use for deciding whether a GoF pattern's indirection is warranted (use
+  implementation-design-pattern-selection).
 metadata:
   axis: complexity-coupling-management
   rule_count_floor: 6

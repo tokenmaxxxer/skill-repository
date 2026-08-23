@@ -1,6 +1,12 @@
 ---
 name: legal-compliance-license-compatibility
-description: Use when adding, auditing, or replacing an open-source dependency and its license must be checked for compatibility with the project's own license.
+description: >-
+  Use when adding, auditing, or replacing an open-source dependency and its
+  license must be checked for compatibility with the project's own license.
+  Trigger on requests like "can I add this GPL dependency", "Apache-2.0 in a
+  GPLv2 project", "라이선스 호환성 확인해줘", "vendored code license check". Do NOT use
+  for personal-data handling questions such as retention (use
+  legal-compliance-retention-minimization).
 metadata:
   axis: oss-license-compatibility
   rule_count_floor: 2

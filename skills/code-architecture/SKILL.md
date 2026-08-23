@@ -1,18 +1,17 @@
 ---
 name: code-architecture
 description: >-
-  A decision framework for selecting the appropriate code structure and architecture pattern
-  for a given programming task, synthesizing five decades of software engineering methodology
-  (Parnas 1972 through DDD 2003) into a situational classification system. Use whenever the
-  AI is about to produce non-trivial code spanning multiple modules or files and needs to decide
-  on structure — e.g. "이 코드 어떻게 구조화할까", "어떤 패턴 써야 돼", "아키텍처 설계해줘",
-  "클린 코드로 짜줘", "how should I structure this code", "design the architecture for this",
-  "what pattern should I use here". Trigger proactively when building a new module, feature, or
-  service whose structural decisions will outlive the initial implementation. Do NOT use for a
-  single-file script, a one-line fix, a config change, or purely algorithmic work with no
-  structural choice to make. This skill does NOT audit existing code (that's implementation-audit),
-  select external technology (that's tech-feasibility), or evaluate requirements quality
-  (that's requirements-quality).
+  Use whenever you are about to write non-trivial code spanning multiple modules or files
+  and need to decide on structure — proactively when building a new module, feature, or
+  service whose structural decisions will outlive the initial implementation. A decision
+  framework for selecting the appropriate code structure and architecture pattern,
+  synthesizing five decades of software-engineering methodology (Parnas 1972 through DDD
+  2003) into a situational classification system. Trigger on "이 코드 어떻게 구조화할까", "어떤 패턴 써야 돼",
+  "아키텍처 설계해줘", "how should I structure this code", "what pattern should I use here". Do NOT
+  use for a single-file script, a one-line fix, a config change, or purely algorithmic work
+  with no structural choice; for the CLI-backed, database-queried variant of the same
+  selection use implementation-blueprint. It does not audit existing code
+  (implementation-audit) or select external technology (tech-feasibility).
 ---
 # Code Architecture — situational structure selection for AI-generated code
 

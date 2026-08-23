@@ -1,6 +1,14 @@
 ---
 name: refactoring-legacy-refactoring-step-decomposition
-description: Use when sizing an individual refactoring step, sequencing the test cycle between steps, splitting a step that still touches multiple concerns, or prioritizing which legacy area to refactor first.
+description: >-
+  Use when sizing an individual refactoring step, sequencing the test cycle
+  between steps, splitting a step that still touches multiple concerns, or
+  prioritizing which legacy area to refactor first. Follows the catalog's
+  test-small-change-test rhythm — smallest named refactoring first, full suite
+  after each step. Trigger on requests like "리팩토링 단계 쪼개줘", "small refactoring
+  steps", "which legacy area first", "Extract Function vs Extract Class". Do NOT
+  use for choosing where to introduce new behavior into untested code via
+  sprout/wrap or an object seam (use refactoring-legacy-seam-selection).
 metadata:
   axis: refactoring-step-decomposition
   rule_count_floor: 5

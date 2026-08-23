@@ -1,6 +1,13 @@
 ---
 name: devrel-channel-convention
-description: Use when deciding which content format, channel, code-sample convention, or community-entry behavior a devrel deliverable should follow — code samples for public release, cross-language sample sets, conference-proposal topic matching, talk-vs-writeup sequencing, first community interactions, sample-convention or channel consolidation.
+description: >-
+  Use when deciding which content format, channel, code-sample convention, or
+  community-entry behavior a devrel deliverable should follow — code samples for public
+  release, cross-language sample sets, conference-proposal topic matching, talk-vs-writeup
+  sequencing, first community interactions, sample-convention or channel consolidation.
+  Trigger on requests like "code sample style for the SDK repo", "which channel should this
+  go to", "컨퍼런스 CFP 주제 맞춰줘", "talk or blog post first". Do NOT use for sizing concept chunks
+  or reader cognitive load in the content itself (use devrel-content-comprehensibility).
 metadata:
   axis: channel-convention
   rule_count_floor: 8

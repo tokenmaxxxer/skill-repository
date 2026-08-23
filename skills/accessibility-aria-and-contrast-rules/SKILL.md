@@ -1,6 +1,12 @@
 ---
 name: accessibility-aria-and-contrast-rules
-description: Use when you are deciding an ARIA role, an accessible name, a text/background contrast pair, a focus-order or focus-visibility change, or an evidence-field entry for an accessibility criterion, and need a condition-matched rule rather than a general accessibility overview.
+description: >-
+  Use when you are deciding an ARIA role, an accessible name, a text/background contrast pair,
+  a focus-order or focus-visibility change, or an evidence-field entry for an accessibility
+  criterion, and need a condition-matched rule rather than a general accessibility overview.
+  Trigger on requests like "which ARIA role here", "accessible name for this button", "focus
+  order after dialog close", "접근성 검토해줘". Do NOT use for general design-side color-set choice
+  beyond conformance floors (use ux-engineering-color-visibility).
 ---
 
 # Operational playbook: ARIA usage, contrast, and focus (issue-1174)

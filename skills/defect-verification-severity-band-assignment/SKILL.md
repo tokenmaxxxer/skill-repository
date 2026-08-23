@@ -1,9 +1,18 @@
 ---
 name: defect-verification-severity-band-assignment
-description: Use when assigning a severity band to a reproduced defect — reading the band off the fixed technical-impact lookup table by halting/degrading/cosmetic tier, independent of business priority or how clean the upstream review record looks.
+description: >-
+  Use when assigning a severity band to a reproduced defect — reading the band
+  off the fixed technical-impact lookup table by halting/degrading/cosmetic
+  tier, independent of business priority or how clean the upstream review
+  record looks. Trigger on requests like "what severity band is this defect",
+  "blocking or degraded tier", "severity vs priority call", "재현된 결함 심각도 등급
+  매겨줘". Do NOT use for deciding whether the defect reproduced at all (use
+  defect-verification-reproduction-evidence-quality); for writing the band
+  onto a verify-record.md finding block, see verify-severity-classification.
 metadata:
   axis: severity-band-assignment
   rule_count_floor: 8
+
 ---
 
 # Severity-band assignment for a reproduced defect

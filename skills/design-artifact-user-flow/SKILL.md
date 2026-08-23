@@ -1,6 +1,11 @@
 ---
 name: design-artifact-user-flow
-description: Use when diagramming the discrete step-by-step interaction path a user takes through one product task — screens/states and system responses, not emotions or cross-channel context.
+description: >-
+  Use when diagramming the discrete step-by-step interaction path a user takes through one
+  product task — screens/states and system responses, not emotions or cross-channel context.
+  Trigger on requests like "user flow diagram", "screen-to-screen flow", "step-by-step path
+  for checkout", "유저 플로우 그려줘". Do NOT use for a cross-channel, emotional, over-time narrative
+  of the experience (use design-artifact-user-scenario).
 metadata:
   axis: flow-micro-scope-vs-journey-macro-scope
   rule_count_floor: 3

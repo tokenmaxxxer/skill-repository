@@ -1,9 +1,18 @@
 ---
 name: defect-verification-reproduction-evidence-quality
-description: Use when recording an attempt to reproduce a candidate defect and its supporting evidence — building the numbered repro steps, attaching the artifact, or judging whether a green suite or Present requirement actually exercised the claimed behavior.
+description: >-
+  Use when recording an attempt to reproduce a candidate defect and its
+  supporting evidence — building the numbered repro steps, attaching the
+  artifact, or judging whether a green suite or Present requirement actually
+  exercised the claimed behavior. Trigger on requests like "write the repro
+  steps", "reduce this to a minimal reproduction path", "expected vs actual
+  with hit rate", "버그 재현 절차 기록해줘". Do NOT use for bundling and labeling the
+  evidence artifact itself at capture time (use
+  defect-verification-evidence-artifact-completeness).
 metadata:
   axis: reproduction-evidence-quality
   rule_count_floor: 8
+
 ---
 
 # Reproduction-evidence quality for a defect attempt

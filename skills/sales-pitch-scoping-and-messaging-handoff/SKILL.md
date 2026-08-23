@@ -1,6 +1,13 @@
 ---
 name: sales-pitch-scoping-and-messaging-handoff
-description: Use when scoping a sales pitch's length and content, or deciding whether a prospect's request for messaging assets belongs to sales or should hand off to marketing.
+description: >-
+  Use when scoping a sales pitch's length and content, or deciding whether a
+  prospect's request for messaging assets (case-study one-pager, battlecard
+  copy, outbound email template) belongs to sales or should hand off to
+  marketing. Trigger on requests like "세일즈 피치 다듬어줘", "our first-touch pitch is
+  too long", "should sales write this battlecard or marketing", "what goes in
+  the elevator pitch opening". Do NOT use for handling live objections a
+  prospect raises to the pitch (use sales-objection-handling).
 metadata:
   axis: pitch-scoping-and-messaging-handoff
   rule_count_floor: 5
