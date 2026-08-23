@@ -1,6 +1,13 @@
 ---
 name: marketing-positioning-differentiation
-description: Use when drafting a positioning statement, selecting which unique attribute or proof point to lead with, or picking a category frame for an unfamiliar audience.
+description: >-
+  Use when drafting a positioning statement, selecting which unique attribute or proof point
+  to lead with, or picking a category frame for an unfamiliar audience. Trigger on requests
+  like "포지셔닝 문장 잡아줘", "what should our 'instead of' be", "which proof point leads", "we
+  shifted segments — redo the competitive frame". Names the specific alternative
+  (competitor, workaround, or doing nothing), keeps a single UVP, and cuts adjective-only
+  claims with no verifiable referent. Do NOT use for choosing or ranking the target segment
+  itself (use marketing-segment-targeting).
 metadata:
   axis: positioning-differentiation
   rule_count_floor: 5

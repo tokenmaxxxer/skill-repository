@@ -1,17 +1,17 @@
 ---
 name: usability-eval
 description: >-
-  A design-and-analysis harness for evaluative UX research and product experiments: it designs
-  the right test (formative usability, benchmark, heuristic eval, A/B) with correct sample sizes,
-  then analyzes results with proper statistics — standardized scales, task-success confidence
-  intervals, and honest significance. Use whenever the user wants to check whether an existing
-  design/feature actually works — "사용성 테스트 설계해줘", "usability test for this flow", "how many
-  users do I need to test", "analyze these usability findings", "is this SUS/task-success score
-  good", "design an A/B test", "run a heuristic evaluation", "accessibility check", "did this
-  change actually improve things". Trigger it when someone is judging a built thing by opinion or
-  a too-small/too-large sample. Do NOT use for discovering unmet needs before building
-  (user-discovery), market/competitor research (market-recon), or internal performance debugging
-  (diagnose-first).
+  Use whenever the user wants to check whether an existing design or feature actually works: a
+  design-and-analysis harness for evaluative UX research and product experiments that designs the
+  right test (formative usability, benchmark, heuristic eval, A/B) with correct sample sizes, then
+  analyzes results with proper statistics — standardized scales, task-success confidence
+  intervals, and honest significance. Trigger on requests like "사용성 테스트 설계해줘", "usability test for
+  this flow", "how many users do I need to test", "is this SUS/task-success score good", "design
+  an A/B test", "run a heuristic evaluation", "did this change actually improve things". Trigger
+  when someone is judging a built thing by opinion or a too-small/too-large sample. Do NOT use for
+  discovering unmet needs before building (user-discovery), market/competitor research (market-
+  recon), internal performance debugging (diagnose-first), or for picking concrete UI controls and
+  layouts while designing (use ux-engineering-control-selection).
 ---
 
 # Usability Eval — a design & analysis harness for evaluative research

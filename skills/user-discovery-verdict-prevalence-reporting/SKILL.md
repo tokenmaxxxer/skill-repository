@@ -1,6 +1,12 @@
 ---
 name: user-discovery-verdict-prevalence-reporting
-description: Use when writing a pain-confirmed/not-confirmed verdict from interview evidence — stating prevalence as N of M, distinguishing prompted from unprompted mentions, and naming contradicting evidence rather than omitting it.
+description: >-
+  Use when writing a pain-confirmed/not-confirmed verdict from interview evidence — stating
+  prevalence as N of M, distinguishing prompted from unprompted mentions, and naming
+  contradicting evidence rather than omitting it. Trigger on requests like "인터뷰 결과 판정 써줘",
+  "is the pain confirmed", "how many of the interviews showed this", "write the verdict with
+  prevalence". Do NOT use for tagging the individual claims the verdict counts (use
+  user-discovery-evidence-strength-tagging).
 metadata:
   axis: verdict-prevalence-reporting
   rule_count_floor: 8

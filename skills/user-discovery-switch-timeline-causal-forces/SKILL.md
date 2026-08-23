@@ -1,6 +1,12 @@
 ---
 name: user-discovery-switch-timeline-causal-forces
-description: Use when reconstructing a customer's switch (or non-switch) story to test an adoption hypothesis — walking through push/pull/anxiety/habit from a real past decision rather than asking about future adoption intent.
+description: >-
+  Use when reconstructing a customer's switch (or non-switch) story to test an adoption
+  hypothesis — walking through push/pull/anxiety/habit from a real past decision rather than
+  asking about future adoption intent. Trigger on requests like "전환 스토리 인터뷰 어떻게 하지", "run a
+  JTBD switch interview", "why did they not switch despite the pain", "map the four forces
+  for this customer". Do NOT use for the general past-behavior question design that applies
+  to every hypothesis (use user-discovery-question-design-past-behavior).
 metadata:
   axis: switch-timeline-causal-forces
   rule_count_floor: 8

@@ -1,6 +1,13 @@
 ---
 name: refactoring-legacy-seam-selection
-description: Use when choosing how to introduce new or changed behavior into legacy code without tests, deciding between Sprout/Wrap Method and a full object seam, or picking where in the call graph to place the seam.
+description: >-
+  Use when choosing how to introduce new or changed behavior into legacy code
+  without tests, deciding between Sprout/Wrap Method and a full object seam, or
+  picking where in the call graph to place the seam. Trigger on requests like
+  "seam 어디에 둬야 해", "sprout method or wrap method", "break this dependency for
+  testing", "fake out this external call". Do NOT use for choosing Strangler Fig
+  vs Branch by Abstraction for a whole-slice legacy migration and its cutover
+  (use refactoring-legacy-strangler-fig-migration).
 metadata:
   axis: seam-selection
   rule_count_floor: 5

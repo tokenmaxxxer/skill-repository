@@ -1,6 +1,14 @@
 ---
 name: capacity-planning-headroom-band-and-degradation-risk
-description: Use when reporting a resource's headroom or assessing its degradation-risk shape as it nears a scaling ceiling — sizing a headroom band, applying USL alpha/beta terms, or pairing a predictive band with a reactive fallback trigger.
+description: >-
+  Use when reporting a resource's remaining capacity headroom or assessing how
+  its performance degrades as utilization approaches saturation — applying USL
+  contention/coherency (alpha/beta) terms, or pairing a predictive headroom
+  report with a reactive fallback trigger. Trigger on requests like "how much
+  headroom does this cluster have", "헤드룸 얼마나 남았어", "USL fit for degradation
+  near saturation", "headroom shrink rate over the forecast horizon". Do NOT
+  use for sizing the utilization threshold that fires an expansion (use
+  capacity-planning-expansion-trigger-threshold-sizing).
 metadata:
   axis: headroom-band-and-degradation-risk
   rule_count_floor: 8

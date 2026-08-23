@@ -1,6 +1,13 @@
 ---
 name: user-discovery-evidence-strength-tagging
-description: Use when tagging or weighting interview-log claims by evidence strength — distinguishing directly-observed behavioral claims from secondhand recounted ones and from stated opinions/intentions, or when computing an evidence count that must exclude opinion-tier entries.
+description: >-
+  Use when tagging or weighting interview-log claims by evidence strength — distinguishing
+  directly-observed behavioral claims from secondhand recounted ones and from stated
+  opinions/intentions, or when computing an evidence count that must exclude opinion-tier
+  entries. Trigger on requests like "이 인터뷰 로그 증거 등급 태깅해줘", "tag these claims
+  behavioral/recounted/opinion", "does this quote count as evidence", "weight the log before
+  the verdict". Do NOT use for drafting the questions that elicit the evidence (use
+  user-discovery-question-design-past-behavior).
 metadata:
   axis: evidence-strength-tagging
   rule_count_floor: 8

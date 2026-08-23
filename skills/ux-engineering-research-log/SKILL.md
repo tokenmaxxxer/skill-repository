@@ -1,6 +1,11 @@
 ---
 name: ux-engineering-research-log
-description: Use when tracing where a playbook/*.md rule for the ux-engineering family came from — which source, at which research layer, supports a specific rule (issue #1174).
+description: >-
+  Use when tracing where a playbook/*.md rule for the ux-engineering family came from — which
+  source, at which research layer, supports a specific rule (issue #1174). Trigger on requests
+  like "rule provenance", "which source supports this playbook rule", "research layer for this
+  guideline", "이 규칙 출처 찾아줘". Do NOT use for applying a decision rule itself, e.g. a contrast
+  check (use ux-engineering-color-visibility).
 ---
 
 # Playbook research log — ux-engineering (issue #1174)

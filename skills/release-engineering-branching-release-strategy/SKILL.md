@@ -1,9 +1,17 @@
 ---
 name: release-engineering-branching-release-strategy
-description: Use when choosing between trunk-based development, release branches, feature flags, or hotfix branching for a service, or deciding when to retire a stale release/feature branch.
+description: >-
+  Use when choosing between trunk-based development, release branches, feature
+  flags, or hotfix branching for a service, or deciding when to retire a stale
+  release/feature branch. Trigger on requests like "trunk-based or release
+  branches", "hotfix from the last release tag", "long-lived feature branch
+  keeps conflicting", "브랜치 전략 어떻게 가져갈까". Do NOT use for a feature flag's
+  expiration and removal lifecycle (use
+  release-engineering-release-cadence-and-toil).
 metadata:
   axis: branching-release-strategy
   rule_count_floor: 12
+
 ---
 
 # Branching and release strategy

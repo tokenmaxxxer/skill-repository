@@ -1,6 +1,13 @@
 ---
 name: pricing-tier-structure
-description: Use when a verdict has already produced a correctly-labeled price point or preference share and the question turns to packaging it — choosing a value-metric unit and assembling a Good/Better/Best tier structure with a deliberate anchor tier.
+description: >-
+  Use when a verdict has already settled a correctly-labeled price point or
+  preference share and the question turns to packaging it — choosing a
+  value-metric billing unit and assembling a Good/Better/Best tier structure
+  with a deliberate anchor tier. Trigger on requests like "요금제 티어 짜줘", "good
+  better best packaging", "what unit should we bill on", "which tier should be
+  the anchor". Do NOT use to choose or grade the research method behind the
+  numbers (use pricing-method-family).
 metadata:
   axis: tier-structure
   rule_count_floor: 2

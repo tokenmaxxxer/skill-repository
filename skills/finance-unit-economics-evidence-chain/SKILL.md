@@ -1,6 +1,13 @@
 ---
 name: finance-unit-economics-evidence-chain
-description: Use when a unit-economics input, benchmark citation, or headline figure needs its sourcing traced, deduplicated, positioned against a peer distribution, or checked for a hardcoded value hiding behind a formula-derived one.
+description: >-
+  Use when a unit-economics input, benchmark citation, or headline figure needs
+  its sourcing traced, deduplicated, positioned against a peer distribution, or
+  checked for a hardcoded value hiding behind a formula-derived one. Trigger on
+  requests like "이 벤치마크 출처 확인해줘", "where did this CAC number come from", "audit
+  the citations in this financial model", "is this headline figure hardcoded or
+  formula-derived". Do NOT use to pick or band the headline metric itself (use
+  finance-unit-economics-cac-payback).
 metadata:
   axis: evidence-chain
   rule_count_floor: 12

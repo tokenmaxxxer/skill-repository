@@ -1,6 +1,12 @@
 ---
 name: legal-compliance-research-log
-description: Use when you need to trace which source justifies a legal-compliance playbook rule, verify a rule's provenance, or extend the playbook's research to a new or amended axis.
+description: >-
+  Use when you need to trace which source justifies a legal-compliance
+  playbook rule, verify a rule's provenance, or extend the playbook's research
+  to a new or amended axis. Trigger on requests like "where does this consent
+  rule come from", "이 규칙 출처 추적해줘", "provenance of the SCC rule", "three-layer
+  research audit". Do NOT use to apply the rules to a live compliance decision
+  (use legal-compliance-lawful-basis-selection).
 ---
 
 # Playbook research log — legal-compliance (issue #1174)

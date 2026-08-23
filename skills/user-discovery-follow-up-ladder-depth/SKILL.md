@@ -1,6 +1,12 @@
 ---
 name: user-discovery-follow-up-ladder-depth
-description: Use when deciding how deep to follow up on an interviewee's answer — chaining "why"/"how" questions (laddering) toward a root cause or personal value instead of accepting the first surface-level attribute or complaint.
+description: >-
+  Use when deciding how deep to follow up on an interviewee's answer — chaining "why"/"how"
+  questions (laddering) toward a root cause or personal value instead of accepting the first
+  surface-level attribute or complaint. Trigger on requests like "왜라고 몇 번 더 물어야 하지", "how
+  far should I ladder this answer", "they gave a surface complaint — keep probing?", "run
+  Five Whys on this response". Do NOT use for the base question wording or script order
+  itself (use user-discovery-question-design-past-behavior).
 metadata:
   axis: follow-up-ladder-depth
   rule_count_floor: 8

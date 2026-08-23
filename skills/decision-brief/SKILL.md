@@ -1,17 +1,15 @@
 ---
 name: decision-brief
 description: >-
-  A discipline for escalating a significant judgment call to the user as a methodologically sound
-  decision brief instead of deciding unilaterally or asking a bare open question. The AI is
-  expected to know decision methodology — this skill supplies it; the user only has to pick. Use
-  whenever the AI is about to make or ask about a direction call that belongs to the user — e.g.
-  "이거 어떻게 할지 정해줘야 할 것 같은데", "선택지 정리해줘", "결정 상신", "should I ask the user or decide
-  myself", or any point where the AI is about to pose a bare "which do you want?" question.
-  Invoke proactively, before typing that bare question, not only when the user names it. Do NOT
-  use for reversible implementation choices the AI can just make and note (variable names, loop
-  constructs, formatting nits) — escalating those is the Type-2 failure this skill warns against.
-  Also do not use to record a decision after the fact (that is decision-records) or to produce a
-  general design doc.
+  Use whenever the AI is about to make or ask about a direction call that belongs to the
+  user — invoke proactively, before typing a bare "which do you want?" question. A
+  discipline for escalating a significant judgment call as a methodologically sound decision
+  brief instead of deciding unilaterally or asking a bare open question; the AI supplies the
+  decision methodology, the user only has to pick. Trigger on "이거 어떻게 할지 정해줘야 할 것 같은데", "선택지
+  정리해줘", "결정 상신", "should I ask the user or decide myself". Do NOT use for reversible
+  implementation choices the AI can just make and note (variable names, formatting nits —
+  escalating those is the Type-2 failure this skill warns against), or to record a decision
+  after the fact (use decision-records).
 ---
 
 # Decision Brief

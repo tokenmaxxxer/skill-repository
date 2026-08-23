@@ -1,6 +1,15 @@
 ---
 name: conformance-review-finding-record
-description: Use while acting as the review role in the auditing or draft-reported state, once a requirement has been checked and needs its verdict recorded in review-record.md — never to fix or patch what was found.
+description: >-
+  Use while acting as the review role in the auditing or draft-reported state,
+  once a requirement has been checked and needs its verdict recorded in
+  review-record.md — never to fix or patch what was found. Trigger on requests
+  like "record the verdict in review-record.md", "write the finding block with
+  evidence and spec_ref", "리뷰 판정 기록해줘". Covers the five-verdict set (Present,
+  Surface, Absent, Incorrect, Unverifiable) and the refusal to write a verdict
+  with no evidence pointer or spec_ref. Do NOT use for choosing which verdict
+  the located evidence supports (use conformance-review-verdict-assignment).
+
 ---
 
 # finding-record

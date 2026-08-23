@@ -1,9 +1,17 @@
 ---
 name: release-engineering-changelog-entry-categorization
-description: Use when categorizing a changelog entry (Added/Changed/Deprecated/Removed/Fixed/Security), deciding whether an entry belongs at all, or ordering/dating a release's changelog section.
+description: >-
+  Use when categorizing a changelog entry
+  (Added/Changed/Deprecated/Removed/Fixed/Security), deciding whether an entry
+  belongs at all, or ordering/dating a release's changelog section. Trigger on
+  requests like "is this Fixed or Security", "write the changelog for this
+  release", "keep a changelog categories", "체인지로그 항목 분류해줘". Do NOT use for
+  picking the version number the release ships under (use
+  release-engineering-semver-bump-selection).
 metadata:
   axis: changelog-entry-categorization
   rule_count_floor: 13
+
 ---
 
 # Changelog entry categorization

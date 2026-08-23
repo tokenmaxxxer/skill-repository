@@ -1,6 +1,11 @@
 ---
 name: content-strategy-editorial-calendar-and-cadence
-description: Use when planning or reviewing an editorial calendar, committing to a publishing cadence, or deciding a content asset's lifecycle stage (create, update, retire).
+description: >-
+  Use when planning or reviewing an editorial calendar, committing to a publishing cadence,
+  or deciding a content asset's lifecycle stage (create, update, retire). Trigger on
+  requests like "editorial calendar plan", "publishing cadence", "콘텐츠 발행 일정 잡아줘", "when
+  should this page be retired". Do NOT use for assigning owners or sign-off rights over a
+  content domain (use content-strategy-content-governance-ownership).
 metadata:
   axis: lifecycle-and-cadence-planning
   rule_count_floor: 2

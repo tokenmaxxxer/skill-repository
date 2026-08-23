@@ -1,16 +1,15 @@
 ---
 name: merge-gates
 description: >-
-  A procedure for constructing merge gates that hold when several contributors — human or AI agent
-  — have short-lived branches in flight against one trunk. Supplies a four-property shape test
-  every gate must pass, the one gate condition four independent production systems converge on,
-  and an audit of configuration holes that silently let changes through a gate that looks enabled.
-  Use when concurrent work is about to land on a shared branch — e.g. "에이전트 여러 개 병렬로 돌릴 건데
-  머지 어떻게 관리하지", "머지 게이트 설계해줘", "자동 머지 조건 정해줘", "design a merge gate", "how should
-  parallel agents merge to main", "what should block a merge", "review our branch protection
-  setup". Do NOT use to resolve a conflict that has already happened (that is a code task), to
-  decide whether a change is a good idea, or to route a change to a human reviewer by estimated
-  risk — the proxies for risk routing were tested and failed, and this skill refuses to supply them.
+  Use when concurrent work is about to land on a shared branch — several contributors, human or AI
+  agent, with short-lived branches in flight against one trunk. A procedure for constructing merge
+  gates: a four-property shape test every gate must pass, the one gate condition four independent
+  production systems converge on, and an audit of configuration holes that silently let changes
+  through a gate that looks enabled. Trigger on requests like "머지 게이트 설계해줘", "자동 머지 조건 정해줘",
+  "design a merge gate", "how should parallel agents merge to main", "what should block a merge",
+  "review our branch protection setup". Do NOT use to resolve a conflict that has already happened
+  (that is a code task), to decide whether a change is a good idea, or to cut work into parallel
+  pieces before spawning (use parallel-decomposition).
 ---
 
 # Merge Gates

@@ -1,6 +1,17 @@
 ---
 name: verify-severity-classification
-description: Use while acting as the verify role in the reproduced state, once a reproduced defect's finding is addressed to coding and needs a severity band attached — never to decide whether the attempt reproduced at all.
+description: >-
+  Use while acting as the verify role in the reproduced state, once a
+  reproduced defect's finding is addressed to coding and needs a severity band
+  attached — never to decide whether the attempt reproduced at all. Trigger on
+  requests like "set severity on the verify finding", "blocking or advisory
+  for coding", "map the bug-bar band to finding_type", "재현된 결함 blocking인지
+  advisory인지 정해줘". Maps a deterministic band (Chromium five bands or Microsoft
+  bug bar) to the blocking/advisory gate value on the verify-record.md finding
+  block. Do NOT use for writing the attempt and outcome block itself (use
+  verify-finding-record); the review-side analog is
+  conformance-review-severity-classification.
+
 ---
 
 # severity-classification

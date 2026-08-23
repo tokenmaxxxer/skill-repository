@@ -1,6 +1,12 @@
 ---
 name: legal-compliance-vendor-dpa
-description: Use when onboarding a vendor/sub-processor that will handle personal data, or when auditing an existing DPA's sub-processor chain.
+description: >-
+  Use when onboarding a vendor/sub-processor that will handle personal data,
+  or when auditing an existing DPA's sub-processor chain. Trigger on requests
+  like "does this DPA cover Art 28(3)", "sub-processor authorization window",
+  "벤더 DPA 점검해줘", "flow-down obligations". Do NOT use for picking the
+  cross-border transfer mechanism once the vendor sits offshore (use
+  legal-compliance-cross-border-transfer).
 metadata:
   axis: vendor-dpa-requirements
   rule_count_floor: 2

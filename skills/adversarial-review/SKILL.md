@@ -1,17 +1,16 @@
 ---
 name: adversarial-review
 description: >-
-  A protocol for setting up a structurally independent evaluator session that receives only
-  the deliverable — not the spec, not the builder's intent — and is incentivized to find
-  everything wrong with it. The evaluator and builder are different sessions with no shared
-  context, so the evaluator has no stake in defending what the builder produced. Use when you
-  need an honest assessment of any AI-produced artifact (code, design doc, report, config) and
-  can't trust the producing agent to critique its own work — e.g. "이 결과물 까줘", "다른 세션에서
-  평가해줘", "review this with fresh eyes", "제3자 시선에서 검토해줘", "independent adversarial
-  evaluation". Do NOT use for code style checks (use a linter), for verifying against a
-  known-correct spec (use implementation-audit — adversarial-review is for when you want the
-  evaluator to find problems the spec didn't anticipate), or for creative feedback where
-  authorial intent matters (this is intentionally blind to intent).
+  Use when you need an honest assessment of any AI-made artifact (code, design doc, report,
+  config) and can't trust the making agent to critique its own work. A protocol for setting
+  up a structurally independent evaluator session that receives only the deliverable — not
+  the spec, not the builder's intent — and is incentivized to find everything wrong with it;
+  evaluator and builder are different sessions with no shared context, so the evaluator has
+  no stake in defending the work. Trigger on "이 결과물 까줘", "다른 세션에서 평가해줘", "review this with
+  fresh eyes", "제3자 시선에서 검토해줘", "independent adversarial evaluation". Do NOT use for code
+  style checks (use a linter), for verifying against a known-correct spec (use
+  implementation-audit — this is for problems the spec didn't anticipate), or for creative
+  feedback where authorial intent matters (this is intentionally blind to intent).
 ---
 
 # Adversarial Review

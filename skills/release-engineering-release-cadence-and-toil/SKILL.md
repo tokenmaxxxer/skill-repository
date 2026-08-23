@@ -1,9 +1,16 @@
 ---
 name: release-engineering-release-cadence-and-toil
-description: Use when deciding release cadence, whether a release-process task is worth automating, or when to create/expire/remove a feature flag.
+description: >-
+  Use when deciding release cadence, whether a release-process task is worth
+  automating, or when to create/expire/remove a feature flag. Trigger on
+  requests like "how often should we release", "is this release task toil
+  worth automating", "feature flag expiration cleanup", "릴리스 주기 어떻게 잡을까". Do
+  NOT use for choosing the branch or flag strategy for in-flight work itself
+  (use release-engineering-branching-release-strategy).
 metadata:
   axis: release-cadence-and-toil
   rule_count_floor: 12
+
 ---
 
 # Release cadence and toil reduction

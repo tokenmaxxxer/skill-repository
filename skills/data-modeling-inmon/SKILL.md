@@ -1,6 +1,16 @@
 ---
 name: data-modeling-inmon
-description: Use when deciding whether a top-down, subject-oriented 3NF enterprise warehouse fits the project, structuring the central model and its downstream marts, or checking a subject area for unfed or unconsumed scope.
+description: >-
+  Use when deciding whether a top-down, subject-oriented 3NF enterprise
+  warehouse fits the project, structuring the central model and its downstream
+  marts, or checking a subject area for unfed or unconsumed scope. Fits the
+  stable-business, enterprise-wide single-source-of-truth condition where marts
+  derive FROM the central model. Trigger on requests like "3NF 전사 웨어하우스 설계해줘",
+  "Inmon vs Kimball", "subject-oriented warehouse", "resolve conflicting source
+  definitions centrally". Do NOT use when the project needs a fast, narrow
+  bottom-up mart per business process (use data-modeling-kimball), or
+  hub/link/satellite ingestion under multi-source schema churn (use
+  data-modeling-datavault).
 metadata:
   axis: inmon
   rule_count_floor: 10

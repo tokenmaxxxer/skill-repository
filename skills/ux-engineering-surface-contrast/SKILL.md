@@ -1,6 +1,11 @@
 ---
 name: ux-engineering-surface-contrast
-description: Use when deciding elevation, scrim, or chrome treatment for an active editing surface against its surrounding background. Applies to the background-vs-edit-surface-contrast axis.
+description: >-
+  Use when deciding elevation, scrim, or chrome treatment for an active editing surface
+  against its surrounding background. Applies to the background-vs-edit-surface-contrast axis.
+  Trigger on requests like "editing surface elevation", "scrim behind the active panel", "dim
+  the background around the editor", "편집 영역 배경 대비 잡아줘". Do NOT use for text or component
+  contrast minimums in general (use ux-engineering-color-visibility).
 metadata:
   axis: background-vs-edit-surface-contrast
   rule_count_floor: 3

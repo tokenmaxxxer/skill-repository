@@ -1,6 +1,11 @@
 ---
 name: legal-compliance-cross-border-transfer
-description: Use when selecting or reviewing a GDPR Chapter V mechanism (adequacy, SCCs, BCRs) for transferring personal data to a third country.
+description: >-
+  Use when selecting or reviewing a GDPR Chapter V mechanism (adequacy, SCCs,
+  BCRs) for moving personal data to a third country. Trigger on requests like
+  "SCCs or BCRs for this vendor", "data flowing to a US processor", "국외 이전
+  메커니즘 뭐 써야 해", "Transfer Impact Assessment". Do NOT use for the DPA contract
+  terms with the vendor itself (use legal-compliance-vendor-dpa).
 metadata:
   axis: cross-border-transfer-mechanism
   rule_count_floor: 2

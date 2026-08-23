@@ -1,18 +1,17 @@
 ---
 name: compliance-scan
 description: >-
-  An execution harness for regulatory & compliance research: it maps which laws, licenses,
-  certifications, and platform policies apply to a product across the product/data/customer/region
-  axes, traces each to primary-source law or the regulator's guidance, grades legal risk, and
-  stays on the research side of the research-vs-legal-advice line. Use whenever the user needs to
-  know what rules apply before building or launching — "우리 서비스에 어떤 규제가 적용돼", "what
-  regulations apply to this product", "do we need a license/permit for X", "is GDPR/개인정보보호법
-  relevant", "what certifications does this need (KC/CE/FCC)", "app store policy check",
-  "compliance requirements for market Y". Trigger it when a team is about to launch assuming
-  they're compliant. It produces a researched compliance map and flags what needs a lawyer; it
-  does NOT give legal advice or a compliance opinion. Do NOT use for contract drafting, a
-  definitive legal determination (needs a licensed attorney — say so), or non-regulatory market
-  research (market-recon).
+  Use whenever the user needs to know what rules apply before building or launching. An
+  execution harness for regulatory and compliance research: it maps which laws, licenses,
+  certifications, and platform policies apply to a product across the
+  product/data/customer/region axes, traces each to primary-source law or the regulator's
+  guidance, grades legal risk, and stays on the research side of the
+  research-vs-legal-advice line — a researched compliance map that flags what needs a
+  lawyer, never legal advice or a compliance opinion. Trigger on "우리 서비스에 어떤 규제가 적용돼", "what
+  regulations apply to this product", "do we need a license or permit for X", "is GDPR
+  relevant here", "KC/CE/FCC certification check", "app store policy check". Do NOT use for
+  contract drafting, for a definitive legal determination (needs a licensed attorney — say
+  so), or for non-regulatory market research (use market-recon).
 ---
 
 # Compliance Scan — a regulatory-mapping harness that stops at the legal-advice line

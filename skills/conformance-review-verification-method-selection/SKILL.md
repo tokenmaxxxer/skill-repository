@@ -1,9 +1,19 @@
 ---
 name: conformance-review-verification-method-selection
-description: Use when picking how a requirement gets checked — inspection, analysis, demonstration, or test — before picking a verdict. Applies to the verification-method-selection axis.
+description: >-
+  Use when picking how a requirement gets checked — inspection, analysis,
+  demonstration, or test — before picking a verdict. Applies to the
+  verification-method-selection axis. Trigger on requests like "inspection or
+  test for this requirement", "how should we verify this claim", "이 요구사항 어떻게
+  검증하지". Routes static/structural properties to Inspection, unreproducible
+  conditions to Analysis, qualitative functional flows to Demonstration, and
+  reuses existing tests or replayable fixtures as Test evidence. Do NOT use
+  for assigning the resulting verdict (use
+  conformance-review-verdict-assignment).
 metadata:
   axis: verification-method-selection
   rule_count_floor: 3
+
 ---
 
 # Verification method selection

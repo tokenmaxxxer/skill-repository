@@ -1,10 +1,19 @@
 ---
 name: upstream-defect-report-convention
-description: Use when preparing to file a defect against an upstream project and its issue template, required pre-submission steps, commit-linking convention, report channel, contributor tone, or duplicate-check surface haven't yet been matched to that project's actual current norms.
+description: >-
+  Use when preparing to file a defect against an upstream project and its
+  issue template, required pre-submission steps, commit-linking convention,
+  report channel, contributor tone, or duplicate-check surface haven't yet
+  been matched to that project's actual current norms. Trigger on requests
+  like "match the repo's issue template", "check CONTRIBUTING.md before
+  filing", "duplicate search against closed issues too", "업스트림 프로젝트 이슈 컨벤션에
+  맞춰줘". Do NOT use for tightening the report's wording and structure for
+  readability (use upstream-defect-report-comprehensibility).
 metadata:
   axis: convention
   rule_count_floor: 5
   role: upstream-defect-report
+
 ---
 
 # Convention — matching the upstream project's own norms

@@ -1,14 +1,14 @@
 ---
 name: team-safety-measure
 description: >-
-  A measurement-only procedure for administering and interpreting Edmondson's 7-item team
-  psychological safety scale correctly. Use whenever the user wants to measure or diagnose team
-  psychological safety with a real team of respondents — e.g. "팀 심리적 안전 측정해줘", "팀 분위기 진단",
+  Use whenever the user wants to measure or diagnose team psychological safety with a real team of
+  respondents: a measurement-only procedure for administering and interpreting Edmondson's 7-item
+  team psychological safety scale correctly. Trigger on requests like "팀 심리적 안전 측정해줘", "팀 분위기 진단",
   "measure our team's psychological safety", "psychological safety survey for my team", "interpret
   these psych safety scores". The defining boundary: it measures, it does not prescribe
   interventions — the field's best evidence on this construct is correlational, not causal. Do NOT
   use when the ask is for intervention recommendations (say plainly this skill cannot answer that
-  and route to `hypothesis-testing`), when there is no real team of respondents to administer the
+  and route to hypothesis-testing), when there is no real team of respondents to administer the
   scale to, or when the user just wants a definition of the concept with no measurement task.
 ---
 

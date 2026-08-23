@@ -1,6 +1,12 @@
 ---
 name: ux-engineering-color-visibility
-description: Use when choosing or reviewing a color combination for text, a non-text UI component, a color-only distinction, or a multi-value color set. Applies to the color-combination-visibility axis.
+description: >-
+  Use when choosing or reviewing a color combination for text, a non-text UI component, a
+  color-only distinction, or a multi-value color set. Applies to the
+  color-combination-visibility axis. Trigger on requests like "text contrast ratio check",
+  "colorblind safe palette", "status colors distinguishable", "색 대비 검토해줘". Do NOT use for
+  elevation/scrim treatment of an active editing surface (use
+  ux-engineering-surface-contrast).
 metadata:
   axis: color-combination-visibility
   rule_count_floor: 3

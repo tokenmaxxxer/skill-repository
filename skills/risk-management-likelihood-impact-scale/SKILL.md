@@ -1,6 +1,13 @@
 ---
 name: risk-management-likelihood-impact-scale
-description: Use when calibrating a risk's likelihood or impact band, reconciling divergent rater scores, or deciding whether a quantitative loss estimate belongs alongside the qualitative band. Applies to the likelihood-impact-scale axis.
+description: >-
+  Use when calibrating a risk's likelihood or impact band, reconciling
+  divergent rater scores, or deciding whether a quantitative loss estimate
+  belongs alongside the qualitative rating. Trigger on requests like "is this
+  Rare or Possible", "raters disagree by two bands", "리스크 영향도 등급 매겨줘",
+  "annualized loss expectancy alongside the score". Do NOT use for rolling
+  calibrated scores up across entries (use
+  risk-management-aggregation-consolidation).
 metadata:
   axis: likelihood-impact-scale
   rule_count_floor: 10

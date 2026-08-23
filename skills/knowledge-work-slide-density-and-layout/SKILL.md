@@ -1,6 +1,12 @@
 ---
 name: knowledge-work-slide-density-and-layout
-description: Use when checking or authoring an individual slide's content against per-slide density and accessibility limits — max lines/words, heading-level consistency, or image alt text. Applies to the slide-density-and-layout axis.
+description: >-
+  Use when checking or authoring an individual slide's content against per-slide density and
+  accessibility limits — max lines/words, heading-level consistency, or image alt text.
+  Trigger on requests like "is this slide too dense", "슬라이드 글자 너무 많은지 봐줘", "check the deck
+  for alt text", "lines per slide limit". Applies to the slide-density-and-layout axis. Do
+  NOT use for cross-slide sequencing or argument order (use
+  knowledge-work-deck-structure-narrative-arc).
 metadata:
   axis: slide-density-and-layout
   rule_count_floor: 3

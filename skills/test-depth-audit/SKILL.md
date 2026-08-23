@@ -1,6 +1,15 @@
 ---
 name: test-depth-audit
-description: Use when applying Test Depth Audit. An audit that examines an existing test suite and classifies each test by what it actually verifies: Genuine Assertion (proves correct behavior), Execution-Only (runs code without checking results), Mock-Dominated (all dependencies mocked, real integration untested), Happy-Path-Only (avoids edges and errors), or Dead (never runs or always passes). Use after AI generates tests and you need to distinguish real verification from decorative test coverage — e.g. "이 테스트 진짜 검증하는 거 맞아", "테스트가 다 가짜인지 확인해줘", "check if these tests actually test anything", "audit test quality", "커버리지만 채운 테스트 찾아줘". Do NOT use for writing new tests (test-derivation), for performance benchmarking (diagnose-first), or for framework-specific test configuration (linter).
+description: >-
+  Use when applying Test Depth Audit — an audit that examines an existing test suite and
+  classifies each test by what it actually verifies: Genuine Assertion (proves correct
+  behavior), Execution-Only (runs code without checking results), Mock-Dominated (real
+  integration untested), Happy-Path-Only (avoids edges and errors), or Dead (never runs or
+  always passes). Use after AI writes tests and you need to distinguish real verification from
+  decorative coverage — e.g. "이 테스트 진짜 검증하는 거 맞아", "테스트가 다 가짜인지 확인해줘", "check if these tests
+  actually test anything", "audit test quality", "커버리지만 채운 테스트 찾아줘". Do NOT use for writing new
+  tests (use test-derivation), for performance benchmarking (diagnose-first), or for
+  framework-specific test configuration (linter).
 
 ---
 

@@ -1,10 +1,19 @@
 ---
 name: upstream-defect-report-comprehensibility
-description: Use when drafting or reviewing an upstream defect report and its expected/actual behavior, code/log/command snippets, environment facts, repro steps, or lead fact are not yet formatted for a stranger maintainer to parse on first read.
+description: >-
+  Use when drafting or reviewing an upstream defect report and its
+  expected/actual behavior, code/log/command snippets, environment facts,
+  repro steps, or lead fact are not yet formatted for a stranger maintainer to
+  parse on first read. Trigger on requests like "make this bug report
+  readable", "split it into expected vs actual lines", "put the error message
+  above the fold", "업스트림 버그 리포트 읽기 쉽게 다듬어줘". Do NOT use for deciding what
+  content to cut from the report before filing (use
+  upstream-defect-report-subtraction).
 metadata:
   axis: comprehensibility
   rule_count_floor: 5
   role: upstream-defect-report
+
 ---
 
 # Comprehensibility — making the report readable by a stranger

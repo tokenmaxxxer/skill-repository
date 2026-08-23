@@ -1,6 +1,14 @@
 ---
 name: risk-management-appetite-tolerance-threshold
-description: Use when setting or deriving a category- or entity-level risk appetite/tolerance threshold, choosing between appetite and tolerance framing, reconciling thresholds across interacting categories, or tracing a threshold back to its source. Applies to the appetite-tolerance-threshold axis.
+description: >-
+  Use when setting or deriving a category- or entity-level risk
+  appetite/tolerance threshold, choosing between appetite and tolerance
+  framing, reconciling thresholds across interacting categories, or tracing a
+  threshold back to its source statement. Trigger on requests like "set the
+  risk appetite threshold for this category", "appetite vs tolerance framing",
+  "리스크 허용 한도 정해줘", "regulatory limit binds this threshold". Do NOT use for
+  picking Avoid/Mitigate/Transfer/Accept for a specific risk (use
+  risk-management-response-strategy-selection).
 metadata:
   axis: appetite-tolerance-threshold
   rule_count_floor: 10

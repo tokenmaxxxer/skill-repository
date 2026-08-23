@@ -1,6 +1,12 @@
 ---
 name: test-authoring-isolation-and-fixture-strategy
-description: Use when deciding how to build or scope a test's fixture, whether tests can safely share state, or which test-double kind (real/fake/stub/mock) a dependency should get.
+description: >-
+  Use when deciding how to build or scope a test's fixture, whether tests can safely share
+  state, or which test-double kind (real/fake/stub/mock) a dependency should get — factory vs.
+  in-line setup, pytest fixture scope, polluter/victim run-order dependencies, and database
+  cleanup/rollback strategy. Trigger on requests like "fixture scope 어떻게 잡을까", "these tests fail
+  when run in a different order", "mock or fake for the database", "테스트 격리 좀 봐줘". Do NOT use for
+  pulling new test cases out of acceptance criteria (use test-derivation).
 ---
 
 # Operational playbook — isolation & fixture strategy

@@ -1,6 +1,14 @@
 ---
 name: capacity-planning-expansion-trigger-threshold-sizing
-description: Use when sizing an expansion-trigger threshold — computing required occupancy, decomposing growth_rate x lead_time x safety_buffer, choosing a target percentile, or sizing lead_time including provisioning ramp-up.
+description: >-
+  Use when sizing the utilization threshold at which a capacity expansion
+  fires — computing required occupancy via Little's Law, decomposing
+  growth_rate x lead_time x safety_buffer, or choosing the target percentile.
+  Trigger on requests like "at what utilization should we expand", "확장 트리거 임계값
+  잡아줘", "occupancy percentile for the trigger", "fold provisioning lead time
+  into the threshold". Do NOT use for sizing the safety_buffer term by
+  criticality and blast radius (use
+  capacity-planning-safety-buffer-sizing-by-criticality).
 metadata:
   axis: expansion-trigger-threshold-sizing
   rule_count_floor: 8

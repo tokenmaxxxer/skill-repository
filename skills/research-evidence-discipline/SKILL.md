@@ -1,6 +1,15 @@
 ---
 name: research-evidence-discipline
-description: Use when writing a claim into a research-shaped record (market-analysis, product-discovery, growth-analytics, user-discovery) and deciding whether it needs a Fact/Inference/Assumption label, when about to state a name/quote/figure with no source in hand, or when an open-questions list is growing and a call to stop asking and proceed is needed. Applies to the evidence-discipline axis.
+description: >-
+  Use when writing a claim into a research-shaped record (market-analysis, product-discovery,
+  growth-analytics, user-discovery) and deciding whether it needs a Fact/Inference/Assumption
+  label, when about to state a name/quote/figure with no source in hand, or when an open-questions
+  list is growing and a call to stop asking and proceed is needed. Applies to the evidence-
+  discipline axis: Fact/Inference/Assumption labeling, a do-not-invent list for names, quotes, and
+  precise figures, and a question-budget cap that forces progress on labeled assumptions. Trigger
+  on requests like "이 조사 기록에 근거 라벨 붙여줘", "is this claim a fact or an assumption", "source this
+  figure or drop it", "open questions 너무 많은데 진행할까". Do NOT use for grading the rigor of external
+  market sources themselves (use market-analysis-evidence-rigor).
 metadata:
   axis: evidence-discipline
   rule_count_floor: 6

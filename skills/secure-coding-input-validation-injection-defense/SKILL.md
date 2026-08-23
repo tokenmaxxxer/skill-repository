@@ -1,6 +1,12 @@
 ---
 name: secure-coding-input-validation-injection-defense
-description: Use when untrusted input is about to cross a trust boundary — a shell, SQL query, HTML/JS/URL sink, or a validation layer — and you need to choose an allowlist, parameterization, or output-encoding approach.
+description: >-
+  Use when untrusted input is about to cross a trust boundary — a shell, SQL/query engine,
+  HTML/JS/URL rendering sink, or a validation layer — and you need to choose an allowlist,
+  parameterization, or sink-specific encoding approach. Trigger on requests like "SQL injection
+  막아줘", "encode this user input for HTML", "allowlist vs denylist validation", "커맨드 인젝션 점검해줘".
+  Do NOT use for what an authenticated identity may do after input is validated (use
+  secure-coding-authorization-access-control).
 metadata:
   axis: input-validation-injection-defense
   rule_count_floor: 9

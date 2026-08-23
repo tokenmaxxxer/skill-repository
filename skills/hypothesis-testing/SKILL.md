@@ -1,17 +1,17 @@
 ---
 name: hypothesis-testing
 description: >-
-  The scientific approach to entrepreneurial and product decisions: treat an idea as a theory,
-  derive falsifiable hypotheses, PRE-REGISTER the metric, threshold, and decision rule before any
-  data is collected, then let that registered rule — not post-hoc judgment — make the kill/pivot/
-  persist call. Use whenever someone wants to test whether an idea, feature, or direction actually
-  works before sinking more into it — e.g. "이 아이디어 될지 검증해보자", "피벗해야 하나", "가설 세워서
-  테스트하자", "how do we know if this is working", "should we kill this or keep going". Trigger
-  whenever a go/kill/pivot/persist decision is still open and the metric or threshold has not yet
-  been written down. Do NOT use once a test is already running with thresholds fixed (just run it
-  to the registered rule), for a decision already committed with no option to stop, for pure
-  preference calls where no observable outcome could settle it (use `decision-brief`), or for a
-  single reversible implementation detail.
+  Use whenever someone wants to test whether an idea, feature, or direction actually works
+  before sinking more into it — whenever a go/kill/pivot/persist decision is still open and
+  the metric or threshold has not yet been written down. The scientific approach to
+  entrepreneurial and product decisions: treat an idea as a theory, derive falsifiable
+  hypotheses, PRE-REGISTER the metric, threshold, and decision rule before any data is
+  collected, then let that registered rule — not post-hoc judgment — make the
+  kill/pivot/persist call. Trigger on "이 아이디어 될지 검증해보자", "피벗해야 하나", "가설 세워서 테스트하자", "how do
+  we know if this is working", "should we kill this or keep going". Do NOT use once a test
+  is already running with thresholds fixed, for a decision already committed with no option
+  to stop, for pure preference calls with no observable outcome (use decision-brief), or for
+  the discovery-role in-repo variant (use product-discovery-hypothesis-testing).
 ---
 
 # Hypothesis Testing

@@ -1,6 +1,12 @@
 ---
 name: user-discovery-saturation-stopping-rule
-description: Use when deciding how many discovery interviews to run or when to stop a round — sizing the initial batch, tracking a new-theme counter, applying a three-consecutive-dry stopping rule, and recording the saturation decision with its evidence.
+description: >-
+  Use when deciding how many discovery interviews to run or when to stop a round — sizing
+  the initial batch, tracking a new-theme counter, applying a three-consecutive-dry stopping
+  rule, and recording the saturation decision with its evidence. Trigger on requests like
+  "인터뷰 몇 명이면 충분해", "have we reached saturation", "should we stop interviewing", "plan the
+  interview count for this round". Do NOT use for how the final count feeds a pain-confirmed
+  verdict (use user-discovery-verdict-prevalence-reporting).
 metadata:
   axis: saturation-stopping-rule
   rule_count_floor: 8

@@ -1,6 +1,12 @@
 ---
 name: localization-text-expansion-and-layout
-description: Use when laying out a fixed-width UI element that will carry translated text, budgeting a per-locale character limit, or a container/source string risks breaking under text expansion.
+description: >-
+  Use when laying out a fixed-width UI element that will carry translated text, budgeting a
+  per-locale character limit, or a container/source string risks breaking under text
+  expansion. Trigger on requests like "German text overflow", "label character budget per
+  locale", "번역하면 버튼 텍스트 넘칠 것 같아", "width headroom for localization". Do NOT use for
+  mirroring layout or icons for right-to-left scripts (use
+  localization-rtl-and-script-support).
 metadata:
   axis: text-expansion-and-layout
   rule_count_floor: 10

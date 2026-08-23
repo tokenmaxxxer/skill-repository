@@ -1,6 +1,15 @@
 ---
 name: business-model-design-revenue-model-selection
-description: Use when choosing a revenue-model archetype (subscription, usage-based, freemium, marketplace/take-rate, or licensing) for a new or changing business model, based on value-metric alignment, end-user type, consumption pattern, or company stage — upstream of pricing-method-family, which picks a research method within an archetype already chosen here.
+description: >-
+  Use when choosing a revenue-model archetype — subscription, usage-based,
+  freemium, marketplace/take-rate, or licensing — for a new or changing business
+  model, based on value-metric alignment, end-user type, consumption pattern, or
+  company stage. Upstream of pricing-method-family, which picks a research
+  method within an archetype already chosen here. Trigger on requests like "수익
+  모델 뭘로 할까", "subscription vs usage-based for our product", "should we go
+  freemium", "pick a revenue model for an AI product". Do NOT use for take-rate
+  and subsidy design once a marketplace archetype is chosen (use
+  business-model-design-platform-design).
 metadata:
   axis: revenue-model-selection
   rule_count_floor: 7

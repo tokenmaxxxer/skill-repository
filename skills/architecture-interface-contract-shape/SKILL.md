@@ -1,6 +1,13 @@
 ---
 name: architecture-interface-contract-shape
-description: Use when choosing the shape of a boundary contract between services or modules — sync vs. async, saga orchestration vs. choreography, shared-kernel vs. published-language integration, or interface surface area/segregation — at the architecture level, not field-level API design.
+description: >-
+  Use when choosing the shape of a boundary contract between services or modules — sync vs.
+  async, saga orchestration vs. choreography, shared-kernel vs. published-language context
+  mapping, anticorruption layers, or interface surface segregation — at the architecture level,
+  not field-level API design. Trigger on requests like "sync 호출을 이벤트로 바꿀까", "orchestration vs
+  choreography for this saga", "ACL을 둘까 Conformist로 갈까", "BFF split for web and mobile". Do NOT
+  use for deciding where the module/service boundary itself sits (use
+  architecture-module-boundary-definition).
 metadata:
   axis: interface-contract-shape
   rule_count_floor: 12

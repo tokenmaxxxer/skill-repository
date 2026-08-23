@@ -1,6 +1,11 @@
 ---
 name: brand-design-color-visibility
-description: Use when choosing a brand color pair for body/UI text, designating a brand's primary recognition hue, or reviewing a mature palette for low-familiarity accent colors to remove.
+description: >-
+  Use when choosing a brand color pair for body/UI text, designating a brand's primary
+  recognition hue, or reviewing a mature palette for low-familiarity accent colors to remove.
+  Trigger on requests like "brand color pair for text", "primary recognition color", "prune
+  accent colors", "브랜드 컬러 정해줘". Do NOT use for how an icon exposes color, viewBox, or sizing
+  (use brand-design-icon-system-svg).
 metadata:
   axis: color-combination-visibility
   rule_count_floor: 3

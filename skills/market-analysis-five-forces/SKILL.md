@@ -1,6 +1,14 @@
 ---
 name: market-analysis-five-forces
-description: Use when rating one of Porter's five forces (rivalry, buyer power, supplier power, threat of new entrants, threat of substitutes), turning force ratings into an overall attractiveness verdict, or checking that a force rating is quantified and appropriately hedged. Applies to the five-forces axis.
+description: >-
+  Use when rating one of Porter's five forces (rivalry, buyer power, supplier power, threat
+  of new entrants, threat of substitutes), turning force ratings into an overall
+  attractiveness verdict, or checking that a force rating is quantified and appropriately
+  hedged. Applies to the five-forces axis. Trigger on requests like "5 forces 분석해줘", "how
+  strong is buyer power in this segment", "rate the threat of substitutes", "is this market
+  attractive overall". Uses HHI against DOJ/FTC thresholds and names the binding-constraint
+  force rather than averaging. Do NOT use for naming the customer job or the strongest
+  competing alternative (use market-analysis-jtbd-fit).
 metadata:
   axis: five-forces
   rule_count_floor: 10

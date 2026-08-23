@@ -1,6 +1,13 @@
 ---
 name: business-model-design-platform-design
-description: Use when deciding which side of a two-sided platform to subsidize, setting a marketplace take-rate, assessing multi-homing risk to platform defensibility, or sequencing a platform launch to solve the chicken-and-egg cold-start problem.
+description: >-
+  Use when deciding which side of a two-sided platform to subsidize, setting a
+  marketplace take-rate, assessing multi-homing risk to platform defensibility,
+  or sequencing a platform launch to solve the chicken-and-egg cold-start
+  problem. Trigger on requests like "플랫폼 수수료율 얼마로 할까", "which side should we
+  subsidize", "marketplace take rate benchmark", "cold start strategy for a
+  two-sided market". Do NOT use for picking a revenue-model archetype for a
+  non-platform business (use business-model-design-revenue-model-selection).
 metadata:
   axis: platform-design
   rule_count_floor: 5

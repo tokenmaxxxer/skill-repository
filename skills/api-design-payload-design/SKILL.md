@@ -1,6 +1,11 @@
 ---
 name: api-design-payload-design
-description: Use when designing a list/search endpoint's pagination style, continuation signal, page-size limits, field selection, or filter-parameter grammar.
+description: >-
+  Use when designing a list/search endpoint's pagination style, continuation signal, page-size
+  limits, field selection, or filter-parameter grammar. Trigger on requests like "cursor vs
+  offset pagination", "has_more 플래그 넣을까", "페이지네이션 설계해줘", "add sparse fieldsets to the response",
+  "filter query grammar for our list API". Do NOT use for deciding the resource hierarchy or
+  singleton-vs-collection modeling (use api-design-resource-modeling).
 metadata:
   axis: payload-design
   rule_count_floor: 13

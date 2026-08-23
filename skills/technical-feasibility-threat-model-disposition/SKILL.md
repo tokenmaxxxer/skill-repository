@@ -1,6 +1,16 @@
 ---
 name: technical-feasibility-threat-model-disposition
-description: Use when a spec's STRIDE table rows and dispositions need to be built or checked, as opposed to deciding reversibility/spike scope, dependency build-vs-buy health, license/regulatory exposure, or the final verdict/timebox.
+description: >-
+  Use when a spec's STRIDE table rows and dispositions need to be built or
+  checked, as opposed to deciding reversibility/spike scope, dependency
+  build-vs-buy health, license/regulatory exposure, or the final
+  verdict/timebox. Covers DFD-derived element enumeration, one row per (element,
+  category, trust boundary), and terminal dispositions of exactly
+  mitigated/accepted/deferred with confidence tiers. Trigger on requests like
+  "STRIDE 분류해줘", "threat disposition audit", "mitigated accepted deferred
+  check", "data-flow diagram threats". Do NOT use for the feasibility probe's
+  interactive row-by-row walk with the user in the `probing` state (use
+  technical-feasibility-stride-table).
 metadata:
   axis: threat-model-disposition
   rule_count_floor: 10

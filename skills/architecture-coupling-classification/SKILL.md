@@ -1,6 +1,12 @@
 ---
 name: architecture-coupling-classification
-description: Use when classifying the type and severity of coupling between two components (shared data, control flags, struct passing, internal reach-through, timing/deploy ordering, cycles, or chatty call chains) and deciding what corrective action, if any, to take.
+description: >-
+  Use when classifying the type and severity of coupling between two components — shared data or
+  global state, control flags, struct passing, internal reach-through, timing/deploy ordering,
+  import cycles, or chatty call chains — and deciding whether to leave, weaken, or remove it.
+  Trigger on requests like "이 모듈들 결합도 좀 봐줘", "classify this coupling", "shared database between
+  services, how bad is it", "instability metric says split — should we". Do NOT use for deciding
+  which way a dependency arrow should point (use architecture-dependency-direction).
 metadata:
   axis: coupling-classification
   rule_count_floor: 12

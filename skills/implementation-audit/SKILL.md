@@ -1,6 +1,16 @@
 ---
 name: implementation-audit
-description: Use when applying Implementation Audit. A two-session audit protocol: the builder session extracts falsifiable claims from the specification, then a structurally independent evaluator session (spawned via adversarial-review) classifies each claim against the implementation as Present, Surface, Absent, Incorrect, or Unverifiable — with no access to the builder's intent or context. Use after AI completes a task and you need to know "did it genuinely deliver what I asked for" without the builder grading its own homework — e.g. "AI가 구현한 거 검증해줘", "이 코드가 요구사항 제대로 구현했는지 확인해줘", "did the agent actually build what the spec says", "check if this implementation matches the requirements", "요구사항 대비 구현 감사". Do NOT use for code style (linter), to evaluate requirements themselves (requirements-quality), or to decide what tests to write (test-derivation). This skill answers exactly one question: "for each thing asked, is there a real implementation or just a surface imitation?" — and it answers it in a session that has no stake in the answer.
+description: >-
+  Use when applying Implementation Audit — a two-session audit protocol: the builder session
+  extracts falsifiable claims from the specification, then a structurally independent evaluator
+  session (via adversarial-review) classifies each claim against the implementation as Present,
+  Surface, Absent, Incorrect, or Unverifiable, with no access to the builder's intent. Use after
+  AI completes a task and you need "did it genuinely deliver what I asked for" without the
+  builder grading its own homework — e.g. "AI가 구현한 거 검증해줘", "did the agent actually build what
+  the spec says", "check if this matches the requirements", "요구사항 대비 구현 감사". Do NOT use for
+  choosing code structure before building (use implementation-blueprint), for code style
+  (linter), to evaluate requirements themselves (requirements-quality), or to decide what tests
+  to write (test-derivation).
 
 ---
 

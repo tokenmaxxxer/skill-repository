@@ -1,9 +1,18 @@
 ---
 name: incident-response-rca-method-selection
-description: Use when choosing which root-cause-analysis method to apply to an incident — 5 Whys, fishbone, or fault tree — or converting a fishbone into a causal chain. Applies to the rca-method-selection axis.
+description: >-
+  Use when choosing which root-cause-analysis method to apply to an incident —
+  5 Whys, fishbone, or fault tree — or converting a fishbone into a causal
+  chain. Applies to the rca-method-selection axis. Trigger on requests like "5
+  whys or fault tree here", "run RCA on this outage", "fishbone to causal
+  chain", "이 장애 근본원인 분석 방법 골라줘". Adds a second chain rooted at the
+  detection/response delay when the incident escalated because it was caught
+  slowly. Do NOT use for deciding how deep the postmortem needs to go for its
+  tier (use incident-response-severity-classification-scoping).
 metadata:
   axis: rca-method-selection
   rule_count_floor: 4
+
 ---
 
 # RCA method selection

@@ -1,17 +1,16 @@
 ---
 name: user-discovery
 description: >-
-  A design-and-analysis harness for generative user research (discovery): it designs
-  bias-controlled interview studies, then analyzes the transcripts/notes the user brings back —
-  tracking saturation, grading evidence strength, and separating observation from opinion. Use
-  whenever the user wants to find out what customers actually need before building — "고객 인터뷰
-  설계해줘", "design user interviews", "what should I ask potential users", "analyze these
-  interview notes/transcripts", "did we talk to enough users", "what jobs are customers hiring
-  this for", "build personas from this research", "is this user feedback a real pattern".
-  Trigger it when someone is about to build based on a few enthusiastic anecdotes or wants to
-  validate a problem hypothesis with real people. Do NOT use for evaluative testing of an
-  existing design (usability-eval), market sizing/competition (market-recon), or surveys whose
-  goal is statistical measurement rather than discovery.
+  Use whenever the user wants to find out what customers actually need before building — a
+  design-and-analysis harness for generative user research (discovery) that designs
+  bias-controlled interview studies, then analyzes the transcripts/notes the user brings
+  back, tracking saturation, grading evidence strength, and separating observation from
+  opinion. Trigger on "고객 인터뷰 설계해줘", "design user interviews", "what should I ask potential
+  users", "analyze these interview notes/transcripts", "did we talk to enough users", "is
+  this user feedback a real pattern", or when someone is about to build on a few
+  enthusiastic anecdotes. Do NOT use for evaluative testing of an existing design
+  (usability-eval), market sizing/competition (market-recon), or a single axis pass such as
+  tagging an existing log's claims (use user-discovery-evidence-strength-tagging).
 ---
 
 # User Discovery — a design & analysis harness for generative research

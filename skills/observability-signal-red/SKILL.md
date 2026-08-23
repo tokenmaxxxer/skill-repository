@@ -1,6 +1,14 @@
 ---
 name: observability-signal-red
-description: Use when placing Rate, Errors, or Duration signals on a request-driven surface. Applies to the signal-red axis.
+description: >-
+  Use when placing Rate, Errors, or Duration signals on a single
+  request-driven surface (an HTTP/RPC endpoint, a queue consumer). Trigger on
+  requests like "where does the request counter go", "latency histogram vs
+  average gauge", "p99 레이턴시 계측 어디서 해", "classify 4xx vs 5xx errors". Do NOT
+  use for a resource-bound surface like a connection pool, CPU, or disk —
+  utilization/saturation placement belongs to observability-signal-use — nor
+  for a service-rollup aggregating many children (use
+  observability-signal-golden).
 metadata:
   axis: signal-red
   rule_count_floor: 3

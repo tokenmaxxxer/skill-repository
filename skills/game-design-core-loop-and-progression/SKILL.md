@@ -1,6 +1,13 @@
 ---
 name: game-design-core-loop-and-progression
-description: Use when defining a progression tier, a cost curve, a currency's sources and sinks, or the acquisition method for a gating item, and need a condition-matched rule rather than a general economy-design overview. Applies to the core-loop-and-progression axis.
+description: >-
+  Use when defining a progression tier or level, a stage difficulty curve, a cost curve, a
+  currency's sources and sinks, or the acquisition method for a gating item — including
+  balance derivation for per-stage monster and enemy HP/damage scaling so hits-to-kill lands
+  in a target band. Trigger on requests like "stage difficulty curve", "monster HP and damage
+  scaling per stage", "hits-to-kill balance derivation", "몬스터 밸런스 잡아줘". Do NOT use for
+  cross-session pacing, upgrade cadence, or comeback-visit scheduling (use
+  game-growth-system-design).
 metadata:
   axis: core-loop-and-progression
   rule_count_floor: 5

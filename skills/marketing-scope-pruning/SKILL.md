@@ -1,6 +1,13 @@
 ---
 name: marketing-scope-pruning
-description: Use when drafting a campaign brief, running a pre-launch review of a draft asset, or evaluating whether an existing channel, segment, claim, or brand element should be cut.
+description: >-
+  Use when drafting a campaign brief, running a pre-launch review of a draft asset, or
+  evaluating whether an existing channel, segment, claim, or brand element should be cut.
+  Trigger on requests like "캠페인에서 뺄 것 골라줘", "review this asset before launch", "should we
+  cut this claim", "merge these overlapping assets". Applies subtraction-neglect discipline:
+  one core benefit plus one CTA, an explicit what-can-we-remove pass, and cut-or-keep
+  verdicts. Do NOT use for choosing which rhetorical appeal a single message leads with (use
+  marketing-message-persuasion).
 metadata:
   axis: scope-pruning
   rule_count_floor: 5

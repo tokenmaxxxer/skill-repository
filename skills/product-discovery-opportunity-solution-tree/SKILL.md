@@ -1,13 +1,15 @@
 ---
 name: product-discovery-opportunity-solution-tree
-description: >
-  Use this skill whenever the `scoping -> scoping` self-loop fires — i.e.
-  whenever opportunity/outcome framing is drafted or re-affirmed with the
-  user — to update the living Opportunity Solution Tree, distinct from
-  registering a hypothesis or gating any transition (it has no gate).
-  This is cross-cutting: it runs on its own cadence, independent of any
-  single hypothesis's state, and its artifact is never the product-cycle
-  state file.
+description: >-
+  Use this skill whenever the `scoping -> scoping` self-loop fires — i.e. whenever
+  opportunity/outcome framing is drafted or re-affirmed with the user — to update the living
+  Opportunity Solution Tree in product/opportunity-tree.md. Trigger on requests like "기회 트리
+  업데이트해줘", "add this interview finding to the opportunity tree", "refresh the OST this
+  week", "hang this solution under its opportunity". It is cross-cutting, runs on its own
+  cadence independent of any hypothesis's state, and its artifact is never the product-cycle
+  state file (no gate). Do NOT use for the axis-level rules on layer placement,
+  prioritization, or pruning branches (use
+  product-discovery-opportunity-solution-tree-branching).
 ---
 
 # Opportunity Solution Tree maintenance

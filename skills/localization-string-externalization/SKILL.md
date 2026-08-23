@@ -1,6 +1,12 @@
 ---
 name: localization-string-externalization
-description: Use when a user-facing string is hard-coded in source, when a variable needs embedding mid-string, when a key could be reused across grammatically different positions, or when a translation batch spans chunks or agents.
+description: >-
+  Use when a user-facing string is hard-coded in source, when a variable needs embedding
+  mid-string, when a key could be reused across grammatically different positions, or when a
+  translation batch spans chunks or agents. Trigger on requests like "externalize these
+  strings", "i18n key naming", "하드코딩된 문자열 리소스 파일로 빼줘", "terminology table for a translation
+  batch". Do NOT use for choosing CLDR plural variants for a count message (use
+  localization-pluralization-and-grammar).
 metadata:
   axis: string-externalization-and-key-management
   rule_count_floor: 10

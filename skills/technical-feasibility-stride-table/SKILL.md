@@ -1,6 +1,15 @@
 ---
 name: technical-feasibility-stride-table
-description: Use when the feasibility role is in the `probing` state running the threat-model probe and the specification's design needs an adversarial, security-design pass, row by row, before that probe can resolve.
+description: >-
+  Use when the feasibility role is in the `probing` state running the
+  threat-model probe and the specification's design needs an adversarial,
+  security-design pass, row by row, before that probe can resolve. Builds the
+  STRIDE table with the user element by element, each row carrying entry
+  point/trust boundary and a disposition. Trigger on requests like "STRIDE 테이블
+  만들어줘", "threat model probe", "walk the design for threats", "trust boundary
+  row by row". Do NOT use for the rule-based DFD-derivation and
+  disposition-audit decision axis outside the interactive probe session (use
+  technical-feasibility-threat-model-disposition).
 ---
 
 # STRIDE table

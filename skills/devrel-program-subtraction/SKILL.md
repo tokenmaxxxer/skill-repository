@@ -1,6 +1,12 @@
 ---
 name: devrel-program-subtraction
-description: Use when deciding whether to add or cut a devrel program's content, channel, or program surface — evaluating a new content format against existing ones, retiring unused docs/samples/talks/channels, or consolidating instead of adding.
+description: >-
+  Use when deciding whether to add or cut a devrel program's content, channel, or program
+  surface — evaluating a new content format against existing ones, retiring unused
+  docs/samples/talks/channels, or consolidating instead of adding. Trigger on requests like
+  "should we add a newsletter", "안 쓰는 샘플 정리해줘", "retire this conference talk", "too many
+  community channels". Do NOT use for formatting or convention choices on content that stays
+  (use devrel-channel-convention).
 metadata:
   axis: program-subtraction
   rule_count_floor: 8

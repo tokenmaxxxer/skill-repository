@@ -1,6 +1,16 @@
 ---
 name: pr-communications-message-planning-and-evaluation-rules
-description: Use when planning, drafting, clearing, or evaluating an external communications activity (PR description, release note, crisis/Q&A material) and the audience, message hierarchy, approval routing, or success criteria aren't yet decided.
+description: >-
+  Use when planning, drafting, clearing, or evaluating an external communications activity (PR
+  description, release note, crisis/Q&A material) and the audience, message hierarchy, approval
+  routing, or success criteria aren't yet decided. Decision rules cover channel choice by named
+  audience (paid/earned/shared/owned), one-core-message discipline, proof points with
+  ethos/pathos/logos matched to the audience's objection, crisis Q&A approval routing and shared
+  spokesperson statements, and evaluation criteria spanning activity results, outtakes, and
+  outcomes. Trigger on requests like "보도자료 초안 잡아줘", "릴리스 노트 메시지 정리해줘", "draft a press release
+  plan", "who needs to clear this crisis statement", "how do we measure this campaign". Do NOT use
+  for product marketing copy and in-product persuasion (use marketing-message-persuasion) or for
+  user-facing UI text (content-design-operational-playbook).
 metadata:
   role: pr-communications
   axes:

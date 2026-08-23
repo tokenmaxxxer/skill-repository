@@ -1,6 +1,12 @@
 ---
 name: architecture-dependency-direction
-description: Use when deciding which way a dependency arrow should point between modules/layers/services — domain vs. infrastructure imports, adapter-to-port direction, breaking an import cycle, layer-skipping exceptions, or auditing whether a declared direction rule still holds against the real import graph.
+description: >-
+  Use when deciding which way a dependency arrow should point between modules/layers/services —
+  domain vs. infrastructure imports, adapter-to-port direction, breaking an import cycle,
+  layer-skipping exceptions, or auditing whether a declared direction rule still holds against
+  the real import graph. Trigger on requests like "domain이 infra를 import해도 돼?", "break this
+  import cycle", "hexagonal ports and adapters wiring", "의존성 방향 점검해줘". Do NOT use for naming the
+  coupling type between two components (use architecture-coupling-classification).
 metadata:
   axis: dependency-direction
   rule_count_floor: 12

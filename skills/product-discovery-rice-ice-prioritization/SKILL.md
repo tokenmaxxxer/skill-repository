@@ -1,6 +1,14 @@
 ---
 name: product-discovery-rice-ice-prioritization
-description: Use when comparing more than one opportunity or solution candidate for build priority and scoring or citing the evidence behind each score. Applies to the rice-ice-prioritization axis.
+description: >-
+  Use when comparing more than one opportunity or solution candidate for build priority and
+  scoring or citing the evidence behind each score. Applies to the rice-ice-prioritization
+  axis. Trigger on requests like "RICE 점수 매겨줘", "prioritize these opportunities", "should
+  this be RICE or ICE", "what confidence do we really have behind this score". Ties
+  Confidence to admissible Mom Test evidence (count + date range + paraphrase), flags ICE
+  fallbacks explicitly, and surfaces near-ties instead of silently breaking them. Do NOT use
+  to place or prune candidates on the tree before comparison (use
+  product-discovery-opportunity-solution-tree-branching).
 metadata:
   axis: rice-ice-prioritization
   rule_count_floor: 10

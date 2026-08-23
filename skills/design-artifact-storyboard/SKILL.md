@@ -1,6 +1,11 @@
 ---
 name: design-artifact-storyboard
-description: Use when authoring a sequence-of-panels storyboard for a user story or workflow, one that maps chronological events rather than a single static screen.
+description: >-
+  Use when authoring a sequence-of-panels storyboard for a user story or workflow, one that
+  maps chronological events rather than a single static screen. Trigger on requests like
+  "storyboard panels", "scene-by-scene sequence", "panel captions for this story", "스토리보드
+  그려줘". Do NOT use for a screens-and-states interaction path with no panels (use
+  design-artifact-user-flow).
 metadata:
   axis: storyboard-sequence-vs-single-screen
   rule_count_floor: 3
