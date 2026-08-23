@@ -1,0 +1,1 @@
+- 2026-08-23T02:47:06.347649+00:00 | role=knowledge-management | verb=skill_judge | issue=90 | question='과제:\nIssue #90 (requirement R1): author the 4 game-development skill families (game-design-core-loop-and-progression, game-feel-juice-and-feedback, html5-game-rendering-loop, game-ui-board-and-lane-lay' | outcome='error: 시간초과(45s)'
