@@ -1,8 +1,9 @@
 ---
 name: marketing-channel-selection
 description: Use when choosing which channel to fund, allocating or shifting budget across an existing channel mix, or deciding whether to cut an underperforming channel.
-axis: channel-selection
-rule_count_floor: 5
+metadata:
+  axis: channel-selection
+  rule_count_floor: 5
 ---
 
 # Channel selection and budget allocation

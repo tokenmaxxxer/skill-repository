@@ -1,8 +1,9 @@
 ---
 name: knowledge-work-deck-toolchain-selection
 description: Use when choosing which tool (Marp, reveal.js, Slidev, or Quarto) to author a text-source slide deck with, before any slide content exists. Applies to the deck-toolchain-selection axis.
-axis: deck-toolchain-selection
-rule_count_floor: 3
+metadata:
+  axis: deck-toolchain-selection
+  rule_count_floor: 3
 ---
 
 # Deck toolchain selection

@@ -1,8 +1,9 @@
 ---
 name: knowledge-management-curation-pruning
 description: Use when an entry has gone uncited past a review cycle, when auditing a flagged entry, or when deciding whether to update, merge, supersede, or remove a knowledge-library entry.
-axis: curation-pruning
-rule_count_floor: 10
+metadata:
+  axis: curation-pruning
+  rule_count_floor: 10
 ---
 
 # Curation quality gate and pruning

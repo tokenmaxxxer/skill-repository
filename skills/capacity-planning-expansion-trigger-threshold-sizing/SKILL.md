@@ -1,8 +1,9 @@
 ---
 name: capacity-planning-expansion-trigger-threshold-sizing
 description: Use when sizing an expansion-trigger threshold — computing required occupancy, decomposing growth_rate x lead_time x safety_buffer, choosing a target percentile, or sizing lead_time including provisioning ramp-up.
-axis: expansion-trigger-threshold-sizing
-rule_count_floor: 8
+metadata:
+  axis: expansion-trigger-threshold-sizing
+  rule_count_floor: 8
 ---
 
 # Expansion-trigger threshold sizing (growth_rate x lead_time x safety_buffer)

@@ -1,14 +1,15 @@
 ---
 name: localization-text-expansion-and-layout
 description: Use when laying out a fixed-width UI element that will carry translated text, budgeting a per-locale character limit, or a container/source string risks breaking under text expansion.
-axis: text-expansion-and-layout
-rule_count_floor: 10
-axes:
-  - string-externalization-and-key-management
-  - pluralization-and-grammar
-  - locale-convention-formatting
-  - text-expansion-and-layout
-  - rtl-and-script-support
+metadata:
+  axis: text-expansion-and-layout
+  rule_count_floor: 10
+  axes:
+    - string-externalization-and-key-management
+    - pluralization-and-grammar
+    - locale-convention-formatting
+    - text-expansion-and-layout
+    - rtl-and-script-support
 ---
 
 # Decision axis: text expansion & layout

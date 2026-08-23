@@ -1,8 +1,9 @@
 ---
 name: api-design-payload-design
 description: Use when designing a list/search endpoint's pagination style, continuation signal, page-size limits, field selection, or filter-parameter grammar.
-axis: payload-design
-rule_count_floor: 13
+metadata:
+  axis: payload-design
+  rule_count_floor: 13
 ---
 
 # Payload design (pagination, filtering, field selection)

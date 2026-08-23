@@ -1,8 +1,9 @@
 ---
 name: risk-management-likelihood-impact-scale
 description: Use when calibrating a risk's likelihood or impact band, reconciling divergent rater scores, or deciding whether a quantitative loss estimate belongs alongside the qualitative band. Applies to the likelihood-impact-scale axis.
-axis: likelihood-impact-scale
-rule_count_floor: 10
+metadata:
+  axis: likelihood-impact-scale
+  rule_count_floor: 10
 ---
 
 # Likelihood x impact scale calibration

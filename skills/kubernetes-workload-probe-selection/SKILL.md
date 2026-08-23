@@ -1,8 +1,9 @@
 ---
 name: kubernetes-workload-probe-selection
 description: Use when configuring a container's liveness, readiness, or startup probe in a Kubernetes manifest, or diagnosing a pod stuck in a restart loop or never receiving traffic.
-axis: probe-selection
-rule_count_floor: 6
+metadata:
+  axis: probe-selection
+  rule_count_floor: 6
 ---
 
 # Kubernetes probe selection rules

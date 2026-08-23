@@ -1,8 +1,9 @@
 ---
 name: ux-engineering-control-selection
 description: Use when picking which UI control fits a given field's type, option count, or interaction contract. Applies to the control-selection-by-field-type axis.
-axis: control-selection-by-field-type
-rule_count_floor: 3
+metadata:
+  axis: control-selection-by-field-type
+  rule_count_floor: 3
 ---
 
 # Control selection by field type

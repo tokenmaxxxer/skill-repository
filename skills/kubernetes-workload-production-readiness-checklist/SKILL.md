@@ -1,8 +1,9 @@
 ---
 name: kubernetes-workload-production-readiness-checklist
 description: Use when reviewing a Kubernetes workload manifest before it goes to production, or auditing an existing workload for missing production-readiness basics (resources, probes, PDB, HPA, non-root, graceful shutdown).
-axis: production-readiness-checklist
-rule_count_floor: 6
+metadata:
+  axis: production-readiness-checklist
+  rule_count_floor: 6
 ---
 
 # Kubernetes production-readiness checklist

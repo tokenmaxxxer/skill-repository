@@ -1,8 +1,9 @@
 ---
 name: sales-objection-handling
 description: Use when responding to prospect pushback — an emotional objection, a factual objection (price, missing feature), stalling on an already-expressed interest, a social-proof or competitive objection, or an urgency-deferral objection.
-axis: objection-handling
-rule_count_floor: 5
+metadata:
+  axis: objection-handling
+  rule_count_floor: 5
 ---
 
 # Objection handling

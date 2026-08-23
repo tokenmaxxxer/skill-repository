@@ -1,8 +1,9 @@
 ---
 name: game-design-core-loop-and-progression
 description: Use when defining a progression tier, a cost curve, a currency's sources and sinks, or the acquisition method for a gating item, and need a condition-matched rule rather than a general economy-design overview. Applies to the core-loop-and-progression axis.
-axis: core-loop-and-progression
-rule_count_floor: 5
+metadata:
+  axis: core-loop-and-progression
+  rule_count_floor: 5
 ---
 
 # Core loop and progression

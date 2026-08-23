@@ -1,8 +1,9 @@
 ---
 name: business-model-design-canvas-construction
 description: Use when choosing between the Business Model Canvas and Lean Canvas for a given business stage, filling a canvas's blocks in an order that surfaces the riskiest assumption last, or checking a filled canvas for a known construction failure mode.
-axis: canvas-construction
-rule_count_floor: 6
+metadata:
+  axis: canvas-construction
+  rule_count_floor: 6
 ---
 
 # Canvas-construction decision rules

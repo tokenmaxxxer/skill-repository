@@ -1,8 +1,9 @@
 ---
 name: legal-compliance-vendor-dpa
 description: Use when onboarding a vendor/sub-processor that will handle personal data, or when auditing an existing DPA's sub-processor chain.
-axis: vendor-dpa-requirements
-rule_count_floor: 2
+metadata:
+  axis: vendor-dpa-requirements
+  rule_count_floor: 2
 ---
 
 # Vendor / sub-processor DPA requirements

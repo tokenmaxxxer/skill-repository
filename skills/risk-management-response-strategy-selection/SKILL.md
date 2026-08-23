@@ -1,8 +1,9 @@
 ---
 name: risk-management-response-strategy-selection
 description: Use when choosing between Avoid, Mitigate, Transfer, and Accept for a risk, selecting among candidate Mitigate controls, or auditing an Accept decision for missing ownership. Applies to the response-strategy-selection axis.
-axis: response-strategy-selection
-rule_count_floor: 10
+metadata:
+  axis: response-strategy-selection
+  rule_count_floor: 10
 ---
 
 # Risk response strategy selection

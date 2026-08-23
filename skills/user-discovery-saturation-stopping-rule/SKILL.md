@@ -1,8 +1,9 @@
 ---
 name: user-discovery-saturation-stopping-rule
 description: Use when deciding how many discovery interviews to run or when to stop a round — sizing the initial batch, tracking a new-theme counter, applying a three-consecutive-dry stopping rule, and recording the saturation decision with its evidence.
-axis: saturation-stopping-rule
-rule_count_floor: 8
+metadata:
+  axis: saturation-stopping-rule
+  rule_count_floor: 8
 ---
 
 # Saturation: when to stop interviewing

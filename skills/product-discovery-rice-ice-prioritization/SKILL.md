@@ -1,8 +1,9 @@
 ---
 name: product-discovery-rice-ice-prioritization
 description: Use when comparing more than one opportunity or solution candidate for build priority and scoring or citing the evidence behind each score. Applies to the rice-ice-prioritization axis.
-axis: rice-ice-prioritization
-rule_count_floor: 10
+metadata:
+  axis: rice-ice-prioritization
+  rule_count_floor: 10
 ---
 
 # RICE / ICE prioritization and evidence citation

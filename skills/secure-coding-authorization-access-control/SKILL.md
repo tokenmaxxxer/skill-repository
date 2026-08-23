@@ -1,8 +1,9 @@
 ---
 name: secure-coding-authorization-access-control
 description: Use when a design or review is deciding who may act on what, choosing between RBAC and ABAC/ReBAC, closing a client-side-only or single-entry-path check, or auditing accumulated role permissions.
-axis: authorization-access-control
-rule_count_floor: 8
+metadata:
+  axis: authorization-access-control
+  rule_count_floor: 8
 ---
 
 # Authorization / access control

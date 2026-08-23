@@ -1,8 +1,9 @@
 ---
 name: defect-verification-independence-from-upstream-verdicts
 description: Use when devising or running a defect-verification attempt against a review requirement marked Present, a qa defect report, or a closed_checks entry — keeping the attempt independent of coding/qa/review's prior verdict rather than letting it pre-shape scope, rigor, or which attempts get made.
-axis: independence-from-upstream-verdicts
-rule_count_floor: 8
+metadata:
+  axis: independence-from-upstream-verdicts
+  rule_count_floor: 8
 ---
 
 # Preserving independence from coding/qa/review's prior verdicts

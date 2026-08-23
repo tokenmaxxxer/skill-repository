@@ -1,8 +1,9 @@
 ---
 name: observability-cardinality-budget
 description: Use when a candidate metric label/tag/attribute needs to be classified by cardinality risk before it ships, or when an existing metric already carries a high-cardinality label. Applies to the cardinality-budget axis.
-axis: cardinality-budget
-rule_count_floor: 3
+metadata:
+  axis: cardinality-budget
+  rule_count_floor: 3
 ---
 
 # Cardinality budgeting for instrumentation dimensions

@@ -1,8 +1,9 @@
 ---
 name: defect-verification-reproduction-evidence-quality
 description: Use when recording an attempt to reproduce a candidate defect and its supporting evidence — building the numbered repro steps, attaching the artifact, or judging whether a green suite or Present requirement actually exercised the claimed behavior.
-axis: reproduction-evidence-quality
-rule_count_floor: 8
+metadata:
+  axis: reproduction-evidence-quality
+  rule_count_floor: 8
 ---
 
 # Reproduction-evidence quality for a defect attempt

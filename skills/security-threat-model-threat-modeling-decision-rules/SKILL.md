@@ -1,15 +1,16 @@
 ---
 name: security-threat-model-threat-modeling-decision-rules
 description: Use when drawing or scoping a DFD's trust boundaries, classifying an asset's sensitivity, running a STRIDE pass on a DFD element, CVSS-rating a threat, choosing a mitigation disposition (mitigate/avoid/transfer/accept), or signing off residual risk — distinct from generic STRIDE/FMEA walkthroughs or a feasibility-scoped threat disposition call.
-rule_count_floor: 12
-tier: moderate
-axes:
-  - trust-boundary-scoping
-  - asset-sensitivity-classification
-  - stride-enumeration-by-element
-  - cvss-risk-rating
-  - mitigation-disposition
-  - residual-risk-signoff
+metadata:
+  rule_count_floor: 12
+  tier: moderate
+  axes:
+    - trust-boundary-scoping
+    - asset-sensitivity-classification
+    - stride-enumeration-by-element
+    - cvss-risk-rating
+    - mitigation-disposition
+    - residual-risk-signoff
 ---
 
 # Operational playbook: trust-boundary threat modeling decision rules (issue-1174)

@@ -1,8 +1,9 @@
 ---
 name: incident-response-tool-landscape
 description: Use when applying an incident-management tool ecosystem's design moves — auto-timeline capture, severity-driven escalation, blocking action-item gates, or linking instead of re-typing — to one of this role's own axes. Applies to the tool-landscape axis.
-axis: tool-landscape
-rule_count_floor: 4
+metadata:
+  axis: tool-landscape
+  rule_count_floor: 4
 ---
 
 # Tool-landscape learnings

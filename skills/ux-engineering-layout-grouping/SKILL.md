@@ -1,8 +1,9 @@
 ---
 name: ux-engineering-layout-grouping
 description: Use when arranging related fields into groups, choosing single- vs. multi-column layout, placing labels, or adding a visible group boundary. Applies to the layout-grouping axis.
-axis: layout-grouping
-rule_count_floor: 3
+metadata:
+  axis: layout-grouping
+  rule_count_floor: 3
 ---
 
 # Layout and grouping

@@ -1,8 +1,9 @@
 ---
 name: game-ui-board-and-lane-layout
 description: Use when laying out a game board's cells, lanes, and token targets, sizing drag/tap interaction zones on a board, or deciding how pip/token counts and lane boundaries read spatially. Applies to the board-and-lane-layout axis.
-axis: board-and-lane-layout
-rule_count_floor: 4
+metadata:
+  axis: board-and-lane-layout
+  rule_count_floor: 4
 ---
 
 # Board and lane layout

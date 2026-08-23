@@ -1,8 +1,9 @@
 ---
 name: ux-engineering-service-design-frontstage-backstage-separation
 description: Use when deciding whether a service action, system, or actor belongs frontstage (customer-visible), backstage (invisible support for an onstage moment, possibly performed by the same frontstage employee), or a support process (infrastructural, never customer-facing) inside an already-scoped blueprint or touchpoint map.
-axis: frontstage-backstage-support-perceptibility-test
-rule_count_floor: 4
+metadata:
+  axis: frontstage-backstage-support-perceptibility-test
+  rule_count_floor: 4
 ---
 
 # Frontstage / backstage / support-process separation

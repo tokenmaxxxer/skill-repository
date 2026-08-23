@@ -1,8 +1,9 @@
 ---
 name: ux-engineering-color-visibility
 description: Use when choosing or reviewing a color combination for text, a non-text UI component, a color-only distinction, or a multi-value color set. Applies to the color-combination-visibility axis.
-axis: color-combination-visibility
-rule_count_floor: 3
+metadata:
+  axis: color-combination-visibility
+  rule_count_floor: 3
 ---
 
 # Color combination visibility

@@ -1,14 +1,15 @@
 ---
 name: technical-feasibility-license-and-regulatory-risk
 description: Use when the spec's open questions turn on DPIA necessity, GDPR high-risk classification, dependency license compatibility, or regulatory applicability given the spec's data-subject and jurisdiction footprint.
-axis: license-and-regulatory-risk
-rule_count_floor: 10
-axes:
-  - reversibility-and-spike-scoping
-  - build-vs-buy-dependency-health
-  - license-and-regulatory-risk
-  - threat-model-disposition
-  - verdict-and-timebox-selection
+metadata:
+  axis: license-and-regulatory-risk
+  rule_count_floor: 10
+  axes:
+    - reversibility-and-spike-scoping
+    - build-vs-buy-dependency-health
+    - license-and-regulatory-risk
+    - threat-model-disposition
+    - verdict-and-timebox-selection
 ---
 
 # Decision axis: license & regulatory risk

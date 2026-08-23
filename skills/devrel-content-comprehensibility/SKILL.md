@@ -1,8 +1,9 @@
 ---
 name: devrel-content-comprehensibility
 description: Use when shaping developer-facing content for comprehension — sizing new-concept chunks, deciding whether to re-explain or link a foundational concept, avoiding split-attention across sources, trimming a getting-started path, choosing sample idioms for a reader's skill level, or splitting content by audience competence.
-axis: content-comprehensibility
-rule_count_floor: 8
+metadata:
+  axis: content-comprehensibility
+  rule_count_floor: 8
 ---
 
 # Content comprehensibility (cognitive load / schema theory)

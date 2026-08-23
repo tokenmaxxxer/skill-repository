@@ -1,8 +1,9 @@
 ---
 name: observability-phase-trace
 description: Use when a phase-2 implementation record's signals need to be checked against the methodology phase-1 named for that surface, including a deliberate deviation. Applies to the phase-trace axis.
-axis: phase-trace
-rule_count_floor: 3
+metadata:
+  axis: phase-trace
+  rule_count_floor: 3
 ---
 
 # Phase-1 to phase-2 methodology-consistency

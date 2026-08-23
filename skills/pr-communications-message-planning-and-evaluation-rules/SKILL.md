@@ -1,16 +1,17 @@
 ---
 name: pr-communications-message-planning-and-evaluation-rules
 description: Use when planning, drafting, clearing, or evaluating an external communications activity (PR description, release note, crisis/Q&A material) and the audience, message hierarchy, approval routing, or success criteria aren't yet decided.
-role: pr-communications
-axes:
-  - objective-channel-fit
-  - message-hierarchy
-  - approval-sequencing
-  - risk-qa-prep
-  - evaluation-criteria
-  - persuasion-technique
-rule_count_floor: 12
-tier: moderate
+metadata:
+  role: pr-communications
+  axes:
+    - objective-channel-fit
+    - message-hierarchy
+    - approval-sequencing
+    - risk-qa-prep
+    - evaluation-criteria
+    - persuasion-technique
+  rule_count_floor: 12
+  tier: moderate
 ---
 
 # pr-communications operational playbook

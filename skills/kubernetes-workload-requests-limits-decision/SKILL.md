@@ -1,11 +1,12 @@
 ---
 name: kubernetes-workload-requests-limits-decision
 description: Use when setting a container's CPU/memory requests and limits in a Kubernetes manifest, deciding whether a workload needs a CPU limit at all, or diagnosing an OOMKilled or CPU-throttled pod.
-axis: requests-limits-decision
-rule_count_floor: 6
-globs:
-  - "**/*.yaml"
-  - "**/*.yml"
+metadata:
+  axis: requests-limits-decision
+  rule_count_floor: 6
+  globs:
+    - "**/*.yaml"
+    - "**/*.yml"
 ---
 
 # Kubernetes resource requests/limits decision rules

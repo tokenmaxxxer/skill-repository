@@ -1,8 +1,9 @@
 ---
 name: conformance-review-verdict-assignment
 description: Use when choosing among Present, Surface, Absent, Incorrect, or Unverifiable once evidence for a requirement has been located, or not. Applies to the verdict-assignment axis.
-axis: verdict-assignment
-rule_count_floor: 3
+metadata:
+  axis: verdict-assignment
+  rule_count_floor: 3
 ---
 
 # Verdict assignment

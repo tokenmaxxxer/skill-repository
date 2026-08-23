@@ -1,9 +1,10 @@
 ---
 name: implementation-performance-data-structure-choice
 description: Use when choosing a data structure, algorithm, or communication scheme that could introduce a performance cliff — membership testing in a loop, comparing algorithms by asymptotic class, per-message connections, or a cache/index whose maintenance cost may now outweigh its benefit.
-axis: performance-data-structure-choice
-rule_count_floor: 6
-tier: sparse
+metadata:
+  axis: performance-data-structure-choice
+  rule_count_floor: 6
+  tier: sparse
 ---
 
 # Performance-degradation prevention: data structure, algorithm, and

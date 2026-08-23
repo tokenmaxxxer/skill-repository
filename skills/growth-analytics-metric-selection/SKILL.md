@@ -1,8 +1,9 @@
 ---
 name: growth-analytics-metric-selection
 description: Use when choosing a team's North Star / one metric that matters for its current business stage, or when a record proposes more than one metric as the live North Star. Applies to the metric-selection axis.
-axis: metric-selection
-rule_count_floor: 2
+metadata:
+  axis: metric-selection
+  rule_count_floor: 2
 ---
 
 # One-metric-that-matters selection rules

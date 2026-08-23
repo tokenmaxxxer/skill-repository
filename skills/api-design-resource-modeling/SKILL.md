@@ -1,8 +1,9 @@
 ---
 name: api-design-resource-modeling
 description: Use when modeling an API's resources — mapping an operation to CRUD vs. a custom method, deciding singleton vs. collection, structuring the resource hierarchy, or scaling a spec across many resources.
-axis: resource-modeling
-rule_count_floor: 10
+metadata:
+  axis: resource-modeling
+  rule_count_floor: 10
 ---
 
 # Resource modeling

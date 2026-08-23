@@ -1,8 +1,9 @@
 ---
 name: technical-writing-persuasion-trust
 description: Use when writing or reviewing adoption-facing docs whose reader must decide to adopt or trust the product, not just execute a known task. Applies to the persuasion-trust axis.
-axis: persuasion-trust
-rule_count_floor: 10
+metadata:
+  axis: persuasion-trust
+  rule_count_floor: 10
 ---
 
 # Persuasion and trust (adoption-facing docs)

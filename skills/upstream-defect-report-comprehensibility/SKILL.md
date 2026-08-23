@@ -1,9 +1,10 @@
 ---
 name: upstream-defect-report-comprehensibility
 description: Use when drafting or reviewing an upstream defect report and its expected/actual behavior, code/log/command snippets, environment facts, repro steps, or lead fact are not yet formatted for a stranger maintainer to parse on first read.
-axis: comprehensibility
-rule_count_floor: 5
-role: upstream-defect-report
+metadata:
+  axis: comprehensibility
+  rule_count_floor: 5
+  role: upstream-defect-report
 ---
 
 # Comprehensibility — making the report readable by a stranger

@@ -1,9 +1,10 @@
 ---
 name: finance-unit-economics-ltv-churn-assumption
 description: Use when the churn assumption feeding an LTV figure needs a confidence band, a gross-margin adjustment, deduplication against a bull/base/bear scenario table, or a substance-based (not action-based) definition.
-axis: ltv-churn-assumption
-rule_count_floor: 12
-tier: moderate
+metadata:
+  axis: ltv-churn-assumption
+  rule_count_floor: 12
+  tier: moderate
 ---
 
 # LTV churn-assumption — decision rules

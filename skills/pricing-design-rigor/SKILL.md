@@ -1,8 +1,9 @@
 ---
 name: pricing-design-rigor
 description: Use when a study design or fielding plan is already chosen and needs a rigor check — banding a CBC/CVA design's task ratio and task count, or deciding whether and how to incentive-align a conjoint study before it fields.
-axis: design-rigor
-rule_count_floor: 3
+metadata:
+  axis: design-rigor
+  rule_count_floor: 3
 ---
 
 # Design-rigor decision rules

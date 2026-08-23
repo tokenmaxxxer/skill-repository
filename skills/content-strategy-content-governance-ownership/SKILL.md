@@ -1,8 +1,9 @@
 ---
 name: content-strategy-content-governance-ownership
 description: Use when assigning ownership for a content domain, resolving who has final sign-off on a content decision, or choosing between a centralized, decentralized, or hybrid governance model for content across teams.
-axis: accountability-and-decision-rights
-rule_count_floor: 2
+metadata:
+  axis: accountability-and-decision-rights
+  rule_count_floor: 2
 ---
 
 # Content governance and ownership

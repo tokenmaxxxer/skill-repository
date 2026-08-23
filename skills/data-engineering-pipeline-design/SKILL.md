@@ -1,8 +1,9 @@
 ---
 name: data-engineering-pipeline-design
 description: Use when choosing ETL vs ELT, picking an idempotency pattern, requiring exactly-once-effective semantics, naming a data owner/steward, routing a schema change through change control, retiring an unused hop, structuring a task graph, or authoring a dbt-style model.
-axis: pipeline-design
-rule_count_floor: 10
+metadata:
+  axis: pipeline-design
+  rule_count_floor: 10
 ---
 
 # Pipeline design — decision rules

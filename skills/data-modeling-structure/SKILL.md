@@ -1,8 +1,9 @@
 ---
 name: data-modeling-structure
 description: Use when choosing a target normal form, breaking it deliberately for a measured read-path bottleneck, or selecting keys, indexes, and model-layer traceability for any schema, independent of Inmon/Kimball/Data Vault.
-axis: structure
-rule_count_floor: 10
+metadata:
+  axis: structure
+  rule_count_floor: 10
 ---
 
 # Structure — normalization, keys, and index design

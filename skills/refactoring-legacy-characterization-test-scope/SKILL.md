@@ -1,8 +1,9 @@
 ---
 name: refactoring-legacy-characterization-test-scope
 description: Use when writing characterization tests before a legacy refactor, choosing what and how many inputs to capture, deciding a unit is safety-net "done," or handling an observed defect in legacy behavior.
-axis: characterization-test-scope
-rule_count_floor: 5
+metadata:
+  axis: characterization-test-scope
+  rule_count_floor: 5
 ---
 
 # Characterization test scope

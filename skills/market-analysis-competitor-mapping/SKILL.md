@@ -1,8 +1,9 @@
 ---
 name: market-analysis-competitor-mapping
 description: Use when classifying a company as a direct or indirect competitor, attaching evidence to a claimed competitor fact, tracing a secondary-sourced claim back to its primary source, planning monitoring cadence for a competitor list, or checking a comparison table for duplicate/merged entries. Applies to the competitor-mapping axis.
-axis: competitor-mapping
-rule_count_floor: 10
+metadata:
+  axis: competitor-mapping
+  rule_count_floor: 10
 ---
 
 # Competitor-mapping rules (direct vs indirect)

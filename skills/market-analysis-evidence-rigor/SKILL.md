@@ -1,8 +1,9 @@
 ---
 name: market-analysis-evidence-rigor
 description: Use when deciding whether a market/competitor claim needs a primary source, tracing a secondary citation to its primary source, labeling an unsourced claim as an assumption, hedging a forecast or count claim, or checking a citation list for padding or staleness. Applies to the evidence-rigor axis.
-axis: evidence-rigor
-rule_count_floor: 10
+metadata:
+  axis: evidence-rigor
+  rule_count_floor: 10
 ---
 
 # Evidence-rigor rules

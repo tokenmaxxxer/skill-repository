@@ -1,9 +1,10 @@
 ---
 name: partnerships-bd-negotiation-positioning
 description: Use when preparing to negotiate deal terms, when the counterpart's walk-away position becomes known or inferable mid-negotiation, or when a negotiation has stalled into repeated concession rounds on a single number.
-axis: negotiation-positioning
-rule_count_floor: 3
-tier: sparse
+metadata:
+  axis: negotiation-positioning
+  rule_count_floor: 3
+  tier: sparse
 ---
 
 # Negotiation positioning (BATNA/ZOPA) rules

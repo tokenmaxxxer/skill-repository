@@ -1,8 +1,9 @@
 ---
 name: incident-response-action-item-quality
 description: Use when drafting, prioritizing, or cutting a postmortem's action-item list — writing items, setting deadlines, or deciding what to drop. Applies to the action-item-quality axis.
-axis: action-item-quality
-rule_count_floor: 4
+metadata:
+  axis: action-item-quality
+  rule_count_floor: 4
 ---
 
 # Action item quality and prioritization

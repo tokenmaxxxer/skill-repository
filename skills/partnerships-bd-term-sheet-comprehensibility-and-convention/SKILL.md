@@ -1,9 +1,10 @@
 ---
 name: partnerships-bd-term-sheet-comprehensibility-and-convention
 description: Use when laying out a new term sheet's section structure, when drafting or reviewing a clause a non-lawyer stakeholder must approve, or when a term-sheet review finds a clause restating another section.
-axis: term-sheet-comprehensibility-and-convention
-rule_count_floor: 3
-tier: sparse
+metadata:
+  axis: term-sheet-comprehensibility-and-convention
+  rule_count_floor: 3
+  tier: sparse
 ---
 
 # Term-sheet comprehensibility and convention rules

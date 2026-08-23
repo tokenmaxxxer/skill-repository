@@ -1,9 +1,10 @@
 ---
 name: finance-unit-economics-cac-payback
 description: Use when a proposal or model needs a CAC payback headline metric picked, banded by motion, kept isolated from overhead, or jointly checked against gross margin and burn multiple before it is called healthy.
-axis: cac-payback
-rule_count_floor: 12
-tier: moderate
+metadata:
+  axis: cac-payback
+  rule_count_floor: 12
+  tier: moderate
 ---
 
 # CAC payback — decision rules

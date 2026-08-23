@@ -1,8 +1,9 @@
 ---
 name: release-engineering-rollback-and-recovery
 description: Use when deciding whether/how to roll back a release during an incident, budgeting rollback speed, or confirming a rollback target's build/config pairing.
-axis: rollback-and-recovery
-rule_count_floor: 12
+metadata:
+  axis: rollback-and-recovery
+  rule_count_floor: 12
 ---
 
 # Rollback and recovery

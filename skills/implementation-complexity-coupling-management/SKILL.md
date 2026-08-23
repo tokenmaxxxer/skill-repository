@@ -1,9 +1,10 @@
 ---
 name: implementation-complexity-coupling-management
 description: Use when a class's coupling or cohesion metric crosses a threshold, a caller chains through nested accessors, a cross-module import direction is being introduced, or a pre-merge check pipeline needs ordering — decide whether to split, restructure, widen a contract, remove indirection, or reorder checks.
-axis: complexity-coupling-management
-rule_count_floor: 6
-tier: sparse
+metadata:
+  axis: complexity-coupling-management
+  rule_count_floor: 6
+  tier: sparse
 ---
 
 # Complexity / coupling management

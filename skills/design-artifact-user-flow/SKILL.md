@@ -1,8 +1,9 @@
 ---
 name: design-artifact-user-flow
 description: Use when diagramming the discrete step-by-step interaction path a user takes through one product task — screens/states and system responses, not emotions or cross-channel context.
-axis: flow-micro-scope-vs-journey-macro-scope
-rule_count_floor: 3
+metadata:
+  axis: flow-micro-scope-vs-journey-macro-scope
+  rule_count_floor: 3
 ---
 
 # Flow micro-scope vs. journey macro-scope

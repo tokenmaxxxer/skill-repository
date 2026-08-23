@@ -1,8 +1,9 @@
 ---
 name: product-discovery-hypothesis-preregistration
 description: Use when a hypothesis needs its primary metric, numeric threshold, and decision rule fixed before any data collection begins, or when ranking candidate hypotheses to register next. Applies to the hypothesis-preregistration axis.
-axis: hypothesis-preregistration
-rule_count_floor: 10
+metadata:
+  axis: hypothesis-preregistration
+  rule_count_floor: 10
 ---
 
 # Hypothesis pre-registration (metric, threshold, decision rule fixed before data)

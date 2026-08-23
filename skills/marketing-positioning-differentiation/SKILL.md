@@ -1,8 +1,9 @@
 ---
 name: marketing-positioning-differentiation
 description: Use when drafting a positioning statement, selecting which unique attribute or proof point to lead with, or picking a category frame for an unfamiliar audience.
-axis: positioning-differentiation
-rule_count_floor: 5
+metadata:
+  axis: positioning-differentiation
+  rule_count_floor: 5
 ---
 
 # Positioning and differentiation

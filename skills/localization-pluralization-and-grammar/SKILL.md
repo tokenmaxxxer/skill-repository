@@ -1,14 +1,15 @@
 ---
 name: localization-pluralization-and-grammar
 description: Use when a message's wording depends on a numeric placeholder, when authoring source plural variants, or when a target locale's grammatical gender/case could change an adjacent word form.
-axis: pluralization-and-grammar
-rule_count_floor: 10
-axes:
-  - string-externalization-and-key-management
-  - pluralization-and-grammar
-  - locale-convention-formatting
-  - text-expansion-and-layout
-  - rtl-and-script-support
+metadata:
+  axis: pluralization-and-grammar
+  rule_count_floor: 10
+  axes:
+    - string-externalization-and-key-management
+    - pluralization-and-grammar
+    - locale-convention-formatting
+    - text-expansion-and-layout
+    - rtl-and-script-support
 ---
 
 # Decision axis: pluralization & grammar rules

@@ -1,8 +1,9 @@
 ---
 name: pricing-verdict-report
 description: Use when a pricing method has already produced numbers and they need to be assembled into a labeled, six-element verdict — correctly naming what PSM/conjoint outputs mean, stating the residual list, and handing off revenue/volume questions rather than answering them from the same data.
-axis: verdict-assembly
-rule_count_floor: 3
+metadata:
+  axis: verdict-assembly
+  rule_count_floor: 3
 ---
 
 # Verdict-assembly decision rules

@@ -1,8 +1,9 @@
 ---
 name: conformance-review-traceability-and-evidence
 description: Use when recording a verdict's evidence so a reader can re-derive it, or when linking a requirement forward or backward across a spec and its artifacts. Applies to the traceability-and-evidence axis.
-axis: traceability-and-evidence
-rule_count_floor: 3
+metadata:
+  axis: traceability-and-evidence
+  rule_count_floor: 3
 ---
 
 # Traceability and evidence citation

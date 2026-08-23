@@ -1,8 +1,9 @@
 ---
 name: data-modeling-inmon
 description: Use when deciding whether a top-down, subject-oriented 3NF enterprise warehouse fits the project, structuring the central model and its downstream marts, or checking a subject area for unfed or unconsumed scope.
-axis: inmon
-rule_count_floor: 10
+metadata:
+  axis: inmon
+  rule_count_floor: 10
 ---
 
 # Inmon — subject-oriented, 3NF enterprise warehouse modeling

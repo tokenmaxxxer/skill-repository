@@ -21,6 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from check_skill_conformance import (  # noqa: E402
     extract_frontmatter,
     parse_field,
+    parse_custom_field,
     check_skill,
     TRIGGER_MARKERS,
 )
@@ -67,7 +68,7 @@ def normalize_file(skill_md, dirname):
     if name is None:
         # axis-only case: insert name + description right after opening '---'.
         title = derive_title(text)
-        axis = parse_field(frontmatter, "axis")
+        axis = parse_custom_field(frontmatter, "axis")
         new_description = derive_description(title, axis, dirname)
         insertion = f"name: {dirname}\ndescription: {new_description}\n"
         # Rebuild explicitly: opening delimiter, inserted fields, then the
@@ -90,7 +91,7 @@ def normalize_file(skill_md, dirname):
 
     if description is None or not description.strip():
         title = derive_title(text)
-        axis = parse_field(frontmatter, "axis")
+        axis = parse_custom_field(frontmatter, "axis")
         new_description = derive_description(title, axis, dirname)
         if re.search(r"^description:", frontmatter, re.MULTILINE):
             frontmatter = re.sub(

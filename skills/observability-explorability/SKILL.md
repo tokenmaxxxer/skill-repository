@@ -1,8 +1,9 @@
 ---
 name: observability-explorability
 description: Use when designing a dashboard or planning an incident investigation and the design must stay open to ad-hoc questions beyond pre-built panels. Applies to the explorability axis.
-axis: explorability
-rule_count_floor: 3
+metadata:
+  axis: explorability
+  rule_count_floor: 3
 ---
 
 # Explorability (unplanned production questions)

@@ -1,9 +1,10 @@
 ---
 name: brand-design-typography-pairing
 description: Use when selecting a second typeface to pair with the brand's primary typeface, locking a final font pair for the brand system, or auditing shipped material for typefaces beyond the guide's stated type system.
-axis: typography-pairing
-rule_count_floor: 3
-tier: rich
+metadata:
+  axis: typography-pairing
+  rule_count_floor: 3
+  tier: rich
 ---
 
 # Typography pairing rules

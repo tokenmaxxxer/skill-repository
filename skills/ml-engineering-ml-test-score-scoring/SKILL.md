@@ -1,8 +1,9 @@
 ---
 name: ml-engineering-ml-test-score-scoring
 description: Use when scoring a model's production readiness against the ML Test Score rubric (Breck et al. 2017) across Data, Model, Infrastructure, and Monitoring Tests. Applies to the ml-test-score-scoring axis.
-axis: ml-test-score-scoring
-rule_count_floor: 5
+metadata:
+  axis: ml-test-score-scoring
+  rule_count_floor: 5
 ---
 
 # ML Test Score scoring discipline (Breck et al. 2017)

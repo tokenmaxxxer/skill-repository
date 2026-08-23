@@ -1,9 +1,10 @@
 ---
 name: brand-design-brand-identity-strategy
 description: Use when proposing a new visual direction for a brand asset, auditing whether a shipped asset is consistent with the brand's declared identity, or reviewing an identity guide for facets the brand no longer actually delivers on.
-axis: brand-identity-strategy
-rule_count_floor: 3
-tier: rich
+metadata:
+  axis: brand-identity-strategy
+  rule_count_floor: 3
+  tier: rich
 ---
 
 # Brand identity strategy rules

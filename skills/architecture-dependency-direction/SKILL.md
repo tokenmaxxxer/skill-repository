@@ -1,8 +1,9 @@
 ---
 name: architecture-dependency-direction
 description: Use when deciding which way a dependency arrow should point between modules/layers/services — domain vs. infrastructure imports, adapter-to-port direction, breaking an import cycle, layer-skipping exceptions, or auditing whether a declared direction rule still holds against the real import graph.
-axis: dependency-direction
-rule_count_floor: 12
+metadata:
+  axis: dependency-direction
+  rule_count_floor: 12
 ---
 
 # Dependency Direction Playbook

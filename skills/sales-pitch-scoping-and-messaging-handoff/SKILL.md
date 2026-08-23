@@ -1,8 +1,9 @@
 ---
 name: sales-pitch-scoping-and-messaging-handoff
 description: Use when scoping a sales pitch's length and content, or deciding whether a prospect's request for messaging assets belongs to sales or should hand off to marketing.
-axis: pitch-scoping-and-messaging-handoff
-rule_count_floor: 5
+metadata:
+  axis: pitch-scoping-and-messaging-handoff
+  rule_count_floor: 5
 ---
 
 # Pitch scoping and messaging hand-off

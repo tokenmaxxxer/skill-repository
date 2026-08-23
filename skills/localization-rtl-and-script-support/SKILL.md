@@ -1,14 +1,15 @@
 ---
 name: localization-rtl-and-script-support
 description: Use when a target locale uses a right-to-left script, when deciding whether an icon or directional CSS property needs mirroring, or when a locale pair has no RTL/bidi requirement to check.
-axis: rtl-and-script-support
-rule_count_floor: 10
-axes:
-  - string-externalization-and-key-management
-  - pluralization-and-grammar
-  - locale-convention-formatting
-  - text-expansion-and-layout
-  - rtl-and-script-support
+metadata:
+  axis: rtl-and-script-support
+  rule_count_floor: 10
+  axes:
+    - string-externalization-and-key-management
+    - pluralization-and-grammar
+    - locale-convention-formatting
+    - text-expansion-and-layout
+    - rtl-and-script-support
 ---
 
 # Decision axis: RTL & script/encoding support

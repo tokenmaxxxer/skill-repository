@@ -1,8 +1,9 @@
 ---
 name: business-model-design-value-proposition-fit
 description: Use when building a Value Proposition Canvas's Customer Profile or Value Map for a single segment, judging whether a value proposition has achieved fit against evidence, or checking a value proposition for a named fit-validation failure mode (solution-first bias, blended segments, comprehensive-coverage trap, functional-only jobs).
-axis: value-proposition-fit
-rule_count_floor: 5
+metadata:
+  axis: value-proposition-fit
+  rule_count_floor: 5
 ---
 
 # Value-proposition fit decision rules

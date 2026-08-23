@@ -1,8 +1,9 @@
 ---
 name: knowledge-work-slide-density-and-layout
 description: Use when checking or authoring an individual slide's content against per-slide density and accessibility limits — max lines/words, heading-level consistency, or image alt text. Applies to the slide-density-and-layout axis.
-axis: slide-density-and-layout
-rule_count_floor: 3
+metadata:
+  axis: slide-density-and-layout
+  rule_count_floor: 3
 ---
 
 # Slide density and layout

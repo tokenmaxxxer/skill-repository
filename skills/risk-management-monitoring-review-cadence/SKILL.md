@@ -1,8 +1,9 @@
 ---
 name: risk-management-monitoring-review-cadence
 description: Use when setting or adjusting a register entry's review cadence, an event or mitigation-completion changes an entry's status, or a legacy cadence may no longer be justified. Applies to the monitoring-review-cadence axis.
-axis: monitoring-review-cadence
-rule_count_floor: 10
+metadata:
+  axis: monitoring-review-cadence
+  rule_count_floor: 10
 ---
 
 # Monitoring / review cadence selection

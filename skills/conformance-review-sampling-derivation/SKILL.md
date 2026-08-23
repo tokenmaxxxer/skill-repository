@@ -1,8 +1,9 @@
 ---
 name: conformance-review-sampling-derivation
 description: Use when full enumeration of every requirement/file under review is infeasible and the review needs a defensible sampling scope instead. Applies to the sampling-derivation axis.
-axis: sampling-derivation
-rule_count_floor: 3
+metadata:
+  axis: sampling-derivation
+  rule_count_floor: 3
 ---
 
 # Sampling derivation

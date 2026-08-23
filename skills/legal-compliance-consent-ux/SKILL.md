@@ -1,8 +1,9 @@
 ---
 name: legal-compliance-consent-ux
 description: Use when designing or reviewing a consent-collecting interface — cookie/consent banners, opt-in forms, or any accept/reject or checkbox control gating non-essential data processing.
-axis: consent-mechanism-ux
-rule_count_floor: 2
+metadata:
+  axis: consent-mechanism-ux
+  rule_count_floor: 2
 ---
 
 # Consent mechanism UX

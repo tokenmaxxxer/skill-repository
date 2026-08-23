@@ -1,8 +1,9 @@
 ---
 name: knowledge-management-pattern-extraction
 description: Use when a retrospective surfaces a candidate lesson, when deciding whether a finding is pattern-shaped, or when extracting, merging, or promoting a pattern-library entry from issue retrospectives.
-axis: pattern-extraction
-rule_count_floor: 10
+metadata:
+  axis: pattern-extraction
+  rule_count_floor: 10
 ---
 
 # Pattern extraction from issue retrospectives

@@ -1,8 +1,9 @@
 ---
 name: knowledge-work-deck-structure-narrative-arc
 description: Use when outlining or sequencing a slide deck's content before or while drafting individual slides. Applies to the deck-narrative-arc axis.
-axis: deck-narrative-arc
-rule_count_floor: 3
+metadata:
+  axis: deck-narrative-arc
+  rule_count_floor: 3
 ---
 
 # Deck structure / narrative arc

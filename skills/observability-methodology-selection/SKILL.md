@@ -1,8 +1,9 @@
 ---
 name: observability-methodology-selection
 description: Use when a touched surface needs exactly one signal methodology (RED, USE, or Golden Signals) chosen, or when a redundant methodology dashboard is proposed on top of an existing one. Applies to the methodology-selection axis.
-axis: methodology-selection
-rule_count_floor: 3
+metadata:
+  axis: methodology-selection
+  rule_count_floor: 3
 ---
 
 # Signal-methodology selection (RED / USE / Golden Signals)

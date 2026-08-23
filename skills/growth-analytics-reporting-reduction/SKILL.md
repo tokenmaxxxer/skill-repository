@@ -1,8 +1,9 @@
 ---
 name: growth-analytics-reporting-reduction
 description: Use when drafting a funnel-diagnosis or experiment-trust deliverable, or when a funnel-diagnosis section carries more than one prioritized recommendation. Applies to the reporting-reduction axis.
-axis: reporting-reduction
-rule_count_floor: 2
+metadata:
+  axis: reporting-reduction
+  rule_count_floor: 2
 ---
 
 # Report-reduction (subtraction) rules

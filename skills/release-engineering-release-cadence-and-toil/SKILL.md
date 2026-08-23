@@ -1,8 +1,9 @@
 ---
 name: release-engineering-release-cadence-and-toil
 description: Use when deciding release cadence, whether a release-process task is worth automating, or when to create/expire/remove a feature flag.
-axis: release-cadence-and-toil
-rule_count_floor: 12
+metadata:
+  axis: release-cadence-and-toil
+  rule_count_floor: 12
 ---
 
 # Release cadence and toil reduction
