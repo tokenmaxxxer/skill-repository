@@ -1,0 +1,17 @@
+skill: work-in-english
+rule_targets:
+  - "Edge cases, project convention conflicts: follow the project — if CONTRIBUTING.md/git history uses Korean commits, write Korean commits and flag the conflict in exactly one sentence"
+  - "The rule: code comments remain English exhaust; final summary in Korean"
+ungated_expected_failure: >-
+  An agent that has internalized 'engineering exhaust in English' as a
+  blanket rule overrides the repo's explicit Korean-commit convention
+  and writes an English commit message — applying the policy where the
+  project convention takes precedence — or conversely writes everything
+  including the code comment in Korean to mirror the user.
+gated_expected_behavior: >-
+  Per the project-convention edge case, the commit message follows the
+  repo and is written in Korean with the conflict flagged in exactly one
+  sentence; the code comment stays in English per 'The rule', and the
+  summary is delivered in Korean.
+incidents:
+  - "none cited"

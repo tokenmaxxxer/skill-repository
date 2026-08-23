@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: game-character-rendering-composition--silhouette-first
+tags: [pressure-test, game]
+runs: 3
+max_turns: 10
+timeout_seconds: 300

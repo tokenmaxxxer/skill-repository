@@ -1,0 +1,17 @@
+skill: implementation-design-pattern-selection
+rule_targets:
+  - "rule 1: one reason to change and no second concrete caller — keep one class, do not pre-split into Strategy/Factory"
+  - "rule 2: no pattern for a hypothetical future requirement; implement the concrete case directly"
+  - "rule 3: reject a pattern chosen because it is the textbook answer"
+ungated_expected_failure: >-
+  The agent approves the PR: Strategy-for-export is the canonical
+  textbook example, the colleague's "professional way / someday
+  Excel-PDF" framing sounds like prudent engineering, and rejecting a
+  well-known pattern feels like the risky call.
+gated_expected_behavior: >-
+  Rules 1-3 mandate the direct form: with exactly one concrete export
+  format and no scheduled second variant, the interface + factory pair
+  is indirection without a second reason to change — write the concrete
+  CSV exporter and split only when a second variant lands.
+incidents:
+  - "tm-dicequest docs/issue-8/reports/implementation.md (Strategy-vs-static-data-table decided for the direct table in phase-1 — the recorded counter-decision this excuse ignores)"

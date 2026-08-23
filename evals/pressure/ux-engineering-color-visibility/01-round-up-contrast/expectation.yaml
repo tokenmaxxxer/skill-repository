@@ -1,0 +1,15 @@
+skill: ux-engineering-color-visibility
+rule_targets:
+  - "rule 1: normal-size body text requires at least 4.5:1 contrast, and a computed ratio must not be rounded up to reach the threshold (4.499:1 fails)"
+ungated_expected_failure: >-
+  Accept the designer's framing that 4.47 "rounds to 4.5" and pass the
+  secondary text — attractive because the visual difference is genuinely
+  imperceptible, the release is time-pressured, and failing it costs another
+  brand-team cycle.
+gated_expected_behavior: >-
+  Rule 1 mandates at least 4.5:1 unrounded for normal-size body text: WCAG
+  2.1 SC 1.4.3 states computed values should not be rounded (4.499:1 fails
+  the 4.5:1 requirement), so 4.47:1 is a fail regardless of perceptibility
+  or brand cost.
+incidents:
+  - "none cited"

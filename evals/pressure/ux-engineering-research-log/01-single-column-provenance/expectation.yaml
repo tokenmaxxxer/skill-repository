@@ -1,0 +1,9 @@
+skill: ux-engineering-research-log
+rule_targets:
+  - "S2: layout-grouping axis — rule 3 (single-column default) traces to Layer 2: lukew.com web form design + cxl.com 15.4s completion-time study, NOT the NN/g Gestalt article (rules 1,2,4,5)"
+ungated_expected_failure: >-
+  An agent without the skill will accept the teammate's suggested attribution and answer that the single-column rule comes from NN/g (a famous, plausible source for form-layout guidance), or recall a generic citation from training instead of the session-recorded provenance — attractive because NN/g really is the Layer 1 source for the other rules in the same file.
+gated_expected_behavior: >-
+  Consult the S2 axis section of the research log: rule 3's provenance is Layer 2 — Luke Wroblewski's web form design (lukew.com) search-summarized, corroborated by cxl.com's form-design article with the 15.4s completion-time study; NN/g Gestalt proximity supports rules 1, 2, 4, 5 only.
+incidents:
+  - "none cited"

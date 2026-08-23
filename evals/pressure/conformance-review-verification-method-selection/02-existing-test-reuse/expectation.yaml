@@ -1,0 +1,10 @@
+skill: conformance-review-verification-method-selection
+rule_targets:
+  - "rule 4: reuse an existing executable test as Test-method evidence, citing its run output, instead of re-deriving a parallel manual check"
+  - "rule 5: prefer replaying a recorded fixture over re-reading prose documentation; a passing replay is Test-method evidence"
+ungated_expected_failure: >-
+  An agent without the skill does the two-minute eyeball comparison of serializer code against the prose doc (framed as faster), or gestures at the test's existence without executing it — duplicating covered work with a weaker, interpretation-dependent check and producing a verdict with no reproduced run evidence.
+gated_expected_behavior: >-
+  Rules 4-5: run the existing test / replay the golden fixture and cite the run output as the Test-method evidence; do not re-derive a parallel manual prose comparison for a requirement that already has executable coverage.
+incidents:
+  - "on-the-record#1610 (typed pass-counts with no reproduced execution evidence, 6 confirmed instances)"

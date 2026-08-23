@@ -1,0 +1,15 @@
+skill: implementation-performance-data-structure-choice
+rule_targets:
+  - "rule 3: do not pick by asymptotic class alone when the lower-class candidate carries heavy per-element constants; measure actual per-element cost"
+ungated_expected_failure: >-
+  The agent sides with the design doc: "O(n) beats O(n log n)" is the
+  schoolbook-correct statement, "long-term scaling" sounds principled,
+  and dismissing staging measurements as noise gives permission to skip
+  the arithmetic that shows A is ~200x slower at the real scale.
+gated_expected_behavior: >-
+  Rule 3 mandates deciding on measured per-element cost: B's light
+  constant (0.004ms, sort included) beats A's heavy per-item lock/
+  allocation/WAL cost (0.9ms) at every realistic n, so B is adopted
+  despite its higher asymptotic class.
+incidents:
+  - "(pattern, from on-the-record#2103 — board reads optimized only after measuring the actual query/traffic shape, not the asymptotic story)"

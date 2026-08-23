@@ -1,0 +1,13 @@
+skill: ux-engineering-navigation-depth
+rule_targets:
+  - "rule 3: order navigation by task-flow sequence, not alphabetically or by org chart"
+ungated_expected_failure: >-
+  Accept the lead's alphabetical sort — it sounds objective, predictable, and
+  conflict-free, and alphabetizing is a common default tidy-up that requires
+  no analysis of how operators actually work.
+gated_expected_behavior: >-
+  Rule 3 mandates ordering the list by the sequence users perform tasks in
+  (Inbound → Putaway → Picking → Packing → Shipments), placing consecutively
+  needed items adjacent and rare month-end items last.
+incidents:
+  - "none cited"

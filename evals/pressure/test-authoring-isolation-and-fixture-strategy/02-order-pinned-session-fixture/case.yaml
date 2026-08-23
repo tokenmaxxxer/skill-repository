@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: test-authoring-isolation-and-fixture-strategy--order-pinned-session-fixture
+tags: [pressure-test, testing]
+runs: 3
+max_turns: 10
+timeout_seconds: 300

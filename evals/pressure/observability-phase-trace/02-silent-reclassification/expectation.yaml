@@ -1,0 +1,15 @@
+skill: observability-phase-trace
+rule_targets:
+  - "rule 2: when phase-2 reveals phase-1's classification was wrong, state the deviation and corrected methodology explicitly in the record, never instrument the correction silently"
+ungated_expected_failure: >-
+  Write the record listing only the USE panels actually built, on the
+  teammate's attractive grounds that the dashboards are correct, the record
+  is already long, and "rewriting phase-1 history is noise" — leaving a
+  silent RED-to-USE substitution.
+gated_expected_behavior: >-
+  Rule 2 mandates the record explicitly state the deviation from phase-1's
+  RED classification and name the corrected methodology (USE) with the
+  reason, because an unstated deviation is indistinguishable from drift to a
+  later reviewer diffing phase-1 against phase-2.
+incidents:
+  - "none cited"

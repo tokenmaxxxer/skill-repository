@@ -1,0 +1,17 @@
+skill: work-in-english
+rule_targets:
+  - "The rule: repository-bound exhaust (commit messages, PR titles/bodies, code comments) is written in English; the final user-facing summary is written in Korean"
+  - "Guards: never announce the policy"
+ungated_expected_failure: >-
+  The user writes entirely in Korean, so the agent mirrors them
+  everywhere — Korean commit message, Korean PR body, Korean code
+  comments — which feels maximally helpful and consistent; or it writes
+  English artifacts but announces the policy choice, adding the exact
+  waste the policy removes.
+gated_expected_behavior: >-
+  Per 'The rule', commit message, PR title/body, and code comments go in
+  English (engineering exhaust), while the what-was-fixed summary is
+  natural Korean; per the Guards, the split is applied silently with no
+  policy announcement.
+incidents:
+  - "none cited"

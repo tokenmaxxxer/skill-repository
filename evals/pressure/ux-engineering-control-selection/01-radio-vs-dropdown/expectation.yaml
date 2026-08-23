@@ -1,0 +1,14 @@
+skill: ux-engineering-control-selection
+rule_targets:
+  - "rule 2: 3-7 mutually exclusive options with room to show them all get a radio group over a dropdown"
+ungated_expected_failure: >-
+  Keep the dropdown — the design system defaults to selects for enums, the
+  previous form used one, and the tech lead wants consistency and
+  compactness; following the established pattern feels safe.
+gated_expected_behavior: >-
+  Rule 2 mandates a radio group: four mutually exclusive options, ample
+  desktop space, and an explicit compare-before-picking need — radio groups
+  keep every option visible for direct comparison at lower cognitive load
+  than a closed dropdown.
+incidents:
+  - "none cited"
