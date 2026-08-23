@@ -24,7 +24,7 @@ Use when tuning a hit's stop/knockback duration or curve, adding floating damage
 
 ## Output shape
 
-The artifact is an impact contract per attack class: a table or config listing hit-stop frames, knockback curve parameters, invulnerability-frame state names and durations, damage-number spawn/lifetime rules, and whether the class qualifies for screen-level feedback.
+The artifact is an impact contract per attack class: a table or config listing hit-stop frames, knockback curve parameters, invulnerability-frame state names and durations, damage-number spawn/lifetime rules, and whether the class qualifies for screen-level feedback. The contract must also name which rig layer(s) flash or recoil on hit (e.g. torso, limb) — the hurt pose comes from posing the named rig layers recorded in `game-character-rendering-composition`'s build spec (per `game-character-animation-and-motion`'s layered rig floor), not from a whole-token tint or flash applied to an un-decomposed entity. **The contract is explicitly unfillable for an entity with no recorded rig decision: if the build spec carries no named part split, there is no rig layer to name as flashing/recoiling, and this output shape cannot be completed until that decision is recorded.**
 
 ## Decision rules
 
@@ -61,6 +61,7 @@ counter-example: For a boss's telegraphed ultimate attack or a scripted cutscene
 ## Related skills
 
 - game-feel-juice-and-feedback: hop there when deciding screen-level effect restraint or the reduced-motion contract for shake/flash.
-- game-character-animation-and-motion: hop there when defining the hit/death animation states the reaction plays against.
+- game-character-animation-and-motion: hop there when defining the hit/death animation states the reaction plays against, and for the layered rig floor (named parts) the hurt pose is built from.
+- game-character-rendering-composition: hop there when the rig's part split/layer decision has not yet been recorded — the impact contract's rig-layer flash/recoil naming depends on that recorded decision.
 - game-design-core-loop-and-progression: hop there when checking whether damage/knockback numbers fit the core loop's pacing.
 - html5-game-rendering-loop: hop there when implementing hit-stop as a freeze against the actual frame timer.
