@@ -81,3 +81,9 @@ Research trail: cognitive-bias-in-testing literature (MagicPod confirmation-bias
 9. **REMOVAL**: Stop treating a "clean" review record (no open items) as lowering the bar for how many self-devised attempts this pass should include — a clean upstream record is not evidence of absence, and letting it shrink the attempt list re-imports the deference rule 3 and rule 6 forbid, just earlier in the process (at planning instead of at citation).
 
 10. **REMOVAL**: Retire the practice of writing an attempt's expected outcome before running it in prose that leaks into the outcome record (e.g. phrasing that presumes reproduced or not-reproduced going in) — pre-committing to an expected result in the write-up is a textbook confirmation-bias vector, and the fix is writing the attempt's target claim only, with the outcome slot genuinely open until the attempt runs. source: https://www.functionize.com/blog/the-impact-of-cognitive-bias-on-software-testing
+
+## Rationalizations
+
+Documented excuses agents used to skip this gate, each rebutted and tied
+back to a rule and its originating incident: see
+[references/rationalizations.md](references/rationalizations.md).

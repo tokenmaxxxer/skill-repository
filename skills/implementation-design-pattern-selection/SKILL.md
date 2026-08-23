@@ -119,3 +119,9 @@ when the pattern is rejected or removed.
   internal habit, so rule 5's "only ever constructs one concrete
   product" condition does not by itself trigger removal when an external
   extension contract already exists.
+
+## Rationalizations
+
+Documented excuses agents used to skip this gate, each rebutted and tied
+back to a rule and its originating incident: see
+[references/rationalizations.md](references/rationalizations.md).

@@ -66,3 +66,9 @@ database. Do not paste the CSVs into context; query them.
 - The recommendation is emitted once and is deterministic. Do not iterate on
   it, second-guess it, or re-run classify hoping for a different answer —
   if the situation changed, the inputs changed; rerun with the new inputs.
+
+## Rationalizations
+
+Documented excuses agents used to skip this gate, each rebutted and tied
+back to a rule and its originating incident: see
+[references/rationalizations.md](references/rationalizations.md).

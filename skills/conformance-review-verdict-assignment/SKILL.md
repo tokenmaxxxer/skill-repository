@@ -112,3 +112,9 @@ forward with their basis commit sha cited rather than re-derived.
    reviewer. source: false-positive-verification practice in security-audit
    tooling, which gates a finding behind a dedicated re-check step before it
    is reported rather than trusting the first detection.
+
+## Rationalizations
+
+Documented excuses agents used to skip this gate, each rebutted and tied
+back to a rule and its originating incident: see
+[references/rationalizations.md](references/rationalizations.md).

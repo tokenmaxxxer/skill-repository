@@ -117,3 +117,9 @@ design.
   to this skill running.
 - Fix, patch, or propose remediation for the finding it classifies.
 - Run when severity is out of the engagement's agreed scope.
+
+## Rationalizations
+
+Documented excuses agents used to skip this gate, each rebutted and tied
+back to a rule and its originating incident: see
+[references/rationalizations.md](references/rationalizations.md).
