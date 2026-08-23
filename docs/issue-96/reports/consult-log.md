@@ -1,0 +1,1 @@
+- 2026-08-23T06:24:43.262226+00:00 | role=knowledge-management | verb=skill_judge | issue=96 | question='과제:\nIssue #96: deepen the game-art skill family (game-character-animation-and-motion, game-hit-reaction-and-impact, game-character-rendering-composition) with rig-layering/keyframe-pose/silhouette rul' | outcome='error: 시간초과(45s)'
