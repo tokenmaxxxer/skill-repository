@@ -96,3 +96,9 @@ verified before its implementation is checked.
    later distinguish "conforms to the version in force" from "conforms to a
    version already superseded," and a reader re-deriving the verdict against
    the current spec would silently check the wrong baseline.
+
+## Rationalizations
+
+Documented excuses agents used to skip this gate, each rebutted and tied
+back to a rule and its originating incident: see
+[references/rationalizations.md](references/rationalizations.md).

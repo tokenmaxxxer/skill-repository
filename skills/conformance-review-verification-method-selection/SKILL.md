@@ -96,3 +96,9 @@ existing tests and recorded fixtures reused rather than duplicated.
    replay either matches or it doesn't, while a prose comparison depends on
    the reviewer's own interpretation of ambiguous wording. Treat a passing
    replay as Test-method evidence per rule 4, not as a fresh Inspection.
+
+## Rationalizations
+
+Documented excuses agents used to skip this gate, each rebutted and tied
+back to a rule and its originating incident: see
+[references/rationalizations.md](references/rationalizations.md).

@@ -143,3 +143,9 @@ qamadness.com and softwaretestershub.in). All fetched this session
     reconstructed-after-the-fact environment note carries exactly the
     accuracy risk the "capture at attempt time" design move exists to
     avoid.
+
+## Rationalizations
+
+Documented excuses agents used to skip this gate, each rebutted and tied
+back to a rule and its originating incident: see
+[references/rationalizations.md](references/rationalizations.md).

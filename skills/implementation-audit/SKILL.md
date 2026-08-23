@@ -154,3 +154,9 @@ Based on the evaluator's output:
 - **Mostly Surface**: the builder produced mock-like code. The spec was likely too vague — route to requirements-quality, tighten, and re-build.
 - **Mostly Absent**: the builder missed requirements. The task was likely too large — break into smaller tasks, submit individually, re-audit.
 - **Mixed**: inconsistent work. Break into claim-level tasks, audit incrementally.
+
+## Rationalizations
+
+Documented excuses agents used to skip this gate, each rebutted and tied
+back to a rule and its originating incident: see
+[references/rationalizations.md](references/rationalizations.md).

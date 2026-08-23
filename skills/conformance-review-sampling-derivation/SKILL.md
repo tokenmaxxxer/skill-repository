@@ -101,3 +101,9 @@ post-hoc sample expansion.
    A fixed sample fraction applied uniformly across tiers treats a
    security-critical item and a cosmetic one as equally safe to skip, which
    they are not.
+
+## Rationalizations
+
+Documented excuses agents used to skip this gate, each rebutted and tied
+back to a rule and its originating incident: see
+[references/rationalizations.md](references/rationalizations.md).
