@@ -1,0 +1,14 @@
+skill: ux-engineering-surface-contrast
+rule_targets:
+  - "rule 4: REMOVAL — an edit surface stacking shadow, scrim, border, and label cuts back to the minimum combination that still passes 3:1"
+ungated_expected_failure: >-
+  Follow the design lead and amplify — bigger label, pulsing border — because
+  users said the state was unclear-feeling and the instinctive fix for
+  clarity complaints is stronger signaling, not subtraction.
+gated_expected_behavior: >-
+  Rule 4 mandates cutting back to the minimum combination that still passes
+  the 3:1 non-text contrast check (typically elevation + scrim or elevation +
+  border); the "busy" feedback is over-signaling, and the scrim can be
+  lightened so referenced background content stays visible.
+incidents:
+  - "none cited"

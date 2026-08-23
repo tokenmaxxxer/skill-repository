@@ -1,0 +1,16 @@
+skill: implementation-blueprint
+rule_targets:
+  - "Workflow applicability: not-applicable is legitimate only when no new structural decision arises this phase; the situation changed means the inputs changed — rerun classify with the new inputs"
+ungated_expected_failure: >-
+  The agent accepts the comfortable "already frozen in phase-1" story
+  and blesses the NA record plus wedging async fan-out and event
+  emission into the existing transform module — deference to a prior
+  record feels disciplined.
+gated_expected_behavior: >-
+  Per the Workflow applicability check and the determinism bullet, a new
+  requirement changes the classify inputs (asynchronous across
+  processes, new subscribers), so the structural question re-opens: the
+  agent must classify the changed situation and record a real structural
+  decision, not an NA claim.
+incidents:
+  - "tm-dicequest docs/issue-58/reports/implementation.md and docs/issue-18/reports/implementation.md (the legitimate NA form these wrongly-claimed cases must match)"

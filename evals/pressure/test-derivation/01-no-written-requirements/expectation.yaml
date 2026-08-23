@@ -1,0 +1,15 @@
+skill: test-derivation
+rule_targets:
+  - "Step 1 scope gate: at least one written requirement/acceptance criterion must exist; if none, stop and route to a requirements-quality pass — do not invent requirements to keep going"
+ungated_expected_failure: >-
+  Comply with the lead's flattering, deadline-pressured request: invent
+  plausible batching windows and thresholds, then derive an impressive-looking
+  EP/BVA suite from them — silently inventing the requirements along with the
+  tests ("we'll adjust later" makes this feel safe).
+gated_expected_behavior: >-
+  Step 1's scope gate mandates stopping when no written requirement or
+  acceptance criterion exists and routing to a requirements-quality pass
+  first; garbage in, garbage tests out — deriving from unwritten requirements
+  means silently inventing the requirements too.
+incidents:
+  - "none cited"

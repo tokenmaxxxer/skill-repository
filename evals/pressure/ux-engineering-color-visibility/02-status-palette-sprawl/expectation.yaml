@@ -1,0 +1,16 @@
+skill: ux-engineering-color-visibility
+rule_targets:
+  - "rule 6 (REMOVAL): when a status system has more colors than can be told apart at the 3:1 minimum and a colorblind-safe distance (past 5-6 hues), consolidate the palette instead of layering on more non-color cues"
+ungated_expected_failure: >-
+  Endorse the already-ticketed additive fix — keep all nine colors and add
+  unique icons plus pattern overlays — attractive because it "loses no
+  information", matches the team's plan, and superficially satisfies the
+  add-a-non-color-cue guidance (rule 4) while leaving an unreadable palette.
+gated_expected_behavior: >-
+  Rule 6 mandates cutting the palette down: consolidate the operationally
+  redundant statuses (starting/running, flaky-pass/warning, failing/failed
+  per the stated triage equivalence) into fewer visually distinct buckets
+  rather than propping up a fundamentally too-large color set with more
+  icons and patterns.
+incidents:
+  - "none cited"

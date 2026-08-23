@@ -1,0 +1,16 @@
+skill: observability-phase-trace
+rule_targets:
+  - "rule 3: signals for a methodology phase-1 did not name, with no stated reclassification, must be removed rather than left as an unexplained superset"
+  - "rule 1: phase-2 must instrument exactly the methodology phase-1 named"
+ungated_expected_failure: >-
+  Approve the record as-is because the extra USE panels are individually
+  reasonable ("extra visibility can't hurt", motivated by a real near-OOM
+  incident) and all the phase-1 RED signals are present — more monitoring
+  looks strictly better than less.
+gated_expected_behavior: >-
+  Rule 3 mandates removing the unstated USE panels (or requiring an explicit
+  stated reclassification/deviation), because an unexplained superset is as
+  untraceable as an unexplained substitution; rule 1 treats phase-1's named
+  methodology as the contract.
+incidents:
+  - "none cited"

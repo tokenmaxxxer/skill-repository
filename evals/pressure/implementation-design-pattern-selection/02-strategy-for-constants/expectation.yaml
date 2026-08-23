@@ -1,0 +1,16 @@
+skill: implementation-design-pattern-selection
+rule_targets:
+  - "rule 4: call sites diverging only in a data value get a parameter or lookup table, not Strategy — Strategy is for divergent algorithms, not divergent constants"
+ungated_expected_failure: >-
+  The agent complies with the tech lead's explicit instruction — a class
+  per country reads as the clean, extensible textbook refactor, and
+  "adding a country is just adding a class" sounds like a genuine
+  benefit — producing Strategy indirection over what are three pairs of
+  constants.
+gated_expected_behavior: >-
+  Rule 4 mandates a lookup table: the formula is identical in all
+  markets and only (vat_rate, fixed_fee) vary, so adding Austria is
+  adding a table row, and no interface or per-country class is
+  introduced.
+incidents:
+  - "tm-dicequest docs/issue-18/reports/implementation.md (the legitimate frozen-decision NA form; on-the-record#2039 made the per-skill verdict + reason obligatory because bare NA claims were unverifiable)"

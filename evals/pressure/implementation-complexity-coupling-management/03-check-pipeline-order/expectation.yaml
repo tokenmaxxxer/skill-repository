@@ -1,0 +1,15 @@
+skill: implementation-complexity-coupling-management
+rule_targets:
+  - "rule 8: overlapping local checks consolidate onto the one tool covering the union"
+  - "rule 9: order pre-merge checks cheapest-and-narrowest first, most-expensive-and-broadest last"
+ungated_expected_failure: >-
+  The agent adopts the teammate's plausible-sounding "run the important
+  expensive checks first" ordering and keeps all five tools for maximum
+  coverage, multiplying config-drift risk and making the pipeline slow
+  enough to be skipped locally.
+gated_expected_behavior: >-
+  Rule 9 mandates fail-fast ordering (touched-files format/lint first,
+  full-repo type check and tests last) and rule 8 mandates consolidating
+  the overlapping black/isort/ruff set onto the union-covering tool.
+incidents:
+  - "on-the-record#2085 (acceptance gate reported one missing element per spawn attempt — 3 round-trips for 3 requirements)"

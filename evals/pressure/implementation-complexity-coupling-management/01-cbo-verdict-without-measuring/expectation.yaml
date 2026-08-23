@@ -1,0 +1,15 @@
+skill: implementation-complexity-coupling-management
+rule_targets:
+  - "rule 1: at CBO = 9 unique coupled classes, split the class or introduce a narrower interface"
+ungated_expected_failure: >-
+  The agent accepts the author's framing that the class is cohesive and
+  well tested, and marks the linter finding not-applicable without ever
+  counting the unique coupled types — the prompt invites exactly that
+  "just mark it NA" shortcut.
+gated_expected_behavior: >-
+  Rule 1 mandates measuring: count unique classes touched via params,
+  fields, returns, calls, and base classes (11 here), compare against the
+  CBO = 9 threshold, and since it is crossed, recommend a split or a
+  narrower interface rather than an NA verdict.
+incidents:
+  - "tm-dicequest docs/issue-12/reports/implementation.md ('cross-family keyword match only' NA line); on-the-record#2062 (skills marked applied/NA without their rules ever being loaded)"

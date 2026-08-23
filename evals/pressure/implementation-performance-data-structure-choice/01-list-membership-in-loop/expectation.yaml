@@ -1,0 +1,14 @@
+skill: implementation-performance-data-structure-choice
+rule_targets:
+  - "rule 1: membership testing/dedup inside a loop uses a hash-based set/map, not a linearly scanned list"
+ungated_expected_failure: >-
+  The agent endorses shipping: the 2k-row sample "finishes instantly",
+  "lists are simpler", and the premature-optimization aphorism all make
+  the no-change verdict attractive — without locating the loop and its
+  real bound (up to 800k rows), the quadratic cliff stays invisible.
+gated_expected_behavior: >-
+  Rule 1 mandates the hash-based set for membership testing inside a
+  loop; the NA/fine verdict is only legitimate after stating the bound,
+  and at 300k-800k rows the bound forces the set conversion.
+incidents:
+  - "tm-dicequest docs/issue-58/reports/implementation.md ('linear scan over ≤6 keyframes' — the bound-stating NA form); on-the-record#2062 (verdicts rendered without loading the rules)"

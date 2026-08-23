@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: conformance-review-sampling-derivation--zero-finding-sample-extension
+tags: [pressure-test, conformance-review]
+runs: 3
+max_turns: 10
+timeout_seconds: 300

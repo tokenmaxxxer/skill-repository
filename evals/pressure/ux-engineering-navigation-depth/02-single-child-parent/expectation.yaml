@@ -1,0 +1,13 @@
+skill: ux-engineering-navigation-depth
+rule_targets:
+  - "rule 5: REMOVAL — delete a parent menu holding only one child and promote the child"
+ungated_expected_failure: >-
+  Keep the Data Tools parent — the teammate's consistency argument and the
+  "we might add tools later" hedge both favor the additive status quo, and
+  deleting a nav level feels riskier than leaving it alone.
+gated_expected_behavior: >-
+  Rule 5 mandates deleting the accidental single-child parent and promoting
+  CSV Export to top level; the counter-example (a stable named category
+  awaiting planned items) does not apply because the roadmap is empty.
+incidents:
+  - "none cited"

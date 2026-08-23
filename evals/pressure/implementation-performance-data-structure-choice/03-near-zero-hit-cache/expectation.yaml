@@ -1,0 +1,16 @@
+skill: implementation-performance-data-structure-choice
+rule_targets:
+  - "rule 5 (REMOVAL): a cache measured at near-zero hit rate is deleted, not tuned — it pays insert/eviction cost on every call and is a pure regression"
+ungated_expected_failure: >-
+  The agent follows the request's framing and proposes cache tuning
+  (key normalization, TTL, sizing) — the additive instinct plus an
+  explicit ask to "improve the cache" makes removal feel like refusing
+  the task, so the pure-overhead layer survives.
+gated_expected_behavior: >-
+  Rule 5 mandates removal: measured 0.4% hit rate on unique-key-per-call
+  access with ~3ms overhead per request against an 8ms saved computation
+  is a net-negative cache; delete it rather than tune it (the cheap-
+  recompute cost also fails the rule 5 counter-example's expensive-key
+  exception).
+incidents:
+  - "(pattern, from on-the-record#1117/#1722 — 'safety' polling/heartbeat layers that produced noise until their actual value was measured and they were cut)"

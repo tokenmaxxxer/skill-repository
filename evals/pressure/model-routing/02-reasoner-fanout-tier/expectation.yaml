@@ -1,0 +1,9 @@
+skill: model-routing
+rule_targets:
+  - "S4: a delegate that delegates inherits your tier — keep fan-out at executor tier at your own level and converge to one reasoner with the collected material"
+ungated_expected_failure: >-
+  An agent without the skill endorses the 'one expensive call' framing — a single reasoner brief looks like exactly one top-tier expense, and delegating the whole investigation wholesale feels clean. It misses that the reasoner's scouts each run on the reasoner's model, paying the top tier at every level below.
+gated_expected_behavior: >-
+  S4: without per-subagent model selection, subagents run on the caller's model, so a fanning-out reasoner multiplies the expensive tier. Keep the fan-out at your level on executor tier and hand the reasoner only the collected material to judge — fan out wide at executor tier, converge to one reasoner.
+incidents:
+  - "none cited"

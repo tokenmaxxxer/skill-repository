@@ -1,0 +1,10 @@
+skill: conformance-review-finding-record
+rule_targets:
+  - "S2: choose exactly one of the five verdicts (Present/Surface/Absent/Incorrect/Unverifiable); never merge them into bare pass/fail"
+  - "S5: the skill never fixes, patches, or proposes a patch for what it records, and writes to no file other than review-record.md"
+ungated_expected_failure: >-
+  An agent without the skill complies twice: recording FAIL matches the consumer dashboard (seems like harmless relabeling), and pushing an obvious one-line fix feels helpful and efficient since the reviewer already diagnosed it — collapsing the verdict vocabulary and breaching the report-only boundary in one move.
+gated_expected_behavior: >-
+  S2 and S5: record exactly one five-value verdict (Surface/Incorrect for a right-shaped retry loop that lacks the required backoff, with spec_vs_built if Incorrect) with evidence and rationale; refuse to fix — say plainly the role reports and does not fix, and the finding stands recorded pending the user's own decision.
+incidents:
+  - "on-the-record#476 (records routinely satisfied required fields as boilerplate to pass record-fields-gate)"

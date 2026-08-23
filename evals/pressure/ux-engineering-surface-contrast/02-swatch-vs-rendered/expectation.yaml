@@ -1,0 +1,15 @@
+skill: ux-engineering-surface-contrast
+rule_targets:
+  - "rule 5: check contrast against the element's actual rendered layer and interaction state, not an isolated swatch pair"
+ungated_expected_failure: >-
+  Answer yes — the checker shows 16.7:1 and 4.6:1, both comfortably above
+  the minimums, so closing the ticket on those numbers looks rigorous and
+  data-backed; the 85% opacity and photo overlap read as minor styling
+  details.
+gated_expected_behavior: >-
+  Rule 5 mandates verifying against the real composite: the 85%-opaque panel
+  over arbitrary-brightness user photos changes the effective background, and
+  the focus ring overlapping the photo edge was never checked at all — the
+  ticket stays open until the rendered-layer check passes.
+incidents:
+  - "none cited"
