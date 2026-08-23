@@ -41,34 +41,6 @@ where there is no real experiment, or where the result is already settled, just 
 Everything below applies only once: assignment was genuinely random, there is a real control, and a
 metric result exists (or is about to exist) that someone intends to interpret or act on.
 
-## Evidence grade — read before citing this to anyone
-
-Three lines of honesty, stated every time this skill is invoked:
-
-- **(a) Confirmed, from primary industry-research sources (KDD / Microsoft experimentation-platform
-  papers)** — real measured platform data, not RCT evidence about experimentation as a practice: SRM's
-  definition, its chi-square detection method with the verified concrete examples below, its
-  invalidating consequence for causal inference, and its measured platform prevalence.
-- **(b) Confirmed, prescribed procedure with a checkable numeric criterion, same lineage**: the A/A
-  test validation method and its ~5% false-positive-rate criterion.
-- **(c) NEVER EXAMINED — a coverage gap, not a negative finding**: sample-size / power-analysis
-  specifics, and the peeking (early-stopping) type-I-error-inflation literature. These were not
-  refuted; no verifier ever voted on them (the research round extracted 99 claims and verified 25, so
-  the remainder was never adjudicated). Do not report them as unsupported. The gates below still
-  REQUIRE a pre-committed sample size and a no-peeking rule — that is a procedural design choice
-  consistent with the verified A/A false-positive semantics (a fixed nominal α presumes a fixed
-  horizon), not a claim this skill's research checked. For the pre-registration discipline itself — metric, threshold, decision
-  rule, date-stamped before the run — route to `hypothesis-testing`; do not re-derive it here.
-
-Additionally, at medium grade (2-1 vote each, name the grade when citing): Twyman's law as a
-skepticism heuristic for anomalous results, and the base-rate reminder that most experiments do not
-produce a positive significant effect.
-
-**MUST NOT claim**: that chi-square (with KS / Anderson-Darling) is "the industry-standard
-randomization-validation method used at Google, Microsoft and LinkedIn" — that broader industry-wide
-framing was refuted. Chi-square for SRM specifically is confirmed via the examples in Step 4; the
-broader attribution is not. No invented statistics beyond what is listed in this file.
-
 ## Procedure
 
 ### Step 1 — Scope gate
@@ -180,3 +152,11 @@ Report, per experiment reviewed:
 
 Never report a treatment win or loss from a run that failed Step 4, and never report a platform as
 trustworthy by default when Step 2 found no A/A record.
+
+## Rule index
+
+Full rule text, citations, and counter-examples:
+`references/rules.md` in this skill's directory — read it when a
+matched rule's detail is needed.
+
+- S1 — Evidence grade — read before citing this to anyone → references/rules.md
