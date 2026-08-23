@@ -84,3 +84,9 @@ Research trail: bug severity vs. priority literature (QAmadness defect-managemen
 10. **REMOVAL**: Stop treating "priority" language (urgent, do this sprint, can wait) as an input to the severity call — priority is "a business decision" that belongs to whoever owns scheduling (coding or a human), and the deterministic band lookup this axis governs must stay upstream of and blind to that decision, never downstream of it. source: https://www.qamadness.com/bug-severity-vs-priority/
 
 11. Apply the band lookup as a fixed intersection table (technical-impact tier x criterion), not a per-finding freehand weighing — deterministic severity classification tooling is built so "given the same inputs, every engineer... reaches the same row," and a lookup that is re-derived by judgment each time rather than read off a fixed table reintroduces exactly the rating drift rule 4 already forbids, just at the mechanism level instead of the outcome level. Adoption evidence: multi-source coverage of deterministic severity/priority matrix tooling, fetched 2026-08-13 (qamadness.com/bug-severity-vs-priority, softwaretestershub.in/tools/severityprioritymatrix).
+
+## Rationalizations
+
+Documented excuses agents used to skip this gate, each rebutted and tied
+back to a rule and its originating incident: see
+[references/rationalizations.md](references/rationalizations.md).

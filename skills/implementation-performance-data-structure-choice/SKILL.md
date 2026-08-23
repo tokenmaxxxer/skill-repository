@@ -118,3 +118,9 @@ algorithm, batching, removal) selected.
   total cache-maintenance cost; rule 5's condition is "near-zero hit
   rate," not "low hit rate," and requires checking cost-per-hit, not
   just hit-rate percentage, before removal.
+
+## Rationalizations
+
+Documented excuses agents used to skip this gate, each rebutted and tied
+back to a rule and its originating incident: see
+[references/rationalizations.md](references/rationalizations.md).

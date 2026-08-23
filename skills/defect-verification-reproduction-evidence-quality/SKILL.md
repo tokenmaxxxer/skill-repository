@@ -92,3 +92,9 @@ Research trail: bug-report/reproduction-steps best-practice literature (QA Wolf 
 12. When a not-reproduced or reproduced verdict rests on more than one causal step (e.g. "the handler silently swallows the error, so the caller sees success" is two linked claims), attach evidence to each linked step individually rather than one evidence pointer for the chain's end state — a single end-state artifact can be consistent with several different causal chains, and only per-step evidence lets a reader confirm which chain actually held.
 
 13. Treat an empty or pass-through catch/rescue block, a caught-and-logged-only error, or a fallback that substitutes a default value for a failure as its own attempt category worth checking even when no qa report or review requirement names it — this class of defect produces no crash and no failing assertion by construction, so it is systematically under-represented in qa- and review-sourced candidate lists and needs to appear as a self-devised attempt on its own.
+
+## Rationalizations
+
+Documented excuses agents used to skip this gate, each rebutted and tied
+back to a rule and its originating incident: see
+[references/rationalizations.md](references/rationalizations.md).

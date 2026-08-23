@@ -105,3 +105,9 @@ scope stated explicitly rather than silently re-derived.
    that grades a spec across named dimensions (problem statement, scope,
    acceptance criteria, error handling, edge cases) separately rather than as
    one undifferentiated completeness score.
+
+## Rationalizations
+
+Documented excuses agents used to skip this gate, each rebutted and tied
+back to a rule and its originating incident: see
+[references/rationalizations.md](references/rationalizations.md).
