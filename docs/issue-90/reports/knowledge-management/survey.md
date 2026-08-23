@@ -94,6 +94,34 @@ surface, not a placeholder):
    legibility that is not just a restatement of the existing
    accessibility / ux-engineering skills.
 
+## Skill verdicts (issue #2039 / #2062)
+
+- skill-verdict: knowledge-management-structure-findability — applied:
+  invoked; its Diataxis reference-shape and condition-led-title rules
+  drove the one-axis-per-skill decision and the rejection of a single
+  combined playbook in the proposal's Rationale.
+- skill-verdict: knowledge-management-taxonomy-tagging — applied:
+  invoked; rules 2/6 (place a new term via broader/narrower, record
+  related-but-distinct concepts as associative rather than forcing a
+  false hierarchy) are why the four skills form a new family with
+  `## Related skills` cross-links instead of being folded into
+  `ux-engineering-*` / `implementation-performance-*`.
+- skill-verdict: knowledge-management-curation-pruning — not-applicable:
+  no existing entry is uncited, flagged, or up for removal; this issue
+  adds new coverage.
+- skill-verdict: knowledge-management-supersession-lifecycle —
+  not-applicable: nothing is being replaced, dropped, or deprecated.
+- skill-verdict: knowledge-management-pattern-extraction —
+  not-applicable: the input is an issue-specified gap list, not a
+  retrospective surfacing a candidate lesson to promote.
+- skill-verdict: product-discovery-opportunity-solution-tree —
+  not-applicable: no `scoping -> scoping` self-loop here; the issue
+  already fixes the opportunity and the four deliverables.
+- skill-verdict: conformance-review-requirement-extraction —
+  not-applicable: this session authors a proposal, it does not render
+  review verdicts; the acceptance criteria were already discrete and
+  needed no decomposition pass.
+
 ## Skip record
 
 Not applicable — scouting is NOT skipped for this issue. Neither skip
