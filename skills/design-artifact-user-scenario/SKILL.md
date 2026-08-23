@@ -1,6 +1,11 @@
 ---
 name: design-artifact-user-scenario
-description: Use when writing a user scenario, persona, or cross-channel journey map — a macro-scope narrative of a user's experience over time, including emotions and context, grounded in real user research.
+description: >-
+  Use when writing a user scenario, persona, or cross-channel journey map — a macro-scope
+  narrative of a user's experience over time, including emotions and context, grounded in real
+  user research. Trigger on requests like "persona journey map", "narrative scenario for this
+  user", "journey mapping over weeks", "사용자 시나리오 써줘". Do NOT use for a micro-scope
+  single-product step sequence (use design-artifact-user-flow).
 metadata:
   axis: scenario-grounding-vs-invented-persona
   rule_count_floor: 3

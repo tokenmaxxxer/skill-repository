@@ -1,15 +1,14 @@
 ---
 name: work-in-english
 description: >-
-  Token-saving language policy for Korean-speaking teams: do all internal and
-  repository-bound work in English, and write only the final user-facing
-  summary in Korean. Use this skill on EVERY coding task in this project —
-  writing code, fixing bugs, refactoring, committing, opening PRs, writing
-  docs, or long agentic runs — whenever the user communicates in Korean.
-  It governs the language of commit messages, PR titles/bodies, branch names,
-  code comments, docstrings, READMEs and design docs, intermediate progress
-  updates, and internal reasoning. It does NOT translate or alter the user's
-  code or data. Trigger even if the user never mentions language or tokens.
+  Use this skill on EVERY coding task in this project — writing code, fixing bugs, refactoring,
+  committing, opening PRs, writing docs, or long agentic runs — whenever the user communicates in
+  Korean. Token-saving language policy for Korean-speaking teams: do all internal and repository-
+  bound work in English, and write only the final user-facing summary in Korean. It governs the
+  language of commit messages, PR titles/bodies, branch names, code comments, docstrings, READMEs
+  and design docs, intermediate progress updates, and internal reasoning; it does NOT translate or
+  alter the user's code or data. Trigger even if the user never mentions language or tokens — e.g.
+  "이 버그 고쳐줘", "리팩토링 해줘", "PR 올려줘", "커밋 메시지 영어로 써야 하나", "fix this bug and open a PR".
 ---
 
 # Work in English, Report in Korean

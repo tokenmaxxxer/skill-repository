@@ -1,18 +1,16 @@
 ---
 name: release-engineering-readiness-checklist
 description: >-
-  Use when working the ops role's readiness state (ops/state.md status:
+  Use when working the ops role's readiness state (ops/state.md status
   readiness), preparing to move readiness -> rollout, or checking what
   state-gate.sh (PreToolUse) requires before a write to ops/state.md will
-  pass. Walks the launch-readiness discipline this role is built on: every
-  checklist item resolves to yes/no backed by a pointable artifact, never
-  "we have monitoring" with nothing to link. There is no approval-token
-  mechanism here — actor: user rows are satisfied by the model reading the
-  user's own turn and judging the precondition met, not by minting or
-  checking a token.
-  Do NOT use for writing the specification or feasibility work upstream of
-  ops — this is scoped to readiness, and to the readiness-adjacent parts of
-  rollout, steady, and incident only.
+  pass. Trigger on requests like "walk the PRR readiness checklist", "is the
+  service ready for rollout", "every checklist yes needs a pointable
+  artifact", "출시 준비 체크리스트 점검해줘". Covers the seven Production Readiness Review
+  dimensions, each resolving to yes/no backed by a dashboard URL, config key,
+  or runbook path. Do NOT use for declaring the traffic curve and per-step
+  thresholds after readiness passes (use release-engineering-rollout-plan).
+
 ---
 
 # readiness-checklist — the ops role's gate, worked from the inside

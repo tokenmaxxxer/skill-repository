@@ -1,6 +1,14 @@
 ---
 name: interaction-design-form-control-and-layout
-description: Use when you are choosing a form control for a single-select field, deciding how to lay out or group related fields, sizing navigation depth vs. breadth, checking a text or non-text contrast floor, deciding whether an existing modal should be removed, or naming a semantic token for a spacing/color/type value, and need a condition-matched rule rather than general interaction-design advice.
+description: >-
+  Use when you are choosing a form control for a single-select field, deciding how to lay out
+  or group related fields, sizing navigation depth vs. breadth, checking a text or non-text
+  contrast floor, deciding whether an existing modal should be removed, or naming a semantic
+  token for a spacing/color/type value, and need a condition-matched rule rather than general
+  interaction-design advice. Trigger on requests like "radio vs dropdown for this field",
+  "should this stay a modal", "semantic token naming", "폼 컨트롤이랑 레이아웃 정해줘". Do NOT use for the
+  ux-engineering family's narrower single-axis control question (use
+  ux-engineering-control-selection).
 ---
 
 # Playbook: form controls, grouping, navigation, contrast (issue-1174 batch 1)

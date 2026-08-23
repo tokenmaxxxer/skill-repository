@@ -1,6 +1,14 @@
 ---
 name: technical-writing-persuasion-trust
-description: Use when writing or reviewing adoption-facing docs whose reader must decide to adopt or trust the product, not just execute a known task. Applies to the persuasion-trust axis.
+description: >-
+  Use when writing or reviewing adoption-facing docs whose reader must decide to
+  adopt or trust the product, not just execute a known task. Applies to the
+  persuasion-trust axis — central vs. peripheral persuasion routes, verifiable
+  claims placed inline, onboarding's first working call under ~10 minutes.
+  Trigger on requests like "온보딩 문서 설득력 있게 다듬어줘", "developer adoption docs",
+  "make this landing doc build trust", "central vs peripheral route". Do NOT use
+  for organizing already-committed readers' task content for cognitive load (use
+  technical-writing-structure-comprehension).
 metadata:
   axis: persuasion-trust
   rule_count_floor: 10

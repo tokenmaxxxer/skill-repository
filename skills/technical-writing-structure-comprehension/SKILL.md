@@ -1,6 +1,15 @@
 ---
 name: technical-writing-structure-comprehension
-description: Use when drafting or editing sentence, paragraph, or section structure for reader comprehension and cognitive load. Applies to the structure-comprehension axis.
+description: >-
+  Use when drafting or editing sentence, paragraph, or section structure for
+  reader comprehension and cognitive load. Applies to the
+  structure-comprehension axis — 15-20 word sentence targets, chunk breaks,
+  phase-grouped procedures, filler-clause deletion. Trigger on requests like
+  "문장이 너무 길어, 읽기 쉽게 고쳐줘", "readability pass", "split these long sentences",
+  "restructure this section for comprehension". Do NOT use for deciding what
+  content survives at all (use technical-writing-minimalism-scoping) or for
+  mood/voice/person conformance to a named style guide (use
+  technical-writing-style-guide-compliance).
 metadata:
   axis: structure-comprehension
   rule_count_floor: 10

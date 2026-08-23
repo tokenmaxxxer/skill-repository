@@ -1,6 +1,13 @@
 ---
 name: kubernetes-workload-probe-selection
-description: Use when configuring a container's liveness, readiness, or startup probe in a Kubernetes manifest, or diagnosing a pod stuck in a restart loop or never receiving traffic.
+description: >-
+  Use when configuring a container's liveness, readiness, or startup probe in
+  a Kubernetes manifest, or diagnosing a pod stuck in a restart loop or never
+  receiving traffic. Trigger on requests like "liveness vs readiness probe",
+  "pod crash-looping on startup", "startupProbe 넣어야 하나", "Ready but not
+  serving traffic". Do NOT use for the broader pre-production manifest review
+  across all properties (use
+  kubernetes-workload-production-readiness-checklist).
 metadata:
   axis: probe-selection
   rule_count_floor: 6

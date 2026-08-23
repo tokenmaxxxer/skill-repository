@@ -1,6 +1,12 @@
 ---
 name: kubernetes-workload-requests-limits-decision
-description: Use when setting a container's CPU/memory requests and limits in a Kubernetes manifest, deciding whether a workload needs a CPU limit at all, or diagnosing an OOMKilled or CPU-throttled pod.
+description: >-
+  Use when setting a container's CPU/memory requests and limits in a
+  Kubernetes manifest, deciding whether a workload needs a CPU limit at all,
+  or diagnosing an OOMKilled or CPU-throttled pod. Trigger on requests like
+  "pod keeps getting OOMKilled", "should I set a CPU limit", "requests/limits
+  값 잡아줘", "Guaranteed QoS class". Do NOT use for autoscaler replica-count
+  behavior and metrics (use kubernetes-workload-hpa-behavior).
 metadata:
   axis: requests-limits-decision
   rule_count_floor: 6

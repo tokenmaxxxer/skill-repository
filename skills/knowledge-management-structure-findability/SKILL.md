@@ -1,6 +1,11 @@
 ---
 name: knowledge-management-structure-findability
-description: Use when filing a new entry, naming a file or title, or structuring content for retrieval — classifying it as tutorial-, how-to-, reference-, or explanation-shaped per Diátaxis.
+description: >-
+  Use when filing a new entry, naming a file or title, or structuring content for retrieval
+  — classifying it as tutorial-, how-to-, reference-, or explanation-shaped per Diátaxis.
+  Trigger on requests like "where should this doc live", "Diátaxis classification", "문서 어디에
+  어떤 이름으로 넣을까", "structure the docs for RAG retrieval". Do NOT use for choosing or scoping
+  tags and vocabulary terms (use knowledge-management-taxonomy-tagging).
 metadata:
   axis: structure-findability
   rule_count_floor: 10

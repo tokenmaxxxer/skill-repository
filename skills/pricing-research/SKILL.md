@@ -1,17 +1,18 @@
 ---
 name: pricing-research
 description: >-
-  Choose and run a willingness-to-pay / pricing research method honestly, routing between the
-  Van Westendorp Price Sensitivity Meter (PSM) family and the conjoint/discrete-choice (CBC)
-  family by what the pricing decision actually needs to know, and reporting numbers with the
-  labels their evidence base supports. Use whenever someone needs to set, test, or audit a price
-  or price range for a defined product — e.g. "가격 얼마로 정해야 할까", "지불의사 조사해줘", "컨조인트
-  설계해줘", "how much should we charge", "willingness to pay research", "design a conjoint study",
-  "price sensitivity meter". Trigger whenever a team is about to pick a pricing method, design
-  one, or hand off pricing numbers as if they answer a question the method didn't collect data
-  for. Do NOT use for competitor pricing (route to `market-recon`), for pricing decisions with no
-  enumerable product yet (too early), or for general market-sizing questions with no price
-  variable at their center.
+  Use whenever someone needs to set, test, or audit a price or price range for a
+  defined product — choosing and running a willingness-to-pay method honestly,
+  routing between the Van Westendorp Price Sensitivity Meter (PSM) family and
+  the conjoint/discrete-choice (CBC) family by what the pricing decision
+  actually needs to know, and reporting numbers with the labels their evidence
+  base supports. Trigger on requests like "가격 얼마로 정해야 할까", "지불의사 조사해줘", "how
+  much should we charge", "design a conjoint study", "price sensitivity meter".
+  Also trigger when a team is about to hand off pricing numbers as if they
+  answer a question the method never collected data for. Do NOT use for
+  competitor pricing (route to market-recon), for pricing with no enumerable
+  product yet, or for the single upstream question of whether to field anything
+  at all (use pricing-scope-gate).
 ---
 
 # Pricing Research (Willingness to Pay)

@@ -1,6 +1,12 @@
 ---
 name: secure-coding-cryptography-secrets-management
-description: Use when you need to choose an algorithm, key size, or cipher mode, or decide how a secret is generated, stored, rotated, or removed from an image, env var, or log across its lifecycle.
+description: >-
+  Use when you need to choose an encryption algorithm, key size, or cipher mode, or decide how a
+  secret — password, token, key, credential — is created, stored, delivered to a running
+  process, rotated, or removed from an image, env var, or log across its lifecycle. Trigger on
+  requests like "AES 키 길이 얼마로 해", "secrets를 env var에 둬도 돼?", "how often should we rotate this
+  API key", "is ECB mode acceptable here". Do NOT use for session-cookie or auth-token transport
+  once a secret is a live session artifact (use secure-coding-session-authentication).
 metadata:
   axis: cryptography-secrets-management
   rule_count_floor: 10

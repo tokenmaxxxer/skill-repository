@@ -1,6 +1,13 @@
 ---
 name: growth-analytics-funnel-stage-attribution
-description: Use when a proposed metric counts raw registrations, installs, or signups, or when a dashboard reports one blended conversion rate spanning multiple funnel stages. Applies to the funnel-stage-attribution axis.
+description: >-
+  Use when a proposed metric counts raw registrations, installs, or signups, or when a
+  dashboard reports one blended conversion rate spanning multiple funnel stages. Applies to
+  the funnel-stage-attribution axis. Trigger on requests like "이 지표 어느 퍼널 단계야", "signups
+  spiked — is that activation", "split this blended conversion rate", "attribute these
+  metrics to AARRR stages". Keeps acquisition and activation separate and replaces
+  multi-stage figures with per-stage-pair rates. Do NOT use for choosing the North Star /
+  one metric that matters (use growth-analytics-metric-selection).
 metadata:
   axis: funnel-stage-attribution
   rule_count_floor: 2

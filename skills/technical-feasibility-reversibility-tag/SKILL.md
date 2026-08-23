@@ -1,6 +1,16 @@
 ---
 name: technical-feasibility-reversibility-tag
-description: Use when a finding is about to be written to a probe-resolution field in feasibility-record.md by spike-report, stride-table, build-vs-buy, or license-scan, and it has not yet been classified as a one-way or two-way door.
+description: >-
+  Use when a finding is about to be written to a probe-resolution field in
+  feasibility-record.md by spike-report, stride-table, build-vs-buy, or
+  license-scan, and it has not yet been classified as a one-way or two-way door.
+  Adds a Reversibility field — `one-way` or `two-way` plus a one-line
+  cost-to-undo reason — to every finding, scaling the evidence bar before a
+  probe may resolve `pass`. Trigger on requests like "reversibility tag 붙여줘",
+  "tag this finding one-way or two-way", "cost to undo this decision", "can this
+  probe resolve pass yet". Do NOT use for classifying a whole architectural
+  decision and scoping its spike/timebox up front (use
+  technical-feasibility-reversibility-and-spike-scoping).
 
 ---
 

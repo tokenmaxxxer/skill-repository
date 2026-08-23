@@ -1,6 +1,12 @@
 ---
 name: ux-engineering-service-design-touchpoint-channel-mapping
-description: Use when identifying and sequencing the touchpoints a customer encounters across channels for one journey, or judging whether a journey's channel set is omnichannel/cross-functional enough to warrant escalating to a full service blueprint.
+description: >-
+  Use when identifying and sequencing the touchpoints a customer encounters across channels
+  for one journey, or judging whether a journey's channel set is omnichannel/cross-functional
+  enough to warrant escalating to a full service blueprint. Trigger on requests like
+  "touchpoint map", "channel inventory for this journey", "do we need a full blueprint",
+  "터치포인트 정리해줘". Do NOT use once a full blueprint is already under construction (use
+  ux-engineering-service-design-blueprint-construction).
 metadata:
   axis: touchpoint-channel-mapping-vs-blueprint-escalation
   rule_count_floor: 4

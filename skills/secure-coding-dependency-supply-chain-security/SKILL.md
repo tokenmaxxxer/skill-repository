@@ -1,6 +1,12 @@
 ---
 name: secure-coding-dependency-supply-chain-security
-description: Use when you need to decide how to scan, patch, work around, accept the risk of, or retire a vulnerable or unmaintained third-party dependency, or vet a new one before it enters the manifest.
+description: >-
+  Use when you need to decide how to scan, patch, work around, accept the risk of, or retire a
+  vulnerable or unmaintained third-party dependency, or vet a new one before it enters the
+  manifest (package.json, requirements.txt, go.mod). Trigger on requests like "취약한 라이브러리 어떻게
+  처리해", "CVE 떴는데 패치가 없어", "should we add this npm package", "wire dependency scanning into CI".
+  Do NOT use for choosing crypto algorithms or handling secret material (use
+  secure-coding-cryptography-secrets-management).
 metadata:
   axis: dependency-supply-chain-security
   rule_count_floor: 8

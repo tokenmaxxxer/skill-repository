@@ -1,17 +1,16 @@
 ---
 name: flow-metrics
 description: >-
-  A flow-measurement diagnostic that defines WIP, throughput, and lead time over one consistent
-  boundary and applies Little's law (L = λW) correctly, with its actual stated conditions — then
-  reports honestly what the evidence does and does not support about WIP limits. Use whenever the
-  user wants to understand, measure, or diagnose work flow — e.g. "왜 이렇게 오래 걸리지", "리드타임
-  계산해줘", "WIP 제한 걸어야 하나", "why is this taking so long", "should we set a WIP limit", "diagnose
-  our kanban board". The headline value is correcting a widespread belief: in the one quantitative
-  case study available, lower WIP correlates with shorter lead time and correlates with
-  productivity opposite to the kanban claim — neither is a controlled result. Do NOT use when
-  there is no per-item entry/exit timestamp data (the first action is instrumenting start/finish
-  events), when the question is about individual performance rather than a system's flow, or when
-  the team has already decided to change a WIP limit (route to `hypothesis-testing` instead).
+  Use whenever the user wants to understand, measure, or diagnose work flow. A
+  flow-measurement diagnostic that defines WIP, throughput, and lead time over one
+  consistent boundary and applies Little's law (L = λW) correctly, with its actual stated
+  conditions — then reports honestly what the evidence does and does not support about WIP
+  limits (in the one quantitative case study available, neither direction is a controlled
+  result). Trigger on "왜 이렇게 오래 걸리지", "리드타임 계산해줘", "why is this taking so long", "should we
+  set a WIP limit", "diagnose our kanban board". Do NOT use when there is no per-item
+  entry/exit timestamp data (the first action is instrumenting start/finish events), when
+  the question is about individual performance rather than a system's flow, or when the team
+  has already decided to change a WIP limit (use hypothesis-testing).
 ---
 
 # Flow Metrics

@@ -1,6 +1,12 @@
 ---
 name: api-design-tool-landscape
-description: Use when an interface spec, payload schema, new API version, or cross-service contract is about to ship without a generated mock server, runtime schema validator, client SDK, or consumer-driven contract test.
+description: >-
+  Use when an interface spec, payload schema, new API version, or cross-service contract is
+  about to ship without a spec-driven mock server, runtime schema validator, client SDK, or
+  consumer-driven contract test. Trigger on requests like "OpenAPI 스펙으로 mock 서버 만들어줘", "wire a
+  Zod/JSON Schema validator at the service boundary", "regen the client SDK for the new
+  version", "contract test between these two services". Do NOT use for choosing the versioning
+  scheme or deprecation timeline itself (use api-design-versioning-evolution).
 metadata:
   axis: tool-landscape
   rule_count_floor: 4

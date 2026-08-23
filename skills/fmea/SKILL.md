@@ -1,17 +1,17 @@
 ---
 name: fmea
 description: >-
-  A design-stage risk analysis procedure (Failure Mode and Effects Analysis): decompose a
-  design/system/process into elements, enumerate how each element could fail, rate each failure
-  mode on anchored Severity/Occurrence/Detection scales, and prioritize by severity first so a
-  low-probability high-severity risk is never buried under a low RPN. Use when the user wants to
-  find what could go wrong in a design before it ships — e.g. "이 설계에서 뭐가 잘못될 수 있는지
-  분석해줘", "FMEA 해줘", "failure mode analysis", "what could go wrong with this design", "run an FMEA
-  on this". Do NOT use after a failure has already happened in the field (that's root-cause/incident
-  analysis — point to `diagnose-first`), when there is no concrete design with enumerable
-  components, when the user wants official AIAG-VDA Action Priority tables reproduced verbatim
-  (this skill does not have those verified), or for a trivial low-stakes change where a quick gut
-  check is proportionate.
+  Use when the user wants to find what could go wrong in a design before it ships. A
+  design-stage risk analysis procedure (Failure Mode and Effects Analysis): decompose a
+  design/system/process into elements, enumerate how each element could fail, rate each
+  failure mode on anchored Severity/Occurrence/Detection scales, and prioritize by severity
+  first so a low-probability high-severity risk is never buried under a low RPN. Trigger on
+  "이 설계에서 뭐가 잘못될 수 있는지 분석해줘", "FMEA 해줘", "failure mode analysis", "what could go wrong with
+  this design". Do NOT use after a failure has already happened in the field (that's
+  root-cause territory — use diagnose-first), when there is no concrete design with
+  enumerable components, when official AIAG-VDA Action Priority tables are wanted verbatim
+  (not verified here), for a trivial low-stakes change, or for a narrative
+  failure-imagination workshop before commitment (use premortem).
 ---
 
 # FMEA (Failure Mode and Effects Analysis)

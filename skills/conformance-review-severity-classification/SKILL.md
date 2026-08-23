@@ -1,6 +1,17 @@
 ---
 name: conformance-review-severity-classification
-description: Use while acting as the review role in the draft-reported state, when the review's scope has been explicitly extended into risk-weighting a finding already recorded by finding-record — not for ordinary fidelity-checking, and never to decide whether a finding exists.
+description: >-
+  Use while acting as the review role in the draft-reported state, when the
+  review's scope has been explicitly extended into risk-weighting a finding
+  already recorded by finding-record — not for ordinary fidelity-checking, and
+  never to decide whether a finding exists. Trigger on requests like "assign
+  severity to this review finding", "Critical or High band for the review
+  record", "bug bar lookup", "리뷰 finding 심각도 매겨줘". Uses a deterministic table
+  lookup (Chromium five bands or Microsoft bug bar), never a DREAD-style
+  averaged score. Do NOT use for recording the finding itself (use
+  conformance-review-finding-record); for banding a reproduced defect in
+  verify-record.md, see verify-severity-classification.
+
 ---
 
 # severity-classification

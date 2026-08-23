@@ -1,6 +1,13 @@
 ---
 name: product-discovery-jtbd-problem-framing
-description: Use when a problem statement, issue, or feature request needs to be fixed as a solution-free job statement before any solution is evaluated. Applies to the jtbd-problem-framing axis.
+description: >-
+  Use when a problem statement, issue, or feature request needs to be fixed as a
+  solution-free job statement before any solution is evaluated. Applies to the
+  jtbd-problem-framing axis. Trigger on requests like "문제를 JTBD로 다시 써줘", "rewrite this as a
+  job statement", "the ticket already names a feature — what's the underlying job", "who is
+  the job performer here", or whenever incoming text names a tool or mechanism. Fixes the
+  four-part tuple: performer, job, circumstance, measurable desired outcomes. Do NOT use to
+  draft the full scoping one-pager around the problem (use product-discovery-one-pager).
 metadata:
   axis: jtbd-problem-framing
   rule_count_floor: 10

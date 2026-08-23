@@ -1,6 +1,14 @@
 ---
 name: security-threat-model-threat-modeling-decision-rules
-description: Use when drawing or scoping a DFD's trust boundaries, classifying an asset's sensitivity, running a STRIDE pass on a DFD element, CVSS-rating a threat, choosing a mitigation disposition (mitigate/avoid/transfer/accept), or signing off residual risk — distinct from generic STRIDE/FMEA walkthroughs or a feasibility-scoped threat disposition call.
+description: >-
+  Use when drawing or scoping a DFD's trust boundaries, classifying an asset's sensitivity,
+  running a STRIDE pass on a DFD element, CVSS-rating a threat, choosing a mitigation disposition
+  (mitigate/avoid/transfer/accept), or signing off residual risk — practitioner-depth decision
+  rules, distinct from generic STRIDE/FMEA walkthroughs or a feasibility-scoped threat disposition
+  call. Trigger on requests like "신뢰 경계 어디에 그어야 해", "CVSS 점수 매겨줘", "rate this threat's attack
+  vector and scope", "mitigate or accept this rated threat", "sign off the residual risk". Do NOT
+  use for a full design-stage per-element STRIDE walkthrough from scratch (use stride) or for a
+  feasibility spike's threat disposition (technical-feasibility-threat-model-disposition).
 metadata:
   rule_count_floor: 12
   tier: moderate

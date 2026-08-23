@@ -1,6 +1,15 @@
 ---
 name: technical-writing-minimalism-scoping
-description: Use when deciding what to cut vs. keep in a draft section, or auditing an over-long doc for redundant or unrequested content. Applies to the minimalism-scoping axis.
+description: >-
+  Use when deciding what to cut vs. keep in a draft section, or auditing an
+  over-long doc for redundant or unrequested content. Applies to the
+  minimalism-scoping axis — subtraction-first passes, duplicate removal,
+  collapsing edge cases, with error-recovery content as the named exception.
+  Trigger on requests like "문서 너무 길어, 줄여줘", "cut this doc down", "subtraction
+  pass", "remove redundant sections". Do NOT use for choosing which Diátaxis
+  quadrant the doc belongs to (use technical-writing-doc-type-selection) or for
+  how surviving content is structured sentence by sentence (use
+  technical-writing-structure-comprehension).
 metadata:
   axis: minimalism-scoping
   rule_count_floor: 11

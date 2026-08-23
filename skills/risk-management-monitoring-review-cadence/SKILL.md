@@ -1,6 +1,13 @@
 ---
 name: risk-management-monitoring-review-cadence
-description: Use when setting or adjusting a register entry's review cadence, an event or mitigation-completion changes an entry's status, or a legacy cadence may no longer be justified. Applies to the monitoring-review-cadence axis.
+description: >-
+  Use when setting or adjusting a register entry's review cadence, when an
+  event or mitigation-completion changes an entry's status, or when a legacy
+  cadence may no longer be justified. Trigger on requests like "how often
+  should we review this risk", "mitigation done, re-score now?", "리스크 리뷰 주기
+  정해줘", "high-velocity risk cadence". Do NOT use for choosing the response
+  strategy the review monitors (use
+  risk-management-response-strategy-selection).
 metadata:
   axis: monitoring-review-cadence
   rule_count_floor: 10

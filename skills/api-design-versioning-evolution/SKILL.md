@@ -1,6 +1,11 @@
 ---
 name: api-design-versioning-evolution
-description: Use when choosing an API versioning scheme, classifying whether a proposed change is breaking, or planning a field/endpoint/version deprecation and removal.
+description: >-
+  Use when choosing an API versioning scheme, classifying whether a proposed change is breaking,
+  or planning a field/endpoint/version deprecation and removal. Trigger on requests like "is
+  adding this required param a breaking change", "URL 버저닝 vs 헤더 버저닝", "Sunset 헤더로 폐기 일정 잡아줘",
+  "deprecation notice window for v1". Do NOT use for wiring the compatibility artifacts
+  themselves — mock servers, SDKs, contract tests (use api-design-tool-landscape).
 metadata:
   axis: versioning-evolution
   rule_count_floor: 10

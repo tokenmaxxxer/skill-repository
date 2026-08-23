@@ -1,6 +1,12 @@
 ---
 name: knowledge-work-deck-structure-narrative-arc
-description: Use when outlining or sequencing a slide deck's content before or while drafting individual slides. Applies to the deck-narrative-arc axis.
+description: >-
+  Use when outlining or sequencing a slide deck's content before or while drafting
+  individual slides — argument order (pyramid vs SCQA), agenda, transition, and summary
+  signposts. Trigger on requests like "outline this deck", "슬라이드 구성 잡아줘", "should the
+  conclusion come first", "deck storyline". Applies to the deck-narrative-arc axis. Do NOT
+  use for per-slide line/word limits or alt text (use
+  knowledge-work-slide-density-and-layout).
 metadata:
   axis: deck-narrative-arc
   rule_count_floor: 3

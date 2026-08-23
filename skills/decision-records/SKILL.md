@@ -1,18 +1,15 @@
 ---
 name: decision-records
 description: >-
-  A discipline for deciding WHICH decisions must be recorded as Architecture Decision Records
-  (ADRs) and for enforcing record completeness once one is warranted. Use this whenever the user
-  wants a decision written down for future reference or wants their existing ADR practice
-  checked — e.g. "이 결정 ADR로 남겨줘", "아키텍처 결정 기록해줘", "왜 이렇게 했는지 문서로 남기자", "결정 기록
-  정리해줘", "should we write an ADR for this", "document this architecture decision", "why did we
-  do it this way, is there a record", "is our ADR practice actually being followed". The
-  discipline is a set of binary trigger conditions and a syntactic completeness check — not a
-  "write a doc about everything we decide" habit. Do NOT use it for decisions that are cheap to
-  reverse and scoped to one person/team with no lasting cross-team consequence (just make the
-  call), for writing general design docs or specs (different artifact, different purpose), or
-  when the user already has a complete, current ADR and just wants help implementing it (just do
-  the task).
+  Use whenever the user wants a decision written down for future reference or wants their
+  existing ADR practice checked. A discipline for deciding WHICH decisions must be recorded
+  as Architecture Decision Records (ADRs) and for enforcing record completeness once one is
+  warranted — a set of binary trigger conditions and a syntactic completeness check, not a
+  "write a doc about everything we decide" habit. Trigger on "이 결정 ADR로 남겨줘", "아키텍처 결정
+  기록해줘", "왜 이렇게 했는지 문서로 남기자", "document this architecture decision", "is our ADR practice
+  actually being followed". Do NOT use for escalating a still-open direction call to the
+  user (use decision-brief), for decisions cheap to reverse and scoped to one person/team
+  with no lasting cross-team consequence, or for writing general design docs or specs.
 ---
 
 # Decision Records

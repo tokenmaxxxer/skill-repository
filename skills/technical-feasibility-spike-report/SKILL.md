@@ -1,6 +1,15 @@
 ---
 name: technical-feasibility-spike-report
-description: Use when a feasibility role's `probing` state needs one uncertain technical question answered inside an agreed timebox before a feasibility verdict can be drafted.
+description: >-
+  Use when a feasibility role's `probing` state needs one uncertain technical
+  question answered inside an agreed timebox before a feasibility verdict can be
+  drafted. Runs the human-in-the-loop negotiation at both ends
+  (question/timebox/acceptance criteria agreed first; report at timebox end) and
+  writes the spike report artifact. Trigger on requests like "스파이크 돌려줘", "run a
+  timeboxed spike", "spike report for this unknown", "timebox expired, what
+  now". Do NOT use for classifying the decision's reversibility or scoping
+  sensitivity/tradeoff points before exploration starts (use
+  technical-feasibility-reversibility-and-spike-scoping).
 ---
 
 # Spike report

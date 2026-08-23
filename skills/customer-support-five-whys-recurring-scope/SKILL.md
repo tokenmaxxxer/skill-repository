@@ -1,6 +1,12 @@
 ---
 name: customer-support-five-whys-recurring-scope
-description: Use when a repeat/recurring inbound pattern is flagged and you need to run and route a five-whys chain — converged chains resolve in-role, branching ones route to product-discovery.
+description: >-
+  Use when a repeat/recurring inbound pattern is flagged and you need to run
+  and route a five-whys chain — converged chains resolve in-role, branching
+  ones route to product-discovery. Trigger on requests like "same issue keeps
+  coming back", "run a five whys on this pattern", "재발 티켓 근본 원인 분석해줘",
+  "root-cause chain branches". Do NOT use for writing up the converged finding
+  as an article (use customer-support-kcs-article-authoring).
 ---
 
 # Five-whys recurring-pattern decision rules

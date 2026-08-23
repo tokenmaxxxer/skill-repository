@@ -1,6 +1,13 @@
 ---
 name: customer-support-kcs-article-authoring
-description: Use when authoring or reusing a KCS knowledge article — scoping the Environment field, populating Cause from a five-whys chain, writing Problem in requester language, or deciding reuse vs. a new article.
+description: >-
+  Use when authoring or reusing a KCS knowledge article — scoping the
+  Environment field, populating Cause from a five-whys chain, writing Problem
+  in requester language, or deciding reuse vs. a new article. Trigger on
+  requests like "write a KB article from this ticket", "KCS 문서 만들어줘",
+  "Environment field scope", "near-duplicate article or link existing". Do NOT
+  use for running the root-cause chain itself (use
+  customer-support-five-whys-recurring-scope).
 ---
 
 # KCS article-authoring decision rules

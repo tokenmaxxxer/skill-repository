@@ -1,6 +1,12 @@
 ---
 name: architecture-module-boundary-definition
-description: Use when deciding where to draw a module/component/service boundary — what belongs together by cohesion, when to stop splitting, when to merge things back, and how to keep a C4-level boundary diagram reviewable as the decision evolves.
+description: >-
+  Use when deciding where to draw a module/component/service boundary — what belongs together by
+  cohesion, when to stop splitting, when to merge things back, and how to keep a C4-level
+  boundary diagram reviewable as the decision evolves. Trigger on requests like "모듈 경계 어디에 그을까",
+  "does this belong in the same component", "bounded context 나눠줘", "is this module too big to
+  stay one module". Do NOT use for the system-wide split/keep/merge-back decision on service
+  count (use architecture-decomposition-strategy).
 metadata:
   axis: module-boundary-definition
   rule_count_floor: 12

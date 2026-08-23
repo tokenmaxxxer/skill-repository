@@ -1,9 +1,19 @@
 ---
 name: conformance-review-traceability-and-evidence
-description: Use when recording a verdict's evidence so a reader can re-derive it, or when linking a requirement forward or backward across a spec and its artifacts. Applies to the traceability-and-evidence axis.
+description: >-
+  Use when recording a verdict's evidence so a reader can re-derive it, or
+  when linking a requirement forward or backward across a spec and its
+  artifacts. Applies to the traceability-and-evidence axis. Trigger on
+  requests like "cite file line and commit sha for this verdict", "build the
+  traceability matrix links", "backward-trace this requirement to the spec",
+  "요구사항 추적성 근거 정리해줘". Pins citations to file, line range, sha, and spec
+  version, one link per contributing file, collapsing duplicate entries. Do
+  NOT use for choosing which of the five verdicts the evidence supports (use
+  conformance-review-verdict-assignment).
 metadata:
   axis: traceability-and-evidence
   rule_count_floor: 3
+
 ---
 
 # Traceability and evidence citation

@@ -1,6 +1,12 @@
 ---
 name: api-design-resource-modeling
-description: Use when modeling an API's resources — mapping an operation to CRUD vs. a custom method, deciding singleton vs. collection, structuring the resource hierarchy, or scaling a spec across many resources.
+description: >-
+  Use when modeling an API's resources — mapping an operation to CRUD vs. a custom method,
+  deciding singleton vs. collection, structuring parent-child nesting depth, or splitting a
+  growing interface spec per resource. Trigger on requests like "should this be a custom verb
+  endpoint", "리소스 계층 어떻게 잡을까", "nested route depth limit", "API 리소스 모델링 해줘". Do NOT use for a
+  list endpoint's pagination, filtering, or field-selection contract (use
+  api-design-payload-design).
 metadata:
   axis: resource-modeling
   rule_count_floor: 10

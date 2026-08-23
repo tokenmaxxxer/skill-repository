@@ -1,6 +1,12 @@
 ---
 name: legal-compliance-retention-minimization
-description: Use when deciding what personal data to collect, how long to keep it, or whether an already-collected category may be reused for a new purpose.
+description: >-
+  Use when deciding what personal data to collect, how long to keep it, or
+  whether an already-collected category may be reused for a new purpose.
+  Trigger on requests like "retention period for this field", "delete or
+  anonymize after the period lapses", "개인정보 보관 기간 정해줘", "reuse collected data
+  for a new feature". Do NOT use for choosing why the processing is lawful in
+  the first place (use legal-compliance-lawful-basis-selection).
 metadata:
   axis: retention-and-minimization
   rule_count_floor: 2

@@ -1,6 +1,13 @@
 ---
 name: pricing-design-rigor
-description: Use when a study design or fielding plan is already chosen and needs a rigor check — banding a CBC/CVA design's task ratio and task count, or deciding whether and how to incentive-align a conjoint study before it fields.
+description: >-
+  Use when a conjoint study design or fielding plan is already chosen and needs
+  a rigor check — banding a CBC/CVA design's task ratio and task count, or
+  deciding whether and how to incentive-align the study before it fields.
+  Trigger on requests like "컨조인트 설계 검토해줘", "is 12 choice tasks too many for this
+  CBC", "check the task ratio of our conjoint design", "should we
+  incentive-align the WTP study". Do NOT use to pick between PSM and conjoint in
+  the first place (use pricing-method-family).
 metadata:
   axis: design-rigor
   rule_count_floor: 3

@@ -1,6 +1,14 @@
 ---
 name: data-modeling-structure
-description: Use when choosing a target normal form, breaking it deliberately for a measured read-path bottleneck, or selecting keys, indexes, and model-layer traceability for any schema, independent of Inmon/Kimball/Data Vault.
+description: >-
+  Use when choosing a target normal form, breaking it deliberately for a
+  measured read-path bottleneck, or selecting keys, indexes, and model-layer
+  traceability for any schema, independent of Inmon/Kimball/Data Vault. Trigger
+  on requests like "정규화 어디까지 해야 해", "3NF or BCNF", "surrogate key vs natural
+  key", "index this foreign key". Methodology-agnostic — it applies before any
+  warehouse-style choice. Do NOT use for the methodology decision itself or its
+  style-specific structures (use data-modeling-kimball, data-modeling-inmon, or
+  data-modeling-datavault by condition).
 metadata:
   axis: structure
   rule_count_floor: 10

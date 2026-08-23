@@ -1,6 +1,14 @@
 ---
 name: partnerships-bd-deal-structure-selection
-description: Use when choosing which partnership vehicle (revenue share, licensing, reseller, joint venture, co-marketing) fits a proposed deal, when more than one vehicle could plausibly work, or when a live revenue-share agreement keeps generating disputes over what counts as revenue.
+description: >-
+  Use when choosing which partnership vehicle (revenue share, licensing,
+  reseller, joint venture, co-marketing) fits a proposed deal, when more than
+  one vehicle could plausibly work, or when a live revenue-share agreement keeps
+  sparking disputes over what counts as revenue. Trigger on requests like "파트너십
+  딜 구조 뭘로 할까", "revenue share or licensing for this deal", "should this be a
+  joint venture or a reseller deal", "our rev-share contract keeps hitting
+  revenue-definition disputes". Do NOT use for drafting the exclusivity clause
+  inside the chosen vehicle (use partnerships-bd-exclusivity-and-scope-terms).
 metadata:
   axis: deal-structure-selection
   rule_count_floor: 3

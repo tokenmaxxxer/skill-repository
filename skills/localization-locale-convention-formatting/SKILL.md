@@ -1,6 +1,12 @@
 ---
 name: localization-locale-convention-formatting
-description: Use when rendering or reviewing a date, number, currency, or address string for a locale, classifying a locale-convention formatting defect, or verifying an LLM-based translation step holds the text-vs-instruction boundary.
+description: >-
+  Use when rendering or reviewing a date, number, currency, or address string for a locale,
+  classifying a locale-convention formatting defect, or verifying an LLM-based translation
+  step holds the text-vs-instruction boundary. Trigger on requests like "format this date
+  for de-DE", "currency symbol or ISO code", "천단위 구분자 로케일별로 맞춰줘", "MQM locale convention
+  tag". Do NOT use for plural-variant wording driven by a numeric placeholder (use
+  localization-pluralization-and-grammar).
 metadata:
   axis: locale-convention-formatting
   rule_count_floor: 10

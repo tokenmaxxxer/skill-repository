@@ -1,6 +1,11 @@
 ---
 name: knowledge-management-curation-pruning
-description: Use when an entry has gone uncited past a review cycle, when auditing a flagged entry, or when deciding whether to update, merge, supersede, or remove a knowledge-library entry.
+description: >-
+  Use when an entry has gone uncited past a review cycle, when auditing a flagged entry, or
+  when deciding whether to update, merge, supersede, or remove a knowledge-library entry.
+  Trigger on requests like "prune stale knowledge entries", "audit the pattern library", "안
+  쓰는 문서 정리해줘", "merge these duplicate entries". Do NOT use for how to mark a replaced
+  entry's status and forward link (use knowledge-management-supersession-lifecycle).
 metadata:
   axis: curation-pruning
   rule_count_floor: 10

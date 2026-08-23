@@ -1,6 +1,15 @@
 ---
 name: product-discovery-opportunity-solution-tree-branching
-description: Use when placing a finding onto the Opportunity Solution Tree's four layers, prioritizing opportunities or solutions, or pruning invalidated/stale branches. Applies to the opportunity-solution-tree-branching axis.
+description: >-
+  Use when placing a finding onto the Opportunity Solution Tree's four layers, prioritizing
+  opportunities or solutions, or pruning invalidated/stale branches. Applies to the
+  opportunity-solution-tree-branching axis. Trigger on requests like "이 발견 트리 어느 층에 넣지", "is
+  this an opportunity or a solution", "prune the invalidated branches", "which assumption
+  test should run next". Covers layer classification
+  (outcome/opportunity/solution/assumption test), sizing limits (3-4 opportunities, 8-10
+  solutions), and prune-with-reason discipline. Do NOT use for the weekly scoping self-loop
+  that maintains product/opportunity-tree.md itself (use
+  product-discovery-opportunity-solution-tree).
 metadata:
   axis: opportunity-solution-tree-branching
   rule_count_floor: 10

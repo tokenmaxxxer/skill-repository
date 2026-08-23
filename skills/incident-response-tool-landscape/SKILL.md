@@ -1,9 +1,18 @@
 ---
 name: incident-response-tool-landscape
-description: Use when applying an incident-management tool ecosystem's design moves — auto-timeline capture, severity-driven escalation, blocking action-item gates, or linking instead of re-typing — to one of this role's own axes. Applies to the tool-landscape axis.
+description: >-
+  Use when applying an incident-management tool ecosystem's design moves —
+  auto-timeline capture, severity-driven escalation, blocking action-item
+  gates, or linking instead of re-typing — to one of this role's own axes.
+  Applies to the tool-landscape axis. Trigger on requests like "capture the
+  timeline as the incident unfolds", "link the live incident record instead of
+  re-typing it", "인시던트 도구 관행을 포스트모템 축에 적용해줘". Each move names which existing
+  axis rule it upgrades. Do NOT use for the timeline field's own content rules
+  (use incident-response-timeline-construction).
 metadata:
   axis: tool-landscape
   rule_count_floor: 4
+
 ---
 
 # Tool-landscape learnings

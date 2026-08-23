@@ -1,6 +1,14 @@
 ---
 name: finance-unit-economics-sensitivity-scenario
-description: Use when a forward unit-economics model needs sensitivity analysis sequenced before scenario work, a fixed three-scenario frame, a deduplicated what-if appendix, or a single named definition for a variable feeding more than one output.
+description: >-
+  Use when a forward unit-economics model needs sensitivity analysis sequenced
+  before scenario work, a fixed base/bull/bear three-scenario frame, a
+  deduplicated what-if appendix, or a single named definition for a variable
+  feeding more than one downstream figure. Trigger on requests like "민감도 분석 해줘",
+  "which assumption matters most in this model", "set up base bull bear
+  scenarios", "sensitivity vs scenario analysis, which first". Do NOT use for
+  the churn-specific assumption check on LTV (use
+  finance-unit-economics-ltv-churn-assumption).
 metadata:
   axis: sensitivity-scenario
   rule_count_floor: 12

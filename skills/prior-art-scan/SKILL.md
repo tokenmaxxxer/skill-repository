@@ -1,17 +1,16 @@
 ---
 name: prior-art-scan
 description: >-
-  An execution harness for prior-art and patent scanning that runs the actual triple search
-  (keyword + classification + citation) across free patent databases, reads claims correctly,
-  tracks recall/coverage, and delivers a graded findings report — while staying strictly on the
-  research side of the research-vs-legal-opinion line. Use whenever the user wants to check what
-  already exists before building or filing — "이거 특허 있나 찾아봐", "prior art search for this",
-  "is this idea already patented", "freedom to operate check", "has someone done this before",
-  "patent landscape for X", "will this infringe existing patents". Trigger it when someone is
-  about to build or file assuming the space is clear. It produces a research base and flags what
-  needs a patent attorney; it does NOT give a legal clearance opinion. Do NOT use for trademark
-  questions, general market/competitor research (market-recon), or when the user explicitly needs
-  a formal legal FTO opinion (that requires a qualified attorney — say so).
+  Use whenever the user wants to check what already exists before building or filing: an execution
+  harness for prior-art and patent scanning that runs the actual triple search (keyword +
+  classification + citation) across free patent databases, reads claims correctly, tracks
+  recall/coverage, and delivers a graded findings report — while staying strictly on the research
+  side of the research-vs-legal-opinion line. Trigger on requests like "이거 특허 있나 찾아봐", "prior art
+  search for this", "is this idea already patented", "freedom to operate check", "patent landscape
+  for X". It builds a research base and flags what needs a patent attorney; it does NOT give a
+  legal clearance opinion. Do NOT use for trademark questions, for general market/competitor
+  research (use market-recon), or when the user explicitly needs a formal legal FTO opinion — that
+  requires a qualified attorney; say so.
 ---
 
 # Prior-Art Scan — a search harness that stays on the research side of the legal line

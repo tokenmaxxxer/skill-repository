@@ -1,6 +1,11 @@
 ---
 name: game-hit-reaction-and-impact
-description: Use when tuning a hit's stop/knockback, adding damage numbers, assigning invulnerability frames, deciding screen-level hit feedback. Applies to the hit-reaction-and-impact axis.
+description: >-
+  Use when tuning a hit's stop/knockback, adding damage numbers, assigning invulnerability
+  frames, or deciding screen-level hit feedback. Trigger on requests like "hitstop duration",
+  "knockback curve", "floating damage numbers", "i-frames on hit", "피격 넉백 튜닝해줘". Do NOT use
+  for the broader juice/effect stack around non-combat actions (use
+  game-feel-juice-and-feedback).
 metadata:
   axis: hit-reaction-and-impact
   rule_count_floor: 5

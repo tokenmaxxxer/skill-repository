@@ -1,6 +1,11 @@
 ---
 name: game-character-rendering-composition
-description: Use when drawing or assembling a character from parts, judging silhouette readability, splitting an SVG/DOM rig into layers, handling facing/flip, or setting character-vs-field z-order. Applies to the character-rendering-composition axis.
+description: >-
+  Use when drawing or assembling a character from parts, judging silhouette readability,
+  splitting an SVG/DOM rig into layers, handling facing/flip, or setting character-vs-field
+  z-order. Trigger on requests like "character silhouette readability", "SVG character rig
+  layers", "left/right facing flip", "캐릭터 파츠 조립해줘". Do NOT use for state timing or motion of
+  those parts (use game-character-animation-and-motion).
 metadata:
   axis: character-rendering-composition
   rule_count_floor: 4

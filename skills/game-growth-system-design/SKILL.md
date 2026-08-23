@@ -1,6 +1,13 @@
 ---
 name: game-growth-system-design
-description: Use when setting a cost/pacing curve across sessions, adding or auditing a currency's sources and sinks, scheduling upgrade choices, choosing deterministic vs chance-based progression, or setting a return cadence. Applies to the growth-system-design axis.
+description: >-
+  Use when setting a cost/pacing curve across sessions, adding or auditing a currency's
+  sources and sinks, scheduling upgrade choices, choosing deterministic vs chance-based
+  progression, or setting a session-comeback cadence — including growth system balance where
+  stage and level scaling of monster HP and damage keeps hits-to-kill in an intended band as
+  the player grows. Trigger on requests like "upgrade cost curve", "per-stage monster
+  damage/HP scaling", "growth system balance", "성장 시스템 밸런스 잡아줘". Do NOT use for a single run's
+  reward loop or gating-item acquisition (use game-design-core-loop-and-progression).
 metadata:
   axis: growth-system-design
   rule_count_floor: 5

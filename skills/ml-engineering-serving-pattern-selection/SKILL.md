@@ -1,6 +1,15 @@
 ---
 name: ml-engineering-serving-pattern-selection
-description: Use when choosing between batch, online-synchronous, and online-asynchronous/streaming serving for a model workload, or deciding whether to micro-batch requests. Applies to the serving-pattern-selection axis.
+description: >-
+  Use when choosing between batch, online-synchronous, and
+  online-asynchronous/streaming serving for a model workload, or deciding
+  whether to micro-batch requests. Applies to the serving-pattern-selection axis
+  — latency tolerance, bounded vs unbounded input, accelerator-cost-driven
+  micro-batching, re-choosing when traffic shape shifts. Trigger on requests
+  like "배치로 서빙할까 온라인으로 할까", "batch vs online inference", "micro-batching 할까",
+  "streaming serving pattern". Do NOT use for setting the latency/availability
+  target the chosen pattern must then hit (use
+  ml-engineering-slo-definition-tradeoffs).
 metadata:
   axis: serving-pattern-selection
   rule_count_floor: 5

@@ -1,6 +1,12 @@
 ---
 name: customer-support-sla-tier-priority
-description: Use when a ticket needs an Impact x Urgency Priority tier and first-response/resolution commitment assigned, or when checking whether a legacy priority label maps to the ITIL matrix.
+description: >-
+  Use when a ticket needs an Impact x Urgency Priority tier and
+  first-response/resolution commitment assigned, or when checking whether a
+  legacy priority label maps to the ITIL matrix. Trigger on requests like "is
+  this P1 or P2", "티켓 우선순위 정해줘", "first-response SLA for this ticket", "Impact
+  Urgency matrix". Do NOT use for picking the escalation owner and timeout
+  after a breach (use customer-support-escalation-path).
 ---
 
 # SLA-tier priority decision rules

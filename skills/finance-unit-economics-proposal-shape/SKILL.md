@@ -1,6 +1,13 @@
 ---
 name: finance-unit-economics-proposal-shape
-description: Use when assembling a unit-economics proposal for a time-pressured reader — structuring progressive disclosure, capping compared options, running a subtractive edit pass, or cutting a definition-only glossary section.
+description: >-
+  Use when assembling a unit-economics proposal for a time-pressured reader —
+  structuring progressive disclosure, capping compared options at three, running
+  a subtractive edit pass, or cutting a definition-only glossary section.
+  Trigger on requests like "유닛 이코노믹스 제안서 정리해줘", "tighten this unit economics
+  deck", "too many pricing options in the proposal", "does the metrics glossary
+  stay". Do NOT use to trace or verify the figures' sourcing itself (use
+  finance-unit-economics-evidence-chain).
 metadata:
   axis: proposal-shape
   rule_count_floor: 12

@@ -1,6 +1,12 @@
 ---
 name: risk-management-response-strategy-selection
-description: Use when choosing between Avoid, Mitigate, Transfer, and Accept for a risk, selecting among candidate Mitigate controls, or auditing an Accept decision for missing ownership. Applies to the response-strategy-selection axis.
+description: >-
+  Use when choosing between Avoid, Mitigate, Transfer, and Accept for a risk,
+  selecting among candidate Mitigate controls, or auditing an Accept decision
+  for missing ownership. Trigger on requests like "should we mitigate or
+  accept this", "transfer via insurance?", "리스크 대응 전략 골라줘", "Accept with no
+  named owner". Do NOT use for setting the appetite threshold that frames the
+  decision (use risk-management-appetite-tolerance-threshold).
 metadata:
   axis: response-strategy-selection
   rule_count_floor: 10

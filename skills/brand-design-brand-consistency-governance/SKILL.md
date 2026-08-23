@@ -1,6 +1,12 @@
 ---
 name: brand-design-brand-consistency-governance
-description: Use when checking a new or changed brand asset against the standing brand system, defining who can edit a template's core identity elements, routing an asset through the right review tier, or auditing a shared asset library for stale/unapproved versions.
+description: >-
+  Use when checking a new or changed brand asset against the standing brand system, defining
+  who can edit a template's core identity elements, routing an asset through the right review
+  tier, or auditing a shared asset library for stale/unapproved versions. Trigger on requests
+  like "brand asset review workflow", "template lock rules", "stale asset library audit", "브랜드
+  가이드 준수 점검해줘". Do NOT use to judge whether an asset fits the brand's declared identity itself
+  (use brand-design-brand-identity-strategy).
 metadata:
   axis: brand-consistency-governance
   rule_count_floor: 3

@@ -1,9 +1,17 @@
 ---
 name: incident-response-blameless-language-editing
-description: Use when editing a draft postmortem's prose for blame language — person-attributed mistakes, "should have" judgments, or individual credit. Applies to the blameless-language-editing axis.
+description: >-
+  Use when editing a draft postmortem's prose for blame language —
+  person-attributed mistakes, "should have" judgments, or individual credit.
+  Applies to the blameless-language-editing axis. Trigger on requests like
+  "make this postmortem blameless", "rewrite the should-have sentences",
+  "포스트모템에서 비난성 표현 고쳐줘". Rewrites to we-framing, system-language, process
+  questions, and observable facts. Do NOT use for deciding which facts and
+  events belong in the timeline (use incident-response-timeline-construction).
 metadata:
   axis: blameless-language-editing
   rule_count_floor: 4
+
 ---
 
 # Blameless language editing

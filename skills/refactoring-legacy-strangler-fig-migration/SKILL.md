@@ -1,6 +1,15 @@
 ---
 name: refactoring-legacy-strangler-fig-migration
-description: Use when choosing between Strangler Fig and Branch by Abstraction for a legacy migration, scoping a migration slice, verifying a new implementation's correctness before cutover, or deciding when to decommission the legacy path.
+description: >-
+  Use when choosing between Strangler Fig and Branch by Abstraction for a legacy
+  migration, scoping a migration slice, verifying a new implementation's
+  correctness before cutover, or deciding when to decommission the legacy path.
+  Covers facade routing at request boundaries, parallel-run/shadow-traffic
+  comparison, and monitoring-confirmed zero-traffic deletion. Trigger on
+  requests like "스트랭글러 패턴으로 마이그레이션하자", "strangler fig or branch by abstraction",
+  "when can we delete the legacy path", "migration slice scoping". Do NOT use
+  for placing a small in-method change point in untested code (use
+  refactoring-legacy-seam-selection).
 metadata:
   axis: strangler-fig-migration
   rule_count_floor: 5

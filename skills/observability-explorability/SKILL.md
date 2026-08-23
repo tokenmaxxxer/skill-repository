@@ -1,6 +1,12 @@
 ---
 name: observability-explorability
-description: Use when designing a dashboard or planning an incident investigation and the design must stay open to ad-hoc questions beyond pre-built panels. Applies to the explorability axis.
+description: >-
+  Use when designing a dashboard or planning an incident investigation and the
+  design must stay open to ad-hoc questions beyond pre-built panels. Trigger
+  on requests like "we need another dashboard panel for X", "ad-hoc query over
+  raw events", "대시보드로 답 안 나오는 질문 조사해줘", "high dimensionality spans". Do NOT
+  use for picking the concrete signal methodology for a surface (use
+  observability-methodology-selection).
 metadata:
   axis: explorability
   rule_count_floor: 3

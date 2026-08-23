@@ -1,6 +1,14 @@
 ---
 name: product-discovery-hypothesis-preregistration
-description: Use when a hypothesis needs its primary metric, numeric threshold, and decision rule fixed before any data collection begins, or when ranking candidate hypotheses to register next. Applies to the hypothesis-preregistration axis.
+description: >-
+  Use when a hypothesis needs its primary metric, numeric threshold, and decision rule fixed
+  before any data collection begins, or when ranking candidate hypotheses to register next.
+  Applies to the hypothesis-preregistration axis. Trigger on requests like "가설 사전등록 해줘",
+  "fix the ship criterion before we launch", "what sample size and duration should we
+  register", "someone wants to change the metric mid-test". Covers guardrail degradation
+  bounds, sample size/duration, and refusing mid-flight changes. Do NOT use for moving a
+  proposal file through product-cycle's state machine (use
+  product-discovery-hypothesis-testing).
 metadata:
   axis: hypothesis-preregistration
   rule_count_floor: 10

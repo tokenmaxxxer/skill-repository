@@ -1,6 +1,13 @@
 ---
 name: content-design-operational-playbook
-description: Use when writing or reviewing user-facing copy — error messages, button/CTA and confirmation-dialog labels, plain-language phrasing, empty-state or onboarding text, tone-of-voice, copy-inventory reuse, or a staged revision pass — and need the condition-matched wording/action to choose.
+description: >-
+  Use when writing or reviewing user-facing copy — error messages, button/CTA and
+  confirmation-dialog labels, plain-language phrasing, empty-state or onboarding text,
+  tone-of-voice, copy-inventory reuse, or a staged revision pass — and need the
+  condition-matched wording/action to choose. Trigger on requests like "write this error
+  message", "버튼 문구 뭐라고 하지", "confirmation dialog copy", "plain language pass on this text".
+  Do NOT use for cognitive-load shaping of developer tutorials (use
+  devrel-content-comprehensibility).
 ---
 
 # Content-design operational playbook

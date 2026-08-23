@@ -1,6 +1,13 @@
 ---
 name: finance-unit-economics-ltv-cac-band
-description: Use when an LTV:CAC ratio needs a motion-specific CAC band, an investor-facing framing that avoids overstating the 3:1 bar, a normalized per-cohort LTV input, or a healthy/watch/critical verdict scoped to the company's segment.
+description: >-
+  Use when an LTV:CAC ratio needs a motion-specific CAC benchmark band, an
+  investor-facing framing that avoids overstating the 3:1 bar, a
+  cohort-normalized LTV input, or a healthy/watch/critical unit-economics
+  verdict scoped to the company's segment. Trigger on finance requests like "LTV
+  CAC 비율 봐줘", "is our LTV:CAC healthy", "what CAC benchmark fits a PLG motion",
+  "frame our 3:1 LTV to CAC ratio for investors". Do NOT use for payback-period
+  speed or its threshold (use finance-unit-economics-cac-payback).
 metadata:
   axis: ltv-cac-band
   rule_count_floor: 12

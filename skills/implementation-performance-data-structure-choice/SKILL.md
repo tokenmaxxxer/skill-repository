@@ -1,6 +1,12 @@
 ---
 name: implementation-performance-data-structure-choice
-description: Use when choosing a data structure, algorithm, or communication scheme that could introduce a performance cliff — membership testing in a loop, comparing algorithms by asymptotic class, per-message connections, or a cache/index whose maintenance cost may now outweigh its benefit.
+description: >-
+  Use when choosing a data structure, algorithm, or communication scheme that could introduce a
+  performance cliff — membership testing in a loop, comparing algorithms by asymptotic class,
+  per-message connections, or a cache/index whose maintenance cost may now outweigh its benefit.
+  Trigger on requests like "list vs set for lookup in this loop", "이 캐시 유지할 가치 있어?", "자료구조 뭐
+  쓸까", "batch these small frequent messages?". Do NOT use for coupling/cohesion restructuring
+  decisions (use implementation-complexity-coupling-management).
 metadata:
   axis: performance-data-structure-choice
   rule_count_floor: 6

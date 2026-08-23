@@ -1,6 +1,16 @@
 ---
 name: verify-finding-record
-description: Use while acting as the verify role in the reproducing or reproduced state, once an attempt has been made and needs its outcome written down in verify-record.md — never to fix or patch what was found.
+description: >-
+  Use while acting as the verify role in the reproducing or reproduced state,
+  once an attempt has been made and needs its outcome written down in
+  verify-record.md — never to fix or patch what was found. Trigger on requests
+  like "record the attempt in verify-record.md", "reproduced vs not-reproduced
+  outcome block", "blocked needs-repro-access entry", "재현 시도 결과 기록해줘". Covers
+  the three-value outcome set and the escalating finding block addressed to
+  coding. Do NOT use for attaching the severity band to an already-recorded
+  finding (use verify-severity-classification); the review-side analog is
+  conformance-review-finding-record.
+
 ---
 
 # finding-record

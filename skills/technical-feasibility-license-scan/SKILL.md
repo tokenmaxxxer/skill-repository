@@ -1,6 +1,14 @@
 ---
 name: technical-feasibility-license-scan
-description: Use when the feasibility role is in its `probing` state and needs to run the legal-regulatory probe — i.e. dependencies (packages, SaaS, third-party services) are being pulled into the specification and their licenses and applicable regulatory regimes have not yet been recorded.
+description: >-
+  Use when the feasibility role is in its `probing` state and needs to run the
+  legal-regulatory probe — i.e. dependencies (packages, SaaS, third-party
+  services) are being pulled into the specification and their licenses and
+  applicable regulatory regimes have not yet been recorded. Trigger on requests
+  like "라이선스 스캔해줘", "license scan the dependencies", "per-dependency license
+  verdict", "regulatory applicability note". Do NOT use for judging DPIA
+  necessity or GDPR high-risk thresholds by decision rule outside the probe
+  workflow (use technical-feasibility-license-and-regulatory-risk).
 ---
 
 # License scan

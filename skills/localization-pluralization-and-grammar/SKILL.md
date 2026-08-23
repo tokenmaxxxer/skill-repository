@@ -1,6 +1,12 @@
 ---
 name: localization-pluralization-and-grammar
-description: Use when a message's wording depends on a numeric placeholder, when authoring source plural variants, or when a target locale's grammatical gender/case could change an adjacent word form.
+description: >-
+  Use when a message's wording depends on a numeric placeholder, when authoring source
+  plural variants, or when a target locale's grammatical gender/case could change an
+  adjacent word form. Trigger on requests like "ICU MessageFormat plural", "CLDR plural
+  categories", "복수형 처리 어떻게 해", "gendered string variant". Do NOT use for
+  date/number/currency separator conventions (use
+  localization-locale-convention-formatting).
 metadata:
   axis: pluralization-and-grammar
   rule_count_floor: 10

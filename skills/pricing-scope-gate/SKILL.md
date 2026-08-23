@@ -1,6 +1,14 @@
 ---
 name: pricing-scope-gate
-description: Use when a pricing-adjacent request first arrives, before any method is fielded, to decide whether it names a defined product, whether an existing study already covers it within its shelf life, or whether it should be routed to market-recon or dropped entirely.
+description: >-
+  Use when a pricing-adjacent request first arrives, before any method is
+  fielded, to decide whether it names a defined product, whether an existing
+  study already covers it within its shelf life, or whether it should be routed
+  to market-recon or dropped entirely. Trigger on requests like "이거 가격조사부터 해야
+  하나", "do we need new pricing research or is last year's study fine", "how long
+  is a WTP study's shelf life", "price something we haven't defined yet". Do NOT
+  use once the product and method question are already settled (use
+  pricing-method-family).
 metadata:
   axis: scope-gate
   rule_count_floor: 2

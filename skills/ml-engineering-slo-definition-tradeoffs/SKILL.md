@@ -1,6 +1,14 @@
 ---
 name: ml-engineering-slo-definition-tradeoffs
-description: Use when setting or auditing a model-serving SLO and its error-budget policy, including deploy-velocity tradeoffs as the budget depletes. Applies to the slo-definition-tradeoffs axis.
+description: >-
+  Use when setting or auditing a model-serving SLO and its error-budget policy,
+  including deploy-velocity tradeoffs as the budget depletes. Applies to the
+  slo-definition-tradeoffs axis — user-tolerance-derived targets, availability
+  tiers by criticality, deploy slowdown under 25% budget and freeze at 0%,
+  duplicate-SLI pruning. Trigger on requests like "서빙 SLO 잡아줘", "error budget
+  policy", "latency SLO target", "deploy freeze 기준". Do NOT use for choosing the
+  serving architecture the SLO applies to (use
+  ml-engineering-serving-pattern-selection).
 metadata:
   axis: slo-definition-tradeoffs
   rule_count_floor: 5

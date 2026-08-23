@@ -1,6 +1,13 @@
 ---
 name: pricing-method-family
-description: Use when a pricing question has already cleared the scope gate and needs a research method chosen — routing between the Van Westendorp PSM threshold family and the CBC-vs-CVA conjoint family based on what input the decision actually needs.
+description: >-
+  Use when a pricing question has already cleared the scope gate and needs a
+  research method chosen — routing between the Van Westendorp PSM threshold
+  family and the CBC-vs-CVA conjoint family based on what input the decision
+  actually needs. Trigger on requests like "가격조사 어떤 방법으로 할까", "PSM or conjoint
+  for this pricing question", "CBC vs CVA", "which willingness-to-pay method
+  fits this decision". Do NOT use to grade the rigor of a conjoint design
+  already chosen (use pricing-design-rigor).
 metadata:
   axis: method-family-selection
   rule_count_floor: 3

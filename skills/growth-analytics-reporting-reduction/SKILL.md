@@ -1,6 +1,13 @@
 ---
 name: growth-analytics-reporting-reduction
-description: Use when drafting a funnel-diagnosis or experiment-trust deliverable, or when a funnel-diagnosis section carries more than one prioritized recommendation. Applies to the reporting-reduction axis.
+description: >-
+  Use when drafting a funnel-diagnosis or experiment-trust deliverable, or when a
+  funnel-diagnosis section carries more than one prioritized recommendation. Applies to the
+  reporting-reduction axis. Trigger on requests like "리포트 권고안 줄여줘", "too many
+  recommendations in this diagnosis", "look for a subtractive fix first", "trim this funnel
+  report". Enforces subtractive-fix search before additive ones and at most one prioritized
+  recommendation, scoped to the weakest stage. Do NOT use for SRM checks or anomalous-win
+  trust verdicts on the experiment itself (use growth-analytics-experiment-trust).
 metadata:
   axis: reporting-reduction
   rule_count_floor: 2

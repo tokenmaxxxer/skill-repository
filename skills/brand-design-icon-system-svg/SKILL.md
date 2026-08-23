@@ -1,6 +1,11 @@
 ---
 name: brand-design-icon-system-svg
-description: Use when drawing or reviewing an icon for an SVG icon system, sizing an icon to a keyline grid, deciding an icon's color/viewBox/aria attributes, or checking an icon's pixel-fitting at its target render size.
+description: >-
+  Use when drawing or reviewing an icon for an SVG icon system, sizing an icon to a keyline
+  grid, deciding an icon's color/viewBox/aria attributes, or checking an icon's pixel-fitting
+  at its target render size. Trigger on requests like "icon viewBox and stroke", "keyline grid
+  fit", "icon reads at 16px", "아이콘 그리드에 맞춰줘". Do NOT use for choosing the palette hues
+  themselves (use brand-design-color-visibility).
 metadata:
   axis: icon-system-svg
   rule_count_floor: 5

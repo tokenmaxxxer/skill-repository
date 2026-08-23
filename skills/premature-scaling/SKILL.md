@@ -1,17 +1,16 @@
 ---
 name: premature-scaling
 description: >-
-  A stage-alignment diagnostic that detects premature scaling: acting (hiring, spending,
-  building) ahead of what validated traction actually supports. Use this whenever the user is
-  weighing whether to scale up — e.g. "지금 확장해도 될까", "팀 늘려도 되나", "스케일업 시점 점검", "이 시점에
-  채용해도 될까", "펀딩 받은 김에 마케팅 늘려도 될까", "should we scale now", "is it too early to hire/spend/build
-  this much", "are we scaling too fast", "premature scaling check". The diagnosis is a set of
+  Use when a startup is weighing whether hiring, marketing spend, or build-out is running ahead of
+  what validated traction supports — the premature-scaling diagnosis. The check is a set of
   numeric comparisons between measured traction and measured action across five controllable
-  dimensions — not a vibes-based "does this feel too early" judgment call. Do NOT use it when
-  there is no traction data at all yet and no willingness to produce any (that's a discovery
-  problem, not a scaling problem — point to user-discovery instead), when the user has already
-  validated traction and is just asking for execution help (just do the task), or for a single
-  small, cheap, reversible action that doesn't warrant a five-dimension audit.
+  dimensions, not a vibes-based "does this feel too early" judgment call. Trigger on requests like
+  "지금 채용 늘려도 될까", "PMF 전에 마케팅 지출 늘려도 되나", "are we hiring too fast for our traction", "premature
+  scaling check for our startup", "is our burn ahead of validation". Do NOT use when there is no
+  traction data at all and no willingness to gather any (that's a discovery problem — point to
+  user-discovery), when traction is already validated and the ask is execution help, for a single
+  small, cheap, reversible action, or for auditing code that overshot its spec (use
+  overengineering-audit).
 ---
 
 # Premature Scaling

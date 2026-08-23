@@ -1,6 +1,14 @@
 ---
 name: pricing-verdict-report
-description: Use when a pricing method has already produced numbers and they need to be assembled into a labeled, six-element verdict — correctly naming what PSM/conjoint outputs mean, stating the residual list, and handing off revenue/volume questions rather than answering them from the same data.
+description: >-
+  Use when a pricing method has already yielded raw numbers (PSM crossings,
+  conjoint utilities or preference share) and they need to be assembled into a
+  labeled six-element verdict — naming what the figures actually mean, stating
+  the residual list, and handing off revenue/volume questions rather than
+  answering them from the same data. Trigger on requests like "PSM 결과 정리해줘", "is
+  the PSM intersection the optimal price", "report the conjoint preference
+  share", "write up the pricing verdict". Do NOT use to check a design's rigor
+  before it fields (use pricing-design-rigor).
 metadata:
   axis: verdict-assembly
   rule_count_floor: 3

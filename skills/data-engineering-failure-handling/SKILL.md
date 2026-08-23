@@ -1,6 +1,14 @@
 ---
 name: data-engineering-failure-handling
-description: Use when classifying a pipeline failure as retry-vs-DLQ, setting DLQ alert thresholds, scaling recovery targets, or rolling back a bad load.
+description: >-
+  Use when classifying a pipeline failure as retry-vs-DLQ, setting DLQ alert
+  thresholds, scaling recovery targets, or rolling back a bad load. Covers
+  transient/permanent/ambiguous classification, bad-record isolation, replay
+  success-rate verification, criticality-scaled RTO, and cascading-failure DLQ
+  overflow. Trigger on requests like "재시도할까 DLQ로 보낼까", "dead letter queue alert
+  thresholds", "roll back this bad load", "pipeline recovery target". Do NOT use
+  for authoring the completeness/uniqueness/freshness checks that detect bad
+  data in the first place (use data-engineering-data-quality).
 metadata:
   axis: failure-handling
   rule_count_floor: 10

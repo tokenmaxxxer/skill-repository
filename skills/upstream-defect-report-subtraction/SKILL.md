@@ -1,10 +1,18 @@
 ---
 name: upstream-defect-report-subtraction
-description: Use when a draft defect report or its reproduction still contains "just in case" prose, redundant log/text duplication, unrelated repro lines, an investigation narrative, a private dependency, or an un-reverified suspected defect, right before filing.
+description: >-
+  Use when a draft defect report or its reproduction still contains "just in
+  case" prose, redundant log/text duplication, unrelated repro lines, an
+  investigation narrative, a private dependency, or an un-reverified suspected
+  defect, right before filing. Trigger on requests like "trim this bug
+  report", "minimal reproducible example", "cut the investigation narrative",
+  "버그 리포트에서 불필요한 내용 쳐내줘". Do NOT use for matching the upstream project's
+  template, channel, or tone norms (use upstream-defect-report-convention).
 metadata:
   axis: subtraction
   rule_count_floor: 5
   role: upstream-defect-report
+
 ---
 
 # Subtraction — what to remove before filing

@@ -1,6 +1,12 @@
 ---
 name: secure-coding-session-authentication
-description: Use when you need to decide how a session identifier is issued, stored, timed out, or resumed — cookie flags, storage location, timeout tiering, or multi-tab/device session linking.
+description: >-
+  Use when you need to decide how a session identifier is issued, stored, timed out, or resumed —
+  cookie flags (Secure, HttpOnly, SameSite), token storage location, idle/absolute timeout
+  tiering, or multi-tab/device session linking. Trigger on requests like "JWT를 localStorage에 둬도
+  돼?", "세션 타임아웃 얼마로 잡을까", "SameSite Strict or Lax for this cookie", "regen the session ID on
+  privilege change?". Do NOT use for deciding what an authenticated identity may act on (use
+  secure-coding-authorization-access-control).
 metadata:
   axis: session-authentication
   rule_count_floor: 9

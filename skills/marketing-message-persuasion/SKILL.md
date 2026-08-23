@@ -1,6 +1,13 @@
 ---
 name: marketing-message-persuasion
-description: Use when drafting or reviewing persuasive copy — choosing which rhetorical appeal to use, structuring sentences for a first-time reader, or deciding how many claims a single message should carry.
+description: >-
+  Use when drafting or reviewing persuasive copy — choosing which rhetorical appeal
+  (ethos/pathos/logos) to lead with, structuring sentences for a first-time reader, framing
+  against an existing audience schema, or deciding how many claims a single message should
+  carry. Trigger on requests like "카피 설득력 있게 다듬어줘", "which appeal should this ad lead with",
+  "is this message carrying too many claims", "rewrite for a first-time reader". Do NOT use
+  for campaign-wide cut decisions on channels, segments, or brand elements (use
+  marketing-scope-pruning).
 metadata:
   axis: message-persuasion
   rule_count_floor: 5

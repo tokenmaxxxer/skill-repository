@@ -1,6 +1,12 @@
 ---
 name: legal-compliance-consent-ux
-description: Use when designing or reviewing a consent-collecting interface — cookie/consent banners, opt-in forms, or any accept/reject or checkbox control gating non-essential data processing.
+description: >-
+  Use when designing or reviewing a consent-collecting interface —
+  cookie/consent banners, opt-in forms, or any accept/reject or checkbox
+  control gating non-essential data processing. Trigger on requests like
+  "cookie banner reject button placement", "pre-checked opt-in box", "쿠키 동의 배너
+  검토해줘", "Accept All bundling". Do NOT use for deciding whether consent is
+  even the right lawful basis (use legal-compliance-lawful-basis-selection).
 metadata:
   axis: consent-mechanism-ux
   rule_count_floor: 2

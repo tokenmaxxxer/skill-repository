@@ -1,6 +1,13 @@
 ---
 name: finance-unit-economics-cac-payback
-description: Use when a proposal or model needs a CAC payback headline metric picked, banded by motion, kept isolated from overhead, or jointly checked against gross margin and burn multiple before it is called healthy.
+description: >-
+  Use when a proposal or model needs a CAC payback headline metric picked,
+  banded by motion, kept isolated from overhead, or jointly checked against
+  gross margin and burn multiple before it is called healthy. Trigger on
+  requests like "CAC payback 기간 봐줘", "is our CAC payback healthy", "payback vs
+  LTV:CAC as the headline metric", "SMB self-serve payback benchmark". Do NOT
+  use to judge the LTV:CAC ratio magnitude itself (use
+  finance-unit-economics-ltv-cac-band).
 metadata:
   axis: cac-payback
   rule_count_floor: 12

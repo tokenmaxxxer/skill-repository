@@ -1,6 +1,13 @@
 ---
 name: customer-support-escalation-path
-description: Use when a ticket needs escalation — a P1/P2 unresolved past its response or resolution target, an unacknowledged prior escalation, or a repeat unresolved defect — to pick the named owner and timeout for the next tier.
+description: >-
+  Use when a ticket needs escalation — a P1/P2 unresolved past its response or
+  resolution target, an unacknowledged prior escalation, or a repeat
+  unresolved defect — to pick the named owner and timeout for the next tier.
+  Trigger on requests like "P1 still open after 30 minutes", "who do we
+  escalate to", "에스컬레이션 누구한테 올려", "escalation unacknowledged". Do NOT use for
+  assigning the Priority tier and first-response commitment itself (use
+  customer-support-sla-tier-priority).
 ---
 
 # Escalation-path decision rules

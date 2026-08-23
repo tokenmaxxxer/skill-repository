@@ -1,13 +1,13 @@
 ---
 name: product-discovery-guardrail-metrics
-description: >
-  Use this skill while the product role is in `hypothesis-registered`,
-  before the transition to `measuring`, to name guardrail metrics that
-  must not move adversarially — distinct from the primary metric or
-  threshold, which belong to `hypothesis-testing`. Trigger it alongside
-  metric/threshold/decision-rule registration, and read it again once
-  `measuring` starts so guardrail breaches are checked against what was
-  named here.
+description: >-
+  Use this skill while the product role is in `hypothesis-registered`, before the transition
+  to `measuring`, to name guardrail metrics that must not move adversarially, and read it
+  again once `measuring` starts so breaches are checked against what was named. Trigger
+  alongside metric/threshold/decision-rule registration, on requests like "측정 들어가기 전에 가드레일
+  등록해줘", "which metrics must not degrade", "add guardrails to the hypothesis record", "check
+  this result against the registered guardrails". Do NOT use to register the primary metric,
+  threshold, or decision rule themselves (use product-discovery-hypothesis-testing).
 ---
 
 # Guardrail metrics for `hypothesis-registered` / `measuring`

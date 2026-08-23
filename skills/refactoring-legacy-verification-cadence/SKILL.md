@@ -1,6 +1,14 @@
 ---
 name: refactoring-legacy-verification-cadence
-description: Use when deciding how often to run tests during a refactoring sequence, ordering fast vs. slow suites, scoping which regression tests to re-run per step, monitoring a canary rollout, or reacting to a failed captured test.
+description: >-
+  Use when deciding how often to run tests during a refactoring sequence,
+  ordering fast vs. slow suites, scoping which regression tests to re-run per
+  step, monitoring a canary rollout, or reacting to a failed captured test.
+  Trigger on requests like "테스트 언제마다 돌려야 해", "fast tests first pipeline",
+  "canary rollback trigger", "which regression tests per step". Treats any
+  captured-test failure as stop-and-revert, never adjust-the-test. Do NOT use
+  for deciding what the characterization suite should capture in the first place
+  (use refactoring-legacy-characterization-test-scope).
 metadata:
   axis: verification-cadence
   rule_count_floor: 5

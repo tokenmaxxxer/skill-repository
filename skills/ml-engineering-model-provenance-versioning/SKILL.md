@@ -1,6 +1,14 @@
 ---
 name: ml-engineering-model-provenance-versioning
-description: Use when authoring a model card or deciding how a trained model and its training data should be versioned and traced back to their lineage. Applies to the model-provenance-versioning axis.
+description: >-
+  Use when authoring a model card or deciding how a trained model and its
+  training data should be versioned and traced back to their lineage. Applies to
+  the model-provenance-versioning axis — full model-card section set, explicit
+  out-of-scope uses, model version tied to training run, dataset version paired
+  alongside. Trigger on requests like "모델 카드 써줘", "model card audit", "version
+  this dataset with the model", "trace the model to its training run". Do NOT
+  use for scoring the surrounding test suite's completeness against the
+  readiness rubric (use ml-engineering-ml-test-score-scoring).
 metadata:
   axis: model-provenance-versioning
   rule_count_floor: 5

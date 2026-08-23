@@ -1,17 +1,16 @@
 ---
 name: agent-coordination
 description: >-
-  In-flight coordination protocol for AI agents sharing a git repository:
-  file-based claim registration, conflict detection, heartbeat monitoring,
-  structured negotiation via `.agents/` directory, and unilateral resolution
-  on timeout. Use when multiple agents are writing to the same repo
-  concurrently — the operational bridge between `parallel-decomposition`
-  (pre-flight cut) and `merge-gates` (landing checks). Trigger when an agent
-  starts work on a shared repo or detects a write-set collision mid-task.
-  Do NOT use for read-only research fan-out, for single-agent tasks, or to
-  replace `parallel-decomposition` or `merge-gates` — this skill does not cut
-  the work and does not design landing gates. It keeps agents from stepping on
-  each other while they work.
+  Use when multiple agents are writing to the same repo concurrently — when an agent starts
+  work on a shared repo or detects a write-set collision mid-task. In-flight coordination
+  protocol for AI agents sharing a git repository: file-based claim registration, conflict
+  detection, heartbeat monitoring, structured negotiation via the ".agents/" directory, and
+  unilateral resolution on timeout — the operational bridge between parallel-decomposition
+  (pre-flight cut) and merge-gates (landing checks). Trigger on "에이전트끼리 충돌 안 나게 조율해줘", "two
+  agents are editing the same files", "claim this file set before working". Do NOT use for
+  read-only research fan-out, for single-agent tasks, or to replace parallel-decomposition
+  or merge-gates — this skill does not cut the work and does not design landing gates; it
+  keeps agents from stepping on each other while they work.
 ---
 
 # Agent Coordination

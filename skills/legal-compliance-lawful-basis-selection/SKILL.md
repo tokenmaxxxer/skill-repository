@@ -1,6 +1,12 @@
 ---
 name: legal-compliance-lawful-basis-selection
-description: Use when selecting or auditing the GDPR Article 6(1) lawful basis (contract, legitimate interests, or consent) for a specific data processing activity.
+description: >-
+  Use when selecting or auditing the GDPR Article 6(1) lawful basis (contract,
+  legitimate interests, or consent) for a specific data processing activity.
+  Trigger on requests like "which lawful basis for analytics", "legitimate
+  interests balancing test", "처리 근거 뭐로 잡아야 해", "consent as last resort". Do
+  NOT use for designing the interface that collects consent (use
+  legal-compliance-consent-ux).
 metadata:
   axis: lawful-basis-selection
   rule_count_floor: 2

@@ -1,6 +1,15 @@
 ---
 name: technical-feasibility-reversibility-and-spike-scoping
-description: Use when a candidate architectural decision must be sorted into two-way-door vs. one-way-door and, for one-way-door candidates, scoped into a timeboxed spike with sensitivity/tradeoff points and third-party-checkable acceptance criteria — not when the task is comparing dependency health, license/regulatory exposure, threat-model disposition, or assembling the final verdict/timebox record.
+description: >-
+  Use when a candidate architectural decision must be sorted into two-way-door
+  vs. one-way-door and, for one-way-door candidates, scoped into a timeboxed
+  spike with sensitivity/tradeoff points and third-party-checkable acceptance
+  criteria. Trigger on requests like "one-way door인지 판단해줘", "is this decision
+  reversible", "scope a spike for this unknown", "set the spike timebox and
+  acceptance criteria". Do NOT use for stamping the Reversibility field on
+  individual probe findings already being written to feasibility-record.md (use
+  technical-feasibility-reversibility-tag), nor for running the spike itself and
+  writing its report (use technical-feasibility-spike-report).
 metadata:
   axis: reversibility-and-spike-scoping
   rule_count_floor: 10

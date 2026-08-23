@@ -1,7 +1,15 @@
 ---
 name: overengineering-audit
-description: Use when applying Over-engineering Audit. An audit that scans a completed implementation for code that exceeds the specification: unnecessary abstraction layers, interfaces with one implementation, features not in the requirements, unused dependencies, and scope that grew beyond what was asked. Use after AI produces code and you suspect it built more than necessary — e.g. "이 코드 필요 이상으로 복잡한지 봐줘", "요구사항에 없는 기능 찾아줘", "이거 너무 과하게 만든 거 아니야", "audit for over-engineering", "find unnecessary abstractions", "check if this is more than what was asked". Do NOT use for code style review (linter), for performance optimization (diagnose-first), or for architecture design decisions (tech-feasibility). This audit answers: "what exists in the implementation that the specification didn't ask for?"
-
+description: >-
+  Use when a completed implementation may exceed its specification and you need an audit for
+  unnecessary abstraction layers, interfaces with one implementation, features not in the
+  requirements, unused dependencies, and scope that grew beyond what was asked — typically after
+  AI wrote the code. Trigger on requests like "이 코드 필요 이상으로 복잡한지 봐줘", "요구사항에 없는 기능 찾아줘", "audit
+  for over-engineering", "find unnecessary abstractions", "check if this is more than what was
+  asked". The audit answers one question: what exists in the implementation that the specification
+  didn't ask for? Do NOT use for code style review (linter), performance work (diagnose-first),
+  architecture design decisions (tech-feasibility), or for judging whether a startup's hiring or
+  spend is running ahead of traction (use premature-scaling).
 ---
 
 # Over-engineering Audit

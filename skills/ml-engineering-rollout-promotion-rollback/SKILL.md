@@ -1,6 +1,14 @@
 ---
 name: ml-engineering-rollout-promotion-rollback
-description: Use when staging a new model version's rollout through shadow, canary, and full traffic, or defining its automated rollback trigger. Applies to the rollout-promotion-rollback axis.
+description: >-
+  Use when staging a new model version's rollout through shadow, canary, and
+  full traffic, or defining its automated rollback trigger. Applies to the
+  rollout-promotion-rollback axis — offline-eval -> shadow -> canary -> full
+  ordering, SLO-gated 5-10% canary slices, pre-declared rollback thresholds,
+  documented stage-skips at low traffic. Trigger on requests like "카나리 배포 계획
+  세워줘", "shadow deployment", "automated rollback trigger", "canary ramp plan".
+  Do NOT use for judging whether the underlying launch metric itself is
+  trustworthy (use ml-engineering-evaluation-discipline).
 metadata:
   axis: rollout-promotion-rollback
   rule_count_floor: 5

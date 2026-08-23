@@ -1,9 +1,18 @@
 ---
 name: incident-response-action-item-quality
-description: Use when drafting, prioritizing, or cutting a postmortem's action-item list — writing items, setting deadlines, or deciding what to drop. Applies to the action-item-quality axis.
+description: >-
+  Use when drafting, prioritizing, or cutting a postmortem's action-item list
+  — writing items, setting deadlines, or deciding what to drop. Applies to the
+  action-item-quality axis. Trigger on requests like "write the postmortem
+  action items", "owner verb outcome deadline check", "prioritize the
+  follow-up list", "포스트모템 액션 아이템 정리해줘". Sets severity-tied deadlines (15 days
+  for SEV1, 30 for SEV2) and cuts the list to 3-5 root-cause-addressing items.
+  Do NOT use for finding the causes those items address (use
+  incident-response-rca-method-selection).
 metadata:
   axis: action-item-quality
   rule_count_floor: 4
+
 ---
 
 # Action item quality and prioritization

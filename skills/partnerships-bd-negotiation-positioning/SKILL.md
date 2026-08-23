@@ -1,6 +1,14 @@
 ---
 name: partnerships-bd-negotiation-positioning
-description: Use when preparing to negotiate deal terms, when the counterpart's walk-away position becomes known or inferable mid-negotiation, or when a negotiation has stalled into repeated concession rounds on a single number.
+description: >-
+  Use when preparing to negotiate partnership deal terms, when the counterpart's
+  walk-away position becomes known or inferable mid-negotiation, or when a
+  negotiation has stalled into repeated concession rounds on a single number.
+  Trigger on requests like "파트너십 협상 준비 도와줘", "what's our BATNA for this
+  partnership deal", "their walk-away position just surfaced, now what", "we
+  keep trading concessions on the take rate". Do NOT use for drafting the
+  resulting exclusivity or scope clause (use
+  partnerships-bd-exclusivity-and-scope-terms).
 metadata:
   axis: negotiation-positioning
   rule_count_floor: 3

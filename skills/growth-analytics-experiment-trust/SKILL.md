@@ -1,6 +1,13 @@
 ---
 name: growth-analytics-experiment-trust
-description: Use when an experiment's traffic split looks skewed, an anomalous win needs a trust verdict before it is reported, or a guardrail metric's non-significant result needs to be surfaced rather than dropped. Applies to the experiment-trust axis.
+description: >-
+  Use when an experiment's traffic split looks skewed, an anomalous win needs a trust
+  verdict before it is reported, or a guardrail metric's non-significant result needs to be
+  surfaced rather than dropped. Applies to the experiment-trust axis. Trigger on requests
+  like "실험 결과 믿어도 돼?", "run an SRM check on this split", "this win looks too good — verify
+  it", "the guardrail didn't move, do we still report it". Do NOT use for the general
+  standalone A/B trustworthiness review outside a growth-analytics deliverable (use
+  experiment-trust).
 metadata:
   axis: experiment-trust
   rule_count_floor: 3

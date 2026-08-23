@@ -1,14 +1,15 @@
 ---
 name: product-discovery-hypothesis-testing
-description: >
-  Use this skill whenever the product role is moving a specification file
-  through product-cycle's state machine — scoping an idea, registering a
-  metric/threshold/decision rule, asking the user to approve the move into
-  measuring, or applying a registered rule to reach a decision — but not
-  to make the go/kill/pivot call yourself once measuring has started, as
-  that call belongs to the pre-registered rule, not fresh judgement.
-  Trigger it before writing status, metric, threshold, or decision_rule
-  into any file under docs/proposals/.
+description: >-
+  Use this skill whenever the product role is moving a specification file through
+  product-cycle's state machine — scoping an idea, registering a metric/threshold/decision
+  rule in docs/proposals/ frontmatter, asking the user to approve the move into measuring,
+  or applying a registered rule to reach a decision. Trigger before writing status, metric,
+  threshold, or decision_rule into any file under docs/proposals/, on requests like "가설 등록하고
+  measuring 넘어가자", "register this hypothesis", "apply the decision rule to the results",
+  "move the proposal to measuring". The go/kill/pivot call belongs to the pre-registered
+  rule, not fresh judgement. Do NOT use for the standalone axis rules on thresholds and
+  peeking outside the state machine (use product-discovery-hypothesis-preregistration).
 ---
 
 # Hypothesis testing for the product role

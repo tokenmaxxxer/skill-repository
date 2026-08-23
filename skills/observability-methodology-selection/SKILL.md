@@ -1,6 +1,13 @@
 ---
 name: observability-methodology-selection
-description: Use when a touched surface needs exactly one signal methodology (RED, USE, or Golden Signals) chosen, or when a redundant methodology dashboard is proposed on top of an existing one. Applies to the methodology-selection axis.
+description: >-
+  Use when a touched surface needs exactly one signal methodology (RED, USE,
+  or Golden Signals) chosen, or when a redundant methodology dashboard is
+  proposed on top of an existing one. Trigger on requests like "RED or USE for
+  this service?", "which signals should this endpoint have", "이 서비스 모니터링 방법론
+  골라줘", "Golden Signals overview 추가할까". Do NOT use for placing individual
+  Rate/Errors/Duration signals on an already-classified request surface (use
+  observability-signal-red).
 metadata:
   axis: methodology-selection
   rule_count_floor: 3

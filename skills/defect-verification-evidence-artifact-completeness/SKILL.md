@@ -1,9 +1,18 @@
 ---
 name: defect-verification-evidence-artifact-completeness
-description: Use when capturing, bundling, or labeling the evidence artifact for a defect-reproduction attempt — bundling steps, artifact, and environment into one self-contained pointer captured at attempt time rather than reconstructed afterward.
+description: >-
+  Use when capturing, bundling, or labeling the evidence artifact for a
+  defect-reproduction attempt — bundling steps, artifact, and environment into
+  one self-contained pointer captured at attempt time rather than
+  reconstructed afterward. Trigger on requests like "bundle the repro
+  evidence", "capture the trace and environment sha together", "label the
+  evidence pointer type", "재현 증거 아티팩트 정리해줘". Do NOT use for judging whether
+  the repro steps themselves are minimal and well-formed (use
+  defect-verification-reproduction-evidence-quality).
 metadata:
   axis: evidence-artifact-completeness
   rule_count_floor: 8
+
 ---
 
 # Evidence-artifact completeness for a reproduction attempt

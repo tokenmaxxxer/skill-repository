@@ -1,6 +1,13 @@
 ---
 name: risk-management-aggregation-consolidation
-description: Use when combining or rolling up scores across related register entries, flagging concentration risk, merging duplicate entries, retiring stale entries, or ordering a consolidated action queue. Applies to the aggregation-consolidation axis.
+description: >-
+  Use when combining or rolling up scores across related register entries,
+  flagging concentration risk, merging duplicate entries, retiring stale
+  entries, or ordering a consolidated action queue. Trigger on requests like
+  "roll up these correlated risks", "same vendor behind five entries", "리스크
+  레지스터 중복 정리해줘", "concentration exposure". Do NOT use for calibrating an
+  individual entry's likelihood/impact score (use
+  risk-management-likelihood-impact-scale).
 metadata:
   axis: aggregation-consolidation
   rule_count_floor: 10

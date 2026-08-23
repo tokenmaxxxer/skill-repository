@@ -1,6 +1,11 @@
 ---
 name: content-strategy-content-audit-and-inventory
-description: Use when starting a content audit, building a content inventory, or deciding whether a content-assessment task needs quantitative enumeration, qualitative judgment, or both in sequence.
+description: >-
+  Use when starting a content audit, building a content inventory, or deciding whether a
+  content-assessment task needs quantitative enumeration, qualitative judgment, or both in
+  sequence. Trigger on requests like "audit our docs site", "build a content inventory",
+  "콘텐츠 감사 해줘", "which pages are stale". Do NOT use for scheduling publish/review dates or
+  lifecycle stages (use content-strategy-editorial-calendar-and-cadence).
 metadata:
   axis: enumeration-vs-judgment-task-type
   rule_count_floor: 2

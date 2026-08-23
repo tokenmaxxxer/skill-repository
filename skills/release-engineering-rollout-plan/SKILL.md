@@ -1,15 +1,16 @@
 ---
 name: release-engineering-rollout-plan
 description: >-
-  Use when working the ops role's rollout state (ops/state.md status:
-  rollout). Asks the user for (or derives from the readiness record) the
-  traffic curve and per-step metric thresholds that gate progressive
-  delivery, and writes them to ops/rollout-plan.md. The rollout -> rollout
-  (canary step promotion) and rollout -> incident (breach) agent rows in
-  transition-rules.md read this file's thresholds mechanically — do not
-  invent a threshold in the moment; it must already be written here.
-  Do NOT use for the readiness checklist (readiness-checklist) or for the
-  postmortem written after an incident (postmortem).
+  Use when working the ops role's rollout state (ops/state.md status rollout)
+  — asking the user for, or deriving from the readiness record, the traffic
+  curve and per-step metric thresholds that gate progressive delivery, written
+  to ops/rollout-plan.md before the rollout -> rollout and rollout -> incident
+  agent rows can read them. Trigger on requests like "write the rollout plan",
+  "canary step thresholds and bake time", "traffic curve for progressive
+  delivery", "카나리 롤아웃 계획 세워줘". Do NOT use for the readiness checklist upstream
+  of rollout (use release-engineering-readiness-checklist) or the
+  post-incident writeup (release-engineering-postmortem).
+
 ---
 
 # rollout-plan — the canary/progressive-delivery plan

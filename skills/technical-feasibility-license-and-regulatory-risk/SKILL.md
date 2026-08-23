@@ -1,6 +1,13 @@
 ---
 name: technical-feasibility-license-and-regulatory-risk
-description: Use when the spec's open questions turn on DPIA necessity, GDPR high-risk classification, dependency license compatibility, or regulatory applicability given the spec's data-subject and jurisdiction footprint.
+description: >-
+  Use when the spec's open questions turn on DPIA necessity, GDPR high-risk
+  classification, dependency license compatibility, or regulatory applicability
+  given the spec's data-subject and jurisdiction footprint. Trigger on requests
+  like "DPIA 필요한지 판단해줘", "GDPR high-risk screening", "is this license compatible
+  with commercial distribution", "which regulations apply here". Do NOT use for
+  running the probing-state legal-regulatory probe's user-interview and
+  record-writing workflow (use technical-feasibility-license-scan).
 metadata:
   axis: license-and-regulatory-risk
   rule_count_floor: 10
