@@ -12,4 +12,4 @@
 
 ## Entries
 
-(아직 없음 — 첫 이슈를 드래프트할 때 R1 부터 여기에 추가한다)
+- R1: The skill repository continuously covers the decision points that consumer dogfood work actually hits — skill-family gaps observed in dogfood are folded in as sourced, condition-matched skills [live] (source: operator directive 2026-08-23, issue #90)
