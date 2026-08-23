@@ -23,7 +23,7 @@ Use this skill when drawing or assembling a character from parts, judging whethe
 
 ## Output shape
 
-A character build spec: the silhouette gate result (pass/fail at target size), the part/layer split (which nodes are independent groups vs. merged), the shape-language assignment per role, and the z-order contract naming each layer band the character interacts with.
+A character build spec: the silhouette gate result (pass/fail at target size), the part/layer split (which nodes are independent groups vs. merged), the shape-language assignment per role, and the z-order contract naming each layer band the character interacts with. For an animated gameplay entity, the part split must explicitly name head/torso/limbs/weapon-or-tool (cross-ref `game-character-animation-and-motion`'s layered rig floor) and record the rig decision — including a single-primitive build, which is only valid as a stated exception. **Fail condition: a build spec for an animated gameplay entity that ships a single-primitive node without a recorded rig-decision exception fails this output shape.**
 
 ## Decision rules
 
@@ -47,9 +47,9 @@ counter-example: For characters within the same role/faction that only need cosm
 
 ### 4. When splitting a character into an SVG/DOM rig, group parts by animation need and flip via transform
 
-When building a character as an SVG or DOM rig, give each part that must move independently its own node or group, keep parts that always move together merged into one node, and implement left/right facing as a single `scaleX(-1)` transform on the rig root rather than duplicating mirrored art, because this keeps the rig's node count matched to its actual animation degrees of freedom and avoids maintaining two copies of the same art.
+When building a character as an SVG or DOM rig, give each part that must move independently its own node or group, keep parts that always move together merged into one node, and implement left/right facing as a single `scaleX(-1)` transform on the rig root rather than duplicating mirrored art, because this keeps the rig's node count matched to its actual animation degrees of freedom and avoids maintaining two copies of the same art. For a gameplay entity that is animated (not a static icon), the part split must name at minimum head, torso, limbs, and weapon-or-tool as independent nodes — this is the same layered rig floor `game-character-animation-and-motion` sets for its rules; record which of those named parts exist as a rig decision in the build spec. A single-primitive node stands only as a recorded exception (e.g. an explicitly noted static/iconic case), never as an unstated default.
 source: Joshwcomeau — sprite/character animation in CSS and DOM (https://www.joshwcomeau.com/animation/sprites/) — covers DOM/CSS mechanics for animating and flipping character parts.
-counter-example: For a fully static character with no animation and no facing change (e.g. a single-orientation icon), splitting into independently animatable groups adds unnecessary complexity since nothing will ever move independently.
+counter-example: For a fully static character with no animation and no facing change (e.g. a single-orientation icon), splitting into independently animatable groups adds unnecessary complexity since nothing will ever move independently — but this exemption must itself be written down as the recorded rig decision, not left implicit.
 
 ### 5. When a character shares the screen with field/background elements, declare a named z-order contract once
 
