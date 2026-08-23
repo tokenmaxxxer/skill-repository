@@ -1,8 +1,9 @@
 ---
 name: market-analysis-mece-proposal
 description: Use when structuring a phase-1 proposal's required elements to check for content overlap between sections, choosing a MECE split for the analysis, or verifying the section set is collectively exhaustive against the rulebook's PRODUCES field. Applies to the mece-proposal axis.
-axis: mece-proposal
-rule_count_floor: 10
+metadata:
+  axis: mece-proposal
+  rule_count_floor: 10
 ---
 
 # MECE-structuring rules (phase-1 proposal)

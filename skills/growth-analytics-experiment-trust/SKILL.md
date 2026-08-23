@@ -1,8 +1,9 @@
 ---
 name: growth-analytics-experiment-trust
 description: Use when an experiment's traffic split looks skewed, an anomalous win needs a trust verdict before it is reported, or a guardrail metric's non-significant result needs to be surfaced rather than dropped. Applies to the experiment-trust axis.
-axis: experiment-trust
-rule_count_floor: 3
+metadata:
+  axis: experiment-trust
+  rule_count_floor: 3
 ---
 
 # Experiment-trust verdict rules

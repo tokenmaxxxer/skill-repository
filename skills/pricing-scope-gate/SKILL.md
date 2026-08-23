@@ -1,8 +1,9 @@
 ---
 name: pricing-scope-gate
 description: Use when a pricing-adjacent request first arrives, before any method is fielded, to decide whether it names a defined product, whether an existing study already covers it within its shelf life, or whether it should be routed to market-recon or dropped entirely.
-axis: scope-gate
-rule_count_floor: 2
+metadata:
+  axis: scope-gate
+  rule_count_floor: 2
 ---
 
 # Scope-gate decision rules

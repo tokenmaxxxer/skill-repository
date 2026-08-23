@@ -1,8 +1,9 @@
 ---
 name: product-discovery-guardrail-metric-status
 description: Use when naming guardrail metrics for a hypothesis or reporting a guardrail's measured status alongside a primary-metric result. Applies to the guardrail-metric-status axis.
-axis: guardrail-metric-status
-rule_count_floor: 10
+metadata:
+  axis: guardrail-metric-status
+  rule_count_floor: 10
 ---
 
 # Guardrail metric naming and status reporting

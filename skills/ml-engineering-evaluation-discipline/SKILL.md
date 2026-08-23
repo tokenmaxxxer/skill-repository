@@ -1,8 +1,9 @@
 ---
 name: ml-engineering-evaluation-discipline
 description: Use when validating a model's quality before or during launch, distinguishing offline metrics from online-experiment results, or checking whether an online evaluation's arm split and decision rule are trustworthy. Applies to the evaluation-discipline axis.
-axis: evaluation-discipline
-rule_count_floor: 5
+metadata:
+  axis: evaluation-discipline
+  rule_count_floor: 5
 ---
 
 # Evaluation discipline: offline vs online

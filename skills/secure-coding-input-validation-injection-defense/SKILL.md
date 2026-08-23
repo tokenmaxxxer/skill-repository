@@ -1,8 +1,9 @@
 ---
 name: secure-coding-input-validation-injection-defense
 description: Use when untrusted input is about to cross a trust boundary — a shell, SQL query, HTML/JS/URL sink, or a validation layer — and you need to choose an allowlist, parameterization, or output-encoding approach.
-axis: input-validation-injection-defense
-rule_count_floor: 9
+metadata:
+  axis: input-validation-injection-defense
+  rule_count_floor: 9
 ---
 
 # Input validation / injection defense

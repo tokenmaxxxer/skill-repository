@@ -1,8 +1,9 @@
 ---
 name: content-strategy-content-audit-and-inventory
 description: Use when starting a content audit, building a content inventory, or deciding whether a content-assessment task needs quantitative enumeration, qualitative judgment, or both in sequence.
-axis: enumeration-vs-judgment-task-type
-rule_count_floor: 2
+metadata:
+  axis: enumeration-vs-judgment-task-type
+  rule_count_floor: 2
 ---
 
 # Content audit and inventory

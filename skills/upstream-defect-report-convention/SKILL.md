@@ -1,9 +1,10 @@
 ---
 name: upstream-defect-report-convention
 description: Use when preparing to file a defect against an upstream project and its issue template, required pre-submission steps, commit-linking convention, report channel, contributor tone, or duplicate-check surface haven't yet been matched to that project's actual current norms.
-axis: convention
-rule_count_floor: 5
-role: upstream-defect-report
+metadata:
+  axis: convention
+  rule_count_floor: 5
+  role: upstream-defect-report
 ---
 
 # Convention — matching the upstream project's own norms

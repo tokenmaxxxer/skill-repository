@@ -1,8 +1,9 @@
 ---
 name: devrel-channel-convention
 description: Use when deciding which content format, channel, code-sample convention, or community-entry behavior a devrel deliverable should follow — code samples for public release, cross-language sample sets, conference-proposal topic matching, talk-vs-writeup sequencing, first community interactions, sample-convention or channel consolidation.
-axis: channel-convention
-rule_count_floor: 8
+metadata:
+  axis: channel-convention
+  rule_count_floor: 8
 ---
 
 # Channel and format convention

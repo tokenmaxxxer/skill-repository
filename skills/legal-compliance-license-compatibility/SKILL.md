@@ -1,8 +1,9 @@
 ---
 name: legal-compliance-license-compatibility
 description: Use when adding, auditing, or replacing an open-source dependency and its license must be checked for compatibility with the project's own license.
-axis: oss-license-compatibility
-rule_count_floor: 2
+metadata:
+  axis: oss-license-compatibility
+  rule_count_floor: 2
 ---
 
 # Open-source license compatibility

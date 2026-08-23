@@ -1,8 +1,9 @@
 ---
 name: market-analysis-jtbd-fit
 description: Use when naming a customer job for JTBD analysis, identifying the strongest competing alternative, drafting a job statement or outcome statement, or judging whether a spec's differentiation verdict holds against that alternative. Applies to the jtbd-fit axis.
-axis: jtbd-fit
-rule_count_floor: 10
+metadata:
+  axis: jtbd-fit
+  rule_count_floor: 10
 ---
 
 # JTBD-landscape verdict rules

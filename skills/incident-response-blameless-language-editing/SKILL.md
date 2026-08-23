@@ -1,8 +1,9 @@
 ---
 name: incident-response-blameless-language-editing
 description: Use when editing a draft postmortem's prose for blame language — person-attributed mistakes, "should have" judgments, or individual credit. Applies to the blameless-language-editing axis.
-axis: blameless-language-editing
-rule_count_floor: 4
+metadata:
+  axis: blameless-language-editing
+  rule_count_floor: 4
 ---
 
 # Blameless language editing

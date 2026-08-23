@@ -1,8 +1,9 @@
 ---
 name: architecture-module-boundary-definition
 description: Use when deciding where to draw a module/component/service boundary — what belongs together by cohesion, when to stop splitting, when to merge things back, and how to keep a C4-level boundary diagram reviewable as the decision evolves.
-axis: module-boundary-definition
-rule_count_floor: 12
+metadata:
+  axis: module-boundary-definition
+  rule_count_floor: 12
 ---
 
 # Module Boundary Definition

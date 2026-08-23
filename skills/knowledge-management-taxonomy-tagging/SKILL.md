@@ -1,8 +1,9 @@
 ---
 name: knowledge-management-taxonomy-tagging
 description: Use when adding, merging, or scoping a term in the controlled vocabulary, or when tagging an entry with an ambiguous, cross-cutting, or synonym-prone concept.
-axis: taxonomy-tagging
-rule_count_floor: 10
+metadata:
+  axis: taxonomy-tagging
+  rule_count_floor: 10
 ---
 
 # Taxonomy, tagging, and controlled vocabulary

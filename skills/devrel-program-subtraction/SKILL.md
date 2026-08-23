@@ -1,8 +1,9 @@
 ---
 name: devrel-program-subtraction
 description: Use when deciding whether to add or cut a devrel program's content, channel, or program surface — evaluating a new content format against existing ones, retiring unused docs/samples/talks/channels, or consolidating instead of adding.
-axis: program-subtraction
-rule_count_floor: 8
+metadata:
+  axis: program-subtraction
+  rule_count_floor: 8
 ---
 
 # Program subtraction (removal/omission decision rules)

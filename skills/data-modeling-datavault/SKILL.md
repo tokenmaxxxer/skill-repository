@@ -1,8 +1,9 @@
 ---
 name: data-modeling-datavault
 description: Use when choosing whether Data Vault fits a multi-source, evolving-schema ingestion problem, or when structuring hubs, links, satellites, and the raw/business vault split.
-axis: datavault
-rule_count_floor: 10
+metadata:
+  axis: datavault
+  rule_count_floor: 10
 ---
 
 # Data Vault — hubs, links, satellites, raw/business vault split

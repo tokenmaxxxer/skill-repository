@@ -1,8 +1,9 @@
 ---
 name: game-hit-reaction-and-impact
 description: Use when tuning a hit's stop/knockback, adding damage numbers, assigning invulnerability frames, deciding screen-level hit feedback. Applies to the hit-reaction-and-impact axis.
-axis: hit-reaction-and-impact
-rule_count_floor: 5
+metadata:
+  axis: hit-reaction-and-impact
+  rule_count_floor: 5
 ---
 
 # Game Hit Reaction and Impact

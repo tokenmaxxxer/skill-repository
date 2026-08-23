@@ -1,8 +1,9 @@
 ---
 name: api-design-tool-landscape
 description: Use when an interface spec, payload schema, new API version, or cross-service contract is about to ship without a generated mock server, runtime schema validator, client SDK, or consumer-driven contract test.
-axis: tool-landscape
-rule_count_floor: 4
+metadata:
+  axis: tool-landscape
+  rule_count_floor: 4
 ---
 
 # Tool-landscape learnings

@@ -1,8 +1,9 @@
 ---
 name: growth-analytics-funnel-stage-attribution
 description: Use when a proposed metric counts raw registrations, installs, or signups, or when a dashboard reports one blended conversion rate spanning multiple funnel stages. Applies to the funnel-stage-attribution axis.
-axis: funnel-stage-attribution
-rule_count_floor: 2
+metadata:
+  axis: funnel-stage-attribution
+  rule_count_floor: 2
 ---
 
 # Funnel-stage attribution rules

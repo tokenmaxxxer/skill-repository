@@ -1,8 +1,9 @@
 ---
 name: knowledge-management-supersession-lifecycle
 description: Use when a knowledge-library entry is replaced, dropped, or edited — deciding whether to mark it superseded or deprecated, and how to record the change without deleting history.
-axis: supersession-lifecycle
-rule_count_floor: 10
+metadata:
+  axis: supersession-lifecycle
+  rule_count_floor: 10
 ---
 
 # Supersession, deprecation, and removal lifecycle

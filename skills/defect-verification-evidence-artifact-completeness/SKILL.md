@@ -1,8 +1,9 @@
 ---
 name: defect-verification-evidence-artifact-completeness
 description: Use when capturing, bundling, or labeling the evidence artifact for a defect-reproduction attempt — bundling steps, artifact, and environment into one self-contained pointer captured at attempt time rather than reconstructed afterward.
-axis: evidence-artifact-completeness
-rule_count_floor: 8
+metadata:
+  axis: evidence-artifact-completeness
+  rule_count_floor: 8
 ---
 
 # Evidence-artifact completeness for a reproduction attempt

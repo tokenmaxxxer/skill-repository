@@ -1,8 +1,9 @@
 ---
 name: refactoring-legacy-verification-cadence
 description: Use when deciding how often to run tests during a refactoring sequence, ordering fast vs. slow suites, scoping which regression tests to re-run per step, monitoring a canary rollout, or reacting to a failed captured test.
-axis: verification-cadence
-rule_count_floor: 5
+metadata:
+  axis: verification-cadence
+  rule_count_floor: 5
 ---
 
 # Verification cadence and rollback

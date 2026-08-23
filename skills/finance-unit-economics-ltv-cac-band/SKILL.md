@@ -1,9 +1,10 @@
 ---
 name: finance-unit-economics-ltv-cac-band
 description: Use when an LTV:CAC ratio needs a motion-specific CAC band, an investor-facing framing that avoids overstating the 3:1 bar, a normalized per-cohort LTV input, or a healthy/watch/critical verdict scoped to the company's segment.
-axis: ltv-cac-band
-rule_count_floor: 12
-tier: moderate
+metadata:
+  axis: ltv-cac-band
+  rule_count_floor: 12
+  tier: moderate
 ---
 
 # LTV:CAC band — decision rules

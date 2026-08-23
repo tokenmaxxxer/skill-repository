@@ -1,8 +1,9 @@
 ---
 name: incident-response-severity-classification-scoping
 description: Use when classifying an incident's severity tier or scoping how much postmortem depth it earns, or when a draft's depth doesn't match its tier. Applies to the severity-classification-scoping axis.
-axis: severity-classification-scoping
-rule_count_floor: 4
+metadata:
+  axis: severity-classification-scoping
+  rule_count_floor: 4
 ---
 
 # Severity classification / postmortem depth scoping

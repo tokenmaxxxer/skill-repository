@@ -1,8 +1,9 @@
 ---
 name: game-feel-juice-and-feedback
 description: Use when deciding whether a build is ready to receive juice, choosing what feedback an input needs, adding or capping a juice effect (screen shake, squash-and-stretch, anticipation), or pruning a stack of effects that has stopped reading clearly. Applies to the juice-and-feedback axis.
-axis: juice-and-feedback
-rule_count_floor: 4
+metadata:
+  axis: juice-and-feedback
+  rule_count_floor: 4
 ---
 
 # Game feel, juice, and feedback

@@ -1,15 +1,16 @@
 ---
 name: secure-coding-dependency-supply-chain-security
 description: Use when you need to decide how to scan, patch, work around, accept the risk of, or retire a vulnerable or unmaintained third-party dependency, or vet a new one before it enters the manifest.
-axis: dependency-supply-chain-security
-rule_count_floor: 8
-globs:
-  - "**/requirements*.txt"
-  - "**/package.json"
-  - "**/package-lock.json"
-  - "**/go.mod"
-  - "**/Cargo.toml"
-  - "**/Gemfile"
+metadata:
+  axis: dependency-supply-chain-security
+  rule_count_floor: 8
+  globs:
+    - "**/requirements*.txt"
+    - "**/package.json"
+    - "**/package-lock.json"
+    - "**/go.mod"
+    - "**/Cargo.toml"
+    - "**/Gemfile"
 ---
 
 # Dependency & supply-chain security

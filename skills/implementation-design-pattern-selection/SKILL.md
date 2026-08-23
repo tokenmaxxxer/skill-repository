@@ -1,9 +1,10 @@
 ---
 name: implementation-design-pattern-selection
 description: Use when deciding whether to introduce a GoF-style design pattern (Strategy, Factory, Visitor, Observer, Decorator) or keep the direct/procedural form, including when an existing pattern's indirection has only ever served one concrete case.
-axis: design-pattern-selection
-rule_count_floor: 6
-tier: sparse
+metadata:
+  axis: design-pattern-selection
+  rule_count_floor: 6
+  tier: sparse
 ---
 
 # Design-pattern selection

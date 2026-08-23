@@ -1,8 +1,9 @@
 ---
 name: org-design-role-competency-definition
 description: Use when writing or reviewing a role's competency list, a job description's requirements section, or a promotion/leveling criterion. Do NOT use for designing the interview questions that assess a role once its competencies are defined (route to org-design-hiring-rubric-structured-interview) or for choosing what shape a team should be (route to org-design-team-shape-selection).
-axis: threshold-vs-differentiating-competency
-rule_count_floor: 3
+metadata:
+  axis: threshold-vs-differentiating-competency
+  rule_count_floor: 3
 ---
 
 # Role and competency definition

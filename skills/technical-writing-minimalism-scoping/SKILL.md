@@ -1,8 +1,9 @@
 ---
 name: technical-writing-minimalism-scoping
 description: Use when deciding what to cut vs. keep in a draft section, or auditing an over-long doc for redundant or unrequested content. Applies to the minimalism-scoping axis.
-axis: minimalism-scoping
-rule_count_floor: 11
+metadata:
+  axis: minimalism-scoping
+  rule_count_floor: 11
 ---
 
 # Minimalism / scoping

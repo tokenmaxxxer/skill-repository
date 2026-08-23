@@ -1,8 +1,9 @@
 ---
 name: release-engineering-semver-bump-selection
 description: Use when selecting a MAJOR/MINOR/PATCH version bump for a release, deciding whether a change is actually breaking, or versioning a pre-release/build-metadata artifact.
-axis: semver-bump-selection
-rule_count_floor: 12
+metadata:
+  axis: semver-bump-selection
+  rule_count_floor: 12
 ---
 
 # Semver bump selection

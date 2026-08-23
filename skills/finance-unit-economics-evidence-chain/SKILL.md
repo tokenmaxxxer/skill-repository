@@ -1,9 +1,10 @@
 ---
 name: finance-unit-economics-evidence-chain
 description: Use when a unit-economics input, benchmark citation, or headline figure needs its sourcing traced, deduplicated, positioned against a peer distribution, or checked for a hardcoded value hiding behind a formula-derived one.
-axis: evidence-chain
-rule_count_floor: 12
-tier: moderate
+metadata:
+  axis: evidence-chain
+  rule_count_floor: 12
+  tier: moderate
 ---
 
 # Evidence chain — decision rules

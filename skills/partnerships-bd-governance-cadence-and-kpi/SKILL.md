@@ -1,9 +1,10 @@
 ---
 name: partnerships-bd-governance-cadence-and-kpi
 description: Use when designing a partnership's recurring governance rhythm, when deciding which KPIs get reported to which governance tier, or when reviewing whether an existing governance layer still produces decisions.
-axis: governance-cadence-and-kpi
-rule_count_floor: 3
-tier: sparse
+metadata:
+  axis: governance-cadence-and-kpi
+  rule_count_floor: 3
+  tier: sparse
 ---
 
 # Governance cadence and KPI rules

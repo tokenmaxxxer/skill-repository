@@ -1,8 +1,9 @@
 ---
 name: org-design-team-shape-selection
 description: Use when deciding what kind of team a new or restructuring team should be, or what interaction mode two teams should use and for how long. Do NOT use for measuring an existing team's psychological safety (route to team-safety-measure) or for defining the competencies of a role once the team's type is chosen (route to org-design-role-competency-definition).
-axis: team-type-and-interaction-mode-by-cognitive-load
-rule_count_floor: 3
+metadata:
+  axis: team-type-and-interaction-mode-by-cognitive-load
+  rule_count_floor: 3
 ---
 
 # Team-shape selection

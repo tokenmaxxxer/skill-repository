@@ -1,14 +1,15 @@
 ---
 name: localization-string-externalization
 description: Use when a user-facing string is hard-coded in source, when a variable needs embedding mid-string, when a key could be reused across grammatically different positions, or when a translation batch spans chunks or agents.
-axis: string-externalization-and-key-management
-rule_count_floor: 10
-axes:
-  - string-externalization-and-key-management
-  - pluralization-and-grammar
-  - locale-convention-formatting
-  - text-expansion-and-layout
-  - rtl-and-script-support
+metadata:
+  axis: string-externalization-and-key-management
+  rule_count_floor: 10
+  axes:
+    - string-externalization-and-key-management
+    - pluralization-and-grammar
+    - locale-convention-formatting
+    - text-expansion-and-layout
+    - rtl-and-script-support
 ---
 
 # Decision axis: string externalization & key management

@@ -1,14 +1,15 @@
 ---
 name: localization-locale-convention-formatting
 description: Use when rendering or reviewing a date, number, currency, or address string for a locale, classifying a locale-convention formatting defect, or verifying an LLM-based translation step holds the text-vs-instruction boundary.
-axis: locale-convention-formatting
-rule_count_floor: 10
-axes:
-  - string-externalization-and-key-management
-  - pluralization-and-grammar
-  - locale-convention-formatting
-  - text-expansion-and-layout
-  - rtl-and-script-support
+metadata:
+  axis: locale-convention-formatting
+  rule_count_floor: 10
+  axes:
+    - string-externalization-and-key-management
+    - pluralization-and-grammar
+    - locale-convention-formatting
+    - text-expansion-and-layout
+    - rtl-and-script-support
 ---
 
 # Decision axis: locale-convention formatting (dates, numbers, currency, address)

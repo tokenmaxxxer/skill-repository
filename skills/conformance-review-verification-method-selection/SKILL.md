@@ -1,8 +1,9 @@
 ---
 name: conformance-review-verification-method-selection
 description: Use when picking how a requirement gets checked — inspection, analysis, demonstration, or test — before picking a verdict. Applies to the verification-method-selection axis.
-axis: verification-method-selection
-rule_count_floor: 3
+metadata:
+  axis: verification-method-selection
+  rule_count_floor: 3
 ---
 
 # Verification method selection

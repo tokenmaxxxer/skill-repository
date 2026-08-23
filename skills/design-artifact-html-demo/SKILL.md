@@ -1,8 +1,9 @@
 ---
 name: design-artifact-html-demo
 description: Use when building an HTML/CSS demo or no-build single-file prototype — choosing semantic elements, heading structure, and responsive/accessible defaults over generic markup.
-axis: semantic-html-vs-generic-div-soup
-rule_count_floor: 3
+metadata:
+  axis: semantic-html-vs-generic-div-soup
+  rule_count_floor: 3
 ---
 
 # Semantic HTML vs. generic div soup

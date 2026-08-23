@@ -1,9 +1,10 @@
 ---
 name: partnerships-bd-deal-structure-selection
 description: Use when choosing which partnership vehicle (revenue share, licensing, reseller, joint venture, co-marketing) fits a proposed deal, when more than one vehicle could plausibly work, or when a live revenue-share agreement keeps generating disputes over what counts as revenue.
-axis: deal-structure-selection
-rule_count_floor: 3
-tier: sparse
+metadata:
+  axis: deal-structure-selection
+  rule_count_floor: 3
+  tier: sparse
 ---
 
 # Deal-structure selection rules

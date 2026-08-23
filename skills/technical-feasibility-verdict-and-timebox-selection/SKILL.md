@@ -1,14 +1,15 @@
 ---
 name: technical-feasibility-verdict-and-timebox-selection
 description: Use when the four feasibility probes have resolved (or a spike timebox has expired) and you must set the bare verdict field, route conditions/prerequisites/scope-constraints to the correct record location, or decide whether a blocked probe, an inconclusive timebox, or new post-verdict evidence changes the verdict rather than being logged as prose.
-axis: verdict-and-timebox-selection
-rule_count_floor: 10
-axes:
-  - reversibility-and-spike-scoping
-  - build-vs-buy-dependency-health
-  - license-and-regulatory-risk
-  - threat-model-disposition
-  - verdict-and-timebox-selection
+metadata:
+  axis: verdict-and-timebox-selection
+  rule_count_floor: 10
+  axes:
+    - reversibility-and-spike-scoping
+    - build-vs-buy-dependency-health
+    - license-and-regulatory-risk
+    - threat-model-disposition
+    - verdict-and-timebox-selection
 ---
 
 # Decision axis: verdict selection & timebox governance

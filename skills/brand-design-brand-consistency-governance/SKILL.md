@@ -1,9 +1,10 @@
 ---
 name: brand-design-brand-consistency-governance
 description: Use when checking a new or changed brand asset against the standing brand system, defining who can edit a template's core identity elements, routing an asset through the right review tier, or auditing a shared asset library for stale/unapproved versions.
-axis: brand-consistency-governance
-rule_count_floor: 3
-tier: rich
+metadata:
+  axis: brand-consistency-governance
+  rule_count_floor: 3
+  tier: rich
 ---
 
 # Brand consistency / asset governance rules

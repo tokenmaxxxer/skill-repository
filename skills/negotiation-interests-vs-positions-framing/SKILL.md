@@ -1,9 +1,10 @@
 ---
 name: negotiation-interests-vs-positions-framing
 description: Use when a negotiation has stalled into repeated positional concessions with no underlying interest identified, when drafting an opening proposal that states a position without the interest behind it, or when a counterpart's stated position seems irreconcilable with your own and neither side has yet asked what interest the position protects.
-axis: positional-vs-interest-based-framing
-rule_count_floor: 2
-tier: sparse
+metadata:
+  axis: positional-vs-interest-based-framing
+  rule_count_floor: 2
+  tier: sparse
 ---
 
 # Interests-vs-positions framing

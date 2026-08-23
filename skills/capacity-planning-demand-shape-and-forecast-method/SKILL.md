@@ -1,8 +1,9 @@
 ---
 name: capacity-planning-demand-shape-and-forecast-method
 description: Use when classifying a resource's demand shape (organic vs. inorganic) and choosing a forecast method — regression trend, scenario/step model, Holt-Winters, ARIMA/SARIMA, or a hybrid — and reporting or reconciling that forecast against actuals.
-axis: demand-shape-and-forecast-method
-rule_count_floor: 8
+metadata:
+  axis: demand-shape-and-forecast-method
+  rule_count_floor: 8
 ---
 
 # Demand shape classification and forecast-method selection

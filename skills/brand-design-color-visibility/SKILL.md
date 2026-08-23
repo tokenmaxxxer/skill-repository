@@ -1,9 +1,10 @@
 ---
 name: brand-design-color-visibility
 description: Use when choosing a brand color pair for body/UI text, designating a brand's primary recognition hue, or reviewing a mature palette for low-familiarity accent colors to remove.
-axis: color-combination-visibility
-rule_count_floor: 3
-tier: rich
+metadata:
+  axis: color-combination-visibility
+  rule_count_floor: 3
+  tier: rich
 ---
 
 # Color-combination visibility rules

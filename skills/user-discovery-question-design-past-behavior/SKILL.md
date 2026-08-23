@@ -1,8 +1,9 @@
 ---
 name: user-discovery-question-design-past-behavior
 description: Use when drafting or reviewing discovery-interview questions or script order — anchoring questions in specific past events rather than hypotheticals/opinions, and sequencing behavioral questions before any pitch or solution reveal.
-axis: question-design-past-behavior
-rule_count_floor: 8
+metadata:
+  axis: question-design-past-behavior
+  rule_count_floor: 8
 ---
 
 # Question design: past behavior over hypotheticals/opinion/pitching

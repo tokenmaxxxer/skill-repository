@@ -1,8 +1,9 @@
 ---
 name: user-discovery-follow-up-ladder-depth
 description: Use when deciding how deep to follow up on an interviewee's answer — chaining "why"/"how" questions (laddering) toward a root cause or personal value instead of accepting the first surface-level attribute or complaint.
-axis: follow-up-ladder-depth
-rule_count_floor: 8
+metadata:
+  axis: follow-up-ladder-depth
+  rule_count_floor: 8
 ---
 
 # Follow-up ladder: laddering / Five Whys depth per hypothesis

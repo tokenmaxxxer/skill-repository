@@ -1,8 +1,9 @@
 ---
 name: product-discovery-jtbd-problem-framing
 description: Use when a problem statement, issue, or feature request needs to be fixed as a solution-free job statement before any solution is evaluated. Applies to the jtbd-problem-framing axis.
-axis: jtbd-problem-framing
-rule_count_floor: 10
+metadata:
+  axis: jtbd-problem-framing
+  rule_count_floor: 10
 ---
 
 # JTBD problem framing (fixing the problem before any solution)

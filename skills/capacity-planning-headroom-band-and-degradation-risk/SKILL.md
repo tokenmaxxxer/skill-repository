@@ -1,8 +1,9 @@
 ---
 name: capacity-planning-headroom-band-and-degradation-risk
 description: Use when reporting a resource's headroom or assessing its degradation-risk shape as it nears a scaling ceiling — sizing a headroom band, applying USL alpha/beta terms, or pairing a predictive band with a reactive fallback trigger.
-axis: headroom-band-and-degradation-risk
-rule_count_floor: 8
+metadata:
+  axis: headroom-band-and-degradation-risk
+  rule_count_floor: 8
 ---
 
 # Headroom-band sizing and degradation-risk shape

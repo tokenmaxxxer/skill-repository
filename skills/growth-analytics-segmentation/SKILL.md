@@ -1,8 +1,9 @@
 ---
 name: growth-analytics-segmentation
 description: Use when stage-to-stage drop-off is being reported, or when a funnel-diagnosis report states a bottleneck hypothesis with no named segment behind it. Applies to the segmentation axis.
-axis: segmentation
-rule_count_floor: 2
+metadata:
+  axis: segmentation
+  rule_count_floor: 2
 ---
 
 # Segmentation / drop-off localization rules

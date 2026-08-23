@@ -1,8 +1,9 @@
 ---
 name: business-model-design-platform-design
 description: Use when deciding which side of a two-sided platform to subsidize, setting a marketplace take-rate, assessing multi-homing risk to platform defensibility, or sequencing a platform launch to solve the chicken-and-egg cold-start problem.
-axis: platform-design
-rule_count_floor: 5
+metadata:
+  axis: platform-design
+  rule_count_floor: 5
 ---
 
 # Two-sided/multi-sided platform design decision rules

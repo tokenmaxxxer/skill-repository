@@ -1,8 +1,9 @@
 ---
 name: ml-engineering-model-provenance-versioning
 description: Use when authoring a model card or deciding how a trained model and its training data should be versioned and traced back to their lineage. Applies to the model-provenance-versioning axis.
-axis: model-provenance-versioning
-rule_count_floor: 5
+metadata:
+  axis: model-provenance-versioning
+  rule_count_floor: 5
 ---
 
 # Model provenance (model card) and data/model versioning

@@ -1,8 +1,9 @@
 ---
 name: marketing-scope-pruning
 description: Use when drafting a campaign brief, running a pre-launch review of a draft asset, or evaluating whether an existing channel, segment, claim, or brand element should be cut.
-axis: scope-pruning
-rule_count_floor: 5
+metadata:
+  axis: scope-pruning
+  rule_count_floor: 5
 ---
 
 # Subtraction: what to cut from a campaign

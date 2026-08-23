@@ -1,8 +1,9 @@
 ---
 name: game-character-rendering-composition
 description: Use when drawing or assembling a character from parts, judging silhouette readability, splitting an SVG/DOM rig into layers, handling facing/flip, or setting character-vs-field z-order. Applies to the character-rendering-composition axis.
-axis: character-rendering-composition
-rule_count_floor: 4
+metadata:
+  axis: character-rendering-composition
+  rule_count_floor: 4
 ---
 
 # Game Character Rendering Composition

@@ -1,8 +1,9 @@
 ---
 name: user-discovery-evidence-strength-tagging
 description: Use when tagging or weighting interview-log claims by evidence strength — distinguishing directly-observed behavioral claims from secondhand recounted ones and from stated opinions/intentions, or when computing an evidence count that must exclude opinion-tier entries.
-axis: evidence-strength-tagging
-rule_count_floor: 8
+metadata:
+  axis: evidence-strength-tagging
+  rule_count_floor: 8
 ---
 
 # Evidence-strength tagging: behavioral / recounted / opinion

@@ -1,8 +1,9 @@
 ---
 name: content-strategy-editorial-calendar-and-cadence
 description: Use when planning or reviewing an editorial calendar, committing to a publishing cadence, or deciding a content asset's lifecycle stage (create, update, retire).
-axis: lifecycle-and-cadence-planning
-rule_count_floor: 2
+metadata:
+  axis: lifecycle-and-cadence-planning
+  rule_count_floor: 2
 ---
 
 # Editorial calendar and cadence

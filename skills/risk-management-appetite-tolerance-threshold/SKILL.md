@@ -1,8 +1,9 @@
 ---
 name: risk-management-appetite-tolerance-threshold
 description: Use when setting or deriving a category- or entity-level risk appetite/tolerance threshold, choosing between appetite and tolerance framing, reconciling thresholds across interacting categories, or tracing a threshold back to its source. Applies to the appetite-tolerance-threshold axis.
-axis: appetite-tolerance-threshold
-rule_count_floor: 10
+metadata:
+  axis: appetite-tolerance-threshold
+  rule_count_floor: 10
 ---
 
 # Risk appetite / tolerance threshold setting

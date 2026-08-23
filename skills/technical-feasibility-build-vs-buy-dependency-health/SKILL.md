@@ -1,14 +1,15 @@
 ---
 name: technical-feasibility-build-vs-buy-dependency-health
 description: Use when a comparison record must score a candidate dependency or vendor's per-check health (Scorecard Maintained/Code-Review/Vulnerabilities, or vendor SLA/incident history) and decide build vs. buy on that graded, cited evidence rather than on license terms, threat modeling, or timebox/verdict selection.
-axis: build-vs-buy-dependency-health
-rule_count_floor: 10
-axes:
-  - reversibility-and-spike-scoping
-  - build-vs-buy-dependency-health
-  - license-and-regulatory-risk
-  - threat-model-disposition
-  - verdict-and-timebox-selection
+metadata:
+  axis: build-vs-buy-dependency-health
+  rule_count_floor: 10
+  axes:
+    - reversibility-and-spike-scoping
+    - build-vs-buy-dependency-health
+    - license-and-regulatory-risk
+    - threat-model-disposition
+    - verdict-and-timebox-selection
 ---
 
 # Decision axis: build-vs-buy & dependency health

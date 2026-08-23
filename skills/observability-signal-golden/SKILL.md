@@ -1,8 +1,9 @@
 ---
 name: observability-signal-golden
 description: Use when placing the four Golden Signals on a service-rollup surface aggregating multiple request-driven and resource-bound children. Applies to the signal-golden axis.
-axis: signal-golden
-rule_count_floor: 3
+metadata:
+  axis: signal-golden
+  rule_count_floor: 3
 ---
 
 # Golden Signals placement (Latency / Traffic / Errors / Saturation)

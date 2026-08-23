@@ -1,8 +1,9 @@
 ---
 name: secure-coding-session-authentication
 description: Use when you need to decide how a session identifier is issued, stored, timed out, or resumed — cookie flags, storage location, timeout tiering, or multi-tab/device session linking.
-axis: session-authentication
-rule_count_floor: 9
+metadata:
+  axis: session-authentication
+  rule_count_floor: 9
 ---
 
 # Session & authentication management

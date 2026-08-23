@@ -1,8 +1,9 @@
 ---
 name: architecture-decomposition-strategy
 description: Use when deciding whether to split a system into more services/modules, keep it consolidated, or merge an existing split back — including choosing extraction mechanics, boundary placement, and whether a proposed split has enough operational evidence behind it.
-axis: decomposition-strategy
-rule_count_floor: 12
+metadata:
+  axis: decomposition-strategy
+  rule_count_floor: 12
 ---
 
 # Decomposition Strategy Playbook

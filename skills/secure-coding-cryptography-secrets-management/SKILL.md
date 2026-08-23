@@ -1,8 +1,9 @@
 ---
 name: secure-coding-cryptography-secrets-management
 description: Use when you need to choose an algorithm, key size, or cipher mode, or decide how a secret is generated, stored, rotated, or removed from an image, env var, or log across its lifecycle.
-axis: cryptography-secrets-management
-rule_count_floor: 10
+metadata:
+  axis: cryptography-secrets-management
+  rule_count_floor: 10
 ---
 
 # Cryptography & secrets management

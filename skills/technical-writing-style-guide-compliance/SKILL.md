@@ -1,8 +1,9 @@
 ---
 name: technical-writing-style-guide-compliance
 description: Use when reviewing or drafting prose for Google Developer Documentation Style Guide compliance — mood, voice, person, tone, word choice. Applies to the style-guide-compliance axis.
-axis: style-guide-compliance
-rule_count_floor: 11
+metadata:
+  axis: style-guide-compliance
+  rule_count_floor: 11
 ---
 
 # Style-guide compliance (Google Developer Documentation Style Guide)

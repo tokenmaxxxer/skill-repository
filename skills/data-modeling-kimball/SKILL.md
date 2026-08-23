@@ -1,8 +1,9 @@
 ---
 name: data-modeling-kimball
 description: Use when declaring a fact table's grain, selecting an SCD type per dimension attribute, building or integrating a data mart, or checking a star schema for unused history or duplicated columns.
-axis: kimball
-rule_count_floor: 10
+metadata:
+  axis: kimball
+  rule_count_floor: 10
 ---
 
 # Kimball — dimensional modeling, star schema, SCD selection

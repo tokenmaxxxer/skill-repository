@@ -1,8 +1,9 @@
 ---
 name: observability-signal-use
 description: Use when placing Utilization, Saturation, or Errors signals on a resource-bound surface. Applies to the signal-use axis.
-axis: signal-use
-rule_count_floor: 3
+metadata:
+  axis: signal-use
+  rule_count_floor: 3
 ---
 
 # USE signal placement (Utilization / Saturation / Errors)

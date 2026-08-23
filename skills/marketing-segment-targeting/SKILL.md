@@ -1,8 +1,9 @@
 ---
 name: marketing-segment-targeting
 description: Use when evaluating or ranking candidate segments, defining a B2B vs. B2C target segment, or reviewing whether a previously-selected segment should stay in the active target list.
-axis: segment-targeting
-rule_count_floor: 5
+metadata:
+  axis: segment-targeting
+  rule_count_floor: 5
 ---
 
 # Segment selection and targeting

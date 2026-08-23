@@ -1,8 +1,9 @@
 ---
 name: business-model-design-revenue-model-selection
 description: Use when choosing a revenue-model archetype (subscription, usage-based, freemium, marketplace/take-rate, or licensing) for a new or changing business model, based on value-metric alignment, end-user type, consumption pattern, or company stage — upstream of pricing-method-family, which picks a research method within an archetype already chosen here.
-axis: revenue-model-selection
-rule_count_floor: 7
+metadata:
+  axis: revenue-model-selection
+  rule_count_floor: 7
 ---
 
 # Revenue-model archetype selection decision rules

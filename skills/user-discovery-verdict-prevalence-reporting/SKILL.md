@@ -1,8 +1,9 @@
 ---
 name: user-discovery-verdict-prevalence-reporting
 description: Use when writing a pain-confirmed/not-confirmed verdict from interview evidence — stating prevalence as N of M, distinguishing prompted from unprompted mentions, and naming contradicting evidence rather than omitting it.
-axis: verdict-prevalence-reporting
-rule_count_floor: 8
+metadata:
+  axis: verdict-prevalence-reporting
+  rule_count_floor: 8
 ---
 
 # Verdict reporting: prevalence, prompted/unprompted, contradictions

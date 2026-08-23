@@ -1,9 +1,10 @@
 ---
 name: issue-retrospective-timeline-comprehensibility-and-subtraction-rules
 description: Use when composing or reading a records-only cross-role retrospective for a subject issue — drafting its Timeline, Contributing factors, or Action items, or judging whether a draft section restates background instead of citing it.
-axis: convention, subtraction, comprehensibility
-rule_count_floor: 8
-axes: convention,subtraction,comprehensibility
+metadata:
+  axis: convention, subtraction, comprehensibility
+  rule_count_floor: 8
+  axes: convention,subtraction,comprehensibility
 ---
 
 # Retrospective-record convention, subtraction, and comprehensibility rules

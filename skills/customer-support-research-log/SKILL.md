@@ -1,15 +1,16 @@
 ---
 name: customer-support-research-log
 description: Use when verifying that every rule across the customer-support playbook traces to a fetched source, or when auditing this family's rule_count_floor derivation against its axis count and tier.
-role: customer-support
-rule_count_floor: 5
-axes:
-  - sla-tier-priority
-  - escalation-path
-  - kcs-article
-  - five-whys-scope
-  - subtraction-comprehensibility
-tier: sparse
+metadata:
+  role: customer-support
+  rule_count_floor: 5
+  axes:
+    - sla-tier-priority
+    - escalation-path
+    - kcs-article
+    - five-whys-scope
+    - subtraction-comprehensibility
+  tier: sparse
 ---
 
 # Research log — customer-support operational playbook

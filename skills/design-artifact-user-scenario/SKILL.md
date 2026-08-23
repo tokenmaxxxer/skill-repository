@@ -1,8 +1,9 @@
 ---
 name: design-artifact-user-scenario
 description: Use when writing a user scenario, persona, or cross-channel journey map — a macro-scope narrative of a user's experience over time, including emotions and context, grounded in real user research.
-axis: scenario-grounding-vs-invented-persona
-rule_count_floor: 3
+metadata:
+  axis: scenario-grounding-vs-invented-persona
+  rule_count_floor: 3
 ---
 
 # Scenario grounding vs. invented persona

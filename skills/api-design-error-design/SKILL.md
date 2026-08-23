@@ -1,8 +1,9 @@
 ---
 name: api-design-error-design
 description: Use when designing or reviewing an HTTP API's error response shape — envelope, machine-readable codes, field-level validation errors, retryability signaling, or error-message text — before or during implementation.
-axis: error-design
-rule_count_floor: 10
+metadata:
+  axis: error-design
+  rule_count_floor: 10
 ---
 
 # Error response design
