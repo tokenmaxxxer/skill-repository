@@ -1,8 +1,9 @@
 ---
 name: knowledge-management-structure-findability
 description: Use when filing a new entry, naming a file or title, or structuring content for retrieval — classifying it as tutorial-, how-to-, reference-, or explanation-shaped per Diátaxis.
-axis: structure-findability
-rule_count_floor: 10
+metadata:
+  axis: structure-findability
+  rule_count_floor: 10
 ---
 
 # Structure and findability (Diátaxis-informed)

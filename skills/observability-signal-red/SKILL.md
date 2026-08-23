@@ -1,8 +1,9 @@
 ---
 name: observability-signal-red
 description: Use when placing Rate, Errors, or Duration signals on a request-driven surface. Applies to the signal-red axis.
-axis: signal-red
-rule_count_floor: 3
+metadata:
+  axis: signal-red
+  rule_count_floor: 3
 ---
 
 # RED signal placement (Rate / Errors / Duration)

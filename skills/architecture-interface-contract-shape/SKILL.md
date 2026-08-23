@@ -1,8 +1,9 @@
 ---
 name: architecture-interface-contract-shape
 description: Use when choosing the shape of a boundary contract between services or modules — sync vs. async, saga orchestration vs. choreography, shared-kernel vs. published-language integration, or interface surface area/segregation — at the architecture level, not field-level API design.
-axis: interface-contract-shape
-rule_count_floor: 12
+metadata:
+  axis: interface-contract-shape
+  rule_count_floor: 12
 ---
 
 # Interface Contract Shape

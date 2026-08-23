@@ -1,8 +1,9 @@
 ---
 name: legal-compliance-lawful-basis-selection
 description: Use when selecting or auditing the GDPR Article 6(1) lawful basis (contract, legitimate interests, or consent) for a specific data processing activity.
-axis: lawful-basis-selection
-rule_count_floor: 2
+metadata:
+  axis: lawful-basis-selection
+  rule_count_floor: 2
 ---
 
 # Lawful basis selection

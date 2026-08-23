@@ -1,9 +1,10 @@
 ---
 name: partnerships-bd-exclusivity-and-scope-terms
 description: Use when a counterpart requests exclusivity, when drafting how broad an exclusivity grant should be, or when a diligence/negotiation window that justified an existing exclusivity clause has ended.
-axis: exclusivity-and-scope-terms
-rule_count_floor: 3
-tier: sparse
+metadata:
+  axis: exclusivity-and-scope-terms
+  rule_count_floor: 3
+  tier: sparse
 ---
 
 # Exclusivity and scope terms rules

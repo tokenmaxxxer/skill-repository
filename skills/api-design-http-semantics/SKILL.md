@@ -1,8 +1,9 @@
 ---
 name: api-design-http-semantics
 description: Use when choosing an HTTP method (GET/POST/PUT/PATCH/DELETE), designing idempotency/retry behavior, or selecting a response status code for a create/update/delete/async operation.
-axis: http-semantics
-rule_count_floor: 10
+metadata:
+  axis: http-semantics
+  rule_count_floor: 10
 ---
 
 # HTTP method & status code semantics

@@ -1,8 +1,9 @@
 ---
 name: game-character-animation-and-motion
 description: Use when defining a character's animation state machine, choosing keyframes vs tween vs steps() for a state, setting anticipation/follow-through timing, or animating a DOM/SVG character. Applies to the character-animation-and-motion axis.
-axis: character-animation-and-motion
-rule_count_floor: 9
+metadata:
+  axis: character-animation-and-motion
+  rule_count_floor: 9
 ---
 
 # Game Character Animation and Motion

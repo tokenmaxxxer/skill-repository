@@ -1,8 +1,9 @@
 ---
 name: capacity-planning-cost-attribution-at-trigger
 description: Use when recording or reviewing the cost of a capacity expansion — attributing spend to the threshold that fired it, sizing scale-out/scale-in caps, splitting baseline from spike cost, or investigating a cost anomaly.
-axis: cost-attribution-at-trigger
-rule_count_floor: 8
+metadata:
+  axis: cost-attribution-at-trigger
+  rule_count_floor: 8
 ---
 
 # Cost attribution and cost-tradeoff at the firing threshold

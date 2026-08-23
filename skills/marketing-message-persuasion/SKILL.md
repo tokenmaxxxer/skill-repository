@@ -1,8 +1,9 @@
 ---
 name: marketing-message-persuasion
 description: Use when drafting or reviewing persuasive copy — choosing which rhetorical appeal to use, structuring sentences for a first-time reader, or deciding how many claims a single message should carry.
-axis: message-persuasion
-rule_count_floor: 5
+metadata:
+  axis: message-persuasion
+  rule_count_floor: 5
 ---
 
 # Message construction and persuasion

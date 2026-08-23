@@ -1,8 +1,9 @@
 ---
 name: technical-writing-doc-type-selection
 description: Use when choosing which Diátaxis quadrant a deliverable should be, or auditing a draft that mixes more than one quadrant's content. Applies to the doc-type-selection axis.
-axis: doc-type-selection
-rule_count_floor: 12
+metadata:
+  axis: doc-type-selection
+  rule_count_floor: 12
 ---
 
 # Doc-type selection (Diátaxis)

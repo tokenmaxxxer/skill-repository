@@ -1,8 +1,9 @@
 ---
 name: release-engineering-changelog-entry-categorization
 description: Use when categorizing a changelog entry (Added/Changed/Deprecated/Removed/Fixed/Security), deciding whether an entry belongs at all, or ordering/dating a release's changelog section.
-axis: changelog-entry-categorization
-rule_count_floor: 13
+metadata:
+  axis: changelog-entry-categorization
+  rule_count_floor: 13
 ---
 
 # Changelog entry categorization

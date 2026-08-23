@@ -1,8 +1,9 @@
 ---
 name: conformance-review-requirement-extraction
 description: Use when decomposing a spec/issue into a discrete, checkable requirement list, before any verdict is rendered. Applies to the requirement-extraction axis.
-axis: requirement-extraction
-rule_count_floor: 3
+metadata:
+  axis: requirement-extraction
+  rule_count_floor: 3
 ---
 
 # Requirement extraction

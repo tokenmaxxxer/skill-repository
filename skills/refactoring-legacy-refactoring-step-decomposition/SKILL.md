@@ -1,8 +1,9 @@
 ---
 name: refactoring-legacy-refactoring-step-decomposition
 description: Use when sizing an individual refactoring step, sequencing the test cycle between steps, splitting a step that still touches multiple concerns, or prioritizing which legacy area to refactor first.
-axis: refactoring-step-decomposition
-rule_count_floor: 5
+metadata:
+  axis: refactoring-step-decomposition
+  rule_count_floor: 5
 ---
 
 # Refactoring step decomposition

@@ -1,8 +1,9 @@
 ---
 name: pricing-tier-structure
 description: Use when a verdict has already produced a correctly-labeled price point or preference share and the question turns to packaging it — choosing a value-metric unit and assembling a Good/Better/Best tier structure with a deliberate anchor tier.
-axis: tier-structure
-rule_count_floor: 2
+metadata:
+  axis: tier-structure
+  rule_count_floor: 2
 ---
 
 # Tier-structure decision rules

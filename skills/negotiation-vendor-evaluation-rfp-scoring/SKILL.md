@@ -1,9 +1,10 @@
 ---
 name: negotiation-vendor-evaluation-rfp-scoring
 description: Use when designing an RFP's evaluation-criteria section, scoring competing vendor proposals against weighted criteria, or reviewing an existing vendor-scoring matrix for a criterion that can single-handedly decide the award.
-axis: weighted-criteria-scoring-integrity
-rule_count_floor: 3
-tier: sparse
+metadata:
+  axis: weighted-criteria-scoring-integrity
+  rule_count_floor: 3
+  tier: sparse
 ---
 
 # Vendor evaluation and RFP scoring

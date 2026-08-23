@@ -1,8 +1,9 @@
 ---
 name: ux-engineering-surface-contrast
 description: Use when deciding elevation, scrim, or chrome treatment for an active editing surface against its surrounding background. Applies to the background-vs-edit-surface-contrast axis.
-axis: background-vs-edit-surface-contrast
-rule_count_floor: 3
+metadata:
+  axis: background-vs-edit-surface-contrast
+  rule_count_floor: 3
 ---
 
 # Background vs. edit surface contrast

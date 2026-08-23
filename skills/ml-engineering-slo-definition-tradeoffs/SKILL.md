@@ -1,8 +1,9 @@
 ---
 name: ml-engineering-slo-definition-tradeoffs
 description: Use when setting or auditing a model-serving SLO and its error-budget policy, including deploy-velocity tradeoffs as the budget depletes. Applies to the slo-definition-tradeoffs axis.
-axis: slo-definition-tradeoffs
-rule_count_floor: 5
+metadata:
+  axis: slo-definition-tradeoffs
+  rule_count_floor: 5
 ---
 
 # SLO definition and error-budget tradeoffs

@@ -1,8 +1,9 @@
 ---
 name: technical-writing-tool-landscape
 description: Use when applying a Claude Code plugin/skill-ecosystem tool learning to a diagram, redraw, or accuracy-review-evidence decision elsewhere in this family. Applies to the tool-landscape axis.
-axis: tool-landscape
-rule_count_floor: 3
+metadata:
+  axis: tool-landscape
+  rule_count_floor: 3
 ---
 
 # Tool-landscape learnings (Claude Code plugin/skill ecosystem)

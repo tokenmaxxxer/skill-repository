@@ -1,8 +1,9 @@
 ---
 name: legal-compliance-cross-border-transfer
 description: Use when selecting or reviewing a GDPR Chapter V mechanism (adequacy, SCCs, BCRs) for transferring personal data to a third country.
-axis: cross-border-transfer-mechanism
-rule_count_floor: 2
+metadata:
+  axis: cross-border-transfer-mechanism
+  rule_count_floor: 2
 ---
 
 # Cross-border data transfer mechanism selection

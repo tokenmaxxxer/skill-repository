@@ -1,14 +1,15 @@
 ---
 name: technical-feasibility-threat-model-disposition
 description: Use when a spec's STRIDE table rows and dispositions need to be built or checked, as opposed to deciding reversibility/spike scope, dependency build-vs-buy health, license/regulatory exposure, or the final verdict/timebox.
-axis: threat-model-disposition
-rule_count_floor: 10
-axes:
-  - reversibility-and-spike-scoping
-  - build-vs-buy-dependency-health
-  - license-and-regulatory-risk
-  - threat-model-disposition
-  - verdict-and-timebox-selection
+metadata:
+  axis: threat-model-disposition
+  rule_count_floor: 10
+  axes:
+    - reversibility-and-spike-scoping
+    - build-vs-buy-dependency-health
+    - license-and-regulatory-risk
+    - threat-model-disposition
+    - verdict-and-timebox-selection
 ---
 
 # Decision axis: threat-model disposition (STRIDE)

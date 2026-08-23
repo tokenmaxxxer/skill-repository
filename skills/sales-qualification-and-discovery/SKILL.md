@@ -1,8 +1,9 @@
 ---
 name: sales-qualification-and-discovery
 description: Use when deciding whether an opportunity is worth advancing, which questions to ask during discovery, or how to scope a MEDDPICC pass under a compressed timeline.
-axis: qualification-and-discovery
-rule_count_floor: 5
+metadata:
+  axis: qualification-and-discovery
+  rule_count_floor: 5
 ---
 
 # Qualification and discovery

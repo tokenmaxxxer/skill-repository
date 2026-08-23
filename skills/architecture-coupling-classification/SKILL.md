@@ -1,8 +1,9 @@
 ---
 name: architecture-coupling-classification
 description: Use when classifying the type and severity of coupling between two components (shared data, control flags, struct passing, internal reach-through, timing/deploy ordering, cycles, or chatty call chains) and deciding what corrective action, if any, to take.
-axis: coupling-classification
-rule_count_floor: 12
+metadata:
+  axis: coupling-classification
+  rule_count_floor: 12
 ---
 
 # Coupling Classification — Operational Decision Rules

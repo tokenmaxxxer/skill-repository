@@ -1,8 +1,9 @@
 ---
 name: ml-engineering-rollout-promotion-rollback
 description: Use when staging a new model version's rollout through shadow, canary, and full traffic, or defining its automated rollback trigger. Applies to the rollout-promotion-rollback axis.
-axis: rollout-promotion-rollback
-rule_count_floor: 5
+metadata:
+  axis: rollout-promotion-rollback
+  rule_count_floor: 5
 ---
 
 # Rollout staging, promotion, and rollback

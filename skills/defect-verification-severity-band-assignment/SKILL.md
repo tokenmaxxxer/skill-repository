@@ -1,8 +1,9 @@
 ---
 name: defect-verification-severity-band-assignment
 description: Use when assigning a severity band to a reproduced defect — reading the band off the fixed technical-impact lookup table by halting/degrading/cosmetic tier, independent of business priority or how clean the upstream review record looks.
-axis: severity-band-assignment
-rule_count_floor: 8
+metadata:
+  axis: severity-band-assignment
+  rule_count_floor: 8
 ---
 
 # Severity-band assignment for a reproduced defect

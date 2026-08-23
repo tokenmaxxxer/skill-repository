@@ -1,9 +1,10 @@
 ---
 name: finance-unit-economics-proposal-shape
 description: Use when assembling a unit-economics proposal for a time-pressured reader — structuring progressive disclosure, capping compared options, running a subtractive edit pass, or cutting a definition-only glossary section.
-axis: proposal-shape
-rule_count_floor: 12
-tier: moderate
+metadata:
+  axis: proposal-shape
+  rule_count_floor: 12
+  tier: moderate
 ---
 
 # Proposal shape — decision rules

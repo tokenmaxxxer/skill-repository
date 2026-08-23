@@ -1,8 +1,9 @@
 ---
 name: html5-game-rendering-loop
 description: Use when structuring or reviewing a game's frame loop, timestep, or render/logic separation — choosing a single requestAnimationFrame driver, a fixed-timestep accumulator, state interpolation, delta clamping, or tab-visibility handling. Applies to the rendering-loop axis.
-axis: rendering-loop
-rule_count_floor: 5
+metadata:
+  axis: rendering-loop
+  rule_count_floor: 5
 ---
 
 # Rendering loop

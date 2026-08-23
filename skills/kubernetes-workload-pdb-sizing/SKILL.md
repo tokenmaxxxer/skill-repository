@@ -1,8 +1,9 @@
 ---
 name: kubernetes-workload-pdb-sizing
 description: Use when creating or sizing a PodDisruptionBudget for a Kubernetes workload, or deciding whether minAvailable or maxUnavailable is the right field for a given replica count.
-axis: pdb-sizing
-rule_count_floor: 5
+metadata:
+  axis: pdb-sizing
+  rule_count_floor: 5
 ---
 
 # Kubernetes PodDisruptionBudget sizing rules

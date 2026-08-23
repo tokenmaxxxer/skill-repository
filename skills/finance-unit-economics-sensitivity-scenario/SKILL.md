@@ -1,9 +1,10 @@
 ---
 name: finance-unit-economics-sensitivity-scenario
 description: Use when a forward unit-economics model needs sensitivity analysis sequenced before scenario work, a fixed three-scenario frame, a deduplicated what-if appendix, or a single named definition for a variable feeding more than one output.
-axis: sensitivity-scenario
-rule_count_floor: 12
-tier: moderate
+metadata:
+  axis: sensitivity-scenario
+  rule_count_floor: 12
+  tier: moderate
 ---
 
 # Sensitivity / scenario analysis — decision rules

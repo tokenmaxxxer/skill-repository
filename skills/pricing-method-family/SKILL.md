@@ -1,8 +1,9 @@
 ---
 name: pricing-method-family
 description: Use when a pricing question has already cleared the scope gate and needs a research method chosen — routing between the Van Westendorp PSM threshold family and the CBC-vs-CVA conjoint family based on what input the decision actually needs.
-axis: method-family-selection
-rule_count_floor: 3
+metadata:
+  axis: method-family-selection
+  rule_count_floor: 3
 ---
 
 # Method-family selection decision rules

@@ -1,8 +1,9 @@
 ---
 name: incident-response-rca-method-selection
 description: Use when choosing which root-cause-analysis method to apply to an incident — 5 Whys, fishbone, or fault tree — or converting a fishbone into a causal chain. Applies to the rca-method-selection axis.
-axis: rca-method-selection
-rule_count_floor: 4
+metadata:
+  axis: rca-method-selection
+  rule_count_floor: 4
 ---
 
 # RCA method selection

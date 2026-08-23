@@ -1,8 +1,9 @@
 ---
 name: user-discovery-switch-timeline-causal-forces
 description: Use when reconstructing a customer's switch (or non-switch) story to test an adoption hypothesis — walking through push/pull/anxiety/habit from a real past decision rather than asking about future adoption intent.
-axis: switch-timeline-causal-forces
-rule_count_floor: 8
+metadata:
+  axis: switch-timeline-causal-forces
+  rule_count_floor: 8
 ---
 
 # Switch-timeline reconstruction: JTBD four-forces causal framing

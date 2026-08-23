@@ -1,8 +1,9 @@
 ---
 name: data-engineering-data-quality
 description: Use when defining or reviewing data-quality checks — completeness, uniqueness, accuracy, freshness, or volume — formalizing a cross-column rule or data contract, or layering anomaly monitoring on authored checks.
-axis: data-quality
-rule_count_floor: 10
+metadata:
+  axis: data-quality
+  rule_count_floor: 10
 ---
 
 # Data quality — decision rules

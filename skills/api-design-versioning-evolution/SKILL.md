@@ -1,8 +1,9 @@
 ---
 name: api-design-versioning-evolution
 description: Use when choosing an API versioning scheme, classifying whether a proposed change is breaking, or planning a field/endpoint/version deprecation and removal.
-axis: versioning-evolution
-rule_count_floor: 10
+metadata:
+  axis: versioning-evolution
+  rule_count_floor: 10
 ---
 
 # Versioning & evolution

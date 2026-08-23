@@ -1,9 +1,10 @@
 ---
 name: upstream-defect-report-subtraction
 description: Use when a draft defect report or its reproduction still contains "just in case" prose, redundant log/text duplication, unrelated repro lines, an investigation narrative, a private dependency, or an un-reverified suspected defect, right before filing.
-axis: subtraction
-rule_count_floor: 5
-role: upstream-defect-report
+metadata:
+  axis: subtraction
+  rule_count_floor: 5
+  role: upstream-defect-report
 ---
 
 # Subtraction — what to remove before filing

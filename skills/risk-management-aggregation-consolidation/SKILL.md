@@ -1,8 +1,9 @@
 ---
 name: risk-management-aggregation-consolidation
 description: Use when combining or rolling up scores across related register entries, flagging concentration risk, merging duplicate entries, retiring stale entries, or ordering a consolidated action queue. Applies to the aggregation-consolidation axis.
-axis: aggregation-consolidation
-rule_count_floor: 10
+metadata:
+  axis: aggregation-consolidation
+  rule_count_floor: 10
 ---
 
 # Risk aggregation / consolidation (removal-heavy axis)

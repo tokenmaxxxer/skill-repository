@@ -1,9 +1,10 @@
 ---
 name: negotiation-batna-and-zopa-preparation
 description: Use when preparing for any negotiation (procurement, vendor contract, partnership term, internal resource ask) before the first substantive session, or when the counterpart's walk-away position becomes known or inferable mid-negotiation and the zone of possible agreement needs re-checking.
-axis: reservation-point-and-agreement-zone
-rule_count_floor: 2
-tier: sparse
+metadata:
+  axis: reservation-point-and-agreement-zone
+  rule_count_floor: 2
+  tier: sparse
 ---
 
 # BATNA and ZOPA preparation

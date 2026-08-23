@@ -1,8 +1,9 @@
 ---
 name: legal-compliance-retention-minimization
 description: Use when deciding what personal data to collect, how long to keep it, or whether an already-collected category may be reused for a new purpose.
-axis: retention-and-minimization
-rule_count_floor: 2
+metadata:
+  axis: retention-and-minimization
+  rule_count_floor: 2
 ---
 
 # Data retention and minimization

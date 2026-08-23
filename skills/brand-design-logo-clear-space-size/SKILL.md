@@ -1,9 +1,10 @@
 ---
 name: brand-design-logo-clear-space-size
 description: Use when specifying a logo's required clear space, setting minimum-size floors for print or digital reproduction, or pruning a logo-variant appendix of versions tied to a discontinued campaign or medium.
-axis: logo-clear-space-and-minimum-size
-rule_count_floor: 3
-tier: rich
+metadata:
+  axis: logo-clear-space-and-minimum-size
+  rule_count_floor: 3
+  tier: rich
 ---
 
 # Logo clear-space and minimum-size rules

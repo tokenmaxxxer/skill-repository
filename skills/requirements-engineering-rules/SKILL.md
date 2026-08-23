@@ -1,11 +1,12 @@
 ---
 name: requirements-engineering-rules
-subject: issue-1174
-rule_count_floor: 23
-axes: 7
-tier: rich
 description: Use when selecting an EARS sentence template while drafting a requirement, assigning a requirement's verification method, spotting a weak/ambiguous word or double reading, spotting a conjunction or mixed-verification-method requirement, deciding traceability-link granularity, breaking a MoSCoW-tier tie, or reviewing a spec for gold-plating/redundancy/staleness.
 
+metadata:
+  subject: issue-1174
+  rule_count_floor: 23
+  axes: 7
+  tier: rich
 ---
 
 # Requirements-engineering operational playbook

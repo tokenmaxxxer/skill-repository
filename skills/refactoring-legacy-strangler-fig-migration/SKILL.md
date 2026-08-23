@@ -1,8 +1,9 @@
 ---
 name: refactoring-legacy-strangler-fig-migration
 description: Use when choosing between Strangler Fig and Branch by Abstraction for a legacy migration, scoping a migration slice, verifying a new implementation's correctness before cutover, or deciding when to decommission the legacy path.
-axis: strangler-fig-migration
-rule_count_floor: 5
+metadata:
+  axis: strangler-fig-migration
+  rule_count_floor: 5
 ---
 
 # Strangler fig migration

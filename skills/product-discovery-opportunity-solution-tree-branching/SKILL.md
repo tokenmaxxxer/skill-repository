@@ -1,8 +1,9 @@
 ---
 name: product-discovery-opportunity-solution-tree-branching
 description: Use when placing a finding onto the Opportunity Solution Tree's four layers, prioritizing opportunities or solutions, or pruning invalidated/stale branches. Applies to the opportunity-solution-tree-branching axis.
-axis: opportunity-solution-tree-branching
-rule_count_floor: 10
+metadata:
+  axis: opportunity-solution-tree-branching
+  rule_count_floor: 10
 ---
 
 # Opportunity-solution-tree branching and pruning

@@ -1,8 +1,9 @@
 ---
 name: design-artifact-storyboard
 description: Use when authoring a sequence-of-panels storyboard for a user story or workflow, one that maps chronological events rather than a single static screen.
-axis: storyboard-sequence-vs-single-screen
-rule_count_floor: 3
+metadata:
+  axis: storyboard-sequence-vs-single-screen
+  rule_count_floor: 3
 ---
 
 # Storyboard sequence vs. single screen

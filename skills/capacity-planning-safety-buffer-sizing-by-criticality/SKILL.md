@@ -1,8 +1,9 @@
 ---
 name: capacity-planning-safety-buffer-sizing-by-criticality
 description: Use when sizing a safety_buffer term by a resource's criticality and blast radius — choosing a service-level target, ranking criticality against demand history, or sizing a buffer for a shared or sparse-history resource.
-axis: safety-buffer-sizing-by-criticality
-rule_count_floor: 8
+metadata:
+  axis: safety-buffer-sizing-by-criticality
+  rule_count_floor: 8
 ---
 
 # Safety-buffer sizing by criticality and blast radius

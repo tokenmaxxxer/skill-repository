@@ -1,8 +1,9 @@
 ---
 name: market-analysis-five-forces
 description: Use when rating one of Porter's five forces (rivalry, buyer power, supplier power, threat of new entrants, threat of substitutes), turning force ratings into an overall attractiveness verdict, or checking that a force rating is quantified and appropriately hedged. Applies to the five-forces axis.
-axis: five-forces
-rule_count_floor: 10
+metadata:
+  axis: five-forces
+  rule_count_floor: 10
 ---
 
 # Five-forces verdict rules (Porter)

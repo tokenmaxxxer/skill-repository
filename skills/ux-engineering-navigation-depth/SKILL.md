@@ -1,8 +1,9 @@
 ---
 name: ux-engineering-navigation-depth
 description: Use when deciding where an action or item sits in a navigation hierarchy, top level vs. nested, and in what order. Applies to the nav-order-vs-usage-frequency axis.
-axis: nav-order-vs-usage-frequency
-rule_count_floor: 3
+metadata:
+  axis: nav-order-vs-usage-frequency
+  rule_count_floor: 3
 ---
 
 # Navigation order vs. usage frequency

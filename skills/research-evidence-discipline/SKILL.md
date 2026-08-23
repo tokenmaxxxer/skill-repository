@@ -1,8 +1,9 @@
 ---
 name: research-evidence-discipline
 description: Use when writing a claim into a research-shaped record (market-analysis, product-discovery, growth-analytics, user-discovery) and deciding whether it needs a Fact/Inference/Assumption label, when about to state a name/quote/figure with no source in hand, or when an open-questions list is growing and a call to stop asking and proceed is needed. Applies to the evidence-discipline axis.
-axis: evidence-discipline
-rule_count_floor: 6
+metadata:
+  axis: evidence-discipline
+  rule_count_floor: 6
 ---
 
 # Evidence-discipline rules

@@ -12,6 +12,10 @@ block (delimited by `---` lines) that contains:
     TRIGGER_MARKERS)
   - a non-empty `axis:` or `axes:` field, when the skill declares
     `rule_count_floor:` (i.e. is a numbered-decision-rule skill)
+  - only Claude Code's allowed top-level keys (allowed-tools,
+    compatibility, description, license, metadata, name) — custom keys
+    (axis, axes, rule_count_floor, tier, ...) live under `metadata:`
+    (issue #101); readers fall back to top-level for backward compat
   - a well-formed `globs:` field, when present (issue #62): an opt-in
     YAML list of one or more non-empty glob patterns, each containing at
     least one wildcard character (`*` or `?`)
@@ -98,6 +102,64 @@ def extract_frontmatter(text):
     return text[4:end]
 
 
+# Claude Code's sanctioned top-level frontmatter key set (issue #101).
+# Custom keys (axis, rule_count_floor, tier, ...) live under metadata:.
+ALLOWED_TOP_LEVEL_KEYS = {
+    "allowed-tools",
+    "compatibility",
+    "description",
+    "license",
+    "metadata",
+    "name",
+}
+
+TOP_LEVEL_KEY_RE = re.compile(r"^([A-Za-z][A-Za-z0-9_-]*):", re.MULTILINE)
+
+
+def metadata_block(frontmatter):
+    """Return the dedented body of the top-level `metadata:` block, or
+    None when the frontmatter has no metadata: container."""
+    m = re.search(r"^metadata:[ \t]*$", frontmatter, re.MULTILINE)
+    if m is None:
+        return None
+    lines = []
+    for line in frontmatter[m.end():].splitlines():
+        if line.startswith("  "):
+            lines.append(line[2:])
+        elif line.startswith("\t"):
+            lines.append(line[1:])
+        elif line.strip() == "":
+            lines.append("")
+        else:
+            break
+    return "\n".join(lines)
+
+
+def parse_custom_field(frontmatter, field):
+    """Read a custom key: metadata.<field> first, falling back to a
+    top-level key so mixed/unmigrated states keep working."""
+    meta = metadata_block(frontmatter)
+    if meta is not None:
+        value = parse_field(meta, field)
+        if value is not None:
+            return value
+    return parse_field(frontmatter, field)
+
+
+def check_top_level_keys(text, frontmatter):
+    """Every top-level frontmatter key must be in Claude Code's allowed
+    set; custom keys belong under metadata: (issue #101)."""
+    reasons = []
+    for m in TOP_LEVEL_KEY_RE.finditer(frontmatter):
+        key = m.group(1)
+        if key not in ALLOWED_TOP_LEVEL_KEYS:
+            reasons.append(
+                (line_of(text, 4 + m.start()),
+                 f"non-standard top-level frontmatter key '{key}:' — move it under metadata:")
+            )
+    return reasons
+
+
 def parse_field(frontmatter, field):
     # Matches "field: value" or "field: >-" / "field: |" block scalars.
     m = re.search(rf"^{field}:[ \t]*(.*)$", frontmatter, re.MULTILINE)
@@ -121,11 +183,19 @@ def parse_field(frontmatter, field):
 
 def has_axis_field(frontmatter):
     """True iff `axis:` has a non-empty scalar, or `axes:` has a non-empty
-    scalar/count or at least one `- item` list entry beneath it."""
-    axis = parse_field(frontmatter, "axis")
+    scalar/count or at least one `- item` list entry beneath it. Reads
+    metadata.* first, with top-level fallback (issue #101)."""
+    axis = parse_custom_field(frontmatter, "axis")
     if axis:
         return True
-    m = re.search(r"^axes:[ \t]*(.*)$", frontmatter, re.MULTILINE)
+    meta = metadata_block(frontmatter)
+    m = None
+    if meta is not None:
+        m = re.search(r"^axes:[ \t]*(.*)$", meta, re.MULTILINE)
+        if m is not None:
+            frontmatter = meta
+    if m is None:
+        m = re.search(r"^axes:[ \t]*(.*)$", frontmatter, re.MULTILINE)
     if m is None:
         return False
     value = m.group(1).strip()
@@ -145,8 +215,9 @@ def check_globs_field(text, frontmatter):
     """Validate an optional `globs:` frontmatter field. Absent is fine
     (opt-in). Present, it must be a YAML list of one or more non-empty
     string patterns, each containing at least one glob wildcard
-    character (`*` or `?`)."""
-    m = re.search(r"^globs:[ \t]*(.*)$", frontmatter, re.MULTILINE)
+    character (`*` or `?`). Matches `globs:` at top level or nested one
+    level under `metadata:` (issue #101)."""
+    m = re.search(r"^(?:  )?globs:[ \t]*(.*)$", frontmatter, re.MULTILINE)
     if m is None:
         return []
     globs_line = line_of(text, 4 + m.start())
@@ -276,10 +347,11 @@ def check_skill(skill_md, dirname):
         if not any(marker in lowered for marker in TRIGGER_MARKERS):
             reasons.append((desc_line, 'description: has no "Use when ..." trigger sentence'))
 
-    rule_count_floor = parse_field(frontmatter, "rule_count_floor")
+    rule_count_floor = parse_custom_field(frontmatter, "rule_count_floor")
     if rule_count_floor and not has_axis_field(frontmatter):
         reasons.append((1, "missing or empty axis:/axes: (required alongside rule_count_floor:)"))
 
+    reasons += check_top_level_keys(text, frontmatter)
     reasons += check_rule_sources(text)
     reasons += check_globs_field(text, frontmatter)
     reasons += check_related_skills_links(text, skill_md.parent)

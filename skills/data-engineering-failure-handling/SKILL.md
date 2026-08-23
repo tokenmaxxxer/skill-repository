@@ -1,8 +1,9 @@
 ---
 name: data-engineering-failure-handling
 description: Use when classifying a pipeline failure as retry-vs-DLQ, setting DLQ alert thresholds, scaling recovery targets, or rolling back a bad load.
-axis: failure-handling
-rule_count_floor: 10
+metadata:
+  axis: failure-handling
+  rule_count_floor: 10
 ---
 
 # Failure handling — decision rules

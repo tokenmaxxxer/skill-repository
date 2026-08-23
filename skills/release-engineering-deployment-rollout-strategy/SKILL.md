@@ -1,8 +1,9 @@
 ---
 name: release-engineering-deployment-rollout-strategy
 description: Use when choosing between rolling, canary, and blue-green deployment for a service, or setting the rollback threshold and config validation gate for the rollout.
-axis: deployment-rollout-strategy
-rule_count_floor: 13
+metadata:
+  axis: deployment-rollout-strategy
+  rule_count_floor: 13
 ---
 
 # Deployment rollout strategy

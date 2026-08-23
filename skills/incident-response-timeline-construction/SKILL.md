@@ -1,8 +1,9 @@
 ---
 name: incident-response-timeline-construction
 description: Use when building or reviewing an incident postmortem's timeline field — what events to log, at what resolution, and how to verify them. Applies to the timeline-construction axis.
-axis: timeline-construction
-rule_count_floor: 4
+metadata:
+  axis: timeline-construction
+  rule_count_floor: 4
 ---
 
 # Timeline construction

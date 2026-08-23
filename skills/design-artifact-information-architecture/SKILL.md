@@ -1,8 +1,9 @@
 ---
 name: design-artifact-information-architecture
 description: Use when structuring or labeling a site or app's content hierarchy — organizing categories, choosing depth vs. breadth, and naming labels for findability.
-axis: ia-findability-vs-depth
-rule_count_floor: 3
+metadata:
+  axis: ia-findability-vs-depth
+  rule_count_floor: 3
 ---
 
 # IA findability vs. depth

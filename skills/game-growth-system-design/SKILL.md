@@ -1,8 +1,9 @@
 ---
 name: game-growth-system-design
 description: Use when setting a cost/pacing curve across sessions, adding or auditing a currency's sources and sinks, scheduling upgrade choices, choosing deterministic vs chance-based progression, or setting a return cadence. Applies to the growth-system-design axis.
-axis: growth-system-design
-rule_count_floor: 5
+metadata:
+  axis: growth-system-design
+  rule_count_floor: 5
 ---
 
 # Game Growth System Design

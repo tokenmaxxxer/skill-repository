@@ -1,8 +1,9 @@
 ---
 name: ux-engineering-service-design-blueprint-construction
 description: Use when building a service blueprint for an omnichannel or cross-functional service — laying out Physical Evidence, Customer Actions, Onstage, Backstage, and Support Processes layers, placing the Line of Interaction/Visibility/Internal Interaction, or scoping which journey/segment a blueprint should cover before starting.
-axis: blueprint-construction-scope-and-layering
-rule_count_floor: 5
+metadata:
+  axis: blueprint-construction-scope-and-layering
+  rule_count_floor: 5
 ---
 
 # Service blueprint construction

@@ -23,8 +23,9 @@ VALID_SKILL = """\
 ---
 name: sample-skill
 description: Use when deciding something and you need a decision rule.
-axis: sample-axis
-rule_count_floor: 1
+metadata:
+  axis: sample-axis
+  rule_count_floor: 1
 ---
 
 # Sample Skill
@@ -57,7 +58,7 @@ class CheckSkillConformanceTest(unittest.TestCase):
         self.assertEqual(conformance.check_skill(skill_md, "sample-skill"), [])
 
     def test_missing_axis_is_flagged_with_line(self):
-        content = VALID_SKILL.replace("axis: sample-axis\n", "")
+        content = VALID_SKILL.replace("  axis: sample-axis\n", "")
         skill_md = write_skill(self.tmp_path, "sample-skill", content)
         reasons = conformance.check_skill(skill_md, "sample-skill")
         messages = [r for _, r in reasons]
@@ -91,16 +92,16 @@ class CheckSkillConformanceTest(unittest.TestCase):
 
     def test_valid_globs_field_has_no_violations(self):
         content = VALID_SKILL.replace(
-            "rule_count_floor: 1\n",
-            'rule_count_floor: 1\nglobs:\n  - "**/*.yaml"\n  - "**/requirements*.txt"\n',
+            "  rule_count_floor: 1\n",
+            '  rule_count_floor: 1\n  globs:\n    - "**/*.yaml"\n    - "**/requirements*.txt"\n',
         )
         skill_md = write_skill(self.tmp_path, "sample-skill", content)
         self.assertEqual(conformance.check_skill(skill_md, "sample-skill"), [])
 
     def test_malformed_globs_scalar_is_flagged(self):
         content = VALID_SKILL.replace(
-            "rule_count_floor: 1\n",
-            "rule_count_floor: 1\nglobs: **/*.yaml\n",
+            "  rule_count_floor: 1\n",
+            "  rule_count_floor: 1\n  globs: **/*.yaml\n",
         )
         skill_md = write_skill(self.tmp_path, "sample-skill", content)
         reasons = conformance.check_skill(skill_md, "sample-skill")
@@ -108,8 +109,8 @@ class CheckSkillConformanceTest(unittest.TestCase):
 
     def test_globs_pattern_without_wildcard_is_flagged(self):
         content = VALID_SKILL.replace(
-            "rule_count_floor: 1\n",
-            'rule_count_floor: 1\nglobs:\n  - "package.json"\n',
+            "  rule_count_floor: 1\n",
+            '  rule_count_floor: 1\n  globs:\n    - "package.json"\n',
         )
         skill_md = write_skill(self.tmp_path, "sample-skill", content)
         reasons = conformance.check_skill(skill_md, "sample-skill")
@@ -117,8 +118,8 @@ class CheckSkillConformanceTest(unittest.TestCase):
 
     def test_empty_globs_list_is_flagged(self):
         content = VALID_SKILL.replace(
-            "rule_count_floor: 1\n",
-            "rule_count_floor: 1\nglobs:\n",
+            "  rule_count_floor: 1\n",
+            "  rule_count_floor: 1\n  globs:\n",
         )
         skill_md = write_skill(self.tmp_path, "sample-skill", content)
         reasons = conformance.check_skill(skill_md, "sample-skill")
@@ -141,6 +142,41 @@ class CheckSkillConformanceTest(unittest.TestCase):
         skill_md = write_skill(self.tmp_path, "sample-skill", content)
         reasons = conformance.check_skill(skill_md, "sample-skill")
         self.assertTrue(any("is not a relative link" in m for _, m in reasons), reasons)
+
+    def test_non_standard_top_level_key_is_flagged(self):
+        # issue #101: custom keys must live under metadata:, not top level.
+        content = VALID_SKILL.replace(
+            "metadata:\n", "tier: sparse\nmetadata:\n"
+        )
+        skill_md = write_skill(self.tmp_path, "sample-skill", content)
+        reasons = conformance.check_skill(skill_md, "sample-skill")
+        matches = [(line, m) for line, m in reasons if "non-standard top-level" in m]
+        self.assertEqual(len(matches), 1, reasons)
+        self.assertIn("'tier:'", matches[0][1])
+
+    def test_top_level_custom_keys_still_parse_as_fallback(self):
+        # backward compat: an unmigrated skill with top-level
+        # axis:/rule_count_floor: must not trip the axis-required check
+        # (it is flagged for the non-standard keys, and nothing else).
+        content = VALID_SKILL.replace(
+            "metadata:\n  axis: sample-axis\n  rule_count_floor: 1\n",
+            "axis: sample-axis\nrule_count_floor: 1\n",
+        )
+        skill_md = write_skill(self.tmp_path, "sample-skill", content)
+        reasons = conformance.check_skill(skill_md, "sample-skill")
+        self.assertTrue(all("non-standard top-level" in m for _, m in reasons), reasons)
+        self.assertEqual(len(reasons), 2, reasons)
+
+    def test_metadata_key_shadows_top_level_fallback(self):
+        self.assertEqual(
+            conformance.parse_custom_field(
+                "metadata:\n  tier: rich\ntier: sparse", "tier"
+            ),
+            "rich",
+        )
+        self.assertEqual(
+            conformance.parse_custom_field("tier: sparse", "tier"), "sparse"
+        )
 
     def test_full_repo_tree_is_conformant(self):
         skills_dir = REPO_ROOT / "skills"

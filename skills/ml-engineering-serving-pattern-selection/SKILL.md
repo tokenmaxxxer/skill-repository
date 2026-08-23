@@ -1,8 +1,9 @@
 ---
 name: ml-engineering-serving-pattern-selection
 description: Use when choosing between batch, online-synchronous, and online-asynchronous/streaming serving for a model workload, or deciding whether to micro-batch requests. Applies to the serving-pattern-selection axis.
-axis: serving-pattern-selection
-rule_count_floor: 5
+metadata:
+  axis: serving-pattern-selection
+  rule_count_floor: 5
 ---
 
 # Serving pattern selection (batch / online-sync / online-async-streaming)

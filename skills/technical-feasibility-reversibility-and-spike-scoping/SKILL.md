@@ -1,14 +1,15 @@
 ---
 name: technical-feasibility-reversibility-and-spike-scoping
 description: Use when a candidate architectural decision must be sorted into two-way-door vs. one-way-door and, for one-way-door candidates, scoped into a timeboxed spike with sensitivity/tradeoff points and third-party-checkable acceptance criteria — not when the task is comparing dependency health, license/regulatory exposure, threat-model disposition, or assembling the final verdict/timebox record.
-axis: reversibility-and-spike-scoping
-rule_count_floor: 10
-axes:
-  - reversibility-and-spike-scoping
-  - build-vs-buy-dependency-health
-  - license-and-regulatory-risk
-  - threat-model-disposition
-  - verdict-and-timebox-selection
+metadata:
+  axis: reversibility-and-spike-scoping
+  rule_count_floor: 10
+  axes:
+    - reversibility-and-spike-scoping
+    - build-vs-buy-dependency-health
+    - license-and-regulatory-risk
+    - threat-model-disposition
+    - verdict-and-timebox-selection
 ---
 
 # Decision axis: reversibility classification & spike scoping

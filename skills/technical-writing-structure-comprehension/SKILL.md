@@ -1,8 +1,9 @@
 ---
 name: technical-writing-structure-comprehension
 description: Use when drafting or editing sentence, paragraph, or section structure for reader comprehension and cognitive load. Applies to the structure-comprehension axis.
-axis: structure-comprehension
-rule_count_floor: 10
+metadata:
+  axis: structure-comprehension
+  rule_count_floor: 10
 ---
 
 # Structure for comprehension (cognitive load)

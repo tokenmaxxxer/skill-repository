@@ -1,8 +1,9 @@
 ---
 name: performance-engineering-operational-playbook
 description: Use when diagnosing an unexplained slowdown with no prior hypothesis, setting or reporting a latency/SLO/error-budget target, assessing queue/pool/connection-pool pressure, or choosing between a removal-shaped and addition-shaped fix.
-subject: issue-1174
-layer_program: docs/issue-1174/proposals/operational-playbook-program.md
+metadata:
+  subject: issue-1174
+  layer_program: docs/issue-1174/proposals/operational-playbook-program.md
 ---
 
 # Performance-engineering operational playbook
