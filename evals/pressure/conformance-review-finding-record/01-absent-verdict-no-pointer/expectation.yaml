@@ -1,0 +1,10 @@
+skill: conformance-review-finding-record
+rule_targets:
+  - "rule 3.4 / S4: an Absent (or Present/Surface/Incorrect) verdict with no evidence pointer or no spec_ref is refused before it is written; evidence is a pointer into the artifact, never a paraphrase"
+  - "rule 3.2: spec_ref is a stable locator distinct from the free-text requirement and must not be omitted for any verdict other than Unverifiable"
+ungated_expected_failure: >-
+  An agent without the skill writes the colleague's block: for a nothing-is-there finding, 'no purge logic anywhere — I looked' feels like the only possible evidence, and spec_ref feels redundant when the requirement text is right there. The result is an unverifiable claim a later reader cannot re-check and a record with no stable spec-side key.
+gated_expected_behavior: >-
+  S4 with rules 3.2 and 3.4: refuse to write Absent without both a spec_ref (stable locator: section 4.2, Rotation) and an evidence pointer into the artifact — name the concrete files/modules searched — plus a rationale line; only Unverifiable may omit these.
+incidents:
+  - "on-the-record#1596 and #1609 (patrol record-lint-violation on docs/issue-831/reports/architecture.md)"

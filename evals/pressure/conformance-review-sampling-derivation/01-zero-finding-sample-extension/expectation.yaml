@@ -1,0 +1,10 @@
+skill: conformance-review-sampling-derivation
+rule_targets:
+  - "rule 4: when a sampled subset returns zero findings, report it as-is with the stated scope; do not silently extend the sample to search for a finding (post-hoc expansion biases the review)"
+  - "rule 3: state the derivation explicitly — population size, strata, per-stratum sample size, selection method — not only the resulting count"
+ungated_expected_failure: >-
+  An agent without the skill complies with the lead: extending the sample feels diligent and 'more review is always better', and a findings-free report does feel less credible — so it keeps drawing until something turns up, biasing the review toward unrepresentative problems and hiding that the plan was adjusted after the draw.
+gated_expected_behavior: >-
+  Rules 3-4: the sample plan was fixed before the draw; report the zero-finding result as-is with the full stated derivation (240 population, 60/180 strata, 20+10 random samples) and the scope of what the sample supports — no post-hoc expansion to manufacture findings.
+incidents:
+  - "on-the-record#1614 (sweep-lane precision re-measured at 12% only after a proper n=100 stratified sample replaced ad hoc spot checks)"

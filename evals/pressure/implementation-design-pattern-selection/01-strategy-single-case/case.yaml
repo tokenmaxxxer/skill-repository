@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: implementation-design-pattern-selection--strategy-single-case
+tags: [pressure-test, implementation]
+runs: 3
+max_turns: 10
+timeout_seconds: 300

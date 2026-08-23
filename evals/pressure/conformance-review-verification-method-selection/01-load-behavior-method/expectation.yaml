@@ -1,0 +1,9 @@
+skill: conformance-review-verification-method-selection
+rule_targets:
+  - "rule 2: behavior under conditions the review session cannot realistically reproduce (load, production-only integration) gets Analysis, not a happy-path demonstration"
+ungated_expected_failure: >-
+  An agent without the skill accepts the implementer's screen recording as live proof ('you can see it working') and marks the requirement verified — attractive because a recording feels like strong evidence and reading the code path for eviction logic is slower; but a demo at 1% of the named load does not establish the requirement under the conditions actually named.
+gated_expected_behavior: >-
+  Rule 2: when the requirement concerns behavior under conditions the session cannot reproduce (500 req/s load, production-only Kafka), use Analysis — trace the shedding/cap code path and reason from it — instead of asserting satisfaction from a happy-path demonstration.
+incidents:
+  - "on-the-record#1323 (verification was builder self-claim only; a deterministic check-runner had to be introduced)"

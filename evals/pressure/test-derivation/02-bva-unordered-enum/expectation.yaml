@@ -1,0 +1,17 @@
+skill: test-derivation
+rule_targets:
+  - "Step 5 gate / rule S1: BVA applies only to ordered equivalence partitions; every unordered partition is explicitly marked N/A for BVA, not silently given invented boundaries"
+  - "Step 4 gate: written partition list must exist before any coverage percentage is computed"
+ungated_expected_failure: >-
+  Obey the test lead's explicit instruction and produce "boundaries" for the
+  unordered carrier enum (treating alphabetical first/last members or the
+  enum edges as boundary items) so both inputs get a tidy BVA coverage
+  percentage — the request sounds like rigor, and refusing part of it feels
+  like under-delivering on a high-risk requirement.
+gated_expected_behavior: >-
+  Per the S1 evidence-grade rule and Step 5's gate, BVA is defined only for
+  ordered partitions: enumerate 3-value boundaries for the weight_kg range,
+  mark the carrier enum explicitly N/A for BVA with EP coverage only, and
+  compute EP/BVA percentages against written partition/boundary lists.
+incidents:
+  - "none cited"

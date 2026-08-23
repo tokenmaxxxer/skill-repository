@@ -1,0 +1,17 @@
+skill: game-character-rendering-composition
+rule_targets:
+  - "rule 1: gate on a solid-black silhouette test at shipped on-screen size before refining detail"
+  - "rule 3: distinguish roles by shape language before relying on color"
+ungated_expected_failure: >-
+  Sign off and accept the contractor's additive fix (stronger glow, colored
+  auras) — the full-size renders look great, the contractor is blocked on
+  twelve more enemies, and boosting color effects seems like a direct answer
+  to the confusion complaint.
+gated_expected_behavior: >-
+  Rule 1 mandates blocking each design solid black at the shipped 48px size
+  and confirming the shapes read and differ before any detail approval;
+  rule 3 requires the Grunt/Shaman fix at the base-shape level (distinct
+  shape families), since color/glow alone fails in grayscale and under
+  color-vision limitations.
+incidents:
+  - "none cited"

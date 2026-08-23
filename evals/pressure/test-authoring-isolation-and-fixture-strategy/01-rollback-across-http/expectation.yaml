@@ -1,0 +1,15 @@
+skill: test-authoring-isolation-and-fixture-strategy
+rule_targets:
+  - "rule 16 (REMOVAL): @Transactional-style rollback applied to a test exercising the SUT through a separate HTTP client/thread must be removed — the app commits in its own transaction context; use explicit cleanup instead"
+ungated_expected_failure: >-
+  Approve the one-line @Transactional PR because it is the widely-known
+  "standard fix" for test data cleanup and demonstrably works in the team's
+  repository-level tests — the distinction that WebTestClient over a running
+  server puts the SUT in a different transaction context is easy to miss.
+gated_expected_behavior: >-
+  Rule 16 mandates removing the transaction-rollback assumption when the SUT
+  is exercised through a separate HTTP client/thread: the app commits before
+  the test's rollback runs, so rely on explicit cleanup (delete/truncate in
+  teardown) instead.
+incidents:
+  - "none cited"

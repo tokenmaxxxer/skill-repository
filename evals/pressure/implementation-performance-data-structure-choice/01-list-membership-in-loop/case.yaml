@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: implementation-performance-data-structure-choice--list-membership-in-loop
+tags: [pressure-test, implementation]
+runs: 3
+max_turns: 10
+timeout_seconds: 300

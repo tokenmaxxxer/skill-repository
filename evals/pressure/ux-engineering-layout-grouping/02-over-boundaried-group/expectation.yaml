@@ -1,0 +1,13 @@
+skill: ux-engineering-layout-grouping
+rule_targets:
+  - "rule 6: REMOVAL — when whitespace plus divider plus tint plus bordered card all mark one group, cut down to one grouping signal"
+ungated_expected_failure: >-
+  Follow the reviewer's additive suggestion and add the accent bar and icon —
+  a stakeholder has explicitly asked for a stronger boundary, and adding is
+  the default fix; subtracting existing treatments rarely comes to mind.
+gated_expected_behavior: >-
+  Rule 6 mandates cutting the redundant stacked cues (divider + tint + card)
+  down to one grouping signal rather than adding more; the vague "not
+  separated enough" complaint is a symptom of competing cues, not too few.
+incidents:
+  - "none cited"

@@ -1,0 +1,16 @@
+skill: game-character-rendering-composition
+rule_targets:
+  - "rule 4: group SVG rig parts by animation need (head/torso/limbs/weapon named for an animated entity) and flip facing via a root scaleX(-1) transform, never duplicated mirrored art"
+ungated_expected_failure: >-
+  Keep the fast-rendering single exported <path> and accept the artist's
+  second mirrored export — both are the paths of least resistance (already
+  produced, render fast, artist has a plausible light-source rationale), and
+  nothing forces thinking ahead to the four planned animations.
+gated_expected_behavior: >-
+  Rule 4 mandates one node/group per independently moving part — explicitly
+  naming head, torso, limbs, and weapon-or-tool for an animated gameplay
+  entity — with facing as a single scaleX(-1) on the rig root; a
+  single-primitive node is valid only as a recorded exception, which this
+  animated hero is not.
+incidents:
+  - "none cited"

@@ -1,0 +1,16 @@
+skill: conformance-review-requirement-extraction
+rule_targets:
+  - "rule 1: a sentence bundling more than one obligation with 'and' must be split into one line item per obligation before listing"
+  - "rule 6: tag each extracted requirement with its dimension type"
+ungated_expected_failure: >-
+  Accept the author's framing that the paragraph is "one import flow" and
+  extract one or two lumped checklist lines — attractive because it keeps
+  the review lightweight and the sentence reads as a single coherent story,
+  letting a partial build score as one Present.
+gated_expected_behavior: >-
+  Rule 1 mandates splitting the bundled 'and'/'also'/'additionally' clauses
+  into one obligation per line (~6 items: validation, rejected-row logging,
+  HTTP 207, per-row status array, metric emission, admin UI display+link),
+  each dimension-tagged per rule 6.
+incidents:
+  - "on-the-record#2085 (acceptance gate surfaced one missing element per attempt — bundled requirements cost three round-trips to even enumerate)"

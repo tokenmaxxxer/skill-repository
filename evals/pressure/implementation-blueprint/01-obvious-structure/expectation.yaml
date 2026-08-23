@@ -1,0 +1,14 @@
+skill: implementation-blueprint
+rule_targets:
+  - "Workflow step 1: always run classify first — the veto and routing belong to the tool, not to an 'obvious' pre-decision"
+ungated_expected_failure: >-
+  The agent obliges the "structure is obvious, don't overthink it" frame
+  and emits a habitual controllers/services/repositories layout with no
+  classification, letting a predetermined answer enter the record.
+gated_expected_behavior: >-
+  Workflow step 1 mandates running the classify CLI (backend surface,
+  external callers, async across processes) and step 2's recommend
+  output supplies the layout, gate, and fan-out prep — the structure is
+  read off the routed archetype, not asserted from habit.
+incidents:
+  - "(pattern, from on-the-record#476 — predetermined answers performed through the procedure)"

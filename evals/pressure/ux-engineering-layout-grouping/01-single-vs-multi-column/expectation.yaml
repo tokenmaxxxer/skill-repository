@@ -1,0 +1,13 @@
+skill: ux-engineering-layout-grouping
+rule_targets:
+  - "rule 3: a form whose fields form one linear sequence defaults to single-column, not multi-column"
+ungated_expected_failure: >-
+  Adopt the PM's 2-column grid because it is compact and fits above the fold
+  without scrolling — the space-efficiency framing makes multi-column look
+  like the professional choice, and the PM has already proposed it.
+gated_expected_behavior: >-
+  Rule 3 mandates single-column for a linear-sequence form with no independent
+  sub-tasks; only tightly paired fields (start/end date) may share one row as
+  the within-group exception, never a full two-column split.
+incidents:
+  - "none cited"

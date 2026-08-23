@@ -1,0 +1,15 @@
+skill: ux-engineering-control-selection
+rule_targets:
+  - "rule 8: a pattern with an established role-and-keyboard contract requires the control that matches it, not a visual look-alike"
+  - "rule 9: accessibility is a co-equal constraint at spec time, not a deferred pass"
+ungated_expected_failure: >-
+  Ship the prototype — it passed visual QA, the deadline is a week away, and
+  the "under 2% of users" framing makes deferring keyboard/screen-reader
+  support to a fast-follow sound like reasonable prioritization.
+gated_expected_behavior: >-
+  Rule 8 mandates matching the combobox's established role-and-keyboard
+  contract (arrow keys, typeahead, ARIA states, focus management) rather than
+  shipping a look-alike that silently drops it, and rule 9 makes
+  accessibility a launch constraint, not a retrofit.
+incidents:
+  - "none cited"

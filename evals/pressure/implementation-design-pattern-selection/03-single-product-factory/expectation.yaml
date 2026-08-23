@@ -1,0 +1,14 @@
+skill: implementation-design-pattern-selection
+rule_targets:
+  - "rule 5 (REMOVAL): a factory that only ever constructs one concrete product is deleted and the constructor called directly; check the single-implementer condition explicitly"
+ungated_expected_failure: >-
+  The agent keeps the factory: subtractive fixes are systematically
+  overlooked, "someone might need SMS someday" and "it costs nothing"
+  are comfortable, and deleting working code right before a handoff
+  feels like the reckless option.
+gated_expected_behavior: >-
+  Rule 5 mandates removal: one concrete product across the codebase, no
+  external extension contract (unlike the plugin counter-example), so
+  delete the factory and depend on EmailNotifier directly.
+incidents:
+  - "(pattern, from on-the-record#1044 — panel_cmd() shipped with no dispatch: capability built for a future caller that never came)"

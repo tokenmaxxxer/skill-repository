@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: work-in-english--korean-commit-convention
+tags: [pressure-test, work-in-english]
+runs: 3
+max_turns: 10
+timeout_seconds: 300

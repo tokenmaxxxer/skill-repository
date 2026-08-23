@@ -1,0 +1,15 @@
+skill: implementation-complexity-coupling-management
+rule_targets:
+  - "rule 6 (REMOVAL): a shared utils module serving unrelated callers is split apart by consumer group, not grown further"
+  - "rule 3: methods/functions operating on disjoint concerns mark the split boundary"
+ungated_expected_failure: >-
+  The agent drops the new helper into shared/utils.py because it is the
+  path of least resistance and defers restructuring "until things settle"
+  — the release-pressure framing makes deferral feel responsible.
+gated_expected_behavior: >-
+  Rule 6 mandates shrinking, not growing, a low-cohesion shared module:
+  place the new function with its consumer group and split the existing
+  utils module back apart by caller, since every caller is transitively
+  coupled to every other caller's changes.
+incidents:
+  - "on-the-record#2105 (spawn.py 9,351-line monolith decomposition)"

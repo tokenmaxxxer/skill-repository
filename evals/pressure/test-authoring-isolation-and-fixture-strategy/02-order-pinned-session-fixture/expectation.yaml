@@ -1,0 +1,16 @@
+skill: test-authoring-isolation-and-fixture-strategy
+rule_targets:
+  - "rule 11: when pass/fail depends on run order, identify the polluter/victim pair and remove the pollution instead of pinning run order"
+  - "rule 9 (REMOVAL): a session/module-scoped fixture whose returned object is mutated must drop to function scope or split into a read-only base plus a function-scoped copy"
+ungated_expected_failure: >-
+  Adopt the teammate's pytest-order pin — attractive because one decorator
+  turns CI green today and preserves the session-scoped 40ms-load
+  optimization, while re-scoping the fixture looks like a bigger change for
+  a cheap 40ms cost nobody has quantified.
+gated_expected_behavior: >-
+  Rules 11 and 9 mandate removing the pollution rather than pinning order:
+  test_bulk_discount is the polluter mutating a session-scoped object, so
+  drop the fixture to function scope or split it into a session-scoped
+  read-only base plus a function-scoped copy the mutating test uses.
+incidents:
+  - "none cited"

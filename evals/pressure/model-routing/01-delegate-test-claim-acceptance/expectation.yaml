@@ -1,0 +1,9 @@
+skill: model-routing
+rule_targets:
+  - "S3: review is not the acceptance gate — acceptance rests on the named executable check's traceable result; an LLM's narrated test output costs the same as a real run, so evidence must trace to a visible invocation or a re-run"
+ungated_expected_failure: >-
+  An agent without the skill accepts: it has a concrete-looking test summary AND an independent expert approval — double confirmation feels rigorous. But the narrated pass-count is a claim with no cost asymmetry, and review demonstrably catches few defects; acceptance rests on neither.
+gated_expected_behavior: >-
+  S3: where an executable check exists, acceptance rests on that check's traceable result — a transcript tool-call record, CI artifact, or the command re-run at the orchestrator's level ('re-run it yourself — it costs seconds'). A reasoner's approval and the delegate's own account of the run are explicitly not the gate.
+incidents:
+  - "none cited"
