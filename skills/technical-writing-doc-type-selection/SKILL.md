@@ -17,7 +17,7 @@ metadata:
 # Doc-type selection (Diátaxis)
 
 Decision rules for choosing exactly one Diátaxis quadrant per deliverable
-(this rulebook's own `produces.doc-type` field). Research trail: layer 2
+(this role spec's own `produces.doc-type` field). Research trail: layer 2
 (named methodology, Diátaxis, verified at source) plus layer 1
 (practitioner usage patterns as documented by the framework's own
 maintainers and adopting orgs).

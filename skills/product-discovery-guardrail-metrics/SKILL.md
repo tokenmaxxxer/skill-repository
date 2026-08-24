@@ -12,7 +12,7 @@ description: >-
 
 # Guardrail metrics for `hypothesis-registered` / `measuring`
 
-**Belongs to state:** `hypothesis-registered` (written); read again at
+**Stage:** `hypothesis-registered` (written); read again at
 `measuring` (not written there).
 
 **What it asks the user for:** which metrics must NOT move adversarially
@@ -26,7 +26,7 @@ outright, regardless of the primary-metric result.
 
 **What it produces:** a non-empty guardrail-metrics list, each entry
 naming the metric and the direction/threshold that counts as a breach.
-This list *is* this rulebook's `critical_success_factors`
+This list *is* this role spec's `critical_success_factors`
 (`product-discovery.spec.json`'s field for "what must hold, or the result
 doesn't count"): a guardrail named non-empty at hypothesis-registration
 time and checked at measurement time is exactly a critical success
@@ -35,10 +35,10 @@ field or artifact is needed to satisfy `critical_success_factors`.
 
 **Where it is written:** the same spec/state artifact's guardrail-metrics
 field — write it alongside `metric`, `threshold`, and `decision_rule` in
-`product/state.md`'s companion hypothesis fields (wherever this repo's
+`docs/issue-<n>/reports/product-discovery.md`'s companion hypothesis fields (wherever this repo's
 `hypothesis-testing` skill already writes those three; guardrail metrics
 join them as a fourth required field on the same artifact). This does not
-change which file is the gated state file — `product/state.md` remains
+change which file is the gated state file — `docs/issue-<n>/reports/product-discovery.md` remains
 the only gated write; the guardrail field lives in the hypothesis record
 alongside metric/threshold/decision_rule.
 
@@ -66,8 +66,8 @@ threshold, which belong to `hypothesis-testing` — and again at
    threshold) and the action on breach, and write it into the hypothesis
    record before reporting `hypothesis-registered` complete (see `## How
    to run the conversation`).
-3. Enforce the field non-empty before `researching -> hypothesis-registered`
-   (and by extension `hypothesis-registered -> measuring`) (see
+3. Enforce the field non-empty before `researching to hypothesis-registered`
+   (and by extension `hypothesis-registered to measuring`) (see
    `## Precondition this skill enforces`).
 4. At `measuring`, read the list back when checking incoming data — never
    let a guardrail move silently because the primary metric is winning
@@ -81,8 +81,8 @@ breach direction/threshold, and the action to take on breach.
 
 ## Precondition this skill enforces
 
-`researching -> hypothesis-registered` (and by extension,
-`hypothesis-registered -> measuring`) requires this field non-empty, the
+`researching to hypothesis-registered` (and by extension,
+`hypothesis-registered to measuring`) requires this field non-empty, the
 same discipline already applied to `metric`, `threshold`, and
 `decision_rule`. Do not let the package move to `hypothesis-registered`
 with an empty guardrail list.

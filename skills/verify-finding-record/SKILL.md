@@ -1,10 +1,9 @@
 ---
 name: verify-finding-record
 description: >-
-  Use while acting as the verify role in the reproducing or reproduced state,
-  once an attempt has been made and needs its outcome written down in
-  verify-record.md — never to fix or patch what was found. Trigger on requests
-  like "record the attempt in verify-record.md", "reproduced vs not-reproduced
+  Use when a reproduction attempt has been made and needs its outcome written down in
+  docs/issue-<n>/reports/defect-verification.md — never to fix or patch what was found. Trigger on requests
+  like "record the attempt in docs/issue-<n>/reports/defect-verification.md", "reproduced vs not-reproduced
   outcome block", "blocked needs-repro-access entry", "재현 시도 결과 기록해줘". Covers
   the three-value outcome set and the escalating finding block addressed to
   coding. Do NOT use for attaching the severity band to an already-recorded
@@ -15,20 +14,18 @@ description: >-
 
 # finding-record
 
-Belongs to `reproducing` (initial recording) and `reproduced` (dispute
-resolution or re-examination recorded inline, still against the same
-attempt). Produces the per-attempt outcome record, and any escalating
-`finding` block, inside `verify-record.md`, the role's state file, at the
+Covers both initial recording and dispute resolution or re-examination
+(recorded inline, still against the same attempt). Produces the per-attempt outcome record, and any escalating
+`finding` block, inside `docs/issue-<n>/reports/defect-verification.md`, the role's record file, at the
 attempt blocks below the header block.
 
-This skill never writes to any file other than `verify-record.md`. It does
+This skill never writes to any file other than `docs/issue-<n>/reports/defect-verification.md`. It does
 not fix, patch, or suggest a patch for anything it finds — it reports.
 
 ## Trigger
 
-Apply this skill while acting as the verify role in the `reproducing` or
-`reproduced` state, once an attempt has been made and its outcome needs
-to be written down in `verify-record.md` — never to fix or patch what
+Apply this skill once a reproduction attempt has been made and its outcome needs
+to be written down in `docs/issue-<n>/reports/defect-verification.md` — never to fix or patch what
 was found.
 
 ## Procedure
@@ -55,7 +52,7 @@ was found.
 
 ## Output shape
 
-One `---`-delimited block per attempt inside `verify-record.md`,
+One `---`-delimited block per attempt inside `docs/issue-<n>/reports/defect-verification.md`,
 carrying the full field list and exactly one of the three outcome
 values, with an escalating `finding` block attached when the attempt
 reproduces, and a write refused when a required evidence pointer is

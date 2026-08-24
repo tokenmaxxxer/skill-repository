@@ -1,8 +1,8 @@
 ---
 name: release-engineering-postmortem
 description: >-
-  Use when working the ops role's incident state (ops/state.md status
-  incident) once the incident is over and a blameless postmortem is owed —
+  Use when working the release-engineering role's incident phase, once
+  the incident is over and a blameless postmortem is owed —
   enforcing Google's required trigger criteria and required sections, and
   incident.io's action-item failure patterns, as mechanical field checks on
   ops/postmortem-<incident-id>.md. Trigger on requests like "write the
@@ -16,10 +16,10 @@ description: >-
 
 # postmortem — the blameless incident writeup, and what NOT to self-certify
 
-Belongs to the `incident` state, run once the incident is over. Writes
+Covers the `incident` phase, run once the incident is over. Writes
 `ops/postmortem-<incident-id>.md` using
 `postmortem/skills/postmortem/templates/postmortem-template.md` as the field
-skeleton. Writing this file is never gated — it is not `ops/state.md`.
+skeleton. Writing this file is never gated — it is not `docs/issue-<n>/reports/release-engineering.md`.
 
 ## Trigger
 
@@ -44,7 +44,7 @@ thresholds (`rollout-plan`).
    while waiting for those human calls, keep building the timeline and
    surfacing evidence (see "What this skill does NOT do").
 5. Once the human confirms resolution, tell the user the draft is ready
-   for review — do not move `incident -> steady` yourself; that
+   for review — do not move `incident to steady` yourself; that
    transition needs the human's own confirmation that the postmortem was
    reviewed and satisfactory (see "What this skill does NOT do").
 
@@ -54,7 +54,7 @@ thresholds (`rollout-plan`).
 template's field skeleton (Impact, Actions taken, Root cause(s),
 Prevention/follow-up action items — each item carrying an owner,
 tracking location, and closing condition), ready for human review before
-`incident -> steady` fires.
+`incident to steady` fires.
 
 ## Required trigger criteria (fixed before the fact, per Google's stated
 rule, so there is no post-hoc argument about whether one is owed)
@@ -120,7 +120,7 @@ human to make those calls, the agent:
   regardless of who currently holds command.
 - Once the human confirms resolution, runs this skill: drafts the
   postmortem, asks for impact/root cause/action items, and tells the user
-  the draft is ready for review — it does not move `incident -> steady`
+  the draft is ready for review — it does not move `incident to steady`
   itself; that is a gated `actor: user` row requiring the human to confirm
   the postmortem has actually been reviewed and is satisfactory, not merely
   that the file exists.

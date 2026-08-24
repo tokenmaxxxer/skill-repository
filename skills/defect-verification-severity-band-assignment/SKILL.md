@@ -8,7 +8,7 @@ description: >-
   "blocking or degraded tier", "severity vs priority call", "재현된 결함 심각도 등급
   매겨줘". Do NOT use for deciding whether the defect reproduced at all (use
   defect-verification-reproduction-evidence-quality); for writing the band
-  onto a verify-record.md finding block, see verify-severity-classification.
+  onto a docs/issue-<n>/reports/defect-verification.md finding block, see verify-severity-classification.
 metadata:
   axis: severity-band-assignment
   rule_count_floor: 8

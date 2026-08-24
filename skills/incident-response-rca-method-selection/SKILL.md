@@ -18,7 +18,7 @@ metadata:
 # RCA method selection
 
 Decision rules for which root-cause-analysis method to apply
-(this rulebook's `root_cause (root-cause-analysis, 5-Whys/causal-chain)`
+(this role spec's `root_cause (root-cause-analysis, 5-Whys/causal-chain)`
 field / `incident-response-rca-method-gate`). Layer 1 (practitioner:
 Google SRE workbook), layer 2 (named methods: 5 Whys, fishbone, fault
 tree), layer 3 (RCA-method-comparison literature).

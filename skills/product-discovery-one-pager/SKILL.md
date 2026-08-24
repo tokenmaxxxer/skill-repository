@@ -1,9 +1,9 @@
 ---
 name: product-discovery-one-pager
 description: >-
-  Use this skill when the product role is in the `scoping` state and a handed-in idea needs
+  Use this skill when a handed-in idea needs
   to become a structured one-pager before evidence gathering starts, keeping the problem
-  statement separate from any proposed solution. Trigger it right after `idle -> scoping`,
+  statement separate from any proposed solution. Trigger it right after role intake,
   on requests like "원페이저 써줘", "draft a one-pager for this idea", "scope this idea before
   research", "capture target market and differentiator". It walks background, problem,
   candidate hypotheses, risks, metrics, target_market, market_size_rationale,
@@ -14,7 +14,7 @@ description: >-
 
 # One-pager drafting
 
-**Belongs to state:** `scoping`.
+**Stage:** `scoping`.
 
 **What it asks the user for**, one at a time, in this order (Reforge/
 Lenny's one-pager shape, per
@@ -49,7 +49,7 @@ Lenny's one-pager shape, per
 
 These six (`target_market`, `market_size_rationale`,
 `competitive_alternatives`, `differentiator`, `timing_rationale`,
-`go_to_market_plan`) are this rulebook's mapping of
+`go_to_market_plan`) are this role spec's mapping of
 `product-discovery.spec.json`'s opportunity-framing fields: they describe
 the opportunity before any hypothesis is scored or tested, the same
 "problem, not solution, not yet tested" moment the original five fields
@@ -59,7 +59,7 @@ already own.
 
 **Where it is written:** `product/one-pager.md`, in this repository's
 working tree — a plain artifact write, not the state file. This write is
-never gated by `state-gate.sh`; only the record file governed by
+never gated by the record gate; only the record file governed by
 `docs/specs/state-machine.md` is.
 
 **Field list** (matches the template headings below, each required
@@ -95,7 +95,7 @@ from any proposed solution.
 2. If the problem-statement answer already contains a solution, ask the
    user to restate just the problem first (see field 2 above).
 3. Once all eleven fields are non-empty, tell the user the one-pager is
-   complete and that the `scoping -> scoping` affirmation is next; if
+   complete and that the scoping re-affirmation is next; if
    the affirmation is vague, ask where that read came from rather than
    treating it as a green light (see `## How to run the conversation`).
 
@@ -119,8 +119,7 @@ question.
 
 Once all eleven fields are non-empty, tell the user the one-pager is
 complete and that the next step is affirming the outcome framing (the
-`scoping -> scoping` row in `docs/specs/state-machine.md`'s transition
-table) before moving to `researching`. If the user's affirmation is vague
+scoping re-affirmation) before moving on to research. If the user's affirmation is vague
 ("that sounds about right"), do not treat it as a green light — ask where
 that read came from ("is that from a customer conversation, or your own
 read?"), per the product interaction research's core rule that a vague
@@ -131,8 +130,8 @@ response is a prompt to re-ask for its evidentiary source.
 - Writing a solution into the "Problem Statement" field.
 - Treating a partially-filled one-pager as good enough to move to
   `researching` — all eleven fields must be non-empty.
-- Accepting silence or a one-word "yes" as the `scoping -> scoping`
-  affirmation without asking where the read came from.
+- Accepting silence or a one-word "yes" as the scoping re-affirmation
+   without asking where the read came from.
 - Stating a market size with no rationale, or a differentiator with no
   named competitive alternative to differentiate against.
 

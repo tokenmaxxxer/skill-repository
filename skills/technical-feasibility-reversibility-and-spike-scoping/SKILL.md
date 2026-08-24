@@ -7,7 +7,7 @@ description: >-
   criteria. Trigger on requests like "one-way door인지 판단해줘", "is this decision
   reversible", "scope a spike for this unknown", "set the spike timebox and
   acceptance criteria". Do NOT use for stamping the Reversibility field on
-  individual probe findings already being written to feasibility-record.md (use
+  individual probe findings already being written to docs/issue-<n>/reports/technical-feasibility.md (use
   technical-feasibility-reversibility-tag), nor for running the spike itself and
   writing its report (use technical-feasibility-spike-report).
 metadata:

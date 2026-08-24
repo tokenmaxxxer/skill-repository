@@ -14,7 +14,7 @@ description: >-
 
 # Spike report
 
-**Belongs to state:** `probing`, technical probe.
+**Stage:** `probing`, technical probe.
 
 A spike is a timeboxed investigation whose output is knowledge, not
 shippable code. This skill runs the human-in-the-loop negotiation the
@@ -28,7 +28,7 @@ turn.
 This probe applies once the feasibility role has entered the `probing`
 state and there is a single, specific technical unknown blocking the
 feasibility verdict — something that must be resolved by a timeboxed
-investigation (not a broad exploration) before `feasibility-record.md`'s
+investigation (not a broad exploration) before `docs/issue-<n>/reports/technical-feasibility.md`'s
 technical-probe field can be filled in.
 
 ## Procedure
@@ -49,8 +49,8 @@ technical-probe field can be filled in.
    the technical-probe resolution (see "On completion").
 5. Write the spike report to its project-local artifact file using the
    template's field skeleton, keeping this write ungated while the
-   `feasibility-record.md` status transition remains gated by
-   `state-gate.sh` (see "Artifact" and "Field list (spike-report-template.md)").
+   `docs/issue-<n>/reports/technical-feasibility.md` record itself remains gated by
+   the record gate (see "Artifact" and "Field list (spike-report-template.md)").
 6. Where the marketplace spec expects one record file to carry all four
    required fields, keep the spike report as its own separate project-local
    artifact and only summarize/link it from the main record, per the
@@ -68,7 +68,7 @@ Applying this skill produces one project-local spike report file (e.g.
 Type of spike, Estimated Timebox, Acceptance Criteria, Tasks/Activities,
 Outcomes/Learnings, Recommendation, Open questions), plus a
 technical-probe resolution (`pass`/`fail`/`blocked` plus evidence) written
-into `feasibility-record.md` that points at or summarizes that report.
+into `docs/issue-<n>/reports/technical-feasibility.md` that points at or summarizes that report.
 
 ## What it asks the user for, one thing at a time
 
@@ -99,10 +99,9 @@ Stop. Do not silently keep going. Report to the user: what gaps remain,
 and what more time would likely buy. The user decides: extend with a
 **new**, separately-scoped timebox (its own acceptance criteria, not a
 silent continuation of the old one), or stop and record the gap as an open
-finding. This is the `probing -> probing` self-loop in
-`feasibility-cycle/hooks/transition-rules.md` — write the extension (or the
-stop-and-record decision) into the spike report, but this write is to the
-spike report artifact, not the state file, and is not itself gated.
+finding. Write the extension (or the
+stop-and-record decision) into the spike report; this write is to the
+spike report artifact, not the role record, and is not itself gated.
 
 ## On completion
 
@@ -111,17 +110,17 @@ and any open questions for future work. Then classify every finding this
 probe produced as a one-way or two-way door (Bezos framing) using the
 `reversibility-tag` skill's standing directive before writing the
 technical-probe field's resolution (`pass`/`fail`/`blocked` plus evidence)
-in `feasibility-record.md`.
+in `docs/issue-<n>/reports/technical-feasibility.md`.
 
 ## Artifact
 
-Writes to `feasibility-record.md`'s own project (a project-local spike
+Writes to `docs/issue-<n>/reports/technical-feasibility.md`'s own project (a project-local spike
 report file, one per spike, e.g. `feasibility/spike-report-<slug>.md`),
 using the field skeleton at
 `feasibility-cycle/skills/spike-report/templates/spike-report-template.md`.
-This artifact write is not gated — only the `feasibility-record.md` state
-file's `status` field transition is gated by `state-gate.sh`. The
-technical-probe resolution field in `feasibility-record.md` should point at
+This artifact write is not gated — only the `docs/issue-<n>/reports/technical-feasibility.md`
+record itself is gated, by the record gate. The
+technical-probe resolution field in `docs/issue-<n>/reports/technical-feasibility.md` should point at
 (or summarize) the spike report file, and its evidence should not be
 written until the acceptance criteria are actually met or the timebox
 stop-and-record decision is made.
@@ -142,9 +141,9 @@ stop-and-record decision is made.
 
 The marketplace's realized `technical-feasibility.spec.json` expects one
 record file (`write_scope`) to carry all four required fields
-(`spike_goal`, `timebox`, `findings`, `decision`). This rulebook instead
+(`spike_goal`, `timebox`, `findings`, `decision`). This role spec instead
 keeps the spike report as its own project-local artifact, separate from
-`feasibility-record.md`, and only summarizes/links it from the main
+`docs/issue-<n>/reports/technical-feasibility.md`, and only summarizes/links it from the main
 record's technical-probe field. This is a deliberate, unresolved
 structural difference — not silently reconciled — see README.md's
 "Spec vocabulary mapping" section for the field-by-field mapping and

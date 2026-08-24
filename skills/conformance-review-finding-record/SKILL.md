@@ -1,10 +1,9 @@
 ---
 name: conformance-review-finding-record
 description: >-
-  Use while acting as the review role in the auditing or draft-reported state,
-  once a requirement has been checked and needs its verdict recorded in
-  review-record.md — never to fix or patch what was found. Trigger on requests
-  like "record the verdict in review-record.md", "write the finding block with
+  Use when a requirement has been checked and needs its verdict recorded in
+  docs/issue-<n>/reports/conformance-review.md — never to fix or patch what was found. Trigger on requests
+  like "record the verdict in docs/issue-<n>/reports/conformance-review.md", "write the finding block with
   evidence and spec_ref", "리뷰 판정 기록해줘". Covers the five-verdict set (Present,
   Surface, Absent, Incorrect, Unverifiable) and the refusal to write a verdict
   with no evidence pointer or spec_ref. Do NOT use for choosing which verdict
@@ -14,19 +13,18 @@ description: >-
 
 # finding-record
 
-Belongs to `auditing` (initial recording) and `draft-reported` (dispute
-resolution recorded inline, still against the same finding). Produces the
-per-requirement finding record inside `review-record.md`, the role's state
+Covers both initial recording and dispute resolution (recorded inline,
+still against the same finding). Produces the per-requirement finding
+record inside `docs/issue-<n>/reports/conformance-review.md`, the role's record
 file, at the requirement blocks below the header block.
 
-This skill never writes to any file other than `review-record.md`. It does
+This skill never writes to any file other than `docs/issue-<n>/reports/conformance-review.md`. It does
 not fix, patch, or suggest a patch for anything it finds — it reports.
 
 ## Trigger
 
-Apply this skill while acting as the review role in the `auditing` or
-`draft-reported` state, once a requirement has been checked and its
-verdict needs to be written down in `review-record.md` — never to fix or
+Apply this skill once a requirement has been checked and its
+verdict needs to be written down in `docs/issue-<n>/reports/conformance-review.md` — never to fix or
 patch what was found.
 
 ## Procedure
@@ -42,7 +40,7 @@ patch what was found.
 4. Refuse to write Present, Surface, Absent, or Incorrect with no
    evidence pointer or no spec_ref (see "Refusal the skill itself
    enforces").
-5. In `draft-reported`, record a disputed finding's re-examination
+5. When a finding is disputed, record its re-examination
    inline rather than treating the dispute as a request to fix anything
    (see "What it asks the user for").
 6. Before writing, run the per-requirement checklist (see
@@ -50,7 +48,7 @@ patch what was found.
 
 ## Output shape
 
-One `---`-delimited block per requirement inside `review-record.md`,
+One `---`-delimited block per requirement inside `docs/issue-<n>/reports/conformance-review.md`,
 carrying the full field list and a verdict from the fixed five-value
 set, with a write refused when a required evidence pointer or spec_ref
 is missing.

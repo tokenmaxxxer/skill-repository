@@ -104,6 +104,6 @@ for every headline figure.
 
 ## Notes
 
-Every rule in this rulebook that carries a `source:` field is itself an
-application of this axis — evidence-chain is the rulebook's own
+Every rule in this role spec that carries a `source:` field is itself an
+application of this axis — evidence-chain is the role spec's own
 practice made explicit as a rule.

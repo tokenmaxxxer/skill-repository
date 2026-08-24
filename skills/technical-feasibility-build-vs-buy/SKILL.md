@@ -5,7 +5,7 @@ description: >-
   and needs a build-vs-buy comparison with per-dependency health scores before
   that probe can resolve. Trigger on requests like "build vs buy comparison",
   "prior art probe", "is there an existing library for this", "빌드할지 사서 쓸지 비교해줘".
-  Fills feasibility-record.md's prior-art probe field with a comparison table
+  Fills docs/issue-<n>/reports/technical-feasibility.md's prior-art probe field with a comparison table
   (cost/TCO, lock-in, reversibility tag) plus health scores. Do NOT use for
   scoring one candidate's per-check Scorecard or vendor-SLA health evidence by
   decision rule (use technical-feasibility-build-vs-buy-dependency-health); for
@@ -15,7 +15,7 @@ description: >-
 
 # Build vs buy
 
-**Belongs to state:** `probing`, prior-art probe.
+**Stage:** `probing`, prior-art probe.
 
 ## Trigger
 
@@ -30,7 +30,7 @@ ask about other kinds of feasibility risk rather than build-vs-buy choices.
 1. Ask the user, one question at a time, whether prior art exists and, only
    if a genuine build-vs-buy choice is live, which alternatives to compare
    (see ## What it asks the user for).
-2. Record the results in `feasibility-record.md`'s prior-art probe field,
+2. Record the results in `docs/issue-<n>/reports/technical-feasibility.md`'s prior-art probe field,
    pointing to or inlining a project-local artifact such as
    `feasibility/build-vs-buy.md`; note that this write is not itself gated
    (see ## Artifact).
@@ -49,7 +49,7 @@ ask about other kinds of feasibility risk rather than build-vs-buy choices.
 ## Output shape
 
 Applying this skill produces an updated prior-art probe field in
-`feasibility-record.md` pointing to a build-vs-buy comparison table (option,
+`docs/issue-<n>/reports/technical-feasibility.md` pointing to a build-vs-buy comparison table (option,
 cost/TCO, lock-in/maintenance risk, differentiator status, reversibility
 tag) plus per-dependency health scores, written to the project-local
 artifact referenced there (e.g. `feasibility/build-vs-buy.md`).
@@ -65,7 +65,7 @@ compare.
 
 ## Artifact
 
-Writes to `feasibility-record.md`'s prior-art probe field (a pointer to, or
+Writes to `docs/issue-<n>/reports/technical-feasibility.md`'s prior-art probe field (a pointer to, or
 inline table within, a project-local file, e.g.
 `feasibility/build-vs-buy.md`). This artifact write is not gated — only the
 state file's `status` transition is gated.

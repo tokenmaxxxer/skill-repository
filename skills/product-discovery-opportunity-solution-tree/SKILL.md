@@ -1,7 +1,7 @@
 ---
 name: product-discovery-opportunity-solution-tree
 description: >-
-  Use this skill whenever the `scoping -> scoping` self-loop fires — i.e. whenever
+  Use this skill whenever opportunity/outcome framing work recurs — i.e. whenever
   opportunity/outcome framing is drafted or re-affirmed with the user — to update the living
   Opportunity Solution Tree in product/opportunity-tree.md. Trigger on requests like "기회 트리
   업데이트해줘", "add this interview finding to the opportunity tree", "refresh the OST this
@@ -14,7 +14,7 @@ description: >-
 
 # Opportunity Solution Tree maintenance
 
-**Belongs to:** the `scoping -> scoping` self-loop (cross-cutting; not a
+**Cadence:** cross-cutting; recurs with each scoping re-affirmation (not a
 one-time step of any single state). Teresa Torres's practice treats this as
 continuous, weekly-cadence maintenance, not a phase that starts and ends —
 see `docs/reports/research/2026-07-27-role-practice/product.md`.
@@ -34,14 +34,14 @@ bottom:
 **Where it is written:** `product/opportunity-tree.md`.
 
 **This artifact is explicitly outside the gate.** It is not
-`product/state.md`, and no row in `transition-rules.md` binds to it —
-`state-gate.sh` does not check writes to this file at all. Update it as
+`docs/issue-<n>/reports/product-discovery.md` —
+the record gate does not check writes to this file at all. Update it as
 often as new interview evidence arrives; do not wait for a state
 transition to justify writing to it.
 
 ## Trigger
 
-Apply this skill whenever the `scoping -> scoping` self-loop fires —
+Apply this skill whenever the `scoping to scoping` self-loop fires —
 i.e. whenever opportunity/outcome framing is drafted or re-affirmed
 with the user — to update the living Opportunity Solution Tree. This is
 cross-cutting and runs on its own cadence, independent of any single
@@ -50,7 +50,7 @@ any transition — it has no gate.
 
 ## Procedure
 
-1. When the `scoping -> scoping` affirmation moment comes up, ask which
+1. When the scoping re-affirmation moment comes up, ask which
    opportunity or solution should be added or updated this cycle (see
    `## How to run the conversation`).
 2. Confirm which desired-outcome node it hangs under, creating one if
@@ -60,7 +60,7 @@ any transition — it has no gate.
    opinion as if it were customer evidence (see `## How to run the
    conversation`).
 4. Write or update `product/opportunity-tree.md` with the four-layer
-   structure, outside `state-gate.sh` entirely (see `## Where it is
+   structure, outside the record gate entirely (see `## Where it is
    written`).
 
 ## Output shape
@@ -72,7 +72,7 @@ available, maintained continuously outside the gated state file.
 
 ## How to run the conversation
 
-1. When the `scoping -> scoping` affirmation moment comes up, ask the user
+1. When the scoping re-affirmation moment comes up, ask the user
    which opportunity or solution should be added or updated in the tree
    this cycle.
 2. Confirm which desired outcome node it hangs under (create one if none
@@ -92,4 +92,4 @@ available, maintained continuously outside the gated state file.
 - Recording a stakeholder's unsourced opinion as if it were customer
   evidence in the tree.
 - Gating any state transition on this file — it has none; it stays
-  outside `product/state.md` and outside `state-gate.sh` entirely.
+  outside `docs/issue-<n>/reports/product-discovery.md` and outside the record gate entirely.

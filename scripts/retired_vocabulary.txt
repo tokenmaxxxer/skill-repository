@@ -1,0 +1,58 @@
+# Retired-vocabulary list for scripts/check_retired_vocabulary.py (issue #109).
+# One entry per line: <flags>|<regex>
+# flags: i = case-insensitive, c = case-sensitive.
+# Matched against every skills/**/*.md file; any match fails the lint unless
+# covered by an allowlist entry (see ALLOWLIST section).
+#
+# -- Rulebook state-machine state names (retired by on-the-record #1955) --
+i|\bauditing state\b
+i|\bdraft-reported\b
+i|\bscoping state\b
+i|\breproducing state\b
+i|\breproduced state\b
+i|\bmeasuring state\b
+i|\bscoped state\b
+i|\breadiness state\b
+# "idle -> X" transition notation (rulebook state machine)
+i|idle\s*(?:->|→)
+# other rulebook state-transition arrows and state-machine plumbing
+i|\b(?:scoping|readiness|rollout|steady|incident|auditing|draft-reported|reproducing|reproduced|measuring|hypothesis-registered)\b\s*->
+i|(?:->|→)\s*\b(?:scoping|readiness|rollout|steady|incident|auditing|draft-reported|reproducing|reproduced|hypothesis-registered)\b
+i|\bstate-gate\b
+i|\bBelongs to state\b
+i|\btransition-rules\.md\b
+# "the <role> role in the X state" phrasing
+i|role in the\s+`?[\w-]+`?(?:\s+or\s+`?[\w-]+`?)?\s+state
+i|\bstatus:\s*(?:scoping|auditing|readiness|reproducing|reproduced|draft-reported)\b
+#
+# -- Roles-as-entities (rulebook repos retired 2026-08-22) --
+i|\brulebooks?\b
+# rulebook-contract PRODUCES field (uppercase contract field; the live
+# concept is the lowercase `produces` field of roles/<role>.json)
+c|\bPRODUCES\b
+# rulebook repo paths; the marketplace roles/specs/*.spec.json files are
+# LIVE and allowlisted below
+i|\broles/[\w-]+\b
+#
+# -- Retired record types (verified against on-the-record record gates,
+#    2026-08-24: the record gate enforces only docs/issue-<n>/reports/<role>.md
+#    — see on-the-record/gates/record_lint.py RECORD_PATH; none of these
+#    filenames appear in any live gate or directive) --
+i|\breview-record\.md\b
+i|\bverify-record\.md\b
+i|\bfeasibility-record\.md\b
+i|\bstate\.md\b
+#
+# -- Wake machinery (removed, on-the-record #120) --
+i|\bwake(?:s|d|-up)?\b
+#
+# -- Test-default era (post on-the-record #2137: regression tests are
+#    acceptance-conditional, never an unconditional default) --
+i|\balways add a regression test\b
+i|\badd a regression test\b(?![^.]{0,80}\b(?:if|when|only|where)\b)
+
+# ===================== ALLOWLIST =====================
+# Verified-still-live terms. Format: ALLOW|<regex>|<verification pointer>
+# A line matching a retired pattern is exempt if it also matches an ALLOW regex.
+ALLOW|roles/specs/|LIVE: marketplace roles/<role>.json "spec" field points at roles/specs/<role>.spec.json (verified 2026-08-24 in ~/.claude/plugins/marketplaces/tokenmaxxxer/roles/, e.g. defect-verification.spec.json present and referenced)
+ALLOW|regression tests?\b(?! as a default)|LIVE technique content: regression testing as a verification technique (refactoring-legacy-*, test-* domains) is not the retired unconditional "add a regression test" default; kept per issue #109 (rephrase, don't delete technique content)

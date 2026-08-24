@@ -17,7 +17,7 @@ metadata:
 
 # Minimalism / scoping
 
-Decision rules for what to include vs. cut per section (this rulebook's
+Decision rules for what to include vs. cut per section (this role spec's
 `produces.minimalism check` field). Research trail: layer 1 (practitioner
 depth per John Carroll's minimalist-instruction canon) plus layer 3
 (academic: subtraction neglect, cognitive-load/extraneous-load theory).

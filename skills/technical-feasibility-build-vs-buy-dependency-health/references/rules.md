@@ -34,7 +34,7 @@ matched rule's full text, citation, or counter-example is needed.
    which scores) — the role's own evidence-citation rule requires
    `check-name score`, singular check named, not an aggregate number
    that hides which specific control passed or failed.
-   source: docs/specs evidence-citation directive, this rulebook's
+   source: docs/specs evidence-citation directive, this role spec's
    `evidence-citation` module — evidence-citation/hooks/directive.sh
    (this repo).
 

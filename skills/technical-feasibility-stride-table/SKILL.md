@@ -14,7 +14,7 @@ description: >-
 
 # STRIDE table
 
-**Belongs to state:** `probing`, threat-model probe.
+**Stage:** `probing`, threat-model probe.
 
 ## Trigger
 
@@ -34,7 +34,7 @@ before the probe can resolve and the role can move past it.
    categories (see ## What it asks the user for).
 3. Record each row with its element, threat category, entry point or
    trust boundary crossed, and disposition, writing the table to
-   `feasibility-record.md`'s threat-model probe field or a project-local
+   `docs/issue-<n>/reports/technical-feasibility.md`'s threat-model probe field or a project-local
    STRIDE table file it points to (see ## Artifact, see ## Field list).
 4. Ensure every row's disposition is mitigated, accepted, or deferred —
    never blank or "in progress" (see ## Field list).
@@ -49,7 +49,7 @@ before the probe can resolve and the role can move past it.
 Applying this skill produces a STRIDE table — one row per
 (element, threat category) with entry point/trust boundary and
 disposition fields — written either inline in or pointed to by
-`feasibility-record.md`'s threat-model probe field, typically at a
+`docs/issue-<n>/reports/technical-feasibility.md`'s threat-model probe field, typically at a
 project-local path such as `feasibility/stride-table.md`.
 
 ## What it asks the user for
@@ -68,7 +68,7 @@ Denial of Service, Elevation of Privilege.
 
 ## Artifact
 
-Writes to `feasibility-record.md`'s threat-model probe field (a pointer to,
+Writes to `docs/issue-<n>/reports/technical-feasibility.md`'s threat-model probe field (a pointer to,
 or inline table within, a project-local STRIDE table file, e.g.
 `feasibility/stride-table.md`). This artifact write is not gated — only the
 state file's `status` transition is gated.
@@ -86,7 +86,7 @@ state file's `status` transition is gated.
 ## Resolution rule
 
 Every row requires a non-empty disposition field before the threat-model
-probe can resolve to `pass`/`fail`/`blocked` in `feasibility-record.md`.
+probe can resolve to `pass`/`fail`/`blocked` in `docs/issue-<n>/reports/technical-feasibility.md`.
 Before writing the probe's resolution, tag every finding as a one-way or
 two-way door per `reversibility-tag` — a one-way-door threat finding should
 carry more rigorous mitigation evidence than a two-way-door one before this

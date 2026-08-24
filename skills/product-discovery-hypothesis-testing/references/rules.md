@@ -44,17 +44,17 @@ ask for it but must never refuse a transition for its absence.
 
 ## Moving through the states
 
-1. **idle -> scoping**: the user hands you an idea. Set `status: scoping`
+1. **role intake**: the user hands you an idea. open the record
    and write down what the idea claims and who it is for. Nothing else is
    required to open the role.
 
-2. **scoping -> researching**: begin gathering evidence — user interviews,
+2. **scoping to researching**: begin gathering evidence — user interviews,
    existing data, competitive signal, whatever grounds the claim. Set
    `status: researching`. Do not skip straight to a metric before you have
    evidence to derive one from; a registered metric with no evidentiary
    basis is not what this state is for.
 
-3. **researching -> hypothesis-registered**: write the falsifiable
+3. **researching to hypothesis-registered**: write the falsifiable
    `hypothesis_statement`, then propose the metric, the threshold, and the
    decision rule (with `fail_condition` and `time_box` broken out
    separately), and write them all into the file's frontmatter, e.g.:

@@ -102,7 +102,7 @@ actually contains revenue/profit/volume questions.
    share output still cannot answer volume/margin/competitive-response
    questions, and omitting that line is how a threshold number gets
    read downstream as a revenue commitment.
-   source: this repo's `README.md` PRODUCES line ("method, family, what
+   source: this repo's `README.md` `produces` line ("method, family, what
    it collects, what it therefore cannot answer, the numbers ..., the
    residual list").
 

@@ -17,7 +17,7 @@ metadata:
 
 # Evidence-discipline rules
 
-Decision rules for three mechanisms layered on top of this rulebook's
+Decision rules for three mechanisms layered on top of this role spec's
 existing per-rule `source:` citation discipline: Fact/Inference/
 Assumption labeling of claims, an explicit do-not-invent list, and a
 question-budget cap. Independently authored — no text ported from any
@@ -57,7 +57,7 @@ assumptions rather than stalling on unanswered questions.
 
 ### 1. Label a directly-sourced claim Fact
 When a claim can be traced to a primary or secondary source already
-cited in the record (per this rulebook's existing sourcing discipline),
+cited in the record (per this role spec's existing sourcing discipline),
 label it `Fact:` — a labeled Fact is what lets a downstream reader
 distinguish sourced content from everything else in the record without
 re-deriving the sourcing chain themselves.

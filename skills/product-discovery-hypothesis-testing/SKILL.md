@@ -33,14 +33,14 @@ not fresh judgement.
 
 ## Procedure
 
-1. Move `idle -> scoping` on the user's idea, then `scoping ->
+1. Move role intake on the user's idea, then `scoping to
    researching` once evidence gathering begins (see steps 1-2 above).
 2. Write the falsifiable `hypothesis_statement` and register
    metric/threshold/decision_rule/fail_condition/time_box before moving
-   `researching -> hypothesis-registered` (see step 3 above); if the
+   `researching to hypothesis-registered` (see step 3 above); if the
    statement cannot be falsified, set `status:
    hypothesis-not-falsifiable` instead.
-3. Move `hypothesis-registered -> measuring` only once the gate's two
+3. Move `hypothesis-registered to measuring` only once the gate's two
    conditions both hold — all pre-registration fields non-empty and the
    user's own-turn approval token present (see step 4 above).
 4. While `status: measuring`, never edit `threshold` (see step 5 above).
@@ -58,8 +58,8 @@ product-cycle's state machine, with `hypothesis_statement`,
 `time_box` all written before any gated transition, and a mechanically
 -derived `recommendation`/`verdict` pair once measured.
 
-4. **hypothesis-registered -> measuring** (gated): this is the one
-   transition `state-gate.sh` enforces mechanically. It is refused unless:
+4. **hypothesis-registered to measuring** (gated): this is the one
+   transition the record gate enforces mechanically. It is refused unless:
    - `hypothesis_statement`, `metric`, `threshold`, `decision_rule`,
      `fail_condition`, and `time_box` are all non-empty in the file
      (`confidence_level` is exempt — optional, never gates), AND
@@ -75,12 +75,12 @@ product-cycle's state machine, with `hypothesis_statement`,
    around the gate (e.g. writing the file through a shell command instead
    of Write/Edit); the gate refuses those too, by design.
 
-5. **measuring**: once here, the finish line cannot move. `state-gate.sh`
+5. **measuring**: once here, the finish line cannot move. the record gate
    refuses any edit that changes the `threshold` field while `status:
    measuring`, regardless of which tool makes the edit. Update other
    fields (e.g. collected-data notes) freely; do not touch `threshold`.
 
-6. **measuring -> validated / invalidated / inconclusive**: apply the rule
+6. **measuring to validated / invalidated / inconclusive**: apply the rule
    fixed in step 3 to whatever data was collected — mechanically, not by
    fresh argument. If the registered rule said "kill below 15%," a 14%
    result is a kill even if it feels close; that is what pre-registration
@@ -113,8 +113,8 @@ Full rule text, citations, and counter-examples:
 `references/rules.md` in this skill's directory — read it when a
 matched rule's detail is needed.
 
-- 2.1 — **idle -> scoping**: the user hands you an idea. Set `status: scoping` and write down what the idea claims and who it is for. Nothing else is required to open the role
-- 2.2 — **scoping -> researching**: begin gathering evidence — user interviews, existing data, competitive signal, whatever grounds the claim. Set `status: researching`. Do not…
-- 2.3 — **researching -> hypothesis-registered**: write the falsifiable `hypothesis_statement`, then propose the metric, the threshold, and the decision rule (with `fail_conditi…
+- 2.1 — **role intake**: the user hands you an idea. Open the record and write down what the idea claims and who it is for. Nothing else is required to open the role
+- 2.2 — **scoping to researching**: begin gathering evidence — user interviews, existing data, competitive signal, whatever grounds the claim. Set `status: researching`. Do not…
+- 2.3 — **researching to hypothesis-registered**: write the falsifiable `hypothesis_statement`, then propose the metric, the threshold, and the decision rule (with `fail_conditi…
 - S1 — The carrying file → references/rules.md
 - S2 — Common mistakes this skill exists to prevent → references/rules.md
