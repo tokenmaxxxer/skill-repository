@@ -16,7 +16,7 @@ metadata:
 # Signal-methodology selection (RED / USE / Golden Signals)
 
 Decision rules for picking exactly one signal methodology per touched
-surface (this rulebook's own `observability-methodology-selector`
+surface (this role spec's own `observability-methodology-selector`
 phase-1 duty). Research trail: layer 2 (named methodologies — Tom
 Wilkie's RED method, Brendan Gregg's USE method, Google's Four Golden
 Signals — verified at source) plus layer 1 (practitioner framing of

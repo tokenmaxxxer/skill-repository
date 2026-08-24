@@ -114,5 +114,5 @@ partial (form controls, grouping, navigation depth, contrast floor, one
 removal rule) — not a claim of full coverage against issue #1174's
 N-per-role target; color-combination visibility beyond contrast,
 usage-frequency-to-menu-depth beyond R4, and background/editing-surface
-separation remain open for a follow-up batch in this same rulebook.
+separation remain open for a follow-up batch in this same skill family.
 

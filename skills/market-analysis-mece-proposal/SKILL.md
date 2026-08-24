@@ -3,7 +3,7 @@ name: market-analysis-mece-proposal
 description: >-
   Use when structuring a phase-1 proposal's required elements to check for content overlap
   between sections, choosing a MECE split for the analysis, or verifying the section set is
-  collectively exhaustive against the rulebook's required-elements field. Applies to the
+  collectively exhaustive against the role spec's required-elements field. Applies to the
   mece-proposal axis. Trigger on requests like "제안서 섹션 구조 MECE하게 잡아줘", "do these sections
   overlap", "is the proposal missing a required element", "re-cut this issue tree". Do NOT
   use for judging whether the claims inside a section are properly sourced (use
@@ -26,7 +26,7 @@ issue-tree structuring practice).
 
 Apply this skill when drafting or reviewing a phase-1 proposal's
 section structure, choosing how to split the analysis, or checking the
-proposal against the rulebook's 5 required elements for overlap or
+proposal against the role spec's 5 required elements for overlap or
 gaps.
 
 ## Procedure
@@ -54,7 +54,7 @@ gaps.
    not force an artificial split — state the shared dependency once and
    reference it (rule 8).
 9. When checking collective exhaustiveness, verify against the
-   rulebook's own PRODUCES field's 5 named elements, not against
+   role spec's own `produces` field's 5 named elements, not against
    recollection (rule 9).
 10. When an "other" bucket accumulates more than a small fraction of
     content, split it into properly named sub-elements rather than
@@ -64,8 +64,8 @@ gaps.
 
 A proposal whose sections carry no cross-section content overlap, each
 required element paired with its rationale, an explicit MECE split
-choice, and full coverage of the rulebook's 5 named elements verified
-against the PRODUCES field.
+choice, and full coverage of the role spec's 5 named elements verified
+against the `produces` field.
 
 ## Rules
 
@@ -80,7 +80,7 @@ against the PRODUCES field.
    style nit — the required element is "frameworks selected + why," and
    a bare list without rationale does not satisfy the "why" half of the
    pairing. source: docs/issue-1174/proposals/operational-playbook-program.md
-   (this rulebook's own governing role-directive, `PRODUCES` field)
+   (this role spec's own governing role-directive, `produces` field)
 3. When choosing how to split the analysis into sections, prefer the
    fastest reliable MECE splits named in practitioner guidance —
    two-part splits, formula-based splits (e.g. TAM = SAM + SOM),
@@ -120,7 +120,7 @@ against the PRODUCES field.
    reference it, rather than duplicating or awkwardly forcing exclusivity.
    source: https://www.myconsultingoffer.org/case-study-interview-prep/mece/
 9. When checking collective exhaustiveness, verify against the
-   rulebook's own `PRODUCES` field (the 5 named elements) as the
+   role spec's own `produces` field (the 5 named elements) as the
    checklist, not against whatever the analyst remembers writing —
    a proposal missing one of the 5 named elements fails exhaustiveness
    even if every present section is well-written. source:

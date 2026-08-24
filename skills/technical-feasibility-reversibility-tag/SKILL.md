@@ -2,7 +2,7 @@
 name: technical-feasibility-reversibility-tag
 description: >-
   Use when a finding is about to be written to a probe-resolution field in
-  feasibility-record.md by spike-report, stride-table, build-vs-buy, or
+  docs/issue-<n>/reports/technical-feasibility.md by spike-report, stride-table, build-vs-buy, or
   license-scan, and it has not yet been classified as a one-way or two-way door.
   Adds a Reversibility field — `one-way` or `two-way` plus a one-line
   cost-to-undo reason — to every finding, scaling the evidence bar before a
@@ -16,7 +16,7 @@ description: >-
 
 # Reversibility tag
 
-**Belongs to state:** `probing` — cross-cutting across all four probes
+**Stage:** `probing` — cross-cutting across all four probes
 (technical, prior-art, legal-regulatory, threat-model), not a probe of its
 own.
 
@@ -34,7 +34,7 @@ This applies whenever any of the four feasibility probes — `spike-report`,
 `stride-table`, `build-vs-buy`, or `license-scan` — has produced a finding
 that is about to be written into a probe-resolution field
 (`technical`, `prior_art`, `legal_regulatory`, `threat_model`) in
-`feasibility-record.md`. It applies to the agent itself, not as a question
+`docs/issue-<n>/reports/technical-feasibility.md`. It applies to the agent itself, not as a question
 to surface to the user.
 
 ## Procedure
@@ -59,7 +59,7 @@ field — `one-way` or `two-way` plus a one-line cost-to-undo reason — inline
 to each finding already being written into the relevant probe artifact
 (the spike report, STRIDE table row, build-vs-buy comparison row, or
 license-scan entry), which in turn feeds the probe-resolution fields in
-`feasibility-record.md`.
+`docs/issue-<n>/reports/technical-feasibility.md`.
 
 ## What it does, before any probe-resolution field is written
 
@@ -80,7 +80,7 @@ Not a separate file. This tag is written inline as a field on each finding
 within the probe artifact that produced it (the spike report, the STRIDE
 table row, the build-vs-buy comparison row, the license-scan entry) —
 never a standalone `feasibility/reversibility.md`. Like those artifacts,
-this write is not the state file and is not gated by `state-gate.sh`.
+this write is not the role record and is not gated.
 
 ## Field added to every finding
 
@@ -89,7 +89,7 @@ this write is not the state file and is not gated by `state-gate.sh`.
 
 ## Rule
 
-A probe's resolution field in `feasibility-record.md` (`technical`,
+A probe's resolution field in `docs/issue-<n>/reports/technical-feasibility.md` (`technical`,
 `prior_art`, `legal_regulatory`, `threat_model`) should not be written as
 `pass` if any of its one-way-door findings lack the heavier evidence this
 tag calls for — say so to the user rather than resolving optimistically.

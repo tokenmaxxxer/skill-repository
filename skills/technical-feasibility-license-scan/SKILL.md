@@ -13,7 +13,7 @@ description: >-
 
 # License scan
 
-**Belongs to state:** `probing`, legal-regulatory probe.
+**Stage:** `probing`, legal-regulatory probe.
 
 ## Trigger
 
@@ -33,7 +33,7 @@ applicability has not yet been noted.
    category, customer/region), so the applicability note is grounded rather
    than guessed, and be plain that this is research and not a legal opinion
    (see ## What it asks the user for).
-3. Record findings by writing to `feasibility-record.md`'s legal-regulatory
+3. Record findings by writing to `docs/issue-<n>/reports/technical-feasibility.md`'s legal-regulatory
    probe field, pointing to or inlining a project-local file such as
    `feasibility/license-scan.md`; note that this artifact write is not
    itself gated, only the state file's `status` transition is (see ##
@@ -53,7 +53,7 @@ applicability has not yet been noted.
 Applying this skill produces (or updates) a per-dependency license-verdict
 table and a regulatory-applicability note, written into a project-local
 file such as `feasibility/license-scan.md` and pointed to from (or inlined
-in) `feasibility-record.md`'s legal-regulatory probe field.
+in) `docs/issue-<n>/reports/technical-feasibility.md`'s legal-regulatory probe field.
 
 ## What it asks the user for
 
@@ -66,7 +66,7 @@ determination is needed and none is available.
 
 ## Artifact
 
-Writes to `feasibility-record.md`'s legal-regulatory probe field (a pointer
+Writes to `docs/issue-<n>/reports/technical-feasibility.md`'s legal-regulatory probe field (a pointer
 to, or inline table within, a project-local file, e.g.
 `feasibility/license-scan.md`). This artifact write is not gated — only the
 state file's `status` transition is gated.

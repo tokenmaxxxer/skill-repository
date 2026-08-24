@@ -42,7 +42,7 @@ never merged into the attempt's own outcome field.
 
 ## The artifact and its field list
 
-Written to `verify-record.md`, in this repository's root (path
+Written to `docs/issue-<n>/reports/defect-verification.md`, in this repository's root (path
 configurable via `VERIFY_RECORD_NAME`), as one `---`-delimited block per
 attempt below the header block. Attempt fields:
 
@@ -89,14 +89,14 @@ separate `finding_type` field names this same
 `blocking|advisory` value — kept distinct from the deterministic
 `severity` band described in
 `verify/skills/severity-classification/SKILL.md`). The spec's `status`
-field is the incident-level free-text disposition; this rulebook's
+field is the incident-level free-text disposition; this role spec's
 `outcome`/`verdict` are the per-attempt call the spec's `status` is
 derived from, not a renamed version of it.
 
 Spec field-token cross-reference table (`roles/specs/defect-verification.spec.json`
-field name -> this rulebook's field):
+field name -> this role spec's field):
 
-| spec field     | this rulebook's field                                  |
+| spec field     | this role spec's field                                  |
 | -------------- | -------------------------------------------------------|
 | `verdict`      | `verdict` (finding block) / `outcome` (attempt block)   |
 | `repro_steps`  | `steps`                                                 |
@@ -125,7 +125,7 @@ to point at otherwise. `blocked: needs-repro-access` requires its own
   stands recorded as-is pending coding's own resolution of it.
 - Merge `reproduced`/`not-reproduced`/`blocked: needs-repro-access` into a
   single pass/fail signal that loses which attempts were even taken.
-- Write to any file other than `verify-record.md`.
+- Write to any file other than `docs/issue-<n>/reports/defect-verification.md`.
 - Treat a clean `review-record` as grounds to skip a reproduction attempt
   or record a `not-reproduced` outcome without actually attempting it.
 

@@ -1,13 +1,13 @@
 ---
 name: verify-severity-classification
 description: >-
-  Use while acting as the verify role in the reproduced state, once a
+  Use when a
   reproduced defect's finding is addressed to coding and needs a severity band
   attached — never to decide whether the attempt reproduced at all. Trigger on
   requests like "set severity on the verify finding", "blocking or advisory
   for coding", "map the bug-bar band to finding_type", "재현된 결함 blocking인지
   advisory인지 정해줘". Maps a deterministic band (Chromium five bands or Microsoft
-  bug bar) to the blocking/advisory gate value on the verify-record.md finding
+  bug bar) to the blocking/advisory gate value on the docs/issue-<n>/reports/defect-verification.md finding
   block. Do NOT use for writing the attempt and outcome block itself (use
   verify-finding-record); the review-side analog is
   conformance-review-severity-classification.
@@ -16,7 +16,7 @@ description: >-
 
 # severity-classification
 
-Belongs to `reproduced`. Runs after `finding-record` has already recorded a
+Runs after `finding-record` has already recorded a
 `reproduced` outcome and its accompanying `finding` block — this skill only
 sets that finding's `severity` field, per
 `docs/specs/role-handoff-contract.md` §5: "`severity: blocking | advisory`.
@@ -26,8 +26,7 @@ the finding is context, not a gate."
 
 ## Trigger
 
-Apply this skill while acting as the verify role in the `reproduced`
-state, once `finding-record` has already recorded a `reproduced` outcome
+Apply this skill once `finding-record` has already recorded a `reproduced` outcome
 and its finding needs a severity band attached before it can gate
 landing — never to decide whether the attempt reproduced at all.
 
@@ -45,13 +44,13 @@ landing — never to decide whether the attempt reproduced at all.
    contract's gates actually consult, keeping the two spec fields
    distinct (see "Two distinct spec fields, not one").
 4. Write the resulting `severity` field onto the finding's existing
-   block in `verify-record.md`, never as a separate artifact (see "The
+   block in `docs/issue-<n>/reports/defect-verification.md`, never as a separate artifact (see "The
    artifact").
 
 ## Output shape
 
 A `severity` field written onto the existing finding block in
-`verify-record.md`, holding one deterministic band value mapped to a
+`docs/issue-<n>/reports/defect-verification.md`, holding one deterministic band value mapped to a
 `blocking|advisory` gate value — never a new file, never an averaged
 score.
 
@@ -66,7 +65,7 @@ never dropped on dispute, only re-rated.
 ## The shape of the classification
 
 A **deterministic table-lookup**, not an averaged subjective score, mirroring
-the practice research review-rulebook already established for this
+the practice research review role already established for this
 org's use of severity: Microsoft's SDL bug bar replaced DREAD's averaged
 damage/reproducibility/exploitability/affected-users/discoverability score
 for being too subjective and inconsistently scored. This skill uses one of
@@ -102,7 +101,7 @@ one deterministic band and one closed gate value: its `severity` field is
 the free-text deterministic band this skill computes (Chromium's five
 bands or Microsoft's four-level bug bar, above); its `finding_type` field
 is the closed `blocking|advisory` enum that `finding-record` writes onto
-the finding block and that this rulebook's gates (`verify-finding-gate`,
+the finding block and that this role spec's gates (`verify-finding-gate`,
 `verify-outcome-gate`) actually consult. The two must not be collapsed:
 `severity` informs the `finding_type` call but is not itself the gated
 value.
@@ -110,7 +109,7 @@ value.
 ## The artifact
 
 Writes a `severity` field onto the finding's existing block in
-`verify-record.md` (the same block `finding-record` wrote), not a separate
+`docs/issue-<n>/reports/defect-verification.md` (the same block `finding-record` wrote), not a separate
 file — this is an addition to an existing finding, not a new artifact.
 
 ## What this skill never does

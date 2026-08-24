@@ -1,9 +1,8 @@
 ---
 name: product-discovery-assumption-mapping
 description: >-
-  Use this skill when the product role is in the `researching` state and needs to decompose
-  a candidate solution into testable assumptions, or whenever the agent is about to draft
-  interview questions while in this state. Trigger it right after `scoping -> researching`,
+  Use this skill when a candidate solution needs to be decomposed into testable assumptions, or whenever the agent is about to draft
+  interview questions at that point. Trigger it right after `scoping to researching`,
   on requests like "가정 맵 만들어줘", "map the assumptions behind this idea", "which assumptions
   are riskiest", "plot evidence strength vs importance". It plots each assumption on the 2x2
   evidence-strength x importance grid across
@@ -14,7 +13,7 @@ description: >-
 
 # Assumption mapping for `researching`
 
-**Belongs to state:** `researching`.
+**Stage:** `researching`.
 
 **What it asks the user for** (or derives from interview evidence already
 on file): candidate assumptions underlying the idea, across Teresa
@@ -41,7 +40,7 @@ it: prototype test, one-question survey, data mining, or engineering
 spike.
 
 **Where it is written:** `product/assumption-map.md` — a plain artifact
-write, not the state file. Never gated by `state-gate.sh`.
+write, not the role record. Never gated.
 
 **Field list**, per assumption row:
 
@@ -136,7 +135,7 @@ statements, and feature wishlists.
 5. When enough evidence exists on the priority assumption(s), move to
    drafting the hypothesis statement ("We believe / we will know" — see
    the existing `hypothesis-testing` skill) and hand off to
-   `guardrail-metrics` before `researching -> hypothesis-registered`.
+   `guardrail-metrics` before `researching to hypothesis-registered`.
 
 ## Common mistakes this skill exists to prevent
 

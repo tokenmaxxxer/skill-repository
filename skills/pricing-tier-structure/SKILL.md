@@ -16,7 +16,7 @@ metadata:
 # Tier-structure decision rules
 
 Decisions for `pricing-verdict-report` (chain position 4/4), the
-tier-structure element of this role's PRODUCES line: how a fielded
+tier-structure element of this role's `produces` line: how a fielded
 verdict's numbers assemble into packaging, once the research-method
 rules elsewhere in this chain have produced a correctly-labeled price
 point or preference share.
@@ -87,7 +87,7 @@ applies because the decision was never a packaging question.
    level, with the middle tier structured as the default recommendation)
    — this convention's decoy/anchor logic is standard multi-tier
    pricing-page practice, distinct from and complementary to this
-   rulebook's own conjoint/PSM design-rigor rules, which govern how the
+   role spec's own conjoint/PSM design-rigor rules, which govern how the
    underlying price points are measured, not how they are packaged into
    tiers.
 
@@ -99,7 +99,7 @@ applies because the decision was never a packaging question.
    tiers for a decision that only asked "what single price" manufactures
    a packaging structure nobody requested and adds a decoy/anchor
    judgment call the verdict has no data to inform.
-   source: this repo's own chain scope (`README.md` PRODUCES line names
+   source: this repo's own chain scope (`README.md` `produces` line names
    "tier structure" as one of three outputs, not a mandatory element of
    every verdict) — tiering is conditional on the decision actually
    being a packaging question.

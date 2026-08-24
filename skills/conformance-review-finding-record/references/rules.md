@@ -16,7 +16,7 @@ be logged at runtime; I can't observe that from a static diff — can you
 point me at a log sample, or should this be `Unverifiable`?" That answer,
 or the absence of one, decides the verdict; it does not gate the write.
 
-In `draft-reported`, if the reviewed party disputes a finding, this skill
+If the reviewed party disputes a finding, this skill
 asks the user to state their side, records it, and re-examines the
 evidence — it does not treat the dispute itself as a request to fix
 anything.
@@ -43,7 +43,7 @@ Never merge these into a bare pass/fail.
 
 ## The artifact and its field list
 
-Written to `review-record.md`, in this repository's root (path
+Written to `docs/issue-<n>/reports/conformance-review.md`, in this repository's root (path
 configurable via `REVIEW_RECORD_NAME`), as one `---`-delimited block per
 requirement below the header block. Field list, taken from the practice
 research's synthesis of the OWASP finding template, CVSS/bug-bar
@@ -88,13 +88,13 @@ The requirement's subject-under-audit (the artifact/commit being checked)
 is this skill's EARL counterpart to the spec's `subject` field; the
 reviewer's own identity recording a verdict is the counterpart to the
 spec's `assertedBy` field — neither has a dedicated field name in this
-rulebook's template today, but both are implicit in where the record
-lives (`review-record.md`, scoped to one subject) and who writes it.
+role spec's template today, but both are implicit in where the record
+lives (`docs/issue-<n>/reports/conformance-review.md`, scoped to one subject) and who writes it.
 
 ## [S3] EARL alignment (issue-521 spec)
 
 The marketplace `conformance-review` role spec names two rules this
-rulebook does not enforce locally, by design (proposal `## Constraints`:
+role spec does not enforce locally, by design (proposal `## Constraints`:
 no forked enforcement):
 
 - **`reference_resolution`**: "test must resolve to the actual
@@ -137,7 +137,7 @@ not have had its spec locator pinned down either.
   say plainly that this role reports and does not fix, and that the
   finding stands recorded as-is pending the user's own decision on it.
 - Merge the five verdicts into pass/fail.
-- Write to any file other than `review-record.md`.
+- Write to any file other than `docs/issue-<n>/reports/conformance-review.md`.
 - Treat a complete-looking diff as a `Present` verdict without an evidence
   pointer into it.
 

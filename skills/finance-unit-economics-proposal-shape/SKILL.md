@@ -84,7 +84,7 @@ definition-only glossary section standing in for decision rules.
   no attached condition or choice, cut that section entirely rather
   than let it stand in for decision rules — a definition-only block
   ("CAC is...") looks like guidance but gives a reader nothing to act
-  on, which is exactly the shape this rulebook's own depth gate rejects.
+  on, which is exactly the shape this role spec's own depth gate rejects.
   source: gates/playbook_depth_gate.py glossary-shape check (issue
   #1174 (c) check 4) — https://github.com/tokenmaxxxer/on-the-record
   gates/playbook_depth_gate.py.

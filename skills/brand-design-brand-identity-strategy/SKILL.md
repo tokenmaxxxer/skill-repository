@@ -19,7 +19,7 @@ Rules for the `decides: 브랜드 정체성이 시각적으로 일관되는가` 
 this role's contract — checking that a visual choice actually maps
 back to the brand's declared identity rather than being style-work in
 isolation. Grounded in Kapferer's Brand Identity Prism (this role's
-own rulebook plugin is already named `brand-design-kapferer-scope-guard`,
+own skill is already named `brand-design-kapferer-scope-guard`,
 confirming the prism as this repo's chosen framework).
 
 ## Trigger

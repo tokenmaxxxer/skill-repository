@@ -1,10 +1,10 @@
 ---
 name: release-engineering-rollout-plan
 description: >-
-  Use when working the ops role's rollout state (ops/state.md status rollout)
+  Use when working the release-engineering role's rollout phase
   — asking the user for, or deriving from the readiness record, the traffic
   curve and per-step metric thresholds that gate progressive delivery, written
-  to ops/rollout-plan.md before the rollout -> rollout and rollout -> incident
+  to ops/rollout-plan.md before the rollout to rollout and rollout to incident
   agent rows can read them. Trigger on requests like "write the rollout plan",
   "canary step thresholds and bake time", "traffic curve for progressive
   delivery", "카나리 롤아웃 계획 세워줘". Do NOT use for the readiness checklist upstream
@@ -15,14 +15,14 @@ description: >-
 
 # rollout-plan — the canary/progressive-delivery plan
 
-Belongs to the `rollout` state. Entered once `readiness -> rollout` fires
+Covers the `rollout` phase. Entered once `readiness to rollout` fires
 (checklist complete, every yes item has a pointable artifact).
 
 ## Trigger
 
-Apply this skill while working the `rollout` state: declaring or deriving
+Apply this skill while working the `rollout` phase: declaring or deriving
 the traffic curve and per-step metric thresholds before the agent-owned
-`rollout -> rollout`/`rollout -> incident` rows can read them —
+`rollout to rollout`/`rollout to incident` rows can read them —
 distinguishing it from the readiness checklist (`readiness-checklist`)
 and the post-incident postmortem (`postmortem`).
 
@@ -34,13 +34,13 @@ and the post-incident postmortem (`postmortem`).
 2. Write one step entry per traffic increment to `ops/rollout-plan.md`,
    each with a `result: pending` field (see "What it writes, and
    where").
-3. Let the agent promote itself `rollout -> rollout` when a step's
+3. Let the agent promote itself `rollout to rollout` when a step's
    result comes back clean against its declared threshold, with no
    human turn required (see "How the agent-owned rows read it").
-4. Let the agent declare `rollout -> incident` immediately on a breach
+4. Let the agent declare `rollout to incident` immediately on a breach
    past a step's hard threshold, without waiting to be asked (see "How
    the agent-owned rows read it").
-5. For `rollout -> steady`, do not self-promote even after the last
+5. For `rollout to steady`, do not self-promote even after the last
    canary step passes — ask the user for an explicit promotion approval
    in their own turn first (see "How the agent-owned rows read it").
 
@@ -48,8 +48,8 @@ and the post-incident postmortem (`postmortem`).
 
 `ops/rollout-plan.md`, one step entry per traffic increment (bake time,
 metric queries, pass/fail/inconclusive thresholds, `result:` field), read
-mechanically by the `rollout -> rollout` and `rollout -> incident`
-agent-owned transitions; `rollout -> steady` instead waits on the user's
+mechanically by the `rollout to rollout` and `rollout to incident`
+agent-owned transitions; `rollout to steady` instead waits on the user's
 own explicit approval turn.
 
 ## What it asks the user for
@@ -87,25 +87,25 @@ rollout (canary / staged deploy)".)
 - result: pending   # pending | pass | marginal | fail
 ```
 
-This file is not `ops/state.md` — writing it is never gated. Only the
-resulting write to `ops/state.md` (the step promotion or the incident
+This file is not `docs/issue-<n>/reports/release-engineering.md` — writing it is never gated. Only the
+resulting write to `docs/issue-<n>/reports/release-engineering.md` (the step promotion or the incident
 declaration) is gated, and only on table membership.
 
 ## How the agent-owned rows read it
 
-- `rollout -> rollout`: when a step's `result` comes back clean against its
+- `rollout to rollout`: when a step's `result` comes back clean against its
   declared threshold, the agent promotes to the next step itself — no
   human turn required. This mirrors Argo Rollouts/Flagger/Kayenta's
   auto-promote loops, which are real, mature production practice for
   exactly this decision.
-- `rollout -> incident`: when a step's `result` is a breach past its hard
+- `rollout to incident`: when a step's `result` is a breach past its hard
   pre-set threshold, the agent declares the incident itself, immediately,
   without waiting to be asked. Raising costs nothing; understating costs
   more (PostHog's "when in doubt, raise it anyway," carried into the
   companion interaction research for `ops`).
-- `rollout -> steady`: NOT agent-owned. Even once the last canary step
+- `rollout to steady`: NOT agent-owned. Even once the last canary step
   passes, cutover to full/production traffic is a human call in every
   source that names this moment — ask the user for an explicit promotion
-  approval in their own turn before writing `status: steady` (see
-  `readiness-checklist`'s "Working `rollout -> steady`" section for the
+  approval in their own turn before writing `phase: steady` (see
+  `readiness-checklist`'s "Working `rollout to steady`" section for the
   exact wording expected).

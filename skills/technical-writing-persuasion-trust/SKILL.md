@@ -142,6 +142,6 @@ placed inline per claim, no repeated or unbacked trust claims.
     cut it down to one placement near the reader's decision point (e.g.
     the top of an adoption-facing overview) — repetition of a peripheral
     cue does not compound its persuasive value in the ELM model and
-    instead reads as padding, contradicting this rulebook's own
+    instead reads as padding, contradicting this role spec's own
     minimalism axis. source:
     https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1679853/full

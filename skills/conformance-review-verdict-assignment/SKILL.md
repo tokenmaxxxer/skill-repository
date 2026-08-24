@@ -7,7 +7,7 @@ description: >-
   this requirement", "is this Absent or Incorrect", "이 요구사항 판정 뭐로 해야 해".
   Reserves Present for implemented-and-reachable, names the failing clause on
   Incorrect/Absent, and carries prior Present verdicts forward by sha. Do NOT
-  use for writing the finished verdict into review-record.md (use
+  use for writing the finished verdict into docs/issue-<n>/reports/conformance-review.md (use
   conformance-review-finding-record).
 metadata:
   axis: verdict-assignment

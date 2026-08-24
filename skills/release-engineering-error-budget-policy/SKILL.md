@@ -1,9 +1,9 @@
 ---
 name: release-engineering-error-budget-policy
 description: >-
-  Use when working the ops role's steady state (ops/state.md status steady) to
+  Use when working the release-engineering role's steady phase to
   write, per SLI, the measurement method, SLO target, measurement window, and
-  consequence table that gates steady -> readiness on error_budget ok, or when
+  consequence table that gates steady to readiness on error_budget ok, or when
   a true P0/security-fix exception needs to be routed around an exhausted
   budget. Trigger on requests like "write the error-budget policy", "budget
   exhausted, can we still ship", "SLO consequence table per SLI", "에러 버짓 정책
@@ -15,9 +15,9 @@ description: >-
 
 # error-budget-policy — the steady-state handoff contract
 
-Belongs to the `steady` state. Ops does not define what "healthy" means —
+Covers the `steady` phase. Ops does not define what "healthy" means —
 that is the measurement design `feasibility` already produced and `ops`
-was handed at `idle -> readiness`. This skill's job is only to write down
+was handed at role start. This skill's job is only to write down
 the policy consequence, per SLI, so the `steady` refusal rule has something
 mechanical to read.
 
@@ -25,15 +25,15 @@ mechanical to read.
 
 Apply this skill while working the `steady` state: writing or updating
 the per-SLI error-budget policy that `error_budget:` reads before any
-`steady -> readiness` transition, or handling a dispute about whether the
+`steady to readiness` transition, or handling a dispute about whether the
 budget calculation is right or an exception applies.
 
 ## Procedure
 
 1. For each SLI, record the fields per "Fields, per SLI" below into
    `ops/error-budget-policy.md` (see "Where it is written").
-2. Leave `ops/state.md`'s `error_budget:` field for the mechanical
-   `steady -> readiness` check to read; do not edit it to unblock a
+2. Leave `docs/issue-<n>/reports/release-engineering.md`'s `error_budget:` field for the mechanical
+   `steady to readiness` check to read; do not edit it to unblock a
    transition (see "How it is read").
 3. If the field reads `exhausted`, refuse the transition outright,
    regardless of readiness, except for true P0/security-fix work — route
@@ -47,7 +47,7 @@ budget calculation is right or an exception applies.
 
 `ops/error-budget-policy.md`, one section per SLI (measurement method,
 SLO target, measurement window, consequence table), read by
-`ops/state.md`'s `error_budget:` field, which the `steady -> readiness`
+`docs/issue-<n>/reports/release-engineering.md`'s `error_budget:` field, which the `steady to readiness`
 transition checks mechanically before proceeding.
 
 ## Fields, per SLI (Google's error-budget-policy shape)
@@ -78,12 +78,12 @@ accounting" and "Error budget policy doc".)
     exhausted: only P0/security-fix releases proceed until back within budget
 ```
 
-Writing this file is never gated — it is not `ops/state.md`.
+Writing this file is never gated — it is not `docs/issue-<n>/reports/release-engineering.md`.
 
 ## How it is read
 
-`ops/state.md`'s `error_budget:` field (`ok` / `exhausted`) is checked
-mechanically before `steady -> readiness`. If `exhausted`, the transition
+`docs/issue-<n>/reports/release-engineering.md`'s `error_budget:` field (`ok` / `exhausted`) is checked
+mechanically before `steady to readiness`. If `exhausted`, the transition
 is refused outright, regardless of how ready the next change looks — this
 mirrors the policy's own carve-out that only P0/security-fix work proceeds
 while the budget is spent. That carve-out is not automatic: route a true
