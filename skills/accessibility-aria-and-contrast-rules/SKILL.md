@@ -101,4 +101,4 @@ matched rule's detail is needed.
 - 5.2 — an accessible-name or alt-text value under evaluation was produced by a suggestion tool (spell/AI-assisted drafting) rather than authored or reviewed by a person → do not record the entry's `assertedBy` as a person, and do not
 - 5.3 — the only evidence gathered for a criterion is an automated scanner's result (axe-core, Lighthouse, Pa11y, or an equivalent engine), and the criterion is one automated to… → do not close the criterion on scan evidence alone; add a
 - 5.4 — a criterion is marked `not-applicable` because a deliberate design tradeoff excludes it (not because the criterion structurally cannot apply to the artifact type at all) → distinguish the two cases in the scope note. A boundary-
-- S1 — Sources → references/rules.md
+- S1 — Sources → references/rules.md (primary sources: WCAG 2.2, source: https://www.w3.org/TR/WCAG22/; Accessible Name and Description Computation, source: https://www.w3.org/TR/accname-1.2/)

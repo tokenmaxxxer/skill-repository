@@ -43,6 +43,9 @@ fi
 mkdir -p "$(dirname "$SKILLS_LINK")"
 ln -s "$SKILLS_SRC" "$SKILLS_LINK"
 
+# 커밋 시점에 스킬 정합성 검사를 강제하기 위해 버전관리되는 훅 디렉터리를 사용 (issue-113).
+git -C "$HOME/skill-registry" config core.hooksPath .githooks
+
 echo "설치 완료: $SKILLS_LINK → $SKILLS_SRC"
 echo
 echo "Claude Code와 OpenCode 모두 다음 세션부터 스킬을 인식합니다."

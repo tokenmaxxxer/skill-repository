@@ -29,19 +29,25 @@ including the vacuous "0 skills checked" case for an empty skills/ dir.
 Exits 1, printing one `path:line: reason` diagnostic per violation,
 otherwise.
 
-Optional --manifest <path> adds an additive, opt-in check: every skill
-directory name listed in the manifest file (one per line, blank lines
-and lines starting with `#` ignored) must have a SKILL.md body
+--manifest <path> is always-on by default (issue #113: these additive
+checks previously defaulted to off and were never wired to any landed
+session, so they silently never ran). It adds an additive check: every
+skill directory name listed in the manifest file (one per line, blank
+lines and lines starting with `#` ignored) must have a SKILL.md body
 containing `## Trigger`, `## Procedure`, and `## Output shape` headings
 (any order). Skills not listed in the manifest are unaffected by this
-check.
+check. The default path is scripts/procedure_authored_skills.txt
+(relative to the repo root); pass --manifest <other-path> to override.
 
-Optional --require-use-when-and-source <path> adds an additive, opt-in
-check: every skill directory name listed in that file (same one-per-
-line format as --manifest) must have a `description:` containing the
-literal substring "use when" (case-insensitive) and a SKILL.md body
-citing at least one `source:`/`Source:` URL anywhere (a strictly
-narrower re-check than the always-on per-rule citation check above).
+--require-use-when-and-source <path> is likewise always-on by default.
+It adds an additive check: every skill directory name listed in that
+file (same one-per-line format as --manifest) must have a
+`description:` containing the literal substring "use when"
+(case-insensitive) and a SKILL.md body citing at least one
+`source:`/`Source:` URL anywhere (a strictly narrower re-check than the
+always-on per-rule citation check above). The default path is
+scripts/issue_1996_use_when_source_manifest.txt (relative to the repo
+root); pass --require-use-when-and-source <other-path> to override.
 """
 import argparse
 import re
@@ -360,12 +366,25 @@ def check_skill(skill_md, dirname):
 
 
 def main():
+    repo_root = Path(__file__).resolve().parent.parent
+
+    # issue #113: these two additive checks used to default to None (off)
+    # and no landed session ever passed the flags, so they silently never
+    # ran. Default them to the repo's checked-in manifests so they are
+    # always-on; the flags remain present so a path can still be overridden.
     parser = argparse.ArgumentParser()
-    parser.add_argument("--manifest", type=Path, default=None)
-    parser.add_argument("--require-use-when-and-source", type=Path, default=None)
+    parser.add_argument(
+        "--manifest",
+        type=Path,
+        default=repo_root / "scripts" / "procedure_authored_skills.txt",
+    )
+    parser.add_argument(
+        "--require-use-when-and-source",
+        type=Path,
+        default=repo_root / "scripts" / "issue_1996_use_when_source_manifest.txt",
+    )
     args = parser.parse_args()
 
-    repo_root = Path(__file__).resolve().parent.parent
     skills_dir = repo_root / "skills"
 
     manifest_names = load_manifest(args.manifest) if args.manifest else set()
