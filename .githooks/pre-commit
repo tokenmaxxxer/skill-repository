@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# issue-113 (F5): the corpus conformance gates existed but were never wired
+# to commit-time enforcement, so violations landed silently. This hook wires
+# scripts/check_skill_conformance.py to every commit that touches skills/.
+set -euo pipefail
+
+repo_root="$(git rev-parse --show-toplevel)"
+staged_files="$(git diff --cached --name-only)"
+
+if ! printf '%s\n' "$staged_files" | grep -q '^skills/'; then
+  exit 0
+fi
+
+if ! output="$(python3 "$repo_root/scripts/check_skill_conformance.py" 2>&1)"; then
+  echo "$output"
+  echo "pre-commit: skill conformance check failed (scripts/check_skill_conformance.py); commit refused." >&2
+  exit 1
+fi
+
+exit 0
