@@ -15,8 +15,8 @@ metadata:
 # Tool-landscape learnings
 
 Distilled design moves from the Claude Code plugin/skill ecosystem this
-role's practitioners actually use (issue #1199, 2026-08-14 amendment,
-northpole req#1/req#5), folded into this role's own decision axes —
+skill's practitioners actually use (issue #1199, 2026-08-14 amendment,
+northpole req#1/req#5), folded into this skill's own decision axes —
 never a tool catalog. Adoption-evidence citations (stars, install
 counts, marketplace listing) and fetched-source URLs are in
 `docs/issue-1199/reports/api-design/scout-brief.md` in the

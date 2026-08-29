@@ -16,7 +16,7 @@ description: >-
 
 Covers both initial recording and dispute resolution or re-examination
 (recorded inline, still against the same attempt). Produces the per-attempt outcome record, and any escalating
-`finding` block, inside `docs/issue-<n>/reports/defect-verification.md`, the role's record file, at the
+`finding` block, inside `docs/issue-<n>/reports/defect-verification.md`, the skill's record file, at the
 attempt blocks below the header block.
 
 This skill never writes to any file other than `docs/issue-<n>/reports/defect-verification.md`. It does
@@ -39,7 +39,7 @@ was found.
    evidence, steps, expected/actual when applicable, evidence_kind, and
    environment (see "The artifact and its field list").
 4. When the attempt reproduces, additionally write the inline `finding`
-   block per the role-handoff contract's `finding` row, addressed to
+   block per the skill-handoff contract's `finding` row, addressed to
    coding, carrying its severity (see "The artifact and its field
    list").
 5. Refuse to write `reproduced` with no `evidence` pointer, and require

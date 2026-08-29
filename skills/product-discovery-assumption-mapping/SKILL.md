@@ -40,7 +40,7 @@ it: prototype test, one-question survey, data mining, or engineering
 spike.
 
 **Where it is written:** `product/assumption-map.md` — a plain artifact
-write, not the role record. Never gated.
+write, not the skill record. Never gated.
 
 **Field list**, per assumption row:
 
@@ -54,7 +54,7 @@ write, not the role record. Never gated.
 
 ## Trigger
 
-Apply this skill when the product role is in the `researching` state and
+Apply this skill when the product skill is in the `researching` state and
 needs to decompose a candidate solution into testable assumptions, or
 whenever the agent is about to draft interview questions while in this
 state — distinct from writing the hypothesis statement itself, which

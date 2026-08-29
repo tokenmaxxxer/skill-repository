@@ -70,10 +70,10 @@ matched rule's full text, citation, or counter-example is needed.
     exists is under-specified. Source: distilled from a widely-adopted
     Claude Code spec-authoring plugin's convention of attaching "a
     runnable verify command on every build step" to each acceptance
-    criterion (evidence trail: this role's tool-landscape fold-in,
+    criterion (evidence trail: this skill's tool-landscape fold-in,
     docs/issue-1199/reports/requirements-engineering.md).
 11b. Condition: a batch of requirements has just been drafted or
-    revised and is about to hand off to a downstream role (plan,
+    revised and is about to hand off to a downstream skill (plan,
     design, or implementation). Choice: run one explicit
     cross-requirement consistency/coverage pass over the whole batch
     before handoff — check for gaps and contradictions across the set,
@@ -83,7 +83,7 @@ matched rule's full text, citation, or counter-example is needed.
     check. Source: distilled from a widely-adopted Claude Code
     spec-driven-development plugin's dedicated cross-artifact
     consistency/coverage-analysis step run after task generation but
-    before implementation (evidence trail: this role's tool-landscape
+    before implementation (evidence trail: this skill's tool-landscape
     fold-in, docs/issue-1199/reports/requirements-engineering.md).
 
 ## Axis 3 — Ambiguity detection & resolution
@@ -106,10 +106,10 @@ matched rule's full text, citation, or counter-example is needed.
 14. Condition: a requirement statement admits two or more distinct
     readings under a plain reading by a domain-competent reader.
     Choice: log it in the ambiguity list (statement + candidate
-    readings + resolution) per this role's `produces` field, resolve
+    readings + resolution) per this skill's `produces` field, resolve
     to one reading with the requesting stakeholder, and only then
     assign a requirement ID — an unresolved reading never gets an ID.
-    Source: role produces-spec (README.md Doctrine); Ambiguity in NL
+    Source: skill produces-spec (README.md Doctrine); Ambiguity in NL
     Software Requirements case study.
 15. Condition: a requirement is phrased as a negative statement ("the
     system shall not fail to..."). Choice: rewrite as the positive
@@ -146,7 +146,7 @@ matched rule's full text, citation, or counter-example is needed.
     at feature-to-requirement-group granularity, coarser than 1:1, and
     say so in the matrix's status field rather than silently thinning
     detail. Source: EPLC guide ("shouldn't create unnecessarily
-    detailed matrices for simple projects"); this role's
+    detailed matrices for simple projects"); this skill's
     `write_scope: []` boundary (documented judgment, not code).
 20. Condition: a requirement changes after its matrix row already
     exists. Choice: update the row's downstream_link and status in the
@@ -209,8 +209,8 @@ matched rule's full text, citation, or counter-example is needed.
     stakeholder able to resolve the reading. Choice: do not keep
     re-drafting it indefinitely — recommend removal from this spec
     version and log it as `unverifiable`/`source-unresolvable`
-    (this role's loop_state vocabulary) rather than shipping a
-    requirement nobody can verify. Source: role's own loop_state
+    (this skill's loop_state vocabulary) rather than shipping a
+    requirement nobody can verify. Source: skill's own loop_state
     vocabulary (README.md); Nature 2021 subtraction-neglect (removal
     must be a stated option, not just re-elaboration).
 

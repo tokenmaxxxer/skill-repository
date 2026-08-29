@@ -16,7 +16,7 @@ metadata:
 # Brand consistency / asset governance rules
 
 Rules for the `produces: ... consistency check vs existing guide` half
-of this role's contract — how a new/changed asset is checked against
+of this skill's contract — how a new/changed asset is checked against
 the standing brand system, and how the system itself stays governable
 rather than drifting.
 

@@ -15,7 +15,7 @@ metadata:
 
 # Seam selection
 
-Research trail: Michael Feathers, *Working Effectively with Legacy Code* (seam taxonomy: preprocessing/link/object seams; Sprout Method, Sprout Class, Wrap Method), Martin Fowler's bliki "LegacySeam", and practitioner write-ups (Mike Bland; Codably's sprout/wrap/seam comparison) that restate the book's decision order in current terms. No independent academic layer was found specific to seam mechanics beyond Feathers' own text — this is a practitioner-canon axis, not a research-literature one, consistent with this role's sparse source tier.
+Research trail: Michael Feathers, *Working Effectively with Legacy Code* (seam taxonomy: preprocessing/link/object seams; Sprout Method, Sprout Class, Wrap Method), Martin Fowler's bliki "LegacySeam", and practitioner write-ups (Mike Bland; Codably's sprout/wrap/seam comparison) that restate the book's decision order in current terms. No independent academic layer was found specific to seam mechanics beyond Feathers' own text — this is a practitioner-canon axis, not a research-literature one, consistent with this skill's sparse source tier.
 
 ## Trigger
 

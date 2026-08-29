@@ -17,7 +17,7 @@ metadata:
 # Competitor-mapping rules (direct vs indirect)
 
 Decision rules for classifying a competitor as direct or indirect and
-attaching evidence to every claimed fact (this role spec's
+attaching evidence to every claimed fact (this skill spec's
 `produces.competitor list w/ evidence links` field). Research trail:
 layer 1 (practitioner classification criteria) plus layer 3 (evidence
 sourcing rigor, shared with evidence-rigor axis).

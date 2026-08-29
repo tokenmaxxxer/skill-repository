@@ -6,7 +6,7 @@ matched rule's full text, citation, or counter-example is needed.
 
 ## [S1] The record file
 
-`docs/issue-<n>/reports/release-engineering.md`, at the repository root the role is being run against.
+`docs/issue-<n>/reports/release-engineering.md`, at the repository root the skill is being run against.
 Frontmatter carries the state field:
 
 ```markdown
@@ -31,9 +31,9 @@ A `no` item is fine — it just means the transition isn't ready yet. A
 pass. Point at something real: a dashboard URL, a runbook path, a config
 key, a file in this repo.
 
-## [S2] Working role start
+## [S2] Working skill start
 
-Opened when the user hands the role a merged change plus the measurement
+Opened when the user hands the skill a merged change plus the measurement
 design `feasibility` produced (`docs/specs/agent-roles.md`, ops: "given to
 start"). Write `docs/issue-<n>/reports/release-engineering.md` with `phase: readiness` and start filling in
 checklist items — this transition itself is not gated by anything beyond

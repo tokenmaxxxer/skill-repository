@@ -16,7 +16,7 @@ metadata:
 
 # Verification cadence and rollback
 
-Research trail: BrowserStack and CircleCI's regression-testing/CI guides, Harness's regression-testing-in-CI/CD writeup on gated pipelines, and progressive-delivery/canary-rollback practitioner material (Bird Eats Bug; the CI/CD gate-ordering pattern). This axis is process/tooling practice rather than a named academic methodology — no independent academic layer was found, matching the sparse-tier expectation for this role.
+Research trail: BrowserStack and CircleCI's regression-testing/CI guides, Harness's regression-testing-in-CI/CD writeup on gated pipelines, and progressive-delivery/canary-rollback practitioner material (Bird Eats Bug; the CI/CD gate-ordering pattern). This axis is process/tooling practice rather than a named academic methodology — no independent academic layer was found, matching the sparse-tier expectation for this skill.
 
 ## Trigger
 

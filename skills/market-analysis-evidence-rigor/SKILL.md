@@ -16,7 +16,7 @@ metadata:
 # Evidence-rigor rules
 
 Decision rules for whether a methodological/factual claim carries a
-source or must be labeled an assumption (this role spec's `Sources:`
+source or must be labeled an assumption (this skill spec's `Sources:`
 list / evidence-appendix requirement). Research trail: layer 1
 (practitioner sourcing standards) plus layer 3 (overconfidence/
 forecasting-bias literature bearing on how unlabeled certainty should
@@ -78,7 +78,7 @@ and time-sensitive claims dated.
    indistinguishable from a sourced one to a downstream reader, which is
    the exact failure this axis exists to prevent.
    source: docs/issue-1174/proposals/operational-playbook-program.md
-   (this role spec's own governing role-directive, `produces` field)
+   (this skill spec's own governing skill-directive, `produces` field)
 4. When a secondary source is being used, restrict its role to
    establishing context, showing a debate exists, or summarizing
    consensus — never as the sole direct evidence for a specific factual

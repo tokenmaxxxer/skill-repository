@@ -11,7 +11,7 @@ description: >-
   we know if this is working", "should we kill this or keep going". Do NOT use once a test
   is already running with thresholds fixed, for a decision already committed with no option
   to stop, for pure preference calls with no observable outcome (use decision-brief), or for
-  the discovery-role in-repo variant (use product-discovery-hypothesis-testing).
+  the discovery-skill in-repo variant (use product-discovery-hypothesis-testing).
 ---
 
 # Hypothesis Testing

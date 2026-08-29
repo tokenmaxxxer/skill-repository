@@ -10,7 +10,7 @@ description: >-
   vs buy", "evaluate this vendor/SaaS", "compare X and Y for our stack" — or when a team is about
   to commit to a technology on hype, a single blog post, or familiarity alone. Do NOT use for a
   quick syntax/API question (just answer), market opportunity sizing (market-recon), debugging an
-  existing system (diagnose-first), or the role's verdict/timebox call (use technical-
+  existing system (diagnose-first), or the skill's verdict/timebox call (use technical-
   feasibility-verdict-and-timebox-selection).
 ---
 

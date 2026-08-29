@@ -36,7 +36,7 @@ Exactly one of, per attempt:
   indistinguishable from a genuinely-tried-and-clean one.
 
 When an attempt reproduces, this skill additionally writes an inline
-`finding` block per `docs/specs/role-handoff-contract.md` §2's `finding`
+`finding` block per the spawning contract's §2 `finding`
 row, `addressed_to: coding`, carrying `severity: blocking` or `advisory` —
 never merged into the attempt's own outcome field.
 
@@ -89,14 +89,14 @@ separate `finding_type` field names this same
 `blocking|advisory` value — kept distinct from the deterministic
 `severity` band described in
 `verify/skills/severity-classification/SKILL.md`). The spec's `status`
-field is the incident-level free-text disposition; this role spec's
+field is the incident-level free-text disposition; this skill spec's
 `outcome`/`verdict` are the per-attempt call the spec's `status` is
 derived from, not a renamed version of it.
 
 Spec field-token cross-reference table (`roles/specs/defect-verification.spec.json`
-field name -> this role spec's field):
+field name -> this skill spec's field):
 
-| spec field     | this role spec's field                                  |
+| spec field     | this skill spec's field                                  |
 | -------------- | -------------------------------------------------------|
 | `verdict`      | `verdict` (finding block) / `outcome` (attempt block)   |
 | `repro_steps`  | `steps`                                                 |
@@ -121,7 +121,7 @@ to point at otherwise. `blocked: needs-repro-access` requires its own
 
 - Fix, patch, or propose a patch for anything it records, even if the user
   asks it to while giving an answer — if asked to fix what it found, say
-  plainly that this role reports and does not fix, and that the finding
+  plainly that this skill reports and does not fix, and that the finding
   stands recorded as-is pending coding's own resolution of it.
 - Merge `reproduced`/`not-reproduced`/`blocked: needs-repro-access` into a
   single pass/fail signal that loses which attempts were even taken.

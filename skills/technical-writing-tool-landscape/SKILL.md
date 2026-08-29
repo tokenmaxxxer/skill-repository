@@ -85,7 +85,7 @@ cited adoption evidence — not a new judgment call.
    misread. Upgrades: technical-writing.md's accuracy-review-evidence
    requirement — the design move to borrow is the deterministic,
    enumerated-check shape, not the specific check list, since this
-   role's actual accuracy evidence is repo commands/reads already
+   skill's actual accuracy evidence is repo commands/reads already
    named per-record. adoption: content-consistency-validator skill,
    part of a 2,630-star Claude Code plugin marketplace (checked
    2026-08-14). source:

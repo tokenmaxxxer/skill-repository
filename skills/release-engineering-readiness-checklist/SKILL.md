@@ -1,7 +1,7 @@
 ---
 name: release-engineering-readiness-checklist
 description: >-
-  Use when working the release-engineering role's readiness phase,
+  Use when working the release-engineering skill's readiness phase,
   preparing to move from readiness to rollout, or checking what the
   record gate requires before the readiness record will pass. Trigger on requests like "walk the PRR readiness checklist", "is the
   service ready for rollout", "every checklist yes needs a pointable
@@ -12,7 +12,7 @@ description: >-
 
 ---
 
-# readiness-checklist — the release-engineering role's gate, worked from the inside
+# readiness-checklist — the release-engineering skill's gate, worked from the inside
 
 Covers the `readiness` phase. Asks the user, dimension by dimension,
 whether each of the seven Production Readiness Review (PRR) items is
@@ -47,8 +47,8 @@ cover.
 
 ## Procedure
 
-1. Write `docs/issue-<n>/reports/release-engineering.md` with `phase: readiness` at role start
-   (see "Working role start").
+1. Write `docs/issue-<n>/reports/release-engineering.md` with `phase: readiness` at skill start
+   (see "Working skill start").
 2. Walk the seven PRR dimensions with the user, recording each as
    yes/no plus a pointable artifact for every yes, in the `##
    Checklist` section's exact gate-required shape (see "The state
@@ -85,7 +85,7 @@ Full rule text, citations, and counter-examples:
 matched rule's detail is needed.
 
 - S1 — The state file → references/rules.md
-- S2 — Working role start → references/rules.md
+- S2 — Working skill start → references/rules.md
 - S3 — Working `readiness to rollout` → references/rules.md
 - S4 — Working `readiness to rollout`, and `rollout`'s own agent-owned steps → references/rules.md
 - S5 — Working `rollout to steady` → references/rules.md

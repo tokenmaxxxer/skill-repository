@@ -16,7 +16,7 @@ metadata:
 
 # RICE / ICE prioritization and evidence citation
 
-Research trail: Intercom's original RICE model and the ICE simplification, fetched this session via ProductPlan glossary, PM Toolkit's RICE-vs-ICE comparison, and Evelance's research-integration guide; cross-checked against the Mom Test's evidence-admissibility rule (stated preference/hypothetical response is not admissible evidence) already binding on this role's proposal facet.
+Research trail: Intercom's original RICE model and the ICE simplification, fetched this session via ProductPlan glossary, PM Toolkit's RICE-vs-ICE comparison, and Evelance's research-integration guide; cross-checked against the Mom Test's evidence-admissibility rule (stated preference/hypothetical response is not admissible evidence) already binding on this skill's proposal facet.
 
 ## Trigger
 
@@ -60,9 +60,9 @@ consistent effort unit across the whole comparison.
 
 3. When a fallback to ICE is used, write the flag next to the score itself (e.g. "ICE (RICE unavailable: no reach baseline)"), not in a separate methodology footnote — a bare ICE score presented without the flag reads as a deliberate framework choice rather than a data-availability compromise, which misleads a later reader comparing it against RICE-scored items. source: https://pmtoolkit.ai/compare/rice-vs-ice
 
-4. When citing evidence to support a Reach or Impact estimate, write it as one line containing interview/observation count, an approximate date range, and a short paraphrase (e.g. "6 interviews, 2026-06 to 2026-07: users described re-entering the same filter every session") — a bare claim with no count or date is not a citation and cannot be weighed against other evidence when opportunities are compared. source: (role's own binding Mom Test rule, applied at prioritization time)
+4. When citing evidence to support a Reach or Impact estimate, write it as one line containing interview/observation count, an approximate date range, and a short paraphrase (e.g. "6 interviews, 2026-06 to 2026-07: users described re-entering the same filter every session") — a bare claim with no count or date is not a citation and cannot be weighed against other evidence when opportunities are compared. source: (skill's own binding Mom Test rule, applied at prioritization time)
 
-5. When the only evidence available for an opportunity is a stated preference or a hypothetical response ("I would use X if you built it"), exclude it from the Confidence input to the RICE/ICE score — the Mom Test rule this role already carries holds that stated preference or hypothetical response is not admissible evidence, so admitting it into a Confidence score silently launders inadmissible evidence into a numeric-looking score.
+5. When the only evidence available for an opportunity is a stated preference or a hypothetical response ("I would use X if you built it"), exclude it from the Confidence input to the RICE/ICE score — the Mom Test rule this skill already carries holds that stated preference or hypothetical response is not admissible evidence, so admitting it into a Confidence score silently launders inadmissible evidence into a numeric-looking score.
 
 6. When Confidence is scored, tie the percentage to the strength of the admissible evidence actually cited (e.g. 100% = hard data/observed behavior, 80% = solid but incomplete data, 50% = qualitative/anecdotal only) rather than to gut feeling — Intercom's original RICE model defines Confidence precisely to let a team be honest that a promising-looking Impact/Reach combination might be based on weak evidence, so an ungrounded Confidence score defeats that purpose. source: https://www.productplan.com/glossary/rice-scoring-model
 

@@ -1,13 +1,13 @@
 ---
 name: release-engineering-error-budget-policy
 description: >-
-  Use when working the release-engineering role's steady phase to
+  Use when working the release-engineering skill's steady phase to
   write, per SLI, the measurement method, SLO target, measurement window, and
   consequence table that gates steady to readiness on error_budget ok, or when
   a true P0/security-fix exception needs to be routed around an exhausted
   budget. Trigger on requests like "write the error-budget policy", "budget
   exhausted, can we still ship", "SLO consequence table per SLI", "에러 버짓 정책
-  작성해줘". Do NOT use to define what "healthy" means from scratch — this role
+  작성해줘". Do NOT use to define what "healthy" means from scratch — this skill
   consumes the SLO/measurement design feasibility it was already handed; for
   the readiness gate itself, use release-engineering-readiness-checklist.
 
@@ -17,7 +17,7 @@ description: >-
 
 Covers the `steady` phase. Ops does not define what "healthy" means —
 that is the measurement design `feasibility` already produced and `ops`
-was handed at role start. This skill's job is only to write down
+was handed at skill start. This skill's job is only to write down
 the policy consequence, per SLI, so the `steady` refusal rule has something
 mechanical to read.
 

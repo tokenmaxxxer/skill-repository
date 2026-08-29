@@ -3,7 +3,7 @@ name: product-discovery-one-pager
 description: >-
   Use this skill when a handed-in idea needs
   to become a structured one-pager before evidence gathering starts, keeping the problem
-  statement separate from any proposed solution. Trigger it right after role intake,
+  statement separate from any proposed solution. Trigger it right after skill intake,
   on requests like "원페이저 써줘", "draft a one-pager for this idea", "scope this idea before
   research", "capture target market and differentiator". It walks background, problem,
   candidate hypotheses, risks, metrics, target_market, market_size_rationale,
@@ -49,7 +49,7 @@ Lenny's one-pager shape, per
 
 These six (`target_market`, `market_size_rationale`,
 `competitive_alternatives`, `differentiator`, `timing_rationale`,
-`go_to_market_plan`) are this role spec's mapping of
+`go_to_market_plan`) are this skill spec's mapping of
 `product-discovery.spec.json`'s opportunity-framing fields: they describe
 the opportunity before any hypothesis is scored or tested, the same
 "problem, not solution, not yet tested" moment the original five fields
@@ -81,7 +81,7 @@ Template: `product-one-pager/skills/one-pager/templates/one-pager-template.md`.
 
 ## Trigger
 
-Apply this skill when the product role is in the `scoping` state and a
+Apply this skill when the product skill is in the `scoping` state and a
 handed-in idea needs to become a structured one-pager before evidence
 gathering starts — not for drafting a solution spec, which belongs
 elsewhere; this skill exists to keep the problem statement separate

@@ -19,8 +19,8 @@ description: >-
 Runs after `finding-record` has already recorded a
 `reproduced` outcome and its accompanying `finding` block — this skill only
 sets that finding's `severity` field, per
-`docs/specs/role-handoff-contract.md` §5: "`severity: blocking | advisory`.
-`blocking` means loops that DEPEND ON the addressed role's output pause
+the spawning contract's §5: "`severity: blocking | advisory`.
+`blocking` means loops that DEPEND ON the addressed skill's output pause
 until the finding is resolved. `advisory` means downstream loops continue;
 the finding is context, not a gate."
 
@@ -65,7 +65,7 @@ never dropped on dispute, only re-rated.
 ## The shape of the classification
 
 A **deterministic table-lookup**, not an averaged subjective score, mirroring
-the practice research review role already established for this
+the practice research review skill already established for this
 org's use of severity: Microsoft's SDL bug bar replaced DREAD's averaged
 damage/reproducibility/exploitability/affected-users/discoverability score
 for being too subjective and inconsistently scored. This skill uses one of
@@ -101,7 +101,7 @@ one deterministic band and one closed gate value: its `severity` field is
 the free-text deterministic band this skill computes (Chromium's five
 bands or Microsoft's four-level bug bar, above); its `finding_type` field
 is the closed `blocking|advisory` enum that `finding-record` writes onto
-the finding block and that this role spec's gates (`verify-finding-gate`,
+the finding block and that this skill spec's gates (`verify-finding-gate`,
 `verify-outcome-gate`) actually consult. The two must not be collapsed:
 `severity` informs the `finding_type` call but is not itself the gated
 value.

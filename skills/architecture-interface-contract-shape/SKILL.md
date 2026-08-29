@@ -15,7 +15,7 @@ metadata:
 
 # Interface Contract Shape
 
-Operational decision rules for the architecture role on choosing the SHAPE of a
+Operational decision rules for the architecture skill on choosing the SHAPE of a
 boundary contract: sync vs async, shared-kernel vs published-language,
 orchestration vs choreography, and interface surface area. Scope is
 architecture-level shape, not API field-level design.

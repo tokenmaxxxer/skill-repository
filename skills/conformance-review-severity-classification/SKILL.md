@@ -19,7 +19,7 @@ description: >-
 Optional — used only where the review's
 scope is explicitly extended into risk-weighting; severity is not
 required for pure fidelity-checking, per the existing spec's scoping of
-this role to a per-requirement verdict rather than a holistic quality
+this skill to a per-requirement verdict rather than a holistic quality
 judgment. Only run this skill when the user (or the engagement scope
 agreed at review intake) has said severity is in scope.
 

@@ -11,7 +11,7 @@ description: >-
   Companion to usability-eval (study design) and hypothesis-testing (decision rule). Do NOT
   use for designing a NEW experiment, for an observational comparison with no random
   assignment, for a qualitative usability question with no metric contrast, or for the
-  growth-role in-repo variant (use growth-analytics-experiment-trust).
+  growth-skill in-repo variant (use growth-analytics-experiment-trust).
 ---
 
 # Experiment Trust

@@ -132,7 +132,7 @@ matched rule's full text, citation, or counter-example is needed.
 A one-line release note ("Fixed a bug") is NOT required to run the full
 message-hierarchy/Q&A/evaluation apparatus above — rules 3-13 apply when
 the communications activity has an audience beyond the immediate PR
-reviewer and a stated objective (per the role's own `objective` required
+reviewer and a stated objective (per the skill's own `objective` required
 field). A routine internal-only changelog entry with no external
 audience is out of this playbook's scope; applying the full apparatus to
 it would be exactly the padding rule 13 warns against.

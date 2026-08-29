@@ -24,7 +24,7 @@ metadata:
 # Operational playbook: trust-boundary threat modeling decision rules (issue-1174)
 
 Numbered condition → choice → source rules for the `security-threat-model`
-role. Practitioner-depth decision rules, not methodology-name pointers.
+skill. Practitioner-depth decision rules, not methodology-name pointers.
 Each rule cites the fetched source it is derived from; rules marked
 `[REMOVAL]` are subtractive (drop/simplify/de-scope), per amendment 4 —
 at least one removal rule is recorded per axis below.

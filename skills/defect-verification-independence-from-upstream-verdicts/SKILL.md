@@ -35,7 +35,7 @@ closed_checks entry carried over from coding/qa/review.
 4. When an attempt comes up not-reproduced, keep looking for other
    candidate attempts on the same area rather than treating the whole
    area as settled (rule 4).
-5. Do not adjust an attempt's scope or rigor based on which role
+5. Do not adjust an attempt's scope or rigor based on which skill
    (coding, qa, or review) is credited with the underlying work
    (rule 5).
 6. When qa's defect report and review's Present verdict disagree about
@@ -56,21 +56,21 @@ closed_checks entry carried over from coding/qa/review.
 An independently-derived verdict per attempt: not-reproduced attempts
 written with the same rigor as reproduced ones, closed_checks entries
 re-derived rather than cited stale, and scope/rigor held constant
-regardless of which upstream role or verdict is in play.
+regardless of which upstream skill or verdict is in play.
 
 Research trail: cognitive-bias-in-testing literature (MagicPod confirmation-bias-in-QA article, Xebia bias-mapping article, PractiTest cognitive-bias article, Katalon cognitive-biases guide). All fetched/searched this session.
 
 ## Rules
 
-1. Treat a review requirement marked Present as a claim to independently test, not as a fact already settled — confirmation bias leads testers to "seek evidence that confirms preconceptions while dismissing contradictory information," and a role whose whole purpose is catching what review's pass missed cannot let review's own verdict pre-shape the attempt. source: https://blog.magicpod.com/confirmation-bias-in-qa-unveiling-the-hidden-traps
+1. Treat a review requirement marked Present as a claim to independently test, not as a fact already settled — confirmation bias leads testers to "seek evidence that confirms preconceptions while dismissing contradictory information," and a skill whose whole purpose is catching what review's pass missed cannot let review's own verdict pre-shape the attempt. source: https://blog.magicpod.com/confirmation-bias-in-qa-unveiling-the-hidden-traps
 
-2. When devising a self-devised attempt, deliberately include at least one edge case or negative path rather than only the paths a positive/happy-path bias would suggest — testers under confirmation bias "prefer positive tests, cherry-pick tests that confirm a hypothesis, or avoid edge cases that could fail," and this role exists specifically to cover what that bias would skip. source: https://blog.magicpod.com/confirmation-bias-in-qa-unveiling-the-hidden-traps
+2. When devising a self-devised attempt, deliberately include at least one edge case or negative path rather than only the paths a positive/happy-path bias would suggest — testers under confirmation bias "prefer positive tests, cherry-pick tests that confirm a hypothesis, or avoid edge cases that could fail," and this skill exists specifically to cover what that bias would skip. source: https://blog.magicpod.com/confirmation-bias-in-qa-unveiling-the-hidden-traps
 
 3. Re-derive a closed_checks entry from primary evidence rather than citing it against a stale sha, and do not let a prior "closed" status make a re-derivation feel unnecessary — collaborative review checkpoints work because they let "testers challenge each other's decisions or identify overlooked risks," which requires actually looking, not deferring to the earlier verdict's label. source: https://xebia.com/blog/mapping-biases-to-testing-confirmation-bias/
 
 4. When an attempt comes up not-reproduced, resist the pull to stop looking for other candidate attempts on the same area just because the first one cleared — cognitive-bias guidance frames bias mitigation as needing "diverse viewpoints" and "broader testing approaches" precisely because one clean result creates pressure to treat the whole area as settled. source: https://www.practitest.com/resource-center/article/cognitive-biases-in-software-testing/
 
-5. Do not adjust an attempt's scope or rigor based on which role (coding, qa, or review) is credited with the underlying work — bias mitigation strategies emphasize "tester rotation" and structural independence specifically because familiarity with an author or team correlates with reduced scrutiny, and this role's value is exactly the removal of that correlation. source: https://katalon.com/resources-center/blog/cognitive-biases-in-software-testing
+5. Do not adjust an attempt's scope or rigor based on which skill (coding, qa, or review) is credited with the underlying work — bias mitigation strategies emphasize "tester rotation" and structural independence specifically because familiarity with an author or team correlates with reduced scrutiny, and this skill's value is exactly the removal of that correlation. source: https://katalon.com/resources-center/blog/cognitive-biases-in-software-testing
 
 6. When qa's defect report and review's Present verdict disagree about the same area, attempt both independently rather than resolving the disagreement by picking the more authoritative-sounding source — the point of independent verification is that "two sets of eyes are always better than one — especially when it comes to spotting biased assumptions," and deferring to authority instead of evidence defeats that. source: https://blog.magicpod.com/confirmation-bias-in-qa-unveiling-the-hidden-traps
 

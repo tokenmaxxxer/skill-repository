@@ -17,7 +17,7 @@ metadata:
 
 Decision rules for naming the customer job and judging whether this
 spec's differentiation holds against the strongest competing
-alternative (this role spec's `produces.JTBD-landscape verdict` field).
+alternative (this skill spec's `produces.JTBD-landscape verdict` field).
 Research trail: layer 2 (Christensen JTBD, Ulwick Outcome-Driven
 Innovation, verified at source) plus layer 1 (practitioner job-framing
 practice).
@@ -95,7 +95,7 @@ against the competitor-mapping/five-forces sections.
 5. When the differentiation verdict claims "better," require it to name
    the specific desired outcome it is better on and by what evidence —
    an unqualified "better" verdict fails the same shape test evidence-
-   rigor requires elsewhere in this role spec: a claim with no cited
+   rigor requires elsewhere in this skill spec: a claim with no cited
    source or metric does not count as a verdict. source:
    https://researcher.life/blog/article/primary-vs-secondary-sources-differences-and-examples/
 6. When the spec's differentiation is not actually about performing the

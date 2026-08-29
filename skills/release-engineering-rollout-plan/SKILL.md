@@ -1,7 +1,7 @@
 ---
 name: release-engineering-rollout-plan
 description: >-
-  Use when working the release-engineering role's rollout phase
+  Use when working the release-engineering skill's rollout phase
   — asking the user for, or deriving from the readiness record, the traffic
   curve and per-step metric thresholds that gate progressive delivery, written
   to ops/rollout-plan.md before the rollout to rollout and rollout to incident

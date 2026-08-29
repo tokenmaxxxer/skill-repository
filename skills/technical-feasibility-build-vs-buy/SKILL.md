@@ -1,7 +1,7 @@
 ---
 name: technical-feasibility-build-vs-buy
 description: >-
-  Use when the feasibility role's `probing` state reaches the prior-art probe
+  Use when the feasibility skill's `probing` state reaches the prior-art probe
   and needs a build-vs-buy comparison with per-dependency health scores before
   that probe can resolve. Trigger on requests like "build vs buy comparison",
   "prior art probe", "is there an existing library for this", "빌드할지 사서 쓸지 비교해줘".
@@ -19,7 +19,7 @@ description: >-
 
 ## Trigger
 
-This probe applies when the feasibility role is in the `probing` state and
+This probe applies when the feasibility skill is in the `probing` state and
 has reached the prior-art probe specifically — i.e. the open question is
 whether the specification already exists as prior art (product, library, or
 patented approach), distinguishing it from sibling probes in `probing` that

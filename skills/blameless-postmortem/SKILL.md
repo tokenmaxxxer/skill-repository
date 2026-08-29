@@ -10,7 +10,7 @@ description: >-
   Do NOT use for a routine bugfix that caused no declared incident, for live incident
   response while the fire is still active (this is the after-the-fact written record, not a
   runbook), when the user wants to assign blame to a specific person, or for the
-  release-role record inside this repo's role system (use release-engineering-postmortem).
+  release-skill record inside this repo's skill system (use release-engineering-postmortem).
 ---
 
 # Blameless Postmortem

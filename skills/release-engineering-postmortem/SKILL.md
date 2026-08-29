@@ -1,7 +1,7 @@
 ---
 name: release-engineering-postmortem
 description: >-
-  Use when working the release-engineering role's incident phase, once
+  Use when working the release-engineering skill's incident phase, once
   the incident is over and a blameless postmortem is owed —
   enforcing Google's required trigger criteria and required sections, and
   incident.io's action-item failure patterns, as mechanical field checks on

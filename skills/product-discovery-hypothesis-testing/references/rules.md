@@ -44,9 +44,9 @@ ask for it but must never refuse a transition for its absence.
 
 ## Moving through the states
 
-1. **role intake**: the user hands you an idea. open the record
+1. **skill intake**: the user hands you an idea. open the record
    and write down what the idea claims and who it is for. Nothing else is
-   required to open the role.
+   required to open the skill.
 
 2. **scoping to researching**: begin gathering evidence — user interviews,
    existing data, competitive signal, whatever grounds the claim. Set

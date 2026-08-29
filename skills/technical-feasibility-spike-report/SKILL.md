@@ -1,7 +1,7 @@
 ---
 name: technical-feasibility-spike-report
 description: >-
-  Use when a feasibility role's `probing` state needs one uncertain technical
+  Use when a feasibility skill's `probing` state needs one uncertain technical
   question answered inside an agreed timebox before a feasibility verdict can be
   drafted. Runs the human-in-the-loop negotiation at both ends
   (question/timebox/acceptance criteria agreed first; report at timebox end) and
@@ -25,7 +25,7 @@ turn.
 
 ## Trigger
 
-This probe applies once the feasibility role has entered the `probing`
+This probe applies once the feasibility skill has entered the `probing`
 state and there is a single, specific technical unknown blocking the
 feasibility verdict — something that must be resolved by a timeboxed
 investigation (not a broad exploration) before `docs/issue-<n>/reports/technical-feasibility.md`'s
@@ -101,7 +101,7 @@ and what more time would likely buy. The user decides: extend with a
 silent continuation of the old one), or stop and record the gap as an open
 finding. Write the extension (or the
 stop-and-record decision) into the spike report; this write is to the
-spike report artifact, not the role record, and is not itself gated.
+spike report artifact, not the skill record, and is not itself gated.
 
 ## On completion
 
@@ -141,7 +141,7 @@ stop-and-record decision is made.
 
 The marketplace's realized `technical-feasibility.spec.json` expects one
 record file (`write_scope`) to carry all four required fields
-(`spike_goal`, `timebox`, `findings`, `decision`). This role spec instead
+(`spike_goal`, `timebox`, `findings`, `decision`). This skill spec instead
 keeps the spike report as its own project-local artifact, separate from
 `docs/issue-<n>/reports/technical-feasibility.md`, and only summarizes/links it from the main
 record's technical-probe field. This is a deliberate, unresolved

@@ -98,7 +98,7 @@ specific fix required before translation lands.
    source before translation, rather than translating the padding into
    every locale and inheriting a multiplied expansion cost per language
    — this is a hand-off, not a localization-side rewrite, per this
-   role's own fluency-rewrite boundary.
+   skill's own fluency-rewrite boundary.
    source: derived from the text-expansion multiplication finding
    itself (rule 2 sources: German ~70% max expansion) — a shorter
    source string reduces every locale's absolute expansion budget

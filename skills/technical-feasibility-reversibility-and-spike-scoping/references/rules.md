@@ -68,8 +68,8 @@ matched rule's full text, citation, or counter-example is needed.
    agreed with the human BEFORE work starts, never self-assigned after
    research has already begun — a timebox set after the fact is not a
    stopping condition, it is a rationalization.
-   source: spec `timebox` field, feasibility role directive
-   (docs/specs feasibility role contract, this repo's own
+   source: spec `timebox` field, feasibility skill directive
+   (docs/specs feasibility skill contract, this repo's own
    `feasibility/hooks/directive.sh`) — feasibility/hooks/directive.sh.
 
 7. **when** a spike's timebox expires with no conclusive pass/fail
@@ -77,7 +77,7 @@ matched rule's full text, citation, or counter-example is needed.
    never silently continue past the agreed box — an expired timebox
    that keeps running unannounced defeats the reason a timebox was set
    (to bound one-way-door deliberation cost, rule 3).
-   source: feasibility role directive, this repo —
+   source: feasibility skill directive, this repo —
    feasibility/hooks/directive.sh.
 
 8. **when** two architectural approaches trade off the same quality
@@ -96,9 +96,9 @@ matched rule's full text, citation, or counter-example is needed.
    party (not the spike's author) could check pass/fail from the
    deliverable alone — criteria written after exploration invites
    fitting the criteria to whatever was found, which defeats the
-   evidence bar this role enforces (no verdict until all probes
+   evidence bar this skill enforces (no verdict until all probes
    resolve with cited evidence).
-   source: feasibility role directive, spike-report/reversibility-tag
+   source: feasibility skill directive, spike-report/reversibility-tag
    skill contract, this repo — feasibility/hooks/directive.sh.
 
 10. **REMOVAL — when** a candidate architecture requires large upfront

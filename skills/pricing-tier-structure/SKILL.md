@@ -16,7 +16,7 @@ metadata:
 # Tier-structure decision rules
 
 Decisions for `pricing-verdict-report` (chain position 4/4), the
-tier-structure element of this role's `produces` line: how a fielded
+tier-structure element of this skill's `produces` line: how a fielded
 verdict's numbers assemble into packaging, once the research-method
 rules elsewhere in this chain have produced a correctly-labeled price
 point or preference share.
@@ -87,7 +87,7 @@ applies because the decision was never a packaging question.
    level, with the middle tier structured as the default recommendation)
    — this convention's decoy/anchor logic is standard multi-tier
    pricing-page practice, distinct from and complementary to this
-   role spec's own conjoint/PSM design-rigor rules, which govern how the
+   skill spec's own conjoint/PSM design-rigor rules, which govern how the
    underlying price points are measured, not how they are packaged into
    tiers.
 
