@@ -114,7 +114,7 @@ Condition: a STRIDE pass over a trust boundary produces one or more
 findings.
 Choice: attach an owner and one of fix/accept/backlog to each finding
 at enumeration time, not after the fact — an un-dispositioned finding
-list is not a complete STRIDE table for this role's record.
+list is not a complete STRIDE table for this skill's record.
 Source: https://hivesecurity.gitlab.io/blog/stride-threat-modeling-practical-guide/ (fetched 2026-08-13)
 
 **Rule 3.5 — Triage an ambiguous STRIDE candidate against a fixed accept/dismiss/investigate-further question set before spending enumeration effort on it.**

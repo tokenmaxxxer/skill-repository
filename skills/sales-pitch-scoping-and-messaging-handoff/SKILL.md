@@ -80,7 +80,7 @@ rule 4 — the hand-off destination instead of inline copy.
    competitive battlecard copy, an outbound email template), hand off
    to marketing's asset library rather than drafting new positioning
    copy inline in a sales conversation record — positioning language
-   is marketing's owned surface per this role's hand-off boundary, and
+   is marketing's owned surface per this skill's hand-off boundary, and
    inline drafting creates two divergent copies of the same message.
    source: sales-playbook/README.md (this repo, marketing hand-off
    boundary, sales-playbook methodology)

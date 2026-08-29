@@ -17,7 +17,7 @@ metadata:
 
 # ML Test Score scoring discipline (Breck et al. 2017)
 
-Research trail: Breck, Cai, Nielsen, Salib & Sculley, "The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction" (IEEE Big Data 2017), the named primary source for this role's Data/Model/Infrastructure/Monitoring Tests sections; TensorFlow Data Validation (TFX) docs for the training-serving skew mechanics one of the rubric's items requires. Fetched this session.
+Research trail: Breck, Cai, Nielsen, Salib & Sculley, "The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction" (IEEE Big Data 2017), the named primary source for this skill's Data/Model/Infrastructure/Monitoring Tests sections; TensorFlow Data Validation (TFX) docs for the training-serving skew mechanics one of the rubric's items requires. Fetched this session.
 
 ## Trigger
 

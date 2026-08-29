@@ -5,7 +5,7 @@ description: >-
   requirement's verification method, spotting a weak/ambiguous word or double reading, spotting a
   conjunction or mixed-verification-method requirement, deciding traceability-link granularity,
   breaking a MoSCoW-tier tie, or reviewing a spec for gold-plating/redundancy/staleness.
-  Condition-matched drafting rules for the requirements-engineering role. Trigger on requests like
+  Condition-matched drafting rules for the requirements-engineering skill. Trigger on requests like
   "이 요구사항 EARS 템플릿으로 써줘", "검증 방법 뭐로 지정하지", "write this as an event-driven EARS requirement",
   "assign a verification method for this requirement", "break this MoSCoW tie". Do NOT use for
   auditing a finished requirements document or user story against QUS/INVEST checklists (use
@@ -20,7 +20,7 @@ metadata:
 # Requirements-engineering operational playbook
 
 Condition -> choice -> source decision rules for drafting requirements
-(contract v3 role: requirements-engineering). Distilled per-role
+(contract v3 skill: requirements-engineering). Distilled per-skill
 research per issue #1174 amendment 1; evidence trail in
 docs/issue-1174/reports/scout-brief.md. Rules are decisions, not
 definitions: each names the triggering condition and the choice it

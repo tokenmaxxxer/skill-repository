@@ -11,7 +11,7 @@ matched rule's full text, citation, or counter-example is needed.
    element with all six categories collapsed into a single free-text
    cell — a collapsed cell hides which specific category was actually
    assessed and which was skipped.
-   source: feasibility role directive, this repo
+   source: feasibility skill directive, this repo
    (feasibility/hooks/directive.sh): "threat_model: a STRIDE table,
    one row per (element, category, trust boundary)".
 
@@ -46,13 +46,13 @@ matched rule's full text, citation, or counter-example is needed.
    source: "helping teams reason about potential security threats
    across trust boundaries" — Security Compass, STRIDE overview
    (https://www.securitycompass.com/blog/stride-in-threat-modeling/);
-   row shape requirement, feasibility role directive, this repo.
+   row shape requirement, feasibility skill directive, this repo.
 
 5. **when** a threat table row is completed **choose** require a
    disposition of exactly one of `mitigated`, `accepted`, or
    `deferred` — never leave a row "in progress" or blank — because a
    record at a terminal loop_state with an undisposed risk row is
-   refused outright by this role's ADR-spine gate.
+   refused outright by this skill's ADR-spine gate.
    source: this session's SessionStart hook, Nygard ADR-spine
    directive: "every Risks entry must carry a disposition of
    mitigated, accepted, or deferred; a Risks section with an undisposed
@@ -62,8 +62,8 @@ matched rule's full text, citation, or counter-example is needed.
    named follow-up (an issue reference or a next-review trigger) in
    the same row, not a bare "deferred" label — an undated deferral is
    functionally identical to silently dropping the risk, which the
-   role's all-four-probes-resolve rule exists to prevent.
-   source: feasibility role directive, this repo
+   skill's all-four-probes-resolve rule exists to prevent.
+   source: feasibility skill directive, this repo
    (feasibility/hooks/directive.sh): "No verdict until ALL FOUR probes
    resolve ... An empty or in-progress field is not a resolution" —
    applied to individual STRIDE rows by extension of the same
@@ -74,9 +74,9 @@ matched rule's full text, citation, or counter-example is needed.
    **choose** carry its reversibility tag into the STRIDE row's
    disposition reasoning — a `mitigated` verdict on a one-way-door
    element should cite stronger evidence than a `mitigated` verdict on
-   a two-way-door element, per this role's reversibility-scales-
+   a two-way-door element, per this skill's reversibility-scales-
    evidence rule.
-   source: feasibility role directive, this repo
+   source: feasibility skill directive, this repo
    (feasibility/hooks/directive.sh): "Reversibility scales evidence: a
    one-way door needs more before its probe may pass; a two-way door
    may pass on less. It is a field on every finding."
@@ -92,7 +92,7 @@ matched rule's full text, citation, or counter-example is needed.
    source: STRIDE category definitions (Information disclosure,
    Elevation of privilege) — Security Compass
    (https://www.securitycompass.com/blog/stride-in-threat-modeling/);
-   combined with this role's four-probes-must-all-resolve requirement,
+   combined with this skill's four-probes-must-all-resolve requirement,
    feasibility/hooks/directive.sh (this repo).
 
 9. **when** Denial-of-service is being assessed for an element the
@@ -113,7 +113,7 @@ matched rule's full text, citation, or counter-example is needed.
     that no longer exists in the spec is not a real deferred risk, and
     keeping it dilutes the signal of the rows that are.
     source: row-shape requirement (one row per element/category/
-    boundary that exists in the spec), feasibility role directive,
+    boundary that exists in the spec), feasibility skill directive,
     this repo (feasibility/hooks/directive.sh); MADR carry-forward's
     `dropped: <reason>` convention applied by analogy to threat-model
     rows, this session's SessionStart hook.

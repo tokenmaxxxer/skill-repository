@@ -5,7 +5,7 @@ description: >-
   service, or setting the rollback threshold and config validation gate for
   the rollout. Trigger on requests like "canary or blue-green here",
   "pre-declare the rollback threshold", "exponential canary traffic steps",
-  "배포 전략 뭘로 할까". Do NOT use for the ops-role rollout state's per-step plan
+  "배포 전략 뭘로 할까". Do NOT use for the ops-skill rollout state's per-step plan
   file in ops/rollout-plan.md (use release-engineering-rollout-plan).
 metadata:
   axis: deployment-rollout-strategy

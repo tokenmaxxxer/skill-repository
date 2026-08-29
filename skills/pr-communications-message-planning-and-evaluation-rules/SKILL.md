@@ -12,7 +12,7 @@ description: >-
   for product marketing copy and in-product persuasion (use marketing-message-persuasion) or for
   user-facing UI text (content-design-operational-playbook).
 metadata:
-  role: pr-communications
+  skill: pr-communications
   axes:
     - objective-channel-fit
     - message-hierarchy

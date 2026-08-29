@@ -8,7 +8,7 @@ description: >-
   provenance". Do NOT use to apply the rules to a live ticket (use
   customer-support-sla-tier-priority).
 metadata:
-  role: customer-support
+  skill: customer-support
   rule_count_floor: 5
   axes:
     - sla-tier-priority

@@ -19,7 +19,7 @@ metadata:
 # Severity classification / postmortem depth scoping
 
 Decision rules for how much postmortem depth a given incident earns
-(this role spec's `note: severity-tiered document depth` field). Layer 1
+(this skill spec's `note: severity-tiered document depth` field). Layer 1
 (practitioner canon: incident.io/PagerDuty/Xurrent severity playbooks),
 layer 2 (named framework: SEV0-SEV5 tiering), layer 3 (impact-scoping
 theory: proportionality of response cost to blast radius).

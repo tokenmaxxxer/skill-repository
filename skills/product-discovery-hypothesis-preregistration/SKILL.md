@@ -16,7 +16,7 @@ metadata:
 
 # Hypothesis pre-registration (metric, threshold, decision rule fixed before data)
 
-Research trail: pre-registration and metric-hierarchy practice fetched this session via Atticus Li's pre-registration glossary, Optibase and AB Test Pro guardrail/measurement-plan guides, and Statsig's guardrail-metric explainer; converged with this role's own binding rule that the verdict is the mechanical application of a rule fixed before data collection.
+Research trail: pre-registration and metric-hierarchy practice fetched this session via Atticus Li's pre-registration glossary, Optibase and AB Test Pro guardrail/measurement-plan guides, and Statsig's guardrail-metric explainer; converged with this skill's own binding rule that the verdict is the mechanical application of a rule fixed before data collection.
 
 ## Trigger
 

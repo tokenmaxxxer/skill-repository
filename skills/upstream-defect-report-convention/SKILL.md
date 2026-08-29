@@ -12,7 +12,7 @@ description: >-
 metadata:
   axis: convention
   rule_count_floor: 5
-  role: upstream-defect-report
+  skill: upstream-defect-report
 
 ---
 

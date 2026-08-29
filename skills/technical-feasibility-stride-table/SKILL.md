@@ -1,7 +1,7 @@
 ---
 name: technical-feasibility-stride-table
 description: >-
-  Use when the feasibility role is in the `probing` state running the
+  Use when the feasibility skill is in the `probing` state running the
   threat-model probe and the specification's design needs an adversarial,
   security-design pass, row by row, before that probe can resolve. Builds the
   STRIDE table with the user element by element, each row carrying entry
@@ -18,10 +18,10 @@ description: >-
 
 ## Trigger
 
-Apply this probe when the feasibility role is in the `probing` state and
+Apply this probe when the feasibility skill is in the `probing` state and
 the active probe is the threat-model probe — i.e., the specification's
 design (or a diagram of it) needs an adversarial, security-design pass
-before the probe can resolve and the role can move past it.
+before the probe can resolve and the skill can move past it.
 
 ## Procedure
 

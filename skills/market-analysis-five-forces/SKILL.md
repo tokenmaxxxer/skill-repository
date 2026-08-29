@@ -18,7 +18,7 @@ metadata:
 
 Decision rules for rating each of Porter's five forces strong/moderate/
 weak and turning that rating into an attractiveness verdict (this
-role spec's `produces.five-forces summary` field). Research trail: layer
+skill spec's `produces.five-forces summary` field). Research trail: layer
 2 (Porter's framework, verified at source + DOJ/FTC merger-guideline
 thresholds) plus layer 1 (practitioner scoring practice) plus layer 3
 (overconfidence-in-forecasting literature bearing on how a verdict

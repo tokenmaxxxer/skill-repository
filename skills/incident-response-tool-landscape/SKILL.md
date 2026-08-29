@@ -3,7 +3,7 @@ name: incident-response-tool-landscape
 description: >-
   Use when applying an incident-management tool ecosystem's design moves —
   auto-timeline capture, severity-driven escalation, blocking action-item
-  gates, or linking instead of re-typing — to one of this role's own axes.
+  gates, or linking instead of re-typing — to one of this skill's own axes.
   Applies to the tool-landscape axis. Trigger on requests like "capture the
   timeline as the incident unfolds", "link the live incident record instead of
   re-typing it", "인시던트 도구 관행을 포스트모템 축에 적용해줘". Each move names which existing
@@ -18,8 +18,8 @@ metadata:
 # Tool-landscape learnings
 
 Distilled design moves from the incident-management/postmortem tool
-ecosystem this role's practitioners actually use (issue #1199,
-northpole req#1/req#5), folded into this role's own decision axes —
+ecosystem this skill's practitioners actually use (issue #1199,
+northpole req#1/req#5), folded into this skill's own decision axes —
 never a tool catalog. Adoption-evidence citations (stars, reported
 customer counts, acquisition/market signal, multi-source comparison
 mentions) are in `docs/issue-1199/reports/incident-response/scout-brief.md`
@@ -31,7 +31,7 @@ which existing axis it upgrades.
 Apply this skill when a design move from the incident-management tool
 ecosystem (auto-timeline capture, severity-driven escalation routing,
 blocking action-item gates, link-don't-duplicate) would upgrade one of
-this role's existing axis skills, distinguishing it from those axis
+this skill's existing axis skills, distinguishing it from those axis
 skills themselves — this skill states which existing rule the move
 upgrades, it does not replace that rule.
 
@@ -85,7 +85,7 @@ standalone tool catalog or a new axis of its own.
    fact — mirrors how the surveyed postmortem tools structurally refuse
    to create an action item without those fields. Upgrades
    [[action-item-quality]] rule 1 from advisory framing to blocking
-   framing, matching this role's own
+   framing, matching this skill's own
    `incident-response-action-item-gate`'s mechanical enforcement instead
    of merely restating it in prose.
 

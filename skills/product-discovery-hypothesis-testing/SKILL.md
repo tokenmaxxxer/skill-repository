@@ -1,7 +1,7 @@
 ---
 name: product-discovery-hypothesis-testing
 description: >-
-  Use this skill whenever the product role is moving a specification file through
+  Use this skill whenever the product skill is moving a specification file through
   product-cycle's state machine — scoping an idea, registering a metric/threshold/decision
   rule in docs/proposals/ frontmatter, asking the user to approve the move into measuring,
   or applying a registered rule to reach a decision. Trigger before writing status, metric,
@@ -12,7 +12,7 @@ description: >-
   peeking outside the state machine (use product-discovery-hypothesis-preregistration).
 ---
 
-# Hypothesis testing for the product role
+# Hypothesis testing for the product skill
 
 product-cycle treats an idea as a theory: it earns the right to move to
 `measuring` only once a metric, a threshold, and a decision rule are all
@@ -23,7 +23,7 @@ moving through it correctly.
 
 ## Trigger
 
-Apply this skill whenever the product role is moving a specification
+Apply this skill whenever the product skill is moving a specification
 file through product-cycle's state machine — scoping an idea,
 registering a metric/threshold/decision rule, asking the user to
 approve the move into `measuring`, or applying a registered rule to
@@ -33,7 +33,7 @@ not fresh judgement.
 
 ## Procedure
 
-1. Move role intake on the user's idea, then `scoping to
+1. Move skill intake on the user's idea, then `scoping to
    researching` once evidence gathering begins (see steps 1-2 above).
 2. Write the falsifiable `hypothesis_statement` and register
    metric/threshold/decision_rule/fail_condition/time_box before moving
@@ -113,7 +113,7 @@ Full rule text, citations, and counter-examples:
 `references/rules.md` in this skill's directory — read it when a
 matched rule's detail is needed.
 
-- 2.1 — **role intake**: the user hands you an idea. Open the record and write down what the idea claims and who it is for. Nothing else is required to open the role
+- 2.1 — **skill intake**: the user hands you an idea. Open the record and write down what the idea claims and who it is for. Nothing else is required to open the skill
 - 2.2 — **scoping to researching**: begin gathering evidence — user interviews, existing data, competitive signal, whatever grounds the claim. Set `status: researching`. Do not…
 - 2.3 — **researching to hypothesis-registered**: write the falsifiable `hypothesis_statement`, then propose the metric, the threshold, and the decision rule (with `fail_conditi…
 - S1 — The carrying file → references/rules.md

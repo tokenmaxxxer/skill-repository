@@ -73,7 +73,7 @@ forward with their basis commit sha cited rather than re-derived.
    present-but-wrong implementation is a distinct failure mode a builder needs
    to know is different from "not started." source: standard defect-severity
    practice distinguishing missing-feature from wrong-behavior defects, which
-   this role's own verdict taxonomy already encodes.
+   this skill's own verdict taxonomy already encodes.
 
 3. **When** the only evidence for a requirement lives in a location the review
    session cannot read (a third-party service's internal behavior, a
@@ -81,7 +81,7 @@ forward with their basis commit sha cited rather than re-derived.
    access to), **assign Unverifiable and name the specific missing evidence
    location** — never render a favorable guess (Present) or an unfavorable
    guess (Absent) from absence of access; both are fabrications of confidence
-   the session does not have. source: this role's own spec directive
+   the session does not have. source: this skill's own spec directive
    ("an unlocatable-evidence case is Unverifiable, never a favorable guess").
 
 4. **When** a prior review record already marked a requirement Present at an
@@ -96,7 +96,7 @@ forward with their basis commit sha cited rather than re-derived.
 
 5. **When** assigning Incorrect or Absent, **name the specific clause of the
    requirement that the evidence fails to satisfy**, not a bare verdict
-   label — "Incorrect" alone tells the owning role a requirement failed but
+   label — "Incorrect" alone tells the owning skill a requirement failed but
    not which of its clauses to fix, forcing them to re-derive the same
    comparison the review already made. State the failing clause the same way
    a passing requirement's evidence citation is stated, so the verdict is
@@ -108,7 +108,7 @@ forward with their basis commit sha cited rather than re-derived.
    **re-check that specific evidence once against the current artifact state
    before finalizing the verdict**, rather than asserting it on the first
    pass — a defect claim that turns out to be a false positive costs the
-   owning role more rework than one extra confirmation pass costs the
+   owning skill more rework than one extra confirmation pass costs the
    reviewer. source: false-positive-verification practice in security-audit
    tooling, which gates a finding behind a dedicated re-check step before it
    is reported rather than trusting the first detection.

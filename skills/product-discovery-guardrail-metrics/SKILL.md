@@ -1,7 +1,7 @@
 ---
 name: product-discovery-guardrail-metrics
 description: >-
-  Use this skill while the product role is in `hypothesis-registered`, before the transition
+  Use this skill while the product skill is in `hypothesis-registered`, before the transition
   to `measuring`, to name guardrail metrics that must not move adversarially, and read it
   again once `measuring` starts so breaches are checked against what was named. Trigger
   alongside metric/threshold/decision-rule registration, on requests like "측정 들어가기 전에 가드레일
@@ -26,7 +26,7 @@ outright, regardless of the primary-metric result.
 
 **What it produces:** a non-empty guardrail-metrics list, each entry
 naming the metric and the direction/threshold that counts as a breach.
-This list *is* this role spec's `critical_success_factors`
+This list *is* this skill spec's `critical_success_factors`
 (`product-discovery.spec.json`'s field for "what must hold, or the result
 doesn't count"): a guardrail named non-empty at hypothesis-registration
 time and checked at measurement time is exactly a critical success
@@ -51,7 +51,7 @@ alongside metric/threshold/decision_rule.
 
 ## Trigger
 
-Apply this skill while the product role is in `hypothesis-registered`,
+Apply this skill while the product skill is in `hypothesis-registered`,
 before the transition to `measuring`, to name guardrail metrics that
 must not move adversarially — distinct from the primary metric or
 threshold, which belong to `hypothesis-testing` — and again at

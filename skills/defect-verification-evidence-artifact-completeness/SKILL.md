@@ -100,7 +100,7 @@ qamadness.com and softwaretestershub.in). All fetched this session
 4. When an attempt could be captured as a durable artifact (a log
    excerpt, a run transcript, a diff) rather than only described in
    prose, capture the artifact — a description of what a recording showed
-   is strictly weaker than the recording, and this role's evidence
+   is strictly weaker than the recording, and this skill's evidence
    pointer exists precisely so coding does not have to trust a paraphrase.
 
 5. Treat a `blocked: needs-repro-access` outcome as still needing an

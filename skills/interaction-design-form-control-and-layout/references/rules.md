@@ -50,7 +50,7 @@ When any text conveys information (excluding decorative text, logo
 text, and disabled/inactive-state text), apply a minimum contrast ratio
 of 4.5:1 against its background for text under 18pt (24px) / 14pt-bold
 (18.66px), or 3:1 if the text is at or above that large-text threshold —
-per WCAG 2.1 SC 1.4.3, the numeric floor this role's spec names but does
+per WCAG 2.1 SC 1.4.3, the numeric floor this skill's spec names but does
 not itself tabulate. Counter-example: disabled controls are explicitly
 exempt under the same criterion; do not force the 4.5:1 floor onto
 disabled-state text, since that would falsely imply interactivity.
@@ -112,7 +112,7 @@ docs/issue-1174/reports/interaction-design/2026-08-13-playbook-evidence.md
 in the on-the-record repo for the query/source log. Scope: batch 1
 partial (form controls, grouping, navigation depth, contrast floor, one
 removal rule) — not a claim of full coverage against issue #1174's
-N-per-role target; color-combination visibility beyond contrast,
+N-per-skill target; color-combination visibility beyond contrast,
 usage-frequency-to-menu-depth beyond R4, and background/editing-surface
 separation remain open for a follow-up batch in this same skill family.
 

@@ -1,7 +1,7 @@
 ---
 name: technical-feasibility-license-scan
 description: >-
-  Use when the feasibility role is in its `probing` state and needs to run the
+  Use when the feasibility skill is in its `probing` state and needs to run the
   legal-regulatory probe — i.e. dependencies (packages, SaaS, third-party
   services) are being pulled into the specification and their licenses and
   applicable regulatory regimes have not yet been recorded. Trigger on requests
@@ -17,7 +17,7 @@ description: >-
 
 ## Trigger
 
-This applies whenever the feasibility role is in its `probing` state and the
+This applies whenever the feasibility skill is in its `probing` state and the
 legal-regulatory probe for the current specification has not yet resolved —
 concretely, when the specification names or implies dependencies (packages,
 SaaS, third-party services) whose licenses have not been verdicted, or when

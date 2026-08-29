@@ -63,7 +63,7 @@ finding record contain to be actionable?"):
    and `requirement` alone (free text, potentially paraphrased) does not
    reliably serve as that key across re-review (issue #30 conformance
    methodology proposal, part (b)). EARL counterpart: the marketplace
-   `conformance-review` role spec's `test` field (`roles/specs/
+   `conformance-review` skill spec's `test` field (`roles/specs/
    conformance-review.spec.json`, issue-521) — a `ref`-typed pointer to
    the same conformance criterion this field names.
 3. **`verdict`** — one of the five values above. EARL counterpart: the
@@ -88,26 +88,26 @@ The requirement's subject-under-audit (the artifact/commit being checked)
 is this skill's EARL counterpart to the spec's `subject` field; the
 reviewer's own identity recording a verdict is the counterpart to the
 spec's `assertedBy` field — neither has a dedicated field name in this
-role spec's template today, but both are implicit in where the record
+skill spec's template today, but both are implicit in where the record
 lives (`docs/issue-<n>/reports/conformance-review.md`, scoped to one subject) and who writes it.
 
 ## [S3] EARL alignment (issue-521 spec)
 
-The marketplace `conformance-review` role spec names two rules this
-role spec does not enforce locally, by design (proposal `## Constraints`:
+The marketplace `conformance-review` skill spec names two rules this
+skill spec does not enforce locally, by design (proposal `## Constraints`:
 no forked enforcement):
 
 - **`reference_resolution`**: "test must resolve to the actual
   conformance criterion (a spec section, requirement, or lint rule) being
   checked, not a vague description; subject must resolve to a real repo
   path or commit sha." `checked_by`:
-  `on-the-record/hooks/role-spec-reference-guard.sh` — owned upstream in
+  the spec-reference-guard hook in `on-the-record/hooks/` — owned upstream in
   `tokenmaxxxer/on-the-record`, not vendored here.
 - **`recomputation`**: "overall verdict = the worst-case result across
   all cited test entries (failed > cantTell > inapplicable > untested >
   passed), never a standalone summary field asserted independently of the
   cited results (issue-515 invariant 4)." `checked_by`: TBD upstream
-  (issue-521 out-of-scope note: per-role recomputation enforcement is a
+  (issue-521 out-of-scope note: per-skill recomputation enforcement is a
   follow-up once evidence from real usage shows which roles need it) —
   unenforced anywhere today, including here.
 
@@ -134,7 +134,7 @@ not have had its spec locator pinned down either.
 
 - Fix, patch, or propose a patch for anything it records, even if the
   user asks it to while giving an answer — if asked to fix what it found,
-  say plainly that this role reports and does not fix, and that the
+  say plainly that this skill reports and does not fix, and that the
   finding stands recorded as-is pending the user's own decision on it.
 - Merge the five verdicts into pass/fail.
 - Write to any file other than `docs/issue-<n>/reports/conformance-review.md`.

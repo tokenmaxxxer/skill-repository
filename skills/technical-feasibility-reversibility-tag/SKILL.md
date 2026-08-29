@@ -80,7 +80,7 @@ Not a separate file. This tag is written inline as a field on each finding
 within the probe artifact that produced it (the spike report, the STRIDE
 table row, the build-vs-buy comparison row, the license-scan entry) —
 never a standalone `feasibility/reversibility.md`. Like those artifacts,
-this write is not the role record and is not gated.
+this write is not the skill record and is not gated.
 
 ## Field added to every finding
 

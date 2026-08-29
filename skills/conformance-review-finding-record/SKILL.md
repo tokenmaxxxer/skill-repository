@@ -15,7 +15,7 @@ description: >-
 
 Covers both initial recording and dispute resolution (recorded inline,
 still against the same finding). Produces the per-requirement finding
-record inside `docs/issue-<n>/reports/conformance-review.md`, the role's record
+record inside `docs/issue-<n>/reports/conformance-review.md`, the skill's record
 file, at the requirement blocks below the header block.
 
 This skill never writes to any file other than `docs/issue-<n>/reports/conformance-review.md`. It does

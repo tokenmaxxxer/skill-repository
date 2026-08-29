@@ -11,7 +11,7 @@ description: >-
 
 # Operational playbook — isolation & fixture strategy
 
-Condition → choice → source rules for this role's decides: 테스트 코드 자체가
+Condition → choice → source rules for this skill's decides: 테스트 코드 자체가
 격리성·fixture 전략 면에서 좋은 설계인가. Numbered, one rule per line item.
 REMOVAL-category rules are marked `[REMOVAL]`.
 

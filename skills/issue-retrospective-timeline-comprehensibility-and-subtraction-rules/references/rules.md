@@ -7,14 +7,14 @@ matched rule's full text, citation, or counter-example is needed.
 ## Rules
 
 1. When starting record composition, write the Timeline section from the
-   subject's other-role records first, before drafting any Contributing
+   subject's other-skill records first, before drafting any Contributing
    factors or What-we-learned language — Google SRE's postmortem template
    documents "an accurate timeline reconstructed from system data" ahead of
    causal analysis, and SRE workbook practice treats timeline-before-judgment
    as the mechanism that keeps causal claims falsifiable against the record.
    source: https://sre.google/workbook/postmortem-culture/
 
-2. When a contributing-factor sentence is about to name a person or a role's
+2. When a contributing-factor sentence is about to name a person or a skill's
    choice as the explanation, rewrite it to name the structural gap (process,
    tool, documentation, or interface absence) that let that choice go wrong —
    blameless-postmortem practice assumes everyone acted in good faith with
@@ -28,14 +28,14 @@ matched rule's full text, citation, or counter-example is needed.
    attribution. source: https://incident.io/blog/sre-incident-postmortem-best-practices
 
 4. When drafting Action items, give each one a named owner (a person or
-   role, never "the team") and phrase it as a checkable change, and mark
+   skill, never "the team") and phrase it as a checkable change, and mark
    whether it fixes this instance or the class of failure — PagerDuty's
    postmortem documentation separates "fixes to prevent the contributing
    factor" from "preparedness tasks" and requires owners on both.
    source: https://www.pagerduty.com/resources/insights/learn/how-to-write-postmortem/
 
 5. When the record will be read by a session or reviewer unfamiliar with the
-   subject issue's jargon (role names, internal gate names, tool acronyms),
+   subject issue's jargon (skill names, internal gate names, tool acronyms),
    define the term at its first use in the record rather than assuming
    context — PagerDuty's guide flags that postmortem readers are often
    newcomers to the incident and terminology must be defined for them.
@@ -48,17 +48,17 @@ matched rule's full text, citation, or counter-example is needed.
    postmortem-writing practice treats mixing description and remedy as what
    makes a record hard to audit later. source: https://www.pagerduty.com/resources/insights/learn/how-to-write-postmortem/
 
-7. When another role's record is silent on a section this role's contract
+7. When another skill's record is silent on a section this skill's contract
    requires reading (e.g., no Impact summary in an implementation record),
    record that silence itself as a finding ("record too thin to
    retrospective on") rather than inferring the missing content from the
-   running system — the records-only constraint is this role's own
+   running system — the records-only constraint is this skill's own
    convention, and SRE practice's rule that a postmortem is only as good as
    the data it draws from applies the same way to records as to system logs.
    source: https://sre.google/workbook/postmortem-culture/
 
 8. **REMOVAL**: When a draft record section restates background already
-   established by the linked issue, proposal, or another role's record
+   established by the linked issue, proposal, or another skill's record
    (e.g., a "Context" section re-explaining the subject issue), delete it
    and cite the source instead of restating it — subtraction-neglect
    research shows people default to additive edits and must be prompted to
@@ -106,8 +106,8 @@ matched rule's full text, citation, or counter-example is needed.
     zero-context reader navigate without re-deriving the record's shape
     each time. source: https://sre.google/sre-book/example-postmortem/
 
-14. When any sibling role record for the subject is still at a
-    non-terminal loop_state at the moment this role reads it, say so
+14. When any sibling skill record for the subject is still at a
+    non-terminal loop_state at the moment this skill reads it, say so
     plainly in the Timeline (or a dedicated note next to the sibling
     citation) instead of drafting the rest of the record as if the full
     picture were already settled — a retrospective built over an
@@ -118,7 +118,7 @@ matched rule's full text, citation, or counter-example is needed.
 15. When drafting Action items, add a one-clause stated Impact (what
     measurably improves if the item is done) next to the owner and the
     checkable phrasing already required by rule 4; and scale how much
-    Timeline/sibling-record depth this role reads to the subject's actual
+    Timeline/sibling-record depth this skill reads to the subject's actual
     footprint — a subject with two sibling records needs a light pass,
     one with a dozen needs proportionally more — rather than applying one
     fixed reading depth regardless of how large the subject actually is.

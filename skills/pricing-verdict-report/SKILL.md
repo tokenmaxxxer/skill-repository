@@ -111,7 +111,7 @@ actually contains revenue/profit/volume questions.
    — do not add a boilerplate hand-off line to `finance-unit-economics`
    out of habit. State the residual list as empty explicitly and skip
    the hand-off; forcing a hand-off with nothing to hand off manufactures
-   downstream work for a role that has nothing to check.
+   downstream work for a skill that has nothing to check.
    source: this repo's `README.md` HAND-OFF line, read literally — the
    hand-off is conditioned on the residual actually containing
    revenue/profit/volume, not issued unconditionally.

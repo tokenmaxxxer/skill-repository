@@ -12,7 +12,7 @@ matched rule's full text, citation, or counter-example is needed.
    condition in the `conditions:` list — never `go` with the condition
    buried in prose, because a condition outside `conditions:` is
    invisible to any automated gate checking for open blockers.
-   source: this role's own directive (feasibility/hooks/directive.sh,
+   source: this skill's own directive (feasibility/hooks/directive.sh,
    this repo): "a blocking condition that cannot proceed until
    resolved EXTERNALLY ... -> verdict: conditional, the blocking
    condition in the conditions: list".
@@ -23,7 +23,7 @@ matched rule's full text, citation, or counter-example is needed.
    body convention, never placed in `conditions:` — `conditions:` is
    reserved for external blockers only, so an internal prerequisite
    there would misrepresent an in-repo task as an external dependency.
-   source: same role directive, this repo: "a prerequisite that is
+   source: same skill directive, this repo: "a prerequisite that is
    two-way (reversible) and resolvable WITHIN the repo's own work ->
    verdict: go, with the prerequisite recorded via the
    verdict_provisional convention ... never in conditions:".
@@ -35,7 +35,7 @@ matched rule's full text, citation, or counter-example is needed.
    and not a prerequisite, and forcing it into either field
    misclassifies a boundary-of-what-was-checked as a thing that must
    still happen.
-   source: same role directive, this repo: "a scope constraint only
+   source: same skill directive, this repo: "a scope constraint only
    (no blocking or resolvable prerequisite, just a boundary on what
    was evaluated) -> verdict: go, the constraint stated in the record
    body".
@@ -46,7 +46,7 @@ matched rule's full text, citation, or counter-example is needed.
    — because every condition/prerequisite/constraint narrative belongs
    in the record body, and encoding it into the field breaks any
    mechanical parser that expects one of exactly three values.
-   source: same role directive, this repo: "The verdict field itself
+   source: same skill directive, this repo: "The verdict field itself
    carries the bare enum value only — every condition, prerequisite,
    or constraint narrative lives in the record body, never appended to
    or encoded in the field."
@@ -56,8 +56,8 @@ matched rule's full text, citation, or counter-example is needed.
    pass/fail/blocked with cited evidence **choose** withhold any
    verdict at all, not a placeholder `conditional` — a verdict issued
    before all four probes resolve is not provisional caution, it is a
-   rule violation of this role's own gating requirement.
-   source: feasibility role directive, this repo
+   rule violation of this skill's own gating requirement.
+   source: feasibility skill directive, this repo
    (feasibility/hooks/directive.sh): "No verdict until ALL FOUR probes
    resolve to pass:<evidence> | fail:<evidence> | blocked:<evidence>."
 
@@ -69,7 +69,7 @@ matched rule's full text, citation, or counter-example is needed.
    verdict reasoning) — a verdict argued from "but this will make
    money" is not a feasibility verdict, it is advocacy wearing a
    feasibility record's shape.
-   source: role directive, this repo (feasibility/hooks/directive.sh):
+   source: skill directive, this repo (feasibility/hooks/directive.sh):
    "read the specification DELIBERATELY WITHOUT the market argument
    that motivated it ... Record market_argument_supplied: false
    explicitly: the record must SAY the argument was withheld, not
@@ -80,7 +80,7 @@ matched rule's full text, citation, or counter-example is needed.
    never quietly extend the box or quietly issue a verdict on
    incomplete evidence to avoid the escalation — both silent paths
    defeat the reason a pre-agreed timebox exists.
-   source: role directive, this repo (feasibility/hooks/directive.sh):
+   source: skill directive, this repo (feasibility/hooks/directive.sh):
    "A timebox that expires without a conclusive answer STOPS and puts
    extend-vs-stop to the human — never silently continues."
 
@@ -89,7 +89,7 @@ matched rule's full text, citation, or counter-example is needed.
    new probe finding (fresh evidence on one of the four probes) before
    revising — an unsupported "on reflection" revision without a new
    probe result is not a legitimate basis to reopen a closed verdict.
-   source: role directive, this repo (feasibility/hooks/directive.sh):
+   source: skill directive, this repo (feasibility/hooks/directive.sh):
    "Once at verdict, refuse to revise without a new probe finding."
 
 9. **when** deciding between a `conditional` verdict with many
@@ -101,7 +101,7 @@ matched rule's full text, citation, or counter-example is needed.
    which part is actually blocked and delays shipping the feasible
    core.
    source: verdict-selection-criteria mechanical rule (per condition
-   class, evaluated per blocking item, not per whole spec), role
+   class, evaluated per blocking item, not per whole spec), skill
    directive, this repo (feasibility/hooks/directive.sh) — the
    per-condition-class mechanism implies per-condition scoping rather
    than whole-spec bundling.
@@ -114,7 +114,7 @@ matched rule's full text, citation, or counter-example is needed.
     in the body reads as an unresolved condition to any later reader
     or gate, misrepresenting a closed item as open.
     source: `verdict_provisional` body-level convention definition,
-    role directive, this repo (feasibility/hooks/directive.sh): "it
+    skill directive, this repo (feasibility/hooks/directive.sh): "it
     marks a go verdict's in-repo-resolvable prerequisite" — a marker
     for an open prerequisite has no defined meaning once that
     prerequisite is closed, so carrying it forward stale is an

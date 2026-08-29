@@ -9,7 +9,7 @@ matched rule's full text, citation, or counter-example is needed.
 1. **when** grading a candidate dependency's ongoing maintenance
    **choose** run the OpenSSF Scorecard `Maintained` check (activity
    and maintenance status of the project) rather than eyeballing the
-   commit graph — it is the automated, comparable signal this role's
+   commit graph — it is the automated, comparable signal this skill's
    evidence bar requires (`check-name score` citation format).
    source: "The Maintained check checks the activity and maintenance
    status of the project" — OpenSSF Scorecard checks documentation
@@ -31,10 +31,10 @@ matched rule's full text, citation, or counter-example is needed.
 3. **when** a candidate dependency scores well on Scorecard but the
    record cites only the aggregate score **choose** reject the
    citation and require per-check breakdown (which named checks,
-   which scores) — the role's own evidence-citation rule requires
+   which scores) — the skill's own evidence-citation rule requires
    `check-name score`, singular check named, not an aggregate number
    that hides which specific control passed or failed.
-   source: docs/specs evidence-citation directive, this role spec's
+   source: docs/specs evidence-citation directive, this skill spec's
    `evidence-citation` module — evidence-citation/hooks/directive.sh
    (this repo).
 
@@ -42,9 +42,9 @@ matched rule's full text, citation, or counter-example is needed.
    **choose** treat "buy" (adopt an existing dependency/vendor) as the
    default candidate to evaluate first, and require the record to
    state per-dependency health evidence before "build" can be chosen —
-   the role's own probe requirement is a build-vs-buy comparison WITH
+   the skill's own probe requirement is a build-vs-buy comparison WITH
    per-dependency health evidence, not a build-first assumption.
-   source: feasibility role directive (this repo,
+   source: feasibility skill directive (this repo,
    feasibility/hooks/directive.sh): "prior_art: a build-vs-buy
    comparison with per-dependency health evidence, OpenSSF-Scorecard-
    or-equivalent (skill: build-vs-buy)".
@@ -53,7 +53,7 @@ matched rule's full text, citation, or counter-example is needed.
    **choose** run one before citing it, rather than substituting a
    GitHub star count or a blog post's opinion — stars and popularity
    are not maintenance-health signals and do not satisfy the
-   `check-name score` evidence shape this role requires.
+   `check-name score` evidence shape this skill requires.
    source: OpenSSF Scorecard project description, "OpenSSF Scorecard
    assesses open source projects for security risks through a series
    of automated checks" — OpenSSF Scorecard homepage
@@ -74,7 +74,7 @@ matched rule's full text, citation, or counter-example is needed.
    the record to name the specific health gap in the rejected buy
    candidate (which check failed, what score) as the one-line
    rejection reason — a bare "not chosen" note does not satisfy the
-   plural-candidates-with-cited-reason discipline this role's proposal
+   plural-candidates-with-cited-reason discipline this skill's proposal
    phase already applies to architectural options.
    source: MADR options-considered discipline (this session's
    SessionStart hook, rule 2: "One-line rejection reason per
